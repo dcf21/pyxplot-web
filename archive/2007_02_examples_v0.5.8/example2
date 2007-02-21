@@ -1,0 +1,38 @@
+# Example 2
+# Uses multiplot to produce a gallery of
+# trigonometric functions.
+
+reset
+
+set term eps
+set output 'examples/eps/example2.eps'
+set multiplot
+set nodisplay
+set xlabel 'x'
+set ylabel 'y'
+
+# Plot 0 (bottom left)
+plot sin(x)
+
+# Plot 1 (bottom right)
+set origin 11,0
+plot cos(x)
+
+# Plot 2 (top left)
+set origin 0,6.2
+plot sin(x) ax x1y1, sin(x)**2 ax x1y2
+
+# Plot 3 (top right)
+set origin 11,6.2
+plot sin(x)+cos(x)
+
+# Now that we are finished preparing multiplot,
+# turn display on
+set display
+refresh
+
+# Produce a gif copy
+set term gif
+set dpi 98
+set output 'examples/eps/example2.gif'
+refresh

@@ -1,0 +1,21 @@
+# Example 4
+# Demonstrates how an equation might be output as a gif
+# for inclusion in a slideshow in Microsoft Powerpoint.
+
+reset
+
+# Set terminal to produce transparent gif output
+set term gif trans invert
+set dpi 450
+set output 'examples/eps/example4.gif'
+set multiplot
+
+# Render the Planck blackbody formula in LaTeX
+text '$B_\nu = \frac{8\pi h}{c^3} \frac{\nu^3}\
+{\exp \left( h\nu / kT \right) -1 }$' at 0,0
+text 'This is an example equation:' at 0, 0.75
+
+# Produce a second copy of this plot as an eps file
+set output 'examples/eps/example4.eps'
+set term eps
+refresh

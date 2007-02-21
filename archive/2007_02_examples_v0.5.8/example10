@@ -1,0 +1,95 @@
+# Example 10
+# Example of the Removal of Unwanted Axes
+reset
+
+set multiplot
+set nodisplay
+set width 8
+set terminal eps
+set output 'examples/eps/example10.eps'
+
+# Plot 0 (bottom left)
+set x2label 'invisible'
+set y2label 'invisible'
+set xlabel 'x'
+set ylabel 'y'
+plot [0:5] (sin(x) ** 2)
+
+# Plot 1 (bottom right)
+set ylabel  'invisible'
+set xlabel  'A normal axis'
+set x3label 'An axis with outward-pointing ticks'
+set x3ticdir outward
+set x5label 'nolabels: A \texttt{nolabels} axis'
+set x7label 'nolabelstics: A \texttt{nolabelstics} axis'
+set x9label 'invisible: An \texttt{invisible} axis'
+set origin 9.5,5.5
+plot
+
+# Plot 2 (top left)
+unset label
+unset axis x3x5x7x9
+xmin = -0.5 ; xmax = 1.5
+ymin = -0.5 ; ymax = 1.0
+set arrow 1 from xmin,ymin to xmax,ymin
+set arrow 2 from xmin,ymin to xmin,ymax
+set arrow 3 from 0.6,0 to 0.5,0.20
+set label 1 'A sketch of a parabola' at 0, -0.2
+set xlabel 'nolabelstics'
+set ylabel 'nolabelstics'
+set nokey
+set origin 0,6.5
+plot [xmin:xmax][ymin:ymax] x ** 2
+
+# Plot 3 (top right)
+unset arrow
+unset label
+set xlabel 'invisible'
+set ylabel 'invisible'
+logo_x = 9.5
+logo_y = 6.5
+set textcolour Grey80
+text '\large $\frac{\hbar^2}{2m}\frac{\partial^2 \psi}{\partial \
+       x^2} + V\psi = E\psi$' at logo_x+2.1, logo_y+0.5
+text '\large $d \sin \theta = n\lambda$' at logo_x+0.5, logo_y+3.5
+
+set textcolour Grey70
+text '\Large $\nabla \cdot D = \rho_{\mathrm{free}}$' \
+      at logo_x+2.9, logo_y+4.6
+text '\Large $\nabla \times E = - \frac{\partial \bf B} \
+      {\partial t}$' at logo_x+1.2, logo_y+4.0
+text '\Large $\nabla \cdot B = 0$' at logo_x+0.9, logo_y+1.2
+text '\Large $\nabla \times H = J_{\mathrm{free}} - \
+      \frac{\partial \bf D}{\partial t}$' at logo_x+3.8,logo_y+1.8
+
+set textcolour Grey55
+text '\Large $ds^2=\left(1-\frac{2GM}{rc^2}\right) \
+      dt^2$' at logo_x+0.4, logo_y+2
+text '\large $H(t)=\frac{\dot R}{R}$' at logo_x+6.1,logo_y+3.1
+text '$q(t) = - \frac{\ddot R R}{\dot R^2}$' \
+     at logo_x+5.3, logo_y+3.9
+text '\large $d_\mathrm{L} = \left( \frac{L}{4\pi F} \right) \
+      ^\frac{1}{2}$' at logo_x+3.7, logo_y+1.2
+text '\Large $\ddot x^a + \Gamma^a_{\phantom{a}bc} \
+      \dot x^b \dot x^c = 0$' at logo_x+4.5, logo_y+2.5
+
+set textcolour Black
+set label 1 '\Huge \textbf{PyXPlot}' at -8.5 , 0.05
+set arrow 1 from 0.0 , -0.590 to 2.75 , -0.590 \
+            with nohead linetype 3 colour 1
+set arrow 2 from 2.5 , -0.590 to 2.5 , -0.325 with twoway
+set label 2 '\Large ${\bf \Delta \phi}$' at 2.7, -0.5
+set origin logo_x, logo_y
+p [-9.5:4.8][-0.75:0.60] - x*exp(-x**2) + \
+   (1/(exp((x-1)*3)+1) - 0.5)/4 - 0.2 with l lw 2 colour 1
+
+# Now that we are finished preparing multiplot,
+# turn display on
+set display
+refresh
+
+# Produce a gif copy
+set term gif
+set dpi 103
+set output 'examples/eps/example10.gif'
+refresh

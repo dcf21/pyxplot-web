@@ -1,0 +1,41 @@
+# Example 11
+# Examples of the 'arrows' plotting style
+
+reset
+
+set multiplot
+set nodisplay
+width = 15
+set terminal eps
+set output 'examples/eps/example11.eps'
+set width width
+set size square
+set fontsize 2
+set nokey
+
+# Plot 0 (left)
+set xlabel 'x'
+set ylabel 'y'
+plot [-10.9:10.9][-10.9:10.9] \
+ 'examples/example11.dat' i 0 u 1:2:($1+$3):($2+$4) w arrows, \
+ 4*sin(x/10.9*pi):4*cos(x/10.9*pi) u 2:3 w lt 2 col black
+
+# Plot 1 (right)
+set origin width, 0
+set ylabel 'linkaxis 0'
+set key bottom right
+plot [-10.9:10.9] \
+ 'examples/example11.dat' i 1 t '' with arrows, \
+ 'examples/example11.dat' i 1 t 'Before correction' u 1:2 w p, \
+ 'examples/example11.dat' i 1 t 'After  correction' u 3:4 w p
+
+# Now that we are finished preparing multiplot,
+# turn display on
+set display
+refresh
+
+# Produce a gif copy
+set term gif
+set dpi 63
+set output 'examples/eps/example11.gif'
+refresh

@@ -1,0 +1,14 @@
+# A very simple first example... plots sin(x)
+# and cos(x)
+reset
+set xlabel 'x'
+set ylabel 'y'
+set term eps
+set output 'examples/eps/example1.eps'
+plot sin(x), cos(x)
+
+# Produce a gif copy
+set term gif
+set dpi 207
+set output 'examples/eps/example1.gif'
+refresh

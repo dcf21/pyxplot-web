@@ -1,0 +1,61 @@
+# Example 5
+# A gallery of trigonometric functions demonstrating
+# the use of linked axes.
+
+reset
+set term landscape eps
+set output 'examples/eps/example5.eps'
+set multiplot
+set nodisplay
+
+set xlabel '$x$'
+set ylabel '$y$'
+set xrange [-10.9:10.9]
+
+width  = 8
+height = 5.75
+
+# Plot 0 (bottom left)
+set key bottom right
+set origin 0*width, 0*height
+plot sin(x) with colour 3
+
+# Plot 1 (bottom right)
+set key top right
+set origin 1*width, 0*height
+set ylabel 'linkaxis 0'
+plot cos(x)-1 with colour seagreen
+
+# Plot 2 (top left)
+set key top right
+set origin 0*width, 1*height
+set xlabel 'linkaxis 0'
+set ylabel '$y$'
+plot cos(x) with colour 7
+
+# Plot 3 (top right)
+set key bottom right
+set origin 1*width, 1*height
+set xlabel 'linkaxis 1'
+set ylabel 'linkaxis 2'
+plot sin(x)**2 + 1 with colour green
+
+# Plot 4 (inset plot)
+set xlabel ''
+set ylabel ''
+set key top xcentre
+set fontsize -3
+set origin 1.1*width, 1.15*height
+set width width/3
+p [-5:5] x**2
+
+# Now that we are finished preparing multiplot,
+# turn display on
+set display
+refresh
+
+# Produce a gif copy
+set term gif
+set dpi 100
+set output 'examples/eps/example5.gif'
+refresh
