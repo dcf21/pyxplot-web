@@ -1,0 +1,68 @@
+set nogrid
+set xlabel 'Radius $r$'
+set x2label 'invisible:'
+set y2label 'invisible:'
+set ylabel 'invisible:'
+w=2.3
+d=0.75
+set arrow 1 from 0.0        , 0.0 to 10.0        ,0.0
+set arrow 2 from 1.0        ,12.0 to 1.0         ,1.0 with nohead linewidth 2
+set arrow 3 from 9.0        ,12.0 to 9.0         ,1.0 with nohead linewidth 2
+set arrow 4 from 1.0+w      ,10.0 to 1.0+w       ,1.0 with nohead linetype 2
+set arrow 5 from 1.0+w*(d+1),10.0 to 1.0+w*(d+1) ,1.0 with nohead linetype 2
+set arrow 6 from 1.0+w*(d+2),10.0 to 1.0+w*(d+2) ,1.0 with nohead linetype 2
+
+set arrow 100 from 1.0+w*(1+d*1.0/3),10.0 to 1.0+w*(1+d*1.0/3),6.8 with nohead linetype 2
+set arrow 101 from 1.0+w*(1+d*1.0/3), 5.5 to 1.0+w*(1+d*1.0/3),1.0 with nohead linetype 2
+set arrow 102 from 1.0+w*(1+d*2.0/3),10.0 to 1.0+w*(1+d*2.0/3),6.8 with nohead linetype 2
+set arrow 103 from 1.0+w*(1+d*2.0/3), 6.0 to 1.0+w*(1+d*2.0/3),1.0 with nohead linetype 2
+
+set arrow 110 from 1.0+w*(2+d*4.0/3),10.0 to 1.0+w*(2+d*4.0/3),6.8 with nohead linetype 2
+set arrow 111 from 1.0+w*(2+d*4.0/3), 5.5 to 1.0+w*(2+d*4.0/3),1.0 with nohead linetype 2
+set arrow 112 from 1.0+w*(2+d*5.0/3),10.0 to 1.0+w*(2+d*5.0/3),6.8 with nohead linetype 2
+set arrow 113 from 1.0+w*(2+d*5.0/3), 5.5 to 1.0+w*(2+d*5.0/3),1.0 with nohead linetype 2
+
+set arrow 7  from 1.0        , 6.5 to 1.0+w*0.5    ,6.5
+set arrow 8  from 1.0+w      , 6.5 to 1.0+w*(1+0.5),6.5
+set arrow 9  from 1.0+w*(d+1), 6.5 to 1.0+w*(d+1.5),6.5
+set arrow 10 from 1.0+w*(d+2), 6.5 to 1.0+w*(d+2.5),6.5
+set arrow 11 from 9.0        , 6.5 to 9.0+w*0.5    ,6.5
+
+set textvalign top
+set texthalign centre
+set fontsize -2
+set label 1 '$F_{\nu,0  }$' 1.5        , 6.3
+set label 2 '$F_{\nu,1  }$' 1.5+w      , 6.3
+set label 3 '$F_{\nu,i  }$' 1.5+w*(d+1), 6.3
+set label 4 '$F_{\nu,i+1}$' 1.7+w*(d+2), 6.3
+set label 5 '$F_{\nu,n  }$' 9.5        , 6.3
+
+set arrow 12 from 1.0+w*(d+1), 8.0 to 1.0+w*(d+2), 8.0 with twoway
+set arrow 13 from 1.0        , 8.0 to 1.0+w      , 8.0 with twoway
+
+set label 6  '$\Delta r$' 1.0+w*(d+1.5), 8.7
+set label 7 '$\Delta r$' 1.0+w*0.5, 8.7
+#set label 999 '$r=R_0$' 1.0, 10.7
+#set label 999 '$r=R_1$' 9.0, 10.7
+#set label 999 '$r=R_i$' 1.0+w*(d+1), 10.7
+
+set label 8 '$\epsilon_\nu(r_0+\frac{\Delta r}{2})$' 1.0+w*(0.5)  , 4.0
+set label 9 '$\epsilon_\nu(r_i+\frac{\Delta r}{2})$' 1.0+w*(d+1.5), 4.0
+
+set label 10 '$n_\mathrm{H}(r_0+\frac{\Delta r}{2})$' 1.0+w*(0.5)  , 3.0
+set label 11 '$n_\mathrm{H}(r_i+\frac{\Delta r}{2})$' 1.0+w*(d+1.5), 3.0
+
+ds_size = 1.5
+set label 12 '\textbf{\normalsize Dust Shell}' 5.0 , 11.2
+set arrow 14 from 5.0-ds_size , 11.0 to 1.0, 11.0
+set arrow 15 from 5.0+ds_size , 11.0 to 9.0, 11.0
+
+set xtics border ( "$r_0$" 1.0, "$r_0+\Delta r_0$" 1.0+w, "$r_i$" 1.0+w*(d+1), "$r_i+\Delta r_i$" 1.0+w*(d+2), "$r_1$" 9.0 )
+set mxtics border ( "" 1.0+w*(1+d*1.0/3), "" 1.0+w*(1+d*2.0/3), "" 1.0+w*(2+d*4.0/3), "" 1.0+w*(2+d*5.0/3) )
+
+set nokey
+plot [0:10][0:10] 2 u (1.0):(6.5) w p pt 1, \
+                  2 u (1.0+w):(6.5) w p pt 1, \
+                  2 u (1.0+w*(d+1)):(6.5) w p pt 1, \
+                  2 u (1.0+w*(d+2)):(6.5) w p pt 1, \
+                  2 u (9.0):(6.5) w p pt 1
