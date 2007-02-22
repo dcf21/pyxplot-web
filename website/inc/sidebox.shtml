@@ -20,7 +20,7 @@
       
       <a href="http://www.pyxplot.org.uk/examples/">Examples</a>
 		</div>
-      <div class="menuitem">
+      <!-- <div class="menuitem">
 		<ul>
 		   <li> <a href="http://www.pyxplot.org.uk/examples/firstSteps/">First steps in PyXPlot</a></li>
 			<li> <a href="http://www.pyxplot.org.uk/examples/barCharts/">Bar charts</a></li>
@@ -28,7 +28,7 @@
 			<li> <a href="http://www.pyxplot.org.uk/examples/otherApplications/">Other applications of PyXPlot</a></li>
 			<li> <a href="http://www.pyxplot.org.uk/examples/random/">Random cool stuff</a></li>
 		</ul>
-		</div>
+		</div> -->
       <div class="menuitem">
       <a href="http://www.pyxplot.org.uk/lists.shtml">Mailing lists</a>
 		</div>
