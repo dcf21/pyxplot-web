@@ -1,0 +1,49 @@
+<!--#set var="title" value="Archive" -->
+<!--#include virtual="inc/header.shtml" -->
+
+<h3>
+   Archived beta releases
+</h3>
+
+<p>
+The following beta releases of PyXPlot are available:
+</p>
+<table frame="box" rules="all">
+<tr><th>Version number</th><th>Date</th><th>Files</th><th>Downloads</th></tr>
+<tr><td>0.5.8</td><td>September 9th 2006</td>     <td><a href="src/pyxplot_0.5.8.tar.gz">tar.gz</a> (508kB) <a href="src/pyxplot_0.5.8-1_all.deb">deb</a> (1.6MB)</td><td><!--#include virtual="counter/0.5.8" --></td></tr>
+</table>
+
+<h3>
+	Archived alpha releases
+</h3>
+<p>
+The following alpha releases of PyXPlot are available. Note that these are
+experimental releases and may be highly unstable; they are not recommended for
+general use. <!-- Version 0.6.x will appear here in due course.-->
+</p>
+<table frame="box" rules="all">
+<tr><th>Version number</th><th>Date</th><th>Files</th><th>Downloads</th></tr>
+<tr><td>0.6.2</td><td>January 19th 2007</td>     <td><a href="src/pyxplot_0.6.2.tar.gz">tar.gz</a> (548kB) <a href="src/pyxplot_0.6.2-1_all.deb">deb</a> (1.8MB)</td><td><!--#include virtual="counter/0.6.2" --></td></tr>
+<tr><td>0.6.1</td><td>December 27th 2006</td>     <td><a href="src/pyxplot_0.6.1.tar.gz">tar.gz</a> (548kB) <a href="src/pyxplot_0.6.1_all.deb">deb</a> (1.8MB)</td><td><!--#include virtual="counter/0.6.1" --></td></tr>
+<tr><td>0.6.0</td><td>November 13th 2006</td>     <td><a href="src/pyxplot_0.6.0.tar.gz">tar.gz</a> (530kB) <a href="src/pyxplot_0.6.0-2_all.deb">deb</a> (1.6MB)</td><td><!--#include virtual="counter/0.6.0" --></td></tr>
+<tr><td>0.5.8</td><td>September 9th 2006</td>     <td><a href="src/pyxplot_0.5.8.tar.gz">tar.gz</a> (508kB) <a href="src/pyxplot_0.5.8-1_all.deb">deb</a> (1.6MB)</td><td><!--#include virtual="counter/0.5.8" --></td></tr>
+<tr><td>0.5.7</td><td>August 26th 2006</td>     <td><a href="src/pyxplot_0.5.7.tar.gz">tar.gz</a> (507kB) <a href="src/pyxplot_0.5.7_all.deb">deb</a> (1.6MB)</td><td><!--#include virtual="counter/0.5.7" --></td></tr>
+<tr><td>0.5.6</td><td>August 18th 2006</td>     <td><a href="src/pyxplot_0.5.6.tar.gz">tar.gz</a> (497kB) <a href="src/pyxplot_0.5.6_all.deb">deb</a> (1.6MB)</td><td><!--#include virtual="counter/0.5.6" --></td></tr>
+<tr><td>0.5.5</td><td>July 25th 2006</td>     <td><a href="src/pyxplot_0.5.5.tar.gz">tar.gz</a> (478kB) <a href="src/pyxplot_0.5.5-2_all.deb">deb</a> (1.5MB)</td><td><!--#include virtual="counter/0.5.5" --></td></tr>
+<tr><td>0.5.4</td><td>July 3rd 2006</td>     <td><a href="src/pyxplot_0.5.4.tar.gz">tar.gz</a> (465kB) <a href="src/pyxplot_0.5.4-1_all.deb">deb</a> (1.5MB)</td><td><!--#include virtual="counter/0.5.4" --></td></tr>
+<tr><td>0.5.3</td><td>June 27th 2006</td>     <td><a href="src/pyxplot_0.5.3.tar.gz">tar.gz</a> (459kB)</td><td><!--#include virtual="counter/0.5.3" --></td></tr>
+<tr><td>0.5.2</td><td>June 14th 2006</td>     <td><a href="src/pyxplot_0.5.2.tar.gz">tar.gz</a> (450kB)</td><td><!--#include virtual="counter/0.5.2" --></td></tr>
+<tr><td>0.5.1</td><td>June 2nd 2006</td>     <td><a href="src/pyxplot_0.5.1.tar.gz">tar.gz</a> (436kB)</td><td><!--#include virtual="counter/0.5.1" --></td></tr>
+<tr><td>0.5.0</td><td>May 27th 2006</td>     <td><a href="src/pyxplot_0.5.0.tar.gz">tar.gz</a> (249kB)</td><td><!--#include virtual="counter/0.5.0" --></td></tr>
+<tr><td>0.4.3</td><td>May 18th 2006</td>     <td><a href="src/gnuplot_0.4.3.tar.gz">tar.gz</a> (73kB)</td><td><!--#include virtual="counter/0.4.3" --></td></tr>
+<tr><td>0.4.2</td><td>May 4th 2006</td>      <td><a href="src/gnuplot_0.4.2.tar.gz">tar.gz</a> (72kB)</td><td><!--#include virtual="counter/0.4.2" --></td></tr>
+<tr><td>0.4.1</td><td>May 1st 2006</td>      <td><a href="src/gnuplot_0.4.1.tar.gz">tar.gz</a> (66kB)</td><td><!--#include virtual="counter/0.4.1" --></td></tr>
+<tr><td>0.4.0</td><td>April 27th 2006</td>   <td><a href="src/gnuplot_0.4.0.tar.gz">tar.gz</a> (25kB)</td><td><!--#include virtual="counter/0.4.0" --></td></tr>
+<tr><td>0.3.2</td><td>April 14th 2006</td>   <td><a href="src/gnuplot_0.3.2.tar.gz">tar.gz</a> (22kB)</td><td><!--#include virtual="counter/0.3.2" --></td></tr>
+<tr><td>0.3.1</td><td>April 12th 2006</td>   <td><a href="src/gnuplot_0.3.1.tar.gz">tar.gz</a> (21kB)</td><td><!--#include virtual="counter/0.3.1" --></td></tr>
+<tr><td>0.3.0</td><td>April 12th 2006</td>   <td><a href="src/gnuplot_0.3.0.tar.gz">tar.gz</a> (21kB)</td><td><!--#include virtual="counter/0.3.0" --></td></tr>
+<tr><td>0.2.0</td><td>March 30th 2006</td>   <td><a href="src/gnuplot_0.2.0.tar.gz">tar.gz</a> (18kB)</td><td><!--#include virtual="counter/0.2.0" --></td></tr>
+<tr><td>0.1.0</td><td>February 26th 2006</td><td><a href="src/gnuplot_0.1.0.tar.gz">tar.gz</a> (16kB)</td><td><!--#include virtual="counter/0.1.0" --></td></tr>
+</table>
+
+<!--#include virtual="inc/footer.shtml" -->

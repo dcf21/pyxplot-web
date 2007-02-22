@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3. Extensions of Gnuplot's Interface</TITLE>
+<META NAME="description" CONTENT="3. Extensions of Gnuplot's Interface">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node41.html">
+<LINK REL="previous" HREF="node8.html">
+<LINK REL="up" HREF="pyxplot.html">
+<LINK REL="next" HREF="node19.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html438"
+  HREF="node19.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html432"
+  HREF="pyxplot.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html426"
+  HREF="node17.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html434"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html436"
+  HREF="node69.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html439"
+  HREF="node19.html">3.1 The Commandline Environment</A>
+<B> Up:</B> <A NAME="tex2html433"
+  HREF="pyxplot.html">PyXPlot Users' Guide</A>
+<B> Previous:</B> <A NAME="tex2html427"
+  HREF="node17.html">2.9 Differences Between PyXPlot</A>
+ &nbsp; <B>  <A NAME="tex2html435"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html437"
+  HREF="node69.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00400000000000000000"></A>
+<A NAME="new_features"></A>
+<BR>
+<SPAN CLASS="arabic">3</SPAN>. Extensions of Gnuplot's Interface
+</H1>
+
+<P>
+A large number of new functions are available in PyXPlot which were not
+originally present in gnuplot. This chapter describes these extensions.  From
+here onwards I shall presume that the user is familiar with the basic operation
+of gnuplot, and shall concentrate on the differences between PyXPlot's
+interface and that of gnuplot. In addition to having read the previous chapter,
+novice users may also find it of use to consult one of the many gnuplot
+tutorials which are to be found on the web before proceeding.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html440"
+  HREF="node19.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">1</SPAN> The Commandline Environment</A>
+<LI><A NAME="tex2html441"
+  HREF="node20.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">2</SPAN> Formatting and Terminals</A>
+<LI><A NAME="tex2html442"
+  HREF="node21.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN> Plotting</A>
+<UL>
+<LI><A NAME="tex2html443"
+  HREF="node22.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">1</SPAN> Configuring Axes</A>
+<LI><A NAME="tex2html444"
+  HREF="node23.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">2</SPAN> Keys and Legends</A>
+<LI><A NAME="tex2html445"
+  HREF="node24.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN> The <TT>linestyle</TT> keyword</A>
+<LI><A NAME="tex2html446"
+  HREF="node25.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">4</SPAN> Colour Plotting</A>
+<LI><A NAME="tex2html447"
+  HREF="node26.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">5</SPAN> General Extensions Beyond Gnuplot</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html448"
+  HREF="node27.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">4</SPAN> Sundry Items (Arrows, Text Labels, and More)</A>
+<UL>
+<LI><A NAME="tex2html449"
+  HREF="node28.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">1</SPAN> Arrows</A>
+<LI><A NAME="tex2html450"
+  HREF="node29.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">2</SPAN> Text Labels</A>
+<LI><A NAME="tex2html451"
+  HREF="node30.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">3</SPAN> Gridlines</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html452"
+  HREF="node31.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">5</SPAN> Multi-plotting</A>
+<UL>
+<LI><A NAME="tex2html453"
+  HREF="node32.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">1</SPAN> Speed Issues</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html454"
+  HREF="node33.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">6</SPAN> Barcharts and Histograms</A>
+<UL>
+<LI><A NAME="tex2html455"
+  HREF="node34.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">1</SPAN> Basic Operation</A>
+<LI><A NAME="tex2html456"
+  HREF="node35.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">2</SPAN> Stacked Bar Charts</A>
+<LI><A NAME="tex2html457"
+  HREF="node36.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">3</SPAN> Steps</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html458"
+  HREF="node37.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">7</SPAN> Function Splicing</A>
+<LI><A NAME="tex2html459"
+  HREF="node38.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">8</SPAN> Datafile Interpolation: Spline Fitting</A>
+<LI><A NAME="tex2html460"
+  HREF="node39.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">9</SPAN> Numerical Integration and Differentiation</A>
+<LI><A NAME="tex2html461"
+  HREF="node40.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">10</SPAN> Script Watching: pyxplot_watch</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Dominic Ford
+2006-09-09
+</ADDRESS>
+</BODY>
+</HTML>

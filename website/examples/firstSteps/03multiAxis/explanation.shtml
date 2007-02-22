@@ -1,0 +1,3 @@
+We plot two datafiles, one with a line, and another with points. We label our
+lines using arrows and text labels.  We also have multiple axes, this time
+having three <i>x</i>-axes on the same plot.

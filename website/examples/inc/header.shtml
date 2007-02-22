@@ -1,0 +1,13 @@
+<!DOCTYPE html 
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>PyXPlot  <!--#echo var="title" --> </title>
+    <link rel="stylesheet" type="text/css" media="screen" href="http://www.srcf.ucam.org/pyxplot/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="http://www.srcf.ucam.org/pyxplot/css/examples.css" />
+  </head>
+  <body>
+	 <!--#include virtual="topbox.shtml" -->
+	 <!--#include virtual="sidebox.shtml" -->
+    <div class="main">

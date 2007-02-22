@@ -1,0 +1,37 @@
+<!--#set var="title" value="Screenshots" -->
+<!--#include virtual="inc/header.shtml" -->
+
+
+<p>
+A simple plot of some trigonometric functions.
+</p>
+<p>
+<img src="screenshots/example1.gif">
+</p>
+<p>
+A gallery of bar charts, showing the use of multiplot.
+</p>
+<p>
+<img src="screenshots/example7.gif">
+</p>
+<p>
+A plot of some data and functions.  Look at the gorgeous LaTeX on those axes...
+</p>
+<p>
+<img src="screenshots/example3.gif">
+</p>
+<p>
+And now for something completely different...
+</p>
+<p>
+<img src="screenshots/example4.gif">
+</p>
+<p>
+A figure showing some of the more more artistic applications of PyXPlot.
+</p>
+<p>
+<img src="screenshots/example10.gif">
+</p>
+
+
+<!--#include virtual="inc/footer.shtml" -->

@@ -1,0 +1,15 @@
+<div class="footer">
+<hr>
+<p>
+ Last modified on <!--#echo var="LAST_MODIFIED"-->.
+</p>
+</div>
+</BODY>
+
+</HTML>
+
+
+
+
+
+

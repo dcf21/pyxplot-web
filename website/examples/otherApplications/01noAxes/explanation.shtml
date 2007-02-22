@@ -1,0 +1,11 @@
+In this example, we use the magic axis labels <tt>nolabels</tt>,
+<tt>nolabelsticks</tt> and <tt>invisible</tt>. In the lower-left plot, we show
+how to create a graph without mirrored <i>x</i>- and <i>y</i>-axes on the top
+and right sides of the plot. In the lower-right panel, we produce a plot with
+only <i>x</i>-axes visible, using them to produce a gallery showing the
+appearance resulting from the use of each of these magic labels. The top-left
+plot shows a simple sketch-graph with completely unlabelled axes. We also draw
+arrows over the top of the axes in this example, to give them arrowheads.
+Finally, in the top-right panel, we show one artistic application of plotting
+functions with no axes visible at all, creating a simple logo.
+

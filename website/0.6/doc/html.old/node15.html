@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2.5 Directing Where Output Goes</TITLE>
+<META NAME="description" CONTENT="2.5 Directing Where Output Goes">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node16.html">
+<LINK REL="previous" HREF="node14.html">
+<LINK REL="up" HREF="node10.html">
+<LINK REL="next" HREF="node16.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html607"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html601"
+  HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html595"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html603"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html605"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html608"
+  HREF="node16.html">2.6 Data Styles</A>
+<B> Up:</B> <A NAME="tex2html602"
+  HREF="node10.html">2. First Steps With</A>
+<B> Previous:</B> <A NAME="tex2html596"
+  HREF="node14.html">2.4 Plotting Datafiles</A>
+ &nbsp; <B>  <A NAME="tex2html604"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html606"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00350000000000000000"></A>
+<A NAME="directing_output"></A>
+<BR>
+<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">5</SPAN> Directing Where Output Goes
+</H1>
+
+<P>
+By default, when PyXPlot is used interactively, all plots are displayed on the
+screen. It is also possible to produce postscript output, to be read into other
+programs or embedded into <SPAN CLASS="logo,LaTeX">L<SUP><SMALL>A</SMALL></SUP>T<SMALL>E</SMALL>X</SPAN> documents, as well as a variety of other
+graphic formats. The <TT>set terminal</TT> command<A NAME="3125"></A><A NAME="tex2html10"
+  HREF="footnode.html#foot3126"><SUP><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">3</SPAN></SUP></A> is used to specify the output format that is
+required, and the <TT>set output</TT> command<A NAME="3127"></A> the file to which output should be
+directed. For example,
+
+<P>
+<PRE>
+set terminal postscript
+set output 'myplot.eps'
+plot sin(x)
+</PRE>
+
+<P>
+would produce a postscript plot of <SPAN CLASS="MATH"><IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$ \sin(x)$"></SPAN> to the file
+<TT>myplot.eps</TT>.
+
+<P>
+The <TT>set terminal</TT> command can also be used to configure further aspects
+of the output file format. For example, the following would produce
+black-and-white and colour output respectively:
+
+<P>
+<PRE>
+set terminal monochrome
+set terminal colour
+</PRE>
+
+<P>
+The former is useful for preparing plots for black-and-white
+publications, the latter for preparing plots for colourful presentations.
+
+<P>
+Both encapsulated and non-encapsulated postscript can be produced. The former
+is recommended for producing figures to embed into documents, the latter for
+plots which are to be printed without further processing. The
+<TT>postscript</TT> terminal produces the latter; the <TT>eps</TT> terminal
+should be used to produce the former:
+
+<P>
+<PRE>
+set terminal postscript
+set terminal eps
+</PRE>
+
+<P>
+It is also possible to produce plots in the gif, png and jpeg graphic formats,
+as follows:
+
+<P>
+<PRE>
+set terminal gif
+set terminal png
+set terminal jpg
+</PRE>
+
+<P>
+More than one of the above keywords can be combined on a single line, for
+example:
+
+<P>
+<PRE>
+set terminal postscript colour
+set terminal gif monochrome
+</PRE>
+
+<P>
+To return to the default state of displaying plots on screen, the <TT>x11</TT>
+terminal should be selected:
+
+<P>
+<PRE>
+set terminal x11
+</PRE>
+
+<P>
+For more details of the <TT>set terminal</TT> command, including how to produce
+transparent gifs and pngs, see section&nbsp;<A HREF="node23.html#set_terminal2">3.2</A>.
+
+<P>
+We finally note that, after changing terminals, the <TT>replot</TT> command is
+especially useful; it repeats the last <TT>plot</TT> command.<A NAME="3128"></A>. If any plot items are placed after it, they
+are added to the last plot.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html607"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html601"
+  HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html595"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html603"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html605"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html608"
+  HREF="node16.html">2.6 Data Styles</A>
+<B> Up:</B> <A NAME="tex2html602"
+  HREF="node10.html">2. First Steps With</A>
+<B> Previous:</B> <A NAME="tex2html596"
+  HREF="node14.html">2.4 Plotting Datafiles</A>
+ &nbsp; <B>  <A NAME="tex2html604"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html606"
+  HREF="node179.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

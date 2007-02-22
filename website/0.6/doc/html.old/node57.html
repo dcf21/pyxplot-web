@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>5.5 edit</TITLE>
+<META NAME="description" CONTENT="5.5 edit">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node58.html">
+<LINK REL="previous" HREF="node56.html">
+<LINK REL="up" HREF="node52.html">
+<LINK REL="next" HREF="node58.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1326"
+  HREF="node58.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1320"
+  HREF="node52.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1314"
+  HREF="node56.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1322"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1324"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1327"
+  HREF="node58.html">5.6 exit</A>
+<B> Up:</B> <A NAME="tex2html1321"
+  HREF="node52.html">5. Command Reference</A>
+<B> Previous:</B> <A NAME="tex2html1315"
+  HREF="node56.html">5.4 delete</A>
+ &nbsp; <B>  <A NAME="tex2html1323"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1325"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00650000000000000000">
+<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">5</SPAN> edit</A>
+</H1><A NAME="3278"></A>
+
+<P>
+<PRE>
+edit &lt;plot number&gt;
+</PRE>
+
+<P>
+The <TT>edit</TT> command is part of the multiplot environment; it allows one to
+modify the properties of any plot on a multiplot. The desired plot should be
+identified using the reference number which it was given when it was created
+using the <TT>plot</TT> command; it would have been displayed on the terminal at
+that time. For example, consider the following command sequence:
+
+<P>
+<PRE>
+edit 1
+set textcolour red
+replot
+</PRE>
+
+<P>
+Here, the <TT>edit</TT> command sets the following <TT>set textcolour</TT> command to
+affect the plot with reference number 1 - the first plot which would have been
+placed on the multiplot. The <TT>set textcolour red</TT> command then affects this
+plot, although does not take effect until the <TT>replot</TT> command is called.
+
+<P>
+The <TT>edit</TT> command also has the effect of resetting all of PyXPlot's plot
+settings to those used to produce the chosen plot, and so in conjunction with
+the <TT>show</TT> command, can be used to inspect as well as modify the settings of
+any plot on a multiplot page. For example:
+
+<P>
+<PRE>
+edit 1
+show textcolour
+</PRE>
+
+<P>
+would show the text colour used in plot 1.
+
+<P>
+Having issued the <TT>edit</TT> command, no further command needs to be issued to
+return to a state of adding plots to a multiplot rather than editing the
+existing plots; simply call the <TT>plot</TT> command rather than the <TT>replot</TT>
+command to do this.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1326"
+  HREF="node58.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1320"
+  HREF="node52.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1314"
+  HREF="node56.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1322"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1324"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1327"
+  HREF="node58.html">5.6 exit</A>
+<B> Up:</B> <A NAME="tex2html1321"
+  HREF="node52.html">5. Command Reference</A>
+<B> Previous:</B> <A NAME="tex2html1315"
+  HREF="node56.html">5.4 delete</A>
+ &nbsp; <B>  <A NAME="tex2html1323"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1325"
+  HREF="node179.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

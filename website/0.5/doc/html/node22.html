@@ -1,0 +1,268 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.3.1 Configuring Axes</TITLE>
+<META NAME="description" CONTENT="3.3.1 Configuring Axes">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node23.html">
+<LINK REL="previous" HREF="node21.html">
+<LINK REL="up" HREF="node21.html">
+<LINK REL="next" HREF="node23.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html521"
+  HREF="node23.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html515"
+  HREF="node21.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html509"
+  HREF="node21.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html517"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html519"
+  HREF="node69.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html522"
+  HREF="node23.html">3.3.2 Keys and Legends</A>
+<B> Up:</B> <A NAME="tex2html516"
+  HREF="node21.html">3.3 Plotting</A>
+<B> Previous:</B> <A NAME="tex2html510"
+  HREF="node21.html">3.3 Plotting</A>
+ &nbsp; <B>  <A NAME="tex2html518"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html520"
+  HREF="node69.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00431000000000000000"></A>
+<A NAME="axis_extensions"></A><A NAME="ranges_multiaxes"></A><A NAME="multiple_axes"></A>
+<BR>
+<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">1</SPAN> Configuring Axes
+</H2>
+
+<P>
+By default, plots have only one <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$ x$"></SPAN>-axis and one <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$ y$"></SPAN>-axis. Further parallel
+axes can be added and configured via statements such as:<A NAME="2019"></A><A NAME="2020"></A>
+
+<P>
+<PRE>
+set x3label 'foo'
+plot sin(x) axes x3y1
+set axis x3
+</PRE>
+
+<P>
+In the top statement, a further <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$ x$"></SPAN> axis, called <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="$ x3$"></SPAN> is implicitly
+created by giving it a label. In the next, the <TT>axes</TT> modifier is used
+to tell the <TT>plot</TT> command to plot data against the <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="$ x3$"></SPAN>-axis, which
+also implicitly created such an axis if it doesn't already exist. In the third,
+an <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="$ x3$"></SPAN>-axis is explicitly created.
+
+<P>
+Unlike gnuplot, which allowed only a maximum of two parallel axes to be added
+to plots, PyXPlot allows an unlimited number of axes to be used. Odd-numbered
+<SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$ x$"></SPAN>-axes appear below the plot, and even numbered <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$ x$"></SPAN>-axes above it; a similar
+rule applies for <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$ y$"></SPAN>-axes, to the left and to the right.
+
+<P>
+As discussed in the previous chapter, the ranges of axes can be set either
+using the <TT>set xrange</TT> command<A NAME="2021"></A>, or within the <TT>plot</TT> command. The following two
+statements would set an equivalent range for the <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="$ x3$"></SPAN>-axis:
+
+<P>
+<PRE>
+set x3range [-2:2]
+plot [:][:][:][:][-2:2] sin(x) axes x3y1
+</PRE>
+
+<P>
+As usual, the first two ranges specified in the <TT>plot</TT> command
+apply to the <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$ x$"></SPAN>- and <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$ y$"></SPAN>-axes. The next pair apply to the <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ x2$"></SPAN>- and <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$ y2$"></SPAN>-axes,
+and so forth.
+
+<P>
+<A NAME="513"></A><A NAME="514"></A><A NAME="515"></A><A NAME="axis_removal"></A> Having made axes with the above commands, they may
+subsequently be removed using the <TT>unset axis</TT> command as follows:
+
+<P>
+<PRE>
+unset axis x3
+unset axis x3x5y3 y7
+</PRE>
+
+<P>
+The top statement, for example, would remove axis <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="$ x3$"></SPAN>. The command
+<TT>unset axis</TT> on its own, with no axes specified, returns all axes to
+their default configuration.  The special case of <TT>unset axis x1</TT> does
+not remove the first <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$ x$"></SPAN>-axis - it cannot be removed - but instead returns it
+to its default configuration.
+
+<P>
+It should be noted, that if the following two commands are typed in succession,
+the second may not entirely negate the first:
+
+<P>
+<PRE>
+set x3label 'foo'
+unset x3label 'foo'
+</PRE>
+
+<P>
+The first may have implicitly created an <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="$ x3$"></SPAN>-axis, which would need
+to be removed with the <TT>unset axis x3</TT> command.
+
+<P>
+A subtly different task is that of removing labels from axes, or setting axes
+not to display. To achieve this, a number of special axis labels are used.
+Labelling an axis ``<TT>nolabels</TT>''<A NAME="2022"></A> has the effect that no title or numerical
+labels are placed upon it. Labelling it<A NAME="nolabelstics"></A>``<TT>nolabelstics</TT>''<A NAME="2023"></A> is stronger still; this removes all tick marks from it as well
+(similar in effect to <TT>set noxtics</TT> in gnuplot). Finally, labelling it
+``<TT>invisible</TT>''<A NAME="2024"></A>
+makes an axis completely invisible.
+
+<P>
+Labels may be placed on such axes, by following the magic keywords above with a
+colon and the desired title, for example:
+
+<P>
+<PRE>
+set xlabel 'nolabels:Time'
+</PRE>
+
+<P>
+would produce an <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$ x$"></SPAN>-axis with no numeric labels, but a label of
+`Time'.
+
+<P>
+Several examples of effects which can be achieved with these commands can be
+found in Example&nbsp;10 (see section&nbsp;<A HREF="node58.html#ex10">5.10</A>).  In the unlikely event of wanting
+to label a normal axis with one of these magic words<A NAME="536"></A><A NAME="537"></A>, this may be achieved by prefixing the magic
+word with a space. There is one further magic axis label, <TT>linkaxis</TT>,
+which will be described in section&nbsp;<A HREF="node31.html#linked_axes">3.5</A>.
+
+<P>
+The ticks of axes can be configured to point either inward, towards the plot,
+as is the default, or outward towards the axis labels, or in both directions.
+This is achieved using the <TT>set xticdir</TT> command, for example:
+
+<P>
+<PRE>
+set xticdir inward
+set y2ticdir outward
+set x2ticdir both
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html521"
+  HREF="node23.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html515"
+  HREF="node21.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html509"
+  HREF="node21.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html517"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html519"
+  HREF="node69.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html522"
+  HREF="node23.html">3.3.2 Keys and Legends</A>
+<B> Up:</B> <A NAME="tex2html516"
+  HREF="node21.html">3.3 Plotting</A>
+<B> Previous:</B> <A NAME="tex2html510"
+  HREF="node21.html">3.3 Plotting</A>
+ &nbsp; <B>  <A NAME="tex2html518"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html520"
+  HREF="node69.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford
+2006-09-09
+</ADDRESS>
+</BODY>
+</HTML>

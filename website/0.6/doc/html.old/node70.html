@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>5.18 replot</TITLE>
+<META NAME="description" CONTENT="5.18 replot">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node71.html">
+<LINK REL="previous" HREF="node69.html">
+<LINK REL="up" HREF="node52.html">
+<LINK REL="next" HREF="node71.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1508"
+  HREF="node71.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1502"
+  HREF="node52.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1496"
+  HREF="node69.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1504"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1506"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1509"
+  HREF="node71.html">5.19 reset</A>
+<B> Up:</B> <A NAME="tex2html1503"
+  HREF="node52.html">5. Command Reference</A>
+<B> Previous:</B> <A NAME="tex2html1497"
+  HREF="node69.html">5.17 refresh</A>
+ &nbsp; <B>  <A NAME="tex2html1505"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1507"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION006180000000000000000">
+<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">18</SPAN> replot</A>
+</H1><A NAME="3291"></A>
+
+<P>
+<PRE>
+replot [&lt;plot number&gt;]
+</PRE>
+
+<P>
+In single plot mode, the <TT>replot</TT> command causes the most recent plot
+command to be re-run.  This can be useful to replot a datafile which has changed
+in the meantime, but also to change some aspect of a plot within PyXPlot itself.
+Usages of the <TT>set</TT> command between the original <TT>plot</TT> command and the
+calling of the <TT>replot</TT> command are applied to the new plot. For example:
+
+<P>
+<PRE>
+plot sin(x)
+set textcolour red
+replot
+</PRE>
+
+<P>
+In multiplot mode, the <TT>replot</TT> command acts by default upon the last plot
+item which was added to the multiplot page, and causes that to be replotted. It
+is possible to change this behaviour by first calling the <TT>edit</TT> command, in
+which case any given plot within a multiplot can be modified and replotted.
+
+<P>
+Specifying a function or datafile after the <TT>replot</TT> command causes that
+function or data file to be added to the plot. The syntax here is the same as
+for the <TT>plot</TT> command.  For example:
+
+<P>
+<PRE>
+replot sin(x) axes x2y1 with linespoints
+</PRE>
+
+<P>
+will add a plot of the function <SPAN CLASS="MATH"><IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$ \sin(x)$"></SPAN> to the current plot.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1508"
+  HREF="node71.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1502"
+  HREF="node52.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1496"
+  HREF="node69.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1504"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1506"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1509"
+  HREF="node71.html">5.19 reset</A>
+<B> Up:</B> <A NAME="tex2html1503"
+  HREF="node52.html">5. Command Reference</A>
+<B> Previous:</B> <A NAME="tex2html1497"
+  HREF="node69.html">5.17 refresh</A>
+ &nbsp; <B>  <A NAME="tex2html1505"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1507"
+  HREF="node179.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

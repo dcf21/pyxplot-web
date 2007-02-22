@@ -1,0 +1,41 @@
+    <div class="sidebox">
+      <div class="menuitem">
+			<a href="http://www.pyxplot.org.uk/">Home</a>
+		</div>
+      <div class="menuitem">
+			<a href="http://www.pyxplot.org.uk/0.5/download/">Download</a>
+			<ul>
+            <li><a href="http://www.pyxplot.org.uk/0.5/download/">0.5 (stable)</a></li>
+            <li><a href="http://www.pyxplot.org.uk/0.6/download/">0.6 (dev)</a></li>
+         </ul>
+      </div>
+      <div class="menuitem">
+      <a href="http://www.pyxplot.org.uk/0.5/doc/">Documentation</a>
+         <ul style="font-size: 80%">
+            <li><a href="http://www.pyxplot.org.uk/0.5/doc/">0.5 (stable)</a>
+            <li><a href="http://www.pyxplot.org.uk/0.6/doc/">0.6 (dev)</a>
+         </ul>
+		</div>
+      <div class="menuitem">
+      
+      <a href="http://www.pyxplot.org.uk/examples/">Examples</a>
+		</div>
+      <div class="menuitem">
+		<ul>
+		   <li> <a href="http://www.pyxplot.org.uk/examples/firstSteps/">First steps in PyXPlot</a></li>
+			<li> <a href="http://www.pyxplot.org.uk/examples/barCharts/">Bar charts</a></li>
+			<li> <a href="http://www.pyxplot.org.uk/examples/advancedFunctions/">Advanced function plotting</a></li>
+			<li> <a href="http://www.pyxplot.org.uk/examples/otherApplications/">Other applications of PyXPlot</a></li>
+			<li> <a href="http://www.pyxplot.org.uk/examples/random/">Random cool stuff</a></li>
+		</ul>
+		</div>
+      <div class="menuitem">
+      <a href="http://www.pyxplot.org.uk/lists.shtml">Mailing lists</a>
+		</div>
+      <div class="menuitem">
+      <a href="http://www.pyxplot.org.uk/bugs.shtml">Reporting bugs</a>
+		</div>
+      <div class="menuitem">
+      <a href="http://www.pyxplot.org.uk/authors.shtml">Authors, credits &amp; license</a>
+		</div>
+    </div>

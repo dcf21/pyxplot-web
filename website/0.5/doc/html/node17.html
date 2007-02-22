@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2.9 Differences Between PyXPlot and Gnuplot</TITLE>
+<META NAME="description" CONTENT="2.9 Differences Between PyXPlot and Gnuplot">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="previous" HREF="node16.html">
+<LINK REL="up" HREF="node8.html">
+<LINK REL="next" HREF="node18.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html424"
+  HREF="node18.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html418"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html414"
+  HREF="node16.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html420"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html422"
+  HREF="node69.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html425"
+  HREF="node18.html">3. Extensions of Gnuplot's</A>
+<B> Up:</B> <A NAME="tex2html419"
+  HREF="node8.html">2. First Steps With</A>
+<B> Previous:</B> <A NAME="tex2html415"
+  HREF="node16.html">2.8 Interactive Help</A>
+ &nbsp; <B>  <A NAME="tex2html421"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html423"
+  HREF="node69.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00390000000000000000"></A>
+<A NAME="missing_features"></A>
+<BR>
+<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">9</SPAN> Differences Between PyXPlot and Gnuplot
+</H1>
+
+<P>
+The commands supported by PyXPlot are only a subset of those available in
+gnuplot, although most of its functionality is present. Features which are
+supported by this version include:
+
+<P>
+
+<UL>
+<LI>Allocation of user-defined variables and functions.
+</LI>
+<LI>The <TT>print</TT>, <TT>help</TT>, <TT>exit</TT> and <TT>quit</TT> commands.
+</LI>
+<LI>The <TT>reset</TT> and <TT>clear</TT> commands.
+</LI>
+<LI>The <TT>!</TT> command, to execute the remainder of the line as a shell command, e.g. <TT>!ls</TT>.
+</LI>
+<LI>The <TT>cd</TT> and <TT>pwd</TT> commands, to change and display the current working directory.
+</LI>
+<LI>The use of ` ` back-quotes to substitute the output of a shell command.<A NAME="tex2html12"
+  HREF="footnode.html#foot2006"><SUP><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">7</SPAN></SUP></A>
+</LI>
+<LI>Set plot titles, axis labels, axis ranges, pointsize, linestyles, etc.
+</LI>
+<LI>Fitting of functions to data via the <TT>fit</TT> command.
+</LI>
+<LI>Basic 2d plotting and replotting of functions and datafiles, with the following styles: <TT>lines</TT>, <TT>points</TT>, <TT>linespoints</TT>, <TT>dots</TT>, <TT>boxes</TT>, <TT>steps</TT>, <TT>fsteps</TT>, <TT>histeps</TT>, <TT>impulses</TT>, <TT>csplines</TT>, <TT>acsplines</TT> and errorbars of all flavours (see section <A HREF="node26.html#errorbars">3.3</A> for details of changes to errorbars).
+</LI>
+<LI>Automatic and manual selection of linestyles, linetypes, linewidths, pointtypes and pointsizes.
+</LI>
+<LI>Use of dual axes. Note: Operation here differs slightly from original gnuplot; dual axes are displayed whenever they are defined, there is no need to <TT>set xtics nomirror</TT>. See the details in the following section.
+</LI>
+<LI>Placing arrows and textual labels on plots.
+</LI>
+<LI>Putting grids on plots (colour can be set, but not linestyle).
+</LI>
+<LI>Setting plot aspect ratios with <TT>set size ratio</TT> or <TT>set size square</TT>.
+</LI>
+<LI>Multiplot (which is very significantly improved over gnuplot; see section&nbsp;<A HREF="node31.html#multiplot">3.5</A>)
+</LI>
+</UL>
+
+<P>
+Gnuplot features which PyXPlot does not presently support include:
+
+<P>
+
+<UL>
+<LI>Parametric function plotting.
+</LI>
+<LI>Three-dimensional plotting (i.e. the <TT>splot</TT> command).
+</LI>
+<LI>Setting major/minor tics (but PyXPlot always gets this right without being told anyway ).<A NAME="tex2html13"
+  HREF="footnode.html#foot2007"><SUP><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">8</SPAN></SUP></A>
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html424"
+  HREF="node18.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html418"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html414"
+  HREF="node16.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html420"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html422"
+  HREF="node69.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html425"
+  HREF="node18.html">3. Extensions of Gnuplot's</A>
+<B> Up:</B> <A NAME="tex2html419"
+  HREF="node8.html">2. First Steps With</A>
+<B> Previous:</B> <A NAME="tex2html415"
+  HREF="node16.html">2.8 Interactive Help</A>
+ &nbsp; <B>  <A NAME="tex2html421"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html423"
+  HREF="node69.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford
+2006-09-09
+</ADDRESS>
+</BODY>
+</HTML>

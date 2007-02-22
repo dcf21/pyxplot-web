@@ -1,0 +1,18 @@
+<!--#set var="title" value="Reporting Bugs" -->
+<!--#include virtual="inc/header.shtml" -->
+
+<p>
+	Please report bugs in PyXPlot to the author, <a
+	href="mailto:coders@pyxplot.org.uk">Dominic Ford</a>, via email.  To check
+	if your bug has already been reported there is a <a
+	href="http://www.srcf.ucam.org/pyxplot/bugs_noauth/trac.cgi">bug tracking
+	system</a>.  If you have a Cambridge University raven account, you can <a
+	href="http://www.srcf.ucam.org/pyxplot/bugs/trac.cgi">click here</a> for a
+	read-write access. 
+</p>
+
+<p>
+	Please report any problems with the website by email to <a href="mailto:webmaster@pyxplot.org.uk">the web monkey</a>.
+</p>
+
+<!--#include virtual="inc/footer.shtml" -->

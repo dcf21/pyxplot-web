@@ -1,0 +1,10 @@
+</div>
+
+<div class="bottombox">
+   <p>
+	   This page is maintained by <a href="mailto:webmaster@pyxplot.org.uk">the PyXPlot webmonkey</a> and was last updated on <!--#echo var="LAST_MODIFIED" -->.
+	</p>
+</div>
+</body>
+</html>
+

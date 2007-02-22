@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>1.3 Installation</TITLE>
+<META NAME="description" CONTENT="1.3 Installation">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node6.html">
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html251"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html245"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html239"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html247"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html249"
+  HREF="node69.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html252"
+  HREF="node6.html">1.4 Credits</A>
+<B> Up:</B> <A NAME="tex2html246"
+  HREF="node2.html">1. Introduction</A>
+<B> Previous:</B> <A NAME="tex2html240"
+  HREF="node4.html">1.2 System Requirements</A>
+ &nbsp; <B>  <A NAME="tex2html248"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html250"
+  HREF="node69.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00230000000000000000"></A>
+<A NAME="69"></A>
+<BR>
+<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">3</SPAN> Installation
+</H1>
+
+<P>
+The following steps describe the installation of PyXPlot from a
+<TT>.tar.gz</TT> archive. It is assumed that the packages listed above have
+already been installed.
+
+<P>
+
+<UL>
+<LI>Unpack the distributed .tar.gz:
+
+<P>
+<PRE>
+tar xvfz pyxplot_0.5.7.tar.gz
+cd pyxplot
+</PRE>
+
+<P>
+</LI>
+<LI>Run the installation script:
+
+<P>
+<PRE>
+./configure
+make
+make install
+</PRE>
+
+<P>
+where the final step needs to be executed as root. By default, the
+PyXPlot executable installs to <TT>/usr/local/bin/pyxplot</TT>. If desired,
+this installation path may be modified in the file <TT>Makefile.skel</TT>, by
+changing the variable <TT>USRDIR</TT> in the first line to an alternative
+desired installation location. This will be necessary for users who do not have
+root access to their machines, for example.
+
+<P>
+</LI>
+<LI>Finally, start PyXPlot:
+
+<P>
+<PRE>
+pyxplot
+</PRE>
+
+<P>
+</LI>
+</UL>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Dominic Ford
+2006-09-09
+</ADDRESS>
+</BODY>
+</HTML>

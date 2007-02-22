@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>6.4 Example 4: Something Completely Different</TITLE>
+<META NAME="description" CONTENT="6.4 Example 4: Something Completely Different">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node163.html">
+<LINK REL="previous" HREF="node161.html">
+<LINK REL="up" HREF="node158.html">
+<LINK REL="next" HREF="node163.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2900"
+  HREF="node163.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2894"
+  HREF="node158.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2888"
+  HREF="node161.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2896"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2898"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2901"
+  HREF="node163.html">6.5 Example 5: Multiplot</A>
+<B> Up:</B> <A NAME="tex2html2895"
+  HREF="node158.html">6. Examples</A>
+<B> Previous:</B> <A NAME="tex2html2889"
+  HREF="node161.html">6.3 Example 3: Plotting</A>
+ &nbsp; <B>  <A NAME="tex2html2897"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2899"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00740000000000000000">
+<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">4</SPAN> Example 4: Something Completely Different</A>
+</H1>
+
+<P>
+<A NAME="powerpoint_example"></A>
+<P>
+<A NAME="2519"></A>
+<A NAME="2520"></A>
+
+<P>
+In this example, we demonstrate something rather different that PyXPlot can
+do. There is a common problem of trying to incorporate <SPAN CLASS="logo,LaTeX">L<SUP><SMALL>A</SMALL></SUP>T<SMALL>E</SMALL>X</SPAN>ed equations into
+various multimedia/graphics packages: the postscript format which <SPAN CLASS="logo,LaTeX">L<SUP><SMALL>A</SMALL></SUP>T<SMALL>E</SMALL>X</SPAN>
+produces is not supported by programs such as Microsoft Powerpoint. PyXPlot
+offers a very quick and simple solution to this problem.
+
+<P>
+First of all, we set our terminal to produce png output. To overlay our output
+onto a Powerpoint slide, we will want it to have a transparent background, and
+so we also use the ``transparent'' terminal option (see section&nbsp;<A HREF="node23.html#terminals">3.2</A>
+for a discussion of PyXPlot terminal options). Finally, if we're producing a
+Powerpoint presentation with light-coloured text on a dark background, we will
+want to invert the colours to have white text, and so use the ``invert''
+terminal option.
+
+<P>
+<A NAME="3381"></A>
+We can now produce plots which can readily be imported into Powerpoint. To
+produce <SPAN CLASS="logo,LaTeX">L<SUP><SMALL>A</SMALL></SUP>T<SMALL>E</SMALL>X</SPAN>ed equations, we use the multiplot environment's <TT>text</TT>
+command (see section&nbsp;<A HREF="node35.html#text_command">3.5</A>).
+
+<P>
+<A NAME="3382"></A>
+Finally, as such a figure would not be very easy to incorporate into this User
+Manual, we produce a normal eps version of our equation, illustrating how to
+use the <TT>refresh</TT> command to produce multiple copies of the same figure
+in different graphic formats.
+
+<P>
+The output is shown in figure&nbsp;<A HREF="node170.html#fig_ex4">6.4</A>.
+
+<P>
+<BR>
+<BR>
+<BR>
+<SPAN  CLASS="textbf">PyXPlot Script:</SPAN>
+
+<P>
+examples/example4
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2900"
+  HREF="node163.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2894"
+  HREF="node158.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2888"
+  HREF="node161.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2896"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2898"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2901"
+  HREF="node163.html">6.5 Example 5: Multiplot</A>
+<B> Up:</B> <A NAME="tex2html2895"
+  HREF="node158.html">6. Examples</A>
+<B> Previous:</B> <A NAME="tex2html2889"
+  HREF="node161.html">6.3 Example 3: Plotting</A>
+ &nbsp; <B>  <A NAME="tex2html2897"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2899"
+  HREF="node179.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

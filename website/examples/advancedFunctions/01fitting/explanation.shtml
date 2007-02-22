@@ -1,0 +1,8 @@
+The <tt>fit</tt> command works in PyXPlot in essentially the same way as in
+gnuplot. In this example, we take a series of data points, and first fit
+parabolas through them. For the first fit, <i>f(x)</i>, we do not take the
+errorbars into account; in the second, <i>g(x)</i>, we do.  Then, we use the
+<tt>spline</tt> command to fit a spline, <i>h(x)</i>, through the same data.
+Strong oscillation is seen in this example because of the angular nature of the
+data; it is not well-fit by a spline.
+

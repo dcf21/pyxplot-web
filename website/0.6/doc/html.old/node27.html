@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.3.2 Keys and Legends</TITLE>
+<META NAME="description" CONTENT="3.3.2 Keys and Legends">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node28.html">
+<LINK REL="previous" HREF="node26.html">
+<LINK REL="up" HREF="node25.html">
+<LINK REL="next" HREF="node28.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html800"
+  HREF="node28.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html794"
+  HREF="node25.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html788"
+  HREF="node26.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html796"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html798"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html801"
+  HREF="node28.html">3.3.3 The linestyle keyword</A>
+<B> Up:</B> <A NAME="tex2html795"
+  HREF="node25.html">3.3 Plotting</A>
+<B> Previous:</B> <A NAME="tex2html789"
+  HREF="node26.html">3.3.1 Configuring Axes</A>
+ &nbsp; <B>  <A NAME="tex2html797"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html799"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00432000000000000000">
+<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">2</SPAN> Keys and Legends</A>
+</H2>
+
+<P>
+By default, plots are displayed with a legend in their top-right corners. The
+textual description of each dataset is drawn by default from the command used
+to plot it. Alternatively, the user may specify his own description for each
+dataset by following the <TT>plot</TT> command with the <TT>title</TT>
+modifier<A NAME="3166"></A>, as follows:
+
+<P>
+<PRE>
+plot sin(x) title 'A sine wave'
+plot cos(x) title ''
+</PRE>
+
+<P>
+In the lower case, a blank title is specified, in which case, PyXPlot makes no
+entry for this dataset in the legend. This is useful if it is desired to place
+some but not all datasets into the legend of a plot.  Alternatively, the
+production of the legend can be completely turned off for all datasets, by the
+command <TT>set nokey</TT>. The opposite effect can be achieved by the
+<TT>set key</TT><A NAME="3167"></A> command.
+
+<P>
+This latter command can also be used to dictate where on the plot the legend
+should be placed, using a syntax along the lines of:
+
+<P>
+<PRE>
+set key top right
+</PRE>
+
+<P>
+The following recognised positioning keywords are self-explanatory:
+<TT>top</TT>, <TT>bottom</TT>, <TT>left</TT>, <TT>right</TT>, <TT>xcentre</TT>
+and <TT>ycentre</TT>. The word <TT>outside</TT> places the key outside the
+plot, on its right side. The word <TT>below</TT> places the legend below the
+plot.
+
+<P>
+In addition, two positional offset coordinates may be specified after such
+keywords - the first value is assumed to be an <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="$ x$"></SPAN>-offset, and the second a
+<SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ y$"></SPAN>-offset, in units approximately equal to the size of the plot. For example:
+
+<P>
+<PRE>
+set key bottom left 0.0 -0.5
+</PRE>
+
+<P>
+would display a key below the bottom left corner of the graph.
+
+<P>
+By default, entries in the key are placed in a single vertical list. They can
+instead be arranged into a number of columns by means of the <TT>set
+keycolumns</TT> command.<A NAME="3168"></A>. This should be followed by the integer number of desired columns, for
+example:
+
+<P>
+<PRE>
+set keycolumns 2
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html800"
+  HREF="node28.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html794"
+  HREF="node25.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html788"
+  HREF="node26.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html796"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html798"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html801"
+  HREF="node28.html">3.3.3 The linestyle keyword</A>
+<B> Up:</B> <A NAME="tex2html795"
+  HREF="node25.html">3.3 Plotting</A>
+<B> Previous:</B> <A NAME="tex2html789"
+  HREF="node26.html">3.3.1 Configuring Axes</A>
+ &nbsp; <B>  <A NAME="tex2html797"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html799"
+  HREF="node179.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

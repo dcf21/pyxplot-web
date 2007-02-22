@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>5.24 text</TITLE>
+<META NAME="description" CONTENT="5.24 text">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node156.html">
+<LINK REL="previous" HREF="node154.html">
+<LINK REL="up" HREF="node52.html">
+<LINK REL="next" HREF="node156.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2792"
+  HREF="node156.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2786"
+  HREF="node52.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2780"
+  HREF="node154.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2788"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2790"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2793"
+  HREF="node156.html">5.25 undelete</A>
+<B> Up:</B> <A NAME="tex2html2787"
+  HREF="node52.html">5. Command Reference</A>
+<B> Previous:</B> <A NAME="tex2html2781"
+  HREF="node154.html">5.23 spline</A>
+ &nbsp; <B>  <A NAME="tex2html2789"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2791"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION006240000000000000000">
+<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">24</SPAN> text</A>
+</H1><A NAME="3377"></A>
+
+<P>
+<PRE>
+text '&lt;text string&gt;' &lt;x&gt;, &lt;y&gt; [rotation &lt;angle&gt;]
+</PRE>
+
+<P>
+The <TT>text</TT> command is primarily part of the multiplot environment; it can be
+used to add blocks of text to a multiplot. It can, however, also be used in
+single plot mode, in a way that is described below. As always in PyXPlot, the
+text is rendered using <SPAN CLASS="logo,LaTeX">L<SUP><SMALL>A</SMALL></SUP>T<SMALL>E</SMALL>X</SPAN>. An example would be:
+
+<P>
+<PRE>
+text 'Hello world' 0,2
+</PRE>
+
+<P>
+which would render the text `Hello world' at position <SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img83.png"
+ ALT="$ (0,2)$"></SPAN>, measured in
+centimetres. The alignment of the text item with respect to this position can
+be set using the <TT>set texthalign</TT> and <TT>set textvalign</TT> commands.
+
+<P>
+A rotation angle may optionally be specified after the keyword `<TT>rotation</TT>'
+to produce text rotated to any arbitrary angle, measured in degrees
+counter-clockwise. The following example would produce upward-running text:
+
+<P>
+<PRE>
+text 'Hello' 1.5, 3.6 rotation 90
+</PRE>
+
+<P>
+Outside of multiplot mode, the text command can be used to produce images
+consisting simply of one single text item. This can be useful for importing
+<SPAN CLASS="logo,LaTeX">L<SUP><SMALL>A</SMALL></SUP>T<SMALL>E</SMALL>X</SPAN>ed equations as gif images into slideshow programs such as Microsoft
+Powerpoint, which aren't capable of producing such neat mathematical notation
+by themselves.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2792"
+  HREF="node156.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2786"
+  HREF="node52.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2780"
+  HREF="node154.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2788"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2790"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2793"
+  HREF="node156.html">5.25 undelete</A>
+<B> Up:</B> <A NAME="tex2html2787"
+  HREF="node52.html">5. Command Reference</A>
+<B> Previous:</B> <A NAME="tex2html2781"
+  HREF="node154.html">5.23 spline</A>
+ &nbsp; <B>  <A NAME="tex2html2789"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2791"
+  HREF="node179.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

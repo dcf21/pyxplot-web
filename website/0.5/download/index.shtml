@@ -1,0 +1,17 @@
+<!--#set var="title" value="Download" -->
+<!--#include virtual="inc/header.shtml" -->
+
+<p>
+	The latest stable beta-release of PyXPlot is version 0.5.8 and is available
+	to download as 
+	<ul>
+	   <li> A gzipped <a href="../../src/pyxplot_0.5.8.tar.gz">tar file</a> (508kB) 
+		<li> A <a href="../../src/pyxplot_0.5.8-1_all.deb">Debian Package</a> (1.6MB)
+	</ul>
+</p>
+
+<p>
+   An <a href="../../archive.shtml">archive</a> of old PyXPlot releases is also available.
+</p>
+
+<!--#include virtual="inc/footer.shtml" -->

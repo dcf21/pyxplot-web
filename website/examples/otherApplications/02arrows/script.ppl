@@ -1,0 +1,26 @@
+set multiplot
+set nodisplay
+width = 10
+set width width
+set size square
+set fontsize 2
+set nokey
+
+# Plot 0 (left)
+set xlabel 'x'
+set ylabel 'y'
+plot [-10.9:10.9][-10.9:10.9] \
+ 'example11.dat' i 0 u 1:2:($1+$3):($2+$4) w arrows, \
+ 4*sin(x/10.9*pi):4*cos(x/10.9*pi) u 2:3 w lt 2 col black
+
+# Plot 1 (right)
+set origin width, 0
+set ylabel 'linkaxis 0'
+set key bottom right
+plot [-10.9:10.9] \
+ 'example11.dat' i 1 t '' with arrows, \
+ 'example11.dat' i 1 t 'Before correction' u 1:2 w p, \
+ 'example11.dat' i 1 t 'After  correction' u 3:4 w p
+
+set display
+refresh

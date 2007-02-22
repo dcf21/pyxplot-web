@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.4.2 Text Labels</TITLE>
+<META NAME="description" CONTENT="3.4.2 Text Labels">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node34.html">
+<LINK REL="previous" HREF="node32.html">
+<LINK REL="up" HREF="node31.html">
+<LINK REL="next" HREF="node34.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html885"
+  HREF="node34.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html879"
+  HREF="node31.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html873"
+  HREF="node32.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html881"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html883"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html886"
+  HREF="node34.html">3.4.3 Gridlines</A>
+<B> Up:</B> <A NAME="tex2html880"
+  HREF="node31.html">3.4 Sundry Items (Arrows,</A>
+<B> Previous:</B> <A NAME="tex2html874"
+  HREF="node32.html">3.4.1 Arrows</A>
+ &nbsp; <B>  <A NAME="tex2html882"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html884"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00442000000000000000">
+<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">2</SPAN> Text Labels</A>
+</H2>
+
+<P>
+Text labels may be placed on plots using the <TT>set label</TT>
+command<A NAME="3187"></A>. As with all
+textual labels in PyXPlot, these are rendered in <SPAN CLASS="logo,LaTeX">L<SUP><SMALL>A</SMALL></SUP>T<SMALL>E</SMALL>X</SPAN>:
+
+<P>
+<PRE>
+set label 1 'Hello World' at 0,0
+</PRE>
+
+<P>
+As in the previous section, the number `1' is a reference number, which allows
+the label to be removed by either of the following two commands:
+
+<P>
+<PRE>
+set nolabel 1
+unset label 1
+</PRE>
+
+<P>
+The positional coordinates for the text label, placed after the
+keyword `<TT>at</TT>', can be specified in any of the coordinate systems
+described for arrows above. A rotation angle may optionally be specified after
+the keyword `<TT>rotation</TT>', to rotate text counter-clockwise by a given
+angle, measured in degrees. For example, the following would produce
+upward-running text:
+
+<P>
+<PRE>
+set label 1 'Hello World' at axis3 3.0, axis4 2.7 rotation 90
+</PRE>
+
+<P>
+<A NAME="862"></A><A NAME="863"></A><A NAME="3188"></A> The fontsize of these text labels can globally be set using
+the <TT>set fontsize x</TT> command. This applies not only to the <TT>set
+label</TT> command, but also to plot titles, axis labels, keys, etc. The value
+given should be an integer in the range <!-- MATH
+ $-4 \leq x \leq 5$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="92" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img60.png"
+ ALT="$ -4 \leq x \leq 5$"></SPAN>. The default is
+zero, which corresponds to <SPAN CLASS="logo,LaTeX">L<SUP><SMALL>A</SMALL></SUP>T<SMALL>E</SMALL>X</SPAN>'s <TT>normalsize</TT>; -4 corresponds to
+<TT>tiny</TT> and 5 to <TT>Huge</TT>.
+
+<P>
+<A NAME="870"></A><A NAME="871"></A><A NAME="3189"></A> The <TT>set textcolour</TT> command
+can be used to globally set the colour of all text output, and applies to all
+of the text that the <TT>set fontsize</TT> command does. It is especially
+useful when producing plots to be embedded in presentation slideshows, where
+bright text on a dark background may be desired. It should be followed either
+by an integer, to set a colour from the present palette, or by a colour name. A
+list of the recognised colour names can be found in section&nbsp;<A HREF="node51.html#colour_names">4.6</A>.
+For example:
+
+<P>
+<PRE>
+set textcolour 2
+set textcolour blue
+</PRE>
+
+<P>
+<A NAME="878"></A><A NAME="879"></A><A NAME="3190"></A><A NAME="3191"></A>By default, each label's specified position corresponds to its bottom left corner. This alignment may be changed with the <TT>set texthalign</TT> and <TT>set textvalign</TT> commands. The former takes the options <TT>left</TT>, <TT>centre</TT> or <TT>right</TT>, and the latter takes the options <TT>bottom</TT>, <TT>centre</TT> or <TT>top</TT>, for example:
+
+<P>
+<PRE>
+set texthalign right
+set textvalign top
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html885"
+  HREF="node34.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html879"
+  HREF="node31.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html873"
+  HREF="node32.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html881"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html883"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html886"
+  HREF="node34.html">3.4.3 Gridlines</A>
+<B> Up:</B> <A NAME="tex2html880"
+  HREF="node31.html">3.4 Sundry Items (Arrows,</A>
+<B> Previous:</B> <A NAME="tex2html874"
+  HREF="node32.html">3.4.1 Arrows</A>
+ &nbsp; <B>  <A NAME="tex2html882"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html884"
+  HREF="node179.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

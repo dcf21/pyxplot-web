@@ -1,0 +1,524 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>4.4 Configuration Options: settings section</TITLE>
+<META NAME="description" CONTENT="4.4 Configuration Options: settings section">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node50.html">
+<LINK REL="previous" HREF="node48.html">
+<LINK REL="up" HREF="node45.html">
+<LINK REL="next" HREF="node50.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1111"
+  HREF="node50.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1105"
+  HREF="node45.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1099"
+  HREF="node48.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1107"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1109"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1112"
+  HREF="node50.html">4.5 Configuration Options: terminal</A>
+<B> Up:</B> <A NAME="tex2html1106"
+  HREF="node45.html">4. Configuring PyXPlot</A>
+<B> Previous:</B> <A NAME="tex2html1100"
+  HREF="node48.html">4.3 An Example Configuration</A>
+ &nbsp; <B>  <A NAME="tex2html1108"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1110"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00540000000000000000"></A>
+<A NAME="configfile_settings"></A>
+<BR>
+<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">4</SPAN> Configuration Options: <TT>settings</TT> section
+</H1>
+
+<P>
+The following table provides a brief description of the function of each of the
+parameters in the <TT>settings</TT> section of the above configuration file,
+with a list of possible values for each:
+
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>ASPECT</TT></TD>
+<TH ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any floating-point number.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set size ratio</TT><A NAME="3231"></A>
+
+<P>
+Sets the aspect ratio of plots.</TH>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>AUTOASPECT</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> ON / OFF
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set size ratio</TT>
+
+<P>
+Sets whether plots have the automatic aspect ratio, which is the golden ratio. If <TT>ON</TT>, then the above setting is ignored.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>AXESCOLOUR</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any recognised colour.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set axescolour</TT><A NAME="3232"></A>
+
+<P>
+Sets the colour of axis lines and ticks.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>BACKUP</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> ON / OFF
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set backup</TT><A NAME="3233"></A>
+
+<P>
+When this switch is set to `ON', and plot output is being directed to file, attempts to write output over existing files cause a copy of the existing file to be preserved, with a tilda after its old filename (see section&nbsp;<A HREF="node30.html#filebackup">3.3</A>).</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>BAR</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN>  Any floating-point number.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set bar</TT><A NAME="3234"></A>
+
+<P>
+Sets the horizontal length of the lines drawn at the end of errorbars, in units of their default length.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>BOXFROM</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any floating-point number.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set boxfrom</TT><A NAME="3235"></A>
+
+<P>
+Sets the horizontal point from which bars on bar charts appear to emanate.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>BOXWIDTH</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any floating-point number.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set boxwidth</TT><A NAME="3236"></A>
+
+<P>
+Sets the default width of boxes on barcharts. If negative, then the boxes have automatically selected widths, so that the interfaces between bars occur at the horizontal midpoints between the specified datapoints.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>COLOUR</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> ON / OFF
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set terminal</TT><A NAME="3237"></A>
+
+<P>
+Sets whether output should be colour (ON) or monochrome (OFF).</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>DATASTYLE</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any plot style. 
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set data style</TT><A NAME="3238"></A>
+
+<P>
+Sets the plot style used by default when plotting datafiles.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>DISPLAY</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> ON / OFF
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set display</TT><A NAME="3239"></A>
+
+<P>
+When set to `ON', no output is produced until the <TT>set display</TT> command is issued. This is useful for speeding up scripts which produce large multiplots; see section&nbsp;<A HREF="node36.html#set_display">3.5.1</A> for more details.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>DPI</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any floating-point number.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set dpi</TT><A NAME="3240"></A>
+
+<P>
+Sets the sampling quality used, in dots per inch, when output is sent to a bitmapped terminal (the jpeg/gif/png terminals).</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>FONTSIZE</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Integers in the range <SPAN CLASS="MATH"><IMG
+ WIDTH="62" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img78.png"
+ ALT="$ -4 \to 5$"></SPAN>.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set fontsize</TT><A NAME="3241"></A>
+
+<P>
+Sets the fontsize of text, varying between <SPAN CLASS="logo,LaTeX">L<SUP><SMALL>A</SMALL></SUP>T<SMALL>E</SMALL>X</SPAN>'s <TT>tiny</TT> (-4) and <TT>Huge</TT> (5).</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>FUNCSTYLE</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any plot style.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set function style</TT><A NAME="3242"></A>
+
+<P>
+Sets the plot style used by default when plotting functions.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>GRID</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> ON / OFF
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set grid</TT><A NAME="3243"></A>
+
+<P>
+Sets whether a grid should be displayed on plots.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>GRIDAXISX</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any integer.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> None
+
+<P>
+Sets the default <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="$ x$"></SPAN>-axis to which gridlines should attach, if the <TT>set grid</TT> command is called without specifying which axes to use.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>GRIDAXISY</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any integer.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> None
+
+<P>
+Sets the default <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ y$"></SPAN>-axis to which gridlines should attach, if the <TT>set grid</TT> command is called without specifying which axes to use.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>GRIDMAJCOLOUR</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any recognised colour.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set gridmajcolour</TT><A NAME="3244"></A>
+
+<P>
+Sets the colour of major grid lines.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>GRIDMINCOLOUR</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any recognised colour.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set gridmincolour</TT><A NAME="3245"></A>
+
+<P>
+Sets the colour of minor grid lines.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>KEY</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> ON / OFF
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set key</TT><A NAME="3246"></A>
+
+<P>
+Sets whether a legend is displayed on plots.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>KEYCOLUMNS</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any integer <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img79.png"
+ ALT="$ &gt;0$"></SPAN>.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set keycolumns</TT><A NAME="3247"></A>
+
+<P>
+Sets the number of columns into which the legends of plots should be divided.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>KEYPOS</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> ``TOP RIGHT'', ``TOP MIDDLE'', ``TOP LEFT'', ``MIDDLE RIGHT'', ``MIDDLE MIDDLE'', ``MIDDLE LEFT'', ``BOTTOM RIGHT'', ``BOTTOM MIDDLE'', ``BOTTOM LEFT'', ``BELOW'', ``OUTSIDE''.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set key</TT><A NAME="3248"></A>
+
+<P>
+Sets where the legend should appear on plots.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>KEY_XOFF</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any floating-point number.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set key</TT><A NAME="3249"></A>
+
+<P>
+Sets the horizontal offset, in approximate graph-widths, that should be applied to the legend, relative to its default position, as set by <TT>KEYPOS</TT>.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>KEY_YOFF</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any floating-point number.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set key</TT><A NAME="3250"></A>
+
+<P>
+Sets the vertical offset, in approximate graph-heights, that should be applied to the legend, relative to its default position, as set by <TT>KEYPOS</TT>.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>LANDSCAPE</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> ON / OFF
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set terminal</TT><A NAME="3251"></A>
+
+<P>
+Sets whether output is in portrait orientation (OFF), or landscape orientation (ON).</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>LINEWIDTH</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any floating-point number.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set linewidth</TT><A NAME="3252"></A>
+
+<P>
+Sets the width of lines on plots, as a  multiple of the default.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>MULTIPLOT</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> ON / OFF
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set multiplot</TT><A NAME="3253"></A>
+
+<P>
+Sets whether multiplot mode is on or off.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>ORIGINX</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any floating point number.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set origin</TT><A NAME="3254"></A>
+
+<P>
+Sets the horizontal position, in centimetres, of the default origin of plots on the page. Most useful when multiplotting many plots.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>ORIGINY</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any floating point number.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set origin</TT><A NAME="3255"></A>
+
+<P>
+Sets the vertical position, in centimetres, of the default origin of plots on the page. Most useful when multiplotting many plots.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>OUTPUT</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any string.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set output</TT><A NAME="3256"></A>
+
+<P>
+Sets the output filename for plots. If blank, the default filename of pyxplot.foo is used, where `foo' is an extension appropriate for the file format.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>PAPER_HEIGHT</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any floating-point number.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set papersize</TT><A NAME="3257"></A>
+
+<P>
+Sets the height of the papersize for postscript output in millimetres.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>PAPER_WIDTH</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any floating-point number.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set papersize</TT><A NAME="3258"></A>
+
+<P>
+Sets the width of the papersize for postscript output in millimetres.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>POINTLINEWIDTH</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any floating-point number.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set pointlinewidth</TT> / <TT>plot with pointlinewidth</TT><A NAME="3259"></A>
+
+<P>
+Sets the linewidth used to stroke points onto plots, as a multiple of the default.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>POINTSIZE</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any floating-point number.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set pointsize</TT> / <TT>plot with pointsize</TT><A NAME="3260"></A>
+
+<P>
+Sets the sizes of points on plots, as a multiple of their normal sizes.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>SAMPLES</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any integer.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set samples</TT><A NAME="3261"></A>
+
+<P>
+Sets the number of samples (datapoints) to be evaluated along the <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="$ x$"></SPAN>-axis when plotting a function.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>TERMINVERT</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> ON / OFF
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set terminal</TT><A NAME="3262"></A>
+
+<P>
+Sets whether jpeg/gif/png output has normal colours (OFF), or inverted colours (ON).</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>TERMTRANSPARENT</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> ON / OFF
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set terminal</TT><A NAME="3263"></A>
+
+<P>
+Sets whether jpeg/gif/png output has transparent background (ON), or solid background (OFF).</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>TERMTYPE</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> <TT>X11_singlewindow</TT>,
+
+<P>
+<TT>X11_multiwindow</TT>, <TT>X11_persist</TT>, <TT>PS</TT>, <TT>EPS</TT>, <TT>PNG</TT>, <TT>JPG</TT>, <TT>GIF</TT>
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set terminal</TT><A NAME="3264"></A>
+
+<P>
+Sets whether output is sent to the screen or to disk, and, in the latter case, the format of the output. The <TT>ps</TT> option should be used for both encapsulated and normal postscript output; these are distinguished using the <TT>ENHANCED</TT> option, above.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>TEXTCOLOUR</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any recognised colour.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set textcolour</TT><A NAME="3265"></A>
+
+<P>
+Sets the colour of all text output.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>TEXTHALIGN</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> <TT>Left</TT>, <TT>Centre</TT>, <TT>Right</TT>
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set texthalign</TT><A NAME="3266"></A>
+
+<P>
+Sets the horizontal alignment of text labels to their given reference positions.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>TEXTVALIGN</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> <TT>Top</TT>, <TT>Centre</TT>, <TT>Bottom</TT>
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set textvalign</TT><A NAME="3267"></A>
+
+<P>
+Sets the vertical alignment of text labels to their given reference positions.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>TITLE</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any string.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set title</TT><A NAME="3268"></A>
+
+<P>
+Sets the title to appear at the top of the plot.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>TIT_XOFF</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any floating point number.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set title</TT>
+
+<P>
+Sets the horizontal offset of the title of the plot from its default central location.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>TIT_YOFF</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any floating point number.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set title</TT>
+
+<P>
+Sets the vertical offset of the title of the plot from its default location at the top of the plot.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=96><TT>WIDTH</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255><SPAN  CLASS="textbf">Possible values:</SPAN> Any floating-point number.
+
+<P>
+<SPAN  CLASS="textbf">Analogous set command:</SPAN> <TT>set width</TT> / <TT>set size</TT><A NAME="3269"></A><A NAME="3270"></A>
+
+<P>
+Sets the width of plots in centimetres.</TD>
+</TR>
+</TABLE>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1111"
+  HREF="node50.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1105"
+  HREF="node45.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1099"
+  HREF="node48.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1107"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1109"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1112"
+  HREF="node50.html">4.5 Configuration Options: terminal</A>
+<B> Up:</B> <A NAME="tex2html1106"
+  HREF="node45.html">4. Configuring PyXPlot</A>
+<B> Previous:</B> <A NAME="tex2html1100"
+  HREF="node48.html">4.3 An Example Configuration</A>
+ &nbsp; <B>  <A NAME="tex2html1108"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1110"
+  HREF="node179.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

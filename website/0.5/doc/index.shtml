@@ -1,0 +1,10 @@
+<!--#set var="title" value="Documentation" -->
+<!--#include virtual="inc/header.shtml" -->
+
+<p>
+   This documentation describes the stable 0.5.8 release of PyXPlot.
+	The <a href="pyxplot-0.5.8.pdf">manual</a> can be downloaded (pdf, 567k), or
+	viewed as <!-- hideous --><a href="html/pyxplot.html">html</a>.
+</p>
+
+<!--#include virtual="inc/footer.shtml" -->

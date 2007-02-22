@@ -1,0 +1,9 @@
+#<Limit POST>
+#order deny,allow
+#deny from all
+#allow from .cam.ac.uk
+#</Limit>
+AuthName "PyXPlot development"
+AuthType "basic"
+AuthUserFile /societies/pyxplot/.htpasswd
+Require user rpc25

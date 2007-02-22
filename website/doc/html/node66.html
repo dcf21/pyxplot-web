@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>6.5 The Correlation Matrix</TITLE>
+<META NAME="description" CONTENT="6.5 The Correlation Matrix">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node67.html">
+<LINK REL="previous" HREF="node65.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node67.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1154"
+  HREF="node67.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1148"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1142"
+  HREF="node65.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1150"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1152"
+  HREF="node69.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1155"
+  HREF="node67.html">6.6 Finding</A>
+<B> Up:</B> <A NAME="tex2html1149"
+  HREF="node61.html">6. The fit Command:</A>
+<B> Previous:</B> <A NAME="tex2html1143"
+  HREF="node65.html">6.4 The Covariance Matrix</A>
+ &nbsp; <B>  <A NAME="tex2html1151"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1153"
+  HREF="node69.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00750000000000000000"></A>
+<A NAME="correlation_matrix"></A><A NAME="1802"></A>
+<BR>
+<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">5</SPAN> The Correlation Matrix
+</H1>
+
+<P>
+Having evaluated the covariance matrix, we may straightforwardly find the
+standard deviations in each of our variables, by taking the square roots of the
+terms along its leading diagonal. For datafiles where the user does not specify
+the standard deviations <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \sigma _i$"></SPAN> in each value <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img85.png"
+ ALT="$ f_i$"></SPAN>, the task is not quite
+complete, as the Hessian matrix depends critically upon these uncertainties,
+even if they are assumed the same for all of our <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img85.png"
+ ALT="$ f_i$"></SPAN>. This point is returned
+to in section&nbsp;<A HREF="node67.html#finding_sigmai">6.6</A>.
+
+<P>
+The correlation matrix <!-- MATH
+ $\mathbf{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img144.png"
+ ALT="$ \mathbf{C}$"></SPAN>, whose terms are given by:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+C_{ij} = \frac{V_{ij}}{\sigma_i\sigma_j}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="88" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img145.png"
+ ALT="$\displaystyle C_{ij} = \frac{V_{ij}}{\sigma_i\sigma_j}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">16</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+may be considered a more user-friendly version of the covariance
+matrix for inspecting the correlation between parameters. The leading diagonal
+terms are all clearly equal unity by construction. The cross terms lie in the
+range <!-- MATH
+ $-1 \leq C_{ij} \leq 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="106" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img146.png"
+ ALT="$ -1 \leq C_{ij} \leq 1$"></SPAN>, the upper limit of this range representing
+perfect correlation between parameters, and the lower limit perfect
+anti-correlation.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1154"
+  HREF="node67.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1148"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1142"
+  HREF="node65.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1150"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1152"
+  HREF="node69.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1155"
+  HREF="node67.html">6.6 Finding</A>
+<B> Up:</B> <A NAME="tex2html1149"
+  HREF="node61.html">6. The fit Command:</A>
+<B> Previous:</B> <A NAME="tex2html1143"
+  HREF="node65.html">6.4 The Covariance Matrix</A>
+ &nbsp; <B>  <A NAME="tex2html1151"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1153"
+  HREF="node69.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford
+2006-09-09
+</ADDRESS>
+</BODY>
+</HTML>

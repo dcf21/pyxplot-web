@@ -1,0 +1,315 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>PyXPlot Users' Guide</TITLE>
+<META NAME="description" CONTENT="PyXPlot Users' Guide">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html40"
+  HREF="node1.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev_g.png"> 
+<A NAME="tex2html36"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html38"
+  HREF="node69.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html41"
+  HREF="node1.html">Contents</A>
+ &nbsp; <B>  <A NAME="tex2html37"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html39"
+  HREF="node69.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<P>
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<DIV ALIGN="CENTER">
+<BIG CLASS="XHUGE"><B>PyXPlot Users' Guide</B></BIG>
+<BR>
+</DIV>
+
+<P>
+<BR>
+
+<P>
+<BR>
+<DIV ALIGN="CENTER">
+<BIG CLASS="XXLARGE"><B>A Commandline Plotting Package, 
+<BR>
+<BR>
+with Interface similar to that of Gnuplot, 
+<BR>
+<BR>
+which produces 
+<BR>
+<BR>
+Publication-Quality Output. 
+<BR></B></BIG>
+
+</DIV>
+
+<P>
+<BR>
+
+<P>
+<BR>
+<DIV ALIGN="CENTER">
+<BIG CLASS="XLARGE">Version 0.5.8
+<BR></BIG>
+
+</DIV>
+
+<P><P>
+<BR>
+<DIV ALIGN="CENTER">
+Dominic Ford
+<BR>
+Trinity College
+<BR>
+Cambridge
+<BR>
+CB2 1TQ
+<BR>
+UK
+<BR>
+Email: <TT>dcf21@mrao.cam.ac.uk</TT>
+
+</DIV>
+
+<P>
+
+<P><P>
+<BR>
+<DIV ALIGN="CENTER">
+<BIG CLASS="XLARGE">September 2006
+<BR></BIG>
+
+</DIV>
+
+<P>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html42"
+  HREF="node1.html">Contents</A>
+<LI><A NAME="tex2html43"
+  HREF="node2.html"><SPAN CLASS="arabic">1</SPAN>. Introduction</A>
+<UL>
+<LI><A NAME="tex2html44"
+  HREF="node3.html"><SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">1</SPAN> Overview</A>
+<LI><A NAME="tex2html45"
+  HREF="node4.html"><SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">2</SPAN> System Requirements</A>
+<LI><A NAME="tex2html46"
+  HREF="node5.html"><SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">3</SPAN> Installation</A>
+<LI><A NAME="tex2html47"
+  HREF="node6.html"><SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">4</SPAN> Credits</A>
+<LI><A NAME="tex2html48"
+  HREF="node7.html"><SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">5</SPAN> Legal Blurb</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html49"
+  HREF="node8.html"><SPAN CLASS="arabic">2</SPAN>. First Steps With PyXPlot</A>
+<UL>
+<LI><A NAME="tex2html50"
+  HREF="node9.html"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN> Getting Started</A>
+<LI><A NAME="tex2html51"
+  HREF="node10.html"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">2</SPAN> First Plots</A>
+<LI><A NAME="tex2html52"
+  HREF="node11.html"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">3</SPAN> Plotting Datafiles</A>
+<LI><A NAME="tex2html53"
+  HREF="node12.html"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">4</SPAN> Directing Where Output Goes</A>
+<LI><A NAME="tex2html54"
+  HREF="node13.html"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">5</SPAN> Data Styles</A>
+<LI><A NAME="tex2html55"
+  HREF="node14.html"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">6</SPAN> Setting Axis Ranges</A>
+<LI><A NAME="tex2html56"
+  HREF="node15.html"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">7</SPAN> Function Fitting</A>
+<LI><A NAME="tex2html57"
+  HREF="node16.html"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">8</SPAN> Interactive Help</A>
+<LI><A NAME="tex2html58"
+  HREF="node17.html"><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">9</SPAN> Differences Between PyXPlot and Gnuplot</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html59"
+  HREF="node18.html"><SPAN CLASS="arabic">3</SPAN>. Extensions of Gnuplot's Interface</A>
+<UL>
+<LI><A NAME="tex2html60"
+  HREF="node19.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">1</SPAN> The Commandline Environment</A>
+<LI><A NAME="tex2html61"
+  HREF="node20.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">2</SPAN> Formatting and Terminals</A>
+<LI><A NAME="tex2html62"
+  HREF="node21.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN> Plotting</A>
+<UL>
+<LI><A NAME="tex2html63"
+  HREF="node22.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">1</SPAN> Configuring Axes</A>
+<LI><A NAME="tex2html64"
+  HREF="node23.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">2</SPAN> Keys and Legends</A>
+<LI><A NAME="tex2html65"
+  HREF="node24.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN> The <TT>linestyle</TT> keyword</A>
+<LI><A NAME="tex2html66"
+  HREF="node25.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">4</SPAN> Colour Plotting</A>
+<LI><A NAME="tex2html67"
+  HREF="node26.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">5</SPAN> General Extensions Beyond Gnuplot</A>
+</UL>
+<LI><A NAME="tex2html68"
+  HREF="node27.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">4</SPAN> Sundry Items (Arrows, Text Labels, and More)</A>
+<UL>
+<LI><A NAME="tex2html69"
+  HREF="node28.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">1</SPAN> Arrows</A>
+<LI><A NAME="tex2html70"
+  HREF="node29.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">2</SPAN> Text Labels</A>
+<LI><A NAME="tex2html71"
+  HREF="node30.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">3</SPAN> Gridlines</A>
+</UL>
+<LI><A NAME="tex2html72"
+  HREF="node31.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">5</SPAN> Multi-plotting</A>
+<UL>
+<LI><A NAME="tex2html73"
+  HREF="node32.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">1</SPAN> Speed Issues</A>
+</UL>
+<LI><A NAME="tex2html74"
+  HREF="node33.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">6</SPAN> Barcharts and Histograms</A>
+<UL>
+<LI><A NAME="tex2html75"
+  HREF="node34.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">1</SPAN> Basic Operation</A>
+<LI><A NAME="tex2html76"
+  HREF="node35.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">2</SPAN> Stacked Bar Charts</A>
+<LI><A NAME="tex2html77"
+  HREF="node36.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">3</SPAN> Steps</A>
+</UL>
+<LI><A NAME="tex2html78"
+  HREF="node37.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">7</SPAN> Function Splicing</A>
+<LI><A NAME="tex2html79"
+  HREF="node38.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">8</SPAN> Datafile Interpolation: Spline Fitting</A>
+<LI><A NAME="tex2html80"
+  HREF="node39.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">9</SPAN> Numerical Integration and Differentiation</A>
+<LI><A NAME="tex2html81"
+  HREF="node40.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">10</SPAN> Script Watching: pyxplot_watch</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html82"
+  HREF="node41.html"><SPAN CLASS="arabic">4</SPAN>. Configuring PyXPlot</A>
+<UL>
+<LI><A NAME="tex2html83"
+  HREF="node42.html"><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">1</SPAN> Overview</A>
+<LI><A NAME="tex2html84"
+  HREF="node43.html"><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">2</SPAN> Configuration Files</A>
+<LI><A NAME="tex2html85"
+  HREF="node44.html"><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">3</SPAN> An Example Configuration File</A>
+<LI><A NAME="tex2html86"
+  HREF="node45.html"><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">4</SPAN> Configuration Options: <TT>settings</TT> section</A>
+<LI><A NAME="tex2html87"
+  HREF="node46.html"><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">5</SPAN> Configuration Options: <TT>terminal</TT> section</A>
+<LI><A NAME="tex2html88"
+  HREF="node47.html"><SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">6</SPAN> Recognised Colour Names</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html89"
+  HREF="node48.html"><SPAN CLASS="arabic">5</SPAN>. Examples</A>
+<UL>
+<LI><A NAME="tex2html90"
+  HREF="node49.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">1</SPAN> Example 1: Plotting Functions - A Simple First Plot</A>
+<LI><A NAME="tex2html91"
+  HREF="node50.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">2</SPAN> Example 2: Stacking Many Plots Together - Multiplot</A>
+<LI><A NAME="tex2html92"
+  HREF="node51.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">3</SPAN> Example 3: Plotting A Datafile - Using Multiple Axes</A>
+<LI><A NAME="tex2html93"
+  HREF="node52.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">4</SPAN> Example 4: Something Completely Different</A>
+<LI><A NAME="tex2html94"
+  HREF="node53.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">5</SPAN> Example 5: Multiplot - Linked Axes</A>
+<LI><A NAME="tex2html95"
+  HREF="node54.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">6</SPAN> Example 6: Bar Charts and Steps</A>
+<LI><A NAME="tex2html96"
+  HREF="node55.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">7</SPAN> Example 7: Bar Charts - Box Widths</A>
+<LI><A NAME="tex2html97"
+  HREF="node56.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">8</SPAN> Example 8: Fitting Functions to Data</A>
+<LI><A NAME="tex2html98"
+  HREF="node57.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">9</SPAN> Example 9: Simple Examples of Function Splicing</A>
+<LI><A NAME="tex2html99"
+  HREF="node58.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">10</SPAN> Example 10: Removal of Unwanted Axes</A>
+<LI><A NAME="tex2html100"
+  HREF="node59.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">11</SPAN> Example 11: The Arrows Plot Style</A>
+<LI><A NAME="tex2html101"
+  HREF="node60.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">12</SPAN> Output Produced by Examples</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html102"
+  HREF="node61.html"><SPAN CLASS="arabic">6</SPAN>. The <TT>fit</TT> Command: Mathematical Details</A>
+<UL>
+<LI><A NAME="tex2html103"
+  HREF="node62.html"><SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">1</SPAN> Notation</A>
+<LI><A NAME="tex2html104"
+  HREF="node63.html"><SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">2</SPAN> The Probability Density Function</A>
+<LI><A NAME="tex2html105"
+  HREF="node64.html"><SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">3</SPAN> Estimating the Error in <!-- MATH
+ $\mathbf{u}^0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.png"
+ ALT="$ \mathbf{u}^0$"></SPAN></A>
+<LI><A NAME="tex2html106"
+  HREF="node65.html"><SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">4</SPAN> The Covariance Matrix</A>
+<LI><A NAME="tex2html107"
+  HREF="node66.html"><SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">5</SPAN> The Correlation Matrix</A>
+<LI><A NAME="tex2html108"
+  HREF="node67.html"><SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">6</SPAN> Finding <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \sigma _i$"></SPAN></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html109"
+  HREF="node68.html"><SPAN CLASS="arabic">7</SPAN>. ChangeLog</A>
+<LI><A NAME="tex2html110"
+  HREF="node69.html">Index</A>
+<LI><A NAME="tex2html111"
+  HREF="node70.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Dominic Ford
+2006-09-09
+</ADDRESS>
+</BODY>
+</HTML>

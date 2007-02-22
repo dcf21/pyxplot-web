@@ -1,0 +1,3 @@
+A simple example of a script to plot data from a file.  The <tt>using</tt>
+modifier is utilized to select the fourth and fifth columns, and axis labels
+rendered as equations within LaTeX.

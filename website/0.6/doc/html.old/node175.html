@@ -1,0 +1,464 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>7.4 The Covariance Matrix</TITLE>
+<META NAME="description" CONTENT="7.4 The Covariance Matrix">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node176.html">
+<LINK REL="previous" HREF="node174.html">
+<LINK REL="up" HREF="node171.html">
+<LINK REL="next" HREF="node176.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html3086"
+  HREF="node176.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3080"
+  HREF="node171.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3074"
+  HREF="node174.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3082"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html3084"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3087"
+  HREF="node176.html">7.5 The Correlation Matrix</A>
+<B> Up:</B> <A NAME="tex2html3081"
+  HREF="node171.html">7. The fit Command:</A>
+<B> Previous:</B> <A NAME="tex2html3075"
+  HREF="node174.html">7.3 Estimating the Error</A>
+ &nbsp; <B>  <A NAME="tex2html3083"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html3085"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00840000000000000000"></A>
+<A NAME="2821"></A>
+<BR>
+<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">4</SPAN> The Covariance Matrix
+</H1>
+
+<P>
+The terms of the covariance matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img139.png"
+ ALT="$ V_{ij}$"></SPAN> are defined by:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="def_covar"></A><!-- MATH
+ \begin{equation}
+V_{ij} = \left< \left(u_i - u^0_i\right) \left(u_j - u^0_j\right) \right>
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="211" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img140.png"
+ ALT="$\displaystyle V_{ij} = \left&lt; \left(u_i - u^0_i\right) \left(u_j - u^0_j\right) \right&gt;$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">8</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Its leading diagonal terms may be recognised as equalling the
+variances of each of our <!-- MATH
+ $n_\mathrm{u}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img108.png"
+ ALT="$ n_\mathrm{u}$"></SPAN> variables; its cross terms measure the
+correlation between the variables. If a component <!-- MATH
+ $V_{ij} > 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="58" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img141.png"
+ ALT="$ V_{ij} &gt; 0$"></SPAN>, it implies that
+higher estimates of the coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img138.png"
+ ALT="$ u_i$"></SPAN> make higher estimates of <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img142.png"
+ ALT="$ u_j$"></SPAN> more
+favourable also; if <!-- MATH
+ $V_{ij} < 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="58" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img143.png"
+ ALT="$ V_{ij} &lt; 0$"></SPAN>, the converse is true.
+
+<P>
+It is a standard statistical result that <!-- MATH
+ $\mathbf{V} = (-\mathbf{A})^{-1}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="103" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img144.png"
+ ALT="$ \mathbf{V} = (-\mathbf{A})^{-1}$"></SPAN>. In
+the remainder of this section we prove this; readers who are willing to accept
+this may skip onto section&nbsp;<A HREF="node176.html#correlation_matrix">7.5</A>.
+
+<P>
+Using <!-- MATH
+ $\Delta u_i$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img145.png"
+ ALT="$ \Delta u_i$"></SPAN> to denote <!-- MATH
+ $\left(u_i - u^0_i\right)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="75" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img146.png"
+ ALT="$ \left(u_i - u^0_i\right)$"></SPAN>, we may proceed by
+rewriting equation&nbsp;(<A HREF="#def_covar">7.8</A>) as:
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray}
+V_{ij} & = & \idotsint_{u_i=-\infty}^{\infty}
+\Delta u_i \Delta u_j
+\mathrm{P}\left(
+\mathbf{u} | \left\{ \mathbf{x}_i, f_i, \sigma_i \right\} \right)
+\,\mathrm{d}^{n_\mathrm{u}}\mathbf{u} \\
+ & = & \frac{
+\idotsint_{u_i=-\infty}^{\infty} \Delta u_i \Delta u_j \exp(-Q) \,\mathrm{d}^{n_\mathrm{u}}\mathbf{u}
+}{
+\idotsint_{u_i=-\infty}^{\infty} \exp(-Q) \,\mathrm{d}^{n_\mathrm{u}}\mathbf{u}
+}
+\nonumber
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="26" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.png"
+ ALT="$\displaystyle V_{ij}$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="338" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img148.png"
+ ALT="$\displaystyle \idotsint_{u_i=-\infty}^{\infty}
+\Delta u_i \Delta u_j
+\mathrm{P}...
+...thbf{x}_i, f_i, \sigma_i \right\} \right)
+\,\mathrm{d}^{n_\mathrm{u}}\mathbf{u}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">9</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="274" HEIGHT="67" ALIGN="MIDDLE" BORDER="0"
+ SRC="img149.png"
+ ALT="$\displaystyle \frac{
+\idotsint_{u_i=-\infty}^{\infty} \Delta u_i \Delta u_j \ex...
+...dotsint_{u_i=-\infty}^{\infty} \exp(-Q) \,\mathrm{d}^{n_\mathrm{u}}\mathbf{u}
+}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+<P>
+The normalisation factor in the denominator of this expression, which we denote
+as <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img150.png"
+ ALT="$ Z$"></SPAN>, the <SPAN  CLASS="textit">partition function</SPAN>, may be evaluated by
+<!-- MATH
+ $n_\mathrm{u}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img108.png"
+ ALT="$ n_\mathrm{u}$"></SPAN>-dimensional Gaussian integration, and is a standard result:
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray}
+Z & = & \idotsint_{u_i=-\infty}^{\infty} \exp\left(\frac{1}{2} \Delta \mathbf{u}^\mathbf{T} \mathbf{A} \Delta \mathbf{u} \right) \,\mathrm{d}^{n_\mathrm{u}}\mathbf{u} \\
+& = & \frac{(2\pi)^{n_\mathrm{u}/2}}{\mathrm{Det}(\mathbf{-A})} \nonumber
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="18" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img151.png"
+ ALT="$\displaystyle Z$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="297" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img152.png"
+ ALT="$\displaystyle \idotsint_{u_i=-\infty}^{\infty} \exp\left(\frac{1}{2} \Delta \ma...
+...f{T} \mathbf{A} \Delta \mathbf{u} \right) \,\mathrm{d}^{n_\mathrm{u}}\mathbf{u}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">10</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="78" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img153.png"
+ ALT="$\displaystyle \frac{(2\pi)^{n_\mathrm{u}/2}}{\mathrm{Det}(\mathbf{-A})}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+<P>
+Differentiating <SPAN CLASS="MATH"><IMG
+ WIDTH="61" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img154.png"
+ ALT="$ \log_e(Z)$"></SPAN> with respect of any given component of the Hessian
+matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img155.png"
+ ALT="$ A_{ij}$"></SPAN> yields:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+-2 \frac{\partial}{\partial A_{ij}} \left[ \log_e(Z) \right] = \frac{1}{Z}
+\idotsint_{u_i=-\infty}^{\infty} \Delta u_i \Delta u_j \exp(-Q) \,\mathrm{d}^{n_\mathrm{u}}\mathbf{u}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="453" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img156.png"
+ ALT="$\displaystyle -2 \frac{\partial}{\partial A_{ij}} \left[ \log_e(Z) \right] = \f...
+...}^{\infty} \Delta u_i \Delta u_j \exp(-Q) \,\mathrm{d}^{n_\mathrm{u}}\mathbf{u}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">11</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+which we may identify as equalling <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img139.png"
+ ALT="$ V_{ij}$"></SPAN>:
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="v_zrelate"></A><!-- MATH
+ \begin{eqnarray}
+V_{ij} & = & -2 \frac{\partial}{\partial A_{ij}} \left[ \log_e(Z) \right] \\
+& = & -2 \frac{\partial}{\partial A_{ij}} \left[ \log_e((2\pi)^{n_\mathrm{u}/2}) - \log_e(\mathrm{Det}(\mathbf{-A})) \right] \nonumber \\
+& = & 2 \frac{\partial}{\partial A_{ij}} \left[ \log_e(\mathrm{Det}(\mathbf{-A})) \right] \nonumber
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="26" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.png"
+ ALT="$\displaystyle V_{ij}$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="134" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.png"
+ ALT="$\displaystyle -2 \frac{\partial}{\partial A_{ij}} \left[ \log_e(Z) \right]$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">12</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="325" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img158.png"
+ ALT="$\displaystyle -2 \frac{\partial}{\partial A_{ij}} \left[ \log_e((2\pi)^{n_\mathrm{u}/2}) - \log_e(\mathrm{Det}(\mathbf{-A})) \right]$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="178" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img159.png"
+ ALT="$\displaystyle 2 \frac{\partial}{\partial A_{ij}} \left[ \log_e(\mathrm{Det}(\mathbf{-A})) \right]$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+<P>
+This expression may be simplified by recalling that the determinant
+of a matrix is equal to the scalar product of any of its rows with its
+cofactors, yielding the result:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\frac{\partial}{\partial A_{ij}} \left[\mathrm{Det}(\mathbf{-A})\right] = -a_{ij}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="183" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img160.png"
+ ALT="$\displaystyle \frac{\partial}{\partial A_{ij}} \left[\mathrm{Det}(\mathbf{-A})\right] = -a_{ij}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">13</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.png"
+ ALT="$ a_{ij}$"></SPAN> is the cofactor of <SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img155.png"
+ ALT="$ A_{ij}$"></SPAN>. Substituting this into
+equation&nbsp;(<A HREF="#v_zrelate">7.12</A>) yields:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+V_{ij} = \frac{-a_{ij}}{\mathrm{Det}(\mathbf{-A})}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="123" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img162.png"
+ ALT="$\displaystyle V_{ij} = \frac{-a_{ij}}{\mathrm{Det}(\mathbf{-A})}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">14</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Recalling that the adjoint <!-- MATH
+ $\mathbf{A}^\dagger$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img163.png"
+ ALT="$ \mathbf{A}^\dagger$"></SPAN> of the Hessian matrix is the
+matrix of cofactors of its transpose, and that <!-- MATH
+ $\mathbf{A}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img129.png"
+ ALT="$ \mathbf{A}$"></SPAN> is symmetric, we
+may write:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+V_{ij} = \frac{-\mathbf{A}^\dagger}{\mathrm{Det}(\mathbf{-A})} \equiv (-\mathbf{A})^{-1}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="207" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img164.png"
+ ALT="$\displaystyle V_{ij} = \frac{-\mathbf{A}^\dagger}{\mathrm{Det}(\mathbf{-A})} \equiv (-\mathbf{A})^{-1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">15</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+which proves the result stated earlier.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3086"
+  HREF="node176.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3080"
+  HREF="node171.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3074"
+  HREF="node174.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3082"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html3084"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3087"
+  HREF="node176.html">7.5 The Correlation Matrix</A>
+<B> Up:</B> <A NAME="tex2html3081"
+  HREF="node171.html">7. The fit Command:</A>
+<B> Previous:</B> <A NAME="tex2html3075"
+  HREF="node174.html">7.3 Estimating the Error</A>
+ &nbsp; <B>  <A NAME="tex2html3083"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html3085"
+  HREF="node179.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

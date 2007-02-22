@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Plotting Datafiles</title>
+
+<link href="directing_output.html" title="Directing Where Output Goes" rel="next" />
+<link href="sect0009.html" title="Operators and Functions" rel="prev" />
+<link href="gnuplot_intro.html" title="First Steps With PyXPlot" rel="up" />
+<link rel="stylesheet" href="styles/plastex-styles.css" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0009.html" title="Operators and Functions"><img alt="Previous: Operators and Functions" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="directing_output.html" title="Directing Where Output Goes"><img alt="Next: Directing Where Output Goes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="gnuplot_intro.html">First Steps With PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Plotting Datafiles</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="plot_datafiles">2.4 Plotting Datafiles</h1>
+<p>  </p><p>In the simple example of the previous section, we plotted the first column of a datafile against the second. It is also possible to plot any arbitrary column of a datafile against any other; the syntax for doing this is: </p><p><img src="images/img-0025.png" alt="$f(x) = 3$" style="position:relative; bottom:-5px; width:68px; height:19px" class="math" /> </p><pre>
+plot 'datafile' using 3:5
+</pre><p><img src="images/img-0025.png" alt="$f(x) = 3$" style="position:relative; bottom:-5px; width:68px; height:19px" class="math" /> </p><p>This example would plot the fifth column of the file <tt class="ttfamily">datafile</tt> against the third. As mentioned above, columns in datafiles can be separated using whitespace and/or commas, which means that PyXPlot is compatible both with the format used by gnuplot, and also with comma-separated-value (CSV)<span id="a-1225432084"></span> files which many spreadsheets<span id="a-1225432788"></span> produce. Algebraic expressions may also be used in place of column numbers, for example: </p><p><img src="images/img-0025.png" alt="$f(x) = 3$" style="position:relative; bottom:-5px; width:68px; height:19px" class="math" /> </p><p><img src="images/img-0026.png" alt="$f(x) $" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> </p><p><img src="images/img-0027.png" alt="$=$" style="position:relative; bottom:2px; width:12px; height:5px" class="math" /> </p><p><img src="images/img-0028.png" alt="$f(x) =$" style="position:relative; bottom:-5px; width:53px; height:19px" class="math" /> </p><p><img src="images/img-0029.png" alt="$f(x) = $" style="position:relative; bottom:-5px; width:53px; height:19px" class="math" /> </p><p><img src="images/img-0025.png" alt="$f(x) = 3$" style="position:relative; bottom:-5px; width:68px; height:19px" class="math" /> </p><p><img src="images/img-0030.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> </p><pre>
+plot 'datafile' using (3+$1+$2):(2+$3)
+</pre><p><img src="images/img-0030.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> </p><p>In algebraic expressions, column numbers should be prefixed by dollar signs, to distinguish them from numerical constants. The example above would plot the sum of the values in the first two columns of the datafile, plus three, on the horizontal axis, against two plus the value in the third column on the vertical axis. A more advanced example might be: </p><pre>
+plot 'datafile' using 3.0:$($2)
+</pre><p><img src="images/img-0030.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> </p><p><img src="images/img-0030.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> some text </p><p>some text <img src="images/img-0030.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> </p><p>some text <img src="images/img-0030.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> some more text </p><p>This would place all of the datapoints on the line <img src="images/img-0031.png" alt="$x=3$" style="position:relative; bottom:-1px; width:44px; height:14px" class="math" />, drawing their vertical positions from the value of some column <img src="images/img-0032.png" alt="$n$" style="position:relative; bottom:-1px; width:11px; height:9px" class="math" /> in the datafile, where the value of <img src="images/img-0032.png" alt="$n$" style="position:relative; bottom:-1px; width:11px; height:9px" class="math" /> is itself read from the second column of the datafile. </p><p>Later, in Section <a href="filebackup.html">3.3.5</a>, I shall discuss how to plot rows of datafiles against one another, in horizontally arranged datafiles. </p><p>It is also possible to plot data from only a range of lines within a datafile. When PyXPlot reads a datafile, it looks for any blank lines in the file. It divides the datafile up into “data blocks”, each being separated by single blank lines. The first datablock is numbered 0, the next 1, and so on. <span id="a-1226049588"></span> </p><p>When two or more blank lines are found together, the datafile is divided up into “index blocks”. Each index block may be made up of a series of data blocks. To clarify this, a labelled example datafile is shown in figure <a href="plot_datafiles.html#sample_datafile">2.1</a>. </p><div id="sample_datafile" class="figure"><table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left"><p> <tt class="ttfamily">0.0  0.0</tt> </p></td>
+
+    
+    <td style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left"><p> Start of index 0, data block 0. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">1.0  1.0</tt> </p></td>
+
+    
+    <td style="text-align:left"></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">2.0  2.0</tt> </p></td>
+
+    
+    <td style="text-align:left"></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">3.0  3.0</tt> </p></td>
+
+    
+    <td style="text-align:left"></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"></td>
+
+    
+    <td style="text-align:left"><p> A single blank line marks the start of a new data block. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">0.0  5.0</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Start of index 0, data block 1. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">1.0  4.0</tt> </p></td>
+
+    
+    <td style="text-align:left"></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">2.0  2.0</tt> </p></td>
+
+    
+    <td style="text-align:left"></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"></td>
+
+    
+    <td style="text-align:left"><p> A double blank line marks the start of a new index. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"></td>
+
+    
+    <td style="text-align:left"><p> ... </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">0.0  1.0</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Start of index 1, data block 0. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">1.0  1.0</tt> </p></td>
+
+    
+    <td style="text-align:left"></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"></td>
+
+    
+    <td style="text-align:left"><p> A single blank line marks the start of a new data block. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">0.0  5.0</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Start of index 1, data block 1. </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-width:1px; border-bottom-color:black; border-bottom-style:solid; text-align:left"></td>
+
+    
+    <td style="border-bottom-width:1px; border-bottom-color:black; border-bottom-style:solid; text-align:left"><p> <img src="images/img-0033.png" alt="$&lt;$" style="position:relative; bottom:-1px; width:12px; height:11px" class="math" />etc<img src="images/img-0034.png" alt="$&gt;$" style="position:relative; bottom:-1px; width:12px; height:11px" class="math" /> </p></td>
+
+</tr>
+</table><b>Figure 2.1</b>: <span>An Example PyXPlot Datafile – the datafile is shown in the two left-hand columns, and commands are shown to the right.</span><p>  </p></div><p>By default, when a datafile is plotted, all data blocks in all index blocks are plotted. To plot only the data from one index block, the following syntax may be used: </p><pre>
+plot 'datafile' index 1
+</pre><p>To achieve the default behaviour of plotting all index blocks, the <tt class="ttfamily">index</tt> modifier should be followed by a negative number.<span id="a-1226305844"></span> </p><p>It is also possible to specify which lines and/or data blocks to plot from within each index. For this purpose the <tt class="ttfamily">every</tt> modifier is used, which takes six values, separated by colons:<span id="a-1226308660"></span> </p><pre>
+plot 'datafile' every a:b:c:d:e:f
+</pre><p>The values have the following meanings: </p><table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="text-align:left"><p> <img src="images/img-0035.png" alt="$a$" style="position:relative; bottom:-1px; width:9px; height:9px" class="math" /> </p></td>
+
+    
+    <td style="text-align:left"><p> Plot data only from every <img src="images/img-0036.png" alt="$a\, $" style="position:relative; bottom:-1px; width:9px; height:9px" class="math" />th line in datafile. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><img src="images/img-0037.png" alt="$b$" style="position:relative; bottom:-1px; width:8px; height:14px" class="math" /> </p></td>
+
+    
+    <td style="text-align:left"><p> Plot only data from every <img src="images/img-0038.png" alt="$b\, $" style="position:relative; bottom:-1px; width:8px; height:14px" class="math" />th block within each index block. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><img src="images/img-0039.png" alt="$c$" style="position:relative; bottom:-1px; width:8px; height:9px" class="math" /> </p></td>
+
+    
+    <td style="text-align:left"><p> Plot only from line <img src="images/img-0039.png" alt="$c$" style="position:relative; bottom:-1px; width:8px; height:9px" class="math" /> onwards within each block. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><img src="images/img-0040.png" alt="$d$" style="position:relative; bottom:-1px; width:10px; height:14px" class="math" /> </p></td>
+
+    
+    <td style="text-align:left"><p> Plot only data from block <img src="images/img-0040.png" alt="$d$" style="position:relative; bottom:-1px; width:10px; height:14px" class="math" /> onwards within each index block. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><img src="images/img-0013.png" alt="$e$" style="position:relative; bottom:-1px; width:8px; height:9px" class="math" /> </p></td>
+
+    
+    <td style="text-align:left"><p> Plot only up to the <img src="images/img-0041.png" alt="$e\, $" style="position:relative; bottom:-1px; width:8px; height:9px" class="math" />th line within each block. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><img src="images/img-0042.png" alt="$f$" style="position:relative; bottom:-4px; width:9px; height:17px" class="math" /> </p></td>
+
+    
+    <td style="text-align:left"><p> Plot only up to the <img src="images/img-0043.png" alt="$f\, $" style="position:relative; bottom:-4px; width:9px; height:17px" class="math" />th block within each index block. </p></td>
+
+</tr>
+</table><p>Any or all of these values can be omitted, and so the following would both be valid statements: </p><pre>
+plot 'datafile' index 1 every 2:3
+plot 'datafile' index 1 every :::3
+</pre><p>The first would plot only every other data point from every third data block; the second from the third line onwards within each data block. </p><p>A final modifier for selecting which parts of a datafile are plotted is <tt class="ttfamily">select</tt>, which plots only those data points which satisfy some given criterion. This is an extension of gnuplot’s original syntax, and is described in Section <a href="filebackup.html">3.3.5</a>. </p><p><br /></p></div>
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0009.html" title="Operators and Functions"><img alt="Previous: Operators and Functions" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="directing_output.html" title="Directing Where Output Goes"><img alt="Next: Directing Where Output Goes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

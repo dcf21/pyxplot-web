@@ -1,0 +1,48 @@
+<!--#set var="title" value="PyXPlot Documentation" -->
+<!--#include virtual="../head.shtml" -->
+
+
+<h2>
+<a name="manual">Manual
+</a></h2>
+<p>
+The <a href="http://www.srcf.ucam.org/pyxplot/doc/pyxplot.pdf">manual</a> can
+be downloaded (pdf, 567k), or viewed as <a href="html/pyxplot.html">html</a>.
+</p>
+
+<h2>
+<a name="screenshots">Screenshots
+</a></h2>
+<p>
+A simple plot of some trigonometric functions.
+</p>
+<p>
+<img src="examples/example1.gif">
+</p>
+<p>
+A gallery of bar charts, showing the use of multiplot.
+</p>
+<p>
+<img src="examples/example7.gif">
+</p>
+<p>
+A plot of some data and functions.  Look at the gorgeous LaTeX on those axes...
+</p>
+<p>
+<img src="examples/example3.gif">
+</p>
+<p>
+And now for something completely different...
+</p>
+<p>
+<img src="examples/example4.gif">
+</p>
+<p>
+A figure showing some of the more more artistic applications of PyXPlot.
+</p>
+<p>
+<img src="examples/example10.gif">
+</p>
+
+
+<!--#include virtual="../foot.shtml" -->

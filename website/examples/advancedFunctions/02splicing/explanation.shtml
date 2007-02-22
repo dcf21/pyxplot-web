@@ -1,0 +1,10 @@
+<p>
+Here, we demonstrate simple use of function splicing. In panel (a), we plot the
+function <i>sin(x)</i>, but specify that we only want it to be drawn in the range
+<i>-2&lt;x&lt;7</i>. In panel (b),
+we show how to define a discontinuous function similar to a top-hat function,
+also demonstrating how to set movable boundaries between the spliced components
+of functions, in this case using the variable <i>a</i> for this purpose.
+Panels (c) and (d) demonstrate a more complex example, involving the splicing
+of a two-dimensional function.
+</p>

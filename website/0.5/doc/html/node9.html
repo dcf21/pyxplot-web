@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2.1 Getting Started</TITLE>
+<META NAME="description" CONTENT="2.1 Getting Started">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node10.html">
+<LINK REL="previous" HREF="node8.html">
+<LINK REL="up" HREF="node8.html">
+<LINK REL="next" HREF="node10.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html314"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html308"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html302"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html310"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html312"
+  HREF="node69.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html315"
+  HREF="node10.html">2.2 First Plots</A>
+<B> Up:</B> <A NAME="tex2html309"
+  HREF="node8.html">2. First Steps With</A>
+<B> Previous:</B> <A NAME="tex2html303"
+  HREF="node8.html">2. First Steps With</A>
+ &nbsp; <B>  <A NAME="tex2html311"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html313"
+  HREF="node69.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00310000000000000000">
+<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN> Getting Started</A>
+</H1>
+
+<P>
+The simplest way to start PyXPlot is simply to type ``<TT>pyxplot</TT>'' at a
+shell prompt to start an interactive session. A PyXPlot commandline prompt will
+appear, into which commands can be typed. PyXPlot can be exited either by
+typing ``<TT>exit</TT>'', ``<TT>quit</TT>'', or by pressing CTRL-D.<A NAME="1977"></A><A NAME="1978"></A>
+
+<P>
+Alternatively, a list of commands to be executed may be stored in a command
+script, and executed by passing the filename of the command script to PyXPlot
+on the shell commandline, for example:<A NAME="96"></A>
+
+<P>
+<PRE>
+pyxplot foo
+</PRE>
+
+<P>
+In this case, PyXPlot would exit immediately after finishing
+executing the commands from the file <TT>foo</TT>. Several filenames may be
+passed on the commandline, to be executed in sequence:
+
+<P>
+<PRE>
+pyxplot foo1 foo2 foo3
+</PRE>
+
+<P>
+Wildcards can also be used; the following would execute all command
+scripts in the presenting working directory whose filenames end with a
+<TT>.plot</TT> suffix:
+
+<P>
+<PRE>
+pyxplot *.plot
+</PRE>
+
+<P>
+It is possible to use PyXPlot both interactively, and from command scripts, in
+the same session. One way to do this is to pass the magic filename `-' on the
+commandline:
+
+<P>
+<PRE>
+pyxplot foo1 - foo2
+</PRE>
+
+<P>
+This magic filename represents an interactive session, which
+commences after the execution of <TT>foo1</TT>, and should be terminated in the
+usual way after use, with the ``<TT>exit</TT>'' or ``<TT>quit</TT>'' commands.
+Afterwards, the command script <TT>foo2</TT> would execute.
+
+<P>
+From within an interactive session, it is possible to run a command script
+using the <TT>load</TT><A NAME="1979"></A> command:
+
+<P>
+<PRE>
+pyxplot&gt; load 'foo'
+</PRE>
+
+<P>
+This example would have the same effect as typing the contents of the
+file <TT>foo</TT> into the present session.
+
+<P>
+A related command is ``<TT>save</TT>''<A NAME="1980"></A>, which stores a history of the commands executed in the present
+interactive session to file.
+
+<P>
+All command files can include comment lines, which should begin with a hash
+character, for example:<A NAME="118"></A><A NAME="119"></A>
+
+<P>
+<PRE>
+# This is a comment
+</PRE>
+
+<P>
+Long commands may be split over multiple lines in the script by terminating
+each line of it with a backslash character, whereupon the following line will
+be appended to the end of it.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html314"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html308"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html302"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html310"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html312"
+  HREF="node69.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html315"
+  HREF="node10.html">2.2 First Plots</A>
+<B> Up:</B> <A NAME="tex2html309"
+  HREF="node8.html">2. First Steps With</A>
+<B> Previous:</B> <A NAME="tex2html303"
+  HREF="node8.html">2. First Steps With</A>
+ &nbsp; <B>  <A NAME="tex2html311"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html313"
+  HREF="node69.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford
+2006-09-09
+</ADDRESS>
+</BODY>
+</HTML>

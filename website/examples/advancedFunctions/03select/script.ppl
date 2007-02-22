@@ -1,0 +1,1 @@
+plot sin(x) select (sin($1)<0.5) w p

@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>5.21.53 xticdir</TITLE>
+<META NAME="description" CONTENT="5.21.53 xticdir">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node148.html">
+<LINK REL="previous" HREF="node146.html">
+<LINK REL="up" HREF="node73.html">
+<LINK REL="next" HREF="node148.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2682"
+  HREF="node148.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2676"
+  HREF="node73.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2670"
+  HREF="node146.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2678"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2680"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2683"
+  HREF="node148.html">5.21.54 xtics</A>
+<B> Up:</B> <A NAME="tex2html2677"
+  HREF="node73.html">5.21 set</A>
+<B> Previous:</B> <A NAME="tex2html2671"
+  HREF="node146.html">5.21.52 xrange</A>
+ &nbsp; <B>  <A NAME="tex2html2679"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2681"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0062153000000000000000">
+<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">53</SPAN> xticdir</A>
+</H2><A NAME="3369"></A>
+
+<P>
+<PRE>
+set (x|y)[&lt;axisnumber&gt;]ticdir (inward|outward|both)
+</PRE>
+
+<P>
+The `<TT>xticdir</TT>' setting can be used to set whether the ticks along the
+<SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="$ x$"></SPAN>-axis of a plot point inwards, towards the graph, as by default, or outwards,
+towards the numeric labels along the axis. They can also be set to point in both
+directions simultaneously. The syntax for this is as follows:
+
+<P>
+<PRE>
+set xticdir inward 
+set xticdir outward 
+set xticdir both
+</PRE>
+
+<P>
+The same setting can also be made on higher numbered axes, by inserting their
+numbers after the `<TT>x</TT>', for example:
+
+<P>
+<PRE>
+set x10ticdir outward
+</PRE>
+
+<P>
+Similarly, the `<TT>x</TT>' can be substituted with a `<TT>y</TT>' to set the directions of ticks
+on vertical axes:
+
+<P>
+<PRE>
+set yticdir inward
+set y10ticdir both
+</PRE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

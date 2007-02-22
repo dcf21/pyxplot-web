@@ -1,0 +1,445 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Operators and Functions</title>
+
+<link href="plot_datafiles.html" title="Plotting Datafiles" rel="next" />
+<link href="first_plots.html" title="First Plots" rel="prev" />
+<link href="gnuplot_intro.html" title="First Steps With PyXPlot" rel="up" />
+<link rel="stylesheet" href="styles/plastex-styles.css" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="first_plots.html" title="First Plots"><img alt="Previous: First Plots" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="plot_datafiles.html" title="Plotting Datafiles"><img alt="Next: Plotting Datafiles" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="gnuplot_intro.html">First Steps With PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Operators and Functions</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="a-1225641748">2.3 Operators and Functions</h1>
+<p>As has already been seen above, some functions such as <img src="images/img-0004.png" alt="$\sin (x)$" style="position:relative; bottom:-5px; width:45px; height:19px" class="math" /> are pre-defined within PyXPlot. A list of frequently-used functions which are predefined in PyXPlot is given in Table <a href="sect0009.html#functions_table">2.1</a><a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">Users with some programming experience may be interested to know that all of the functions in the core and math modules of python are recognised.</span></a>. A list of operators recognised by PyXPlot is given in Table <a href="sect0009.html#operators_table">2.2</a>. </p><div id="functions_table" class="table"><table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-left:1px solid black"><p> acos(<img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />)</p></td>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-right:1px solid black"><p> Return the arc cosine (measured in radians) of <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>asin(<img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Return the arc sine (measured in radians) of <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>atan(<img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Return the arc tangent (measured in radians) of <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>atan2(<img src="images/img-0009.png" alt="$y,x$" style="position:relative; bottom:-4px; width:28px; height:12px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Return the arc tangent (measured in radians) of <img src="images/img-0010.png" alt="$y/x$" style="position:relative; bottom:-5px; width:29px; height:19px" class="math" />. Unlike <img src="images/img-0011.png" alt="$\mathrm{atan}(y/x)$" style="position:relative; bottom:-5px; width:77px; height:19px" class="math" />, the signs of both <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" /> and <img src="images/img-0006.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" /> are considered.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>ceil(<img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Return the ceiling of <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" /> as a float. This is the smallest integral value <img src="images/img-0012.png" alt="$\geq x$" style="position:relative; bottom:-3px; width:28px; height:15px" class="math" />.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>cos(<img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Return the cosine of <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" /> (measured in radians).</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>cosh(<img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Return the hyperbolic cosine of <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>degrees(<img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Convert angle <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" /> from radians to degrees.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>exp(<img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Return <img src="images/img-0013.png" alt="$e$" style="position:relative; bottom:-1px; width:8px; height:9px" class="math" /> raised to the power of <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>fabs(<img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Return the absolute value of the float <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>floor(<img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Return the floor of <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" /> as a float. This is the largest integral value <img src="images/img-0014.png" alt="$\leq x$" style="position:relative; bottom:-3px; width:28px; height:15px" class="math" />.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>fmod(<img src="images/img-0015.png" alt="$x,y$" style="position:relative; bottom:-4px; width:28px; height:12px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Return fmod(x, y), according to platform C. x % y may differ.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>frexp(<img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Return the mantissa and exponent of <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />, as pair <img src="images/img-0016.png" alt="$(m,e)$" style="position:relative; bottom:-5px; width:44px; height:19px" class="math" />. <img src="images/img-0017.png" alt="$m$" style="position:relative; bottom:-1px; width:16px; height:9px" class="math" /> is a float and <img src="images/img-0013.png" alt="$e$" style="position:relative; bottom:-1px; width:8px; height:9px" class="math" /> is an int, such that <img src="images/img-0018.png" alt="$x = m \times 2^ e$" style="position:relative; bottom:-1px; width:88px; height:14px" class="math" />. If <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" /> is 0, <img src="images/img-0017.png" alt="$m$" style="position:relative; bottom:-1px; width:16px; height:9px" class="math" /> and <img src="images/img-0013.png" alt="$e$" style="position:relative; bottom:-1px; width:8px; height:9px" class="math" /> are both 0. Else <img src="images/img-0019.png" alt="$0.5 \leq \mathrm{abs}(m) &lt; 1.0$" style="position:relative; bottom:-5px; width:152px; height:19px" class="math" />.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>hypot(<img src="images/img-0015.png" alt="$x,y$" style="position:relative; bottom:-4px; width:28px; height:12px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Return the Euclidean distance, <img src="images/img-0020.png" alt="$\sqrt {x^2 + y^2}$" style="position:relative; bottom:-5px; width:74px; height:22px" class="math" />.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>ldexp(<img src="images/img-0021.png" alt="$x, i$" style="position:relative; bottom:-4px; width:25px; height:16px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Return <img src="images/img-0022.png" alt="$x \times 2^ i$" style="position:relative; bottom:-1px; width:47px; height:17px" class="math" />. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>log(<img src="images/img-0023.png" alt="$x[,base]$" style="position:relative; bottom:-5px; width:62px; height:19px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Return the logarithm of <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" /> to the given base. If the base not specified, returns the natural logarithm (base <img src="images/img-0013.png" alt="$e$" style="position:relative; bottom:-1px; width:8px; height:9px" class="math" />) of <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>log10(<img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Return the base 10 logarithm of <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>modf(<img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Return the fractional and integer parts of <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />. Both results carry the sign of <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />. The integer part is returned as a real.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>pow(<img src="images/img-0015.png" alt="$x,y$" style="position:relative; bottom:-4px; width:28px; height:12px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Return <img src="images/img-0024.png" alt="$x^ y$" style="position:relative; bottom:-1px; width:17px; height:14px" class="math" />.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>radians(<img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Converts angle <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" /> from degrees to radians.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>sin(<img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Return the sine of <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" /> (measured in radians).</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>sinh(<img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Return the hyperbolic sine of <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>sqrt(<img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Return the square root of <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p>tan(<img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />)</p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Return the tangent of <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" /> (measured in radians).</p></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-color:black; border-bottom-width:1px; text-align:left; border-bottom-style:solid; border-left:1px solid black"><p>tanh(<img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />)</p></td>
+
+    
+    <td style="border-bottom-color:black; border-bottom-width:1px; text-align:left; border-bottom-style:solid; border-right:1px solid black"><p> Return the hyperbolic tangent of <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />.</p></td>
+
+</tr>
+</table><b>Table 2.1</b>: <span>A list of mathematical functions which are pre-defined within PyXPlot.</span><p>  </p></div><div id="operators_table" class="table"><table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-left:1px solid black"><p> <tt class="ttfamily">+</tt> </p></td>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-right:1px solid black"><p> Algebraic sum </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="ttfamily">-</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Algebraic subtraction </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="ttfamily">*</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Algebraic multiplication </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="ttfamily">**</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Algebraic exponentiation </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="ttfamily">/</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Algebraic division </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="ttfamily">%</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Modulo operator </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="ttfamily">&lt;&lt;</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Left binary shift </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="ttfamily">&gt;&gt;</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Right binary shift </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="ttfamily">&amp;</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Binary and </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="ttfamily">|</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Binary or </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="ttfamily"><img src="images/img-0007.png" alt="\^{}" style="position:relative; bottom:10px; width:5px; height:3px" class="accent" /></tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Logical xor </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="ttfamily">&lt;</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Magnitude comparison </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="ttfamily">&gt;</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Magnitude comparison </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="ttfamily">&lt;=</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Magnitude comparison </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="ttfamily">&gt;=</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Magnitude comparison </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="ttfamily">==</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Equality comparison </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="ttfamily">!=</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Equality comparison </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="ttfamily">&lt;&gt;</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Alias for <tt class="ttfamily">!=</tt> </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="ttfamily">and</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> Logical and </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-color:black; border-bottom-width:1px; text-align:left; border-bottom-style:solid; border-left:1px solid black"><p><tt class="ttfamily">or</tt> </p></td>
+
+    
+    <td style="border-bottom-color:black; border-bottom-width:1px; text-align:left; border-bottom-style:solid; border-right:1px solid black"><p> Logical or </p></td>
+
+</tr>
+</table><b>Table 2.2</b>: <span>A list of mathematical operators which PyXPlot recognises.</span><p>  </p></div></div>
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="first_plots.html" title="First Plots"><img alt="Previous: First Plots" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="plot_datafiles.html" title="Plotting Datafiles"><img alt="Next: Plotting Datafiles" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

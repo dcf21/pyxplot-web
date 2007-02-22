@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2.8 Function Fitting</TITLE>
+<META NAME="description" CONTENT="2.8 Function Fitting">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node19.html">
+<LINK REL="previous" HREF="node17.html">
+<LINK REL="up" HREF="node10.html">
+<LINK REL="next" HREF="node19.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html649"
+  HREF="node19.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html643"
+  HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html637"
+  HREF="node17.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html645"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html647"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html650"
+  HREF="node19.html">2.9 Interactive Help</A>
+<B> Up:</B> <A NAME="tex2html644"
+  HREF="node10.html">2. First Steps With</A>
+<B> Previous:</B> <A NAME="tex2html638"
+  HREF="node17.html">2.7 Setting Axis Ranges</A>
+ &nbsp; <B>  <A NAME="tex2html646"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html648"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00380000000000000000">
+<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">8</SPAN> Function Fitting</A>
+</H1>
+<A NAME="3140"></A>
+<A NAME="fit_command"></A>
+<P>
+It is possible to fit functional forms to data points in datafiles using the
+<TT>fit</TT> command. A simple example might be:<A NAME="tex2html14"
+  HREF="footnode.html#foot3141"><SUP><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">7</SPAN></SUP></A>
+<P>
+<PRE>
+f(x) = a*x+b
+fit f() 'datafile' index 1 using 2:3 via a,b
+</PRE>
+
+<P>
+The coefficients to be varied are listed after the keyword ``<TT>via</TT>'';
+the keywords <TT>index</TT>, <TT>every</TT> and <TT>using</TT> have the same
+meanings as in the plot command.<A NAME="tex2html15"
+  HREF="footnode.html#foot3142"><SUP><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">8</SPAN></SUP></A>
+<P>
+This is useful for producing best-fit lines<A NAME="364"></A><A NAME="tex2html16"
+  HREF="footnode.html#foot3143"><SUP><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">9</SPAN></SUP></A>, and also has
+applications for estimating the gradients of datasets.  The syntax is
+essentially identical to that used by gnuplot, though a few points are worth
+noting:
+
+<P>
+
+<UL>
+<LI>When fitting a function of <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img29.png"
+ ALT="$ n$"></SPAN> variables, at least <SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.png"
+ ALT="$ n+1$"></SPAN> columns (or
+rows - see section&nbsp;<A HREF="node30.html#horizontal_datafiles">3.3</A>) must be specified after the
+<TT>using</TT> modifier. By default, the first <SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.png"
+ ALT="$ n+1$"></SPAN> columns are used. These
+correspond to the values of each of the <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img29.png"
+ ALT="$ n$"></SPAN> inputs to the function, plus
+finally the value which the output from the function is aiming to match.
+</LI>
+<LI>If an additional column is specified, then this is taken to contain the
+standard error in the value that the output from the function is aiming to
+match, and can be used to weight the datapoints which are input into the
+<TT>fit</TT> command. 
+</LI>
+<LI>By default, the starting values for each of the fitting parameters is
+<SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ 1.0$"></SPAN>. However, if the variables to be used in the fitting process are already
+set before the <TT>fit</TT> command is called, these initial values are used
+instead. For example, the following would use the initial values
+<!-- MATH
+ $\{a=100,b=50\}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="136" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img44.png"
+ ALT="$ \{a=100,b=50\}$"></SPAN>:
+<PRE>
+f(x) = a*x+b
+a = 100
+b = 50
+fit f() 'datafile' index 1 using 2:3 via a,b
+</PRE>
+
+<P>
+</LI>
+<LI>As with all numerical fitting procedures, the <TT>fit</TT> command comes
+with caveats. It uses a generic fitting algorithm, and may not work well with
+poorly behaved or ill-constrained problems. It works best when all of the
+values it is attempting to fit are of order unity. For example, in a problem
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="$ a$"></SPAN> was of order <SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.png"
+ ALT="$ 10^{10}$"></SPAN>, the following might fail:
+<PRE>
+f(x) = a*x
+fit f() 'datafile' via a
+</PRE>
+However, better results might be achieved if <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="$ a$"></SPAN> were artificially made of
+order unity, as in the following script:
+<PRE>
+f(x) = 1e10*a*x
+fit f() 'datafile' via a
+</PRE>
+
+<P>
+</LI>
+<LI>A series of ranges may be specified after the <TT>fit</TT> command, using
+the same syntax as in the <TT>plot</TT> command, as described in
+section&nbsp;<A HREF="node17.html#plot_ranges">2.7</A>. If ranges are specified then only datapoints falling
+within these ranges are used in the fitting process; the ranges refer to each
+of the <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img29.png"
+ ALT="$ n$"></SPAN> variables of the fitted function in order.
+
+<P>
+</LI>
+<LI>For those interested in the mathematical details, the workings of the
+<TT>fit</TT> command is discussed in more detail in chapter&nbsp;<A HREF="node171.html#fit_math">7</A>.
+
+<P>
+</LI>
+</UL>
+
+<P>
+At the end of the fitting process, the best-fitting values of each parameter
+are output to the terminal, along with an estimate of the uncertainty in each.
+Additionally, the Hessian, covariance and correlation matrices are output in
+both human-readable and machine-readable formats, allowing a more complete
+assessment of the probability distribution of the parameters.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html649"
+  HREF="node19.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html643"
+  HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html637"
+  HREF="node17.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html645"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html647"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html650"
+  HREF="node19.html">2.9 Interactive Help</A>
+<B> Up:</B> <A NAME="tex2html644"
+  HREF="node10.html">2. First Steps With</A>
+<B> Previous:</B> <A NAME="tex2html638"
+  HREF="node17.html">2.7 Setting Axis Ranges</A>
+ &nbsp; <B>  <A NAME="tex2html646"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html648"
+  HREF="node179.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

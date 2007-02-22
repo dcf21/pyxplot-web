@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>5.21.20 logscale</TITLE>
+<META NAME="description" CONTENT="5.21.20 logscale">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node94.html">
+<LINK REL="previous" HREF="node92.html">
+<LINK REL="up" HREF="node73.html">
+<LINK REL="next" HREF="node94.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1909"
+  HREF="node94.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1903"
+  HREF="node73.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1897"
+  HREF="node92.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1905"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1907"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1910"
+  HREF="node94.html">5.21.21 multiplot</A>
+<B> Up:</B> <A NAME="tex2html1904"
+  HREF="node73.html">5.21 set</A>
+<B> Previous:</B> <A NAME="tex2html1898"
+  HREF="node92.html">5.21.19 linewidth</A>
+ &nbsp; <B>  <A NAME="tex2html1906"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1908"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0062120000000000000000">
+<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">20</SPAN> logscale</A>
+</H2><A NAME="3315"></A>
+
+<P>
+<PRE>
+set logscale [&lt;axis&gt; ... ]
+</PRE>
+
+<P>
+The `<TT>logscale</TT>' setting causes an axis to be laid out with logarithmically,
+rather than linearly, spaced intervals.  For example, issuing the command:
+
+<P>
+<PRE>
+set log
+</PRE>
+
+<P>
+would cause all of the axes of a plot to be scaled logarithmically. Alternatively
+only one, or a selection of axes, can be set to scale logarithmically as
+follows:
+
+<P>
+<PRE>
+set log x1 y2
+</PRE>
+
+<P>
+This would cause the first <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="$ x$"></SPAN>- and second <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ y$"></SPAN>-axes to be scaled logarithmically.
+Linear scaling can be restored to all axes via:
+
+<P>
+<PRE>
+set nolog
+</PRE>
+
+<P>
+or:
+
+<P>
+<PRE>
+unset log
+</PRE>
+
+<P>
+and to only one, or a selection of axes, via:
+
+<P>
+<PRE>
+set nolog x1 y2
+</PRE>
+
+<P>
+or:
+
+<P>
+<PRE>
+unset log x1y2
+</PRE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

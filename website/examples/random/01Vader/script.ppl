@@ -1,0 +1,17 @@
+set dpi 100 
+set wid 15
+set samp 1000
+set size square
+set xrange [-1:1]
+set yrange [-1:1]
+set nokey
+set x1label 'invisible:'
+set x2label 'invisible:'
+set y1label 'invisible:'
+set y2label 'invisible:'
+m = 1000.0
+f1 = m
+a1 = 0.4
+f2 = m * 60.0/70.0
+a2 = 0.6
+p a1*sin(f1*x)+a2*sin(f2*x):a1*cos(f1*x)+a2*cos(f2*x) using 2:3

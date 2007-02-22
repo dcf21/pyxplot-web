@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+     "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+	 
+<HEAD>
+<TITLE>PyXPlot</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="http://www.srcf.ucam.org/pyxplot/css/main.css">
+</HEAD>
+
+<BODY>
+
+<HR>
+<DIV class="normal"><BR></DIV>
+<table width=100%><tr align=center><td width=25%><img src="http://www.srcf.ucam.org/pyxplot/pyxplot_logo.jpg"></td><td width=75%>
+<DIV class="heading1">
+<!--#echo var="title" -->
+</DIV>
+<DIV class="normal"><BR></DIV>
+<table rules="none" width="100%">
+<colgroup span=10 width="*">
+<tr>
+<td><a href="http://www.pyxplot.org.uk/index.shtml#home">Home</a></td>
+<td><a href="http://www.pyxplot.org.uk/index.shtml#download">Download</a></td>
+<td><a href="http://www.pyxplot.org.uk/doc/">Manual</a></td>
+<td><a href="http://www.pyxplot.org.uk/index.shtml#lists">Lists</a></td>
+<td><a href="http://www.pyxplot.org.uk/index.shtml#bugs">Bugs</a></td>
+<td><a href="http://www.pyxplot.org.uk/index.shtml#authors">Authors</a></td>
+<td><a href="http://www.pyxplot.org.uk/index.shtml#archive">Archive</a></td>
+</tr>
+</table>
+</td></tr></table>
+<hr>

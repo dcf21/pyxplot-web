@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.7 Function Splicing</TITLE>
+<META NAME="description" CONTENT="3.7 Function Splicing">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node42.html">
+<LINK REL="previous" HREF="node37.html">
+<LINK REL="up" HREF="node21.html">
+<LINK REL="next" HREF="node42.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html995"
+  HREF="node42.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html989"
+  HREF="node21.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html983"
+  HREF="node40.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html991"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html993"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html996"
+  HREF="node42.html">3.8 Datafile Interpolation: Spline</A>
+<B> Up:</B> <A NAME="tex2html990"
+  HREF="node21.html">3. Extensions of Gnuplot's</A>
+<B> Previous:</B> <A NAME="tex2html984"
+  HREF="node40.html">3.6.3 Steps</A>
+ &nbsp; <B>  <A NAME="tex2html992"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html994"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00470000000000000000"></A>
+<A NAME="1056"></A>
+<A NAME="1057"></A>
+<BR>
+<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">7</SPAN> Function Splicing
+</H1>
+
+<P>
+In PyXPlot, as in gnuplot, user-defined functions may be declared on the
+commandline:
+
+<P>
+<PRE>
+f(x) = x*sin(x)
+</PRE>
+
+<P>
+As an extension to what is possible in gnuplot, it is also possible
+to declare functions which are only valid over a certain range of argument
+space. For example, the following function would only be valid in the range
+<SPAN CLASS="MATH"><IMG
+ WIDTH="92" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.png"
+ ALT="$ -2&lt;x&lt;2$"></SPAN>:<A NAME="tex2html26"
+  HREF="footnode.html#foot3219"><SUP><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">8</SPAN></SUP></A>
+<P>
+<PRE>
+f(x)[-2:2] = x*sin(x)
+</PRE>
+
+<P>
+The following function would only be valid when all of <SPAN CLASS="MATH"><IMG
+ WIDTH="44" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img70.png"
+ ALT="$ {a,b,c}$"></SPAN> were
+in the range <SPAN CLASS="MATH"><IMG
+ WIDTH="62" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img71.png"
+ ALT="$ -1 \to 1$"></SPAN>:
+
+<P>
+<PRE>
+f(a,b,c)[-1:1][-1:1][-1:1] = a+b+c
+</PRE>
+
+<P>
+If an attempt is made to evaluate a function outside of its specified range,
+then an error results. This may be useful, for example, for plotting a
+function, but not continuing it outside some specified range. The following
+would print the function <SPAN CLASS="MATH"><IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$ \sin(x)$"></SPAN>, but only in the range <SPAN CLASS="MATH"><IMG
+ WIDTH="92" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img72.png"
+ ALT="$ -2&lt;x&lt;7$"></SPAN>:
+
+<P>
+<PRE>
+f(x)[-2:7] = sin(x)
+plot f(x)
+</PRE>
+
+<P>
+<A NAME="splice"></A> The output of this particular example can be seen in
+panel (a) of figure&nbsp;<A HREF="node170.html#fig_ex9">6.9</A>. A similar effect could also have been
+achieved with the <TT>select</TT> keyword; see section&nbsp;<A HREF="node30.html#select_modifier">3.3</A>.
+
+<P>
+It is possible to make multiple declarations of the same function, over
+different regions of argument space; if there is an overlap in the valid
+argument space for multiple definitions, then later declarations take
+precedence. This makes it possible to use different functional forms for a
+function in different parts of parameter space, and is especially useful when
+fitting a function to data, if different functional forms are to be spliced
+together to fit different regimes in the data.
+
+<P>
+Another application of function splicing is to work with functions which do not
+have analytic forms, or which are, by definition, discontinuous, such as
+top-hat functions or Heaviside functions. The following example would define
+<SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$ f(x)$"></SPAN> to be a Heaviside function:
+
+<P>
+<PRE>
+f(x) = 0
+f(x)[0:] = 1
+</PRE>
+
+<P>
+The declaration of a function similar to a top-hat function is
+demonstrated in panel (b) of figure&nbsp;<A HREF="node170.html#fig_ex9">6.9</A>. The following example would
+define <SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$ f(x)$"></SPAN> to follow the Fibonacci sequence, though it is not at all
+computationally efficient, and it is inadvisable to evaluate it for <SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img73.png"
+ ALT="$ x&gt;8$"></SPAN>:
+
+<P>
+<PRE>
+f(x) = 1
+f(x)[2:] = f(x-1) + f(x-2)
+plot [0:8] f(x)
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html995"
+  HREF="node42.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html989"
+  HREF="node21.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html983"
+  HREF="node40.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html991"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html993"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html996"
+  HREF="node42.html">3.8 Datafile Interpolation: Spline</A>
+<B> Up:</B> <A NAME="tex2html990"
+  HREF="node21.html">3. Extensions of Gnuplot's</A>
+<B> Previous:</B> <A NAME="tex2html984"
+  HREF="node40.html">3.6.3 Steps</A>
+ &nbsp; <B>  <A NAME="tex2html992"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html994"
+  HREF="node179.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

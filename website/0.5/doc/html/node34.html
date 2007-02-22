@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.6.1 Basic Operation</TITLE>
+<META NAME="description" CONTENT="3.6.1 Basic Operation">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node35.html">
+<LINK REL="previous" HREF="node33.html">
+<LINK REL="up" HREF="node33.html">
+<LINK REL="next" HREF="node35.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html690"
+  HREF="node35.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html684"
+  HREF="node33.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html678"
+  HREF="node33.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html686"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html688"
+  HREF="node69.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html691"
+  HREF="node35.html">3.6.2 Stacked Bar Charts</A>
+<B> Up:</B> <A NAME="tex2html685"
+  HREF="node33.html">3.6 Barcharts and Histograms</A>
+<B> Previous:</B> <A NAME="tex2html679"
+  HREF="node33.html">3.6 Barcharts and Histograms</A>
+ &nbsp; <B>  <A NAME="tex2html687"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html689"
+  HREF="node69.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00461000000000000000">
+<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">1</SPAN> Basic Operation</A>
+</H2>
+
+<P>
+As in gnuplot, bar charts and histograms can be produced using the
+<TT>boxes</TT><A NAME="2075"></A> plot style:
+
+<P>
+<PRE> 
+plot 'datafile' with boxes
+</PRE>
+
+<P>
+Horizontally, the interfaces between the bars are, by default, at the
+midpoints along the <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$ x$"></SPAN>-axis between the specified datapoints (see, for
+example, panel (a) of figure&nbsp;<A HREF="node60.html#fig_ex7">5.7</A>, and the script which produced it,
+in section&nbsp;<A HREF="node55.html#example7">5.7</A>).  Alternatively, the widths of the bars may be set
+using the <TT>set boxwidth</TT> command. In this case, all of the bars will be
+centred upon their specified <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$ x$"></SPAN>-coordinates, and have total widths equalling
+that specified in the <TT>set boxwidth</TT><A NAME="2076"></A> command. Consequently, there may be gaps
+between them, or they may overlap, as seen in panel (c) of
+figure&nbsp;<A HREF="node60.html#fig_ex7">5.7</A>.
+
+<P>
+Having set a fixed box width, the default automatic width mode may be restored
+either with the <TT>unset boxwidth</TT> command, or by setting the boxwidth to
+a negative width.
+
+<P>
+As a third alternative, it is also possible to specify different widths for
+each bar manually, in a column of the input datafile. For this, the
+<TT>wboxes</TT><A NAME="2077"></A> plot style
+should be used:
+
+<P>
+<PRE> 
+plot 'datafile' using 1:2:3 with wboxes
+</PRE>
+
+<P>
+This plot style expects three columns of data to be specified: the
+<SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$ x$"></SPAN>- and <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$ y$"></SPAN>-coordinates of each bar, and the width in the third column. Panel
+(b) of figure&nbsp;<A HREF="node60.html#fig_ex7">5.7</A> shows an example of this plot style in use.
+
+<P>
+By default, the bars all originate from the line <SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img48.png"
+ ALT="$ y=0$"></SPAN>, as is normally wanted
+for a histogram. However, should it be desired for the bars to start from a
+different vertical point, that may be achieved with the <TT>set boxfrom</TT>
+command, for example:
+
+<P>
+<PRE> 
+set boxfrom 5
+</PRE>
+
+<P>
+All of the bars would then originate from the line <SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img49.png"
+ ALT="$ y=5$"></SPAN>. Panel (f)
+of figure&nbsp;<A HREF="node60.html#fig_ex6">5.6</A> shows the kind of effect that is achieved; for
+comparison, panel (b) of the same figure shows the same bar chart with the
+boxes starting from their default position at <SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img48.png"
+ ALT="$ y=0$"></SPAN>.
+
+<P>
+The bars may be filled using the <TT>with fillcolour</TT><A NAME="2078"></A> modifier, followed by the name of a
+colour:
+
+<P>
+<PRE> 
+plot 'datafile' with boxes fillcolour blue
+plot 'datafile' with boxes fc 4
+</PRE>
+
+<P>
+Additionally, the word `<TT>auto</TT>' may be used in place of a
+colour name, to fill the bar with the line colour being used to draw it. Panels
+(c) and (d) of figure&nbsp;<A HREF="node60.html#fig_ex7">5.7</A> demonstrate the use of filled bars.
+
+<P>
+Finally, the <TT>impulses</TT> plot style, as in gnuplot, produces bars of zero
+width; see panel (e) of figure&nbsp;<A HREF="node60.html#fig_ex6">5.6</A> for an example.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html690"
+  HREF="node35.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html684"
+  HREF="node33.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html678"
+  HREF="node33.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html686"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html688"
+  HREF="node69.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html691"
+  HREF="node35.html">3.6.2 Stacked Bar Charts</A>
+<B> Up:</B> <A NAME="tex2html685"
+  HREF="node33.html">3.6 Barcharts and Histograms</A>
+<B> Previous:</B> <A NAME="tex2html679"
+  HREF="node33.html">3.6 Barcharts and Histograms</A>
+ &nbsp; <B>  <A NAME="tex2html687"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html689"
+  HREF="node69.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford
+2006-09-09
+</ADDRESS>
+</BODY>
+</HTML>

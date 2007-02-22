@@ -1,0 +1,166 @@
+BODY {
+   margin: 0;
+	padding: 0em;
+	border: 0;
+}
+ 
+.topbox{
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background: #ffe8ba;
+    border-top: #d2d2d2 solid 1px;
+    border-bottom: #d2d2d2 solid 1px;
+    top: 0;
+    left: 0;
+    right: 0;
+	 bottom: 0;
+    padding-right:20px;
+    padding-left:20px;
+    padding-top:0;
+    padding-bottom:0;
+    color: #555555;     
+	 min-height: 150px;
+}
+
+.topbox h1 {
+   text-align: center;
+}
+
+.topbox h2 {
+   text-align: center;
+}
+
+.topbox img {
+	border: 0;
+}
+
+.sidebox{
+	 position: absolute;
+	 width: 10em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 20px;
+    /*margin-bottom: 2000px;*/
+    background: #ffe8ba;
+    border-left: #d2d2d2 solid 1px;
+    border-right: #d2d2d2 solid 1px;
+    border-top: #d2d2d2 solid 1px;
+    border-bottom: #d2d2d2 solid 1px;
+	 padding-right: 20px;
+	 padding-left: 20px;
+	 padding-bottom: 0;
+    color: #747474;     
+}
+
+.sidebox a {
+   color: #5050ff;
+}
+
+.sidebox a:visited {
+   color: #705070;
+}
+
+   
+
+/*
+.sidebox h1 {
+font: 24pt "Times New Roman";
+color: black;
+text-align: center;
+font-weight: bold;
+line-height: 30pt;}
+*/
+
+.topbox img {
+   float:left;
+}
+
+.menu {
+  text-align: right;
+}
+.topbox A{
+  color: #747474;
+}
+
+.topbox h1 A{
+  text-decoration:none;
+}
+
+.topbox h2 A{
+  text-decoration:none;
+  color: #ffc600;
+}
+
+
+/*
+.topbox h1 {
+  font-size: 4em;
+  margin-top: 5px;
+  margin-bottom: 0;
+  margin-left:10px;
+}
+
+.topbox h2 {
+  margin-top:0;
+  color: #ffc600;
+  font-size:1em;
+}
+
+*/
+
+.logo {
+  float: left;
+}
+
+.main {
+  position: static;
+  display: inline-block;
+  /* margin-left: 350pt; */
+  margin-top: 1em;
+  margin-left: 15em;
+  margin-right: 1em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  padding-left: 1em;
+  color: #555555;
+  background: #ffeecc;
+  width: auto
+}
+/*
+.main h1 {
+  font-size:1.4em;
+  color: #555555;
+}    
+*/
+
+
+.main A {
+  color: #0000ff;
+}
+
+.warning {
+	color: #000000;
+	background: #ff5555;
+	border: #d2d2d2 solid 1px;
+	padding: 1em;
+	margin: 1em;
+	margin-right: 2em;
+	padding-right: 1em;
+}
+
+
+.bottombox{
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background: #ffe8ba;
+    border-top: #d2d2d2 solid 1px;
+    border-bottom: #d2d2d2 solid 1px;
+    padding-right:20px;
+    padding-left:20px;
+    padding-top:0;
+    padding-bottom:0;
+    color: #555555;     
+	 clear: both;
+}

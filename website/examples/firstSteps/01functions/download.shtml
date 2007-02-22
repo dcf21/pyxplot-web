@@ -1,0 +1,7 @@
+			<div class="exampledownload">
+				<a href="<!--#echo var="file"-->"><!--#echo var="extension"--></a>
+				<div class="exampledownloadsize">
+					<!--#include virtual="size.cgi" -->
+				</div>
+			</div>
+

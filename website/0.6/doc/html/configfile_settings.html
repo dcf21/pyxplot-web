@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Configuration Options: settings section</title>
+
+<link href="configfile_terminal.html" title="Configuration Options: &lt;tt class=&quot;ttfamily&quot;&gt;terminal&lt;/tt&gt; section" rel="next" />
+<link href="sect0025.html" title="An Example Configuration File" rel="prev" />
+<link href="sect0024.html" title="Configuring PyXPlot" rel="up" />
+<link rel="stylesheet" href="styles/plastex-styles.css" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0025.html" title="An Example Configuration File"><img alt="Previous: An Example Configuration File" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0024.html" title="Configuring PyXPlot"><img alt="Up: Configuring PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="configfile_terminal.html" title="Configuration Options: terminal section"><img alt="Next: Configuration Options: terminal section" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0024.html">Configuring PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Configuration Options: <tt class="ttfamily">settings</tt> section</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="configfile_settings">4.4 Configuration Options: <tt class="ttfamily">settings</tt> section</h1>
+<p>  </p><p>The following table provides a brief description of the function of each of the parameters in the <tt class="ttfamily">settings</tt> section of the above configuration file, with a list of possible values for each: </p><table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="text-align:left"><p> <tt class="ttfamily">ASPECT</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any floating-point number. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set size ratio</tt><span id="a-1228313556"></span> </p><p>Sets the aspect ratio of plots. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">AUTOASPECT</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> ON / OFF </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set size ratio</tt> </p><p>Sets whether plots have the automatic aspect ratio, which is the golden ratio. If <tt class="ttfamily">ON</tt>, then the above setting is ignored. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">AXESCOLOUR</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any recognised colour. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set axescolour</tt><span id="a-1228310196"></span> </p><p>Sets the colour of axis lines and ticks. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">BACKUP</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> ON / OFF </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set backup</tt><span id="a-1228494772"></span> </p><p>When this switch is set to ‘ON’, and plot output is being directed to file, attempts to write output over existing files cause a copy of the existing file to be preserved, with a tilda after its old filename (see Section <a href="filebackup.html">3.3.5</a>). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">BAR</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any floating-point number. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set bar</tt><span id="a-1228491636"></span> </p><p>Sets the horizontal length of the lines drawn at the end of errorbars, in units of their default length. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">BOXFROM</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any floating-point number. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set boxfrom</tt><span id="a-1228495188"></span> </p><p>Sets the horizontal point from which bars on bar charts appear to emanate. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">BOXWIDTH</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any floating-point number. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set boxwidth</tt><span id="a-1228491700"></span> </p><p>Sets the default width of boxes on barcharts. If negative, then the boxes have automatically selected widths, so that the interfaces between bars occur at the horizontal midpoints between the specified datapoints. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">COLOUR</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> ON / OFF </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set terminal</tt><span id="a-1228463732"></span> </p><p>Sets whether output should be colour (ON) or monochrome (OFF). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">DATASTYLE</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any plot style. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set data style</tt><span id="a-1228489492"></span> </p><p>Sets the plot style used by default when plotting datafiles. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">DISPLAY</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> ON / OFF </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set display</tt><span id="a-1228494804"></span> </p><p>When set to ‘ON’, no output is produced until the <tt class="ttfamily">set display</tt> command is issued. This is useful for speeding up scripts which produce large multiplots; see Section <a href="set_display.html">3.5.1</a> for more details. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">DPI</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any floating-point number. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set dpi</tt><span id="a-1228103284"></span> </p><p>Sets the sampling quality used, in dots per inch, when output is sent to a bitmapped terminal (the jpeg/gif/png terminals). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">FONTSIZE</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Integers in the range <img src="images/img-0082.png" alt="$-4 \to 5$" style="position:relative; bottom:-1px; width:60px; height:14px" class="math" />. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set fontsize</tt><span id="a-1228460052"></span> </p><p>Sets the fontsize of text, varying between L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X’s <tt class="ttfamily">tiny</tt> (-4) and <tt class="ttfamily">Huge</tt> (5). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">FUNCSTYLE</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any plot style. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set function style</tt><span id="a-1228492276"></span> </p><p>Sets the plot style used by default when plotting functions. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">GRID</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> ON / OFF </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set grid</tt><span id="a-1228574388"></span> </p><p>Sets whether a grid should be displayed on plots. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">GRIDAXISX</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any integer. </p><p><b class="bfseries">Analogous set command:</b> None </p><p>Sets the default <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis to which gridlines should attach, if the <tt class="ttfamily">set grid</tt> command is called without specifying which axes to use. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">GRIDAXISY</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any integer. </p><p><b class="bfseries">Analogous set command:</b> None </p><p>Sets the default <img src="images/img-0006.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-axis to which gridlines should attach, if the <tt class="ttfamily">set grid</tt> command is called without specifying which axes to use. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">GRIDMAJCOLOUR</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any recognised colour. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set gridmajcolour</tt><span id="a-1228571988"></span> </p><p>Sets the colour of major grid lines. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">GRIDMINCOLOUR</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any recognised colour. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set gridmincolour</tt><span id="a-1229008276"></span> </p><p>Sets the colour of minor grid lines. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">KEY</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> ON / OFF </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set key</tt><span id="a-1229005396"></span> </p><p>Sets whether a legend is displayed on plots. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">KEYCOLUMNS</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any integer <img src="images/img-0083.png" alt="$&gt;0$" style="position:relative; bottom:-1px; width:28px; height:14px" class="math" />. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set keycolumns</tt><span id="a-1228612468"></span> </p><p>Sets the number of columns into which the legends of plots should be divided. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">KEYPOS</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> “TOP RIGHT”, “TOP MIDDLE”, “TOP LEFT”, “MIDDLE RIGHT”, “MIDDLE MIDDLE”, “MIDDLE LEFT”, “BOTTOM RIGHT”, “BOTTOM MIDDLE”, “BOTTOM LEFT”, “BELOW”, “OUTSIDE”. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set key</tt><span id="a-1229005108"></span> </p><p>Sets where the legend should appear on plots. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">KEY_XOFF</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any floating-point number. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set key</tt><span id="a-1228977780"></span> </p><p>Sets the horizontal offset, in approximate graph-widths, that should be applied to the legend, relative to its default position, as set by <tt class="ttfamily">KEYPOS</tt>. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">KEY_YOFF</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any floating-point number. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set key</tt><span id="a-1228102036"></span> </p><p>Sets the vertical offset, in approximate graph-heights, that should be applied to the legend, relative to its default position, as set by <tt class="ttfamily">KEYPOS</tt>. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">LANDSCAPE</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> ON / OFF </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set terminal</tt><span id="a-1228980180"></span> </p><p>Sets whether output is in portrait orientation (OFF), or landscape orientation (ON). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">LINEWIDTH</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any floating-point number. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set linewidth</tt><span id="a-1228953524"></span> </p><p>Sets the width of lines on plots, as a multiple of the default. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">MULTIPLOT</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> ON / OFF </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set multiplot</tt><span id="a-1228573364"></span> </p><p>Sets whether multiplot mode is on or off. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">ORIGINX</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any floating point number. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set origin</tt><span id="a-1228954388"></span> </p><p>Sets the horizontal position, in centimetres, of the default origin of plots on the page. Most useful when multiplotting many plots. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">ORIGINY</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any floating point number. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set origin</tt><span id="a-1228925940"></span> </p><p>Sets the vertical position, in centimetres, of the default origin of plots on the page. Most useful when multiplotting many plots. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">OUTPUT</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any string. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set output</tt><span id="a-1229005972"></span> </p><p>Sets the output filename for plots. If blank, the default filename of pyxplot.foo is used, where ‘foo’ is an extension appropriate for the file format. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">PAPER_HEIGHT</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any floating-point number. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set papersize</tt><span id="a-1228926868"></span> </p><p>Sets the height of the papersize for postscript output in millimetres. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">PAPER_WIDTH</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any floating-point number. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set papersize</tt><span id="a-1228885460"></span> </p><p>Sets the width of the papersize for postscript output in millimetres. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">POINTLINEWIDTH</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any floating-point number. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set pointlinewidth</tt> / <tt class="ttfamily">plot with pointlinewidth</tt><span id="a-1228979732"></span> </p><p>Sets the linewidth used to stroke points onto plots, as a multiple of the default. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">POINTSIZE</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any floating-point number. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set pointsize</tt> / <tt class="ttfamily">plot with pointsize</tt><span id="a-1228883860"></span> </p><p>Sets the sizes of points on plots, as a multiple of their normal sizes. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">SAMPLES</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any integer. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set samples</tt><span id="a-1228860564"></span> </p><p>Sets the number of samples (datapoints) to be evaluated along the <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis when plotting a function. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">TERMINVERT</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> ON / OFF </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set terminal</tt><span id="a-1228884692"></span> </p><p>Sets whether jpeg/gif/png output has normal colours (OFF), or inverted colours (ON). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">TERMTRANSPARENT</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> ON / OFF </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set terminal</tt><span id="a-1228860148"></span> </p><p>Sets whether jpeg/gif/png output has transparent background (ON), or solid background (OFF). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">TERMTYPE</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> <tt class="ttfamily">X11_singlewindow</tt>, </p><p><tt class="ttfamily">X11_multiwindow</tt>, <tt class="ttfamily">X11_persist</tt>, <tt class="ttfamily">PS</tt>, <tt class="ttfamily">EPS</tt>, <tt class="ttfamily">PNG</tt>, <tt class="ttfamily">JPG</tt>, <tt class="ttfamily">GIF</tt> </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set terminal</tt><span id="a-1228496276"></span> </p><p>Sets whether output is sent to the screen or to disk, and, in the latter case, the format of the output. The <tt class="ttfamily">ps</tt> option should be used for both encapsulated and normal postscript output; these are distinguished using the <tt class="ttfamily">ENHANCED</tt> option, above. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">TEXTCOLOUR</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any recognised colour. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set textcolour</tt><span id="a-1228882548"></span> </p><p>Sets the colour of all text output. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">TEXTHALIGN</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> <tt class="ttfamily">Left</tt>, <tt class="ttfamily">Centre</tt>, <tt class="ttfamily">Right</tt> </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set texthalign</tt><span id="a-1228829076"></span> </p><p>Sets the horizontal alignment of text labels to their given reference positions. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">TEXTVALIGN</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> <tt class="ttfamily">Top</tt>, <tt class="ttfamily">Centre</tt>, <tt class="ttfamily">Bottom</tt> </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set textvalign</tt><span id="a-1228831700"></span> </p><p>Sets the vertical alignment of text labels to their given reference positions. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">TITLE</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any string. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set title</tt><span id="a-1228803668"></span> </p><p>Sets the title to appear at the top of the plot. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">TIT_XOFF</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any floating point number. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set title</tt> </p><p>Sets the horizontal offset of the title of the plot from its default central location. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">TIT_YOFF</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any floating point number. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set title</tt> </p><p>Sets the vertical offset of the title of the plot from its default location at the top of the plot. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">WIDTH</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bfseries">Possible values:</b> Any floating-point number. </p><p><b class="bfseries">Analogous set command:</b> <tt class="ttfamily">set width</tt> / <tt class="ttfamily">set size</tt><span id="a-1228858644"></span><span id="a-1228859892"></span> </p><p>Sets the width of plots in centimetres. </p></td>
+
+</tr>
+</table></div>
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0025.html" title="An Example Configuration File"><img alt="Previous: An Example Configuration File" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0024.html" title="Configuring PyXPlot"><img alt="Up: Configuring PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="configfile_terminal.html" title="Configuration Options: terminal section"><img alt="Next: Configuration Options: terminal section" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>5.21.45 terminal</TITLE>
+<META NAME="description" CONTENT="5.21.45 terminal">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node140.html">
+<LINK REL="previous" HREF="node117.html">
+<LINK REL="up" HREF="node73.html">
+<LINK REL="next" HREF="node122.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2302"
+  HREF="node122.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2296"
+  HREF="node73.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2290"
+  HREF="node120.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2298"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2300"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2303"
+  HREF="node122.html">5.21.45.1 colour</A>
+<B> Up:</B> <A NAME="tex2html2297"
+  HREF="node73.html">5.21 set</A>
+<B> Previous:</B> <A NAME="tex2html2291"
+  HREF="node120.html">5.21.44.3 square</A>
+ &nbsp; <B>  <A NAME="tex2html2299"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2301"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0062145000000000000000">
+<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN> terminal</A>
+</H2><A NAME="3343"></A>
+
+<P>
+<PRE>
+set terminal &lt;terminal type&gt; [&lt;option&gt; ... ]
+</PRE>
+
+<P>
+Syntax:
+
+<P>
+<PRE>
+set terminal { X11_singlewindow | X11_multiwindow | X11_persist | 
+               postscript | eps | gif | png | jpg } 
+             { colour | color | monochrome } 
+             { portrait | landscape } 
+             { invert | noinvert } 
+             { transparent | solid }
+</PRE>
+
+<P>
+The <TT>set terminal</TT> command controls the graphic format in which PyXPlot
+should output plots, for example setting whether it should output plots to files
+or display them in a window on the screen. Various options can also be set
+within many of the graphic formats which PyXPlot supports using this command.
+
+<P>
+The following graphic formats are supported:  <TT>X11_singlewindow</TT>,
+<TT>X11_multiwindow</TT>, <TT>postscript</TT>, <TT>gif</TT>, <TT>jpeg</TT>, <TT>png</TT>. The
+select one of these formats, simply type the name of the desired format after
+the <TT>set terminal</TT> command. To obtain more details on each, see the
+subtopics below.
+
+<P>
+The following settings, which can also be typed following the <TT>set terminal</TT>
+command, are used to change the options within some of these graphic formats:
+<TT>colour</TT>, <TT>monochrome</TT>, <TT>enhanced</TT>, <TT>noenhanced</TT>, <TT>
+portrait</TT>, <TT>landscape</TT>, <TT>invert</TT>, <TT>noinvert</TT>, <TT>transparent</TT>,
+<TT>solid</TT>. Details of each of these can be found below.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html2304"
+  HREF="node122.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">1</SPAN> colour</A>
+<LI><A NAME="tex2html2305"
+  HREF="node123.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">2</SPAN> color</A>
+<LI><A NAME="tex2html2306"
+  HREF="node124.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">3</SPAN> enhanced</A>
+<LI><A NAME="tex2html2307"
+  HREF="node125.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">4</SPAN> eps</A>
+<LI><A NAME="tex2html2308"
+  HREF="node126.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">5</SPAN> gif</A>
+<LI><A NAME="tex2html2309"
+  HREF="node127.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">6</SPAN> invert</A>
+<LI><A NAME="tex2html2310"
+  HREF="node128.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">7</SPAN> jpeg</A>
+<LI><A NAME="tex2html2311"
+  HREF="node129.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">8</SPAN> landscape</A>
+<LI><A NAME="tex2html2312"
+  HREF="node130.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">9</SPAN> monochrome</A>
+<LI><A NAME="tex2html2313"
+  HREF="node131.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">10</SPAN> noenhanced</A>
+<LI><A NAME="tex2html2314"
+  HREF="node132.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">11</SPAN> noinvert</A>
+<LI><A NAME="tex2html2315"
+  HREF="node133.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">12</SPAN> png</A>
+<LI><A NAME="tex2html2316"
+  HREF="node134.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">13</SPAN> portrait</A>
+<LI><A NAME="tex2html2317"
+  HREF="node135.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">14</SPAN> postscript</A>
+<LI><A NAME="tex2html2318"
+  HREF="node136.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">15</SPAN> solid</A>
+<LI><A NAME="tex2html2319"
+  HREF="node137.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">16</SPAN> transparent</A>
+<LI><A NAME="tex2html2320"
+  HREF="node138.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">17</SPAN> X11_multiwindow</A>
+<LI><A NAME="tex2html2321"
+  HREF="node139.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">18</SPAN> X11_singlewindow</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

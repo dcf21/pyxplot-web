@@ -1,0 +1,50 @@
+<!--#set var="title" value="Examples" -->
+<!--#include virtual="inc/header.shtml" -->
+		
+		The following examples are available:
+
+		<h3>
+		   <a href="firstSteps/">First steps in PyXPlot</a>
+		</h3>
+		<ul>
+         <li><a href="firstSteps/01functions/">Basic function plotting</a></li>
+         <li><a href="firstSteps/02datafiles/">Basic datafile plotting</a></li>
+         <li><a href="firstSteps/03multiAxis/">Plotting on multiple axes</a></li>
+			<li><a href="firstSteps/04multiplot/">Multiplot mode</a></li>
+			<li><a href="firstSteps/05linkaxis/">Linked axes</a></li>
+		</ul>
+
+		<h3>
+			<a href="barCharts/">Bar charts</a>
+		</h3>
+		<ul>
+         <li><a href="barCharts/01styles/">Boxes, impulses and steps</a></li>
+         <li><a href="barCharts/02widths/">Bar charts and histograms</a></li>
+		</ul>
+
+		<h3>
+			<a href="advancedFunctions/">Advanced function plotting</a>
+		</h3>
+
+		<ul>
+		   <li><a href="advancedFunctions/01fitting/">Fitting functions to data</a></li>
+			<li><a href="advancedFunctions/02splicing/">Splicing functions</a></li>
+		</ul>
+
+		<h3>
+			<a href="otherApplications/">Other applications of PyXPlot</a>
+		</h3>
+		<ul>
+			<li><a href="otherApplications/01noAxes/">Plots without axes</a></li>
+			<li><a href="otherApplications/02arrows/">The arrows plotting style</a></li>
+			<li><a href="otherApplications/03presentations/">Equations for presentations</a></li>
+		</ul>
+
+		<h3>
+			<a href="random/">Random cool stuff</a>
+		</h3>
+		<ul>
+			<li><a href="random/01Vader/">Darth Vader</a></li>
+			<li><a href="random/02Hello/">Hello World</a></li>
+		</ul>
+<!--#include virtual="inc/footer.shtml" -->

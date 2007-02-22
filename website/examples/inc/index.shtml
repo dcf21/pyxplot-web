@@ -1,0 +1,42 @@
+<!--#include virtual="heading.shtml" -->
+<!--#include virtual="../title.shtml" -->
+<!--#include virtual="inc/header.shtml" -->
+		
+<!-- Float with example downloads in -->
+		<div class="exampledownloads">
+			Download
+			<!--#include virtual="downloads.cgi" -->
+		</div>
+
+		<h2>
+         <!--#echo var="heading" -->
+      </h2>
+
+		<div class="examplebuttons">
+			<!--#include virtual="navbuttons.cgi" -->
+		</div>
+
+
+		<div class="exampleimage" style="width: <!--#include virtual="width" -->px">
+		   <img src="output.png" alt="Graphical output from PyXPlot" />
+			<!-- style="float: right; border: #000 10px solid; margin-right: 2em;" /> -->
+		</div>
+		
+		<div class="examplescript">
+		<h3>
+			Script
+		</h3>
+		<pre><!--#include virtual="script.ppl" --></pre>
+		</div>
+
+		<div class="exampletext">
+		<h3>
+			Notes
+		</h3>
+      <p>
+			<!--#include virtual="explanation.shtml" -->
+      </p>
+		</div>
+
+<!--#include virtual="inc/footer.shtml" -->
+

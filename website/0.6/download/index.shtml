@@ -1,0 +1,20 @@
+<!--#set var="title" value="Download" -->
+<!--#include virtual="inc/header.shtml" -->
+
+
+<!--#include virtual="inc/warning.shtml" -->
+
+<p>
+	The latest alpha release of PyXPlot is version 0.6.2 and is available
+	to download as 
+	<ul>
+	   <li> A gzipped <a href="../../src/pyxplot_0.6.2.tar.gz">tar file</a> (548kB) 
+		<li> A <a href="../../src/pyxplot_0.6.2-1_all.deb">Debian Package</a> (1.8MB)
+	</ul>
+</p>
+
+<p>
+   An <a href="../../archive.shtml">archive</a> of old PyXPlot releases is also available.
+</p>
+
+<!--#include virtual="inc/footer.shtml" -->

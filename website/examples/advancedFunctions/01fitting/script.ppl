@@ -1,0 +1,18 @@
+# Functional forms to be fitted -- parabolas
+f(x) = a * x**2 + b * x + c
+g(x) = d * x**2 + e * x + f
+
+# First of all, fit data neglecting errorbars
+fit f() 'example8.dat' via a,b,c
+# Now fit data taking errorbars into account
+fit g() 'example8.dat' using 1:2:3 via d,e,f
+# Now fit a spline through the data
+spline h() 'example8.dat'
+
+# Plot the resulting functions
+set width 12
+set key top xcentre
+set xlabel 'x'
+set ylabel 'y'
+plot [0:8][0:5] \
+     'example8.dat' with yerrorbars, f(x), g(x), h(x)

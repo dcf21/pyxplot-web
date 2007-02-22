@@ -1,0 +1,6 @@
+In this example, the multiplot environment is used to produce a gallery of
+several plots. The <tt>set origin</tt> command is used to position each one. We
+also make use of multiple <i>y</i>-axes in the top-left plot: the functions
+sin(<i>x</i>) and sin<sup>2</sup>(<i>x</i>) are plotted together, but on different
+<i>y</i> scales.
+

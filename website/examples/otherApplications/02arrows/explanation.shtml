@@ -1,0 +1,7 @@
+Here, we show two possible applications of the <tt>arrows</tt> plot style.
+ In the left panel, we plot a map of fluid flow around a vortex core, the
+dotted circle showing the outline of the vortex core. The source for this is a
+datafile mapping fluid velocity as a function of position. In the right panel,
+we show a series of datapoints before and after some correction factor is
+applied to them, showing how the data are moved in the process. 
+

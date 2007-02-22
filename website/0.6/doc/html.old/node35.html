@@ -1,0 +1,353 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.5 Multi-plotting</TITLE>
+<META NAME="description" CONTENT="3.5 Multi-plotting">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node37.html">
+<LINK REL="previous" HREF="node31.html">
+<LINK REL="up" HREF="node21.html">
+<LINK REL="next" HREF="node36.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html911"
+  HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html905"
+  HREF="node21.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html899"
+  HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html907"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html909"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html912"
+  HREF="node36.html">3.5.1 Speed Issues</A>
+<B> Up:</B> <A NAME="tex2html906"
+  HREF="node21.html">3. Extensions of Gnuplot's</A>
+<B> Previous:</B> <A NAME="tex2html900"
+  HREF="node34.html">3.4.3 Gridlines</A>
+ &nbsp; <B>  <A NAME="tex2html908"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html910"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00450000000000000000"></A>
+<A NAME="multiplot"></A>
+<A NAME="920"></A>
+<BR>
+<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">5</SPAN> Multi-plotting
+</H1>
+
+<P>
+Gnuplot has a plotting mode called ``multiplot'' which allows many graphs to be
+plotted together, and display side-by-side. The basic syntax of this mode is
+reproduced in PyXPlot, but is hugely extended.
+
+<P>
+The mode is entered by the command ``<TT>set multiplot</TT>''. This can be compared
+to taking a blank sheet of paper on which to place plots. Plots are then placed
+on that sheet of paper, as usual, with the <TT>plot</TT> command. The position
+of each plot is set using the <TT>set origin</TT> command, which takes a
+comma-separated <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$ x,y$"></SPAN> coordinate pair, measured in centimetres. The following,
+for example, would plot a graph of <SPAN CLASS="MATH"><IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$ \sin(x)$"></SPAN> to the left of a plot of
+<SPAN CLASS="MATH"><IMG
+ WIDTH="51" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.png"
+ ALT="$ \cos(x)$"></SPAN>:<A NAME="3196"></A>
+
+<P>
+<PRE> 
+set multiplot
+plot sin(x)
+set origin 10,0
+plot cos(x)
+</PRE>
+
+<P>
+The multiplot page may subsequently be cleared with the <TT>clear</TT> command,
+and multiplot mode may be left using the ``<TT>set nomultiplot</TT>''
+command.<A NAME="3197"></A>
+
+<P>
+At this point we move beyond the syntax available in gnuplot. Each time a plot
+is placed on the multiplot page in PyXPlot, it is allocated a reference number,
+which is output to the terminal. Reference numbers count up from zero each time
+the multiplot page is cleared. A number of commands exist for modifying plots
+after they have been placed on the page, selecting them by making reference to
+their reference numbers.
+
+<P>
+Plots may be removed from the page with the <TT>delete</TT> command, and
+restored with the <TT>undelete</TT> command:<A NAME="3198"></A><A NAME="3199"></A>
+
+<P>
+<PRE> 
+delete &lt;number&gt;
+undelete &lt;number&gt;
+</PRE>
+
+<P>
+The reference numbers of deleted plots are not reused until the page is
+cleared, as they may always be restored with the <TT>undelete</TT> command;
+plots which have been deleted simply do not appear.
+
+<P>
+Plots may also be moved with the <TT>move</TT> command. For example, the
+following would move plot 23 to position (8,8) measured in centimetres:
+
+<P>
+<PRE> 
+move 23 8,8
+</PRE>
+
+<P>
+The axes of plots can be linked together, in such a way that they always share
+a common scale. This can be useful when placing plots next to one another,
+firstly, of course, if it is of intrinsic interest to ensure that they are on a
+common scale, but also because the two plots then do not both need their own
+axis labels, and space can be saved by one sharing the labels from the other.
+In PyXPlot, an axis which borrows its scale and labels from another is called a
+``linked axis''.
+
+<P>
+Such axes are declared by setting the label of the linked axis to a magic
+string such as ``<TT>linkaxis 0</TT>''<A NAME="linked_axes"></A><A NAME="942"></A><A NAME="943"></A>. This magic label would set the axis to borrow
+its scale from an axis from plot zero. The general syntax is
+``<TT>linkaxis</TT> <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img29.png"
+ ALT="$ n$"></SPAN> <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.png"
+ ALT="$ m$"></SPAN>'', where <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img29.png"
+ ALT="$ n$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.png"
+ ALT="$ m$"></SPAN> are two integers, separated by
+a comma or whitespace. The first, <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img29.png"
+ ALT="$ n$"></SPAN>, indicates the plot from which to borrow
+an axis; the second, <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.png"
+ ALT="$ m$"></SPAN>, indicates whether to borrow the scale of axis <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img62.png"
+ ALT="$ x1$"></SPAN>,
+<SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$ x2$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img49.png"
+ ALT="$ x3$"></SPAN>, etc. By default, <SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img63.png"
+ ALT="$ m=1$"></SPAN>. The linking will fail, and a warning
+result, if an attempt is made to link to an axis which doesn't exist.
+
+<P>
+The specimen plots in section&nbsp;<A HREF="node170.html#gallery">6.12</A> show numerous examples of the use
+of linked axes.
+
+<P>
+In multiplot mode, the <TT>replot</TT> command can be used to modify the last
+plot added to the page. For example, the following would change the title of
+the latest plot to ``foo'', and add a plot of <SPAN CLASS="MATH"><IMG
+ WIDTH="51" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.png"
+ ALT="$ \cos(x)$"></SPAN> to it:
+
+<P>
+<PRE> 
+set title 'foo'
+replot cos(x)
+</PRE>
+
+<P>
+Additionally, it is possible to modify any plot on the page, by first selecting
+it with the <TT>edit</TT> command. Subsequently, the <TT>replot</TT> will act
+upon the selected plot. The following example would produce two plots, and then
+change the colour of the text on the first:
+
+<P>
+<PRE> 
+set multiplot
+plot sin(x)
+set origin 10,0
+plot cos(x)
+edit 0        # Select the first plot ...
+set textcolour red
+replot        # ... and replot it.
+</PRE>
+
+<P>
+The <TT>edit</TT> command can also be used to view the settings which are
+applied to any plot on the multiplot page - after executing ``edit 0'', the
+<TT>show</TT> command will show the settings applied to plot zero.
+
+<P>
+When a new plot is added to the page, <TT>replot</TT> always switches to act
+upon this most recent plot.
+
+<P>
+<A NAME="text_command"></A><A NAME="3200"></A> In addition to
+placing plots on the multiplot page, text labels may also be inserted
+independently of any plots, using the <TT>text</TT> command. This has the
+following syntax:
+
+<P>
+<PRE> 
+text 'This is some text' x,y
+</PRE>
+
+<P>
+In this case, the string ``This is some text'' would be rendered at position
+<SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ (x,y)$"></SPAN> on the multiplot. As with the <TT>set label</TT> command, a rotation
+angle may optionally be specified to rotate text labels through any given
+angle, measured in degrees counter-clockwise, for example:
+
+<P>
+<PRE> 
+text 'This is some text' x,y rotation r
+</PRE>
+
+<P>
+The commands <TT>set textcolour</TT>, <TT>set
+texthalign</TT> and <TT>set textvalign</TT>, which have already been described in
+the context in the <TT>set label</TT> command, can also be used to set the
+colour and alignment of text produced with the <TT>text</TT> command.<A NAME="3201"></A><A NAME="3202"></A><A NAME="3203"></A>. A useful application of this is to
+produce centred headings at the top of multiplots.
+
+<P>
+As with plots, each text item has a unique identification number, and can be
+moved around, deleted or undeleted with the <TT>delete</TT>, <TT>undelete</TT>
+and <TT>move</TT> commands.
+<A NAME="3204"></A>
+<A NAME="3205"></A>
+
+<P>
+It should be noted that the <TT>text</TT> command can also be used outside of
+the multiplot environment, to render a single piece of short text instead of a
+graph. This has limited applications, but one is illustrated in
+section&nbsp;<A HREF="node162.html#powerpoint_example">6.4</A>.
+
+<P>
+<A NAME="arrows"></A> <A NAME="3206"></A> Arrows may also be
+placed on multiplot pages, independently of any plots, using the <TT>arrow</TT>
+command, which has syntax:
+
+<P>
+<PRE> 
+arrow from x,y to x,y
+</PRE>
+
+<P>
+As above, arrows receive unique identification numbers, and can be deleted and
+undeleted.
+
+<P>
+The <TT>arrow</TT> command may be followed by the `<TT>with</TT>' keyword to
+specify to style of the arrow. The style keywords which are accepted are
+identical to those accepted by the <TT>set arrow</TT> command (see
+section&nbsp;<A HREF="node32.html#set_arrow">3.4.1</A>). For example:
+
+<P>
+<PRE> 
+arrow from x1,y1 to x2,y2 \
+with twohead colour red
+</PRE>
+
+<P>
+<A NAME="3207"></A><A NAME="991"></A>
+<A NAME="3208"></A> The <TT>refresh</TT> command is
+rather similar to the <TT>replot</TT> command, but produces an exact copy of
+the latest display. This can be useful, for example, after changing the
+terminal type, to produce a second copy of a multiplot page in a different
+format. But the crucial difference between this command and <TT>replot</TT> is
+that it doesn't replot anything. Indeed, there could be only textual items and
+arrows on the present multiplot page, and no graphs <SPAN  CLASS="textit">to</SPAN> replot.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html913"
+  HREF="node36.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">1</SPAN> Speed Issues</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html911"
+  HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html905"
+  HREF="node21.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html899"
+  HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html907"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html909"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html912"
+  HREF="node36.html">3.5.1 Speed Issues</A>
+<B> Up:</B> <A NAME="tex2html906"
+  HREF="node21.html">3. Extensions of Gnuplot's</A>
+<B> Previous:</B> <A NAME="tex2html900"
+  HREF="node34.html">3.4.3 Gridlines</A>
+ &nbsp; <B>  <A NAME="tex2html908"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html910"
+  HREF="node179.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

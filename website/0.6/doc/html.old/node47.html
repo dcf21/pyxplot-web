@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>4.2 Configuration Files</TITLE>
+<META NAME="description" CONTENT="4.2 Configuration Files">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node48.html">
+<LINK REL="previous" HREF="node46.html">
+<LINK REL="up" HREF="node45.html">
+<LINK REL="next" HREF="node48.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1083"
+  HREF="node48.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1077"
+  HREF="node45.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1071"
+  HREF="node46.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1079"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1081"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1084"
+  HREF="node48.html">4.3 An Example Configuration</A>
+<B> Up:</B> <A NAME="tex2html1078"
+  HREF="node45.html">4. Configuring PyXPlot</A>
+<B> Previous:</B> <A NAME="tex2html1072"
+  HREF="node46.html">4.1 Overview</A>
+ &nbsp; <B>  <A NAME="tex2html1080"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1082"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00520000000000000000"></A>
+<A NAME="config_files"></A>
+<BR>
+<SPAN CLASS="arabic">4</SPAN>.<SPAN CLASS="arabic">2</SPAN> Configuration Files
+</H1>
+
+<P>
+PyXPlot can also be configured by means of a configuration file, with filename
+<TT>.pyxplotrc</TT>, which is scanned once upon startup. This file may be
+placed either in the user's current working directory, or in his home
+directory. In the event of both files existing, settings in the former override
+those in the latter; in the event of neither file existing, PyXPlot uses its
+own default settings.
+
+<P>
+The configuration file should take the form of a series of sections, each
+headed by a section heading enclosed in square brackets, and followed by
+variables declared using the format:
+
+<P>
+<PRE> 
+OUTPUT=foo.eps
+</PRE>
+
+<P>
+The following sections are used, although they do not all need to be present in
+any given file:
+
+<P>
+
+<UL>
+<LI><TT>settings</TT> - contains parameters similar to those which can be set with the <TT>set</TT> command. A complete list is given in section&nbsp;<A HREF="node49.html#configfile_settings">4.4</A> below.
+</LI>
+<LI><TT>terminal</TT> - contains parameters for altering the behaviour and appearance of PyXPlot's interactive terminal. A complete list is given in section&nbsp;<A HREF="node50.html#configfile_terminal">4.5</A>.
+</LI>
+<LI><TT>variables</TT> - contains variable definitions. Any variables defined in this section will be predefined in the PyXPlot mathematical environment upon startup.
+</LI>
+<LI><TT>functions</TT> - contains function definitions.
+</LI>
+<LI><TT>colours</TT> - contains a variable `<TT>palette</TT>', which should be set to a comma-separated list of the sequence of colours in the palette used to plot datasets. The first will be called colour 1 in PyXPlot, the second colour 2, etc. A list of recognised colour names is given in section&nbsp;<A HREF="node51.html#colour_names">4.6</A>.
+</LI>
+<LI><TT>latex</TT> - contains a variable `<TT>preamble</TT>', which is prefixed to the beginning of all <SPAN CLASS="logo,LaTeX">L<SUP><SMALL>A</SMALL></SUP>T<SMALL>E</SMALL>X</SPAN> text items, before the <TT>&#92;begin{document}</TT> statement. It can be used to define custom <SPAN CLASS="logo,LaTeX">L<SUP><SMALL>A</SMALL></SUP>T<SMALL>E</SMALL>X</SPAN> macros, or to include packages using the <TT>&#92;includepackage{}</TT> command.
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1083"
+  HREF="node48.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1077"
+  HREF="node45.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1071"
+  HREF="node46.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1079"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1081"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1084"
+  HREF="node48.html">4.3 An Example Configuration</A>
+<B> Up:</B> <A NAME="tex2html1078"
+  HREF="node45.html">4. Configuring PyXPlot</A>
+<B> Previous:</B> <A NAME="tex2html1072"
+  HREF="node46.html">4.1 Overview</A>
+ &nbsp; <B>  <A NAME="tex2html1080"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1082"
+  HREF="node179.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

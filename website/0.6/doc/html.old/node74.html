@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>5.21.1 arrow</TITLE>
+<META NAME="description" CONTENT="5.21.1 arrow">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node75.html">
+<LINK REL="previous" HREF="node73.html">
+<LINK REL="up" HREF="node73.html">
+<LINK REL="next" HREF="node75.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1643"
+  HREF="node75.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1637"
+  HREF="node73.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1631"
+  HREF="node73.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1639"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1641"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1644"
+  HREF="node75.html">5.21.2 autoscale</A>
+<B> Up:</B> <A NAME="tex2html1638"
+  HREF="node73.html">5.21 set</A>
+<B> Previous:</B> <A NAME="tex2html1632"
+  HREF="node73.html">5.21 set</A>
+ &nbsp; <B>  <A NAME="tex2html1640"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1642"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION006211000000000000000">
+<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">1</SPAN> arrow</A>
+</H2><A NAME="3295"></A>
+
+<P>
+<PRE>
+set arrow &lt;arrow number&gt; from [&lt;co-ordinate&gt;] &lt;x&gt;,
+          [&lt;co-ordinate&gt;] &lt;y&gt; to [&lt;co-ordinate&gt;] &lt;x&gt;,
+          [&lt;co-ordinate&gt;] &lt;y&gt; [with &lt;modifier&gt; ]
+</PRE>
+
+<P>
+<PRE>
+&lt;co-ordinate&gt; = ( first | second | screen | graph |
+                  axis&lt;axisnumber&gt;                  )
+</PRE>
+
+<P>
+The <TT>set arrow</TT> command causes an arrow to be added to a plot. An example of
+its syntax would be:
+
+<P>
+<PRE>
+set arrow 1 from 0,0 to 1,1
+</PRE>
+
+<P>
+which would cause an arrow to be drawn between the points 0,0 and 1,1, as
+measured on the <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="$ x$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ y$"></SPAN> axes.  The tag `1' immediately following the <TT>
+arrow</TT> keyword is an identification number, and allows the arrow to be removed
+later with the <TT>unset arrow</TT> command.  By default the co-ordinates are
+measured relative to the first <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="$ x$"></SPAN>- and <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ y$"></SPAN>-axes, but can be specified in a range
+of coordinate systems. These are specified as follows:
+
+<P>
+<PRE>
+set arrow 1 from first 0, second 0 to axis3 1, axis4 1
+</PRE>
+
+<P>
+As can be seen, the name of the desired coordinate system precedes the position
+value in that coordinate system. The coordinate system <TT>first</TT>, the default,
+measures the graph using the <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="$ x$"></SPAN>- and <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ y$"></SPAN>-axes. <TT>second</TT> uses the <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$ x2$"></SPAN>- and
+<SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img41.png"
+ ALT="$ y2$"></SPAN>-axes.  <TT>screen</TT> and <TT>graph</TT> both measure in centimetres from the
+origin of the graph.  The syntax <TT>axisn</TT> may also be
+used, to use the <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img29.png"
+ ALT="$ n$"></SPAN> th <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="$ x$"></SPAN>- or <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ y$"></SPAN>-axis; for example, <TT>axis3</TT> above.
+
+<P>
+The <TT>set arrow</TT> command can be followed by the keyword `<TT>with</TT>', to
+specify the style of the arrow. For example, the specifiers `<TT>nohead</TT>', `<TT>
+head</TT>' and `<TT>twohead</TT>', after the keyword `<TT>with</TT>', can be used to make
+arrows with no arrow heads, normal arrow heads, or two arrow heads. `<TT>twoway</TT>'
+is an alias for `<TT>twohead</TT>'.  Normal line type modifiers can also be used
+here.  For example:
+
+<P>
+<PRE>
+set arrow 2 from first 0, second 2.5 to axis3 0,
+             axis4 2.5 with colour blue nohead
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1643"
+  HREF="node75.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1637"
+  HREF="node73.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1631"
+  HREF="node73.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1639"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1641"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1644"
+  HREF="node75.html">5.21.2 autoscale</A>
+<B> Up:</B> <A NAME="tex2html1638"
+  HREF="node73.html">5.21 set</A>
+<B> Previous:</B> <A NAME="tex2html1632"
+  HREF="node73.html">5.21 set</A>
+ &nbsp; <B>  <A NAME="tex2html1640"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1642"
+  HREF="node179.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

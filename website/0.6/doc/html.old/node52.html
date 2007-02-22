@@ -1,0 +1,298 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>5. Command Reference</TITLE>
+<META NAME="description" CONTENT="5. Command Reference">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node158.html">
+<LINK REL="previous" HREF="node45.html">
+<LINK REL="up" HREF="pyxplot.html">
+<LINK REL="next" HREF="node53.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1151"
+  HREF="node53.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1145"
+  HREF="pyxplot.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1139"
+  HREF="node51.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1147"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1149"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1152"
+  HREF="node53.html">5.1 arrow</A>
+<B> Up:</B> <A NAME="tex2html1146"
+  HREF="pyxplot.html">PyXPlot Users' Guide</A>
+<B> Previous:</B> <A NAME="tex2html1140"
+  HREF="node51.html">4.6 Recognised Colour Names</A>
+ &nbsp; <B>  <A NAME="tex2html1148"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1150"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00600000000000000000">
+<SPAN CLASS="arabic">5</SPAN>. Command Reference</A>
+</H1>
+
+<P>
+This chapter contains a list of all the commands that PyXPlot understands,
+listed by alphabetical order.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1153"
+  HREF="node53.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">1</SPAN> arrow</A>
+<LI><A NAME="tex2html1154"
+  HREF="node54.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">2</SPAN> cd</A>
+<LI><A NAME="tex2html1155"
+  HREF="node55.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">3</SPAN> clear</A>
+<LI><A NAME="tex2html1156"
+  HREF="node56.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">4</SPAN> delete</A>
+<LI><A NAME="tex2html1157"
+  HREF="node57.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">5</SPAN> edit</A>
+<LI><A NAME="tex2html1158"
+  HREF="node58.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">6</SPAN> exit</A>
+<LI><A NAME="tex2html1159"
+  HREF="node59.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">7</SPAN> fit</A>
+<LI><A NAME="tex2html1160"
+  HREF="node60.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">8</SPAN> help</A>
+<LI><A NAME="tex2html1161"
+  HREF="node61.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">9</SPAN> load</A>
+<LI><A NAME="tex2html1162"
+  HREF="node62.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">10</SPAN> move</A>
+<LI><A NAME="tex2html1163"
+  HREF="node63.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">11</SPAN> !</A>
+<LI><A NAME="tex2html1164"
+  HREF="node64.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">12</SPAN> plot</A>
+<LI><A NAME="tex2html1165"
+  HREF="node65.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">13</SPAN> print</A>
+<LI><A NAME="tex2html1166"
+  HREF="node66.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">14</SPAN> pwd</A>
+<LI><A NAME="tex2html1167"
+  HREF="node67.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">15</SPAN> ?</A>
+<LI><A NAME="tex2html1168"
+  HREF="node68.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">16</SPAN> quit</A>
+<LI><A NAME="tex2html1169"
+  HREF="node69.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">17</SPAN> refresh</A>
+<LI><A NAME="tex2html1170"
+  HREF="node70.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">18</SPAN> replot</A>
+<LI><A NAME="tex2html1171"
+  HREF="node71.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">19</SPAN> reset</A>
+<LI><A NAME="tex2html1172"
+  HREF="node72.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">20</SPAN> save</A>
+<LI><A NAME="tex2html1173"
+  HREF="node73.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN> set</A>
+<UL>
+<LI><A NAME="tex2html1174"
+  HREF="node74.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">1</SPAN> arrow</A>
+<LI><A NAME="tex2html1175"
+  HREF="node75.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">2</SPAN> autoscale</A>
+<LI><A NAME="tex2html1176"
+  HREF="node76.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">3</SPAN> axescolour</A>
+<LI><A NAME="tex2html1177"
+  HREF="node77.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">4</SPAN> axis</A>
+<LI><A NAME="tex2html1178"
+  HREF="node78.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">5</SPAN> backup</A>
+<LI><A NAME="tex2html1179"
+  HREF="node79.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">6</SPAN> bar</A>
+<LI><A NAME="tex2html1180"
+  HREF="node80.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">7</SPAN> boxfrom</A>
+<LI><A NAME="tex2html1181"
+  HREF="node81.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">8</SPAN> boxwidth</A>
+<LI><A NAME="tex2html1182"
+  HREF="node82.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">9</SPAN> display</A>
+<LI><A NAME="tex2html1183"
+  HREF="node83.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">10</SPAN> dpi</A>
+<LI><A NAME="tex2html1184"
+  HREF="node84.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">11</SPAN> fontsize</A>
+<LI><A NAME="tex2html1185"
+  HREF="node85.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">12</SPAN> grid</A>
+<LI><A NAME="tex2html1186"
+  HREF="node86.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">13</SPAN> gridmajcolour</A>
+<LI><A NAME="tex2html1187"
+  HREF="node87.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">14</SPAN> gridmincolour</A>
+<LI><A NAME="tex2html1188"
+  HREF="node88.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">15</SPAN> key</A>
+<LI><A NAME="tex2html1189"
+  HREF="node89.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">16</SPAN> keycolumns</A>
+<LI><A NAME="tex2html1190"
+  HREF="node90.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">17</SPAN> label</A>
+<LI><A NAME="tex2html1191"
+  HREF="node91.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">18</SPAN> linestyle</A>
+<LI><A NAME="tex2html1192"
+  HREF="node92.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">19</SPAN> linewidth</A>
+<LI><A NAME="tex2html1193"
+  HREF="node93.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">20</SPAN> logscale</A>
+<LI><A NAME="tex2html1194"
+  HREF="node94.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">21</SPAN> multiplot</A>
+<LI><A NAME="tex2html1195"
+  HREF="node95.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">22</SPAN> mxtics</A>
+<LI><A NAME="tex2html1196"
+  HREF="node96.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">23</SPAN> mytics</A>
+<LI><A NAME="tex2html1197"
+  HREF="node97.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">24</SPAN> noarrow</A>
+<LI><A NAME="tex2html1198"
+  HREF="node98.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">25</SPAN> noaxis</A>
+<LI><A NAME="tex2html1199"
+  HREF="node99.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">26</SPAN> nobackup</A>
+<LI><A NAME="tex2html1200"
+  HREF="node100.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">27</SPAN> nodisplay</A>
+<LI><A NAME="tex2html1201"
+  HREF="node101.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">28</SPAN> nogrid</A>
+<LI><A NAME="tex2html1202"
+  HREF="node102.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">29</SPAN> nokey</A>
+<LI><A NAME="tex2html1203"
+  HREF="node103.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">30</SPAN> nolabel</A>
+<LI><A NAME="tex2html1204"
+  HREF="node104.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">31</SPAN> nolinestyle</A>
+<LI><A NAME="tex2html1205"
+  HREF="node105.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">32</SPAN> nologscale</A>
+<LI><A NAME="tex2html1206"
+  HREF="node106.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">33</SPAN> nomultiplot</A>
+<LI><A NAME="tex2html1207"
+  HREF="node107.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">34</SPAN> notitle</A>
+<LI><A NAME="tex2html1208"
+  HREF="node108.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">35</SPAN> noxtics</A>
+<LI><A NAME="tex2html1209"
+  HREF="node109.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">36</SPAN> noytics</A>
+<LI><A NAME="tex2html1210"
+  HREF="node110.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">37</SPAN> origin</A>
+<LI><A NAME="tex2html1211"
+  HREF="node111.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">38</SPAN> output</A>
+<LI><A NAME="tex2html1212"
+  HREF="node112.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">39</SPAN> palette</A>
+<LI><A NAME="tex2html1213"
+  HREF="node113.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">40</SPAN> papersize</A>
+<LI><A NAME="tex2html1214"
+  HREF="node114.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">41</SPAN> pointlinewidth</A>
+<LI><A NAME="tex2html1215"
+  HREF="node115.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">42</SPAN> pointsize</A>
+<LI><A NAME="tex2html1216"
+  HREF="node116.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">43</SPAN> samples</A>
+<LI><A NAME="tex2html1217"
+  HREF="node117.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">44</SPAN> size</A>
+<UL>
+<LI><A NAME="tex2html1218"
+  HREF="node118.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">44</SPAN>.<SPAN CLASS="arabic">1</SPAN> noratio</A>
+<LI><A NAME="tex2html1219"
+  HREF="node119.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">44</SPAN>.<SPAN CLASS="arabic">2</SPAN> ratio</A>
+<LI><A NAME="tex2html1220"
+  HREF="node120.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">44</SPAN>.<SPAN CLASS="arabic">3</SPAN> square</A>
+</UL>
+<LI><A NAME="tex2html1221"
+  HREF="node121.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN> terminal</A>
+<UL>
+<LI><A NAME="tex2html1222"
+  HREF="node122.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">1</SPAN> colour</A>
+<LI><A NAME="tex2html1223"
+  HREF="node123.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">2</SPAN> color</A>
+<LI><A NAME="tex2html1224"
+  HREF="node124.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">3</SPAN> enhanced</A>
+<LI><A NAME="tex2html1225"
+  HREF="node125.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">4</SPAN> eps</A>
+<LI><A NAME="tex2html1226"
+  HREF="node126.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">5</SPAN> gif</A>
+<LI><A NAME="tex2html1227"
+  HREF="node127.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">6</SPAN> invert</A>
+<LI><A NAME="tex2html1228"
+  HREF="node128.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">7</SPAN> jpeg</A>
+<LI><A NAME="tex2html1229"
+  HREF="node129.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">8</SPAN> landscape</A>
+<LI><A NAME="tex2html1230"
+  HREF="node130.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">9</SPAN> monochrome</A>
+<LI><A NAME="tex2html1231"
+  HREF="node131.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">10</SPAN> noenhanced</A>
+<LI><A NAME="tex2html1232"
+  HREF="node132.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">11</SPAN> noinvert</A>
+<LI><A NAME="tex2html1233"
+  HREF="node133.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">12</SPAN> png</A>
+<LI><A NAME="tex2html1234"
+  HREF="node134.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">13</SPAN> portrait</A>
+<LI><A NAME="tex2html1235"
+  HREF="node135.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">14</SPAN> postscript</A>
+<LI><A NAME="tex2html1236"
+  HREF="node136.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">15</SPAN> solid</A>
+<LI><A NAME="tex2html1237"
+  HREF="node137.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">16</SPAN> transparent</A>
+<LI><A NAME="tex2html1238"
+  HREF="node138.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">17</SPAN> X11_multiwindow</A>
+<LI><A NAME="tex2html1239"
+  HREF="node139.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">45</SPAN>.<SPAN CLASS="arabic">18</SPAN> X11_singlewindow</A>
+</UL>
+<LI><A NAME="tex2html1240"
+  HREF="node140.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">46</SPAN> textcolour</A>
+<LI><A NAME="tex2html1241"
+  HREF="node141.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">47</SPAN> texthalign</A>
+<LI><A NAME="tex2html1242"
+  HREF="node142.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">48</SPAN> textvalign</A>
+<LI><A NAME="tex2html1243"
+  HREF="node143.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">49</SPAN> title</A>
+<LI><A NAME="tex2html1244"
+  HREF="node144.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">50</SPAN> width</A>
+<LI><A NAME="tex2html1245"
+  HREF="node145.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">51</SPAN> xlabel</A>
+<LI><A NAME="tex2html1246"
+  HREF="node146.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">52</SPAN> xrange</A>
+<LI><A NAME="tex2html1247"
+  HREF="node147.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">53</SPAN> xticdir</A>
+<LI><A NAME="tex2html1248"
+  HREF="node148.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">54</SPAN> xtics</A>
+<LI><A NAME="tex2html1249"
+  HREF="node149.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">55</SPAN> ylabel</A>
+<LI><A NAME="tex2html1250"
+  HREF="node150.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">56</SPAN> yrange</A>
+<LI><A NAME="tex2html1251"
+  HREF="node151.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">57</SPAN> yticdir</A>
+<LI><A NAME="tex2html1252"
+  HREF="node152.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">58</SPAN> ytics</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1253"
+  HREF="node153.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">22</SPAN> show</A>
+<LI><A NAME="tex2html1254"
+  HREF="node154.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">23</SPAN> spline</A>
+<LI><A NAME="tex2html1255"
+  HREF="node155.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">24</SPAN> text</A>
+<LI><A NAME="tex2html1256"
+  HREF="node156.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">25</SPAN> undelete</A>
+<LI><A NAME="tex2html1257"
+  HREF="node157.html"><SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">26</SPAN> unset</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,49 @@
+set multiplot
+set nodisplay
+width=9
+gold_ratio = 1/((1+sqrt(5))/2)
+set width width
+
+# Plot 0 (bottom left)
+f(x)[-2:7] = sin(x)
+
+set xlabel 'x'
+set ylabel 'y'
+set xrange [-10.9:10.9]
+set label 1 '(a)' -9,0.8
+plot f(x)
+
+# Plot 1 (bottom right)
+g(x,a)      =  a/10
+g(x,a)[:-a] = -a/10
+g(x,a)[a:]  = -a/10
+
+set ylabel 'linkaxis 0'
+set label 1 '(b)' -9,0.8
+set origin width,0
+set key bottom xcentre
+plot g(x,2), g(x,5), g(x,7)
+
+# Plot 2 (top left)
+h(x,y) = 1
+h(x,y)[1:][1:] = x*y
+h(x,y)[1:][:1] = x
+h(x,y)[:1][1:] = y
+
+set nokey
+set xlabel 'linkaxis 0'
+set ylabel 'y'
+set yrange [0.1:25]
+set label 1 '(c)' -9,22
+set origin 0,width*gold_ratio
+plot h(x,cos(x)+1) w l
+
+# Plot 3 (top right)
+set xlabel 'linkaxis 1'
+set ylabel 'linkaxis 2'
+set label 1 '(d)' -9,22
+set origin width,width*gold_ratio
+plot h(x,min(tan(x),10)) w l
+
+set display
+refresh

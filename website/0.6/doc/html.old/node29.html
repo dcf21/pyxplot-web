@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.3.4 Colour Plotting</TITLE>
+<META NAME="description" CONTENT="3.3.4 Colour Plotting">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node30.html">
+<LINK REL="previous" HREF="node28.html">
+<LINK REL="up" HREF="node25.html">
+<LINK REL="next" HREF="node30.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html828"
+  HREF="node30.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html822"
+  HREF="node25.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html816"
+  HREF="node28.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html824"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html826"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html829"
+  HREF="node30.html">3.3.5 General Extensions Beyond</A>
+<B> Up:</B> <A NAME="tex2html823"
+  HREF="node25.html">3.3 Plotting</A>
+<B> Previous:</B> <A NAME="tex2html817"
+  HREF="node28.html">3.3.3 The linestyle keyword</A>
+ &nbsp; <B>  <A NAME="tex2html825"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html827"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00434000000000000000">
+<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">4</SPAN> Colour Plotting</A>
+</H2>
+
+<P>
+<A NAME="681"></A> In the <TT>with</TT>
+clause of the plot command, the modifier <TT>colour</TT>, (abbrev.
+`<TT>c</TT>'), allows the colour of each dataset to be manually selected. It
+should be followed either by an integer, to set a colour from the present
+palette, or by a colour name. A list of valid colour names is given in
+section&nbsp;<A HREF="node51.html#colour_names">4.6</A>. For example:
+
+<P>
+<PRE>
+plot sin(x) with c 5
+plot sin(x) with colour blue
+</PRE>
+
+<P>
+The <TT>colour</TT> modifier can also be used when defining linestyles.
+
+<P>
+<A NAME="689"></A><A NAME="3170"></A> PyXPlot has a palette of colours which it assigns
+sequentially to datasets when colours are not manually assigned. This is also
+the palette to which integers passed to <TT>set colour</TT> refer - the `5'
+above, for example. It may be set using the <TT>set palette</TT> command, which
+differs in syntax from gnuplot. It should be followed by a comma-separated list
+of colours, for example:
+
+<P>
+<PRE>
+set palette red,green,blue
+</PRE>
+
+<P>
+Another way of setting the palette, in a configuration file, is described in
+section&nbsp;<A HREF="node47.html#config_files">4.2</A>; a list of valid colour names is given in
+section&nbsp;<A HREF="node51.html#colour_names">4.6</A>.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html828"
+  HREF="node30.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html822"
+  HREF="node25.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html816"
+  HREF="node28.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html824"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html826"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html829"
+  HREF="node30.html">3.3.5 General Extensions Beyond</A>
+<B> Up:</B> <A NAME="tex2html823"
+  HREF="node25.html">3.3 Plotting</A>
+<B> Previous:</B> <A NAME="tex2html817"
+  HREF="node28.html">3.3.3 The linestyle keyword</A>
+ &nbsp; <B>  <A NAME="tex2html825"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html827"
+  HREF="node179.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,293 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.2 Formatting and Terminals</TITLE>
+<META NAME="description" CONTENT="3.2 Formatting and Terminals">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node25.html">
+<LINK REL="previous" HREF="node22.html">
+<LINK REL="up" HREF="node21.html">
+<LINK REL="next" HREF="node24.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html740"
+  HREF="node24.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html734"
+  HREF="node21.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html728"
+  HREF="node22.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html736"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html738"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html741"
+  HREF="node24.html">3.2.1 Paper Sizes</A>
+<B> Up:</B> <A NAME="tex2html735"
+  HREF="node21.html">3. Extensions of Gnuplot's</A>
+<B> Previous:</B> <A NAME="tex2html729"
+  HREF="node22.html">3.1 The Commandline Environment</A>
+ &nbsp; <B>  <A NAME="tex2html737"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html739"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00420000000000000000"></A>
+<A NAME="set_terminal2"></A>
+<BR>
+<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">2</SPAN> Formatting and Terminals
+</H1>
+
+<P>
+In this section I shall outline the new and modified commands for controlling
+the graphic output format of PyXPlot.
+
+<P>
+The widths of plots may be set be means of two commands - <TT>set
+size</TT><A NAME="3146"></A> and <TT>set
+width</TT><A NAME="3147"></A>. Both are
+equivalent, and should be followed by the desired width measured in
+centimetres, for example:
+
+<P>
+<PRE>
+set width 20
+</PRE>
+
+<P>
+The <TT>set size</TT> command can also be used to set the aspect ratio of plots
+by following it with the keyword <TT>ratio</TT><A NAME="3148"></A>. The number which follows should be
+the desired ratio of height to width. The following, for example would produce
+plots three times as high as they are wide:
+
+<P>
+<PRE>
+set size ratio 3.0
+</PRE>
+
+<P>
+The command <TT>set size noratio</TT> returns to PyXPlot's default aspect ratio
+of the golden ratio, i.e. <!-- MATH
+ $\left((1+\sqrt{5})/2\right)^{-1}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="123" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img46.png"
+ ALT="$ \left((1+\sqrt{5})/2\right)^{-1}$"></SPAN>, which matches
+that of a sheet of A4 paper<A NAME="tex2html20"
+  HREF="footnode.html#foot468"><SUP><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN></SUP></A>.  The special command <TT>set size
+square</TT><A NAME="3149"></A> sets
+the aspect ratio to unity.
+
+<P>
+In section&nbsp;<A HREF="node15.html#directing_output">2.5</A> I described how the <TT>set terminal</TT>
+command<A NAME="3150"></A> can be used
+to produce plots in various graphic formats. In addition, I here describe how
+the way in which plots are displayed on the screen can be changed. The default
+terminal, <TT>X11</TT>, is used to send output to screen.
+
+<P>
+By default, each time a new plot is generated, if the previous plot is still
+open on the display, the X11 terminal will replace it with the new one, thus
+keeping only one plot window open at a time. This has the advantage that the
+desktop does not become flooded with plot windows.
+
+<P>
+If this behaviour is not desired, old plots can be kept visible when plotting
+further graphs by using the the <TT>X11_multiwindow</TT> terminal: <A NAME="476"></A><A NAME="477"></A>
+
+<P>
+<PRE> 
+set terminal X11_singlewindow
+plot sin(x)
+plot cos(x)  &lt;-- first plot window disappears
+</PRE>
+
+<P>
+c.f.:
+
+<P>
+<PRE> 
+set terminal X11_multiwindow
+plot sin(x)
+plot cos(x)  &lt;-- first plot window remains
+</PRE>
+
+<P>
+As an additional option, the <TT>X11_persist</TT> terminal keeps plot windows
+open after PyXPlot exits; the above two terminals close all plot windows upon
+exit.
+
+<P>
+<A NAME="3151"></A> As there are many
+changes to the options accepted by the <TT>set terminal</TT> command in
+comparison to those understood by gnuplot, the syntax of PyXPlot's command is
+given below, followed by a list of the recognised settings:
+
+<P>
+<PRE> 
+set terminal { X11_singlewindow | X11_multiwindow | X11_persist |
+               postscript | eps | gif | png | jpg }
+             { colour | color | monochrome }
+             { portrait | landscape }
+             { invert | noinvert }
+             { transparent | solid }
+</PRE>
+
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=85><TT>x11_singlewindow</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>Displays plots on the screen (in X11 windows, using ghostview). Each time a new plot is generated, it replaces the old one, preventing the desktop from becoming flooded with old plots.<A NAME="tex2html21"
+  HREF="footnode.html#foot491"><SUP><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">4</SPAN></SUP></A> <SPAN  CLASS="textbf">[default when running interactively; see below]</SPAN></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=85><TT>x11_multiwindow</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>As above, but each new plot appears in a new window, and the old plots remain visible. As many plots as may be desired can be left on the desktop simultaneously.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=85><TT>x11_persist</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>As above, but plot windows remain open after PyXPlot closes.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=85><TT>postscript</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>Sends output to a postscript file. The filename for this file should be set using <TT>set output</TT>. <SPAN  CLASS="textbf">[default when running non-interactively; see below]</SPAN><A NAME="498"></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=85><TT>eps</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>As above, but produces encapsulated postscript.<A NAME="500"></A><A NAME="501"></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=85><TT>colour</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>Allows datasets to be plotted in colour. Automatically they will be displayed in a series of different colours, or alternatively colours may be specified using the <TT>with colour</TT> plot modifier (see below). <SPAN  CLASS="textbf">[default]</SPAN><A NAME="505"></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=85><TT>color</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>Equivalent to the above; provided for users of nationalities which can't spell.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=85><TT>monochrome</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>Opposite to the above; all datasets will be plotted in black.<A NAME="508"></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=85><TT>portrait</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>Sets plots to be displayed in upright (normal) orientation. <SPAN  CLASS="textbf">[default]</SPAN><A NAME="511"></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=85><TT>landscape</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>Opposite of the above; produces side-ways plots. Not very useful when displayed on the screen, but you fit more on a sheet of paper that way around.<A NAME="513"></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=85><TT>gif</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>Sends output to a gif image file; as above, the filename should be set using <TT>set output</TT>.<A NAME="516"></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=85><TT>png</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>As above, but produces a png image.<A NAME="518"></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=85><TT>jpg</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>As above, but produces a jpeg image.<A NAME="520"></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=85><TT>invert</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>Modifier for the gif, png and jpg terminals; produces output with inverted colours.<A NAME="tex2html22"
+  HREF="footnode.html#foot3153"><SUP><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">5</SPAN></SUP></A><A NAME="525"></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=85><TT>noinvert</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>Modifier for the gif, png and jpg terminals; opposite to the above. <SPAN  CLASS="textbf">[default]</SPAN></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=85><TT>transparent</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>Modifier for the gif and png terminals; produces output with a transparent background.<A NAME="529"></A><A NAME="530"></A><A NAME="531"></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=85><TT>solid</TT></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>Modifier for the gif and png terminals; opposite to the above. <SPAN  CLASS="textbf">[default]</SPAN></TD>
+</TR>
+</TABLE>
+<A NAME="terminals"></A>
+<P>
+The default terminal is normally <TT>x11_singlewindow</TT>, matching
+approximately the behaviour of gnuplot. However, there is an exception to this.
+When PyXPlot is used non-interactively - i.e. one or more command scripts is
+specified on the commandline, and PyXPlot exits as soon as it finishes
+executing them - the <TT>x11_singlewindow</TT> is not a very sensible
+terminal to use. Any plot window would close as soon as PyXPlot exited. The
+default terminal in this case changes to <TT>postscript</TT>.
+
+<P>
+One exception to this is when the special `-' filename is specified in a list
+of command scripts on the commandline, to produce an interactive terminal
+between running a series of scripts. In this case, PyXPlot detects that the
+session will be interactive, and defaults to the usual
+<TT>x11_singlewindow</TT> terminal.
+
+<P>
+An additional exception is on machines where the <TT>DISPLAY</TT> environment
+variable<A NAME="3154"></A> is not set. In this case, PyXPlot detects that it has access to no
+X-terminal on which to display plots, and defaults to the <TT>postscript</TT>
+terminal.
+
+<P>
+The <TT>gif</TT>, <TT>png</TT> and <TT>jpg</TT> terminals result in some loss
+of quality, since the plot has to be sampled into a bitmapped graphic format.
+By default, this sampling is performed at 300 dpi, though it may be changed
+using the command <TT>set dpi &lt;value&gt;</TT>. Alternatively, it may be changed
+using the <TT>DPI</TT> option in the <TT>settings</TT> section of a
+configuration file (see section&nbsp;<A HREF="node46.html#configuration">4.1</A>).<A NAME="3155"></A><A NAME="551"></A><A NAME="552"></A>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html742"
+  HREF="node24.html"><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN> Paper Sizes</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html740"
+  HREF="node24.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html734"
+  HREF="node21.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html728"
+  HREF="node22.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html736"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html738"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html741"
+  HREF="node24.html">3.2.1 Paper Sizes</A>
+<B> Up:</B> <A NAME="tex2html735"
+  HREF="node21.html">3. Extensions of Gnuplot's</A>
+<B> Previous:</B> <A NAME="tex2html729"
+  HREF="node22.html">3.1 The Commandline Environment</A>
+ &nbsp; <B>  <A NAME="tex2html737"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html739"
+  HREF="node179.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

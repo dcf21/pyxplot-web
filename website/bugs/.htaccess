@@ -1,0 +1,13 @@
+#<Limit POST>
+#order deny,allow
+#deny from all
+#allow from .cam.ac.uk
+#</Limit>
+AuthName "GnuPlot+ development"
+#AuthType "basic"
+#AuthUserFile /societies/gnuplotplus/.htpasswd
+#Require user rpc25
+Require valid-user
+AuthType Ucam-WebAuth
+#AADescription "GnuPlot+ development"
+#Require valid-user

@@ -1,0 +1,142 @@
+<!--#set var="title" value="PyXPlot" -->
+<!--#include virtual="head.shtml" -->
+
+<!-- <h2>
+Summary
+</h2>
+<p>
+</p>
+-->
+<a name="whatis">
+<h2>
+What is PyXPlot?
+</h2>
+<p>
+PyXPlot is a commandline graphing package, which, for ease of use, has an
+interface based heavily upon that of gnuplot -- perhaps UNIX's most widely-used
+plotting package. Despite the shared interface, however, PyXPlot is intended to
+significantly improve upon the quality of gnuplot's output, producing
+publication-quality figures. The commandline interface has also been extended,
+providing a wealth of new features, and short-cuts for some operations which
+were felt to be excessively cumbersome in the original.
+</p>
+<p>
+The motivation behind PyXPlot's creation was the apparent lack of a free
+plotting package which combined both high-quality output and a simple
+interface.  Some -- pgplot for one -- provided very attractive output, but
+required a program to be written each time a plot was to be produced -- a
+potentially time consuming task. Others, gnuplot being the prime example, were
+quick and simple to use, but produced less attractive results.
+</p>
+<p>
+PyXPlot attempts to fill that gap, offering the best of both worlds. Though the
+interface is based upon that of gnuplot, text is now rendered with all of the
+beauty and flexibility of the LaTeX typesetting environment; the "multiplot"
+environment is made massively more flexible, making it easy to produce
+galleries of plots; and the range of possible output formats is extended -- to
+name but a few of the enhancements. A number of examples of the results of
+which PyXPlot is capable can be seen <a href="doc#screenshots">here</a>.
+</p>
+<a name="download">
+<h2>
+Download
+</h2>
+
+The latest beta-release of PyXPlot is version 0.5.8 and is available to
+download as a <a href="src/pyxplot_0.5.8.tar.gz">tar file</a> (508kB) and as a
+<a href="src/pyxplot_0.5.8-1_all.deb">Debian Package</a> (1.6MB). Version 0.6.x
+is presently under active development and can be downloaded in alpha-release
+from from the archive below. However it may be unstable and contain
+partially-implemented undocumented features; the use of version 0.5.8 is
+recommended at the present time.
+
+<a name="docs">
+<h2>
+Documentation
+</h2>
+<p>
+Documentation for version 0.5.8 can be found <a href="doc">here</a>, along with some <a href="doc#screenshots">some screenshots</a>.
+</p>
+
+<a name="lists">
+<h2>
+Mailing lists
+</h2>
+<p>
+There are currently two PyXPlot mailing lists.  <a href="http://www.srcf.ucam.org/mailman/listinfo/pyxplot-announce">pyxplot-announce</a>
+is a low-volume moderated list for announcement of new PyXPlot releases.  <a
+href="http://www.srcf.ucam.org/mailman/listinfo/pyxplot-user">pyxplot-user</a>
+is a higher-volume unmoderated list for discussion; any list member can post to it.  To sign up for one of these lists please visit the linked pages.
+
+<a name="bugs">
+<h2>
+Bugs
+</h2>
+<p>
+There is a <a href="bugs_noauth/trac.cgi">bug tracking system</a>, which is
+currently read-only. If you have a Cambridge University raven account, you
+should <a href="http://www.srcf.ucam.org/pyxplot/bugs/trac.cgi">click here</a>
+for a read-write access. The author would be very pleased to receive bug
+reports from other users emailed to <a
+href="mailto:coders@pyxplot.org.uk">Dominic Ford</a>.
+</p>
+
+
+<a name="authors">
+<h2>
+Contact, Credits and License
+</h2>
+<p>
+PyXPlot is written by <a href="mailto:coders@pyxplot.org.uk">Dominic Ford</a>
+[<a href="http://www.dcford.org.uk">personal website</a>].  <a
+href="mailto:testers@pyxplot.org.uk">Ross Church</a> [<a
+href="http://www-jcsu.jesus.cam.ac.uk/~rpc25/">personal website</a>] is
+principal <!--elephant--> tester and webmonkey.  The author would like to
+express his thanks to Joerg Lehmann and Andre Wobst for writing the <a
+href="http://pyx.sourceforge.net/">PyX</a> graphics library for <a
+href="http://www.python.org">python</a>, upon which this program is heavily
+built.  PyXPlot is distributed under the <a
+href="http://www.gnu.org/copyleft/gpl.html">Gnu General Public License</a>,
+Version 2.
+</p>
+
+<hr>
+<a name="archive">
+<h2>
+Archive
+</h2>
+<p>
+The following old beta-releases of PyXPlot are available:
+</p>
+<table frame="box" rules="all">
+<tr><th>Version number</th><th>Date</th><th>Files</th><th>Downloads</th></tr>
+<tr><td>0.5.8</td><td>September 9th 2006</td>     <td><a href="src/pyxplot_0.5.8.tar.gz">tar.gz</a> (508kB) <a href="src/pyxplot_0.5.8-1_all.deb">deb</a> (1.6MB)</td><td><!--#include virtual="counter/0.5.8" --></td></tr>
+</table>
+<p>
+The following alpha-releases of PyXPlot are available. Note that these are
+experimental releases and may be highly unstable; they are not recommended for
+general use. <!-- Version 0.6.x will appear here in due course.-->
+</p>
+<table frame="box" rules="all">
+<tr><th>Version number</th><th>Date</th><th>Files</th><th>Downloads</th></tr>
+<tr><td>0.6.0</td><td>November 13th 2006</td>     <td><a href="src/pyxplot_0.6.0.tar.gz">tar.gz</a> (530kB) <a href="src/pyxplot_0.6.0_all.deb">deb</a> (1.6MB)</td><td><!--#include virtual="counter/0.6.0" --></td></tr>
+<tr><td>0.5.8</td><td>September 9th 2006</td>     <td><a href="src/pyxplot_0.5.8.tar.gz">tar.gz</a> (508kB) <a href="src/pyxplot_0.5.8-1_all.deb">deb</a> (1.6MB)</td><td><!--#include virtual="counter/0.5.8" --></td></tr>
+<tr><td>0.5.7</td><td>August 26th 2006</td>     <td><a href="src/pyxplot_0.5.7.tar.gz">tar.gz</a> (507kB) <a href="src/pyxplot_0.5.7_all.deb">deb</a> (1.6MB)</td><td><!--#include virtual="counter/0.5.7" --></td></tr>
+<tr><td>0.5.6</td><td>August 18th 2006</td>     <td><a href="src/pyxplot_0.5.6.tar.gz">tar.gz</a> (497kB) <a href="src/pyxplot_0.5.6_all.deb">deb</a> (1.6MB)</td><td><!--#include virtual="counter/0.5.6" --></td></tr>
+<tr><td>0.5.5</td><td>July 25th 2006</td>     <td><a href="src/pyxplot_0.5.5.tar.gz">tar.gz</a> (478kB) <a href="src/pyxplot_0.5.5-2_all.deb">deb</a> (1.5MB)</td><td><!--#include virtual="counter/0.5.5" --></td></tr>
+<tr><td>0.5.4</td><td>July 3rd 2006</td>     <td><a href="src/pyxplot_0.5.4.tar.gz">tar.gz</a> (465kB) <a href="src/pyxplot_0.5.4-1_all.deb">deb</a> (1.5MB)</td><td><!--#include virtual="counter/0.5.4" --></td></tr>
+<tr><td>0.5.3</td><td>June 27th 2006</td>     <td><a href="src/pyxplot_0.5.3.tar.gz">tar.gz</a> (459kB)</td><td><!--#include virtual="counter/0.5.3" --></td></tr>
+<tr><td>0.5.2</td><td>June 14th 2006</td>     <td><a href="src/pyxplot_0.5.2.tar.gz">tar.gz</a> (450kB)</td><td><!--#include virtual="counter/0.5.2" --></td></tr>
+<tr><td>0.5.1</td><td>June 2nd 2006</td>     <td><a href="src/pyxplot_0.5.1.tar.gz">tar.gz</a> (436kB)</td><td><!--#include virtual="counter/0.5.1" --></td></tr>
+<tr><td>0.5.0</td><td>May 27th 2006</td>     <td><a href="src/pyxplot_0.5.0.tar.gz">tar.gz</a> (249kB)</td><td><!--#include virtual="counter/0.5.0" --></td></tr>
+<tr><td>0.4.3</td><td>May 18th 2006</td>     <td><a href="src/gnuplot_0.4.3.tar.gz">tar.gz</a> (73kB)</td><td><!--#include virtual="counter/0.4.3" --></td></tr>
+<tr><td>0.4.2</td><td>May 4th 2006</td>      <td><a href="src/gnuplot_0.4.2.tar.gz">tar.gz</a> (72kB)</td><td><!--#include virtual="counter/0.4.2" --></td></tr>
+<tr><td>0.4.1</td><td>May 1st 2006</td>      <td><a href="src/gnuplot_0.4.1.tar.gz">tar.gz</a> (66kB)</td><td><!--#include virtual="counter/0.4.1" --></td></tr>
+<tr><td>0.4.0</td><td>April 27th 2006</td>   <td><a href="src/gnuplot_0.4.0.tar.gz">tar.gz</a> (25kB)</td><td><!--#include virtual="counter/0.4.0" --></td></tr>
+<tr><td>0.3.2</td><td>April 14th 2006</td>   <td><a href="src/gnuplot_0.3.2.tar.gz">tar.gz</a> (22kB)</td><td><!--#include virtual="counter/0.3.2" --></td></tr>
+<tr><td>0.3.1</td><td>April 12th 2006</td>   <td><a href="src/gnuplot_0.3.1.tar.gz">tar.gz</a> (21kB)</td><td><!--#include virtual="counter/0.3.1" --></td></tr>
+<tr><td>0.3.0</td><td>April 12th 2006</td>   <td><a href="src/gnuplot_0.3.0.tar.gz">tar.gz</a> (21kB)</td><td><!--#include virtual="counter/0.3.0" --></td></tr>
+<tr><td>0.2.0</td><td>March 30th 2006</td>   <td><a href="src/gnuplot_0.2.0.tar.gz">tar.gz</a> (18kB)</td><td><!--#include virtual="counter/0.2.0" --></td></tr>
+<tr><td>0.1.0</td><td>February 26th 2006</td><td><a href="src/gnuplot_0.1.0.tar.gz">tar.gz</a> (16kB)</td><td><!--#include virtual="counter/0.1.0" --></td></tr>
+</table>
+<!--#include virtual="foot.shtml" -->

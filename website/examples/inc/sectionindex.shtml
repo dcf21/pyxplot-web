@@ -1,0 +1,9 @@
+<!--#include virtual="title.shtml" -->
+<!--#include virtual="inc/header.shtml" -->
+		
+		The following examples are available:
+
+		<!--#include virtual="makeindex.cgi" -->
+		
+<!--#include virtual="inc/footer.shtml" -->
+

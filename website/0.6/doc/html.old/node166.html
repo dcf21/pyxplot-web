@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>6.8 Example 8: Fitting Functions to Data</TITLE>
+<META NAME="description" CONTENT="6.8 Example 8: Fitting Functions to Data">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node167.html">
+<LINK REL="previous" HREF="node165.html">
+<LINK REL="up" HREF="node158.html">
+<LINK REL="next" HREF="node167.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html2956"
+  HREF="node167.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2950"
+  HREF="node158.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2944"
+  HREF="node165.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2952"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2954"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2957"
+  HREF="node167.html">6.9 Example 9: Simple</A>
+<B> Up:</B> <A NAME="tex2html2951"
+  HREF="node158.html">6. Examples</A>
+<B> Previous:</B> <A NAME="tex2html2945"
+  HREF="node165.html">6.7 Example 7: Bar</A>
+ &nbsp; <B>  <A NAME="tex2html2953"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2955"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00780000000000000000">
+<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">8</SPAN> Example 8: Fitting Functions to Data</A>
+</H1>
+
+<P>
+<A NAME="2580"></A>
+<A NAME="3392"></A>
+<A NAME="3393"></A>
+
+<P>
+The <TT>fit</TT> command works in PyXPlot in essentially the same way as in
+gnuplot (see section&nbsp;<A HREF="node18.html#fit_command">2.8</A>). In this example, we take a series of
+data points, and first fit parabolas through them. For the first fit, <SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$ f(x)$"></SPAN>,
+we do not take the errorbars into account; in the second, <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img58.png"
+ ALT="$ g(x)$"></SPAN>, we do. Then,
+we use the <TT>spline</TT> command to fit a spline, <SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img85.png"
+ ALT="$ h(x)$"></SPAN>, through the same
+data (see section&nbsp;<A HREF="node42.html#spline_command">3.8</A>). Strong oscillation is seen in this
+example because of the angular nature of the data; it is not well-fit by a
+spline. The output is shown in figure&nbsp;<A HREF="node170.html#fig_ex8">6.8</A>.
+
+<P>
+<BR>
+<BR>
+<BR>
+<SPAN  CLASS="textbf">PyXPlot Script:</SPAN>
+
+<P>
+examples/example8
+
+<P>
+
+<BR><HR>
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,42 @@
+<!--#set var="title" value="Examples: First Steps in PyXPlot" -->
+<!--#include virtual="inc/header.shtml" -->
+		
+		The following examples are available:
+
+		<h3>
+         <a href="functions/">Basic function plotting</a>
+      </h3>
+		<p>
+		   <!--#include virtual="functions/description" -->
+		</p>
+      
+		<h3>
+         <a href="datafiles/">Basic datafile plotting</a>
+      </h3>
+		<p>
+		   <!--#include virtual="datafiles/description" -->
+		</p>
+		
+		<h3>
+         <a href="multiAxis/">Plotting on multiple axes</a>
+      </h3>
+		<p>
+		   <!--#include virtual="multiAxis/description" -->
+		</p>
+		
+		<h3>
+			<a href="multiplot/">Multiplot mode</a>
+		</h3>
+		<p>
+		   <!--#include virtual="multiplot/description" -->
+		</p>
+
+		<h3>
+			<a href="linkaxis/">Linked axes</a>
+		</h3>
+      <p>
+		   <!--#include virtual="linkaxis/description" -->
+      </p>
+
+<!--#include virtual="inc/footer.shtml" -->
+

@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+
+<title></title>
+<link href="introduction.html" title="Introduction" rel="next" />
+
+
+<link rel="stylesheet" href="styles/plastex-styles.css" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+<td><a href="introduction.html" title="Introduction"><img alt="Next: Introduction" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+
+
+<div> <span class="normalsize"><p> </p><center> <big class="xhuge"><b class="bf">PyXPlot Users’ Guide</b></big><br /></center><p> </p><center> <big class="xxlarge"><b class="bf">A Commandline Plotting Package, <br /> with Interface similar to that of Gnuplot, <br /> which produces <br /> Publication-Quality Output. <br /></b></big> </center><p> </p><center> <big class="xlarge">Version 0.6.2<br /></big> </center><p> </p><center> Dominic Ford<br />Trinity College<br />Cambridge<br />CB2 1TQ<br />UK<br />Email: <tt class="ttfamily">dcf21@mrao.cam.ac.uk</tt> </center><p></p><center> <big class="xlarge">January 2007<br /></big> </center><p> </p></span><p> </p></div>
+
+<div class="contents"><!--<strong>Subsections</strong>-->
+<ul>
+<li><a href="introduction.html">1 Introduction</a>
+   <ul>
+   <li><a href="sect0001.html">1.1 Overview</a>
+       
+   </li><li><a href="sect0002.html">1.2 System Requirements</a>
+       
+   </li><li><a href="sect0003.html">1.3 Installation</a>
+       <ul>
+       <li><a href="sect0004.html">1.3.1 Installation as User</a>
+           
+       </li><li><a href="sect0005.html">1.3.2 System-wide Installation</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="sect0006.html">1.4 Credits</a>
+       
+   </li><li><a href="sect0007.html">1.5 Legal Blurb</a>
+       
+   </li>
+   </ul>
+</li><li><a href="gnuplot_intro.html">2 First Steps With PyXPlot</a>
+   <ul>
+   <li><a href="sect0008.html">2.1 Getting Started</a>
+       
+   </li><li><a href="first_plots.html">2.2 First Plots</a>
+       
+   </li><li><a href="sect0009.html">2.3 Operators and Functions</a>
+       
+   </li><li><a href="plot_datafiles.html">2.4 Plotting Datafiles</a>
+       
+   </li><li><a href="directing_output.html">2.5 Directing Where Output Goes</a>
+       
+   </li><li><a href="pointtype_modifier.html">2.6 Data Styles</a>
+       
+   </li><li><a href="plot_ranges.html">2.7 Setting Axis Ranges</a>
+       
+   </li><li><a href="fit_command.html">2.8 Function Fitting</a>
+       
+   </li><li><a href="sect0010.html">2.9 Interactive Help</a>
+       
+   </li><li><a href="missing_features.html">2.10 Differences Between PyXPlot and Gnuplot</a>
+       
+   </li>
+   </ul>
+</li><li><a href="new_features.html">3 Extensions of Gnuplot’s Interface</a>
+   <ul>
+   <li><a href="sect0011.html">3.1 The Commandline Environment</a>
+       
+   </li><li><a href="terminals.html">3.2 Formatting and Terminals</a>
+       <ul>
+       <li><a href="sect0012.html">3.2.1 Paper Sizes</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="sect0013.html">3.3 Plotting</a>
+       <ul>
+       <li><a href="nolabelstics.html">3.3.1 Configuring Axes</a>
+           
+       </li><li><a href="sect0014.html">3.3.2 Keys and Legends</a>
+           
+       </li><li><a href="sect0015.html">3.3.3 The <tt class="ttfamily">linestyle</tt> keyword</a>
+           
+       </li><li><a href="sect0016.html">3.3.4 Colour Plotting</a>
+           
+       </li><li><a href="filebackup.html">3.3.5 General Extensions Beyond Gnuplot</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="sect0017.html">3.4 Sundry Items (Arrows, Text Labels, and More)</a>
+       <ul>
+       <li><a href="set_arrow.html">3.4.1 Arrows</a>
+           
+       </li><li><a href="sect0018.html">3.4.2 Text Labels</a>
+           
+       </li><li><a href="set_colours.html">3.4.3 Gridlines</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="arrows.html">3.5 Multi-plotting</a>
+       <ul>
+       <li><a href="set_display.html">3.5.1 Speed Issues</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="barcharts.html">3.6 Barcharts and Histograms</a>
+       <ul>
+       <li><a href="sect0019.html">3.6.1 Basic Operation</a>
+           
+       </li><li><a href="sect0020.html">3.6.2 Stacked Bar Charts</a>
+           
+       </li><li><a href="sect0021.html">3.6.3 Steps</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="splice.html">3.7 Function Splicing</a>
+       
+   </li><li><a href="spline_command.html">3.8 Datafile Interpolation: Spline Fitting</a>
+       
+   </li><li><a href="sect0022.html">3.9 Numerical Integration and Differentiation</a>
+       
+   </li><li><a href="sect0023.html">3.10 Script Watching: pyxplot_watch</a>
+       
+   </li>
+   </ul>
+</li><li><a href="sect0024.html">4 Configuring PyXPlot</a>
+   <ul>
+   <li><a href="configuration.html">4.1 Overview</a>
+       
+   </li><li><a href="config_files.html">4.2 Configuration Files</a>
+       
+   </li><li><a href="sect0025.html">4.3 An Example Configuration File</a>
+       
+   </li><li><a href="configfile_settings.html">4.4 Configuration Options: <tt class="ttfamily">settings</tt> section</a>
+       
+   </li><li><a href="configfile_terminal.html">4.5 Configuration Options: <tt class="ttfamily">terminal</tt> section</a>
+       
+   </li><li><a href="colour_names.html">4.6 Recognised Colour Names</a>
+       
+   </li>
+   </ul>
+</li><li><a href="sect0026.html">5 Command Reference</a>
+   <ul>
+   <li><a href="sect0027.html">5.1 arrow</a>
+       
+   </li><li><a href="sect0028.html">5.2 cd</a>
+       
+   </li><li><a href="sect0029.html">5.3 clear</a>
+       
+   </li><li><a href="sect0030.html">5.4 delete</a>
+       
+   </li><li><a href="sect0031.html">5.5 edit</a>
+       
+   </li><li><a href="sect0032.html">5.6 exit</a>
+       
+   </li><li><a href="sect0033.html">5.7 fit</a>
+       
+   </li><li><a href="sect0034.html">5.8 help</a>
+       
+   </li><li><a href="sect0035.html">5.9 load</a>
+       
+   </li><li><a href="sect0036.html">5.10 move</a>
+       
+   </li><li><a href="sect0037.html">5.11 !</a>
+       
+   </li><li><a href="sect0038.html">5.12 plot</a>
+       
+   </li><li><a href="sect0039.html">5.13 print</a>
+       
+   </li><li><a href="sect0040.html">5.14 pwd</a>
+       
+   </li><li><a href="sect0041.html">5.15 ?</a>
+       
+   </li><li><a href="sect0042.html">5.16 quit</a>
+       
+   </li><li><a href="sect0043.html">5.17 refresh</a>
+       
+   </li><li><a href="sect0044.html">5.18 replot</a>
+       
+   </li><li><a href="sect0045.html">5.19 reset</a>
+       
+   </li><li><a href="sect0046.html">5.20 save</a>
+       
+   </li><li><a href="sect0047.html">5.21 set</a>
+       <ul>
+       <li><a href="sect0048.html">5.21.1 arrow</a>
+           
+       </li><li><a href="sect0049.html">5.21.2 autoscale</a>
+           
+       </li><li><a href="sect0050.html">5.21.3 axescolour</a>
+           
+       </li><li><a href="sect0051.html">5.21.4 axis</a>
+           
+       </li><li><a href="sect0052.html">5.21.5 backup</a>
+           
+       </li><li><a href="sect0053.html">5.21.6 bar</a>
+           
+       </li><li><a href="sect0054.html">5.21.7 boxfrom</a>
+           
+       </li><li><a href="sect0055.html">5.21.8 boxwidth</a>
+           
+       </li><li><a href="sect0056.html">5.21.9 display</a>
+           
+       </li><li><a href="sect0057.html">5.21.10 dpi</a>
+           
+       </li><li><a href="sect0058.html">5.21.11 fontsize</a>
+           
+       </li><li><a href="sect0059.html">5.21.12 grid</a>
+           
+       </li><li><a href="sect0060.html">5.21.13 gridmajcolour</a>
+           
+       </li><li><a href="sect0061.html">5.21.14 gridmincolour</a>
+           
+       </li><li><a href="sect0062.html">5.21.15 key</a>
+           
+       </li><li><a href="sect0063.html">5.21.16 keycolumns</a>
+           
+       </li><li><a href="sect0064.html">5.21.17 label</a>
+           
+       </li><li><a href="sect0065.html">5.21.18 linestyle</a>
+           
+       </li><li><a href="sect0066.html">5.21.19 linewidth</a>
+           
+       </li><li><a href="sect0067.html">5.21.20 logscale</a>
+           
+       </li><li><a href="sect0068.html">5.21.21 multiplot</a>
+           
+       </li><li><a href="sect0069.html">5.21.22 mxtics</a>
+           
+       </li><li><a href="sect0070.html">5.21.23 mytics</a>
+           
+       </li><li><a href="sect0071.html">5.21.24 noarrow</a>
+           
+       </li><li><a href="sect0072.html">5.21.25 noaxis</a>
+           
+       </li><li><a href="sect0073.html">5.21.26 nobackup</a>
+           
+       </li><li><a href="sect0074.html">5.21.27 nodisplay</a>
+           
+       </li><li><a href="sect0075.html">5.21.28 nogrid</a>
+           
+       </li><li><a href="sect0076.html">5.21.29 nokey</a>
+           
+       </li><li><a href="sect0077.html">5.21.30 nolabel</a>
+           
+       </li><li><a href="sect0078.html">5.21.31 nolinestyle</a>
+           
+       </li><li><a href="sect0079.html">5.21.32 nologscale</a>
+           
+       </li><li><a href="sect0080.html">5.21.33 nomultiplot</a>
+           
+       </li><li><a href="sect0081.html">5.21.34 notitle</a>
+           
+       </li><li><a href="sect0082.html">5.21.35 noxtics</a>
+           
+       </li><li><a href="sect0083.html">5.21.36 noytics</a>
+           
+       </li><li><a href="sect0084.html">5.21.37 origin</a>
+           
+       </li><li><a href="sect0085.html">5.21.38 output</a>
+           
+       </li><li><a href="sect0086.html">5.21.39 palette</a>
+           
+       </li><li><a href="sect0087.html">5.21.40 papersize</a>
+           
+       </li><li><a href="sect0088.html">5.21.41 pointlinewidth</a>
+           
+       </li><li><a href="sect0089.html">5.21.42 pointsize</a>
+           
+       </li><li><a href="sect0090.html">5.21.43 samples</a>
+           
+       </li><li><a href="sect0091.html">5.21.44 size</a>
+           
+       </li><li><a href="sect0092.html">5.21.45 terminal</a>
+           
+       </li><li><a href="sect0093.html">5.21.46 textcolour</a>
+           
+       </li><li><a href="sect0094.html">5.21.47 texthalign</a>
+           
+       </li><li><a href="sect0095.html">5.21.48 textvalign</a>
+           
+       </li><li><a href="sect0096.html">5.21.49 title</a>
+           
+       </li><li><a href="sect0097.html">5.21.50 width</a>
+           
+       </li><li><a href="sect0098.html">5.21.51 xlabel</a>
+           
+       </li><li><a href="sect0099.html">5.21.52 xrange</a>
+           
+       </li><li><a href="sect0100.html">5.21.53 xticdir</a>
+           
+       </li><li><a href="sect0101.html">5.21.54 xtics</a>
+           
+       </li><li><a href="sect0102.html">5.21.55 ylabel</a>
+           
+       </li><li><a href="sect0103.html">5.21.56 yrange</a>
+           
+       </li><li><a href="sect0104.html">5.21.57 yticdir</a>
+           
+       </li><li><a href="sect0105.html">5.21.58 ytics</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="sect0106.html">5.22 show</a>
+       
+   </li><li><a href="sect0107.html">5.23 spline</a>
+       
+   </li><li><a href="sect0108.html">5.24 text</a>
+       
+   </li><li><a href="sect0109.html">5.25 undelete</a>
+       
+   </li><li><a href="sect0110.html">5.26 unset</a>
+       
+   </li>
+   </ul>
+</li><li><a href="examples.html">6 Examples</a>
+   <ul>
+   <li><a href="sect0111.html">6.1 Example 1: Plotting Functions – A Simple First Plot</a>
+       
+   </li><li><a href="sect0112.html">6.2 Example 2: Stacking Many Plots Together – Multiplot</a>
+       
+   </li><li><a href="sect0113.html">6.3 Example 3: Plotting A Datafile – Using Multiple Axes</a>
+       
+   </li><li><a href="powerpoint_example.html">6.4 Example 4: Something Completely Different</a>
+       
+   </li><li><a href="sect0114.html">6.5 Example 5: Multiplot – Linked Axes</a>
+       
+   </li><li><a href="example6.html">6.6 Example 6: Bar Charts and Steps</a>
+       
+   </li><li><a href="example7.html">6.7 Example 7: Bar Charts – Box Widths</a>
+       
+   </li><li><a href="sect0115.html">6.8 Example 8: Fitting Functions to Data</a>
+       
+   </li><li><a href="sect0116.html">6.9 Example 9: Simple Examples of Function Splicing</a>
+       
+   </li><li><a href="ex10.html">6.10 Example 10: Removal of Unwanted Axes</a>
+       
+   </li><li><a href="ex11.html">6.11 Example 11: The Arrows Plot Style</a>
+       
+   </li><li><a href="gallery.html">6.12 Output Produced by Examples</a>
+       
+   </li>
+   </ul>
+</li><li><a href="fit_math.html">7 The <tt class="ttfamily">fit</tt> Command: Mathematical Details</a>
+   <ul>
+   <li><a href="bayes_notation.html">7.1 Notation</a>
+       
+   </li><li><a href="bayes_pdf.html">7.2 The Probability Density Function</a>
+       
+   </li><li><a href="sect0117.html">7.3 Estimating the Error in <img src="images/img-0125.png" alt="$\mathbf{u}^0$" style="position:relative; bottom:-1px; width:19px; height:17px" class="math" /></a>
+       
+   </li><li><a href="sect0118.html">7.4 The Covariance Matrix</a>
+       
+   </li><li><a href="correlation_matrix.html">7.5 The Correlation Matrix</a>
+       
+   </li><li><a href="finding_sigmai.html">7.6 Finding <img src="images/img-0111.png" alt="$\sigma _ i$" style="position:relative; bottom:-3px; width:15px; height:11px" class="math" /></a>
+       
+   </li>
+   </ul>
+</li><li><a href="sect0119.html">8 ChangeLog</a>
+   
+</li><li><a href="sect0120.html">Index</a>
+   
+</li>
+
+
+
+</ul>
+</div>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+<td><a href="introduction.html" title="Introduction"><img alt="Next: Introduction" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

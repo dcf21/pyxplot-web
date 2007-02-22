@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: The Commandline Environment</title>
+
+<link href="terminals.html" title="Formatting and Terminals" rel="next" />
+<link href="new_features.html" title="Extensions of Gnuplot’s Interface" rel="prev" />
+<link href="new_features.html" title="Extensions of Gnuplot’s Interface" rel="up" />
+<link rel="stylesheet" href="styles/plastex-styles.css" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="new_features.html" title="Extensions of Gnuplot’s Interface"><img alt="Previous: Extensions of Gnuplot’s Interface" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="new_features.html" title="Extensions of Gnuplot’s Interface"><img alt="Up: Extensions of Gnuplot’s Interface" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="terminals.html" title="Formatting and Terminals"><img alt="Next: Formatting and Terminals" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="new_features.html">Extensions of Gnuplot’s Interface</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">The Commandline Environment</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="a-1226566004">3.1 The Commandline Environment</h1>
+<p>PyXPlot uses the Gnu Readline commandline environment, which means that the up and down arrow keys can be used to repeat previously executed commands. Each user’s command history is stored in his homespace in a history file called ‘<tt class="ttfamily">.pyxplot_history</tt>’, allowing PyXPlot to remember command histories between sessions. Additionally, a <tt class="ttfamily">save</tt> command is provided, allowing the user to save his command history from the present session to a text file; this has the following syntax: </p><pre>
+save 'output_filename'
+</pre><p>From the shell commandline, the PyXPlot accepts the following switches which modify its behaviour:<span id="a-1226596116"></span> </p><table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="text-align:left"><p> <tt class="ttfamily">-h –help</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Display a short help message listing the available commandline switches.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">-v –version</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Display the current version number of PyXPlot.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">-q –quiet</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Turn off the display of the welcome message on startup. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">-V –verbose</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Display the welcome message on startup, as happens by default. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">-c –colour</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Use colour highlighting<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">This will only function on terminals which support colour output.</span></a> to display output in green, warning messages in amber, and error messages in red.<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">The author apologies to those members of the population who are red/green colourblind, but draws their attention to the following sentence.</span></a> These colours can be changed in the <tt class="ttfamily">terminal</tt> section of the configuration file; see Section <a href="configuration.html">4.1</a> for more details. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">-m –monochrome</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Do not use colour highlighting, as happens by default. </p></td>
+
+</tr>
+</table></div>
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="new_features.html" title="Extensions of Gnuplot’s Interface"><img alt="Previous: Extensions of Gnuplot’s Interface" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="new_features.html" title="Extensions of Gnuplot’s Interface"><img alt="Up: Extensions of Gnuplot’s Interface" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="terminals.html" title="Formatting and Terminals"><img alt="Next: Formatting and Terminals" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Multi-plotting</title>
+
+<link href="set_display.html" title="Speed Issues" rel="next" />
+<link href="set_colours.html" title="Gridlines" rel="prev" />
+<link href="new_features.html" title="Extensions of Gnuplot’s Interface" rel="up" />
+<link rel="stylesheet" href="styles/plastex-styles.css" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="set_colours.html" title="Gridlines"><img alt="Previous: Gridlines" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="new_features.html" title="Extensions of Gnuplot’s Interface"><img alt="Up: Extensions of Gnuplot’s Interface" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="set_display.html" title="Speed Issues"><img alt="Next: Speed Issues" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="new_features.html">Extensions of Gnuplot’s Interface</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Multi-plotting</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="arrows">3.5 Multi-plotting</h1>
+<p>  <span id="a-1228222996"></span> </p><p>Gnuplot has a plotting mode called “multiplot” which allows many graphs to be plotted together, and display side-by-side. The basic syntax of this mode is reproduced in PyXPlot, but is hugely extended. </p><p>The mode is entered by the command “<tt class="ttfamily">set multiplot</tt>”. This can be compared to taking a blank sheet of paper on which to place plots. Plots are then placed on that sheet of paper, as usual, with the <tt class="ttfamily">plot</tt> command. The position of each plot is set using the <tt class="ttfamily">set origin</tt> command, which takes a comma-separated <img src="images/img-0015.png" alt="$x,y$" style="position:relative; bottom:-4px; width:28px; height:12px" class="math" /> coordinate pair, measured in centimetres. The following, for example, would plot a graph of <img src="images/img-0004.png" alt="$\sin (x)$" style="position:relative; bottom:-5px; width:45px; height:19px" class="math" /> to the left of a plot of <img src="images/img-0065.png" alt="$\cos (x)$" style="position:relative; bottom:-5px; width:48px; height:19px" class="math" />:<span id="a-1228223700"></span> </p><pre> 
+set multiplot
+plot sin(x)
+set origin 10,0
+plot cos(x)
+</pre><p>The multiplot page may subsequently be cleared with the <tt class="ttfamily">clear</tt> command, and multiplot mode may be left using the “<tt class="ttfamily">set nomultiplot</tt>” command.<span id="a-1228224916"></span> </p><p>At this point we move beyond the syntax available in gnuplot. Each time a plot is placed on the multiplot page in PyXPlot, it is allocated a reference number, which is output to the terminal. Reference numbers count up from zero each time the multiplot page is cleared. A number of commands exist for modifying plots after they have been placed on the page, selecting them by making reference to their reference numbers. </p><p>Plots may be removed from the page with the <tt class="ttfamily">delete</tt> command, and restored with the <tt class="ttfamily">undelete</tt> command:<span id="a-1228225108"></span><span id="a-1228225812"></span> </p><pre> 
+delete &lt;number&gt;
+undelete &lt;number&gt;
+</pre><p>The reference numbers of deleted plots are not reused until the page is cleared, as they may always be restored with the <tt class="ttfamily">undelete</tt> command; plots which have been deleted simply do not appear. </p><p>Plots may also be moved with the <tt class="ttfamily">move</tt> command. For example, the following would move plot 23 to position (8,8) measured in centimetres: </p><pre> 
+move 23 8,8
+</pre><p>The axes of plots can be linked together, in such a way that they always share a common scale. This can be useful when placing plots next to one another, firstly, of course, if it is of intrinsic interest to ensure that they are on a common scale, but also because the two plots then do not both need their own axis labels, and space can be saved by one sharing the labels from the other. In PyXPlot, an axis which borrows its scale and labels from another is called a “linked axis”. </p><p>Such axes are declared by setting the label of the linked axis to a magic string such as “<tt class="ttfamily">linkaxis 0</tt>”<span id="a-1228055956"></span><span id="a-1228057140"></span>. This magic label would set the axis to borrow its scale from an axis from plot zero. The general syntax is “<tt class="ttfamily">linkaxis</tt> <img src="images/img-0032.png" alt="$n$" style="position:relative; bottom:-1px; width:11px; height:9px" class="math" /> <img src="images/img-0017.png" alt="$m$" style="position:relative; bottom:-1px; width:16px; height:9px" class="math" />”, where <img src="images/img-0032.png" alt="$n$" style="position:relative; bottom:-1px; width:11px; height:9px" class="math" /> and <img src="images/img-0017.png" alt="$m$" style="position:relative; bottom:-1px; width:16px; height:9px" class="math" /> are two integers, separated by a comma or whitespace. The first, <img src="images/img-0032.png" alt="$n$" style="position:relative; bottom:-1px; width:11px; height:9px" class="math" />, indicates the plot from which to borrow an axis; the second, <img src="images/img-0017.png" alt="$m$" style="position:relative; bottom:-1px; width:16px; height:9px" class="math" />, indicates whether to borrow the scale of axis <img src="images/img-0066.png" alt="$x1$" style="position:relative; bottom:-1px; width:18px; height:13px" class="math" />, <img src="images/img-0044.png" alt="$x2$" style="position:relative; bottom:-1px; width:19px; height:14px" class="math" />, <img src="images/img-0054.png" alt="$x3$" style="position:relative; bottom:-1px; width:19px; height:14px" class="math" />, etc. By default, <img src="images/img-0067.png" alt="$m=1$" style="position:relative; bottom:-1px; width:49px; height:13px" class="math" />. The linking will fail, and a warning result, if an attempt is made to link to an axis which doesn’t exist. </p><p>The specimen plots in Section <a href="gallery.html">6.12</a> show numerous examples of the use of linked axes. </p><p>In multiplot mode, the <tt class="ttfamily">replot</tt> command can be used to modify the last plot added to the page. For example, the following would change the title of the latest plot to “foo”, and add a plot of <img src="images/img-0065.png" alt="$\cos (x)$" style="position:relative; bottom:-5px; width:48px; height:19px" class="math" /> to it: </p><pre> 
+set title 'foo'
+replot cos(x)
+</pre><p>Additionally, it is possible to modify any plot on the page, by first selecting it with the <tt class="ttfamily">edit</tt> command. Subsequently, the <tt class="ttfamily">replot</tt> will act upon the selected plot. The following example would produce two plots, and then change the colour of the text on the first: </p><pre> 
+set multiplot
+plot sin(x)
+set origin 10,0
+plot cos(x)
+edit 0        # Select the first plot ...
+set textcolour red
+replot        # ... and replot it.
+</pre><p>The <tt class="ttfamily">edit</tt> command can also be used to view the settings which are applied to any plot on the multiplot page – after executing “edit 0”, the <tt class="ttfamily">show</tt> command will show the settings applied to plot zero. </p><p>When a new plot is added to the page, <tt class="ttfamily">replot</tt> always switches to act upon this most recent plot. </p><p><span id="a-1228222836"></span> In addition to placing plots on the multiplot page, text labels may also be inserted independently of any plots, using the <tt class="ttfamily">text</tt> command. This has the following syntax: </p><pre> 
+text 'This is some text' x,y
+</pre><p>In this case, the string “This is some text” would be rendered at position <img src="images/img-0068.png" alt="$(x,y)$" style="position:relative; bottom:-5px; width:40px; height:19px" class="math" /> on the multiplot. As with the <tt class="ttfamily">set label</tt> command, a rotation angle may optionally be specified to rotate text labels through any given angle, measured in degrees counter-clockwise, for example: </p><pre> 
+text 'This is some text' x,y rotation r
+</pre><p>The commands <tt class="ttfamily">set textcolour</tt>, <tt class="ttfamily">set texthalign</tt> and <tt class="ttfamily">set textvalign</tt>, which have already been described in the context in the <tt class="ttfamily">set label</tt> command, can also be used to set the colour and alignment of text produced with the <tt class="ttfamily">text</tt> command.<span id="a-1228097876"></span><span id="a-1228222900"></span><span id="a-1228225556"></span>. A useful application of this is to produce centred headings at the top of multiplots. </p><p>As with plots, each text item has a unique identification number, and can be moved around, deleted or undeleted with the <tt class="ttfamily">delete</tt>, <tt class="ttfamily">undelete</tt> and <tt class="ttfamily">move</tt> commands. <span id="a-1228095924"></span> <span id="a-1228096436"></span> </p><p>It should be noted that the <tt class="ttfamily">text</tt> command can also be used outside of the multiplot environment, to render a single piece of short text instead of a graph. This has limited applications, but one is illustrated in Section <a href="powerpoint_example.html">6.4</a>. </p><p> <span id="a-1228096852"></span> Arrows may also be placed on multiplot pages, independently of any plots, using the <tt class="ttfamily">arrow</tt> command, which has syntax: </p><pre> 
+arrow from x,y to x,y
+</pre><p>As above, arrows receive unique identification numbers, and can be deleted and undeleted. </p><p>The <tt class="ttfamily">arrow</tt> command may be followed by the ‘<tt class="ttfamily">with</tt>’ keyword to specify to style of the arrow. The style keywords which are accepted are identical to those accepted by the <tt class="ttfamily">set arrow</tt> command (see Section <a href="set_arrow.html">3.4.1</a>). For example: </p><pre> 
+arrow from x1,y1 to x2,y2 \
+with twohead colour red
+</pre><p><span id="a-1228097524"></span><span id="a-1228095700"></span> <span id="a-1228098324"></span> The <tt class="ttfamily">refresh</tt> command is rather similar to the <tt class="ttfamily">replot</tt> command, but produces an exact copy of the latest display. This can be useful, for example, after changing the terminal type, to produce a second copy of a multiplot page in a different format. But the crucial difference between this command and <tt class="ttfamily">replot</tt> is that it doesn’t replot anything. Indeed, there could be only textual items and arrows on the present multiplot page, and no graphs <i class="itshape">to</i> replot. </p></div>
+
+<div class="contents"><!--<strong>Subsections</strong>-->
+<ul>
+<li><a href="set_display.html">3.5.1 Speed Issues</a>
+   
+</li>
+
+
+
+</ul>
+</div>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="set_colours.html" title="Gridlines"><img alt="Previous: Gridlines" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="new_features.html" title="Extensions of Gnuplot’s Interface"><img alt="Up: Extensions of Gnuplot’s Interface" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="set_display.html" title="Speed Issues"><img alt="Next: Speed Issues" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!--#set var="title" value="Documentation" -->
+<!--#include virtual="inc/header.shtml" -->
+
+
+<!--#include virtual="inc/warning.shtml" -->
+
+<p>
+   This documentation describes the 0.6.2 alpha release of PyXPlot.
+	The <a href="pyxplot.pdf">manual</a> can be downloaded (pdf, 718k)
+	or viewed as <a href="html/">html</a>.
+</p>
+
+<!--#include virtual="inc/footer.shtml" -->

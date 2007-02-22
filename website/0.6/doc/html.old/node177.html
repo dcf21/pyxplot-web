@@ -1,0 +1,460 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>7.6 Finding </TITLE>
+<META NAME="description" CONTENT="7.6 Finding ">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="previous" HREF="node176.html">
+<LINK REL="up" HREF="node171.html">
+<LINK REL="next" HREF="node178.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html3112"
+  HREF="node178.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3106"
+  HREF="node171.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3102"
+  HREF="node176.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3108"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html3110"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3113"
+  HREF="node178.html">8. ChangeLog</A>
+<B> Up:</B> <A NAME="tex2html3107"
+  HREF="node171.html">7. The fit Command:</A>
+<B> Previous:</B> <A NAME="tex2html3103"
+  HREF="node176.html">7.5 The Correlation Matrix</A>
+ &nbsp; <B>  <A NAME="tex2html3109"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html3111"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00860000000000000000"></A>
+<A NAME="finding_sigmai"></A>
+<BR>
+<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">6</SPAN> Finding <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$ \sigma _i$"></SPAN>
+</H1>
+
+<P>
+Throughout the preceding sections, the uncertainties in the supplied target
+values <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.png"
+ ALT="$ f_i$"></SPAN> have been denoted <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$ \sigma _i$"></SPAN> (see section&nbsp;<A HREF="node172.html#bayes_notation">7.1</A>).
+The user has the option of supplying these in the source datafile, in which
+case the provisions of the previous sections are now complete; both
+best-estimate parameter values and their uncertainties can be calculated. The
+user may also, however, leave the uncertainties in <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.png"
+ ALT="$ f_i$"></SPAN> unstated, in which
+case, as described in section&nbsp;<A HREF="node172.html#bayes_notation">7.1</A>, we assume all of the data
+values to have a common uncertainty <!-- MATH
+ $\sigma_\mathrm{data}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img107.png"
+ ALT="$ \sigma_\mathrm{data}$"></SPAN>, which is an
+unknown.
+
+<P>
+In this case, where <!-- MATH
+ $\sigma_i = \sigma_\mathrm{data} \,\forall\, i$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="101" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img168.png"
+ ALT="$ \sigma_i = \sigma_\mathrm{data} \,\forall\, i$"></SPAN>, the best
+fitting parameter values are independent of <!-- MATH
+ $\sigma_\mathrm{data}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img107.png"
+ ALT="$ \sigma_\mathrm{data}$"></SPAN>, but the
+same is not true of the uncertainties in these values, as the terms of the
+Hessian matrix do depend upon <!-- MATH
+ $\sigma_\mathrm{data}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img107.png"
+ ALT="$ \sigma_\mathrm{data}$"></SPAN>. We must therefore
+undertake a further calculation to find the most probable value of
+<!-- MATH
+ $\sigma_\mathrm{data}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img107.png"
+ ALT="$ \sigma_\mathrm{data}$"></SPAN>, given the data. This is achieved by maximising
+<!-- MATH
+ $\mathrm{P}\left( \sigma_\mathrm{data} | \left\{ \mathbf{x}_i, f_i \right\}
+\right)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="133" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img169.png"
+ ALT="$ \mathrm{P}\left( \sigma_\mathrm{data} \vert \left\{ \mathbf{x}_i, f_i \right\}
+\right)$"></SPAN>. Returning once again to Bayes' Theorem, we can write:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\mathrm{P}\left( \sigma_\mathrm{data} | \left\{ \mathbf{x}_i, f_i \right\} \right)
+= \frac{
+\mathrm{P}\left( \left\{ f_i \right\} | \sigma_\mathrm{data}, \left\{ \mathbf{x}_i \right\} \right)
+\mathrm{P}\left( \sigma_\mathrm{data} | \left\{ \mathbf{x}_i \right\} \right)
+}{
+\mathrm{P}\left( \left\{ f_i \right\} | \left\{ \mathbf{x}_i \right\} \right)
+}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="415" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img170.png"
+ ALT="$\displaystyle \mathrm{P}\left( \sigma_\mathrm{data} \vert \left\{ \mathbf{x}_i,...
+...rm{P}\left( \left\{ f_i \right\} \vert \left\{ \mathbf{x}_i \right\} \right) }$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">17</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+As before, we neglect the denominator, which has no effect upon the
+maximisation problem, and assume a uniform prior <!-- MATH
+ $\mathrm{P}\left(
+\sigma_\mathrm{data} | \left\{ \mathbf{x}_i \right\} \right)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="111" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img171.png"
+ ALT="$ \mathrm{P}\left(
+\sigma_\mathrm{data} \vert \left\{ \mathbf{x}_i \right\} \right)$"></SPAN>. This reduces the
+problem to the maximisation of <!-- MATH
+ $\mathrm{P}\left( \left\{ f_i \right\} |
+\sigma_\mathrm{data}, \left\{ \mathbf{x}_i \right\} \right)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="150" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img172.png"
+ ALT="$ \mathrm{P}\left( \left\{ f_i \right\} \vert
+\sigma_\mathrm{data}, \left\{ \mathbf{x}_i \right\} \right)$"></SPAN>, which we may
+write as a marginalised probability distribution over <!-- MATH
+ $\mathbf{u}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img111.png"
+ ALT="$ \mathbf{u}$"></SPAN>:
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="p_f_given_sigma"></A><!-- MATH
+ \begin{eqnarray}
+\mathrm{P}\left( \left\{ f_i \right\} | \sigma_\mathrm{data}, \left\{ \mathbf{x}_i \right\} \right) =
+\idotsint_{-\infty}^{\infty}
+&
+\mathrm{P}\left( \left\{ f_i \right\} | \sigma_\mathrm{data}, \left\{ \mathbf{x}_i \right\}, \mathbf{u} \right)
+\times & \\&
+\mathrm{P}\left( \mathbf{u} | \sigma_\mathrm{data}, \left\{ \mathbf{x}_i \right\} \right)
+\,\mathrm{d}^{n_\mathrm{u}}\mathbf{u}
+& \nonumber
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="251" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img173.png"
+ ALT="$\displaystyle \mathrm{P}\left( \left\{ f_i \right\} \vert \sigma_\mathrm{data}, \left\{ \mathbf{x}_i \right\} \right) =
+\idotsint_{-\infty}^{\infty}$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="188" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img174.png"
+ ALT="$\displaystyle \mathrm{P}\left( \left\{ f_i \right\} \vert \sigma_\mathrm{data}, \left\{ \mathbf{x}_i \right\}, \mathbf{u} \right)
+\times$"></TD>
+<TD>&nbsp;</TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">18</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="170" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img175.png"
+ ALT="$\displaystyle \mathrm{P}\left( \mathbf{u} \vert \sigma_\mathrm{data}, \left\{ \mathbf{x}_i \right\} \right)
+\,\mathrm{d}^{n_\mathrm{u}}\mathbf{u}$"></TD>
+<TD>&nbsp;</TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+<P>
+Assuming a uniform prior for <!-- MATH
+ $\mathbf{u}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img111.png"
+ ALT="$ \mathbf{u}$"></SPAN>, we may neglect the latter term in
+the integral, but even with this assumption, the integral is not generally
+tractable, as <!-- MATH
+ $\mathrm{P}\left( \left\{ f_i \right\} | \sigma_\mathrm{data},
+\left\{ \mathbf{x}_i \right\}, \left\{ \mathbf{u}_i \right\} \right)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="195" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img176.png"
+ ALT="$ \mathrm{P}\left( \left\{ f_i \right\} \vert \sigma_\mathrm{data},
+\left\{ \mathbf{x}_i \right\}, \left\{ \mathbf{u}_i \right\} \right)$"></SPAN> may well
+be multimodal in form. However, if we neglect such possibilities, and assume
+this probability distribution to be approximate a Gaussian <SPAN  CLASS="textit">globally</SPAN>,
+we can make use of the standard result for an <!-- MATH
+ $n_\mathrm{u}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img108.png"
+ ALT="$ n_\mathrm{u}$"></SPAN>-dimensional Gaussian integral:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\idotsint_{-\infty}^{\infty}
+\exp \left(
+\frac{1}{2}\mathbf{u}^\mathbf{T} \mathbf{A} \mathbf{u}
+\right) \,\mathrm{d}^{n_\mathrm{u}}\mathbf{u}
+=
+\frac{
+(2\pi)^{n_\mathrm{u}/2}
+}{
+\sqrt{\mathrm{Det}\left(-\mathbf{A}\right)}
+}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="362" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img177.png"
+ ALT="$\displaystyle \idotsint_{-\infty}^{\infty} \exp \left( \frac{1}{2}\mathbf{u}^...
+...c{ (2\pi)^{n_\mathrm{u}/2} }{ \sqrt{\mathrm{Det}\left(-\mathbf{A}\right)} }$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">19</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+We may thus approximate equation&nbsp;(<A HREF="#p_f_given_sigma">7.18</A>) as:
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray}
+\mathrm{P}\left( \left\{ f_i \right\} | \sigma_\mathrm{data}, \left\{ \mathbf{x}_i \right\} \right)
+& \approx &
+\mathrm{P}\left( \left\{ f_i \right\} | \sigma_\mathrm{data}, \left\{ \mathbf{x}_i \right\}, \mathbf{u}^0 \right)
+\times \\
+& &
+\mathrm{P}\left( \mathbf{u}^0 | \sigma_\mathrm{data}, \left\{ \mathbf{x}_i, f_i \right\} \right)
+\frac{
+(2\pi)^{n_\mathrm{u}/2}
+}{
+\sqrt{\mathrm{Det}\left(-\mathbf{A}\right)}
+}
+\nonumber
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="150" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img178.png"
+ ALT="$\displaystyle \mathrm{P}\left( \left\{ f_i \right\} \vert \sigma_\mathrm{data}, \left\{ \mathbf{x}_i \right\} \right)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img179.png"
+ ALT="$\displaystyle \approx$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="198" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img180.png"
+ ALT="$\displaystyle \mathrm{P}\left( \left\{ f_i \right\} \vert \sigma_\mathrm{data}, \left\{ \mathbf{x}_i \right\}, \mathbf{u}^0 \right)
+\times$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">20</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="256" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img181.png"
+ ALT="$\displaystyle \mathrm{P}\left( \mathbf{u}^0 \vert \sigma_\mathrm{data}, \left\{...
+...\frac{
+(2\pi)^{n_\mathrm{u}/2}
+}{
+\sqrt{\mathrm{Det}\left(-\mathbf{A}\right)}
+}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+<P>
+As in section&nbsp;<A HREF="node173.html#bayes_pdf">7.2</A>, it is numerically easier to maximise this
+quantity via its logarithm, which we denote <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img182.png"
+ ALT="$ L_2$"></SPAN>, and can write as:
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray}
+L_2 & = &
+\sum_{i=0}^{n_\mathrm{d}-1}
+\left(
+\frac{
+-\left[f_i - f_{\mathbf{u}^0}(\mathbf{x}_i)\right]^2
+}{
+2\sigma_\mathrm{data}^2
+}
+- \log_e \left(2\pi\sqrt{\sigma_\mathrm{data}} \right)
+\right) +
+\\& & \nonumber
+\log_e \left(
+\frac{
+(2\pi)^{n_\mathrm{u}/2}
+}{
+\sqrt{\mathrm{Det}\left(-\mathbf{A}\right)}
+}
+\right)
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img183.png"
+ ALT="$\displaystyle L_2$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="349" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img184.png"
+ ALT="$\displaystyle \sum_{i=0}^{n_\mathrm{d}-1}
+\left(
+\frac{
+-\left[f_i - f_{\mathbf...
+...thrm{data}^2
+}
+- \log_e \left(2\pi\sqrt{\sigma_\mathrm{data}} \right)
+\right) +$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">21</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="159" HEIGHT="70" ALIGN="MIDDLE" BORDER="0"
+ SRC="img185.png"
+ ALT="$\displaystyle \log_e \left(
+\frac{
+(2\pi)^{n_\mathrm{u}/2}
+}{
+\sqrt{\mathrm{Det}\left(-\mathbf{A}\right)}
+}
+\right)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+<P>
+This quantity is maximised numerically, a process simplified by the fact that
+<!-- MATH
+ $\mathbf{u}^0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img120.png"
+ ALT="$ \mathbf{u}^0$"></SPAN> is independent of <!-- MATH
+ $\sigma_\mathrm{data}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img107.png"
+ ALT="$ \sigma_\mathrm{data}$"></SPAN>.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3112"
+  HREF="node178.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3106"
+  HREF="node171.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3102"
+  HREF="node176.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3108"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html3110"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3113"
+  HREF="node178.html">8. ChangeLog</A>
+<B> Up:</B> <A NAME="tex2html3107"
+  HREF="node171.html">7. The fit Command:</A>
+<B> Previous:</B> <A NAME="tex2html3103"
+  HREF="node176.html">7.5 The Correlation Matrix</A>
+ &nbsp; <B>  <A NAME="tex2html3109"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html3111"
+  HREF="node179.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

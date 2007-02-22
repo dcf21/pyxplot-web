@@ -1,0 +1,60 @@
+<!--#set var="title" value="" -->
+<!--#include virtual="inc/header.shtml" -->
+		<div style="min-height: 399px">
+		<img style="float: right" src="img/cornu.gif" />
+
+		<p> 
+			PyXPlot is a command-line graphing package with a simple interface that
+			produces publication-quality output.
+		</p>
+
+		<h3> News </h3>
+		<ul>
+			<li>19/1/2007 - <b>PyXPlot 0.6 enters final testing</b><br />
+				The 0.6 development branch of PyXPlot has now entered the final
+				stabilisation phase with the alpha-release of version 0.6.2.   <!-- The
+				documentation is currently being updated and the last few bugs
+				ironed out before the impending release. -->
+			</li>
+		   <li>
+			   9/9/2006 - <b>PyXPlot 0.5.8 released</b><br />
+				0.5.8 is the first stable beta-release of PyXPlot and can be <a
+				href="0.5/download/">downloaded here</a>.  Highlighted features
+				include a versitile multiplot enviroment and plot-time selection of
+				data.  Much more detail can be found in the <a
+				href="0.5/doc/">manual</a>.
+			</li>
+		</div>
+      <!-- <h3>
+         What is PyXPlot?
+      </h3>
+      <p>
+         PyXPlot is a commandline graphing package, which, for ease of use, has
+         an interface based heavily upon that of gnuplot.  PyXPlot improves
+         significantly upon gnuplot's output, producing publication-quality
+         figures. The commandline interface has been extended, providing a
+         wealth of new features.
+      </p>
+      <h3>
+         Motivation
+      </h3>
+      <p>
+         The motivation behind PyXPlot's creation was the apparent lack of a
+         free plotting package which combined both high-quality output and a
+         simple interface.  Some provided attractive output, but required a
+         program to be written for each plot. Others were quick and simple to
+         use, but produced less attractive results.
+      </p>
+      <h3>
+         Realisation
+      </h3>
+      <p>
+         PyXPlot attempts to fill that gap, offering the best of both worlds.
+         For example, text is rendered with the beauty and flexibility of the
+         LaTeX typesetting environment, the enhanced "multiplot" environment
+         allows the production of galleries of plots and selective pruning of
+         datasets is permitted.  A number of examples of the results of which
+         PyXPlot is capable can be seen <a href="screenshots.shtml">here</a>.
+      </p> -->
+
+<!--#include virtual="inc/footer.shtml" -->

@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2.6 Setting Axis Ranges</TITLE>
+<META NAME="description" CONTENT="2.6 Setting Axis Ranges">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node15.html">
+<LINK REL="previous" HREF="node13.html">
+<LINK REL="up" HREF="node8.html">
+<LINK REL="next" HREF="node15.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html384"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html378"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html372"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html380"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html382"
+  HREF="node69.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html385"
+  HREF="node15.html">2.7 Function Fitting</A>
+<B> Up:</B> <A NAME="tex2html379"
+  HREF="node8.html">2. First Steps With</A>
+<B> Previous:</B> <A NAME="tex2html373"
+  HREF="node13.html">2.5 Data Styles</A>
+ &nbsp; <B>  <A NAME="tex2html381"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html383"
+  HREF="node69.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00360000000000000000">
+<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">6</SPAN> Setting Axis Ranges</A>
+</H1>
+
+<P>
+In section&nbsp;<A HREF="node10.html#first_plots">2.2</A>, the <TT>set xlabel</TT> configuration command was
+previously introduced for placing text labels on axes. In this section, the
+configuration of axes is extended to setting their ranges.
+
+<P>
+By default, PyXPlot automatically scales axes to some sensible range which
+contains all of the plotted data. However, it is also possible for the user to
+override this and set his own range.<A NAME="267"></A> This can be
+done directly from the plot command, for example:
+
+<P>
+<PRE>
+plot [-1:1][-2:2] sin(x)
+</PRE>
+<A NAME="plot_ranges"></A>
+<P>
+The ranges are specified immediately after the <TT>plot</TT>
+statement, with the syntax <TT>[minimum:maximum]</TT>.<A NAME="tex2html8"
+  HREF="footnode.html#foot1997"><SUP><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">3</SPAN></SUP></A> The first specified range applies to the <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$ x$"></SPAN>-axis, and the second
+to the <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$ y$"></SPAN>-axis.<A NAME="tex2html9"
+  HREF="footnode.html#foot1998"><SUP><SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">4</SPAN></SUP></A> Any of the values supplied
+can be omitted, for example:
+
+<P>
+<PRE>
+plot [:][-2:2] sin(x)
+</PRE>
+
+<P>
+would only set a range on the <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$ y$"></SPAN>-axis.
+
+<P>
+Alternatively, ranges can be set before the <TT>plot</TT> statement, using the
+<TT>set xrange</TT><A NAME="1999"></A>
+statement, for example:
+
+<P>
+<PRE>
+set xrange [-2:2]
+set y2range [a:b]
+</PRE>
+
+<P>
+Having done so, a range may subsequently be turned off, and an axis returned to
+its default autoscaling behaviour, using the <TT>set autoscale</TT><A NAME="2000"></A> command, which takes a list
+of axes to which it is to apply. If no list is supplied, then the command is
+applied to all axes.
+
+<P>
+<PRE>
+set autoscale x y
+set autoscale
+</PRE>
+
+<P>
+Axes can be set to have logarithmic scales using the <TT>set
+logscale</TT><A NAME="2001"></A> command,
+which also takes a list of axes to which it should apply. Its converse is
+<TT>set nologscale</TT><A NAME="2002"></A>:
+
+<P>
+<PRE>
+set logscale
+set nologscale y x x2
+</PRE>
+
+<P>
+Further discussion of the configuration of axes can be found in
+section&nbsp;<A HREF="node22.html#axis_extensions">3.3.1</A>.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html384"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html378"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html372"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html380"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html382"
+  HREF="node69.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html385"
+  HREF="node15.html">2.7 Function Fitting</A>
+<B> Up:</B> <A NAME="tex2html379"
+  HREF="node8.html">2. First Steps With</A>
+<B> Previous:</B> <A NAME="tex2html373"
+  HREF="node13.html">2.5 Data Styles</A>
+ &nbsp; <B>  <A NAME="tex2html381"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html383"
+  HREF="node69.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford
+2006-09-09
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,21 @@
+<!--#set var="title" value="Examples: Bar charts" -->
+<!--#include virtual="inc/header.shtml" -->
+		
+		The following examples are available:
+
+		<h3>
+         <a href="styles/">Boxes, impulses and steps</a>
+      </h3>
+		<p>
+		   <!--#include virtual="styles/description" -->
+		</p>
+      
+		<h3>
+         <a href="widths/">Bar charts and histograms</a>
+      </h3>
+		<p>
+		   <!--#include virtual="widths/description" -->
+		</p>
+		
+<!--#include virtual="inc/footer.shtml" -->
+

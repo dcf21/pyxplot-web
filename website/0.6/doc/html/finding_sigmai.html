@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Finding </title>
+
+<link href="sect0119.html" title="ChangeLog" rel="next" />
+<link href="correlation_matrix.html" title="The Correlation Matrix" rel="prev" />
+<link href="fit_math.html" title="The &lt;tt class=&quot;ttfamily&quot;&gt;fit&lt;/tt&gt; Command: Mathematical Details" rel="up" />
+<link rel="stylesheet" href="styles/plastex-styles.css" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="correlation_matrix.html" title="The Correlation Matrix"><img alt="Previous: The Correlation Matrix" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="fit_math.html" title="The fit Command: Mathematical Details"><img alt="Up: The fit Command: Mathematical Details" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0119.html" title="ChangeLog"><img alt="Next: ChangeLog" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="fit_math.html">The <tt class="ttfamily">fit</tt> Command: Mathematical Details</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Finding <img src="images/img-0111.png" alt="$\sigma _ i$" style="position:relative; bottom:-3px; width:15px; height:11px" class="math" /></b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="finding_sigmai">7.6 Finding <img src="images/img-0111.png" alt="$\sigma _ i$" style="position:relative; bottom:-3px; width:15px; height:11px" class="math" /></h1>
+<p>  </p><p>Throughout the preceding sections, the uncertainties in the supplied target values <img src="images/img-0110.png" alt="$f_ i$" style="position:relative; bottom:-4px; width:13px; height:17px" class="math" /> have been denoted <img src="images/img-0111.png" alt="$\sigma _ i$" style="position:relative; bottom:-3px; width:15px; height:11px" class="math" /> (see Section <a href="bayes_notation.html">7.1</a>). The user has the option of supplying these in the source datafile, in which case the provisions of the previous sections are now complete; both best-estimate parameter values and their uncertainties can be calculated. The user may also, however, leave the uncertainties in <img src="images/img-0110.png" alt="$f_ i$" style="position:relative; bottom:-4px; width:13px; height:17px" class="math" /> unstated, in which case, as described in Section <a href="bayes_notation.html">7.1</a>, we assume all of the data values to have a common uncertainty <img src="images/img-0112.png" alt="$\sigma _\mathrm{data}$" style="position:relative; bottom:-4px; width:37px; height:12px" class="math" />, which is an unknown. </p><p>In this case, where <img src="images/img-0175.png" alt="$\sigma _ i = \sigma _\mathrm{data} \, \forall \,  i$" style="position:relative; bottom:-4px; width:101px; height:17px" class="math" />, the best fitting parameter values are independent of <img src="images/img-0112.png" alt="$\sigma _\mathrm{data}$" style="position:relative; bottom:-4px; width:37px; height:12px" class="math" />, but the same is not true of the uncertainties in these values, as the terms of the Hessian matrix do depend upon <img src="images/img-0112.png" alt="$\sigma _\mathrm{data}$" style="position:relative; bottom:-4px; width:37px; height:12px" class="math" />. We must therefore undertake a further calculation to find the most probable value of <img src="images/img-0112.png" alt="$\sigma _\mathrm{data}$" style="position:relative; bottom:-4px; width:37px; height:12px" class="math" />, given the data. This is achieved by maximising <img src="images/img-0176.png" alt="$\mathrm{P}\left( \sigma _\mathrm{data} | \left\{  \mathbf{x}_ i, f_ i \right\}  \right)$" style="position:relative; bottom:-5px; width:133px; height:19px" class="math" />. Returning once again to Bayes’ Theorem, we can write: </p><table id="a-1231470964" class="equation" width="100%">
+<tr>
+<td>
+<img src="images/img-0177.png" alt="\begin{equation}  \mathrm{P}\left( \sigma _\mathrm{data} | \left\{  \mathbf{x}_ i, f_ i \right\}  \right) = \frac{ \mathrm{P}\left( \left\{  f_ i \right\}  | \sigma _\mathrm{data}, \left\{  \mathbf{x}_ i \right\}  \right) \mathrm{P}\left( \sigma _\mathrm{data} | \left\{  \mathbf{x}_ i \right\}  \right) }{ \mathrm{P}\left( \left\{  f_ i \right\}  | \left\{  \mathbf{x}_ i \right\}  \right) } \end{equation}" style="width:512px; height:44px" />
+<td class="eqnnum"><span>(<span>7.17</span>)</span></td>
+</tr>
+</table><p>As before, we neglect the denominator, which has no effect upon the maximisation problem, and assume a uniform prior <img src="images/img-0178.png" alt="$\mathrm{P}\left( \sigma _\mathrm{data} | \left\{  \mathbf{x}_ i \right\}  \right)$" style="position:relative; bottom:-5px; width:110px; height:19px" class="math" />. This reduces the problem to the maximisation of <img src="images/img-0179.png" alt="$\mathrm{P}\left( \left\{  f_ i \right\}  | \sigma _\mathrm{data}, \left\{  \mathbf{x}_ i \right\}  \right)$" style="position:relative; bottom:-5px; width:151px; height:19px" class="math" />, which we may write as a marginalised probability distribution over <img src="images/img-0116.png" alt="$\mathbf{u}$" style="position:relative; bottom:-1px; width:12px; height:10px" class="math" />: </p><table id="&lt;plasTeX.TeXFragment object at 0xb68e60ec&gt;" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
+<tr id="a-1232225684">
+    <td></td>
+    
+    
+        <td style="width:17.133em; vertical-align:baseline; text-align:right"><img src="images/img-0180.png" alt="$\displaystyle  \label{p_ f_ given_ sigma} \mathrm{P}\left( \left\{  f_ i \right\}  | \sigma _\mathrm{data}, \left\{  \mathbf{x}_ i \right\}  \right) = \idotsint _{-\infty }^{\infty }  $" style="position:relative; bottom:0.0px; width:257px; height:43px" class="math" /></td>
+    
+    
+    
+        <td style="width:12.667em; vertical-align:baseline; text-align:center"><img src="images/img-0181.png" alt="$\displaystyle  \mathrm{P}\left( \left\{  f_ i \right\}  | \sigma _\mathrm{data}, \left\{  \mathbf{x}_ i \right\} , \mathbf{u} \right) \times  $" style="position:relative; bottom:12.0px; width:190px; height:19px" class="math" /></td>
+    
+    
+    
+        <td style="width:0.067em; vertical-align:baseline; text-align:left"><img src="images/img-0130.png" alt="$\displaystyle  $" style="position:relative; bottom:17.0px; width:1px; height:1px" class="math" /></td>
+    
+    
+    <td></td>
+    <td class="eqnnum"><span>(<span>7.18</span>)</span></td>
+</tr><tr id="a-1232174228">
+    <td></td>
+    
+    
+        <td style="width:0.067em; vertical-align:baseline; text-align:right"><img src="images/img-0130.png" alt="$\displaystyle  $" style="position:relative; bottom:5.0px; width:1px; height:1px" class="math" /></td>
+    
+    
+    
+        <td style="width:11.533em; vertical-align:baseline; text-align:center"><img src="images/img-0182.png" alt="$\displaystyle  \mathrm{P}\left( \mathbf{u} | \sigma _\mathrm{data}, \left\{  \mathbf{x}_ i \right\}  \right) \, \mathrm{d}^{n_\mathrm{u}}\mathbf{u}  $" style="position:relative; bottom:0.0px; width:173px; height:19px" class="math" /></td>
+    
+    
+    
+        <td style="width:0.067em; vertical-align:baseline; text-align:left"><img src="images/img-0183.png" alt="$\displaystyle  \nonumber  $" style="position:relative; bottom:5.0px; width:1px; height:1px" class="math" /></td>
+    
+    
+    <td></td>
+    <td class="eqnnum"></td>
+</tr>
+</table><p>Assuming a uniform prior for <img src="images/img-0116.png" alt="$\mathbf{u}$" style="position:relative; bottom:-1px; width:12px; height:10px" class="math" />, we may neglect the latter term in the integral, but even with this assumption, the integral is not generally tractable, as <img src="images/img-0184.png" alt="$\mathrm{P}\left( \left\{  f_ i \right\}  | \sigma _\mathrm{data}, \left\{  \mathbf{x}_ i \right\} , \left\{  \mathbf{u}_ i \right\}  \right)$" style="position:relative; bottom:-5px; width:198px; height:19px" class="math" /> may well be multimodal in form. However, if we neglect such possibilities, and assume this probability distribution to be approximate a Gaussian <i class="itshape">globally</i>, we can make use of the standard result for an <img src="images/img-0113.png" alt="$n_\mathrm{u}$" style="position:relative; bottom:-3px; width:19px; height:11px" class="math" />-dimensional Gaussian integral: </p><table id="a-1231976340" class="equation" width="100%">
+<tr>
+<td>
+<img src="images/img-0185.png" alt="\begin{equation}  \idotsint _{-\infty }^{\infty } \exp \left( \frac{1}{2}\mathbf{u}^\mathbf{T} \mathbf{A} \mathbf{u} \right) \, \mathrm{d}^{n_\mathrm{u}}\mathbf{u} = \frac{ (2\pi )^{n_\mathrm{u}/2} }{ \sqrt {\mathrm{Det}\left(-\mathbf{A}\right)} } \end{equation}" style="width:483px; height:50px" />
+<td class="eqnnum"><span>(<span>7.19</span>)</span></td>
+</tr>
+</table><p>We may thus approximate equation (<a></a>) as: </p><table id="a-1232138900" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
+<tr id="a-1232138388">
+    <td></td>
+    
+    
+        <td style="width:10.067em; vertical-align:baseline; text-align:right"><img src="images/img-0186.png" alt="$\displaystyle  \mathrm{P}\left( \left\{  f_ i \right\}  | \sigma _\mathrm{data}, \left\{  \mathbf{x}_ i \right\}  \right)  $" style="position:relative; bottom:1.0px; width:151px; height:19px" class="math" /></td>
+    
+    
+    
+        <td style="width:0.800em; vertical-align:baseline; text-align:center"><img src="images/img-0187.png" alt="$\displaystyle  \approx  $" style="position:relative; bottom:7.0px; width:12px; height:8px" class="math" /></td>
+    
+    
+    
+        <td style="width:13.333em; vertical-align:baseline; text-align:left"><img src="images/img-0188.png" alt="$\displaystyle  \mathrm{P}\left( \left\{  f_ i \right\}  | \sigma _\mathrm{data}, \left\{  \mathbf{x}_ i \right\} , \mathbf{u}^0 \right) \times  $" style="position:relative; bottom:0.0px; width:200px; height:23px" class="math" /></td>
+    
+    
+    <td></td>
+    <td class="eqnnum"><span>(<span>7.20</span>)</span></td>
+</tr><tr id="a-1232227412">
+    <td></td>
+    
+    
+        <td style="width:0.067em; vertical-align:baseline; text-align:right"><img src="images/img-0130.png" alt="$\displaystyle  $" style="position:relative; bottom:21.0px; width:1px; height:1px" class="math" /></td>
+    
+    
+    
+        <td style="width:0.067em; vertical-align:baseline; text-align:center"><img src="images/img-0130.png" alt="$\displaystyle  $" style="position:relative; bottom:21.0px; width:1px; height:1px" class="math" /></td>
+    
+    
+    
+        <td style="width:17.400em; vertical-align:baseline; text-align:left"><img src="images/img-0189.png" alt="$\displaystyle  \mathrm{P}\left( \mathbf{u}^0 | \sigma _\mathrm{data}, \left\{  \mathbf{x}_ i, f_ i \right\}  \right) \frac{ (2\pi )^{n_\mathrm{u}/2} }{ \sqrt {\mathrm{Det}\left(-\mathbf{A}\right)} } \nonumber  $" style="position:relative; bottom:0.0px; width:261px; height:50px" class="math" /></td>
+    
+    
+    <td></td>
+    <td class="eqnnum"></td>
+</tr>
+</table><p>As in Section <a href="bayes_pdf.html">7.2</a>, it is numerically easier to maximise this quantity via its logarithm, which we denote <img src="images/img-0190.png" alt="$L_2$" style="position:relative; bottom:-2px; width:19px; height:15px" class="math" />, and can write as: </p><table id="a-1232060500" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
+<tr id="a-1232064244">
+    <td></td>
+    
+    
+        <td style="width:1.267em; vertical-align:baseline; text-align:right"><img src="images/img-0191.png" alt="$\displaystyle  L_2  $" style="position:relative; bottom:21.0px; width:19px; height:15px" class="math" /></td>
+    
+    
+    
+        <td style="width:0.800em; vertical-align:baseline; text-align:center"><img src="images/img-0128.png" alt="$\displaystyle  =  $" style="position:relative; bottom:25.0px; width:12px; height:5px" class="math" /></td>
+    
+    
+    
+        <td style="width:23.933em; vertical-align:baseline; text-align:left"><img src="images/img-0192.png" alt="$\displaystyle  \sum _{i=0}^{n_\mathrm{d}-1} \left( \frac{ -\left[f_ i - f_{\mathbf{u}^0}(\mathbf{x}_ i)\right]^2 }{ 2\sigma _\mathrm{data}^2 } - \log _ e \left(2\pi \sqrt {\sigma _\mathrm{data}} \right) \right) +  $" style="position:relative; bottom:0.0px; width:359px; height:55px" class="math" /></td>
+    
+    
+    <td></td>
+    <td class="eqnnum"><span>(<span>7.21</span>)</span></td>
+</tr><tr id="a-1232505780">
+    <td></td>
+    
+    
+        <td style="width:0.067em; vertical-align:baseline; text-align:right"><img src="images/img-0130.png" alt="$\displaystyle  $" style="position:relative; bottom:23.0px; width:1px; height:1px" class="math" /></td>
+    
+    
+    
+        <td style="width:0.067em; vertical-align:baseline; text-align:center"><img src="images/img-0130.png" alt="$\displaystyle  $" style="position:relative; bottom:23.0px; width:1px; height:1px" class="math" /></td>
+    
+    
+    
+        <td style="width:10.533em; vertical-align:baseline; text-align:left"><img src="images/img-0193.png" alt="$\displaystyle  \nonumber \log _ e \left( \frac{ (2\pi )^{n_\mathrm{u}/2} }{ \sqrt {\mathrm{Det}\left(-\mathbf{A}\right)} } \right)  $" style="position:relative; bottom:0.0px; width:158px; height:55px" class="math" /></td>
+    
+    
+    <td></td>
+    <td class="eqnnum"></td>
+</tr>
+</table><p>This quantity is maximised numerically, a process simplified by the fact that <img src="images/img-0125.png" alt="$\mathbf{u}^0$" style="position:relative; bottom:-1px; width:19px; height:17px" class="math" /> is independent of <img src="images/img-0112.png" alt="$\sigma _\mathrm{data}$" style="position:relative; bottom:-4px; width:37px; height:12px" class="math" />. </p></div>
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="correlation_matrix.html" title="The Correlation Matrix"><img alt="Previous: The Correlation Matrix" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="fit_math.html" title="The fit Command: Mathematical Details"><img alt="Up: The fit Command: Mathematical Details" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0119.html" title="ChangeLog"><img alt="Next: ChangeLog" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

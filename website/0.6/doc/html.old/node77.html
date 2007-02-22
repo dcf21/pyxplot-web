@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>5.21.4 axis</TITLE>
+<META NAME="description" CONTENT="5.21.4 axis">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node78.html">
+<LINK REL="previous" HREF="node76.html">
+<LINK REL="up" HREF="node73.html">
+<LINK REL="next" HREF="node78.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1685"
+  HREF="node78.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1679"
+  HREF="node73.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1673"
+  HREF="node76.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1681"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1683"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1686"
+  HREF="node78.html">5.21.5 backup</A>
+<B> Up:</B> <A NAME="tex2html1680"
+  HREF="node73.html">5.21 set</A>
+<B> Previous:</B> <A NAME="tex2html1674"
+  HREF="node76.html">5.21.3 axescolour</A>
+ &nbsp; <B>  <A NAME="tex2html1682"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1684"
+  HREF="node179.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION006214000000000000000">
+<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">21</SPAN>.<SPAN CLASS="arabic">4</SPAN> axis</A>
+</H2><A NAME="3298"></A>
+
+<P>
+<PRE>
+set axis &lt;axis&gt;, ...
+</PRE>
+
+<P>
+The command:
+
+<P>
+<PRE>
+set axis x2
+</PRE>
+
+<P>
+may be used to add a second <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="$ x$"></SPAN>-axis to a plot, with default settings. In
+general, there is no practical reason to use this command, as a second <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="$ x$"></SPAN>-axis
+would implicitly be created anyway by any of the following statements:
+
+<P>
+<PRE>
+set x2label 'foo' \\
+set x2ticdir outwards \\
+plot sin(x) axes x2y1
+</PRE>
+
+<P>
+Of more practical use is the `<TT>unset x2</TT>' command, which is used to remove an
+axis once it has been added to a plot. After executing:
+
+<P>
+<PRE>
+set x2label 'foo'
+</PRE>
+
+<P>
+for example, the only way to tell PyXPlot to subsequently produce a plot
+without a second <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="$ x$"></SPAN>-axis would be to delete this axis with the following
+command:
+
+<P>
+<PRE>
+unset axis x2
+</PRE>
+
+<P>
+Note that in this case, the <TT>unset x2label</TT> command would be sufficent to
+remove the label `foo' placed on the new axis, but not sufficient to delete the
+new axis that the <TT>set x2label</TT> command implicitly created. Multiple axes
+can be deleted in a single <TT>unset axis</TT> statement, for example:
+
+<P>
+<PRE>
+unset axis x2x4x5
+</PRE>
+
+<P>
+In the special cases of <TT>unset axis x1</TT> or <TT>unset axis y1</TT>, these axes
+cannot be deleted; a plot must have at least one <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="$ x$"></SPAN>- and one <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ y$"></SPAN>-axis. Instead,
+the <TT>unset axis</TT> command restores these axes to their default
+configurations, removing any set titles or ranges that they might have been
+given.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1685"
+  HREF="node78.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1679"
+  HREF="node73.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1673"
+  HREF="node76.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1681"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1683"
+  HREF="node179.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1686"
+  HREF="node78.html">5.21.5 backup</A>
+<B> Up:</B> <A NAME="tex2html1680"
+  HREF="node73.html">5.21 set</A>
+<B> Previous:</B> <A NAME="tex2html1674"
+  HREF="node76.html">5.21.3 axescolour</A>
+ &nbsp; <B>  <A NAME="tex2html1682"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1684"
+  HREF="node179.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford, 24 November 2006
+</ADDRESS>
+</BODY>
+</HTML>

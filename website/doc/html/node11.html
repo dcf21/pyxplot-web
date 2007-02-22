@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2.3 Plotting Datafiles</TITLE>
+<META NAME="description" CONTENT="2.3 Plotting Datafiles">
+<META NAME="keywords" CONTENT="pyxplot">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="pyxplot.css">
+
+<LINK REL="next" HREF="node12.html">
+<LINK REL="previous" HREF="node10.html">
+<LINK REL="up" HREF="node8.html">
+<LINK REL="next" HREF="node12.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html342"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html336"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html330"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html338"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html340"
+  HREF="node69.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html343"
+  HREF="node12.html">2.4 Directing Where Output</A>
+<B> Up:</B> <A NAME="tex2html337"
+  HREF="node8.html">2. First Steps With</A>
+<B> Previous:</B> <A NAME="tex2html331"
+  HREF="node10.html">2.2 First Plots</A>
+ &nbsp; <B>  <A NAME="tex2html339"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html341"
+  HREF="node69.html">Index</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00330000000000000000"></A>
+<A NAME="plot_datafiles"></A>
+<BR>
+<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">3</SPAN> Plotting Datafiles
+</H1>
+
+<P>
+In the simple example of the previous section, we plotted the first column of a
+datafile against the second. It is also possible to plot any arbitrary column
+of a datafile against any other; the syntax for doing this is:
+
+<P>
+<PRE>
+plot 'datafile' using 3:5
+</PRE>
+
+<P>
+This example would plot the fifth column of the file
+<TT>datafile</TT> against the third. As mentioned above, columns in datafiles
+can be separated using whitespace and/or commas, which means that PyXPlot is
+compatible both with the format used by gnuplot, and also with
+comma-separated-value (CSV)<A NAME="162"></A> files which many
+spreadsheets<A NAME="163"></A> produce. Algebraic
+expressions may also be used in place of column numbers, for example:
+
+<P>
+<PRE>
+plot 'datafile' using (3+$1+$2):(2+$3)
+</PRE>
+
+<P>
+In algebraic expressions, column numbers should be prefixed by dollar
+signs, to distinguish them from numerical constants. The example above would
+plot the sum of the values in the first two columns of the datafile, plus
+three, on the horizontal axis, against two plus the value in the third column
+on the vertical axis. A more advanced example might be:
+
+<P>
+<PRE>
+plot 'datafile' using 3.0:$($2)
+</PRE>
+
+<P>
+This would place all of the datapoints on the line <SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$ x=3$"></SPAN>, drawing
+their vertical positions from the value of some column <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.png"
+ ALT="$ n$"></SPAN> in the datafile,
+where the value of <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.png"
+ ALT="$ n$"></SPAN> is itself read from the second column of the datafile.
+
+<P>
+Later, in section&nbsp;<A HREF="node26.html#horizontal_datafiles">3.3</A>, I shall discuss how to plot rows
+of datafiles against one another, in horizontally arranged datafiles.
+
+<P>
+It is also possible to plot data from only a range of lines within a datafile.
+When PyXPlot reads a datafile, it looks for any blank lines in the file. It
+divides the datafile up into ``data blocks'', each being separated by single
+blank lines. The first datablock is numbered 0, the next 1, and so on.
+<A NAME="169"></A>
+
+<P>
+When two or more blank lines are found together, the datafile is divided up
+into ``index blocks''. Each index block may be made up of a series of data
+blocks. To clarify this, a labelled example datafile is shown in
+figure&nbsp;<A HREF="#sample_datafile">2.1</A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="sample_datafile"></A><A NAME="185"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.1:</STRONG>
+An Example PyXPlot Datafile - the datafile is shown in the two left-hand columns, and commands are shown to the right.</CAPTION>
+<TR><TD><IMG
+ WIDTH="565" HEIGHT="326" BORDER="0"
+ SRC="img12.png"
+ ALT="\begin{figure}\begin{tabular}{p{2.2cm}l}
+\hline
+\texttt{0.0  0.0} &amp; Start of in...
+...f index 1, data block 1. \\
+&amp; $&lt;$etc$&gt;$ \\
+\hline
+\end{tabular}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+By default, when a datafile is plotted, all data blocks in all index blocks are
+plotted. To plot only the data from one index block, the following syntax may
+be used:
+
+<P>
+<PRE>
+plot 'datafile' index 1
+</PRE>
+
+<P>
+To achieve the default behaviour of plotting all index blocks, the
+<TT>index</TT> modifier should be followed by a negative number.<A NAME="1986"></A>
+
+<P>
+It is also possible to specify which lines and/or data blocks to plot from
+within each index. For this purpose the <TT>every</TT> modifier is used, which
+takes six values, separated by colons:<A NAME="1987"></A>
+
+<P>
+<PRE>
+plot 'datafile' every a:b:c:d:e:f
+</PRE>
+
+<P>
+The values have the following meanings:
+
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=34><SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$ a$"></SPAN></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=298>Plot data only from every <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.png"
+ ALT="$ a $"></SPAN>th line in datafile.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=34><SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$ b$"></SPAN></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=298>Plot only data from every <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$ b $"></SPAN>th block within each index block.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=34><SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.png"
+ ALT="$ c$"></SPAN></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=298>Plot only from line <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.png"
+ ALT="$ c$"></SPAN> onwards within each block.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=34><SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$ d$"></SPAN></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=298>Plot only data from block <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$ d$"></SPAN> onwards within each index block.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=34><SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.png"
+ ALT="$ e$"></SPAN></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=298>Plot only up to the <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.png"
+ ALT="$ e $"></SPAN>th line within each block.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=34><SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$ f$"></SPAN></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=298>Plot only up to the <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$ f $"></SPAN>th block within each index block.</TD>
+</TR>
+</TABLE>
+
+<P>
+Any or all of these values can be omitted, and so the following would
+both be valid statements:
+
+<P>
+<PRE>
+plot 'datafile' index 1 every 2:3
+plot 'datafile' index 1 every :::3
+</PRE>
+
+<P>
+The first would plot only every other data point from every third
+data block; the second from the third line onwards within each data block.
+
+<P>
+A final modifier for selecting which parts of a datafile are plotted is
+<TT>select</TT>, which plots only those data points which satisfy some given
+criterion. This is an extension of gnuplot's original syntax, and is described
+in section&nbsp;<A HREF="node26.html#select_modifier">3.3</A>.
+
+<P>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html342"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html336"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html330"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html338"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html340"
+  HREF="node69.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html343"
+  HREF="node12.html">2.4 Directing Where Output</A>
+<B> Up:</B> <A NAME="tex2html337"
+  HREF="node8.html">2. First Steps With</A>
+<B> Previous:</B> <A NAME="tex2html331"
+  HREF="node10.html">2.2 First Plots</A>
+ &nbsp; <B>  <A NAME="tex2html339"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html341"
+  HREF="node69.html">Index</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Dominic Ford
+2006-09-09
+</ADDRESS>
+</BODY>
+</HTML>

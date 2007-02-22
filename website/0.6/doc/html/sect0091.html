@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: size</title>
+
+<link href="sect0092.html" title="terminal" rel="next" />
+<link href="sect0090.html" title="samples" rel="prev" />
+<link href="sect0047.html" title="set" rel="up" />
+<link rel="stylesheet" href="styles/plastex-styles.css" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0090.html" title="samples"><img alt="Previous: samples" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0047.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0092.html" title="terminal"><img alt="Next: terminal" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0026.html">Command Reference</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0047.html">set</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">size</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="a-1230320788">5.21.44 size</h2>
+<p><span id="a-1230232564"></span> </p><pre>
+set size (&gt;width&lt;|ratio &lt;ratio&gt;|noratio|square)
+</pre><p>The setting <tt class="tt">size</tt> is deprecated; use <tt class="tt">set width</tt> instead. It sets the width of the plot in centimetres. However, the command <tt class="tt">set size</tt>, when followed by the keyword <tt class="tt">ratio</tt>, is still used to set the aspect ratio of plots. See the ‘<tt class="tt">ratio</tt>’ setting below for details. </p><h3 id="a-1230134772">noratio</h3>
+<p><span id="a-1230131540"></span> </p><pre>
+set size noratio
+</pre><p>Running: </p><pre>
+set size noratio
+</pre><p>resets PyXPlot to produce plots with its default aspect ratio, which is the golden section. Other aspect ratios can be set with the <tt class="tt">set size ratio</tt> command. </p><h3 id="a-1230322420">ratio</h3>
+<p><span id="a-1230135252"></span> </p><pre>
+set size ratio &lt;ratio&gt;
+</pre><p>The command: </p><pre>
+set size ratio x
+</pre><p>sets the aspect ratio of plots produced by PyXPlot. The height of resulting plots will equal the plot width, as set by the <tt class="tt">set width</tt> command, muliplied by this aspect ratio. The value <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" /> in the above statement can be substituted with any positive value, for example: </p><pre>
+set size ratio 2.0
+</pre><p>would cause PyXPlot to produce plots that are twice as high as they are wide. </p><p>The default aspect ratio which PyXPlot uses is a golden ratio of <img src="images/img-0086.png" alt="$2/(1+\sqrt {5})$" style="position:relative; bottom:-5px; width:86px; height:21px" class="math" />, which matches that of a sheet of A4 paper. </p><h3 id="a-1229900340">square</h3>
+<p><span id="a-1230229940"></span> </p><pre>
+set size square
+</pre><p>The command: </p><pre>
+set size square
+</pre><p>sets PyXPlot to produce square plots, i.e. with unit aspect ratio. Other aspect ratios can be set with the <tt class="tt">set size ratio</tt> command. </p></div>
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0090.html" title="samples"><img alt="Previous: samples" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0047.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0092.html" title="terminal"><img alt="Next: terminal" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>
