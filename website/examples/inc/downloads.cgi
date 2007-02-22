@@ -26,7 +26,8 @@ print "Content-type: text/html\n\n";
 
 # Deal with the first set of files
 foreach my $file (@files1) {
-	checkExists($file);
+	#checkExists($file);
+	next unless (-e $file);
 	my $size = fileSize($file);
 	my $extension = fileExtension($file);
 	my $html = interpolateHtml($file, $extension, $size);
