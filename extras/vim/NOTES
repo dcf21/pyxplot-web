@@ -1,0 +1,6 @@
+Syntax highlighting stuff.  To use:
+mkdir ~/.vim
+mkdir ~/.vim/syntax
+cp ppl.vim ~/.vim/syntax
+cp filetype.vim ~/.vim
+
