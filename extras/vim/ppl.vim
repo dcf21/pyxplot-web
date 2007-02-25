@@ -20,7 +20,47 @@ syn case ignore
 " Command keywords
 "syn keyword pplKeyword fit set show spline
 " Set command (Of which there is lots.  And lots.  And lots :-)
-syn match pplCommand /\v^\s*<set=>/ nextgroup=pplSetTerm,pplSetLabel,pplSetRange,pplSetTicdir,pplSetTics,pplSetArrow,pplSetAutoscale,pplSetAxescolour,pplSetAxis,pplSetBackup,pplSetBar,pplSetBoxfrom,pplSetBoxwidth,pplSetDatastyle,pplSetDisplay,pplSetDpi,pplSetFontsize,pplSetGrid,pplSetGrc,pplSetKey skipwhite
+syn match pplCommand /\v^\s*<set=>/ skipwhite nextgroup=pplSetTerm,pplSetLabel,pplSetRange,pplSetTicdir,pplSetTics,pplSetArrow,pplSetAutoscale,pplSetAxescolour,pplSetAxis,pplSetBackup,pplSetBar,pplSetBoxfrom,pplSetBoxwidth,pplSetDatastyle,pplSetDisplay,pplSetDpi,pplSetFontsize,pplSetGrid,pplSetGrc,pplSetKey,pplSetKeyColumns,pplSetLinestyle,pplSetLinewidth,pplSetLog,pplSetMultiplot,pplSetNoarrow,pplSetNoaxis,pplSetNobackup,pplSetNodisplay,pplSetNogrid,pplSetNolabel,pplSetNols,pplSetNolog,pplSetNomult
+syn match pplSetNomult /\v<nom(u(l(t(i(p(l(ot=)=)=)=)=)=)=)=>/ contained
+highlight link pplSetNomult Type
+syn match pplSetNolog /\v<nolo(g(s(c(a(le=)=)=)=)=)=>/ contained nextgroup=pplAxis skipwhite
+highlight link pplSetNolog Type
+syn match pplSetNols /\v<nol(i(n(e(s(t(y(le=)=)=)=)=)=)=)=>/ contained nextgroup=pplIntlist skipwhite
+highlight link pplSetNols Type
+syn match pplSetNolabel /\v<nola(b(el=)=)=>/ contained nextgroup=pplIntlist skipwhite
+highlight link pplSetNolabel Type
+syn match pplSetNogrid /\v<nog(r(id=)=)=>/ contained nextgroup=pplAxis
+highlight link pplSetNogrid Type
+syn match pplSetNodisplay /\v<nod(i(s(p(l(ay=)=)=)=)=)=>/ contained
+highlight link pplSetNodisplay Type
+syn match pplSetNobackup /\v<nob(a(c(k(up=)=)=)=)=>/ contained
+highlight link pplSetNobackup Type
+syn match pplSetNoaxis /\v<noa(x(is=)=)=>/ contained nextgroup=pplAxis skipwhite
+highlight link pplSetNoaxis Type
+syn match pplSetNoarrow /\v<noa(r(r(ow=)=)=)=>/ contained nextgroup=pplIntlist skipwhite
+highlight link pplSetNoarrow Type
+syn match pplSetMultiplot /\v<m(u(l(t(i(p(l(ot=)=)=)=)=)=)=)=>/ contained
+highlight link pplSetMultiplot Type
+syn match pplSetLog /\v<l(o(g(s(c(a(le=)=)=)=)=)=)=>/ contained nextgroup=pplAxis skipwhite
+highlight link pplSetLog Type
+syn match pplSetLinewidth /\v<linew(i(d(th=)=)=)=>/ contained nextgroup=pplNumber,pplFloat skipwhite 
+syn match pplSetLinewidth /\v<lw>/ contained nextgroup=pplNumber,pplFloat skipwhite 
+highlight link pplSetLinewidth Type
+syn match pplSetLinestyle /\v<l(i(n(e(s(t(y(le=)=)=)=)=)=)=)=>\s*\d+/ contained contains=pplNumber nextgroup=pplWithCommand skipwhite
+syn match pplSetLinestyle /\v<ls>\s*\d+/ contained contains=pplNumber nextgroup=pplWithCommand skipwhite
+highlight link pplSetLinestyle Type
+syn match pplSetLabel /\v<la(b(el=)=)=>\s+\d+/ contained contains=pplNumber nextgroup=pplSetLabelCommand skipwhite
+syn match pplSetLabelCommand /.*/ contained contains=pplNumber,pplFloat,pplString,pplSetLabelMods
+syn match pplSetLabelMods /\v<f(i(r(st=)=)=)=>/ contained
+syn match pplSetLabelMods /\v<s(e(c(o(nd=)=)=)=)=>/ contained
+syn match pplSetLabelMods /\v<sc(r(e(en=)=)=)=>/ contained
+syn match pplSetLabelMods /\v<g(r(a(ph=)=)=)=>/ contained
+syn match pplSetLabelMods /\v<axis>/ contained
+syn match pplSetLabelMods /\v<at=>/ contained
+syn match pplSetLabelMods /\v<r(o(t(a(te=)=)=)=)=>/ contained
+highlight link pplSetLabelMods Define
+syn match pplSetKeycolumns /\v<keyc(o(l(u(m(ns=)=)=)=)=)=>/ contained nextgroup=pplNumber skipwhite
+highlight link pplSetKeyColumns Type
 syn match pplSetKey /\v<k(ey=)=>/ contained nextgroup=pplSetKeyCommand skipwhite
 syn match pplSetKeyCommand /.*/ contained contains=pplSetKeyMods,pplNumber,pplFloat
 syn match pplSetKeyMods /\v<be(l(ow=)=)=>/ contained
@@ -230,6 +270,7 @@ syn match pplSpecial /\v\$[0-9]+/ contained
 highlight link pplRange Special
 
 " Numbers
+syn match pplIntlist /\v\d+(\s*,\s*\d+)*/ contained contains=pplNumber
 syn match pplNumber /\<[0-9]*\>/ contained
 highlight link pplNumber Number
 syn match pplFloat          "[+-]\=\d\+\." contained
