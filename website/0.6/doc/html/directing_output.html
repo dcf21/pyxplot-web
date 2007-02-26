@@ -24,7 +24,7 @@
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -51,17 +51,18 @@
 <hr />
 </div>
 
-<div><h1 id="directing_output">2.5 Directing Where Output Goes</h1>
-<p>  </p><p>By default, when PyXPlot is used interactively, all plots are displayed on the screen. It is also possible to produce postscript output, to be read into other programs or embedded into L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X documents, as well as a variety of other graphic formats. The <tt class="ttfamily">set terminal</tt> command<span id="a-1225955668"></span><a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">gnuplot users should note that the syntax of the <tt class="ttfamily">set terminal</tt> command in PyXPlot is rather different; see Section <a href="terminals.html">3.2</a>.</span></a> is used to specify the output format that is required, and the <tt class="ttfamily">set output</tt> command<span id="a-1225953716"></span> the file to which output should be directed. For example, </p><pre>
+<div><h1 id="directing_output">2.6 Directing Where Output Goes</h1>
+<p>  </p><p>By default, when PyXPlot is used interactively, all plots are displayed on the screen. It is also possible to produce postscript output, to be read into other programs or embedded into L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X documents, as well as a variety of other graphical formats. The <tt class="ttfamily">set terminal</tt> command<span id="a-1225732308"></span><a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">gnuplot users should note that the syntax of the <tt class="ttfamily">set terminal</tt> command in PyXPlot is rather different; see Section <a href="terminals.html">3.2</a>.</span></a> is used to specify the output format that is required, and the <tt class="ttfamily">set output</tt> command<span id="a-1225709588"></span> the file to which output should be directed. For example, </p><pre>
 set terminal postscript
 set output 'myplot.eps'
 plot sin(x)
-</pre><p>would produce a postscript plot of <img src="images/img-0004.png" alt="$\sin (x)$" style="position:relative; bottom:-5px; width:45px; height:19px" class="math" /> to the file <tt class="ttfamily">myplot.eps</tt>. </p><p>The <tt class="ttfamily">set terminal</tt> command can also be used to configure further aspects of the output file format. For example, the following would produce black-and-white and colour output respectively: </p><pre>
+</pre><p>would produce a postscript plot of <img src="images/img-0003.png" alt="$\sin (x)$" style="position:relative; bottom:-5px; width:45px; height:19px" class="math" /> to the file <tt class="ttfamily">myplot.eps</tt>. </p><p>The <tt class="ttfamily">set terminal</tt> command can also be used to configure further aspects of the output file format. For example, the following would produce black-and-white and colour output respectively: </p><pre>
 set terminal monochrome
 set terminal colour
-</pre><p>The former is useful for preparing plots for black-and-white publications, the latter for preparing plots for colourful presentations. </p><p>Both encapsulated and non-encapsulated postscript can be produced. The former is recommended for producing figures to embed into documents, the latter for plots which are to be printed without further processing. The <tt class="ttfamily">postscript</tt> terminal produces the latter; the <tt class="ttfamily">eps</tt> terminal should be used to produce the former: </p><pre>
+</pre><p>The former is useful for preparing plots for black-and-white publications, the latter for preparing plots for colourful presentations. </p><p>Both encapsulated and non-encapsulated postscript can be produced. The former is recommended for producing figures to embed into documents, the latter for plots which are to be printed without further processing. The <tt class="ttfamily">postscript</tt> terminal produces the latter; the <tt class="ttfamily">eps</tt> terminal should be used to produce the former. Similarly the <tt class="ttfamily">pdf</tt> terminal produces pdf files: </p><pre>
 set terminal postscript
 set terminal eps
+set terminal pdf
 </pre><p>It is also possible to produce plots in the gif, png and jpeg graphic formats, as follows: </p><pre>
 set terminal gif
 set terminal png
@@ -71,7 +72,7 @@ set terminal postscript colour
 set terminal gif monochrome
 </pre><p>To return to the default state of displaying plots on screen, the <tt class="ttfamily">x11</tt> terminal should be selected: </p><pre>
 set terminal x11
-</pre><p>For more details of the <tt class="ttfamily">set terminal</tt> command, including how to produce transparent gifs and pngs, see Section <a href="terminals.html">3.2</a>. </p><p>We finally note that, after changing terminals, the <tt class="ttfamily">replot</tt> command is especially useful; it repeats the last <tt class="ttfamily">plot</tt> command.<span id="a-1225954900"></span>. If any plot items are placed after it, they are added to the last plot. </p></div>
+</pre><p>For more details of the <tt class="ttfamily">set terminal</tt> command, including how to produce transparent gifs and pngs, see Section <a href="terminals.html">3.2</a>. </p><p>We finally note that, after changing terminals, the <tt class="ttfamily">replot</tt> command is especially useful; it repeats the last <tt class="ttfamily">plot</tt> command.<span id="a-1225734548"></span>. If any plot items are placed after it, they are added to the last plot. </p></div>
 
 
 
@@ -87,7 +88,7 @@ set terminal x11
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Basic Operation</title>
+<title>: Deleting, Moving and Changing Plots</title>
 
-<link href="sect0020.html" title="Stacked Bar Charts" rel="next" />
-<link href="barcharts.html" title="Barcharts and Histograms" rel="prev" />
-<link href="barcharts.html" title="Barcharts and Histograms" rel="up" />
+<link href="linked_axes.html" title="Linked Axes" rel="next" />
+<link href="multiplot.html" title="Multi-plotting" rel="prev" />
+<link href="multiplot.html" title="Multi-plotting" rel="up" />
 <link rel="stylesheet" href="styles/plastex-styles.css" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="barcharts.html" title="Barcharts and Histograms"><img alt="Previous: Barcharts and Histograms" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="multiplot.html" title="Multi-plotting"><img alt="Previous: Multi-plotting" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="barcharts.html" title="Barcharts and Histograms"><img alt="Up: Barcharts and Histograms" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="multiplot.html" title="Multi-plotting"><img alt="Up: Multi-plotting" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0020.html" title="Stacked Bar Charts"><img alt="Next: Stacked Bar Charts" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="linked_axes.html" title="Linked Axes"><img alt="Next: Linked Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -44,45 +44,52 @@
 
 </span><span>
 <span>
-<a href="barcharts.html">Barcharts and Histograms</a> <b>:</b>
+<a href="multiplot.html">Multi-plotting</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">Basic Operation</b>
+<b class="current">Deleting, Moving and Changing Plots</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a-1228615348">3.6.1 Basic Operation</h2>
-<p>As in gnuplot, bar charts and histograms can be produced using the <tt class="ttfamily">boxes</tt><span id="a-1228612980"></span> plot style: </p><pre> 
-plot 'datafile' with boxes
-</pre><p>Horizontally, the interfaces between the bars are, by default, at the midpoints along the <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis between the specified datapoints (see, for example, panel (a) of figure <a href="gallery.html#fig_ex7">6.7</a>, and the script which produced it, in Section <a href="example7.html">6.7</a>). Alternatively, the widths of the bars may be set using the <tt class="ttfamily">set boxwidth</tt> command. In this case, all of the bars will be centred upon their specified <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-coordinates, and have total widths equalling that specified in the <tt class="ttfamily">set boxwidth</tt><span id="a-1228229364"></span> command. Consequently, there may be gaps between them, or they may overlap, as seen in panel (c) of figure <a href="gallery.html#fig_ex7">6.7</a>. </p><p>Having set a fixed box width, the default automatic width mode may be restored either with the <tt class="ttfamily">unset boxwidth</tt> command, or by setting the boxwidth to a negative width. </p><p>As a third alternative, it is also possible to specify different widths for each bar manually, in a column of the input datafile. For this, the <tt class="ttfamily">wboxes</tt><span id="a-1228227956"></span> plot style should be used: </p><pre> 
-plot 'datafile' using 1:2:3 with wboxes
-</pre><p>This plot style expects three columns of data to be specified: the <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />- and <img src="images/img-0006.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-coordinates of each bar, and the width in the third column. Panel (b) of figure <a href="gallery.html#fig_ex7">6.7</a> shows an example of this plot style in use. </p><p>By default, the bars all originate from the line <img src="images/img-0069.png" alt="$y=0$" style="position:relative; bottom:-4px; width:43px; height:17px" class="math" />, as is normally wanted for a histogram. However, should it be desired for the bars to start from a different vertical point, that may be achieved with the <tt class="ttfamily">set boxfrom</tt> command, for example: </p><pre> 
-set boxfrom 5
-</pre><p>All of the bars would then originate from the line <img src="images/img-0070.png" alt="$y=5$" style="position:relative; bottom:-4px; width:43px; height:16px" class="math" />. Panel (f) of figure <a href="gallery.html#fig_ex6">6.6</a> shows the kind of effect that is achieved; for comparison, panel (b) of the same figure shows the same bar chart with the boxes starting from their default position at <img src="images/img-0069.png" alt="$y=0$" style="position:relative; bottom:-4px; width:43px; height:17px" class="math" />. </p><p>The bars may be filled using the <tt class="ttfamily">with fillcolour</tt><span id="a-1228097844"></span> modifier, followed by the name of a colour: </p><pre> 
-plot 'datafile' with boxes fillcolour blue
-plot 'datafile' with boxes fc 4
-</pre><p>Additionally, the word ‘<tt class="ttfamily">auto</tt>’ may be used in place of a colour name, to fill the bar with the line colour being used to draw it. Panels (c) and (d) of figure <a href="gallery.html#fig_ex7">6.7</a> demonstrate the use of filled bars. </p><p>Finally, the <tt class="ttfamily">impulses</tt> plot style, as in gnuplot, produces bars of zero width; see panel (e) of figure <a href="gallery.html#fig_ex6">6.6</a> for an example. </p></div>
+<div><h2 id="a-1227582708">3.5.1 Deleting, Moving and Changing Plots</h2>
+<p>Each time a plot is placed on the multiplot page in PyXPlot, it is allocated a reference number, which is output to the terminal. Reference numbers count up from zero each time the multiplot page is cleared. A number of commands exist for modifying plots after they have been placed on the page, selecting them by making reference to their reference numbers. </p><p>Plots may be removed from the page with the <tt class="ttfamily">delete</tt> command, and restored with the <tt class="ttfamily">undelete</tt> command:<span id="a-1227582580"></span><span id="a-1227582996"></span> </p><pre> 
+delete &lt;number&gt;
+undelete &lt;number&gt;
+</pre><p>The reference numbers of deleted plots are not reused until the page is cleared, as they may always be restored with the <tt class="ttfamily">undelete</tt> command; plots which have been deleted simply do not appear. </p><p>Plots may also be moved with the <tt class="ttfamily">move</tt> command. For example, the following would move plot 23 to position (8,8) measured in centimetres: </p><pre> 
+move 23 to 8,8
+</pre><p>In multiplot mode, the <tt class="ttfamily">replot</tt> command can be used to modify the last plot added to the page. For example, the following would change the title of the latest plot to “foo”, and add a plot of <img src="images/img-0066.png" alt="$\cos (x)$" style="position:relative; bottom:-5px; width:48px; height:19px" class="math" /> to it: </p><pre> 
+set title 'foo'
+replot cos(x)
+</pre><p>Additionally, it is possible to modify any plot on the page, by first selecting it with the <tt class="ttfamily">edit</tt> command. Subsequently, the <tt class="ttfamily">replot</tt> will act upon the selected plot. The following example would produce two plots, and then change the colour of the text on the first: </p><pre> 
+set multiplot
+plot sin(x)
+set origin 10,0
+plot cos(x)
+edit 0        # Select the first plot ...
+set textcolour red
+replot        # ... and replot it.
+</pre><p>The <tt class="ttfamily">edit</tt> command can also be used to view the settings which are applied to any plot on the multiplot page – after executing “edit 0”, the <tt class="ttfamily">show</tt> command will show the settings applied to plot zero. </p><p>When a new plot is added to the page, <tt class="ttfamily">replot</tt> always switches to act upon this most recent plot. </p><p><span id="a-1227581012"></span><span id="a-1227580756"></span> <span id="a-1228042516"></span> The <tt class="ttfamily">refresh</tt> command is rather similar to the <tt class="ttfamily">replot</tt> command, but produces an exact copy of the latest display. This can be useful, for example, after changing the terminal type, to produce a second copy of a multiplot page in a different format. But the crucial difference between this command and <tt class="ttfamily">replot</tt> is that it doesn’t replot anything. Indeed, there could be only textual items and arrows on the present multiplot page, and no graphs <i class="itshape">to</i> replot. </p></div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="barcharts.html" title="Barcharts and Histograms"><img alt="Previous: Barcharts and Histograms" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="multiplot.html" title="Multi-plotting"><img alt="Previous: Multi-plotting" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="barcharts.html" title="Barcharts and Histograms"><img alt="Up: Barcharts and Histograms" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="multiplot.html" title="Multi-plotting"><img alt="Up: Multi-plotting" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0020.html" title="Stacked Bar Charts"><img alt="Next: Stacked Bar Charts" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="linked_axes.html" title="Linked Axes"><img alt="Next: Linked Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: noarrow</title>
+<title>: linestyle</title>
 
-<link href="sect0072.html" title="noaxis" rel="next" />
-<link href="sect0070.html" title="mytics" rel="prev" />
-<link href="sect0047.html" title="set" rel="up" />
+<link href="sect0072.html" title="linewidth" rel="next" />
+<link href="sect0070.html" title="label" rel="prev" />
+<link href="sect0051.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/plastex-styles.css" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0070.html" title="mytics"><img alt="Previous: mytics" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0070.html" title="label"><img alt="Previous: label" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0047.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0051.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0072.html" title="noaxis"><img alt="Next: noaxis" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0072.html" title="linewidth"><img alt="Next: linewidth" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,47 +39,47 @@
 
 </span><span>
 <span>
-<a href="sect0026.html">Command Reference</a> <b>:</b>
+<a href="sect0028.html">Command Reference</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="sect0047.html">set</a> <b>:</b>
+<a href="sect0051.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">noarrow</b>
+<b class="current">linestyle</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a-1229898196">5.21.24 noarrow</h2>
-<p><span id="a-1230355732"></span> </p><pre>
-set noarrow [&lt;arrow number&gt;]
-</pre><p>Issuing the command: </p><pre>
-set noarrow
-</pre><p>removes all arrows, as set using the <tt class="tt">set arrow</tt> command, from the current plot. Alternatively, individual arrows can be removed using the syntax: </p><pre>
-set noarrow 2
-</pre><p>where the tag ‘<tt class="tt">2</tt>’ here is the identification number given to the arrow to be removed when it was initially set using the <tt class="tt">set arrow</tt> command. </p></div>
+<div><h2 id="a-1229875636">5.23.20 linestyle</h2>
+<p><span id="a-1229926292"></span> </p><pre>
+set linestyle &lt;style number&gt; &lt;style specifier&gt; ...
+</pre><p>At times, the string of style keywords following the ‘<tt class="tt">with</tt>’ modifier in plot commands can grow rather unwieldily long. For clarity, frequently used plot styles can be stored as <tt class="tt">linestyles</tt>; this is true of styles involving points as well as lines. The syntax for setting a linestyle is: </p><pre>
+set linestyle 2 points pointtype 3
+</pre><p>where the ‘<tt class="tt">2</tt>’ is the identification number of the linestyle. In a subsequent plot statement, this linestyle can be recalled as follows: </p><pre>
+plot sin(x) with linestyle 2
+</pre></div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0070.html" title="mytics"><img alt="Previous: mytics" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0070.html" title="label"><img alt="Previous: label" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0047.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0051.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0072.html" title="noaxis"><img alt="Next: noaxis" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0072.html" title="linewidth"><img alt="Next: linewidth" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

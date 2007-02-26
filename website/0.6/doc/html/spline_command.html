@@ -4,8 +4,8 @@
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
 <title>: Datafile Interpolation: Spline Fitting</title>
 
-<link href="sect0022.html" title="Numerical Integration and Differentiation" rel="next" />
-<link href="splice.html" title="Function Splicing" rel="prev" />
+<link href="sect0024.html" title="Numerical Integration and Differentiation" rel="next" />
+<link href="sect0023.html" title="Function Splicing" rel="prev" />
 <link href="new_features.html" title="Extensions of Gnuplot’s Interface" rel="up" />
 <link rel="stylesheet" href="styles/plastex-styles.css" />
 <link rel="stylesheet" href="styles/styles.css" />
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="splice.html" title="Function Splicing"><img alt="Previous: Function Splicing" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0023.html" title="Function Splicing"><img alt="Previous: Function Splicing" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="new_features.html" title="Extensions of Gnuplot’s Interface"><img alt="Up: Extensions of Gnuplot’s Interface" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0022.html" title="Numerical Integration and Differentiation"><img alt="Next: Numerical Integration and Differentiation" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0024.html" title="Numerical Integration and Differentiation"><img alt="Next: Numerical Integration and Differentiation" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -52,34 +52,31 @@
 </div>
 
 <div><h1 id="spline_command">3.8 Datafile Interpolation: Spline Fitting</h1>
-<p>  <span id="a-1228759860"></span> </p><p>Gnuplot allows data to be interpolated using its <tt class="ttfamily">csplines</tt> plot style, for example:<span id="a-1228759284"></span><span id="a-1228759316"></span> </p><pre>
-plot 'datafile' with smooth csplines
-plot 'datafile' with smooth acsplines
-</pre><p>where the upper statement fits a spline through all of the datapoints, and the lower applies some smoothing to the data first. This syntax is supported in PyXPlot but deprecated. A similar effect can be achieved with the new, more powerful, <tt class="ttfamily">spline</tt> command<span id="a-1228230292"></span>. This has a syntax similar to that of the <tt class="ttfamily">fit</tt> command, for example: </p><pre>
+<p>  <span id="a-1228325428"></span> </p><p>The <tt class="ttfamily">spline</tt> command<span id="a-1228209460"></span> fits a spline through data from a file. For example: </p><pre>
 spline f() 'datafile' index 1 using 2:3
-</pre><p>The function <img src="images/img-0030.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> now becomes a special function, representing a spline fit to the given datafile. It can be plotted or otherwise used in exactly the same way as any other function. This approach is more flexible than gnuplot’s syntax, as the spline <img src="images/img-0030.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> can subsequently be spliced together with other functions (see the previous section), or used in any mathematical operation. The following code snippet, for example, would fit splines through two datasets, and then plot the interpolated differences between them, regardless, for example, of whether the two datasets were sampled at exactly the same <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" /> coordinates: </p><pre>
+</pre><p>The function <img src="images/img-0061.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> now becomes a special function, representing a spline fit to the given datafile. It can be plotted or otherwise used in exactly the same way as any other function. This approach is more flexible than gnuplot’s syntax, as the spline <img src="images/img-0061.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> can subsequently be spliced together with other functions (see the previous section), or used in any mathematical operation. The following code snippet, for example, would fit splines through two datasets, and then plot the interpolated differences between them, regardless, for example, of whether the two datasets were sampled at exactly the same <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" /> coordinates: </p><pre>
 spline f() 'datafile1'
 spline g() 'datafile2'
 plot f(x)-g(x)
 </pre><p>Smoothed splines can also be produced: </p><pre>
 spline f() 'datafile1' smooth 1.0
-</pre><p>where the value <img src="images/img-0047.png" alt="$1.0$" style="position:relative; bottom:-1px; width:22px; height:14px" class="math" /> determines the degree of smoothing to apply; the higher the value, the more smoothing is applied. The default behaviour is not to smooth at all (equivalent to <tt class="ttfamily">smooth 0.0</tt>); a value of <img src="images/img-0047.png" alt="$1.0$" style="position:relative; bottom:-1px; width:22px; height:14px" class="math" /> corresponds to the default amount of smoothing applied in the <tt class="ttfamily">acsplines</tt> plot style. </p></div>
+</pre><p>where the value <img src="images/img-0042.png" alt="$1.0$" style="position:relative; bottom:-1px; width:22px; height:14px" class="math" /> determines the degree of smoothing to apply; the higher the value, the more smoothing is applied. The default behaviour is not to smooth at all (equivalent to <tt class="ttfamily">smooth 0.0</tt>); a value of <img src="images/img-0042.png" alt="$1.0$" style="position:relative; bottom:-1px; width:22px; height:14px" class="math" /> corresponds to the default amount of smoothing applied in the gnuplot <tt class="ttfamily">acsplines</tt> plot style. </p></div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="splice.html" title="Function Splicing"><img alt="Previous: Function Splicing" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0023.html" title="Function Splicing"><img alt="Previous: Function Splicing" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="new_features.html" title="Extensions of Gnuplot’s Interface"><img alt="Up: Extensions of Gnuplot’s Interface" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0022.html" title="Numerical Integration and Differentiation"><img alt="Next: Numerical Integration and Differentiation" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0024.html" title="Numerical Integration and Differentiation"><img alt="Next: Numerical Integration and Differentiation" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

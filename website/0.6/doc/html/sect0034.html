@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: help</title>
+<title>: eps</title>
 
-<link href="sect0035.html" title="load" rel="next" />
-<link href="sect0033.html" title="fit" rel="prev" />
-<link href="sect0026.html" title="Command Reference" rel="up" />
+<link href="sect0035.html" title="exit" rel="next" />
+<link href="sect0033.html" title="edit" rel="prev" />
+<link href="sect0028.html" title="Command Reference" rel="up" />
 <link rel="stylesheet" href="styles/plastex-styles.css" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0033.html" title="fit"><img alt="Previous: fit" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0033.html" title="edit"><img alt="Previous: edit" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0026.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0028.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0035.html" title="load"><img alt="Next: load" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0035.html" title="exit"><img alt="Next: exit" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,42 +39,39 @@
 
 </span><span>
 <span>
-<a href="sect0026.html">Command Reference</a> <b>:</b>
+<a href="sect0028.html">Command Reference</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">help</b>
+<b class="current">eps</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a-1229244596">5.8 help</h1>
-<p><span id="a-1229244820"></span> </p><pre>
-help [&lt;topic&gt; [&lt;sub-topic&gt; ... ] ]
-</pre><p>The <tt class="tt">help</tt> command provides an easily-navigable source of information which is supplementary to that in this manual. To obtain information on any particular topic, type <tt class="tt">help</tt> followed by the name of the topic. For example: </p><pre>
-help commands
-</pre><p>provides information on PyXPlot’s commands. Some topics have subtopics; these are listed at the end of each help page. To view them, add further words to the end of your help request – an example might be: </p><pre>
-help commands help
-</pre><p>Information is arranged with general information about PyXPlot under the heading <tt class="tt">about</tt>, and information about PyXPlot’s commands under <tt class="tt">commands</tt>. Information about the format that input datafiles should take can be found under <tt class="tt">datafile</tt>. Other categories are self-explanatory. </p><p>To exit any help page, press the ‘<tt class="tt">Q</tt>’ key. </p></div>
+<div><h1 id="a-1229106804">5.6 eps</h1>
+<p><span id="a-1229103476"></span> </p><pre>
+eps '&lt;filename&gt;' [at &lt;x&gt;, &lt;y&gt;] [rotate &lt;angle&gt;] [width &lt;width&gt;]
+                 [height &lt;height&gt;]
+</pre><p>The <tt class="tt">eps</tt> command places an eps format file into the current plot. The <tt class="tt">at</tt> modifier can be used to specify the position of the bottom-left corner of the file, otherwise it is placed at the origin. If the <tt class="tt">rotate</tt> modifier is used the image is rotated by the specified angle counter-clockwise. Either the <tt class="tt">width</tt> or <tt class="tt">height</tt> can be specified, followed by the width or height respectively in cm that the resulting image should be; otherwise the native file width will be used. The <tt class="tt">eps</tt> command is perhaps most useful in multiplot mode, where included files can be combined with plots, text labels, etc. </p></div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0033.html" title="fit"><img alt="Previous: fit" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0033.html" title="edit"><img alt="Previous: edit" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0026.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0028.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0035.html" title="load"><img alt="Next: load" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0035.html" title="exit"><img alt="Next: exit" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

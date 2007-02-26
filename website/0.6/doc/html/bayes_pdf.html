@@ -4,7 +4,7 @@
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
 <title>: The Probability Density Function</title>
 
-<link href="sect0117.html" title="Estimating the Error in &lt;img src=&quot;images/img-0125.png&quot; alt=&quot;$\mathbf{u}^0$&quot; style=&quot;position:relative; bottom:-1px; width:19px; height:17px&quot; class=&quot;math&quot;&gt;" rel="next" />
+<link href="sect0119.html" title="Estimating the Error in &lt;img src=&quot;images/img-0123.png&quot; alt=&quot;$\mathbf{u}^0$&quot; style=&quot;position:relative; bottom:&amp;images/img-0123.png-depth;px;; width:&amp;images/img-0123.png-width;px;; height:&amp;images/img-0123.png-height;px;&quot; class=&quot;math&quot;&gt;" rel="next" />
 <link href="bayes_notation.html" title="Notation" rel="prev" />
 <link href="fit_math.html" title="The &lt;tt class=&quot;ttfamily&quot;&gt;fit&lt;/tt&gt; Command: Mathematical Details" rel="up" />
 <link rel="stylesheet" href="styles/plastex-styles.css" />
@@ -19,12 +19,12 @@
 
 <td><a href="fit_math.html" title="The fit Command: Mathematical Details"><img alt="Up: The fit Command: Mathematical Details" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0117.html" title="Estimating the Error in "><img alt="Next: Estimating the Error in " border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0119.html" title="Estimating the Error in "><img alt="Next: Estimating the Error in " border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -51,26 +51,26 @@
 <hr />
 </div>
 
-<div><h1 id="bayes_pdf">7.2 The Probability Density Function</h1>
-<p>  </p><p>Bayes’ Theorem states that: </p><table id="a-1231350420" class="equation" width="100%">
+<div><h1 id="bayes_pdf">6.2 The Probability Density Function</h1>
+<p>  </p><p>Bayes’ Theorem states that: </p><table id="a-1230879572" class="equation" width="100%">
 <tr>
 <td>
-<img src="images/img-0118.png" alt="\begin{equation}  \mathrm{P}\left( \mathbf{u} | \left\{  \mathbf{x}_ i, f_ i, \sigma _ i \right\}  \right) = \frac{ \mathrm{P}\left( \left\{ f_ i \right\}  | \mathbf{u}, \left\{  \mathbf{x}_ i, \sigma _ i \right\}  \right) \mathrm{P}\left( \mathbf{u} | \left\{  \mathbf{x}_ i, \sigma _ i \right\}  \right) }{ \mathrm{P}\left( \left\{ f_ i \right\}  | \left\{  \mathbf{x}_ i, \sigma _ i \right\}  \right) } \end{equation}" style="width:508px; height:44px" />
-<td class="eqnnum"><span>(<span>7.1</span>)</span></td>
+<img src="images/img-0116.png" alt="\begin{equation}  \mathrm{P}\left( \mathbf{u} | \left\{  \mathbf{x}_ i, f_ i, \sigma _ i \right\}  \right) = \frac{ \mathrm{P}\left( \left\{ f_ i \right\}  | \mathbf{u}, \left\{  \mathbf{x}_ i, \sigma _ i \right\}  \right) \mathrm{P}\left( \mathbf{u} | \left\{  \mathbf{x}_ i, \sigma _ i \right\}  \right) }{ \mathrm{P}\left( \left\{ f_ i \right\}  | \left\{  \mathbf{x}_ i, \sigma _ i \right\}  \right) } \end{equation}" style="width:507px; height:44px" />
+<td class="eqnnum"><span>(<span>6.1</span>)</span></td>
 </tr>
-</table><p>Since we are only seeking to maximise the quantity on the left, and the denominator, termed the Bayesian <i class="itshape">evidence</i>, is independent of <img src="images/img-0116.png" alt="$\mathbf{u}$" style="position:relative; bottom:-1px; width:12px; height:10px" class="math" />, we can neglect it and replace the equality sign with a proportionality sign. Furthermore, if we assume a uniform prior, that is, we assume that we have no prior knowledge to bias us towards certain more favoured values of <img src="images/img-0116.png" alt="$\mathbf{u}$" style="position:relative; bottom:-1px; width:12px; height:10px" class="math" />, then <img src="images/img-0119.png" alt="$\mathrm{P}\left( \mathbf{u} \right)$" style="position:relative; bottom:-5px; width:41px; height:19px" class="math" /> is also a constant which can be neglected. We conclude that maximising <img src="images/img-0117.png" alt="$\mathrm{P}\left( \mathbf{u} | \left\{  \mathbf{x}_ i, f_ i, \sigma _ i \right\}  \right)$" style="position:relative; bottom:-5px; width:130px; height:19px" class="math" /> is equivalent to maximising <img src="images/img-0120.png" alt="$\mathrm{P}\left( \left\{ f_ i \right\}  | \mathbf{u}, \left\{  \mathbf{x}_ i, \sigma _ i \right\}  \right)$" style="position:relative; bottom:-5px; width:148px; height:19px" class="math" />. </p><p>Since we are assuming <img src="images/img-0110.png" alt="$f_ i$" style="position:relative; bottom:-4px; width:13px; height:17px" class="math" /> to be Gaussian-distributed observations of the true function <img src="images/img-0101.png" alt="$f()$" style="position:relative; bottom:-5px; width:23px; height:19px" class="math" />, this latter probability can be written as a product of <img src="images/img-0106.png" alt="$n_\mathrm{d}$" style="position:relative; bottom:-4px; width:19px; height:12px" class="math" /> Gaussian distributions: </p><table id="a-1230951508" class="equation" width="100%">
+</table><p>Since we are only seeking to maximise the quantity on the left, and the denominator, termed the Bayesian <i class="itshape">evidence</i>, is independent of <img src="images/img-0114.png" alt="$\mathbf{u}$" style="position:relative; bottom:-1px; width:12px; height:10px" class="math" />, we can neglect it and replace the equality sign with a proportionality sign. Furthermore, if we assume a uniform prior, that is, we assume that we have no prior knowledge to bias us towards certain more favoured values of <img src="images/img-0114.png" alt="$\mathbf{u}$" style="position:relative; bottom:-1px; width:12px; height:10px" class="math" />, then <img src="images/img-0117.png" alt="$\mathrm{P}\left( \mathbf{u} \right)$" style="position:relative; bottom:-5px; width:41px; height:19px" class="math" /> is also a constant which can be neglected. We conclude that maximising <img src="images/img-0115.png" alt="$\mathrm{P}\left( \mathbf{u} | \left\{  \mathbf{x}_ i, f_ i, \sigma _ i \right\}  \right)$" style="position:relative; bottom:-5px; width:130px; height:19px" class="math" /> is equivalent to maximising <img src="images/img-0118.png" alt="$\mathrm{P}\left( \left\{ f_ i \right\}  | \mathbf{u}, \left\{  \mathbf{x}_ i, \sigma _ i \right\}  \right)$" style="position:relative; bottom:-5px; width:148px; height:19px" class="math" />. </p><p>Since we are assuming <img src="images/img-0108.png" alt="$f_ i$" style="position:relative; bottom:-4px; width:13px; height:17px" class="math" /> to be Gaussian-distributed observations of the true function <img src="images/img-0099.png" alt="$f()$" style="position:relative; bottom:-5px; width:23px; height:19px" class="math" />, this latter probability can be written as a product of <img src="images/img-0104.png" alt="$n_\mathrm{d}$" style="position:relative; bottom:-4px; width:19px; height:12px" class="math" /> Gaussian distributions: </p><table id="a-1230933556" class="equation" width="100%">
 <tr>
 <td>
-<img src="images/img-0121.png" alt="\begin{equation}  \mathrm{P}\left( \left\{ f_ i \right\}  | \mathbf{u}, \left\{  \mathbf{x}_ i, \sigma _ i \right\}  \right) = \prod _{i=0}^{n_\mathrm{d}-1} \frac{1}{\sigma _ i\sqrt {2\pi }} \exp \left( \frac{ -\left[f_ i - f_\mathbf{u}(\mathbf{x}_ i)\right]^2 }{ 2 \sigma _ i^2 } \right) \end{equation}" style="width:524px; height:55px" />
-<td class="eqnnum"><span>(<span>7.2</span>)</span></td>
+<img src="images/img-0119.png" alt="\begin{equation}  \mathrm{P}\left( \left\{ f_ i \right\}  | \mathbf{u}, \left\{  \mathbf{x}_ i, \sigma _ i \right\}  \right) = \prod _{i=0}^{n_\mathrm{d}-1} \frac{1}{\sigma _ i\sqrt {2\pi }} \exp \left( \frac{ -\left[f_ i - f_\mathbf{u}(\mathbf{x}_ i)\right]^2 }{ 2 \sigma _ i^2 } \right) \end{equation}" style="width:525px; height:55px" />
+<td class="eqnnum"><span>(<span>6.2</span>)</span></td>
 </tr>
-</table><p>The product in this equation can be converted into a more computationally workable sum by taking the logarithm of both sides. Since logarithms are monotonically increasing functions, maximising a probability is equivalent to maximising its logarithm. We may write the logarithm <img src="images/img-0122.png" alt="$L$" style="position:relative; bottom:0px; width:12px; height:13px" class="math" /> of <img src="images/img-0117.png" alt="$\mathrm{P}\left( \mathbf{u} | \left\{  \mathbf{x}_ i, f_ i, \sigma _ i \right\}  \right)$" style="position:relative; bottom:-5px; width:130px; height:19px" class="math" /> as: </p><table id="a-1231277172" class="equation" width="100%">
+</table><p>The product in this equation can be converted into a more computationally workable sum by taking the logarithm of both sides. Since logarithms are monotonically increasing functions, maximising a probability is equivalent to maximising its logarithm. We may write the logarithm <img src="images/img-0120.png" alt="$L$" style="position:relative; bottom:0px; width:12px; height:13px" class="math" /> of <img src="images/img-0115.png" alt="$\mathrm{P}\left( \mathbf{u} | \left\{  \mathbf{x}_ i, f_ i, \sigma _ i \right\}  \right)$" style="position:relative; bottom:-5px; width:130px; height:19px" class="math" /> as: </p><table id="a-1230880212" class="equation" width="100%">
 <tr>
 <td>
-<img src="images/img-0123.png" alt="\begin{equation}  L = \sum _{i=0}^{n_\mathrm{d}-1} \left( \frac{ -\left[f_ i - f_\mathbf{u}(\mathbf{x}_ i)\right]^2 }{ 2 \sigma _ i^2 } \right) + k \end{equation}" style="width:428px; height:55px" />
-<td class="eqnnum"><span>(<span>7.3</span>)</span></td>
+<img src="images/img-0121.png" alt="\begin{equation}  L = \sum _{i=0}^{n_\mathrm{d}-1} \left( \frac{ -\left[f_ i - f_\mathbf{u}(\mathbf{x}_ i)\right]^2 }{ 2 \sigma _ i^2 } \right) + k \end{equation}" style="width:428px; height:55px" />
+<td class="eqnnum"><span>(<span>6.3</span>)</span></td>
 </tr>
-</table><p>where <img src="images/img-0124.png" alt="$k$" style="position:relative; bottom:-1px; width:9px; height:14px" class="math" /> is some constant which does not affect the maximisation process. It is this quantity, the familiar sum-of-square-residuals, that we numerically maximise to find our best-fitting set of parameters, which I shall refer to from here on as <img src="images/img-0125.png" alt="$\mathbf{u}^0$" style="position:relative; bottom:-1px; width:19px; height:17px" class="math" />. </p></div>
+</table><p>where <img src="images/img-0122.png" alt="$k$" style="position:relative; bottom:-1px; width:9px; height:14px" class="math" /> is some constant which does not affect the maximisation process. It is this quantity, the familiar sum-of-square-residuals, that we numerically maximise to find our best-fitting set of parameters, which I shall refer to from here on as <img src="images/img-0123.png" alt="$\mathbf{u}^0$" style="position:relative; bottom:-1px; width:19px; height:17px" class="math" />. </p></div>
 
 
 
@@ -81,12 +81,12 @@
 
 <td><a href="fit_math.html" title="The fit Command: Mathematical Details"><img alt="Up: The fit Command: Mathematical Details" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0117.html" title="Estimating the Error in "><img alt="Next: Estimating the Error in " border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0119.html" title="Estimating the Error in "><img alt="Next: Estimating the Error in " border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

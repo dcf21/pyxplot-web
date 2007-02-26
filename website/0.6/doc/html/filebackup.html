@@ -24,7 +24,7 @@
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -61,20 +61,20 @@
 <tr>
 
     
-    <td style="text-align:left"><p>plot linewidths<span id="a-1225678868"></span> </p></td>
+    <td style="text-align:left"><p>plot linewidths<span id="a-1227289012"></span> </p></td>
 
     
     <td style="text-align:left"><p> — </p></td>
 
     
-    <td style="text-align:left"><p> For an unknown reason, gnuplot doesn’t allow <tt class="ttfamily">set linewidth 2</tt> as valid syntax. This setting is allowed to be made in PyXPlot. Furthermore, <tt class="ttfamily">set pointlinewidth 2</tt> will set the linewidth to be used when drawing data <i class="itshape">points</i>. A similar effect can be achieved via: </p><pre>
+    <td style="text-align:left"><p> For an unknown reason, gnuplot doesn’t allow <tt class="ttfamily">set linewidth 2</tt> as valid syntax. This setting is permitted in PyXPlot. Furthermore, <tt class="ttfamily">set pointlinewidth 2</tt> will set the linewidth to be used when drawing data <i class="itshape">points</i>. A similar effect can be achieved via: </p><pre>
 plot sin(x) with points pointlinewidth 2
 </pre><p>In both cases, the abbreviation <tt class="ttfamily">plw</tt> is valid. </p></td>
 
 </tr><tr>
 
     
-    <td style="text-align:left"><p>dots plot style<span id="a-1227752052"></span> </p></td>
+    <td style="text-align:left"><p>dots plot style<span id="a-1227321300"></span> </p></td>
 
     
     <td style="text-align:left"><p> — </p></td>
@@ -89,7 +89,7 @@ plot sin(x) with dots pointsize 10
 </tr><tr>
 
     
-    <td style="text-align:left"><p><tt class="ttfamily">select</tt> keyword<span id="a-1226912916"></span> </p></td>
+    <td style="text-align:left"><p><tt class="ttfamily">select</tt> keyword<span id="a-1225990004"></span> </p></td>
 
     
     <td style="text-align:left"><p> — </p></td>
@@ -125,13 +125,13 @@ plot sin(x) select (($1&gt;0) and ($2&gt;0))
 </tr><tr>
 
     
-    <td style="text-align:left"><p>arrows plot style<span id="a-1227809556"></span> </p></td>
+    <td style="text-align:left"><p>arrows plot style<span id="a-1227385460"></span> </p></td>
 
     
     <td style="text-align:left"><p> — </p></td>
 
     
-    <td style="text-align:left"><p> The <tt class="ttfamily">arrows</tt> plot style takes four columns of data, <img src="images/img-0056.png" alt="$x_1$" style="position:relative; bottom:-2px; width:16px; height:10px" class="math" />, <img src="images/img-0057.png" alt="$y_1$" style="position:relative; bottom:-4px; width:15px; height:12px" class="math" />, <img src="images/img-0058.png" alt="$x_2$" style="position:relative; bottom:-2px; width:17px; height:10px" class="math" />, <img src="images/img-0059.png" alt="$y_2$" style="position:relative; bottom:-4px; width:16px; height:12px" class="math" />, and for each data point draws an arrow from the point <img src="images/img-0060.png" alt="$(x_1,y_1)$" style="position:relative; bottom:-5px; width:55px; height:19px" class="math" /> to <img src="images/img-0061.png" alt="$(x_2,y_2)$" style="position:relative; bottom:-5px; width:56px; height:19px" class="math" />. Three different kinds of arrows can be drawn: ones with normal arrow heads, ones with no arrow heads, which just appear as lines, and ones with arrow heads on both ends. The syntax is: </p><pre>
+    <td style="text-align:left"><p> The <tt class="ttfamily">arrows</tt> plot style takes four columns of data, <img src="images/img-0055.png" alt="$x_1$" style="position:relative; bottom:-2px; width:16px; height:10px" class="math" />, <img src="images/img-0056.png" alt="$y_1$" style="position:relative; bottom:-4px; width:15px; height:12px" class="math" />, <img src="images/img-0057.png" alt="$x_2$" style="position:relative; bottom:-2px; width:17px; height:10px" class="math" />, <img src="images/img-0058.png" alt="$y_2$" style="position:relative; bottom:-4px; width:16px; height:12px" class="math" />, and for each data point draws an arrow from the point <img src="images/img-0059.png" alt="$(x_1,y_1)$" style="position:relative; bottom:-5px; width:55px; height:19px" class="math" /> to <img src="images/img-0060.png" alt="$(x_2,y_2)$" style="position:relative; bottom:-5px; width:56px; height:19px" class="math" />. Three different kinds of arrows can be drawn: ones with normal arrow heads, ones with no arrow heads, which just appear as lines, and ones with arrow heads on both ends. The syntax is: </p><pre>
 plot 'datafile' with arrows_head
 plot 'datafile' with arrows_nohead
 plot 'datafile' with arrows_twohead
@@ -157,7 +157,7 @@ plot 'datafile' with arrows_twohead
     <td style="text-align:left"><p> — </p></td>
 
     
-    <td style="text-align:left"><p> PyXPlot can plot datapoints using the standard upper- and lower-limit symbols.<span id="a-1226501588"></span><span id="a-1226501364"></span> No special syntax is required for this; these symbols are pointtypes<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">The <tt class="ttfamily">pointtype</tt> modifier was introduced in Section <a href="pointtype_modifier.html">2.6</a>.</span></a> 12 and 13 respectively, obtained as follows: </p><pre>
+    <td style="text-align:left"><p> PyXPlot can plot datapoints using the standard upper- and lower-limit symbols.<span id="a-1227411060"></span><span id="a-1227410772"></span> No special syntax is required for this; these symbols are pointtypes<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">The <tt class="ttfamily">pointtype</tt> modifier was introduced in Section <a href="pointtype_modifier.html">2.7</a>.</span></a> 12 and 13 respectively, obtained as follows: </p><pre>
 plot 'upperlimits' with points pointtype 12
 plot 'lowerlimits' with points pointtype 13
 </pre></td>
@@ -184,7 +184,7 @@ plot f(x):g(x) with yerrorbars
     <td style="text-align:left"></td>
 
     
-    <td style="text-align:left"><p>Two functions are supplied, separated by a colon; plotting proceeds as if a datafile had been supplied, containing values of <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" /> in column 1, values of <img src="images/img-0030.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> in column 2, and values of <img src="images/img-0062.png" alt="$g(x)$" style="position:relative; bottom:-5px; width:32px; height:19px" class="math" /> in column 3. This may be useful, for example, if <img src="images/img-0062.png" alt="$g(x)$" style="position:relative; bottom:-5px; width:32px; height:19px" class="math" /> measures the intrinsic uncertainty in <img src="images/img-0030.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" />. The <tt class="ttfamily">using</tt> modifier may also be used: </p><pre>
+    <td style="text-align:left"><p>Two functions are supplied, separated by a colon; plotting proceeds as if a datafile had been supplied, containing values of <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" /> in column 1, values of <img src="images/img-0061.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> in column 2, and values of <img src="images/img-0062.png" alt="$g(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> in column 3. This may be useful, for example, if <img src="images/img-0062.png" alt="$g(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> measures the intrinsic uncertainty in <img src="images/img-0061.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" />. The <tt class="ttfamily">using</tt> modifier may also be used: </p><pre>
 plot f(x):g(x) using 2:3
 </pre></td>
 
@@ -197,18 +197,18 @@ plot f(x):g(x) using 2:3
     <td style="text-align:left"></td>
 
     
-    <td style="text-align:left"><p> Here, <img src="images/img-0062.png" alt="$g(x)$" style="position:relative; bottom:-5px; width:32px; height:19px" class="math" /> would be plotted on the <img src="images/img-0006.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-axis, against <img src="images/img-0030.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> on the <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis. It should be noted, however, that the range of values of <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" /> used would still correspond to the range of the plot’s horizontal axis. If the above were to be attempted with an autoscaling horizontal axis, the result might be rather unexpected – PyXPlot would find itself autoscaling the <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis range to the spread of values of <img src="images/img-0030.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" />, but find that this itself changed depending upon the range of the <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis. </p></td>
+    <td style="text-align:left"><p> Here, <img src="images/img-0062.png" alt="$g(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> would be plotted on the <img src="images/img-0005.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-axis, against <img src="images/img-0061.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> on the <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis. It should be noted, however, that the range of values of <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" /> used would still correspond to the range of the plot’s horizontal axis. If the above were to be attempted with an autoscaling horizontal axis, the result might be rather unexpected – PyXPlot would find itself autoscaling the <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis range to the spread of values of <img src="images/img-0061.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" />, but find that this itself changed depending upon the range of the <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis. </p></td>
 
 </tr><tr>
 
     
-    <td style="text-align:left"><p>horizontally arranged datafiles<span id="a-1227751476"></span><span id="a-1225554516"></span><span id="a-1227810900"></span><span id="a-1226501844"></span> </p></td>
+    <td style="text-align:left"><p>horizontally arranged datafiles<span id="a-1227385908"></span><span id="a-1227386516"></span><span id="a-1227442388"></span><span id="a-1227407700"></span> </p></td>
 
     
     <td style="text-align:left"><p> — </p></td>
 
     
-    <td style="text-align:left"><p> The command syntax for plotting columns of datafiles against one another was previously described in Section <a href="plot_datafiles.html">2.4</a>. In an extension of gnuplot’s interface, it is also possible to plot <i class="itshape">rows</i> of data against one another in horizontally-arranged datafiles. For this, the keyword ‘<tt class="ttfamily">rows</tt>’ is placed after the <tt class="ttfamily">using</tt> modifier:<span id="a-1227911828"></span> </p><pre>
+    <td style="text-align:left"><p> The command syntax for plotting columns of datafiles against one another was previously described in Section <a href="plot_datafiles.html">2.5</a>. In an extension of gnuplot’s interface, it is also possible to plot <i class="itshape">rows</i> of data against one another in horizontally-arranged datafiles. For this, the keyword ‘<tt class="ttfamily">rows</tt>’ is placed after the <tt class="ttfamily">using</tt> modifier:<span id="a-1227292532"></span> </p><pre>
 plot 'datafile' index 1 using rows 1:2
 </pre></td>
 
@@ -221,7 +221,7 @@ plot 'datafile' index 1 using rows 1:2
     <td style="text-align:left"></td>
 
     
-    <td style="text-align:left"><p> The syntax ‘<tt class="ttfamily">using columns</tt>’ is also accepted, to specify the default behaviour of plotting columns against one another:<span id="a-1226498580"></span> </p><pre>
+    <td style="text-align:left"><p> The syntax ‘<tt class="ttfamily">using columns</tt>’ is also accepted, to specify the default behaviour of plotting columns against one another:<span id="a-1226026132"></span> </p><pre>
 plot 'datafile' index 1 using columns 1:2
 </pre></td>
 
@@ -234,7 +234,7 @@ plot 'datafile' index 1 using columns 1:2
     <td style="text-align:left"></td>
 
     
-    <td style="text-align:left"><p> When plotting horizontally-arranged datafiles, the meanings of the <tt class="ttfamily">index</tt> and <tt class="ttfamily">every</tt> modifiers (see Section <a href="plot_datafiles.html">2.4</a>) are altered slightly. The former continues to refer to vertical blocks of data separated by two blank lines. Blocks, as referenced in the <tt class="ttfamily">every</tt> modifier, continue to be vertical blocks of datapoints, separated by single blank lines. The row numbers passed to the <tt class="ttfamily">using</tt> modifier are counted from the top of the current block. </p></td>
+    <td style="text-align:left"><p> When plotting horizontally-arranged datafiles, the meanings of the <tt class="ttfamily">index</tt> and <tt class="ttfamily">every</tt> modifiers (see Section <a href="plot_datafiles.html">2.5</a>) are altered slightly. The former continues to refer to vertical blocks of data separated by two blank lines. Blocks, as referenced in the <tt class="ttfamily">every</tt> modifier, continue to be vertical blocks of datapoints, separated by single blank lines. The row numbers passed to the <tt class="ttfamily">using</tt> modifier are counted from the top of the current block. </p></td>
 
 </tr><tr>
 
@@ -245,7 +245,7 @@ plot 'datafile' index 1 using columns 1:2
     <td style="text-align:left"></td>
 
     
-    <td style="text-align:left"><p> However, the line-numbers specified in the <tt class="ttfamily">every</tt> modifier – i.e. variables <img src="images/img-0035.png" alt="$a$" style="position:relative; bottom:-1px; width:9px; height:9px" class="math" />, <img src="images/img-0039.png" alt="$c$" style="position:relative; bottom:-1px; width:8px; height:9px" class="math" /> and <img src="images/img-0013.png" alt="$e$" style="position:relative; bottom:-1px; width:8px; height:9px" class="math" /> in the system above – now refer to horizontal columns, rather than lines. For example: </p></td>
+    <td style="text-align:left"><p> However, the line-numbers specified in the <tt class="ttfamily">every</tt> modifier – i.e. variables <img src="images/img-0030.png" alt="$a$" style="position:relative; bottom:-1px; width:9px; height:9px" class="math" />, <img src="images/img-0034.png" alt="$c$" style="position:relative; bottom:-1px; width:8px; height:9px" class="math" /> and <img src="images/img-0014.png" alt="$e$" style="position:relative; bottom:-1px; width:8px; height:9px" class="math" /> in the system above – now refer to horizontal columns, rather than lines. For example: </p></td>
 
 </tr><tr>
 
@@ -274,7 +274,7 @@ plot 'datafile' using rows 1:2 every 2::3::9
 </tr><tr>
 
     
-    <td style="text-align:left"><p>errorbars<span id="a-1226410612"></span> </p></td>
+    <td style="text-align:left"><p>errorbars<span id="a-1226426964"></span> </p></td>
 
     
     <td style="text-align:left"><p> — </p></td>
@@ -293,7 +293,7 @@ plot 'datafile' with yerrorbars
     <td style="text-align:left"></td>
 
     
-    <td style="text-align:left"><p> Given a datafile with three columns, this would take the third column to indicate the size of the <img src="images/img-0006.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-errorbar, and given a four-column datafile, it would take the third and fourth columns to indicate the min/max range to be marked out by the errorbar. </p></td>
+    <td style="text-align:left"><p> Given a datafile with three columns, this would take the third column to indicate the size of the <img src="images/img-0005.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-errorbar, and given a four-column datafile, it would take the third and fourth columns to indicate the min/max range to be marked out by the errorbar. </p></td>
 
 </tr><tr>
 
@@ -425,13 +425,13 @@ plot 'datafile' with yerrorrange
 </tr><tr>
 
     
-    <td style="text-align:left"><p>datafile wildcards<span id="a-1226473524"></span><span id="a-1226688148"></span><span id="a-1226690132"></span> </p></td>
+    <td style="text-align:left"><p>datafile wildcards<span id="a-1226708628"></span><span id="a-1226694100"></span><span id="a-1226636020"></span> </p></td>
 
     
     <td style="text-align:left"><p> — </p></td>
 
     
-    <td style="text-align:left"><p> PyXPlot allows the wildcards ‘*’ and ‘?’ to be used both in the filenames of datafiles following the <tt class="ttfamily">plot</tt> command, and also when specifying command files on the commandline and with the <tt class="ttfamily">load</tt> command. For example, the following would plot all datafiles in the current directory with a ‘.dat’ suffix, using the same plot options: </p></td>
+    <td style="text-align:left"><p> PyXPlot allows the wildcards ‘*’ and ‘?’ to be used both in the filenames of datafiles following the <tt class="ttfamily">plot</tt> command, and also when specifying command files on the command line and with the <tt class="ttfamily">load</tt> command. For example, the following would plot all datafiles in the current directory with a ‘.dat’ suffix, using the same plot options: </p></td>
 
 </tr><tr>
 
@@ -460,7 +460,7 @@ plot '*.dat' with linewidth 2
 </tr><tr>
 
     
-    <td style="text-align:left"><p>backing up overwritten files<span id="a-1226686324"></span><span id="a-1226686260"></span><span id="a-1226686068"></span> </p></td>
+    <td style="text-align:left"><p>backing up overwritten files<span id="a-1227752948"></span><span id="a-1227752884"></span><span id="a-1227752692"></span> </p></td>
 
     
     <td style="text-align:left"><p> — </p></td>
@@ -491,7 +491,7 @@ set nobackup
     <td style="text-align:left"></td>
 
     
-    <td style="text-align:left"><p> When this switch is turned on, pre-existing files will be renamed with a tilda at the end of their filenames, rather than being overwritten. </p></td>
+    <td style="text-align:left"><p> When this switch is turned on, pre-existing files will be renamed with a tilde at the end of their filenames, rather than being overwritten. </p></td>
 
 </tr>
 </table></div>
@@ -510,7 +510,7 @@ set nobackup
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

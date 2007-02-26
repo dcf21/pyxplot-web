@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: ?</title>
+<title>: !</title>
 
-<link href="sect0042.html" title="quit" rel="next" />
-<link href="sect0040.html" title="pwd" rel="prev" />
-<link href="sect0026.html" title="Command Reference" rel="up" />
+<link href="sect0042.html" title="plot" rel="next" />
+<link href="sect0040.html" title="move" rel="prev" />
+<link href="sect0028.html" title="Command Reference" rel="up" />
 <link rel="stylesheet" href="styles/plastex-styles.css" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0040.html" title="pwd"><img alt="Previous: pwd" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0040.html" title="move"><img alt="Previous: move" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0026.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0028.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0042.html" title="quit"><img alt="Next: quit" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0042.html" title="plot"><img alt="Next: plot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,38 +39,45 @@
 
 </span><span>
 <span>
-<a href="sect0026.html">Command Reference</a> <b>:</b>
+<a href="sect0028.html">Command Reference</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">?</b>
+<b class="current">!</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a-1229843412">5.15 ?</h1>
-<p><span id="a-1229841780"></span> </p><pre>
-? [&lt;help option&gt; ... ]
-</pre><p>The <tt class="tt">?</tt> symbol is a shortcut to the <tt class="tt">help</tt> command. </p></div>
+<div><h1 id="a-1229046996">5.13 !</h1>
+<p><span id="a-1229014260"></span> </p><pre>
+! &lt;shell command&gt;
+&lt;command&gt; `&lt;shell command&gt;` ...
+</pre><p>Shell commands can be executed from within PyXPlot by pre-fixing them with pling (!) characters, for example: </p><pre>
+!mkdir foo
+</pre><p>As an alternative, back-quotes (‘) can be used to substitute the output of a shell command into a PyXPlot command, for example: </p><pre>
+set xlabel `echo "'" ; ls ; echo "'"`
+</pre><p>Note that back-quotes cannot be used inside quote characters, and so the following would <i class="itshape">not</i> work: </p><pre>
+set xlabel '`ls`'
+</pre></div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0040.html" title="pwd"><img alt="Previous: pwd" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0040.html" title="move"><img alt="Previous: move" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0026.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0028.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0042.html" title="quit"><img alt="Next: quit" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0042.html" title="plot"><img alt="Next: plot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

@@ -24,7 +24,7 @@
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -51,18 +51,18 @@
 <hr />
 </div>
 
-<div><h1 id="a-1225552660">2.1 Getting Started</h1>
-<p>The simplest way to start PyXPlot is simply to type “<tt class="ttfamily">pyxplot</tt>” at a shell prompt to start an interactive session. A PyXPlot commandline prompt will appear, into which commands can be typed. PyXPlot can be exited either by typing “<tt class="ttfamily">exit</tt>”, “<tt class="ttfamily">quit</tt>”, or by pressing CTRL-D.<span id="a-1225077716"></span><span id="a-1225078420"></span> </p><p>Alternatively, a list of commands to be executed may be stored in a command script, and executed by passing the filename of the command script to PyXPlot on the shell commandline, for example:<span id="a-1225682740"></span> </p><pre>
+<div><h1 id="a-1224625268">2.1 Getting Started</h1>
+<p>The simplest way to start PyXPlot is simply to type “<tt class="ttfamily">pyxplot</tt>” at a shell prompt to start an interactive session. A PyXPlot command-line prompt will appear, into which commands can be typed. PyXPlot can be exited either by typing “<tt class="ttfamily">exit</tt>”, “<tt class="ttfamily">quit</tt>”, or by pressing CTRL-D.<span id="a-1225298132"></span><span id="a-1225300404"></span> </p><p>Alternatively, a list of commands to be executed may be stored in a command script, and executed by passing the filename of the command script to PyXPlot on the shell command line, for example:<span id="a-1224886388"></span> </p><pre>
 pyxplot foo
-</pre><p>In this case, PyXPlot would exit immediately after finishing executing the commands from the file <tt class="ttfamily">foo</tt>. Several filenames may be passed on the commandline, to be executed in sequence: </p><pre>
+</pre><p>In this case, PyXPlot would exit immediately after finishing executing the commands from the file <tt class="ttfamily">foo</tt>. Several filenames may be passed on the command line, to be executed in sequence: </p><pre>
 pyxplot foo1 foo2 foo3
 </pre><p>Wildcards can also be used; the following would execute all command scripts in the presenting working directory whose filenames end with a <tt class="ttfamily">.plot</tt> suffix: </p><pre>
 pyxplot *.plot
-</pre><p>It is possible to use PyXPlot both interactively, and from command scripts, in the same session. One way to do this is to pass the magic filename ‘–’ on the commandline: </p><pre>
+</pre><p>It is possible to use PyXPlot both interactively, and from command scripts, in the same session. One way to do this is to pass the magic filename ‘–’ on the command line: </p><pre>
 pyxplot foo1 - foo2
-</pre><p>This magic filename represents an interactive session, which commences after the execution of <tt class="ttfamily">foo1</tt>, and should be terminated in the usual way after use, with the “<tt class="ttfamily">exit</tt>” or “<tt class="ttfamily">quit</tt>” commands. Afterwards, the command script <tt class="ttfamily">foo2</tt> would execute. </p><p>From within an interactive session, it is possible to run a command script using the <tt class="ttfamily">load</tt><span id="a-1225453812"></span> command: </p><pre>
+</pre><p>This magic filename represents an interactive session, which commences after the execution of <tt class="ttfamily">foo1</tt>, and should be terminated in the usual way after use, with the “<tt class="ttfamily">exit</tt>” or “<tt class="ttfamily">quit</tt>” commands. Afterwards, the command script <tt class="ttfamily">foo2</tt> would execute. </p><p>From within an interactive session, it is possible to run a command script using the <tt class="ttfamily">load</tt><span id="a-1225299060"></span> command: </p><pre>
 pyxplot&gt; load 'foo'
-</pre><p>This example would have the same effect as typing the contents of the file <tt class="ttfamily">foo</tt> into the present session. </p><p>A related command is “<tt class="ttfamily">save</tt>”<span id="a-1225818132"></span>, which stores a history of the commands executed in the present interactive session to file. </p><p>All command files can include comment lines, which should begin with a hash character, for example:<span id="a-1225680724"></span><span id="a-1225791220"></span> </p><pre>
+</pre><p>This example would have the same effect as typing the contents of the file <tt class="ttfamily">foo</tt> into the present session. </p><p>A related command is “<tt class="ttfamily">save</tt>”<span id="a-1225320404"></span>, which stores a history of the commands executed in the present interactive session to file. </p><p>All command files can include comment lines, which should begin with a hash character, for example:<span id="a-1225322420"></span><span id="a-1225320116"></span> </p><pre>
 # This is a comment
 </pre><p>Long commands may be split over multiple lines in the script by terminating each line of it with a backslash character, whereupon the following line will be appended to the end of it. </p></div>
 
@@ -80,7 +80,7 @@ pyxplot&gt; load 'foo'
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

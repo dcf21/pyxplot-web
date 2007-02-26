@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: display</title>
+<title>: backup</title>
 
-<link href="sect0057.html" title="dpi" rel="next" />
-<link href="sect0055.html" title="boxwidth" rel="prev" />
-<link href="sect0047.html" title="set" rel="up" />
+<link href="sect0057.html" title="bar" rel="next" />
+<link href="sect0055.html" title="axis" rel="prev" />
+<link href="sect0051.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/plastex-styles.css" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0055.html" title="boxwidth"><img alt="Previous: boxwidth" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0055.html" title="axis"><img alt="Previous: axis" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0047.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0051.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0057.html" title="dpi"><img alt="Next: dpi" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0057.html" title="bar"><img alt="Next: bar" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,48 +39,43 @@
 
 </span><span>
 <span>
-<a href="sect0026.html">Command Reference</a> <b>:</b>
+<a href="sect0028.html">Command Reference</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="sect0047.html">set</a> <b>:</b>
+<a href="sect0051.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">display</b>
+<b class="current">backup</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a-1229641780">5.21.9 display</h2>
-<p><span id="a-1229635892"></span> </p><pre>
-set [no]display
-</pre><p>By default, whenever an item is added to a multiplot, or an existing item moved or replotted, the whole multiplot is replotted to show the change. This can be a time consuming process on large and complex multiplots. For this reason, the ‘<tt class="tt">set nodisplay</tt>’ command is provided, which stops PyXPlot from producing any output. The ‘<tt class="tt">set display</tt>’ command can subsequently be issued to return to normal behaviour. </p><p>This can be especially useful in scripts which produce large multiplots. There is no point in producing output at each step in the construction of a large multiplot, and so a great speed increase can be achieved by wrapping the script with: </p><pre>
-set nodisplay 
-[...prepare large multiplot...] 
-set display 
-refresh
-</pre></div>
+<div><h2 id="a-1229543092">5.23.5 backup</h2>
+<p><span id="a-1229544948"></span> </p><pre>
+set backup
+</pre><p>The setting <tt class="tt">backup</tt> changes PyXPlot’s behaviour when it detects that a file which it is about to write is going to overwrite an existing file. Whereas by default the existing file would be overwritten by the new one, when the <tt class="tt">backup</tt> setting is turned on, it is renamed, placing a tilde at the end of its filename. For example, suppose that a plot were to be written with filename ‘<tt class="tt">out.ps</tt>’, but such a file already existed. With the backup setting turned on the existing file would be renamed ‘<tt class="tt">out.ps </tt>’ to save it from being overwritten. </p><p>The setting may be turned off via <tt class="tt">set nobackup</tt>. </p></div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0055.html" title="boxwidth"><img alt="Previous: boxwidth" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0055.html" title="axis"><img alt="Previous: axis" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0047.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0051.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0057.html" title="dpi"><img alt="Next: dpi" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0057.html" title="bar"><img alt="Next: bar" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

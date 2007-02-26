@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Example 9: Simple Examples of Function Splicing</title>
+<title>: text</title>
 
-<link href="ex10.html" title="Example 10: Removal of Unwanted Axes" rel="next" />
-<link href="sect0115.html" title="Example 8: Fitting Functions to Data" rel="prev" />
-<link href="examples.html" title="Examples" rel="up" />
+<link href="sect0117.html" title="undelete" rel="next" />
+<link href="sect0115.html" title="spline" rel="prev" />
+<link href="sect0028.html" title="Command Reference" rel="up" />
 <link rel="stylesheet" href="styles/plastex-styles.css" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0115.html" title="Example 8: Fitting Functions to Data"><img alt="Previous: Example 8: Fitting Functions to Data" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0115.html" title="spline"><img alt="Previous: spline" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="examples.html" title="Examples"><img alt="Up: Examples" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0028.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="ex10.html" title="Example 10: Removal of Unwanted Axes"><img alt="Next: Example 10: Removal of Unwanted Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0117.html" title="undelete"><img alt="Next: undelete" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,36 +39,42 @@
 
 </span><span>
 <span>
-<a href="examples.html">Examples</a> <b>:</b>
+<a href="sect0028.html">Command Reference</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">Example 9: Simple Examples of Function Splicing</b>
+<b class="current">text</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a-1231045908">6.9 Example 9: Simple Examples of Function Splicing</h1>
-<p>Here, we demonstrate simple use of function splicing (see Section <a href="splice.html">3.7</a>). In panel (a), we plot the function <img src="images/img-0004.png" alt="$\sin (x)$" style="position:relative; bottom:-5px; width:45px; height:19px" class="math" />, but specify that we only want it to be drawn in the range <img src="images/img-0076.png" alt="$-2&lt;x&lt;7$" style="position:relative; bottom:-1px; width:90px; height:14px" class="math" />. In panel (b), we show how to define a discontinuous function similar to a top-hat function, also demonstrating how to set movable boundaries between the spliced components of functions, in this case using the variable <img src="images/img-0035.png" alt="$a$" style="position:relative; bottom:-1px; width:9px; height:9px" class="math" /> for this purpose. </p><p>Panels (c) and (d) demonstrate a more complex example, involving the splicing of a two-dimensional function. </p><p> <b class="bfseries">PyXPlot Script:</b> </p><p>examples/example9 </p><p><br /></p></div>
+<div><h1 id="a-1230528212">5.26 text</h1>
+<p><span id="a-1230528052"></span> </p><pre>
+text '&lt;text string&gt;' [at &lt;x&gt;, &lt;y&gt;] [rotate &lt;angle&gt;]
+</pre><p>The <tt class="tt">text</tt> command is primarily part of the multiplot environment; it can be used to add blocks of text to a multiplot. It can, however, also be used in single plot mode, in a way that is described below. As always in PyXPlot, the text is rendered using L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X. An example would be: </p><pre>
+text 'Hello world' at 0,2
+</pre><p>which would render the text ‘Hello world’ at position <img src="images/img-0098.png" alt="$(0,2)$" style="position:relative; bottom:-5px; width:39px; height:19px" class="math" />, measured in centimetres. The alignment of the text item with respect to this position can be set using the <tt class="tt">set texthalign</tt> and <tt class="tt">set textvalign</tt> commands. </p><p>A rotation angle may optionally be specified after the keyword ‘<tt class="tt">rotate</tt>’ to produce text rotated to any arbitrary angle, measured in degrees counter-clockwise. The following example would produce upward-running text: </p><pre>
+text 'Hello' at 1.5, 3.6 rotate 90
+</pre><p>Outside of multiplot mode, the text command can be used to produce images consisting simply of one single text item. This can be useful for importing L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>Xed equations as gif images into slideshow programs such as Microsoft Powerpoint which are incapable of producing such neat mathematical notation by themselves. </p></div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0115.html" title="Example 8: Fitting Functions to Data"><img alt="Previous: Example 8: Fitting Functions to Data" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0115.html" title="spline"><img alt="Previous: spline" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="examples.html" title="Examples"><img alt="Up: Examples" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0028.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="ex10.html" title="Example 10: Removal of Unwanted Axes"><img alt="Next: Example 10: Removal of Unwanted Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0117.html" title="undelete"><img alt="Next: undelete" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: An Example Configuration File</title>
+<title>: Script Watching: pyxplot_watch</title>
 
-<link href="configfile_settings.html" title="Configuration Options: &lt;tt class=&quot;ttfamily&quot;&gt;settings&lt;/tt&gt; section" rel="next" />
-<link href="config_files.html" title="Configuration Files" rel="prev" />
-<link href="sect0024.html" title="Configuring PyXPlot" rel="up" />
+<link href="sect0026.html" title="Configuring PyXPlot" rel="next" />
+<link href="sect0024.html" title="Numerical Integration and Differentiation" rel="prev" />
+<link href="new_features.html" title="Extensions of Gnuplot’s Interface" rel="up" />
 <link rel="stylesheet" href="styles/plastex-styles.css" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="config_files.html" title="Configuration Files"><img alt="Previous: Configuration Files" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0024.html" title="Numerical Integration and Differentiation"><img alt="Previous: Numerical Integration and Differentiation" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0024.html" title="Configuring PyXPlot"><img alt="Up: Configuring PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="new_features.html" title="Extensions of Gnuplot’s Interface"><img alt="Up: Extensions of Gnuplot’s Interface" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="configfile_settings.html" title="Configuration Options: settings section"><img alt="Next: Configuration Options: settings section" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0026.html" title="Configuring PyXPlot"><img alt="Next: Configuring PyXPlot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,81 +39,24 @@
 
 </span><span>
 <span>
-<a href="sect0024.html">Configuring PyXPlot</a> <b>:</b>
+<a href="new_features.html">Extensions of Gnuplot’s Interface</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">An Example Configuration File</b>
+<b class="current">Script Watching: pyxplot_watch</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a-1228366868">4.3 An Example Configuration File</h1>
-<p> <span id="a-1228496724"></span> As an example, the following is a configuration file which would represent PyXPlot’s default configuration: </p><pre>
-[settings]
-ASPECT=1.0
-AUTOASPECT=ON
-AXESCOLOUR=Black
-BACKUP=OFF
-BAR=1.0
-BOXFROM=0
-BOXWIDTH=0
-COLOUR=ON
-DATASTYLE=points
-DISPLAY=ON
-DPI=300
-FONTSIZE=0
-FUNCSTYLE=lines
-GRID=OFF
-GRIDAXISX=1
-GRIDAXISY=1
-GRIDMAJCOLOUR=Grey60
-GRIDMINCOLOUR=Grey90
-KEY=ON
-KEYCOLUMNS=1
-KEYPOS=TOP RIGHT
-KEY_XOFF=0.0
-KEY_YOFF=0.0
-LANDSCAPE=OFF
-LINEWIDTH=1.0
-MULTIPLOT=OFF
-ORIGINX=0.0
-ORIGINY=0.0
-OUTPUT=
-POINTLINEWIDTH=1.0
-POINTSIZE=1.0 
-SAMPLES=250
-TERMINVERT=OFF
-TERMTRANSPARENT=OFF
-TERMTYPE=X11_singlewindow
-TEXTCOLOUR=Black
-TEXTHALIGN=Left
-TEXTVALIGN=Bottom
-TITLE=
-TIT_XOFF=0.0
-TIT_YOFF=0.0
-WIDTH=8.0
-
-[terminal]
-COLOUR=OFF
-COLOUR_ERR=Red
-COLOUR_REP=Green
-COLOUR_WRN=Brown
-SPLASH=ON
-
-[variables]
-pi = 3.14159265358979
-
-[colours]
-palette = Black, Red, Blue, Magenta, Cyan, Brown, Salmon, Gray,
-Green, NavyBlue, Periwinkle, PineGreen, SeaGreen, GreenYellow,
-Orange, CarnationPink, Plum
-
-[latex]
-PREAMBLE=
+<div><h1 id="a-1228208596">3.10 Script Watching: pyxplot_watch</h1>
+<p>PyXPlot includes a simple tool for watching command script files, and executing them whenever they are modified. This may be useful when developing a command script, if one wants to make small modifications to it, and see the results in a semi-live fashion. This tool is invoked by calling the <tt class="ttfamily">pyxplot_watch</tt><span id="a-1228326036"></span><span id="a-1228327540"></span> command from a shell prompt. The command-line syntax of <tt class="ttfamily">pyxplot_watch</tt> is similar to that of PyXPlot itself, for example: </p><pre>
+pyxplot_watch script
+</pre><p>would set <tt class="ttfamily">pyxplot_watch</tt> to watch the command script file <tt class="ttfamily">script</tt>. One difference, however, is that if multiple script files are specified on the command line, they are watched and executed independently, <i class="itshape">not</i> sequentially, as PyXPlot itself would do. Wildcard characters can also be used to set <tt class="ttfamily">pyxplot_watch</tt> to watch multiple files.<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">Note that <tt class="ttfamily">pyxplot_watch *.script</tt> and <tt class="ttfamily">pyxplot_watch <img src="images/img-0007.png" alt="$\backslash $" style="position:relative; bottom:-5px; width:7px; height:19px" class="math" />*.script</tt> will behave differently in most UNIX shells. In the first case, the wildcard is expanded by your shell, and a list of files passed to <tt class="ttfamily">pyxplot_watch</tt>. Any files matching the wildcard, created after running <tt class="ttfamily">pyxplot_watch</tt>, will not be picked up. In the latter case, the wildcard is expanded by <tt class="ttfamily">pyxplot_watch</tt> itself, which <i class="itshape">will</i> pick up any newly created files.</span></a> </p><p>This is especially useful when combined with GhostView’s watch facility. For example, suppose that a script <tt class="ttfamily">foo</tt> produces postscript output <tt class="ttfamily">foo.ps</tt>. The following two commands could be used to give a live view of the result of executing this script: </p><pre>
+gv --watch foo.ps &amp;
+pyxplot_watch foo
 </pre></div>
 
 
@@ -121,16 +64,16 @@ PREAMBLE=
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="config_files.html" title="Configuration Files"><img alt="Previous: Configuration Files" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0024.html" title="Numerical Integration and Differentiation"><img alt="Previous: Numerical Integration and Differentiation" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0024.html" title="Configuring PyXPlot"><img alt="Up: Configuring PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="new_features.html" title="Extensions of Gnuplot’s Interface"><img alt="Up: Extensions of Gnuplot’s Interface" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="configfile_settings.html" title="Configuration Options: settings section"><img alt="Next: Configuration Options: settings section" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0026.html" title="Configuring PyXPlot"><img alt="Next: Configuring PyXPlot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

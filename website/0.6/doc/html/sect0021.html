@@ -2,10 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Steps</title>
+<title>: Stacked Bar Charts</title>
 
-<link href="splice.html" title="Function Splicing" rel="next" />
-<link href="sect0020.html" title="Stacked Bar Charts" rel="prev" />
+<link href="sect0022.html" title="Steps" rel="next" />
+<link href="sect0020.html" title="Basic Operation" rel="prev" />
 <link href="barcharts.html" title="Barcharts and Histograms" rel="up" />
 <link rel="stylesheet" href="styles/plastex-styles.css" />
 <link rel="stylesheet" href="styles/styles.css" />
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0020.html" title="Stacked Bar Charts"><img alt="Previous: Stacked Bar Charts" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0020.html" title="Basic Operation"><img alt="Previous: Basic Operation" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="barcharts.html" title="Barcharts and Histograms"><img alt="Up: Barcharts and Histograms" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="splice.html" title="Function Splicing"><img alt="Next: Function Splicing" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0022.html" title="Steps"><img alt="Next: Steps" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -50,34 +50,35 @@
 </span><span>
 
 <span>
-<b class="current">Steps</b>
+<b class="current">Stacked Bar Charts</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a-1228224500">3.6.3 Steps</h2>
-<p>As an alternative to solid boxes, a graph may also be plotted with “steps”; see panels (a), (c) and (d) of figure <a href="gallery.html#fig_ex6">6.6</a> for examples. As is illustrated by these panels, three flavours of steps are available (exactly as in gnuplot): </p><pre>
-plot 'datafile' with steps 
-plot 'datafile' with fsteps 
-plot 'datafile' with histeps
-</pre><p>When using the <tt class="ttfamily">steps</tt> plot style, the datapoints specify the right-most edges of each step. By contrast, they specify the left-most edges of the steps when using the <tt class="ttfamily">fsteps</tt> plot style. The <tt class="ttfamily">histeps</tt> plot style works rather like the <tt class="ttfamily">boxes</tt> plot style; the interfaces between the steps occur at the horizontal midpoints between the datapoints. </p></div>
+<div><h2 id="a-1228268276">3.6.2 Stacked Bar Charts</h2>
+<p>If several datapoints are supplied at a common <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-coordinate to the <tt class="ttfamily">boxes</tt> or <tt class="ttfamily">wboxes</tt> plot styles, then the bars are stacked one above another into a stacked barchart. Consider the following datafile: </p><pre> 
+1 1
+2 2
+2 3
+3 4
+</pre><p>The second bar at <img src="images/img-0075.png" alt="$x=2$" style="position:relative; bottom:-1px; width:44px; height:14px" class="math" /> would be placed on top of the first, spanning the range <img src="images/img-0076.png" alt="$2&lt;y&lt;5$" style="position:relative; bottom:-4px; width:76px; height:17px" class="math" />, and having the same width as the first. If plot colours are being automatically selected from the palette, then a different palette colour is used to plot the upper bar. </p></div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0020.html" title="Stacked Bar Charts"><img alt="Previous: Stacked Bar Charts" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0020.html" title="Basic Operation"><img alt="Previous: Basic Operation" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="barcharts.html" title="Barcharts and Histograms"><img alt="Up: Barcharts and Histograms" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="splice.html" title="Function Splicing"><img alt="Next: Function Splicing" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0022.html" title="Steps"><img alt="Next: Steps" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: spline</title>
+<title>: xrange</title>
 
-<link href="sect0108.html" title="text" rel="next" />
-<link href="sect0106.html" title="show" rel="prev" />
-<link href="sect0026.html" title="Command Reference" rel="up" />
+<link href="sect0108.html" title="xticdir" rel="next" />
+<link href="sect0106.html" title="xlabel" rel="prev" />
+<link href="sect0051.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/plastex-styles.css" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0106.html" title="show"><img alt="Previous: show" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0106.html" title="xlabel"><img alt="Previous: xlabel" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0026.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0051.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0108.html" title="text"><img alt="Next: text" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0108.html" title="xticdir"><img alt="Next: xticdir" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,42 +39,49 @@
 
 </span><span>
 <span>
-<a href="sect0026.html">Command Reference</a> <b>:</b>
+<a href="sect0028.html">Command Reference</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0051.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">spline</b>
+<b class="current">xrange</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a-1230868884">5.23 spline</h1>
-<p><span id="a-1230668052"></span> </p><pre>
-spline [&lt;range specification&gt;] &lt;function name&gt; '&lt;filename&gt;' 
-       [index &lt;index specification&gt;] [every &lt;every specification&gt;]
-       [using &lt;using specification&gt;]
-</pre><p>The <tt class="tt">spline</tt> command fits a spline to a datafile. A special function is created that represents the spline fit and can be used in the same way as any other user-defined function. For example: </p><pre>
-spline f() 'data.1'
-</pre><p>would create a function <img src="images/img-0030.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> that is a fit to the data in the file <tt class="tt">data.1</tt>. By default, the <tt class="tt">spline</tt> command uses the first two columns of a data file in a manner analogous to the plot command. The <tt class="tt">index</tt>, <tt class="tt">every</tt> and <tt class="tt">using</tt> modifiers can be used in the same way as in the <tt class="tt">plot</tt> command to select which parts of the datafile should be used; see the <tt class="tt">datafile</tt> section for more details. </p><p>Note that trying to generate splines of multi-valued functions will not, in general, produce useful results. </p></div>
+<div><h2 id="a-1230212692">5.23.56 xrange</h2>
+<p><span id="a-1230416052"></span> </p><pre>
+set x[&lt;axisnumber&gt;]range '&lt;text&gt;'
+</pre><p>The <tt class="tt">xrange</tt> setting controls the range of values along the <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axes of plots. For function plots, this is also the domain across which the function will be evaluated. For example: </p><pre>
+set xrange [0:10]
+</pre><p>sets the first <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" /> axis to be between 0 and 10. Higher numbered axes may be referred to be inserting their number after the <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />; <img src="images/img-0005.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-axes similarly be replacing the <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" /> with a <img src="images/img-0005.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />. Hence: </p><pre>
+set y23range [-5:5]
+</pre><p>sets the range of the 23rd <img src="images/img-0005.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-axis to be between -5 and 5. The following command: </p><pre>
+set xrange [:10]
+</pre><p>would set the <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis to have an upper limit of 10, but an automatically-scaling lower-limit. </p></div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0106.html" title="show"><img alt="Previous: show" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0106.html" title="xlabel"><img alt="Previous: xlabel" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0026.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0051.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0108.html" title="text"><img alt="Next: text" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0108.html" title="xticdir"><img alt="Next: xticdir" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

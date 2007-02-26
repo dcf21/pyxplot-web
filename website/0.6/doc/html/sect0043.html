@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: refresh</title>
+<title>: print</title>
 
-<link href="sect0044.html" title="replot" rel="next" />
-<link href="sect0042.html" title="quit" rel="prev" />
-<link href="sect0026.html" title="Command Reference" rel="up" />
+<link href="sect0044.html" title="pwd" rel="next" />
+<link href="sect0042.html" title="plot" rel="prev" />
+<link href="sect0028.html" title="Command Reference" rel="up" />
 <link rel="stylesheet" href="styles/plastex-styles.css" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0042.html" title="quit"><img alt="Previous: quit" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0042.html" title="plot"><img alt="Previous: plot" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0026.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0028.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0044.html" title="replot"><img alt="Next: replot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0044.html" title="pwd"><img alt="Next: pwd" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,38 +39,40 @@
 
 </span><span>
 <span>
-<a href="sect0026.html">Command Reference</a> <b>:</b>
+<a href="sect0028.html">Command Reference</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">refresh</b>
+<b class="current">print</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a-1229225076">5.17 refresh</h1>
-<p><span id="a-1229841652"></span> </p><pre>
-refresh
-</pre><p>The <tt class="tt">refresh</tt> command produces an exact copy of the latest display. This can be useful, for example, after changing the terminal type, to produce a second copy of a plot in a different graphic format. It differs from the <tt class="tt">replot</tt> command in that it doesn’t replot anything; subsequent usages of the <tt class="tt">set</tt> command since the previous <tt class="tt">plot</tt> command have no affect on the output. The <tt class="tt">refresh</tt> command is also especially useful in the multiplot environment; it can be used to produce second copies of multiplot pages where there need not necessarily even be any plots; there might perhaps only be textual items and arrows. </p></div>
+<div><h1 id="a-1228904500">5.15 print</h1>
+<p><span id="a-1229013908"></span> </p><pre>
+print &lt;expression&gt;
+</pre><p>The <tt class="tt">print</tt> command outputs the value of a mathematical expression to the terminal. It is most often used to find the value of a variable, though it can also be used to produce formatted output from a PyXPlot script. For example: </p><pre>
+print a
+</pre><p>would print the value of the variable <img src="images/img-0030.png" alt="$a$" style="position:relative; bottom:-1px; width:9px; height:9px" class="math" />. </p></div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0042.html" title="quit"><img alt="Previous: quit" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0042.html" title="plot"><img alt="Previous: plot" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0026.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0028.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0044.html" title="replot"><img alt="Next: replot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0044.html" title="pwd"><img alt="Next: pwd" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

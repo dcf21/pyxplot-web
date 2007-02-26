@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: noaxis</title>
+<title>: linewidth</title>
 
-<link href="sect0073.html" title="nobackup" rel="next" />
-<link href="sect0071.html" title="noarrow" rel="prev" />
-<link href="sect0047.html" title="set" rel="up" />
+<link href="sect0073.html" title="logscale" rel="next" />
+<link href="sect0071.html" title="linestyle" rel="prev" />
+<link href="sect0051.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/plastex-styles.css" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0071.html" title="noarrow"><img alt="Previous: noarrow" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0071.html" title="linestyle"><img alt="Previous: linestyle" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0047.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0051.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0073.html" title="nobackup"><img alt="Next: nobackup" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0073.html" title="logscale"><img alt="Next: logscale" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,43 +39,47 @@
 
 </span><span>
 <span>
-<a href="sect0026.html">Command Reference</a> <b>:</b>
+<a href="sect0028.html">Command Reference</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="sect0047.html">set</a> <b>:</b>
+<a href="sect0051.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">noaxis</b>
+<b class="current">linewidth</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a-1229897748">5.21.25 noaxis</h2>
-<p><span id="a-1229898068"></span> </p><pre>
-set noaxis &lt;axis specification&gt;, ...
-</pre><p>The <tt class="tt">set noaxis</tt> command is equivalent to the <tt class="tt">unset axis</tt> command. It should be followed by a comma-separated lists of axes, which are to be removed from the current axis configuration. </p></div>
+<div><h2 id="a-1229873236">5.23.21 linewidth</h2>
+<p><span id="a-1229873908"></span> </p><pre>
+set linewidth &lt;value&gt;
+</pre><p>Sets the default linewidth, in units of pt, of the lines used to plot datasets onto graphs with the ‘<tt class="tt">lines</tt>’ plot style (see the <tt class="tt">plot</tt> command for details of plot styles), for example in the following statement: </p><pre>
+plot sin(x) with lines
+</pre><p>The linewidths of individual datasets can be set as follows; the <tt class="tt">set linewidth</tt> setting only affects plot statements where no linewidth is manually specified: </p><pre>
+plot sin(x) with lines linewidth 5.0
+</pre></div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0071.html" title="noarrow"><img alt="Previous: noarrow" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0071.html" title="linestyle"><img alt="Previous: linestyle" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0047.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0051.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0073.html" title="nobackup"><img alt="Next: nobackup" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0073.html" title="logscale"><img alt="Next: logscale" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

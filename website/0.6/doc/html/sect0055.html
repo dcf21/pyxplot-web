@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: boxwidth</title>
+<title>: axis</title>
 
-<link href="sect0056.html" title="display" rel="next" />
-<link href="sect0054.html" title="boxfrom" rel="prev" />
-<link href="sect0047.html" title="set" rel="up" />
+<link href="sect0056.html" title="backup" rel="next" />
+<link href="sect0054.html" title="axescolour" rel="prev" />
+<link href="sect0051.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/plastex-styles.css" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0054.html" title="boxfrom"><img alt="Previous: boxfrom" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0054.html" title="axescolour"><img alt="Previous: axescolour" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0047.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0051.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0056.html" title="display"><img alt="Next: display" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0056.html" title="backup"><img alt="Next: backup" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,47 +39,55 @@
 
 </span><span>
 <span>
-<a href="sect0026.html">Command Reference</a> <b>:</b>
+<a href="sect0028.html">Command Reference</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="sect0047.html">set</a> <b>:</b>
+<a href="sect0051.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">boxwidth</b>
+<b class="current">axis</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a-1229671060">5.21.8 boxwidth</h2>
-<p><span id="a-1229669428"></span> </p><pre>
-set boxwidth &lt;width&gt;
-</pre><p>The ‘<tt class="tt">boxwidth</tt>’ setting alters PyXPlot’s behaviour when plotting bar charts. It sets the default width of the boxes used, in graph <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis units. If the specified width is negative then, as happens by default, the boxes have automatically selected widths, such that the interfaces between them occur at the horizontal midpoints between their specified <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-positions. For example: </p><pre>
-set boxwidth 2
-</pre><p>would set all boxes to be two units wide. </p><pre>
-set boxwidth -2
-</pre><p>would set all of the bars to have differing widths, centred upon their specified <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-positions, such that their interfaces occur at the horizontal midpoints between them. </p></div>
+<div><h2 id="a-1229542004">5.23.4 axis</h2>
+<p><span id="a-1229610676"></span> </p><pre>
+set axis &lt;axis&gt;, ...
+</pre><p>The command: </p><pre>
+set axis x2
+</pre><p>may be used to add a second <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis to a plot, with default settings. In general, there is no practical reason to use this command, as a second <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis would implicitly be created anyway by any of the following statements: </p><pre>
+set x2label 'foo' \\
+set x2ticdir outwards \\
+plot sin(x) axes x2y1
+</pre><p>Of more practical use is the ‘<tt class="tt">unset x2</tt>’ command, which is used to remove an axis once it has been added to a plot. After executing: </p><pre>
+set x2label 'foo'
+</pre><p>for example, the only way to tell PyXPlot to subsequently produce a plot without a second <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis would be to delete this axis with the following command: </p><pre>
+unset axis x2
+</pre><p>Note that in this case, the <tt class="tt">unset x2label</tt> command would be sufficent to remove the label ‘foo’ placed on the new axis, but not sufficient to delete the new axis that the <tt class="tt">set x2label</tt> command implicitly created. Multiple axes can be deleted in a single <tt class="tt">unset axis</tt> statement, for example: </p><pre>
+unset axis x2x4x5
+</pre><p>In the special cases of <tt class="tt">unset axis x1</tt> or <tt class="tt">unset axis y1</tt>, these axes cannot be deleted; a plot must have at least one <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />- and one <img src="images/img-0005.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-axis. Instead, the <tt class="tt">unset axis</tt> command restores these axes to their default configurations, removing any set titles or ranges that they might have been given. </p></div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0054.html" title="boxfrom"><img alt="Previous: boxfrom" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0054.html" title="axescolour"><img alt="Previous: axescolour" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0047.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0051.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0056.html" title="display"><img alt="Next: display" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0056.html" title="backup"><img alt="Next: backup" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

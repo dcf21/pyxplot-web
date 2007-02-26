@@ -4,7 +4,7 @@
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
 <title>: First Plots</title>
 
-<link href="sect0009.html" title="Operators and Functions" rel="next" />
+<link href="sec-latex_incompatibility.html" title="Axis Labels and Titles" rel="next" />
 <link href="sect0008.html" title="Getting Started" rel="prev" />
 <link href="gnuplot_intro.html" title="First Steps With PyXPlot" rel="up" />
 <link rel="stylesheet" href="styles/plastex-styles.css" />
@@ -19,12 +19,12 @@
 
 <td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0009.html" title="Operators and Functions"><img alt="Next: Operators and Functions" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sec-latex_incompatibility.html" title="Axis Labels and Titles"><img alt="Next: Axis Labels and Titles" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -52,9 +52,9 @@
 </div>
 
 <div><h1 id="first_plots">2.2 First Plots</h1>
-<p>  </p><p>The basic workhorse command of PyXPlot is the <tt class="ttfamily">plot</tt> command, which is used to produce all plots. The following simple example would plot the function <img src="images/img-0004.png" alt="$\sin (x)$" style="position:relative; bottom:-5px; width:45px; height:19px" class="math" />:<span id="a-1225432948"></span> </p><pre>
+<p>  </p><p>The basic workhorse command of PyXPlot is the <tt class="ttfamily">plot</tt> command, which is used to produce all plots. The following simple example would plot the function <img src="images/img-0003.png" alt="$\sin (x)$" style="position:relative; bottom:-5px; width:45px; height:19px" class="math" />:<span id="a-1224957780"></span> </p><pre>
 plot sin(x)
-</pre><p>It is also possible to plot data from files. The following would plot data from a file ‘<tt class="ttfamily">datafile</tt>’, taking the <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-coordinate of each point from the first column of the datafile, and the <img src="images/img-0006.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-coordinate from the second. The datafile is assumed to be in plain text format, with columns separated by whitespace and/or commas<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">If the filename of a datafile ends with a <tt class="ttfamily">.gz</tt> suffix, it is assuming to be gzipped plaintext, and is decoded accordingly.</span></a>: </p><pre>
+</pre><p>It is also possible to plot data from files. The following would plot data from a file ‘<tt class="ttfamily">datafile</tt>’, taking the <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-coordinate of each point from the first column of the datafile, and the <img src="images/img-0005.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-coordinate from the second. The datafile is assumed to be in plain text format, with columns separated by whitespace and/or commas<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">If the filename of a datafile ends with a <tt class="ttfamily">.gz</tt> suffix, it is assuming to be gzipped plaintext, and is decoded accordingly.</span></a>: </p><pre>
 plot 'datafile'
 </pre><p>Several items can be plotted on the same graph by separating them by commas: </p><pre>
 plot 'datafile', sin(x), cos(x)
@@ -64,24 +64,10 @@ b = 1
 c = 1.5
 f(x) = a*(x**2) + b*x + c
 plot f(x)
-</pre><p>To unset a variable or function once it has been set, the following syntax should be used:<span id="a-1225789716"></span><span id="a-1225790420"></span><span id="a-1225790580"></span> </p><pre>
+</pre><p>To unset a variable or function once it has been set, the following syntax should be used:<span id="a-1224954932"></span><span id="a-1224954836"></span><span id="a-1224954804"></span> </p><pre>
 a =
 f(x) =
-</pre><p>Labels can be applied to the two axes of the plot, and a title put at the top: </p><pre>
-set xlabel 'This is the X axis'
-set ylabel 'This is the Y axis'
-set title 'A Plot of sin(x)'
-plot sin(x)
-</pre><p>All such text labels are displayed using L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X, and so any L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X  commands can be used, for example to put equations on axes: </p><pre>
-set xlabel '$\frac{x^2}{c^2}$'
-</pre><p>As a caveat, however, this does mean that care needs to be taken to escape any of L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X’s reserved characters – i.e.: <img src="images/img-0001.png" alt="$\backslash $" style="position:relative; bottom:-5px; width:7px; height:19px" class="math" /> &amp; % # { } $ _ <img src="images/img-0007.png" alt="\^{}" style="position:relative; bottom:10px; width:5px; height:3px" class="accent" /> or <img src="images/img-0008.png" alt="$\sim $" style="position:relative; bottom:2px; width:12px; height:5px" class="math" />. </p><p>Having set labels and titles, they may be removed thus: </p><pre>
-set xlabel ''
-set ylabel ''
-set title ''
-</pre><p>These are two other ways of removing the title from a plot: </p><pre>
-set notitle
-unset title
-</pre><p>The <tt class="ttfamily">unset</tt> command<span id="a-1225431572"></span> may be followed by essentially any word that can follow the <tt class="ttfamily">set</tt> command, such as <tt class="ttfamily">xlabel</tt> or <tt class="ttfamily">title</tt>, to return that setting to its default configuration. The <tt class="ttfamily">reset</tt> command<span id="a-1225429300"></span> restores all configurable parameters to their default states. </p></div>
+</pre></div>
 
 
 
@@ -92,12 +78,12 @@ unset title
 
 <td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0009.html" title="Operators and Functions"><img alt="Next: Operators and Functions" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sec-latex_incompatibility.html" title="Axis Labels and Titles"><img alt="Next: Axis Labels and Titles" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

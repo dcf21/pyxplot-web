@@ -24,7 +24,7 @@
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -56,18 +56,18 @@
 <hr />
 </div>
 
-<div><h2 id="a-1226410772">3.4.2 Text Labels</h2>
-<p>Text labels may be placed on plots using the <tt class="ttfamily">set label</tt> command<span id="a-1227728468"></span>. As with all textual labels in PyXPlot, these are rendered in L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X: </p><pre>
+<div><h2 id="a-1226707924">3.4.2 Text Labels</h2>
+<p>Text labels may be placed on plots using the <tt class="ttfamily">set label</tt> command<span id="a-1227618644"></span>. As with all textual labels in PyXPlot, these are rendered in L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X: </p><pre>
 set label 1 'Hello World' at 0,0
 </pre><p>As in the previous section, the number ‘1’ is a reference number, which allows the label to be removed by either of the following two commands: </p><pre>
 set nolabel 1
 unset label 1
-</pre><p>The positional coordinates for the text label, placed after the keyword ‘<tt class="ttfamily">at</tt>’, can be specified in any of the coordinate systems described for arrows above. A rotation angle may optionally be specified after the keyword ‘<tt class="tt">rotation</tt>’, to rotate text counter-clockwise by a given angle, measured in degrees. For example, the following would produce upward-running text: </p><pre>
-set label 1 'Hello World' at axis3 3.0, axis4 2.7 rotation 90
-</pre><p><span id="a-1226686548"></span><span id="a-1226671508"></span><span id="a-1227811540"></span> The fontsize of these text labels can globally be set using the <tt class="ttfamily">set fontsize x</tt> command. This applies not only to the <tt class="ttfamily">set label</tt> command, but also to plot titles, axis labels, keys, etc. The value given should be an integer in the range <img src="images/img-0064.png" alt="$-4 \leq x \leq 5$" style="position:relative; bottom:-3px; width:90px; height:16px" class="math" />. The default is zero, which corresponds to L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X’s <tt class="ttfamily">normalsize</tt>; -4 corresponds to <tt class="ttfamily">tiny</tt> and 5 to <tt class="ttfamily">Huge</tt>. </p><p><span id="a-1227727156"></span><span id="a-1227728436"></span><span id="a-1227730356"></span> The <tt class="ttfamily">set textcolour</tt> command can be used to globally set the colour of all text output, and applies to all of the text that the <tt class="ttfamily">set fontsize</tt> command does. It is especially useful when producing plots to be embedded in presentation slideshows, where bright text on a dark background may be desired. It should be followed either by an integer, to set a colour from the present palette, or by a colour name. A list of the recognised colour names can be found in Section <a href="colour_names.html">4.6</a>. For example: </p><pre>
+</pre><p>The positional coordinates for the text label, placed after the keyword ‘<tt class="ttfamily">at</tt>’, can be specified in any of the coordinate systems described for arrows above. A rotation angle may optionally be specified after the keyword ‘<tt class="tt">rotate</tt>’, to rotate text counter-clockwise by a given angle, measured in degrees. For example, the following would produce upward-running text: </p><pre>
+set label 1 'Hello World' at axis3 3.0, axis4 2.7 rotate 90
+</pre><p><span id="a-1226634004"></span><span id="a-1225817268"></span><span id="a-1227727796"></span> The fontsize of these text labels can globally be set using the <tt class="ttfamily">set fontsize x</tt> command. This applies not only to the <tt class="ttfamily">set label</tt> command, but also to plot titles, axis labels, keys, etc. The value given should be an integer in the range <img src="images/img-0064.png" alt="$-4 \leq x \leq 5$" style="position:relative; bottom:-3px; width:91px; height:16px" class="math" />. The default is zero, which corresponds to L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X’s <tt class="ttfamily">normalsize</tt>; <img src="images/img-0065.png" alt="$-4$" style="position:relative; bottom:0px; width:22px; height:13px" class="math" /> corresponds to <tt class="ttfamily">tiny</tt> and 5 to <tt class="ttfamily">Huge</tt>. </p><p><span id="a-1227619060"></span><span id="a-1227617140"></span><span id="a-1227618452"></span> The <tt class="ttfamily">set textcolour</tt> command can be used to globally set the colour of all text output, and applies to all of the text that the <tt class="ttfamily">set fontsize</tt> command does. It is especially useful when producing plots to be embedded in presentation slideshows, where bright text on a dark background may be desired. It should be followed either by an integer, to set a colour from the present palette, or by a colour name. A list of the recognised colour names can be found in Section <a href="colour_names.html">4.6</a>. For example: </p><pre>
 set textcolour 2
 set textcolour blue
-</pre><p><span id="a-1226683156"></span><span id="a-1227727124"></span><span id="a-1227727188"></span><span id="a-1228118036"></span>By default, each label’s specified position corresponds to its bottom left corner. This alignment may be changed with the <tt class="ttfamily">set texthalign</tt> and <tt class="ttfamily">set textvalign</tt> commands. The former takes the options <tt class="ttfamily">left</tt>, <tt class="ttfamily">centre</tt> or <tt class="ttfamily">right</tt>, and the latter takes the options <tt class="ttfamily">bottom</tt>, <tt class="ttfamily">centre</tt> or <tt class="ttfamily">top</tt>, for example: </p><pre>
+</pre><p><span id="a-1227728276"></span><span id="a-1227616948"></span><span id="a-1227617268"></span><span id="a-1227691796"></span>By default, each label’s specified position corresponds to its bottom left corner. This alignment may be changed with the <tt class="ttfamily">set texthalign</tt> and <tt class="ttfamily">set textvalign</tt> commands. The former takes the options <tt class="ttfamily">left</tt>, <tt class="ttfamily">centre</tt> or <tt class="ttfamily">right</tt>, and the latter takes the options <tt class="ttfamily">bottom</tt>, <tt class="ttfamily">centre</tt> or <tt class="ttfamily">top</tt>, for example: </p><pre>
 set texthalign right
 set textvalign top
 </pre></div>
@@ -86,7 +86,7 @@ set textvalign top
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

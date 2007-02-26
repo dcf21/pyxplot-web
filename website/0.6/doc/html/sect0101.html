@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: xtics</title>
+<title>: textcolour</title>
 
-<link href="sect0102.html" title="ylabel" rel="next" />
-<link href="sect0100.html" title="xticdir" rel="prev" />
-<link href="sect0047.html" title="set" rel="up" />
+<link href="sect0102.html" title="texthalign" rel="next" />
+<link href="sect0100.html" title="terminal" rel="prev" />
+<link href="sect0051.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/plastex-styles.css" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0100.html" title="xticdir"><img alt="Previous: xticdir" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0100.html" title="terminal"><img alt="Previous: terminal" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0047.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0051.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0102.html" title="ylabel"><img alt="Next: ylabel" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0102.html" title="texthalign"><img alt="Next: texthalign" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,54 +39,45 @@
 
 </span><span>
 <span>
-<a href="sect0026.html">Command Reference</a> <b>:</b>
+<a href="sect0028.html">Command Reference</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="sect0047.html">set</a> <b>:</b>
+<a href="sect0051.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">xtics</b>
+<b class="current">textcolour</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a-1230869588">5.21.54 xtics</h2>
-<p><span id="a-1230808276"></span> </p><pre>
-set [m]x[&lt;axisnumber&gt;]tics 
-         [axis|border|inward|outward|both] 
-         [auto 
-          | [&lt;minimum&gt;,] &lt;increment[, &lt;maximum&gt;] 
-          | ( '&lt;label&gt;' &lt;position&gt; ... ) 
-         ] 
-</pre><p>The <tt class="tt">xtics</tt> option specifies the positions of tick marks on the <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis (similarly, <tt class="tt">ytics</tt> acts on the <img src="images/img-0006.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-axis). One can specify: </p><ul class="itemize">
-<li><p>The axis to modify; if none is specified, then the command acts upon all axes. </p></li><li><p><tt class="tt">mxtics</tt> to alter the placement of minor tic marks. </p></li><li><p>The keywords <tt class="tt">inward</tt>, <tt class="tt">outward</tt> and <tt class="tt">both</tt>, which alter the directions of the tics. <tt class="tt">axis</tt> is an alias for <tt class="tt">inward</tt>, <tt class="tt">border</tt> for <tt class="tt">outward</tt>. </p></li><li><p>The <tt class="tt">autofreq</tt> keyword restores automatic placement of the tics </p></li><li><p>If <tt class="tt">minimum</tt>, <tt class="tt">increment</tt>, <tt class="tt">maximum</tt> are specified, then ticks are placed at evenly spaced intervals between the specified limits. In the case of logarithmic axes, increment is applied multiplicatively. </p></li><li><p>The final form allows ticks to be placed on an axis manually with individual labels. </p></li>
-</ul><p>Two examples: </p><pre>
-set xtics 2 1 5
-</pre><p>will set tick marks on the <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis at positions 2, 3, 4 and 5. </p><pre>
-set x2tics ("a" 2, "b" 3)
-</pre><p>will set tick marks on the second <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis at positions 2 and 3 reading ‘a’ and ‘b’ respectively. </p></div>
+<div><h2 id="a-1230211540">5.23.50 textcolour</h2>
+<p><span id="a-1230210644"></span> </p><pre>
+set textcolour &lt;colour&gt;
+</pre><p>The ‘<tt class="tt">textcolour</tt>’ setting changes the colour of all text displayed on a plot. For example: </p><pre>
+set textcolour red
+</pre><p>causes all text labels, including the labels on graph axes and legends, etc. to be rendered in red. Any of the recognised colour names listed in Section <a href="colour_names.html">4.6</a> can be used. </p></div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0100.html" title="xticdir"><img alt="Previous: xticdir" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0100.html" title="terminal"><img alt="Previous: terminal" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0047.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0051.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0102.html" title="ylabel"><img alt="Next: ylabel" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0102.html" title="texthalign"><img alt="Next: texthalign" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

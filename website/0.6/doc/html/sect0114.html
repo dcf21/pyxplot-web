@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Example 5: Multiplot – Linked Axes</title>
+<title>: show</title>
 
-<link href="example6.html" title="Example 6: Bar Charts and Steps" rel="next" />
-<link href="powerpoint_example.html" title="Example 4: Something Completely Different" rel="prev" />
-<link href="examples.html" title="Examples" rel="up" />
+<link href="sect0115.html" title="spline" rel="next" />
+<link href="sect0113.html" title="ytics" rel="prev" />
+<link href="sect0028.html" title="Command Reference" rel="up" />
 <link rel="stylesheet" href="styles/plastex-styles.css" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="powerpoint_example.html" title="Example 4: Something Completely Different"><img alt="Previous: Example 4: Something Completely Different" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0113.html" title="ytics"><img alt="Previous: ytics" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="examples.html" title="Examples"><img alt="Up: Examples" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0028.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="example6.html" title="Example 6: Bar Charts and Steps"><img alt="Next: Example 6: Bar Charts and Steps" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0115.html" title="spline"><img alt="Next: spline" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,36 +39,41 @@
 
 </span><span>
 <span>
-<a href="examples.html">Examples</a> <b>:</b>
+<a href="sect0028.html">Command Reference</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">Example 5: Multiplot – Linked Axes</b>
+<b class="current">show</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a-1230271476">6.5 Example 5: Multiplot – Linked Axes</h1>
-<p><span id="a-1228096052"></span> In this example, we illustrate how to link the axes of plots on a multiplot, so that they share a common scale, and also demonstrate how to set the colours of datasets using the <tt class="ttfamily">with colour</tt><span id="a-1230807316"></span> plot modifier. In the top-right panel, we also make use of the multiplot environment to add a plot inset.<span id="a-1231120436"></span> Finally, we render this plot using the <tt class="ttfamily">landscape</tt><span id="a-1226683092"></span> terminal setting, showing how to fit more plot onto our sheet of paper. The output is shown in figure <a href="gallery.html#fig_ex5">6.5</a>. </p><p>Notice how the linked axes autoscale intelligently. The right two plots both require larger vertical ranges than those plots to their lefts, to whose vertical axes they are linked. But once they are linked, the plots autoscale together, to ensure that they all have sufficient range for their data. </p><p> <b class="bfseries">PyXPlot Script:</b> </p><p>examples/example5 </p><p><br /></p></div>
+<div><h1 id="a-1230503572">5.24 show</h1>
+<p><span id="a-1230161172"></span> </p><pre>
+show ( all | settings | axes | variables | functions |
+       &lt;parameter&gt; ...                                 )
+</pre><p>The <tt class="tt">show</tt> command displays the values of PyXPlot’s internal parameters. For example: </p><pre>
+show pointsize
+</pre><p>will display the current default point size. </p><p>Details of the various settings that can be shown can be found under the <tt class="tt">set</tt> command; any keyword which can follow the <tt class="tt">set</tt> command can also follow the <tt class="tt">show</tt> command. </p><p>In addition, <tt class="tt">show all</tt> shows the configuration state of all aspects of PyXPlot. The command <tt class="tt">show settings</tt> shows all of PyXPlot’s settings, as distinct from variables, functions and axes. <tt class="tt">show axes</tt> shows the configuration of all of PyXPlot’s axes. <tt class="tt">show variables</tt> lists all of the currently defined variables. And finally, <tt class="tt">show functions</tt> lists all of the current user-defined functions. </p></div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="powerpoint_example.html" title="Example 4: Something Completely Different"><img alt="Previous: Example 4: Something Completely Different" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0113.html" title="ytics"><img alt="Previous: ytics" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="examples.html" title="Examples"><img alt="Up: Examples" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0028.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="example6.html" title="Example 6: Bar Charts and Steps"><img alt="Next: Example 6: Bar Charts and Steps" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0115.html" title="spline"><img alt="Next: spline" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

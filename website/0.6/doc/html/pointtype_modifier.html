@@ -24,7 +24,7 @@
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -51,18 +51,20 @@
 <hr />
 </div>
 
-<div><h1 id="pointtype_modifier">2.6 Data Styles</h1>
-<p>By default, data from files is plotted with points, and functions are plotted with lines. However, either kinds of data can be plotted in a variety of ways. To plot a function with points, for example, the following syntax is used<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">Note that when a plot command contains both <tt class="ttfamily">using</tt>/<tt class="ttfamily">every</tt> modifiers, and the <tt class="ttfamily">with</tt> modifier, the latter must come last.</span></a><span id="a-1226142964"></span>: </p><pre>
+<div><h1 id="pointtype_modifier">2.7 Data Styles</h1>
+<p>By default, data from files are plotted with points, and functions are plotted with lines. However, either kinds of data can be plotted in a variety of ways. To plot a function with points, for example, the following syntax is used<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">Note that when a plot command contains both <tt class="ttfamily">using</tt>/<tt class="ttfamily">every</tt> modifiers, and the <tt class="ttfamily">with</tt> modifier, the latter must come last.</span></a><span id="a-1225415700"></span>: </p><pre>
 plot sin(x) with points
-</pre><p>The number of points displayed (i.e. the number of samples of the function) can be set as follows<span id="a-1225952820"></span>: </p><pre>
+</pre><p>The number of points displayed (i.e. the number of samples of the function) can be set as follows<span id="a-1225414772"></span>: </p><pre>
 set samples 100
 </pre><p>Likewise, datafiles can be plotted with lines: </p><pre>
 plot 'datafile' with lines
 </pre><p>A variety of other styles are available. <tt class="ttfamily">linespoints</tt> combines both the <tt class="ttfamily">points</tt> and <tt class="ttfamily">lines</tt> styles, drawing lines through points. Errorbars can also be drawn, as follows: </p><pre>
 plot 'datafile' with yerrorbars
-</pre><p>In this case, three columns of data need to be specified: the <img src="images/img-0005.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />- and <img src="images/img-0006.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-coordinates of each datapoint, plus the size of the vertical errorbar on that datapoint. By default, the first three columns of the datafile are used, but once again (see Section <a href="plot_datafiles.html">2.4</a>), the <tt class="ttfamily">using</tt> modifier can be used: </p><pre>
+</pre><p>In this case, three columns of data need to be specified: the <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />- and <img src="images/img-0005.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-coordinates of each datapoint, plus the size of the vertical errorbar on that datapoint. By default, the first three columns of the datafile are used, but once again (see Section <a href="plot_datafiles.html">2.5</a>), the <tt class="ttfamily">using</tt> modifier can be used: </p><pre>
 plot 'datafile' using 2:3:7 with yerrorbars
-</pre><p>More details of the errorbars plot style can be found in Section <a href="filebackup.html">3.3.5</a>. Other plots styles supported by PyXPlot are listed in Section <a href="missing_features.html">2.10</a>, and their details can be found in many gnuplot tutorials. Bar charts will be discussed further in Section <a href="barcharts.html">3.6</a>. </p><p>The modifiers “<tt class="ttfamily">pointtype</tt>”<span id="a-1226143732"></span> and “<tt class="ttfamily">linetype</tt>”<span id="a-1225955412"></span>, which can be abbreviated to “<tt class="ttfamily">pt</tt>” and “<tt class="ttfamily">lt</tt>” respectively, can also be placed after the <tt class="ttfamily">with</tt> modifier. Each should be followed by an integer. The former specifies what shape of points should be used to plot the dataset, and the latter, whether a line should be continuous, dotted, dash-dotted, etc. Different integers correspond to different styles. </p></div>
+</pre><p>More details of the errorbars plot style can be found in Section <a href="filebackup.html">3.3.5</a>. Other plots styles supported by PyXPlot are listed in Section <a href="missing_features.html">2.11</a>, and their details can be found in many gnuplot tutorials. Bar charts will be discussed further in Section <a href="barcharts.html">3.6</a>. </p><p>The modifiers “<tt class="ttfamily">pointtype</tt>”<span id="a-1225709204"></span> and “<tt class="ttfamily">linetype</tt>”<span id="a-1225732244"></span>, which can be abbreviated to “<tt class="ttfamily">pt</tt>” and “<tt class="ttfamily">lt</tt>” respectively, can also be placed after the <tt class="ttfamily">with</tt> modifier. Each should be followed by an integer. The former specifies what shape of points should be used to plot the dataset, and the latter whether a line should be continuous, dotted, dash-dotted, etc. Different integers correspond to different styles. </p><p>The default plotting style referred to above can also be changed. For example: </p><pre>
+set style data lines
+</pre><p>The default style for plotting data from files is then changed to lines. Similarly the “<tt class="tt">set style function</tt>”<span id="a-1225733332"></span> command changes the default style for plotting functions. </p></div>
 
 
 
@@ -78,7 +80,7 @@ plot 'datafile' using 2:3:7 with yerrorbars
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

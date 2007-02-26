@@ -10,11 +10,19 @@
 
 		<h3> News </h3>
 		<ul>
+			<li>26/2/2007 - <b>PyXPlot 0.6.3 released</b><br />
+			   The new stable 0.6 version of PyXPlot is now available for
+				<a href="0.6/download/">download</a>!  Improvements in version 0.6
+				include a new parser with improved error messages and support for
+				adding graphical images to plots.
+				<p></p>
+			</li>
 			<li>19/1/2007 - <b>PyXPlot 0.6 enters final testing</b><br />
 				The 0.6 development branch of PyXPlot has now entered the final
 				stabilisation phase with the alpha-release of version 0.6.2.   <!-- The
 				documentation is currently being updated and the last few bugs
 				ironed out before the impending release. -->
+				<p></p>
 			</li>
 		   <li>
 			   9/9/2006 - <b>PyXPlot 0.5.8 released</b><br />

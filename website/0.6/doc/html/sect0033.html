@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: fit</title>
+<title>: edit</title>
 
-<link href="sect0034.html" title="help" rel="next" />
-<link href="sect0032.html" title="exit" rel="prev" />
-<link href="sect0026.html" title="Command Reference" rel="up" />
+<link href="sect0034.html" title="eps" rel="next" />
+<link href="sect0032.html" title="delete" rel="prev" />
+<link href="sect0028.html" title="Command Reference" rel="up" />
 <link rel="stylesheet" href="styles/plastex-styles.css" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0032.html" title="exit"><img alt="Previous: exit" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0032.html" title="delete"><img alt="Previous: delete" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0026.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0028.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0034.html" title="help"><img alt="Next: help" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0034.html" title="eps"><img alt="Next: eps" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,43 +39,45 @@
 
 </span><span>
 <span>
-<a href="sect0026.html">Command Reference</a> <b>:</b>
+<a href="sect0028.html">Command Reference</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">fit</b>
+<b class="current">edit</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a-1229523508">5.7 fit</h1>
-<p><span id="a-1229522772"></span> </p><pre>
-fit [&lt;range specifier&gt; ...] &lt;function&gt; '&lt;datafile&gt;'
-    [index &lt;index specifier&gt;] [using &lt;using specifier&gt;]
-    via &lt;variable&gt;[, &lt;variable&gt;, ...]
-</pre><p>The <tt class="tt">fit</tt> command may be used to fit functional forms to data points in datafiles. A simple example might be: </p><pre>
-f(x) = a*x+b
-fit f(x) 'datafile' index 1 using 2:3 via a,b
-</pre><p>The coefficients to be varied are listed after the keyword ‘<tt class="tt">via</tt>’; the keywords ‘<tt class="tt">index</tt>’, ‘<tt class="tt">every</tt>’ and ‘<tt class="tt">using</tt>’ have the same meanings as in the <tt class="tt">plot</tt> command. </p><p>This is useful for producing best-fit lines and also has applications for estimating the gradients of datasets. The syntax is essentially identical to the used by gnuplot, though a few points are worth noting, which are outlined in Section <a href="fit_command.html">2.8</a>. </p></div>
+<div><h1 id="a-1229103796">5.5 edit</h1>
+<p><span id="a-1229104308"></span> </p><pre>
+edit &lt;plot number&gt;
+</pre><p>The <tt class="tt">edit</tt> command is part of the multiplot environment; it allows one to modify the properties of any plot on a multiplot. The desired plot should be identified using the reference number which it was given when it was created using the <tt class="tt">plot</tt> command; it would have been displayed on the terminal at that time. For example, consider the following command sequence: </p><pre>
+edit 1
+set textcolour red
+replot
+</pre><p>Here, the <tt class="tt">edit</tt> command sets the following <tt class="tt">set textcolour</tt> command to affect the plot with reference number 1 – the first plot which would have been placed on the multiplot. The <tt class="tt">set textcolour red</tt> command then affects this plot, although does not take effect until the <tt class="tt">replot</tt> command is called. </p><p>The <tt class="tt">edit</tt> command also has the effect of resetting all of PyXPlot’s plot settings to those used to produce the chosen plot, and so in conjunction with the <tt class="tt">show</tt> command, can be used to inspect as well as modify the settings of any plot on a multiplot page. For example: </p><pre>
+edit 1
+show textcolour
+</pre><p>would show the text colour used in plot 1. </p><p>Having issued the <tt class="tt">edit</tt> command, no further command needs to be issued to return to a state of adding plots to a multiplot rather than editing the existing plots; simply call the <tt class="tt">plot</tt> command rather than the <tt class="tt">replot</tt> command to do this. </p></div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0032.html" title="exit"><img alt="Previous: exit" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0032.html" title="delete"><img alt="Previous: delete" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0026.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0028.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0034.html" title="help"><img alt="Next: help" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0034.html" title="eps"><img alt="Next: eps" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

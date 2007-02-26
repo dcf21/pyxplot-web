@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: output</title>
+<title>: nologscale</title>
 
-<link href="sect0086.html" title="palette" rel="next" />
-<link href="sect0084.html" title="origin" rel="prev" />
-<link href="sect0047.html" title="set" rel="up" />
+<link href="sect0086.html" title="nomultiplot" rel="next" />
+<link href="sect0084.html" title="nolinestyle" rel="prev" />
+<link href="sect0051.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/plastex-styles.css" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0084.html" title="origin"><img alt="Previous: origin" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0084.html" title="nolinestyle"><img alt="Previous: nolinestyle" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0047.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0051.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0086.html" title="palette"><img alt="Next: palette" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0086.html" title="nomultiplot"><img alt="Next: nomultiplot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,45 +39,47 @@
 
 </span><span>
 <span>
-<a href="sect0026.html">Command Reference</a> <b>:</b>
+<a href="sect0028.html">Command Reference</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="sect0047.html">set</a> <b>:</b>
+<a href="sect0051.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">output</b>
+<b class="current">nologscale</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a-1230272756">5.21.38 output</h2>
-<p><span id="a-1229898356"></span> </p><pre>
-set output '&lt;filename&gt;'
-</pre><p>The <tt class="tt">output</tt> setting controls the name of the file that is produced for non-interactive terminals (<tt class="tt">postscript</tt>, <tt class="tt">eps</tt>, <tt class="tt">jpeg</tt>, <tt class="tt">gif</tt> and <tt class="tt">png</tt>). For example: </p><pre>
-set output 'badger.eps'
-</pre><p>causes the output to be written to the file ‘<tt class="tt">badger.eps</tt>’. </p></div>
+<div><h2 id="a-1229676404">5.23.34 nologscale</h2>
+<p><span id="a-1229675636"></span> </p><pre>
+set nologscale [&lt;axis&gt; ... ]
+</pre><p>The <tt class="tt">logscale</tt> setting causes an axis to be laid out with logarithmically, rather than linearly, spaced intervals. Conversely, the <tt class="tt">nologscale</tt> setting is used to restore linear scaling. For example, issuing the command: </p><pre>
+set nolog 
+</pre><p>would cause all of the axes of a plot to be scaled linearly. Alternatively only one, or a selection of axes, can be set to scale linearly as follows: </p><pre>
+set nologscale x1 y2
+</pre><p>This would cause the first <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />- and second <img src="images/img-0005.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-axes to be scaled linearly. </p></div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0084.html" title="origin"><img alt="Previous: origin" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0084.html" title="nolinestyle"><img alt="Previous: nolinestyle" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0047.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0051.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0086.html" title="palette"><img alt="Next: palette" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0086.html" title="nomultiplot"><img alt="Next: nomultiplot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center"></td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
