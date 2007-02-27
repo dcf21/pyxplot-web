@@ -11,7 +11,7 @@
 		<h3> News </h3>
 		<ul>
 			<li>26/2/2007 - <b>PyXPlot 0.6.3 released</b><br />
-			   The new stable 0.6 version of PyXPlot is now available! 
+			   The new stable 0.6 version of PyXPlot is now available. 
               Improvements in version 0.6 include a new, more reliable,
               command-line environment with clearer error messages and support
               for adding graphical images to plots.  Version 0.6 can be
