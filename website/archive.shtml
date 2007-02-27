@@ -10,8 +10,8 @@ The following beta releases of PyXPlot are available:
 </p>
 <table frame="box" rules="all">
 <tr><th>Version number</th><th>Date</th><th>Files</th><th>Downloads</th></tr>
-<tr><td>0.5.8</td><td>September 9th 2006</td>     <td><a href="src/pyxplot_0.5.8.tar.gz">tar.gz</a> (508kB) <a href="src/pyxplot_0.5.8-1_all.deb">deb</a> (1.6MB)</td><td><!--#include virtual="counter/0.5.8" --></td></tr>
 <tr><td>0.6.3</td><td>February 26th 2007</td>     <td><a href="src/pyxplot_0.6.3.tar.gz">tar.gz</a> (839kB) <a href="src/pyxplot_0.6.3_all.deb">deb</a> (1.3MB)</td><td><!--#include virtual="counter/0.6.3" --></td></tr>
+<tr><td>0.5.8</td><td>September 9th 2006</td>     <td><a href="src/pyxplot_0.5.8.tar.gz">tar.gz</a> (508kB) <a href="src/pyxplot_0.5.8-1_all.deb">deb</a> (1.6MB)</td><td><!--#include virtual="counter/0.5.8" --></td></tr>
 </table>
 
 <h3>
