@@ -1,0 +1,76 @@
+set dpi 150
+
+scale = 0.7
+
+set size squ
+set width 10*scale
+set origin 1*scale,1*scale
+set multiplot
+set nodisp
+
+jpeg "background.jpg" width 12*scale
+
+arrow 0,0 to 12*scale,0 with col orange lw 4 noh
+arrow 12*scale,0 to 12*scale,12*scale with col orange lw 4 noh
+arrow 12*scale,12*scale to 0,12*scale with col orange lw 4 noh
+arrow 0,12*scale to 0,0 with col orange lw 4 noh
+
+fx(t) = int_dx(sin(x**2),0,t)
+gx(t) = int_dx(cos(x**2),0,t)
+
+set xrange[-1:1]
+set yrange[-1:1]
+
+set xtics -1,0.5,1
+set ytics -1,0.5,1
+
+set mxtics -1,0.1,1
+set mytics -1,0.1,1
+
+set grid
+set gridmajcol grey65
+set gridmincol grey30
+
+set xlabel "invisible:"
+set ylabel "invisible:"
+set x2label "invisible:"
+set y2label "invisible:"
+
+set samples 600
+set nokey
+
+p gx(8*x):fx(8*x) using 2:3 with lw 2 col orange
+
+set textcolour orange
+set texthalign centre
+set textvalign centre
+# text "\Huge {\it PyXPlot}" at 4*scale , 8.5*scale
+
+arrow from 5.5*scale, 10.5*scale to 8*scale, 10*scale w col yellow lw 1 noh
+arrow from 5.5*scale, 6.5*scale to 8*scale, 8*scale w col yellow lw 1 noh
+
+arrow from 8*scale, 8*scale to 10*scale, 8*scale w col yellow lw 1 noh
+arrow from 10*scale, 8*scale to 10*scale, 10*scale w col yellow lw 1 noh
+arrow from 10*scale, 10*scale to 8*scale, 10*scale w col yellow lw 1 noh
+arrow from 8*scale, 8*scale to 8*scale, 10*scale w col yellow lw 1 noh
+set gridmajcolour yellow
+
+set or (1+1*.5)*scale, (1+11*.5)*scale
+set width 8*.5*scale
+set xrange [.4:.8]
+set yrange [.4:.8]
+
+set xtics .4,0.4,.8
+set ytics .4,0.4,.8
+
+spacing = .4/8
+set mxtics .4+spacing, spacing, .8-spacing
+set mytics .4+spacing, spacing, .8-spacing
+
+p gx(16*(x-.3)):fx(16*(x-.3)) using 2:3 with lw 2 col orange
+
+# jpeg "background.jpg" width 4*scale height 2*scale at 6.5*scale, scale
+text "\parbox[t]{5cm}{\center \[S(t) = \int_0^t\sin(x^2){\rm d}x\]\[C(t) = \int_0^t\cos(x^2){\rm d}x\]}" at 8.5*scale , 3.8*scale
+
+set display
+refresh
