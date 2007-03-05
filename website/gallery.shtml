@@ -11,13 +11,26 @@
          <a href="examples/firstSteps/03multiAxis/">
          <img src="examples/firstSteps/03multiAxis/output.png" />
          </a>
-         A publication-quality quality plot in style appropriate for a journal.
+      </p> 
+      <p>
+         A publication-quality plot in a style appropriate for a journal.
+      </p> 
+
+      <p>
+         <a href="examples/otherApplications/04figures/">
+         <img src="examples/otherApplications/04figures/output.png" />
+         </a>
+      </p> 
+      <p>
+         A publication-quality technical figure in a style appropriate for a journal.
       </p> 
 
       <p>
          <a href="examples/random/03Cornu/">
          <img src="examples/random/03Cornu/output.png" />
          </a>
+      </p> 
+      <p>
          The Cornu spiral rendered in a funky 1950's style.
       </p> 
 
@@ -37,6 +50,8 @@
          <a href="examples/presentations/04slide">
          <img src="examples/presentations/04slide/output.png" />
          </a>
+      </p> 
+      <p>
          Some slides suitable for using in a presentation.
       </p> 
 
