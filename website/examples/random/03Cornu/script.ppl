@@ -44,33 +44,10 @@ p gx(8*x):fx(8*x) using 2:3 with lw 2 col orange
 set textcolour orange
 set texthalign centre
 set textvalign centre
+text "\Huge {\bf PyXPlot}" at 4*scale, 9.0*scale
+text "{\Large \bf The Cornu Spiral}" at 7.7*scale , 2.5*scale
 # text "\Huge {\it PyXPlot}" at 4*scale , 8.5*scale
 
-arrow from 5.5*scale, 10.5*scale to 8*scale, 10*scale w col yellow lw 1 noh
-arrow from 5.5*scale, 6.5*scale to 8*scale, 8*scale w col yellow lw 1 noh
-
-arrow from 8*scale, 8*scale to 10*scale, 8*scale w col yellow lw 1 noh
-arrow from 10*scale, 8*scale to 10*scale, 10*scale w col yellow lw 1 noh
-arrow from 10*scale, 10*scale to 8*scale, 10*scale w col yellow lw 1 noh
-arrow from 8*scale, 8*scale to 8*scale, 10*scale w col yellow lw 1 noh
-set gridmajcolour yellow
-
-set or (1+1*.5)*scale, (1+11*.5)*scale
-set width 8*.5*scale
-set xrange [.4:.8]
-set yrange [.4:.8]
-
-set xtics .4,0.4,.8
-set ytics .4,0.4,.8
-
-spacing = .4/8
-set mxtics .4+spacing, spacing, .8-spacing
-set mytics .4+spacing, spacing, .8-spacing
-
-p gx(16*(x-.3)):fx(16*(x-.3)) using 2:3 with lw 2 col orange
-
-# jpeg "background.jpg" width 4*scale height 2*scale at 6.5*scale, scale
-text "\parbox[t]{5cm}{\center \[S(t) = \int_0^t\sin(x^2){\rm d}x\]\[C(t) = \int_0^t\cos(x^2){\rm d}x\]}" at 8.5*scale , 3.8*scale
 
 set display
 refresh
