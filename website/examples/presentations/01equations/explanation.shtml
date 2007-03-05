@@ -1,0 +1,16 @@
+<p>
+In this example, we demonstrate something rather different that PyXPlot can
+do. There is a common problem of trying to incorporate LaTeXed equations into
+various multimedia/graphics packages: the postscript format which LaTeX
+produces is not supported by programs such as Microsoft Powerpoint. PyXPlot
+offers a very quick and simple solution to this problem.
+</p>
+
+<p>
+To overlay our output onto a Powerpoint slide, we will want it to have a
+transparent background, and so we also use the transparent terminal option.
+If we were producing a Powerpoint presentation with light-coloured text on a
+dark background, we would also want to invert the colours to have white text,
+and so use the invert terminal option.
+</p>
+
