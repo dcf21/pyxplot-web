@@ -1,4 +1,4 @@
-set dpi 150
+set dpi 102
 set nogrid
 set xlabel 'Radius $r$'
 set x2label 'invisible:'

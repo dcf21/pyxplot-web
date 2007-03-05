@@ -1,6 +1,7 @@
-set dpi 150
-
 scale = 0.7
+
+set dpi 102
+
 
 set size squ
 set width 10*scale
