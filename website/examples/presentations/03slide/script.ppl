@@ -3,7 +3,7 @@ height =  7.68
 
 x = width/100.0
 y = height/100.0
-set dpi 100
+set dpi 160
 set multiplot
 set nodisplay
 
