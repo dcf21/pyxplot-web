@@ -1,0 +1,30 @@
+width  = 10.24
+height =  7.68
+
+x = width/100.0
+y = height/100.0
+set dpi 100
+set multiplot
+set nodisplay
+
+set texthalign centre
+set textvalign centre
+set textcolour yellow
+
+jpeg "background.jpg" width width
+
+# Main body of slide 
+text '\Large \textbf{Modelling Dust Emission from VSGs}' at x*50, y*92
+
+text '\parbox[t]{9cm}{\begin{itemize} \item Let $P_i$ be the probability of a grain being in energy bin $i$. \item Let a matrix $\mathbf{T}$ describe the time-evolution of $P_i$. \item $\mathbf{T}_{ji} = $ the probability of a grain in bin $i$ making a transition to bin $j$ in unit time. \item $P_i$ evolves according to: \begin{displaymath} \frac{\mathrm{d}P_i}{\mathrm{d}t} = \sum_{j\neq i} \mathbf{T}_{ij} P_j - \sum_{j\neq i} \mathbf{T}_{ji} P_i \end{displaymath} \item For the steady-state solution, the above is zero. \end{itemize} }' at x*50,y*50
+
+set textcolour cyan
+text '(Draine \& Li 2001)' at x*75, y*12
+
+# Put watermark at bottom of slide
+set textcolour cyan
+text '\tiny MRAO Seminar, 13th February 2007'  at x*75, y*5
+
+# Print out final slide
+set display
+refresh

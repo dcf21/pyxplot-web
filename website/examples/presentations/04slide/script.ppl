@@ -1,0 +1,38 @@
+width  = 10.24
+height =  7.68
+
+x = width/100.0
+y = height/100.0
+set dpi 100
+set multiplot
+set nodisplay
+
+set texthalign centre
+set textvalign centre
+set textcolour yellow
+
+jpeg "background.jpg" width width
+
+# Main body of slide 
+
+text '\Large \textbf{Modelling Dust Emission from VSGs}' at x*50, y*92
+
+set axescolour yellow
+set width 7.2
+set origin x*20, y*24
+set log x y
+set fontsize -2
+set xlabel '$ E/hc \,/\,\mathrm{cm}^{-1}$'
+set ylabel 'd$P$/d(log $E$)'
+set nogrid
+set key bottom left
+set palette Red, Orange, Green, Yellow, Cyan, Magenta
+plot [1:2e6][1e-9:2] 'mmp_pah_pE.dat' using 01:04 t '  5\AA' with lines, '' using 05:08 t ' 10\AA' with lines, '' using 09:12 t ' 25\AA' with lines, '' using 13:16 t '100\AA' with lines, '' using 17:20 t '200\AA' with lines, '' using 21:24 t '250\AA' with lines
+
+# Put watermark at bottom of slide
+set textcolour cyan
+text '\tiny MRAO Seminar, 13th February 2007'  at x*75, y*5
+
+# Print out final slide
+set display
+refresh

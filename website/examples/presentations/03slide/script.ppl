@@ -1,0 +1,53 @@
+width  = 10.24
+height =  7.68
+
+x = width/100.0
+y = height/100.0
+set dpi 100
+set multiplot
+set nodisplay
+
+set texthalign centre
+set textvalign centre
+set textcolour yellow
+
+jpeg "background.jpg" width width
+
+# Main body of slide 
+
+text '\Large \textbf{The Spitzer Space Telescope}' at x*50, y*92
+
+jpeg "spitzer.jpg" width 2.6 at x*22 , y*52
+
+set axescolour yellow
+set width 7.2
+set origin x*20, y*24
+set log x y
+set fontsize -2
+set xlabel 'Wavelength / $\mathrm{\mu m}$'
+set ylabel '$L_\nu / \mathrm{W\,Hz^{-1}}$'
+set nokey
+set nogrid
+set y3label 'invisible:'
+set y3range [0:3.5]
+set xrange [0.1:300]
+set yrange [3e19:3e22]
+plot 'spectrum.dat' using 1:4 with line col yellow, 'irac_tr1.dat' axes x1y3 using 1:($2/0.6511) with line col cyan, 'irac_tr2.dat' axes x1y3 using 1:($2/0.7365) with line col cyan, 'irac_tr3.dat' axes x1y3 using 1:($2/0.2848) with line col cyan, 'irac_tr4.dat' axes x1y3 using 1:($2/0.4277) with line col cyan, 'mips24.dat' axes x1y3 using 1:2 with line col cyan, 'mips70.dat' axes x1y3 using 1:2 with line col cyan, 'mips160.dat' axes x1y3 using 1:2 with line col cyan
+set xlabel '' ; set ylabel '' ; set xtics () ; set ytics ()
+set textcolour cyan
+set label 1000 "\tiny $3.6\,\mathrm{\mu m}$" at 3.6, 1e22 rot 90
+set label 1001 "\tiny $4.5\,\mathrm{\mu m}$" at 4.5, 1e22 rot 90
+set label 1002 "\tiny $5.8\,\mathrm{\mu m}$" at 5.8, 1e22 rot 90
+set label 1003 "\tiny $8.0\,\mathrm{\mu m}$" at 8.0, 1e22 rot 90
+set label 2000 "\tiny $24\,\mathrm{\mu m}$" at 24, 4e20 rot 90
+set label 2001 "\tiny $70\,\mathrm{\mu m}$" at 70, 4e20 rot 90
+set label 2002 "\tiny $160\,\mathrm{\mu m}$" at 160, 4e20 rot 90
+plot
+
+# Put watermark at bottom of slide
+set textcolour cyan
+text '\tiny MRAO Seminar, 13th February 2007'  at x*75, y*5
+
+# Print out final slide
+set display
+refresh
