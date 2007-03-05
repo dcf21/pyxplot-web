@@ -1,0 +1,43 @@
+<!--#set var="title" value="PyXPlot -- Gallery" -->
+<!--#include virtual="inc/header.shtml" -->
+
+		<p> 
+         Here are some images that showcase what PyXPlot is capable of.
+         Clicking on each image takes you to a page that shows you how to
+         create it yourself.
+		</p>
+
+      <p>
+         <a href="examples/firstSteps/03multiAxis/">
+         <img src="examples/firstSteps/03multiAxis/output.png" />
+         </a>
+         A publication-quality quality plot in style appropriate for a journal.
+      </p> 
+
+      <p>
+         <a href="examples/random/03Cornu/">
+         <img src="examples/random/03Cornu/output.png" />
+         </a>
+         The Cornu spiral rendered in a funky 1950's style.
+      </p> 
+
+      <p>
+         <a href="examples/presentations/02slide">
+         <img src="examples/presentations/02slide/output.png" />
+         </a>
+      </p> 
+
+      <p>
+         <a href="examples/presentations/03slide">
+         <img src="examples/presentations/03slide/output.png" />
+         </a>
+      </p> 
+
+      <p>
+         <a href="examples/presentations/04slide">
+         <img src="examples/presentations/04slide/output.png" />
+         </a>
+         Some slides suitable for using in a presentation.
+      </p> 
+
+<!--#include virtual="inc/footer.shtml" -->
