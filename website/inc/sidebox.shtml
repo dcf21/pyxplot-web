@@ -17,7 +17,9 @@
          </ul>
 		</div>
       <div class="menuitem">
-      
+      <a href="http://www.pyxplot.org.uk/gallery.shtml">Gallery</a>
+		</div>
+      <div class="menuitem">
       <a href="http://www.pyxplot.org.uk/examples/">Examples</a>
 		</div>
       <!-- <div class="menuitem">
