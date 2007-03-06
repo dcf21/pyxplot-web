@@ -38,9 +38,9 @@ f(x)=((c/(x*1e-6))**(3+2))/(exp(h*c/(x*1e-6*k*T))-1.0)
 
 # Finally, plot all of our data
 plot [min:max][1e-7:1e-3] 'example1.dat' using 1:2 \
-t 'Nikoli\v{c}-Ford Dust Code' with lines colour black, \
+t 'Nikoli\v{c}-Ford Dust Code' with lines, \
 'example2.dat' t 'IRAS Photometry' using \
 ($1):(($2)/3e8*((($1)*1e-6)**2)*1.375191e+13/3.668333e+17) \
-with points colour black, \
-f(x)/f(60)*1.375191e+13/(3e8/(60e-6**2)) t '$\beta=2$ Greybody' with lines colour black
+with points, \
+f(x)/f(60)*1.375191e+13/(3e8/(60e-6**2)) t '$\beta=2$ Greybody' with lines
 
