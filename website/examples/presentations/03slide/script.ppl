@@ -32,7 +32,14 @@ set y3label 'invisible:'
 set y3range [0:3.5]
 set xrange [0.1:300]
 set yrange [3e19:3e22]
-plot 's.dat' using 1:4 with line col yellow, 'tr1.dat' axes x1y3 using 1:($2/0.6511) with line col cyan, 'tr2.dat' axes x1y3 using 1:($2/0.7365) with line col cyan, 'tr3.dat' axes x1y3 using 1:($2/0.2848) with line col cyan, 'tr4.dat' axes x1y3 using 1:($2/0.4277) with line col cyan, '24.dat' axes x1y3 using 1:2 with line col cyan, '70.dat' axes x1y3 using 1:2 with line col cyan, '160.dat' axes x1y3 using 1:2 with line col cyan
+plot 's.dat' using 1:4 with line col yellow, \
+     'tr1.dat' axes x1y3 using 1:($2/0.6511) with line col cyan, \
+	  'tr2.dat' axes x1y3 using 1:($2/0.7365) with line col cyan, \
+	  'tr3.dat' axes x1y3 using 1:($2/0.2848) with line col cyan, \
+	  'tr4.dat' axes x1y3 using 1:($2/0.4277) with line col cyan, \
+	  '24.dat' axes x1y3 using 1:2 with line col cyan, \
+	  '70.dat' axes x1y3 using 1:2 with line col cyan, \
+	  '160.dat' axes x1y3 using 1:2 with line col cyan
 set xlabel '' ; set ylabel '' ; set xtics () ; set ytics ()
 set textcolour cyan
 set label 1000 "\tiny $3.6\,\mathrm{\mu m}$" at 3.6, 1e22 rot 90
