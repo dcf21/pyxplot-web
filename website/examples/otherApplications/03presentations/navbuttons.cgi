@@ -1,1 +1,0 @@
-inc/navbuttons.cgi

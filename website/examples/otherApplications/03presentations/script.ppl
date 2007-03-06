@@ -1,8 +1,0 @@
-set term trans 
-set multiplot
-set dpi 300
-
-# Render the Planck blackbody formula in LaTeX
-text '$B_\nu = \frac{8\pi h}{c^3} \
-\frac{\nu^3}{\exp \left( h\nu / kT \right) -1 }$' at 0,0
-text 'This is an example equation:' at 0 , 0.75
