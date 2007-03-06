@@ -3,7 +3,7 @@
 <!--#include virtual="inc/header.shtml" -->
 		
 <!-- Float with example downloads in -->
-		<div class="exampledownloads">
+		<div class="exampledownloads" style="max-width:25em">
 			Download
 			<!--#include virtual="downloads.cgi" -->
 		</div>
