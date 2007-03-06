@@ -41,6 +41,16 @@
 		</ul>
 
 		<h3>
+			<a href="presentations">Using PyXPlot in presentations</a>
+		</h3>
+		<ul>
+			<li><a href="presentations/01equations/">Equations for presentations</a></li>
+			<li><a href="presentations/02slide/">Example slide 1</a></li>
+			<li><a href="presentations/03slide/">Example slide 2</a></li>
+			<li><a href="presentations/04slide/">Example slide 3</a></li>
+		</ul>
+
+		<h3>
 			<a href="random/">Random cool stuff</a>
 		</h3>
 		<ul>
