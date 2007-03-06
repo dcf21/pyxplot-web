@@ -5,6 +5,7 @@
   <head>
     <title>PyXPlot  <!--#echo var="title" --> </title>
     <link rel="stylesheet" type="text/css" media="screen" href="http://www.srcf.ucam.org/pyxplot/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="http://www.srcf.ucam.org/pyxplot/css/examples.css" />
   </head>
   <body>
 	 <!--#include virtual="topbox.shtml" -->

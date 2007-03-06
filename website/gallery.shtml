@@ -7,6 +7,7 @@
          create it yourself.
 		</p>
 
+		<div class=exampleimage style="margin-right: 1em">
       <p>
          <a href="examples/firstSteps/03multiAxis/">
          <img src="examples/firstSteps/03multiAxis/output.png" />
@@ -15,7 +16,9 @@
       <p>
          A publication-quality plot in a style appropriate for a journal.
       </p> 
+		</div>
 
+		<div class=exampleimage style="margin-right: 1em">
       <p>
          <a href="examples/otherApplications/04figures/">
          <img src="examples/otherApplications/04figures/output.png" />
@@ -24,7 +27,9 @@
       <p>
          A publication-quality technical figure in a style appropriate for a journal.
       </p> 
+		</div>
 
+		<div class=exampleimage style="margin-right: 1em">
       <p>
          <a href="examples/random/03Cornu/">
          <img src="examples/random/03Cornu/output.png" />
@@ -33,7 +38,9 @@
       <p>
          The Cornu spiral rendered in a funky 1950's style.
       </p> 
+		</div>
 
+		<div class=exampleimage style="margin-right: 1em">
       <p>
          <a href="examples/presentations/02slide">
          <img src="gallery/slide1.png" />
@@ -54,5 +61,6 @@
       <p>
          Some slides suitable for using in a presentation.
       </p> 
+		</div>
 
 <!--#include virtual="inc/footer.shtml" -->
