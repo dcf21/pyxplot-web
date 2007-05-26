@@ -20,7 +20,53 @@ syn case ignore
 " Command keywords
 "syn keyword pplKeyword fit set show spline
 " Set command (Of which there is lots.  And lots.  And lots :-)
-syn match pplCommand /\v^\s*<set=>/ skipwhite nextgroup=pplSetTerm,pplSetLabel,pplSetRange,pplSetTicdir,pplSetTics,pplSetArrow,pplSetAutoscale,pplSetAxescolour,pplSetAxis,pplSetBackup,pplSetBar,pplSetBoxfrom,pplSetBoxwidth,pplSetDatastyle,pplSetDisplay,pplSetDpi,pplSetFontsize,pplSetGrid,pplSetGrc,pplSetKey,pplSetKeyColumns,pplSetLinestyle,pplSetLinewidth,pplSetLog,pplSetMultiplot,pplSetNoarrow,pplSetNoaxis,pplSetNobackup,pplSetNodisplay,pplSetNogrid,pplSetNolabel,pplSetNols,pplSetNolog,pplSetNomult
+syn match pplCommand /\v^\s*<set=>/ skipwhite nextgroup=pplSetTerm,pplSetLabel,pplSetRange,pplSetTicdir,pplSetTics,pplSetArrow,pplSetAutoscale,pplSetAxescolour,pplSetAxis,pplSetBackup,pplSetBar,pplSetBoxfrom,pplSetBoxwidth,pplSetDatastyle,pplSetDisplay,pplSetDpi,pplSetFontsize,pplSetGrid,pplSetGrc,pplSetKey,pplSetKeyColumns,pplSetLinestyle,pplSetLinewidth,pplSetLog,pplSetMultiplot,pplSetNoarrow,pplSetNoaxis,pplSetNobackup,pplSetNodisplay,pplSetNogrid,pplSetNolabel,pplSetNols,pplSetNolog,pplSetNomult,pplSetNoxtics,pplSetNotitle,pplSetOr,pplSetOut,pplSetPal,pplSetPaper,pplSetPlw,pplSetPs,pplSetPreamble,pplSetSamp,pplSetSize,pplSetTextcol,pplSetTextH,pplSetTextV,pplSetTitle,pplSetWid
+syn match pplSetWid /\v<w(i(d(th=)=)=)=>/ contained nextgroup=pplNumber,pplFloat skipwhite
+highlight link pplSetWid Type
+syn match pplSetTitle /\v<ti(t(le=)=)=>/ contained nextgroup=pplQstring skipwhite
+highlight link pplSetTitle Type
+syn match pplSetTextH /\v<texth(a(l(i(gn=)=)=)=)=>/ contained nextgroup=pplTextH skipwhite
+highlight link pplSetTextH Type
+syn match pplTextH /\v<l(e(ft=)=)=>/ contained
+syn match pplTextH /\v<c(e(n(t(re=)=)=)=)=>/ contained
+syn match pplTextH /\v<c(e(n(t(er=)=)=)=)=>/ contained
+syn match pplTextH /\vr(i(g(ht=)=)=)=>/ contained
+highlight link pplTextH Define
+syn match pplSetTextV /\v<textv(a(l(i(gn=)=)=)=)=>/ contained nextgroup=pplTextV skipwhite
+highlight link pplSetTextV Type
+syn match pplTextV /\v<t(op=)=>/ contained
+syn match pplTextV /\v<c(e(n(t(re=)=)=)=)=>/ contained
+syn match pplTextV /\v<c(e(n(t(er=)=)=)=)=>/ contained
+syn match pplTextV /\v<b(o(t(t(o(m=)=)=)=)=)=>/ contained
+highlight link pplTextV Define
+syn match pplSetTextcol /\v<textc(o(l(ou=r=)=)=)=>/ contained nextgroup=pplString skipwhite
+highlight link pplSetTextcol Type
+syn match pplSetSize /\v<s(i(ze=)=)=>/ contained nextgroup=pplNumber,pplFloat,pplSize skipwhite
+highlight link pplSetSize Type
+syn match pplSize /\v<r(a(t(io=)=)=)=>/ contained nextgroup=pplNumber,pplFloat skipwhite
+syn match pplSize /\v<n(o(r(a(t(io=)=)=)=)=)=>/ contained skipwhite
+syn match pplSize /\v<s(q(u(a(re=)=)=)=)=>/ contained skipwhite
+highlight link pplSize Define
+syn match pplSetSamp /\v<sa(m(p(l(es=)=)=)=)=>/ contained nextgroup=pplNumber skipwhite
+highlight link pplSetSamp Type
+syn match pplSetPreamble /\v<pr(e(a(m(b(le=)=)=)=)=)=/ contained nextgroup=pplAnything skipwhite
+highlight link pplSetPreamble Type
+syn match pplSetPs /\v<(p(o(i(n(t(s(i(ze=)=)=)=)=)=)=)=|ps)>/ contained nextgroup=pplNumber,pplFloat skipwhite
+highlight link pplSetPs Type
+syn match pplSetPlw /\v<(pointl(i(n(e(w(i(d(th=)=)=)=)=)=)=)=|plw)>/ contained nextgroup=pplNumber,pplFloat skipwhite
+highlight link pplSetPlw Type
+syn match pplSetPaper /\v<pap(e(r(s(i(ze=)=)=)=)=)=>/ contained nextgroup=pplCoordinate,pplString,pplQstring skipwhite
+highlight link pplSetPaper Type
+syn match pplSetPal /\v<p(a(l(e(t(te=)=)=)=)=)=>/ contained nextgroup=pplCommalist skipwhite
+highlight link pplSetPal Type
+syn match pplSetOut /\v<o(u(t(p(ut=)=)=)=)=>/ contained nextgroup=pplString,pplQstring skipwhite
+highlight link pplSetOut Type
+syn match pplSetOr /\v<or(i(g(in=)=)=)=>/ contained nextgroup=pplCoordinate skipwhite
+highlight link pplSetOr Type
+syn match pplSetNotitle /\v<not(i(t(le=)=)=)=>/ contained
+highlight link pplSetNotitle Type
+syn match pplSetNoxtics /\v<nom?[xy][0-9]*tics>/ contained
+highlight link pplSetNoxtics Type
 syn match pplSetNomult /\v<nom(u(l(t(i(p(l(ot=)=)=)=)=)=)=)=>/ contained
 highlight link pplSetNomult Type
 syn match pplSetNolog /\v<nolo(g(s(c(a(le=)=)=)=)=)=>/ contained nextgroup=pplAxis skipwhite
@@ -50,7 +96,7 @@ syn match pplSetLinestyle /\v<l(i(n(e(s(t(y(le=)=)=)=)=)=)=)=>\s*\d+/ contained 
 syn match pplSetLinestyle /\v<ls>\s*\d+/ contained contains=pplNumber nextgroup=pplWithCommand skipwhite
 highlight link pplSetLinestyle Type
 syn match pplSetLabel /\v<la(b(el=)=)=>\s+\d+/ contained contains=pplNumber nextgroup=pplSetLabelCommand skipwhite
-syn match pplSetLabelCommand /.*/ contained contains=pplNumber,pplFloat,pplString,pplSetLabelMods
+syn match pplSetLabelCommand /.*/ contained contains=pplNumber,pplFloat,pplQstring,pplSetLabelMods
 syn match pplSetLabelMods /\v<f(i(r(st=)=)=)=>/ contained
 syn match pplSetLabelMods /\v<s(e(c(o(nd=)=)=)=)=>/ contained
 syn match pplSetLabelMods /\v<sc(r(e(en=)=)=)=>/ contained
@@ -138,8 +184,8 @@ highlight link pplSetArrow Type
 syn match pplSetTics /\v<m=[xy]=t(i(cs=)=)=>/ nextgroup=pplSetTicsCommand skipwhite
 syn match pplSetTicsCommand /\v\s*(<\w*>)=/ contains=pplSetTicdirMods,pplSetTicMods nextgroup=pplSetTicMods contained skipwhite
 syn match pplSetTicMods /\v[0-9\.e+-]+(\s*,\s*[0-9\.e+-]+(\s*,\s*[0-9\.e+-]+)=)=/ contained contains=pplFloat,pplNumber
-syn match pplSetTicMods /\v\('[^']*'\s+[0-9\.e+-]+(\s*,\s*'[^']*'\s+[0-9\.e+-]+)*\)/ contained contains=pplString,pplFloat,pplNumber
-syn match pplSetTicMods /\v\("[^"]*"\s+[0-9\.e+-]+(,\s*"[^"]*"\s+[0-9\.e+-]+)*\)/ contained contains=pplString,pplFloat,pplNumber
+syn match pplSetTicMods /\v\('[^']*'\s+[0-9\.e+-]+(\s*,\s*'[^']*'\s+[0-9\.e+-]+)*\)/ contained contains=pplQstring,pplFloat,pplNumber
+syn match pplSetTicMods /\v\("[^"]*"\s+[0-9\.e+-]+(,\s*"[^"]*"\s+[0-9\.e+-]+)*\)/ contained contains=pplQstring,pplFloat,pplNumber
 syn match pplSetTicMods /\v\s*<a(u(t(o(f(r(eq=)=)=)=)=)=)=>/ contained
 highlight link pplSetTics Type
 highlight link pplSetTicMods Define
@@ -172,7 +218,7 @@ syn match pplTerminals /\v<(no)=i(n(v(e(rt=)=)=)=)=>/ contained
 syn match pplTerminals /\v<no=>/ contained
 highlight link pplSetTerm Type
 highlight link pplTerminals Define
-syn match pplSetLabel /\v<(x|y)[0-9]*l(a(b(el=)=)=)=>/ contained nextgroup=pplString skipwhite
+syn match pplSetLabel /\v<(x|y)[0-9]*l(a(b(el=)=)=)=>/ contained nextgroup=pplQstring skipwhite
 highlight link pplSetLabel Type
 syn match pplSetRange /\v<[xy][0-9]*r(a(n(ge=)=)=)=>/ contained nextgroup=pplRange skipwhite
 highlight link pplSetRange Type
@@ -182,7 +228,7 @@ highlight link pplSetRange Type
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plot command (nothing like doing the hard bit first, eh?)
 syn match pplCommand /\v^\s*<p(l(ot=)=)=>/ nextgroup=pplPlotCommand skipwhite
-syn match pplPlotCommand /\v.{-}(<w(i(th=)=)=>|$)/ contained contains=pplUsing,pplSelect,pplTitle,pplEvery,pplIndex,pplRange,pplString,pplWith nextgroup=pplWithCommand
+syn match pplPlotCommand /\v.{-}(<w(i(th=)=)=>|$)/ contained contains=pplUsing,pplSelect,pplTitle,pplEvery,pplIndex,pplRange,pplQstring,pplWith nextgroup=pplWithCommand
 " Note that {-} matches the previous atoms 0+ times non-greedily (c.f. ?)
 highlight link pplCommand Keyword
 
@@ -280,10 +326,22 @@ syn match pplFloat          "[+-]\=\d\+e[+-]\=\d\+" contained
 highlight link pplFloat Float
 
 " Strings
-syn region pplString start=/"/ skip=/\\"/ end=/"/ contained
-syn region pplString start=/'/ skip=/\\'/ end=/'/ contained
+syn region pplQstring start=/"/ skip=/\\"/ end=/"/ contained oneline
+syn region pplQstring start=/'/ skip=/\\'/ end=/'/ contained oneline
+highlight link pplQstring String
+syn match pplString /\v[a-zA-Z0-9]+/ contained
 highlight link pplString String
+
+" Comma separated list of strings
+syn match pplCommalist /\v'=[a-z0-9A-Z]+'=(\s*,\s*'=[a-z0-9A-Z]+'=)*\s*$/ contained contains=pplString,pplQstring
+
+" Co-ordinates
+syn match pplCoordinate /\v<[0-9\.eE]+, *[0-9\.eE]+/ contained contains=pplNumber,pplFloat
 
 " Comments
 syn match pplComment /#.*$/
 highlight link pplComment Comment
+
+" Anything
+syn match pplAnything /.*$/ contained
+highlight link pplAnything Comment
