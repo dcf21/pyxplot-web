@@ -231,6 +231,7 @@ syn match pplCommand /\v^\s*<p(l(ot=)=)=>/ nextgroup=pplPlotCommand skipwhite
 syn match pplPlotCommand /\v.{-}(<w(i(th=)=)=>|$)/ contained contains=pplUsing,pplSelect,pplTitle,pplEvery,pplIndex,pplRange,pplQstring,pplWith nextgroup=pplWithCommand
 " Note that {-} matches the previous atoms 0+ times non-greedily (c.f. ?)
 highlight link pplCommand Keyword
+syn match pplPlotCommandGlue /,/ contained nextgroup=pplPlotCommand skipwhite
 
 "using
 syn match pplUsing /\v<u(s(i(ng=)=)=)=(\s+<colum(ns=)=>)=/ contained
@@ -241,7 +242,7 @@ highlight link pplUsing Type
 "with
 syn match pplWith /\v<w(i(th=)=)=>/ contained "contains=pplWithMods contained
 highlight link pplWith Type
-syn match pplWithCommand /.*$/ contained contains=pplWithMods,pplNumber
+syn match pplWithCommand /\v[^,]+/ contained contains=pplWithMods,pplNumber nextgroup=pplPlotCommandGlue skipwhite
 " Acceptable with keywords (glragghhh)
 " Plotting styles
 syn match pplWithMods /\v<p(o(i(n(ts=)=)=)=)=>/ contained
