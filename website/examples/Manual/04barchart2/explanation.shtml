@@ -1,0 +1,9 @@
+This example demonstrates different ways of specifying the widths of bars on a
+bar chart. In panel (a), the widths are automatically determined from the data,
+changing bar midway between datapoints, using the <tt>boxes</tt> plot style.
+In panel (b), the <tt>boxes</tt> plot style is used again but with a specified
+<tt>boxwidth</tt>, which gives equal width boxes.  Panel (c) illustrates the
+<tt>wboxes</tt> plot style, which reads the widths of the bars from a third
+column in the datafile. And in panel (d) we illustrate how the
+<tt>fillcolour</tt> modifier can be used to produce coloured bars.
+

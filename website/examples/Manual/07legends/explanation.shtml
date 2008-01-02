@@ -1,0 +1,4 @@
+This plot shows how rapidly three functions, often approximated as
+<i>x</i>, deviate from that approximation.  Furthermore it is an example of a
+plot with a two-column legend, positioned below the plot using <tt> set key
+below</tt>.

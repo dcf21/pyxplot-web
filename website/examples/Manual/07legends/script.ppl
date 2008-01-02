@@ -1,0 +1,11 @@
+set xrange [0:0.75]
+set yrange [0:0.75]
+set xlabel "$x$"
+set ylabel "$y$"
+set key below
+set keycolumns 2
+plot x        title "$x$"        , \
+     x*exp(x) title "$x \exp(x)$", \
+     sin(x)   title "$  \sin(x)$", \
+     x*cos(x) title "$x \cos(x)$"
+

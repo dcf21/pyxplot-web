@@ -1,0 +1,6 @@
+set xrange [-5:10]
+set yrange [-0.5:1]
+set xlabel "$x$"
+set ylabel "$y$"
+f(x)[-2:7] = sin(x)/x
+plot f(x)

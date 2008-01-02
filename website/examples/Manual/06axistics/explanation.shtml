@@ -1,0 +1,6 @@
+This plot illustrates some of the crossing points of the function
+exp(<i>x</i>)sin(<i>1/x</i>).  Both x1 and x2 axes are logrithmic, but the x1
+axis has ticks placed on it at fixed multiplicative intervals to 2, whereas the
+x2 axis has labels placed manually at positions chosen to illustrate the
+crossing points of the function.  The y1 axis is automatically ticked (and is
+linear) whereas the y2 axis has no ticks at all.

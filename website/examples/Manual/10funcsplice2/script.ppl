@@ -1,0 +1,9 @@
+set samples 100
+set xrange [1:6.5]
+set yrange [0:15]
+set xlabel "$x$"
+set ylabel "$y$"
+f(x)     = 1.0
+f(x)[2:] = f(x-1) + f(x-2)
+set key bottom right
+plot f(x)

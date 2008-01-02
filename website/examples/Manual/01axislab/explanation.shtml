@@ -1,0 +1,1 @@
+A simple plot of rocket trajectories which demonstrates placing labels on axes.  Note that both the axis labels and legend entries are rendered using LaTeX, allwing the use of LaTeX's sophisticated rendering for mathematical symbols.

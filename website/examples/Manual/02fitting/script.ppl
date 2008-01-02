@@ -1,0 +1,4 @@
+f(x) = a1*sin(x) + a3*sin(3*x) + a5*sin(5*x)
+fit f() 'square.dat' via a1, a3, a5
+set xlabel '$x$' ; set ylabel '$y$'
+plot 'square.dat' title 'data' with points pointsize 2, f(x) title 'Fitted function' with lines

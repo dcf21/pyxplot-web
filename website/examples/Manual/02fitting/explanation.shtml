@@ -1,0 +1,5 @@
+The first line specifies the functional form which is to be fit to the data.
+The coefficients within this function which are to be varied during the fitting
+process are listed after the keyword <tt>via</tt> in the <tt>fit</tt> command.
+Given the data file entitled `square.dat', which contains a sampled square
+wave, the script fits a truncated Fourier series to it.

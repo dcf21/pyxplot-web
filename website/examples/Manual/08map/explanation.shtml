@@ -1,0 +1,4 @@
+A map of Australia, plotted using PyXPlot.  The data were obtained
+from <a href="http://www.maproom.psu.edu/dcw/">the DCW</a> (for the coastal
+outlines and state boundaries) and <a
+href="http://en.wikipedia.org">wikipedia</a> (for the city locations).

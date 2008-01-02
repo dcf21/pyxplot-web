@@ -1,0 +1,5 @@
+A function can be defined over a specific range only, as seen here.  If an
+attempt is made to evaluate a function outside of its specified range, then an
+error results. This may be useful, for example, for plotting a function only
+within some specified range. The example shows the function
+sinc(<i>x</i>), but only in the range -2&lt;<i>x</i>&lt;7.

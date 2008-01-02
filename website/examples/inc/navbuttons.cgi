@@ -13,7 +13,7 @@ my $cwd = `/bin/pwd`;
 chomp $cwd;
 
 # Work out what the number of the current directory is
-unless ($cwd =~ /\/([0-9]{2})[a-zA-Z]+$/) {die "Bad directory $cwd\n";}
+unless ($cwd =~ /\/([0-9]{2})[a-zA-Z][a-zA-Z0-9]*$/) {die "Bad directory $cwd\n";}
 my $dirnumber = $1;
 
 my ($prevlink, $nextlink);

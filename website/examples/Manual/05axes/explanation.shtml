@@ -1,0 +1,3 @@
+A plot demonstating the use of large numbers of axes. Odd-numbered <i>x</i>-axes
+appear below the plot, and even numbered <i>x</i>-axes above it; a similar rule
+applies for <i>y</i>-axes, to the left and to the right.

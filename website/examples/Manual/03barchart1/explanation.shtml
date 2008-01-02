@@ -1,0 +1,6 @@
+<p> This example illustrates the <tt>boxes</tt>, <tt>impulses</tt> and
+<tt>steps</tt> plot styles, which operate similarly to the styles of the same
+name in gnuplot. Panels (a) and (b) illustrate the <tt>boxes</tt> plot style
+for a sine wave, using the <tt>set boxfrom</tt> command to define the point
+from which the lines originate. Panel (c) illustrates the <tt>impulses</tt>
+plot style, (d) <tt>steps</tt>, (e) <tt>fsteps</tt> and (f) <tt>histeps</tt>.

@@ -34,3 +34,14 @@ my $width = $1;
 open WIDTH, ">width" or die "Failed to write to width file";
 print WIDTH $width;
 close WIDTH;
+
+# Make some symlinks
+unless (-e "inc") {
+   my $sltext = <<"EOF";
+ln -s ../inc
+ln -s inc/index.shtml
+ln -s inc/navbuttons.cgi
+ln -s inc/downloads.cgi
+EOF
+   system($sltext);
+}

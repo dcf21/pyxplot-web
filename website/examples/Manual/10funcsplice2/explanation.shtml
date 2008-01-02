@@ -1,0 +1,4 @@
+One application of function splicing is to work with functions which do not
+have analytic forms, or which are, by definition, discontinuous.  This example
+plots the Fibonacci sequence, though it is not at all computationally
+efficient.
