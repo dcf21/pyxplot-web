@@ -1,0 +1,327 @@
+#!/usr/bin/python2.4
+
+import os, sys, codecs, string, glob, re
+sys.path.append("/home/rpc25/plastex/lib/python2.4/site-packages")
+sys.path.append("/home/rchurch/sw/plasTeX-0.8.3")
+import plasTeX
+
+
+# Import renderer from previous code sample
+from MyRenderer import Renderer
+
+from plasTeX.TeX import TeX
+
+# Instantiate a TeX processor and parse the input text
+tex = TeX()
+tex.ownerDocument.config['files']['split-level'] = -100
+tex.ownerDocument.config['files']['filename'] = 'test.xml'
+texFile = open(sys.argv[1]).read()
+tex.input(texFile)
+
+# A global list to store a table in the middle of parsing
+table = []
+# And a queue for footnotes
+footnoteQueue = []
+# And something really cracktastic to tell us what sort of list we're 
+# dealing with
+listType = u''
+
+document = tex.parse()
+
+def section(node):
+    text = unicode(node)
+
+    # Append any footnotes
+    text = text + flushFootnotes()
+
+    text.strip()
+
+    # Add \ns on to the end of the text if necessary
+    if text[-1] != u'\n':
+       text = u'%s\n'%text
+    if text[-2] != u'\n':
+       text = u'%s\n'%text
+
+    # And onto the beginning
+    while (text[0] == u' '):
+       text = text[1:]
+    for i in range(2):
+       if (text[i] != u'\n'):
+          text = u'\n' + text
+
+    # If the title is ! or ?, well it shouldn't be, OK?
+    title = u'%s'%unicode(node.attributes['title']) 
+    if title == u'!':
+       title = u'pling'
+    elif title == u'?':
+       title = u'questionmark'
+       
+    # Remove any spaces in the title
+    title = re.sub('\s+', '_', title)
+
+    # Pick some number of spaces to prefix with in order to replicate dcf's xml
+    if (node.nodeName == 'section'):
+       spaces = u'  '
+    elif (node.nodeName == 'subsection'):
+       spaces = u'   '
+    elif (node.nodeName == 'subsubsection'):
+       spaces = u'    '
+    else:
+       spaces = u'     '
+
+    return u'\n%s<%s>%s%s</%s>' % (spaces, title, text, spaces, title)
+        
+         
+
+def item(node):
+   """ Rendering method for list items """
+
+   global listType
+   s = []
+
+   # Handle characters like \&, \$, \%, etc.
+   if len(node.nodeName) == 1 and node.nodeName not in string.letters:
+       return self.textDefault(node.nodeName)
+
+   # See if we have any attributes to render
+   if node.hasAttributes():
+      for key, value in node.attributes.items():
+         # If the key is 'self', don't render it
+         # these nodes are the same as the child nodes
+         if key == 'self':
+            continue
+         if key == 'term':
+            if listType == u'itemize':
+               s.append('* ')
+            else:
+               s.append('%s ' % (unicode(value)))
+
+   # Invoke rendering on child nodes
+   s.append(unicode(node))
+
+   # End tag
+   s.append(' \\\\\n')
+
+   return u''.join(s)
+
+def silent(node):
+    """ Rendering method for nodes that should produce no output """
+    return u''
+
+def noTag(node):
+    """ Rendering method for nodes that shouldn't produce a tag """
+    s = []
+
+    # Handle characters like \&, \$, \%, etc.
+    if len(node.nodeName) == 1 and node.nodeName not in string.letters:
+        return self.textDefault(node.nodeName)
+
+    # No start tag
+    # s.append('<%s>' % node.nodeName)
+    if node.nodeName == 'verbatim':
+        s.append('\n')
+
+    # Invoke rendering on child nodes
+    s.append(unicode(node))
+
+    # And no end tag
+    # s.append('</%s>' % node.nodeName)
+    if node.nodeName == 'verbatim':
+        s.append('\n')
+
+    return u''.join(s)
+
+
+def showAtts(node):
+    """ Rendering method for all non-text nodes """
+    s = []
+
+    # Handle characters like \&, \$, \%, etc.
+    if len(node.nodeName) == 1 and node.nodeName not in string.letters:
+        return self.textDefault(node.nodeName)
+
+    # Start tag
+    s.append('<%s>' % node.nodeName)
+
+    # We don't want to do this
+    # See if we have any attributes to render
+    if node.hasAttributes():
+        s.append('<attributes>')
+        for key, value in node.attributes.items():
+            # If the key is 'self', don't render it
+            # these nodes are the same as the child nodes
+            if key == 'self':
+                continue
+            s.append('<%s>%s</%s>' % (key, unicode(value), key))
+        s.append('</attributes>')
+
+    # Invoke rendering on child nodes
+    s.append(unicode(node))
+
+    # End tag
+    s.append('</%s>' % node.nodeName)
+
+    return u'\n'.join(s)
+
+def tabular(node):
+   # Rendering method for tabular construct
+   global table
+
+   # Blank the current table
+   table = []
+
+   # Invoke rendering on child nodes, praying to the gods
+   s = []
+   s.append(unicode(node))
+
+   # Parse the resulting table
+   output = []
+   # BUG: currently assume all columns are left-aligned
+   # Create a set of cell widths
+   widths = []
+   for i in table[0]:
+      widths.append(0)
+   # Count all the cell widths
+   for row in table:
+      for i in range(len(row)):
+         widths[i] = max(len(row[i]),widths[i])
+   # Now pad the elements and stick joins in
+   for row in table:
+      for i in range(len(row)):
+         if len(row[i]) < widths[i]:
+            for j in range(widths[i]-len(row[i])):
+               row[i] = u'%s#'%row[i]
+      output.append(u'#|#'.join(row))
+
+   return u'\n\n' + u'\\\\\n'.join(output) + u'\n\n'
+
+def tableRow(node):
+   # Rendering method for rows of tables
+   global table
+
+   # Add a blank row to the table
+   table.append([])
+
+   # Attack the child nodes with a fishfork
+   s = []
+   s.append(unicode(node))
+
+   return u''
+
+def tableCell(node):
+   # Rendering method for cells in tables
+   global table
+
+   # Get the contents of the cell
+   u = unicode(node)
+   # Strip off leading and trailing spaces
+   # (Why use u.strip() when you can diy? :)
+   while u[0] == u' ':
+      u = u[1:]
+   while u[-1] == u' ':
+      u = u[:-1]
+   # Add stuff to the last row in the table
+   s = table[-1]
+   s.append(u)
+   
+   return u''
+
+def printSelf(node):
+   return u'%s'%node.nodeName
+
+def footnote(node):
+   global footnoteQueue
+
+   # Produce a reference thingie
+   ref = u''
+   for i in range(len(footnoteQueue)+1):
+      ref = ref + u'*'
+
+   fntext = ref + u' -- ' + unicode(node)
+
+   # Stick footnote text in queue
+   footnoteQueue.append(fntext)
+
+   return u'[' + ref + u']'
+
+def flushFootnotes():
+   global footnoteQueue
+
+   # Don't do anything if there aren't any footnotes
+   if footnoteQueue == []:
+      return u''
+
+   # footnoteQueue.insert(0, u'')
+   footnoteQueue.append(u'')
+
+   fnOut = u'\n\n'.join(footnoteQueue)
+
+   # Blank footnote queue
+   footnoteQueue = []
+
+   return fnOut
+
+def mathFn(node):
+   # For a maths function return the name followed by the contens in parens
+   return u'%s(%s)'%(node.nodeName,unicode(node))
+
+def startList(node):
+   # Deal with the start of a list
+   global listType
+   
+   # Set up list type for this list
+   save = listType
+   listType = node.nodeName
+
+   # Process the list contents
+   output = unicode(node)
+
+   # Restore the list type
+   listType = save
+
+   return u'\n\n' + output + u'\n'
+
+
+# Render the document
+renderer = Renderer()
+# Sections need to produce an xml tag as they become sections in the help file
+renderer['section'] = section
+renderer['subsection'] = section
+renderer['subsubsection'] = section
+renderer['paragraph'] = section
+# The item tag needs to be handled seperately
+renderer['item'] = item
+# Tables.  Eurgh.
+renderer['tabular'] = tabular
+renderer['ArrayRow'] = tableRow
+renderer['ArrayCell'] = tableCell
+# Some tags just need to produce their nodename with no other output
+# This includes many of the maths functions
+renderer['LaTeX'] = printSelf
+renderer['sin'] = printSelf
+renderer['cos'] = printSelf
+renderer['log'] = printSelf
+renderer['sqrt'] = printSelf
+# Footnotes use a queue
+renderer['footnote'] = footnote
+# Some things don't need to produce any output at all
+# e.g. references aren't going to work, so bin them
+renderer['active::~'] = silent
+renderer['ref'] = silent
+renderer['index'] = silent
+renderer['noindent'] = silent
+renderer['newline'] = silent
+# Lots of things should not prouce an xml tag but have content that needs to be 
+# rendred
+renderer['par'] = noTag
+renderer['verbatim'] = noTag
+renderer['bgroup'] = noTag
+renderer['tt'] = noTag
+renderer['textit'] = noTag
+renderer['texttt'] = noTag
+renderer['math'] = noTag
+# Need to keep a record of what sort of list we're using
+renderer['description'] = startList
+renderer['itemize'] = startList
+renderer['enumerate'] = startList
+renderer.render(document)
