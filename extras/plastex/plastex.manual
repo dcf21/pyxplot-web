@@ -28,6 +28,25 @@ listType = u''
 
 document = tex.parse()
 
+# Now we've rendered the tex, we need to prepend the other manual section
+plastexOutput = open('test.xml', 'r')
+gphelpPreamble = open('preamble.xml', 'r')
+gphelp = open('gp_help.xml', 'w')
+
+# Write the preamble to gp_help.xml
+for line in gphelpPreamble:
+   gphelp.write(line)
+# Write the xml that we've generated, skipping the first line
+plastexOutput.readline()
+for line in plastexOutput.readlines():
+   gphelp.write(line)
+# And write a footer
+gphelp.write('\n\n</commands>\n\n</help>\n')
+plastexOutput.close()
+gphelpPreamble.close()
+gphelp.close()
+
+
 def section(node):
     text = unicode(node)
 
@@ -265,6 +284,9 @@ def mathFn(node):
    # For a maths function return the name followed by the contens in parens
    return u'%s(%s)'%(node.nodeName,unicode(node))
 
+def renderSim(node):
+   return u'~'
+
 def startList(node):
    # Deal with the start of a list
    global listType
@@ -289,6 +311,8 @@ renderer['section'] = section
 renderer['subsection'] = section
 renderer['subsubsection'] = section
 renderer['paragraph'] = section
+# ... but the chapter doesn't need a tag
+renderer['chapter'] = noTag
 # The item tag needs to be handled seperately
 renderer['item'] = item
 # Tables.  Eurgh.
@@ -302,26 +326,39 @@ renderer['sin'] = printSelf
 renderer['cos'] = printSelf
 renderer['log'] = printSelf
 renderer['sqrt'] = printSelf
+renderer['datafile'] = printSelf
+renderer['gnuplot'] = printSelf
 # Footnotes use a queue
 renderer['footnote'] = footnote
 # Some things don't need to produce any output at all
 # e.g. references aren't going to work, so bin them
 renderer['active::~'] = silent
+renderer['active::^'] = silent
 renderer['ref'] = silent
 renderer['index'] = silent
 renderer['noindent'] = silent
 renderer['newline'] = silent
+renderer['label'] = silent
+# None of the index commands need to produce tags
+renderer['indcmd'] = silent
+renderer['indmodt'] = silent
+renderer['indkeyt'] = silent
 # Lots of things should not prouce an xml tag but have content that needs to be 
 # rendred
 renderer['par'] = noTag
 renderer['verbatim'] = noTag
 renderer['bgroup'] = noTag
 renderer['tt'] = noTag
+renderer['it'] = noTag
 renderer['textit'] = noTag
 renderer['texttt'] = noTag
 renderer['math'] = noTag
+renderer['include'] = noTag
+renderer['document'] = noTag
 # Need to keep a record of what sort of list we're using
 renderer['description'] = startList
 renderer['itemize'] = startList
 renderer['enumerate'] = startList
+# <sim> is ~
+renderer['sim'] = renderSim
 renderer.render(document)

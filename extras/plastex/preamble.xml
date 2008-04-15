@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<help>
+
+Welcome to the PyXPlot help system. The 'help' command provides an
+easily-navigable source of information which is supplementary to that in the
+Users' Guide. To obtain information on any particular topic, type 'help'
+followed by the name of the topic. For example:
+
+help commands
+
+provides information on PyXPlot's commands. Some topics have subtopics, this
+being one example; these are listed at the end of each help page. To view them,
+add further words to the end of your help request -- an example might be:
+
+help commands help
+
+Information is arranged with general information about PyXPlot under the
+heading 'about', and information about PyXPlot's commands under 'commands'.
+Information about the format that input datafiles should take can be found
+under 'datafile'. Other categories, listed below, are self-explanatory.
+
+To exit any help page, press the 'Q' key.
+
+ <author>
+
+Dominic Ford \labdcf21@mrao.cam.ac.uk\rab
+
+ </author>
+ <credits>
+
+The author would like to express his gratitude to Joerg Lehmann and Andre Wobst
+for writing the PyX graphics library for python, upon which this software is
+heavily built, as well as to Ross Church for his many useful comments and
+suggestions during its development.
+
+ </credits>
+ <version>
+
+This is PyXPlot version $VERSION.
+
+ </version>
+ <datafile>
+
+PyXPlot expects its input datafiles to be in plain text format, with columns of
+data separated either by whitespace or by commas. This means that PyXPlot is
+compatible both with the format of datafiles read by gnuplot, and also with
+Comma Separated Values (CSV) format, which many spreadsheets are able to
+produce.
+
+The subsections below provide some details of the modifiers that can follow the
+plot command when working with data files to select which parts of the file
+should be used. They also apply equally to the spline and fit commands, which
+also take input from data files.
+
+   <using>
+
+The using specifier allows one to choose which columns of a data file to use.
+For example:
+
+plot 'data' using 2:5 with points
+
+will plot data from the file drawing the x-positions of each datapoint from the
+second column of the data file, and the y-positions from the fourth.
+
+    <rows>
+
+The rows modifier causes the data file to be considered as a set of rows rather
+than columns. For example:
+
+plot 'data' using rows 2:5 with points
+
+would plot data from the file drawing the x-positions of each datapoint from
+the second row of the data file, and the y-positions from the fourth.
+
+    </rows>
+   </using>
+   <every>
+
+When PyXPlot reads a datafile, it looks for any blank lines in the file. It
+divides the datafile up into "data blocks", each being separated by single
+blank lines. The first datablock is numbered 0, the next 1, and so on.
+
+When two or more blank lines are found together, the datafile is divided up
+into "index blocks". Each index block may be made up of a series of data 
+blocks. To clarify this, a labelled example datafile is shown below:
+
+|#0.0###0.0#######Start#of#index#0,#data#block#0. \\
+|#1.0###1.0###### \\
+|#2.0###2.0###### \\
+|#3.0###3.0###### \\
+|#################A#single#blank#line#marks#the#start#of#a#new#data#block. \\
+|#0.0###5.0#######Start#of#index#0,#data#block#1. \\
+|#1.0###4.0###### \\
+|#2.0###2.0###### \\
+|#################A#double#blank#line#marks#the#start#of#a#new#index. \\
+|#################... \\
+|#0.0###1.0#######Start#of#index#1,#data#block#0. \\
+|#1.0###1.0###### \\
+|#################A#single#blank#line#marks#the#start#of#a#new#data#block. \\
+|#0.0###5.0#######Start#of#index#1,#data#block#1. \\
+|#################...etc...
+
+The every modifier chooses which lines and data blocks of a datafile to take
+data from. It has syntax
+
+plot 'datafile' every a:b:c:d:e:f
+
+where the letters have the following meanings:
+
+a Plot data only from every a th line in datafile.
+
+b Plot only data from every b th block within each index block.
+
+c Plot only from line c onwards within each block.
+
+d Plot only data from block d onwards within each index block.
+
+e Plot only up to the e th line within each block.
+
+f Plot only up to the f th block within each index block.
+
+To select which index blocks to take data from, see the "index" modifier.
+
+   </every>
+   <index>
+
+When PyXPlot reads a datafile, it looks for any blank lines in the file. When
+two or more are found together, the datafile is divided up into large blocks
+called "index blocks".  The index blocks are numbered from the start of the
+file, the first being numbered zero.
+
+The index specifier selects an index block from a data set to plot data from.
+For example:
+
+plot 'data' index 1
+
+will plot the data from the second index block only. A negative block number
+will achieve the default option of plotting from all index blocks.
+
+For more information on the divisions of datafiles see the "every" modifier.
+
+   </index>
+   <select>
+
+The select modifier can be used to take only those datapoints from a datafile
+which satisfy some criterion. For example:
+
+plot 'datafile' select ($3>50)
+
+would select from the file 'datafile' only those datapoints for which the value
+in the third column of the file was greater than fifty.
+
+Multiple select criteria can be specified; the following two statements would
+be entirely equivalent:
+
+plot sin(x) select (($1>0)and($2>0)) \\
+plot sin(x) select ($1>0) select ($2>0)
+
+It should be noted, however, that whitespace is not permitted in select
+criteria. The following would NOT be permitted:
+
+plot 'datafile' select ($3 > 50)
+
+The select modifier has many applications, including plotting two-dimensional
+slices from three-dimensional datasets, and selecting certain subsets of
+datapoints from a datafile for plotting.
+
+   </select>
+  
+ </datafile>
+ <date>
+
+This version of PyXPlot was released on $DATE.
+
+ </date>
+ <license>
+
+PyXPlot is distributed under the Gnu General Public License, Version 2. A copy
+of this can be downloaded from: http://www.gnu.org/copyleft/gpl.html .
+
+ </license>
+ <commands>
+
+This section of PyXPlot's help system provides specific help on each of its
+commands. The following list of subtopics represents a complete list of
+PyXPlot's commands:
+
+
