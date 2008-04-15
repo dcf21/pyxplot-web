@@ -41,12 +41,8 @@ class Renderer(Renderer):
     def textDefault(self, node):
         """ Rendering method for all text nodes """
         text = unicode(node)
-        # foo = re.match(u'‘', text)
         text2 = text.encode('ascii', 'xmlcharrefreplace')
         text2 = text2.replace('&#8217;', "'").replace('&#8216;', "`")
         text2 = text2.replace('&#8211;', "-").replace('&#960;', "pi")
-        if (text != text2): print text2
-        # if (foo == None): print text
-        newnode = text2.replace(u'‘', 'badger')
-        return newnode.replace('&','&amp;').replace('<','\\lab').replace('>','\\rab')
+        return text2.replace('&','&amp;').replace('<','\\lab').replace('>','\\rab')
 

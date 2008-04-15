@@ -46,6 +46,9 @@ plastexOutput.close()
 gphelpPreamble.close()
 gphelp.close()
 
+# Apply remaining changes
+os.system('patch < gp_help.xml.diff')
+
 
 def section(node):
     text = unicode(node)
