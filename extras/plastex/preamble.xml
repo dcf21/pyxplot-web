@@ -21,11 +21,13 @@ under 'datafile'. Other categories, listed below, are self-explanatory.
 
 To exit any help page, press the 'Q' key.
 
- <author>
+ <authors>
 
-Dominic Ford \labdcf21@mrao.cam.ac.uk\rab
+Dominic Ford \\
+Ross Church \\
+email: \labcoders@pyxplot.org.uk\rab
 
- </author>
+ </authors>
  <credits>
 
 The author would like to express his gratitude to Joerg Lehmann and Andre Wobst
