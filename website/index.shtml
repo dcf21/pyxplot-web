@@ -1,7 +1,7 @@
 <!--#set var="title" value="" -->
 <!--#include virtual="inc/header.shtml" -->
 		<div style="min-height: 399px">
-		<img style="float: right" src="img/cornu.gif" />
+		<img style="float: right" src="img/cornu.gif" alt="The Cornu Spiral" />
 
 		<p> 
 			PyXPlot is a command-line graphing package with a simple interface that
@@ -33,6 +33,7 @@
 				data.  Much more detail can be found in the <a
 				href="0.5/doc/">manual</a>.
 			</li>
+      </ul>
 		</div>
       <!-- <h3>
          What is PyXPlot?
