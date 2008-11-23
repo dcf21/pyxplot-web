@@ -1,4 +1,3 @@
-<p>
 This example illustrates how to link the axes of plots on a multiplot so that
 they share a common scale.  It also demonstrates how to set the colours of
 datasets using the <tt>with colour</tt> plot modifier. In the top-right panel,
@@ -12,5 +11,3 @@ Notice how the linked axes autoscale intelligently. The right two plots both
 require larger vertical ranges than those plots to their lefts, to whose
 vertical axes they are linked. But once they are linked, the plots autoscale
 together, to ensure that they all have sufficient range for their data.
-</p>
-

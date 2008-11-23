@@ -1,10 +1,15 @@
+  </div>
+  <br style="clear:both" />
+  <div id="clearfooter"></div>
+  <!-- to clear footer -->
 </div>
-
-<div class="bottombox">
+<div id="insertbottom"><div id="hideborderbottom"></div><!-- just rubs out a bit of the bottom border -->
+</div>
+<div id="footer">
    <p>
 	   This page is maintained by <a href="mailto:webmaster@pyxplot.org.uk">the PyXPlot webmonkey</a> and was last updated on <!--#echo var="LAST_MODIFIED" -->.
 	</p>
+
 </div>
 </body>
 </html>
-

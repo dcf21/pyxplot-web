@@ -1,0 +1,24 @@
+body {
+   font-family: serif, sans-serif; 
+	background: #FFFFFF;
+  color: #333333;
+	border: 0;
+}
+
+body a {
+	color: #3333ff;
+	text-decoration: none;
+}
+
+body a:hover {
+	text-decoration: underline;
+}
+
+body a:visited {
+	text-decoration: none;
+   color: #703370;
+}
+
+body img {
+	border: 0;
+}

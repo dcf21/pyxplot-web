@@ -1,0 +1,86 @@
+@import url(http://www.srcf.ucam.org/pyxplot/css/body.css);
+@import url(http://www.srcf.ucam.org/pyxplot/css/table.css);
+@import url(http://www.srcf.ucam.org/pyxplot/css/sidebox.css);
+@import url(http://www.srcf.ucam.org/pyxplot/css/topbox.css);
+@import url(http://www.srcf.ucam.org/pyxplot/css/footer.css);
+@import url(http://www.srcf.ucam.org/pyxplot/css/contentinner.css);
+html, body {margin:0; padding:0%; height:96%}
+
+#clearheader{height:160px;}/*needed to make room for header*/
+
+#content {
+	position:relative;
+	height:100%;
+	min-height:100%;
+	border-right:none;
+	background: #ffffff;
+	margin-bottom:-80px;
+}
+* html #content {height:100%}
+body>#content {height:auto}
+* html #contentinner {height:1%}/* combat ie 3 pixel jog */
+html>body #content{height:auto}
+
+#clearfooter{clear:both;height:80px;}/*needed to make room for footer*/
+
+#hidebordertop {
+	position:absolute;
+	bottom:-2px;
+	left:150px;
+	width:40px;
+	height:3px;
+	background:#fff;
+	overflow:hidden;
+}
+#hideborderbottom {
+	position:absolute;
+	top:-3px;
+	left:150px;
+	width:40px;
+	height:3px;
+	background:#fff;
+	overflow:hidden;
+}
+#inserttop {
+	position:relative;
+	height:1px;
+	background:#fff;
+	color:#000;
+	border: none;
+}
+#insertbottom {
+	position:relative;
+	clear:both;
+	height:1px;
+	background:#fff;
+	color:#000;
+	border: none;
+}
+
+
+/*
+
+.main h1 {
+  font-size:1.4em;
+  color: #333333;
+}    
+
+
+.menu {
+  text-align: right;
+}
+
+.topbox h1 {
+  font-size: 4em;
+  margin-top: 5px;
+  margin-bottom: 0;
+  margin-left:10px;
+}
+
+.topbox h2 {
+  margin-top:0;
+  color: #ffc600;
+  font-size:1em;
+}
+
+*/

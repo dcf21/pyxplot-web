@@ -7,10 +7,10 @@
          create it yourself.
 		</p>
 
-		<div class=exampleimage style="margin-right: 1em">
+		<div class="exampleimage" style="margin-right: 1em">
       <p>
          <a href="examples/firstSteps/03multiAxis/">
-         <img src="examples/firstSteps/03multiAxis/output.png" />
+         <img src="examples/firstSteps/03multiAxis/output.png" alt="An example" />
          </a>
       </p> 
       <p>
@@ -18,10 +18,10 @@
       </p> 
 		</div>
 
-		<div class=exampleimage style="margin-right: 1em">
+		<div class="exampleimage" style="margin-right: 1em">
       <p>
          <a href="examples/otherApplications/03figures/">
-         <img src="examples/otherApplications/03figures/output.png" />
+         <img src="examples/otherApplications/03figures/output.png" alt="An example" />
          </a>
       </p> 
       <p>
@@ -29,10 +29,10 @@
       </p> 
 		</div>
 
-		<div class=exampleimage style="margin-right: 1em">
+		<div class="exampleimage" style="margin-right: 1em">
       <p>
          <a href="examples/random/03Cornu/">
-         <img src="examples/random/03Cornu/output.png" />
+         <img src="examples/random/03Cornu/output.png" alt="An example" />
          </a>
       </p> 
       <p>
@@ -40,22 +40,22 @@
       </p> 
 		</div>
 
-		<div class=exampleimage style="margin-right: 1em">
+		<div class="exampleimage" style="margin-right: 1em">
       <p>
          <a href="examples/presentations/02slide">
-         <img src="gallery/slide1.png" />
+         <img src="gallery/slide1.png" alt="An example" />
          </a>
       </p> 
 
       <p>
          <a href="examples/presentations/03slide">
-         <img src="gallery/slide2.png" />
+         <img src="gallery/slide2.png" alt="An example" />
          </a>
       </p> 
 
       <p>
          <a href="examples/presentations/04slide">
-         <img src="gallery/slide3.png" />
+         <img src="gallery/slide3.png" alt="An example" />
          </a>
       </p> 
       <p>

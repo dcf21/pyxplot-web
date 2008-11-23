@@ -1,7 +1,8 @@
-    <div class="topbox">
+    <div id="topbox">
 		 <a href="http://www.pyxplot.org.uk/">
        <img src="http://www.srcf.ucam.org/pyxplot/pyxplot_logo.jpg" alt="The PyXPlot logo" />
 		 </a>
        <h1>PyXPlot</h1>
        <h2><!--#echo var="title" --></h2>
     </div>
+    <div id="inserttop"><div id="hidebordertop"></div></div>

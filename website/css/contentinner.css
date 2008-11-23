@@ -1,0 +1,21 @@
+#contentinner {
+   margin-left:12.2em;
+   /*margin-left: 350pt;  */
+  margin-top: 1em;
+  margin-left: 15em;
+  margin-right: 1em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  padding-left: 1em;
+  background: #ffeecc;
+}
+
+.warning {
+	color: #000000;
+	background: #ff5555;
+	border: #d2d2d2 solid 1px;
+	padding: 1em;
+	margin: 1em;
+	margin-right: 2em;
+	padding-right: 1em;
+}

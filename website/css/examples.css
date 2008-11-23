@@ -45,7 +45,7 @@
 
 .examplebuttons {
 	padding-bottom: 1.2em;
-	padding-top: -1em;
+	/* padding-top: -1em; */
 }
 
 .examplebutton {
