@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Choosing which Data to Plot</title>
+
+<link href="horizontal_datafiles.html" title="Horizontally arranged Data files" rel="next" />
+<link href="sect0028.html" title="Steps" rel="prev" />
+<link href="sect0021.html" title="Advanced Plotting" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0028.html" title="Steps"><img alt="Previous: Steps" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0021.html" title="Advanced Plotting"><img alt="Up: Advanced Plotting" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="horizontal_datafiles.html" title="Horizontally arranged Data files"><img alt="Next: Horizontally arranged Data files" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0158.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0021.html">Advanced Plotting</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Choosing which Data to Plot</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="select_modifier">4.3 Choosing which Data to Plot</h1>
+<p>  As well as the <tt class="tt">plot</tt> command’s <tt class="tt">index</tt>, <tt class="tt">using</tt> and <tt class="tt">every</tt> modifiers, which allow users to plot subsets of data from data files, it also has a further modifier, <tt class="tt">select</tt><span id="a0000000390"></span>. This can be used to plot only those data points in a data file which specify some given criterion. For example: </p><pre>
+plot 'data.dat' select ($8&gt;5)
+plot sin(x) select (($1&gt;0) and ($2&gt;0))
+</pre><p>In the second example, two selection criteria are given, combined with the logical <tt class="tt">and</tt> operator. A full list of all of the operators recognised by PyXPlot, including logical operators, was given in Chapter 2; see Table <a href="sect0010.html#operators_table">2.3</a>. The select modifier has many applications, for example, plotting two-dimensional slices of three-dimensional datasets and plotting subsets of data from files. </p><p>When plotting using the <tt class="tt">lines</tt><span id="a0000000391"></span><span id="a0000000392"></span> style, the default behaviour is for the lines plotted not to be broken if a set of datapoints are removed by the select modifier. However, this behaviour is sometimes undesirable. To cause the plotted line to break when points are removed the <tt class="tt">discontinuous</tt><span id="a0000000393"></span> modifier is supplied. For example: </p><pre>
+plot sin(x) select ($1&gt;0) discontinuous
+</pre><p>plots a set of disconnected peaks from the sine function. </p></div>
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0028.html" title="Steps"><img alt="Previous: Steps" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0021.html" title="Advanced Plotting"><img alt="Up: Advanced Plotting" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="horizontal_datafiles.html" title="Horizontally arranged Data files"><img alt="Next: Horizontally arranged Data files" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0158.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

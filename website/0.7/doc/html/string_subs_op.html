@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Printing Text</title>
+
+<link href="sec-latex_incompatibility.html" title="Axis Labels and Titles" rel="next" />
+<link href="first_plots.html" title="First Plots" rel="prev" />
+<link href="gnuplot_intro.html" title="First Steps With PyXPlot" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="first_plots.html" title="First Plots"><img alt="Previous: First Plots" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-latex_incompatibility.html" title="Axis Labels and Titles"><img alt="Next: Axis Labels and Titles" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0158.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="gnuplot_intro.html">First Steps With PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Printing Text</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="string_subs_op">2.3 Printing Text</h1>
+<p>  </p><p>PyXPlot has a <tt class="tt">print</tt> command<span id="a0000000214"></span> for displaying strings and the results of calculations to the terminal, for example: </p><pre>
+a=2
+print "Hello World!"
+print a
+</pre><pre>
+f(x) = x**2
+a=3
+print "The value of",a,"squared is",f(a)
+</pre><p>Values may also be substituted into strings using the <tt class="tt">%</tt> operator<span id="a0000000215"></span>, which works in a similar fashion to Python string substitution operator<span id="a0000000216"></span><a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">For a description of this, see Guido van Rossum’s<span id="a0000000217"></span> <i class="it">Python Library Reference</i><span id="a0000000218"></span>: <a href="http://docs.python.org/lib/typesseq-strings.html">http://docs.python.org/lib/typesseq-strings.html</a></span></a>. The list of values to be substituted into the string should be a ()-bracketed list<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">Unlike in Python, the brackets are obligatory; <tt class="tt">’%d’%2</tt> is <i class="it">not</i> valid in PyXPlot.</span></a>: </p><pre>
+print "The value of %d squared is %d."%(a,f(a))
+print "The %s of f(%f) is %d."%("value",sqrt(2),f(sqrt(2)))
+</pre></div>
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="first_plots.html" title="First Plots"><img alt="Previous: First Plots" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-latex_incompatibility.html" title="Axis Labels and Titles"><img alt="Next: Axis Labels and Titles" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0158.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

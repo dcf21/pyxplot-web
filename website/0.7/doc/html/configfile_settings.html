@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Configuration Options: settings section</title>
+
+<link href="configfile_terminal.html" title="Configuration Options: &lt;tt class=&quot;tt&quot;&gt;terminal&lt;/tt&gt; section" rel="next" />
+<link href="sect0045.html" title="An Example Configuration File" rel="prev" />
+<link href="sect0044.html" title="Configuring PyXPlot" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0045.html" title="An Example Configuration File"><img alt="Previous: An Example Configuration File" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0044.html" title="Configuring PyXPlot"><img alt="Up: Configuring PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="configfile_terminal.html" title="Configuration Options: terminal section"><img alt="Next: Configuration Options: terminal section" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0158.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0044.html">Configuring PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Configuration Options: <tt class="tt">settings</tt> section</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="configfile_settings">7.4 Configuration Options: <tt class="tt">settings</tt> section</h1>
+<p>  </p><p>The following table provides a brief description of the function of each of the parameters in the <tt class="tt">settings</tt> section of the above configuration file, with a list of possible values for each: </p><table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="text-align:left"><p> <tt class="tt">ASPECT</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set size ratio</tt><span id="a0000000585"></span> </p><p>Sets the aspect ratio of plots. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">AUTOASPECT</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">ON</tt> / <tt class="tt">OFF</tt> </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set size ratio</tt> </p><p>Sets whether plots have the automatic aspect ratio, which is the golden ratio. If <tt class="tt">ON</tt>, then the above setting is ignored. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">AXESCOLOUR</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any recognised colour. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set axescolour</tt><span id="a0000000586"></span> </p><p>Sets the colour of axis lines and ticks. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">BACKUP</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">ON</tt> / <tt class="tt">OFF</tt> </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set backup</tt><span id="a0000000587"></span> </p><p>When this switch is set to ‘<tt class="tt">ON</tt>’, and plot output is being directed to file, attempts to write output over existing files cause a copy of the existing file to be preserved, with a tilde after its old filename (see Section <a href="filebackup.html">4.10</a>). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">BAR</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set bar</tt><span id="a0000000588"></span> </p><p>Sets the horizontal length of the lines drawn at the end of errorbars, in units of their default length. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">BINORIGIN</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set binorigin</tt><span id="a0000000589"></span> </p><p>Sets the point along the <img src="images/img-0007.png" alt="$x$" style="position:relative; bottom:0px; width:10px; height:8px" class="math" /> axis from which the bins used by the <tt class="tt">histogram</tt> command<span id="a0000000590"></span> originate. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">BINWIDTH</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set binwidth</tt><span id="a0000000591"></span> </p><p>Sets the widths of the bins used by the <tt class="tt">histogram</tt> command<span id="a0000000592"></span>. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">BOXFROM</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set boxfrom</tt><span id="a0000000593"></span> </p><p>Sets the horizontal point from which bars on bar charts appear to emanate. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">BOXWIDTH</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set boxwidth</tt><span id="a0000000594"></span> </p><p>Sets the default width of boxes on barcharts. If negative, then the boxes have automatically selected widths, so that the interfaces between bars occur at the horizontal midpoints between the specified datapoints. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">COLOUR</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">ON</tt> / <tt class="tt">OFF</tt> </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set terminal</tt><span id="a0000000595"></span> </p><p>Sets whether output should be colour (<tt class="tt">ON</tt>) or monochrome (<tt class="tt">OFF</tt>). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">DATASTYLE</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any plot style. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set data style</tt><span id="a0000000596"></span> </p><p>Sets the plot style used by default when plotting data files. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">DISPLAY</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">ON</tt> / <tt class="tt">OFF</tt> </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set display</tt><span id="a0000000597"></span> </p><p>When set to ‘<tt class="tt">ON</tt>’, no output is produced until the <tt class="tt">set display</tt> command<span id="a0000000598"></span> is issued. This is useful for speeding up scripts which produce large multiplots; see Section <a href="set_display.html">5.3.5</a> for more details. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">DPI</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set dpi</tt><span id="a0000000599"></span> </p><p>Sets the sampling quality used, in dots per inch, when output is sent to a bitmapped terminal (the jpeg/gif/png terminals). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">ENLARGE</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">ON</tt> / <tt class="tt">OFF</tt> </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set terminal</tt><span id="a0000000600"></span> </p><p>When set to ‘<tt class="tt">ON</tt>’ output is enlarged or shrunk to fit the current paper size. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">FONTSIZE</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Integers in the range <img src="images/img-0109.png" alt="$-4 \to 5$" style="position:relative; bottom:0px; width:59px; height:13px" class="math" />. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set fontsize</tt><span id="a0000000601"></span> </p><p>Sets the fontsize of text, varying between L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X’s <tt class="tt">tiny</tt> (<img src="images/img-0077.png" alt="$-4$" style="position:relative; bottom:0px; width:22px; height:12px" class="math" />) and <tt class="tt">Huge</tt> (5). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">FUNCSTYLE</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any plot style. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set function style</tt><span id="a0000000602"></span> </p><p>Sets the plot style used by default when plotting functions. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">GRID</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">ON</tt> / <tt class="tt">OFF</tt> </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set grid</tt><span id="a0000000603"></span> </p><p>Sets whether a grid should be displayed on plots. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">GRIDAXISX</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any integer. </p><p><b class="bf">Analogous set command:</b> None </p><p>Sets the default <img src="images/img-0007.png" alt="$x$" style="position:relative; bottom:0px; width:10px; height:8px" class="math" />-axis to which gridlines should attach, if the <tt class="tt">set grid</tt> command is called without specifying which axes to use. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">GRIDAXISY</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any integer. </p><p><b class="bf">Analogous set command:</b> None </p><p>Sets the default <img src="images/img-0008.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-axis to which gridlines should attach, if the <tt class="tt">set grid</tt> command is called without specifying which axes to use. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">GRIDMAJCOLOUR</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any recognised colour. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set gridmajcolour</tt><span id="a0000000604"></span> </p><p>Sets the colour of major grid lines. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">GRIDMINCOLOUR</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any recognised colour. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set gridmincolour</tt><span id="a0000000605"></span> </p><p>Sets the colour of minor grid lines. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">KEY</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">ON</tt> / <tt class="tt">OFF</tt> </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set key</tt><span id="a0000000606"></span> </p><p>Sets whether a legend is displayed on plots. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">KEYCOLUMNS</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any integer <img src="images/img-0110.png" alt="$&gt;0$" style="position:relative; bottom:0px; width:28px; height:12px" class="math" />. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set keycolumns</tt><span id="a0000000607"></span> </p><p>Sets the number of columns into which the legends of plots should be divided. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">KEYPOS</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> ‘TOP RIGHT’, ‘TOP MIDDLE’, ‘TOP LEFT’, ‘MIDDLE RIGHT’, ‘MIDDLE MIDDLE’, ‘MIDDLE LEFT’, ‘BOTTOM RIGHT’, ‘BOTTOM MIDDLE’, ‘BOTTOM LEFT’, ‘BELOW’, ‘OUTSIDE’. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set key</tt><span id="a0000000608"></span> </p><p>Sets where the legend should appear on plots. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">KEY_XOFF</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set key</tt><span id="a0000000609"></span> </p><p>Sets the horizontal offset, in approximate graph-widths, that should be applied to the legend, relative to its default position, as set by <tt class="tt">KEYPOS</tt>. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">KEY_YOFF</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set key</tt><span id="a0000000610"></span> </p><p>Sets the vertical offset, in approximate graph-heights, that should be applied to the legend, relative to its default position, as set by <tt class="tt">KEYPOS</tt>. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">LANDSCAPE</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">ON</tt> / <tt class="tt">OFF</tt> </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set terminal</tt><span id="a0000000611"></span> </p><p>Sets whether output is in portrait orientation (<tt class="tt">OFF</tt>), or landscape orientation (<tt class="tt">ON</tt>). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">LINEWIDTH</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set linewidth</tt><span id="a0000000612"></span> </p><p>Sets the width of lines on plots, as a multiple of the default. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">MULTIPLOT</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">ON</tt> / <tt class="tt">OFF</tt> </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set multiplot</tt><span id="a0000000613"></span> </p><p>Sets whether multiplot mode is on or off. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">ORIGINX</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set origin</tt><span id="a0000000614"></span> </p><p>Sets the horizontal position, in centimetres, of the default origin of plots on the page. Most useful when multiplotting many plots. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">ORIGINY</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set origin</tt><span id="a0000000615"></span> </p><p>Sets the vertical position, in centimetres, of the default origin of plots on the page. Most useful when multiplotting many plots. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">OUTPUT</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any string. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set output</tt><span id="a0000000616"></span> </p><p>Sets the output filename for plots. If blank, the default filename of pyxplot.foo is used, where ‘foo’ is an extension appropriate for the file format. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">PAPER_HEIGHT</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set papersize</tt><span id="a0000000617"></span> </p><p>Sets the height of the papersize for postscript output in millimetres. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">PAPER_NAME</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> A string matching any of the papersizes listed in Table <a href="sect0017.html#paper_sizes">3.1</a>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set papersize</tt><span id="a0000000618"></span> </p><p>Sets the papersize for postscript output to one of the pre-defined papersizes listed in Table <a href="sect0017.html#paper_sizes">3.1</a>. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">PAPER_WIDTH</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set papersize</tt><span id="a0000000619"></span> </p><p>Sets the width of the papersize for postscript output in millimetres. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">POINTLINEWIDTH</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set pointlinewidth</tt><span id="a0000000620"></span> </p><p>Sets the linewidth used to stroke points onto plots, as a multiple of the default. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">POINTSIZE</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set pointsize</tt><span id="a0000000621"></span> </p><p>Sets the sizes of points on plots, as a multiple of their normal sizes. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">SAMPLES</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any integer. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set samples</tt><span id="a0000000622"></span> </p><p>Sets the number of samples (datapoints) to be evaluated along the <img src="images/img-0007.png" alt="$x$" style="position:relative; bottom:0px; width:10px; height:8px" class="math" />-axis when plotting a function. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">TERMANTIALIAS</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">ON</tt> / <tt class="tt">OFF</tt> </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set terminal</tt><span id="a0000000623"></span> </p><p>Sets whether jpeg/gif/png output is antialiased, i.e. whether colour boundaries are smoothed to disguise the effects of pixelisation. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">TERMINVERT</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">ON</tt> / <tt class="tt">OFF</tt> </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set terminal</tt><span id="a0000000624"></span> </p><p>Sets whether jpeg/gif/png output has normal colours (<tt class="tt">OFF</tt>), or inverted colours (<tt class="tt">ON</tt>). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">TERMTRANSPARENT</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">ON</tt> / <tt class="tt">OFF</tt> </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set terminal</tt><span id="a0000000625"></span> </p><p>Sets whether jpeg/gif/png output has transparent background (<tt class="tt">ON</tt>), or solid background (<tt class="tt">OFF</tt>). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">TERMTYPE</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">X11_singlewindow</tt>, </p><p><tt class="tt">X11_multiwindow</tt>, <tt class="tt">X11_persist</tt>, <tt class="tt">PS</tt>, <tt class="tt">EPS</tt>, <tt class="tt">PDF</tt>, <tt class="tt">PNG</tt>, <tt class="tt">JPG</tt>, <tt class="tt">GIF</tt> </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set terminal</tt><span id="a0000000626"></span> </p><p>Sets whether output is sent to the screen or to disk, and, in the latter case, the format of the output. The <tt class="tt">ps</tt> option should be used for both encapsulated and normal postscript output; these are distinguished using the <tt class="tt">ENHANCED</tt> option, above. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">TEXTCOLOUR</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any recognised colour. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set textcolour</tt><span id="a0000000627"></span> </p><p>Sets the colour of all text output. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">TEXTHALIGN</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">Left</tt>, <tt class="tt">Centre</tt>, <tt class="tt">Right</tt> </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set texthalign</tt><span id="a0000000628"></span> </p><p>Sets the horizontal alignment of text labels to their given reference positions. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">TEXTVALIGN</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">Top</tt>, <tt class="tt">Centre</tt>, <tt class="tt">Bottom</tt> </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set textvalign</tt><span id="a0000000629"></span> </p><p>Sets the vertical alignment of text labels to their given reference positions. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">TITLE</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any string. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set title</tt><span id="a0000000630"></span> </p><p>Sets the title to appear at the top of the plot. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">TIT_XOFF</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set title</tt><span id="a0000000631"></span> </p><p>Sets the horizontal offset of the title of the plot from its default central location. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">TIT_YOFF</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set title</tt><span id="a0000000632"></span> </p><p>Sets the vertical offset of the title of the plot from its default location at the top of the plot. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">WIDTH</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set width</tt><span id="a0000000633"></span> / <tt class="tt">set size</tt><span id="a0000000634"></span> </p><p>Sets the width of plots in centimetres. </p></td>
+
+</tr>
+</table></div>
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0045.html" title="An Example Configuration File"><img alt="Previous: An Example Configuration File" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0044.html" title="Configuring PyXPlot"><img alt="Up: Configuring PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="configfile_terminal.html" title="Configuration Options: terminal section"><img alt="Next: Configuration Options: terminal section" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0158.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

@@ -12,6 +12,7 @@ The following beta releases of PyXPlot are available:
 <tfoot><tr><td></td><td></td><td></td><td></td></tr></tfoot>
 <tbody>
 <tr><th>Version </th><th>Date</th><th>Files</th><th>Downloads</th></tr>
+<tr><td>0.7.0</td><td>December 2nd 2008</td>     <td><a href="src/pyxplot_0.7.0.tar.gz">tar.gz</a> (1019kB) </td><td><!--#include virtual="counter/0.7.0" --></td></tr>
 <tr><td>0.6.3.1</td><td>March 15th 2007</td>     <td><a href="src/pyxplot_0.6.3.1.tar.gz">tar.gz</a> (839kB) <a href="src/pyxplot_0.6.3.1_all.deb">deb</a> (1.3MB)</td><td><!--#include virtual="counter/0.6.3.1" --></td></tr>
 <tr><td>0.5.8</td><td>September 9th 2006</td>     <td><a href="src/pyxplot_0.5.8.tar.gz">tar.gz</a> (508kB) <a href="src/pyxplot_0.5.8-1_all.deb">deb</a> (1.6MB)</td><td><!--#include virtual="counter/0.5.8" --></td></tr>
 </tbody>
@@ -28,7 +29,8 @@ general use. <!-- Version 0.6.x will appear here in due course.-->
 <table frame="box" rules="all">
 <tfoot><tr><td></td><td></td><td></td><td></td></tr></tfoot>
 <tr><th>Version</th><th>Date</th><th>Files</th><th>Downloads</th></tr>
-<tr><td>0.6.3.1</td><td>March 15th 2007</td>     <td><a href="src/pyxplot_0.6.3.1.tar.gz">tar.gz</a> (839kB) <a href="src/pyxplot_0.6.3.1_all.deb">deb</a> (1.3MB)</td><td><!--#include virtual="counter/0.6.3.1" --></td></tr>
+<tr><td>0.7.0</td><td>December 2nd 2008</td>     <td><a href="src/pyxplot_0.7.0.tar.gz">tar.gz</a> (1019kB) </td><td><!--#include virtual="counter/0.7.0" --></td></tr>
+<tr class='newsect'><td>0.6.3.1</td><td>March 15th 2007</td>     <td><a href="src/pyxplot_0.6.3.1.tar.gz">tar.gz</a> (839kB) <a href="src/pyxplot_0.6.3.1_all.deb">deb</a> (1.3MB)</td><td><!--#include virtual="counter/0.6.3.1" --></td></tr>
 <tr><td>0.6.3</td><td>February 26th 2007</td>     <td><a href="src/pyxplot_0.6.3.tar.gz">tar.gz</a> (839kB) <a href="src/pyxplot_0.6.3_all.deb">deb</a> (1.3MB)</td><td><!--#include virtual="counter/0.6.3" --></td></tr>
 <tr><td>0.6.2</td><td>January 19th 2007</td>     <td><a href="src/pyxplot_0.6.2.tar.gz">tar.gz</a> (548kB) <a href="src/pyxplot_0.6.2-1_all.deb">deb</a> (1.8MB)</td><td><!--#include virtual="counter/0.6.2" --></td></tr>
 <tr><td>0.6.1</td><td>December 27th 2006</td>     <td><a href="src/pyxplot_0.6.1.tar.gz">tar.gz</a> (548kB) <a href="src/pyxplot_0.6.1_all.deb">deb</a> (1.8MB)</td><td><!--#include virtual="counter/0.6.1" --></td></tr>

@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: axis</title>
+
+<link href="sect0079.html" title="backup" rel="next" />
+<link href="sect0077.html" title="axescolour" rel="prev" />
+<link href="sect0074.html" title="set" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0077.html" title="axescolour"><img alt="Previous: axescolour" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0074.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0079.html" title="backup"><img alt="Next: backup" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0158.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0046.html">Command Reference</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0074.html">set</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">axis</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="a0000000089">8.27.4 axis</h2>
+<p><span id="a0000000682"></span> </p><pre>
+set axis &lt;axis&gt;, ...
+</pre><p>The command: </p><pre>
+set axis x2
+</pre><p>may be used to add a second <img src="images/img-0007.png" alt="$x$" style="position:relative; bottom:0px; width:10px; height:8px" class="math" />-axis to a plot, with default settings. In general, there is no practical reason to use this command, as a second <img src="images/img-0007.png" alt="$x$" style="position:relative; bottom:0px; width:10px; height:8px" class="math" />-axis would implicitly be created by any of the following statements: </p><pre>
+set x2label 'foo' \\
+set x2ticdir outwards \\
+plot sin(x) axes x2y1
+</pre><p>Of more practical use is the <tt class="tt">unset x2</tt> command, which is used to remove an axis once it has been added to a plot. After executing: </p><pre>
+set x2label 'foo'
+</pre><p>for example, the only way to tell PyXPlot to subsequently produce a plot without a second <img src="images/img-0007.png" alt="$x$" style="position:relative; bottom:0px; width:10px; height:8px" class="math" />-axis would be to delete this axis with the following command: </p><pre>
+unset axis x2
+</pre><p>Note that in this case, the <tt class="tt">unset x2label</tt> command would be sufficient to remove the label ‘foo’ placed on the new axis, but not sufficient to delete the new axis that the <tt class="tt">set x2label</tt> command implicitly created. Multiple axes can be deleted in a single <tt class="tt">unset axis</tt> statement, for example: </p><pre>
+unset axis x2x4x5
+</pre><p>In the special cases of <tt class="tt">unset axis x1</tt> or <tt class="tt">unset axis y1</tt>, these axes cannot be deleted; a plot must have at least one <img src="images/img-0007.png" alt="$x$" style="position:relative; bottom:0px; width:10px; height:8px" class="math" />- and one <img src="images/img-0008.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-axis. Instead, the <tt class="tt">unset axis</tt> command restores these axes to their default configurations, removing any set titles or ranges that they might have been given. </p></div>
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0077.html" title="axescolour"><img alt="Previous: axescolour" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0074.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0079.html" title="backup"><img alt="Next: backup" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0158.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>
