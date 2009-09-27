@@ -1,2 +1,4 @@
 In here goes all the extra objects that we need to keep a current version of
 (the logo, the script to make the manual, etc.)
+
+dvieps is a prototype piece of code for converting dvi files into postscript strings.
