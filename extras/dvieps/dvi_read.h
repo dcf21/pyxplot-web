@@ -24,6 +24,8 @@
 #ifndef _PPL_DVI
 #define _PPL_DVI 1
 
+#include "dvi_list.h"
+
 // "Public" function definitions
 int ReadDviFile(char *filename);
 int ReadDviErrorString(char *error, int stlen);
@@ -41,10 +43,32 @@ typedef struct DVIOperator {
    char *s[2];
 } DVIOperator;
 
-// Structure to store the state of a dvi interpreter
-typedef struct dviStack {
+// Structure to store the state of a dvi interpreter that can be pushed onto the stack
+typedef struct dviStackState {
    signed long int h,v,w,x,y,z;
-} dviStack;
+} dviStackState;
+
+// Structure to store a page of postscript
+typedef struct postscriptPage {
+   signed double boundingBox[4];     // The current bounding box 
+   double position[2];               // The current position
+   dlListItem *text;                 // The big blob of postscript strings
+} postscriptPage;
+
+// Structure to store the state of some postscript in the process of being produced
+typedef struct postscriptState {
+   dlListItem *pages;                  // List of pages of postscript
+   int Npages;                         // The number of pages
+   postscriptPage *currentPage;        // The current page
+} postscriptState;
+
+// Structure to store the entire internal state of a dvi interpreter
+typedef struct dviInterpreterState {
+   signed long int h,v,w,x,y,z;  // Positions
+   unsigned int f;               // Current font
+   dlListItem *stack;            // The stack
+   postscriptState *output;      // The output postscript
+} dviInterpreterState;
 
 #define DVI_ERRORSTR_LEN 2048
 extern char DviErrorString[DVI_ERRORSTR_LEN];
