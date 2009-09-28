@@ -35,6 +35,6 @@ void dvi_error(char *error) {
 
 // Deal with fatal errors
 void dvi_fatal(char *func, int returnCode, char *error) {
-   sprintf("dvi: FATAL: %s: %s\n", func, error);
+   fprintf(stderr, "dvi: FATAL: %s: %s\n", func, error);
    exit(returnCode);
 }

@@ -108,6 +108,9 @@ void dlDeleteList(dlListItem *list) {
    dlListItem *item;
    // Find the beginning of the list, dealing with circular lists
    item = list;
+   // Check that we have not been asked to delete a non-existant list
+   if (item==NULL)
+      return;
    while ((item->prv != NULL) && (item->prv != list)) {
       item = item->prv;
    }
@@ -121,5 +124,24 @@ void dlDeleteList(dlListItem *list) {
       dlDeleteItem(item);
       item = next;
    }
+   return;
+}
+
+// Clear the data within an entire list.  Note that this will only work correctly if the
+// data does not contain pointers to things that also need freeing etc.
+void dlClearList(dlListItem *list) {
+   dlListItem *item;
+   // Find the beginning of the list, dealing with circular lists
+   item = list;
+   // Check that we have not been asked to clear a non-existant list
+   if (item==NULL)
+      return;
+   while ((item->prv != NULL) && (item->prv != list)) {
+      item = item->prv;
+   }
+   do {
+      free(item->p);
+      item = item->nxt;
+   } while (item != NULL && item != list);
    return;
 }

@@ -35,5 +35,6 @@ dlListItem *dpPrependItem(dlListItem *list);
 dlListItem *dlSpliceItem(dlListItem *list);
 dlListItem *dlDeleteItem(dlListItem *list);
 void dlDeleteList(dlListItem *list);
+void dlClearList(dlListItem *list);
 
 #endif

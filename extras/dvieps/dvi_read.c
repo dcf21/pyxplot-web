@@ -55,8 +55,11 @@ const char *dviops[58] = {
 int ReadDviFile(char *filename) {
    FILE *fp;
    DVIOperator op;
-   int err;
+   int err, i;
    dviInterpreterState *interpreter;
+
+   op.s[0] = NULL;
+   op.s[1] = NULL;
 
    // Set up the interpreter
    interpreter = dviNewInterpreter();
@@ -67,12 +70,31 @@ int ReadDviFile(char *filename) {
 
    /* Very simple DVI reader; just get each opcode and its attached data */
    while (!feof(fp)) {
-      if ((err=GetDVIOperator(&op, fp))!=0)
+      if ((err=GetDVIOperator(&op, fp))!=0) {
+         char s[1024];
+         snprintf(s, 1024, "Error %d in getting operator!", err);
+         dvi_error(s);
+         break;
          return err;
+      }
       DisplayDVIOperator(&op);
       // A slightly more sophisticated interpreter that makes some postscript
       dviInterpretOperator(interpreter, &op);
+      for (i=0; i<2; i++) {
+         if (op.s[i]!=NULL) {
+            free(op.s[i]);
+            op.s[i] = NULL;
+         }
+      }
+      // If we've hit the post post then we can break out
+      if (op.op==DVI_POSTPOST)
+         break;
    }
+
+   fclose(fp);
+
+   printf("About to delete the interpreter!\n");
+   dviDeleteInterpreter(interpreter);
 
 
    return 0;
@@ -84,8 +106,10 @@ int GetDVIOperator(DVIOperator *op, FILE *fp) {
    int i, v, err;
 
    // First read in the opcode
-   if ((err=ReadUChar(fp,&v))!=0)
+   if ((err=ReadUChar(fp,&v))!=0) {
+      dvi_error("Error reading operator from disc!");
       return err;
+   }
    op->op = v;
 
    // Now work out what it represents and get any extra data if needed
@@ -101,6 +125,8 @@ int GetDVIOperator(DVIOperator *op, FILE *fp) {
       Ndata = v - DVI_SET1234 + 1;
       if ((err=ReadLongInt(fp, op->ul, Ndata))!=0)
          return err;
+      // Set to DVI_SET1234 for convenience later (we don't need to know whether it's 1, 2, 3 or 4)
+      // op->op = DVI_SET1234;
       return 0;
 
    } else if (v == DVI_SETRULE) {
@@ -142,8 +168,10 @@ int GetDVIOperator(DVIOperator *op, FILE *fp) {
    } else if (v < DVI_RIGHT1234 + 4) {
       int Ndata;
       Ndata = v - DVI_RIGHT1234 + 1;
-      if ((err=ReadLongInt(fp, op->ul, Ndata))!=0)
+      if ((err=ReadSignedInt(fp, op->sl, Ndata))!=0)
          return err;
+      // Set to DVI_RIGHT1234 for convenience later (we don't need to know whether it's 1, 2, 3 or 4)
+      // op->op = DVI_RIGHT1234;
       return 0;
 
    } else if (v == DVI_W0) {
@@ -152,7 +180,7 @@ int GetDVIOperator(DVIOperator *op, FILE *fp) {
    } else if (v < DVI_W1234 + 4) {
       int Ndata;
       Ndata = v - DVI_W1234 + 1;
-      if ((err=ReadLongInt(fp, op->ul, Ndata))!=0)
+      if ((err=ReadSignedInt(fp, op->sl, Ndata))!=0)
          return err;
       return 0;
 
@@ -162,14 +190,14 @@ int GetDVIOperator(DVIOperator *op, FILE *fp) {
    } else if (v < DVI_X1234 + 4) {
       int Ndata;
       Ndata = v - DVI_X1234 + 1;
-      if ((err=ReadLongInt(fp, op->ul, Ndata))!=0)
+      if ((err=ReadSignedInt(fp, op->sl, Ndata))!=0)
          return err;
       return 0;
 
    } else if (v < DVI_DOWN1234 + 4) {
       int Ndata;
       Ndata = v - DVI_DOWN1234 + 1;
-      if ((err=ReadLongInt(fp, op->ul, Ndata))!=0)
+      if ((err=ReadSignedInt(fp, op->sl, Ndata))!=0)
          return err;
       return 0;
 
@@ -179,7 +207,7 @@ int GetDVIOperator(DVIOperator *op, FILE *fp) {
    } else if (v < DVI_Y1234 + 4) {
       int Ndata;
       Ndata = v - DVI_Y1234 + 1;
-      if ((err=ReadLongInt(fp, op->ul, Ndata))!=0)
+      if ((err=ReadSignedInt(fp, op->sl, Ndata))!=0)
          return err;
       return 0;
 
@@ -189,7 +217,7 @@ int GetDVIOperator(DVIOperator *op, FILE *fp) {
    } else if (v < DVI_Z1234 + 4) {
       int Ndata;
       Ndata = v - DVI_Z1234 + 1;
-      if ((err=ReadLongInt(fp, op->ul, Ndata))!=0)
+      if ((err=ReadSignedInt(fp, op->sl, Ndata))!=0)
          return err;
       return 0;
 
@@ -275,12 +303,13 @@ int GetDVIOperator(DVIOperator *op, FILE *fp) {
       if ((err=ReadUChar(fp,&v1))!=0)
          return err;
       op->ul[1] = v1;
-      // Mop up all the 233s
-      while ((err=ReadUChar(fp,&v1))==0) {
-         if (v1 != 233) {
-            return -1;
-         }
-      }
+      // Mop up all the 223s
+      /* while (!feof(fp)) {
+         if ((err=ReadUChar(fp,&v1))!=0)
+            return err;
+         if (v1 != 223)
+            return v1;
+      } */
       return 0;
    } else {
       dvi_error("Unidentified opcode in dvi file!");
@@ -298,7 +327,7 @@ int ReadUChar (FILE *fp, int *uc) {
    int i;
    i = getc(fp);
    if (i==EOF) {
-      dvi_error("Unexpected EOF in dvi file!");
+      dvi_fatal("Unexpected EOF in dvi file!", -1, "ReadUChar");
       return -1;
    }
    *uc = i;
