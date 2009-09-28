@@ -33,6 +33,7 @@ int ReadSignedInt (FILE *fp, signed long int *sli, int n);
 int DisplayDVIOperator(DVIOperator *op);
 int GetDVIOperator(DVIOperator *op, FILE *fp);
 
+// The following is useful for output sometimes
 const char *dviops[58] = {
    "set1", "set2", "set3", "set4",
    "setrule", 
@@ -54,9 +55,11 @@ const char *dviops[58] = {
 int ReadDviFile(char *filename) {
    FILE *fp;
    DVIOperator op;
-   int err, i;
+   int err;
+   dviInterpreterState *interpreter;
 
-   i=0;
+   // Set up the interpreter
+   interpreter = dviNewInterpreter();
 
    fp = fopen(filename, "r");
    if (fp==NULL)
@@ -64,20 +67,18 @@ int ReadDviFile(char *filename) {
 
    /* Very simple DVI reader; just get each opcode and its attached data */
    while (!feof(fp)) {
-      //printf("%d\n", ++i);
       if ((err=GetDVIOperator(&op, fp))!=0)
          return err;
       DisplayDVIOperator(&op);
+      // A slightly more sophisticated interpreter that makes some postscript
+      dviInterpretOperator(interpreter, &op);
    }
-   /*
-   for (i=128; i<250; i++) {
-      op.op = i;
-      printf("Operator %d\n", i);
-      DisplayDVIOperator(&op);
-   }
-   */
+
+
    return 0;
 }
+
+
    
 int GetDVIOperator(DVIOperator *op, FILE *fp) {
    int i, v, err;
@@ -350,8 +351,15 @@ int DisplayDVIOperator(DVIOperator *op) {
       }
       s = s2;
       //////printf("XXX 1\n");
+   } else if (op->op == DVI_PRE) {
+      snprintf(s2, 128, "%s %lu %lu %lu %lu", "pre", *(op->ul), *(op->ul+1), *(op->ul+2), *(op->ul+3));
+      s=s2;
    } else if (op->op < DVI_FNTNUMMIN) {
       s = (char *)dviops[op->op-DVI_CHARMAX-1];
+      if (strlen(s)==2 && (char)s[1]>'0') {
+         snprintf(s2, 128, "%s %lu", dviops[op->op-DVI_CHARMAX-1], *(op->ul));
+         s=s2;
+      }
       //printf("XXX 2\n");
    } else if (op->op <= DVI_FNTNUMMAX) {
       snprintf(s2, 128, "Font number %d", op->op);

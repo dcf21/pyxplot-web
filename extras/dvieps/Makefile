@@ -52,7 +52,7 @@ OBJDIR  = obj
 BINDIR  = bin
 
 
-SRC = dvi_read.c ppl_dvips.c dvi_error.c dvi_list.c dvi_lib.c
+SRC = dvi_read.c ppl_dvips.c dvi_error.c dvi_list.c dvi_lib.c dvi_interpreter.c
 HDR = dvi_read.h 
 
 OBJ = $(SRC:%.c=%.o)
