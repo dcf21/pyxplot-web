@@ -51,7 +51,7 @@ typedef struct dviStackState {
 // Structure to store a page of postscript
 typedef struct postscriptPage {
    double *boundingBox;     // The current bounding box 
-   double position[2];               // The current position
+   //double position[2];               // The current position
    dlListItem *text;                 // The big blob of postscript strings
 } postscriptPage;
 
@@ -60,6 +60,7 @@ typedef struct postscriptState {
    dlListItem *pages;                  // List of pages of postscript
    int Npages;                         // The number of pages
    postscriptPage *currentPage;        // The current page
+   dviStackState *currentPosition;     // The current position in dvi units
 } postscriptState;
 
 // Structure to store the entire internal state of a dvi interpreter
@@ -77,10 +78,16 @@ typedef struct dviInterpreterState {
 dviInterpreterState *dviNewInterpreter();
 void dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op);
 void dviDeleteInterpreter(dviInterpreterState *interp);
+void dviTypeset(dviInterpreterState *interp);
+
+dviStackState *dviCloneInterpState(dviStackState *state);
 
 postscriptPage *dviNewPostscriptPage();
 void dviDeletePostscriptPage(postscriptPage *page);
 void dviDeletePostscriptState(postscriptState *state);
+
+void dviPostscriptMoveto(dviInterpreterState *interp);
+void dviPostscriptAppend(dviInterpreterState *interp, char *s);
 
 
 #define DVI_ERRORSTR_LEN 2048

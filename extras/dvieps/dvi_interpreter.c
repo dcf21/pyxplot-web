@@ -28,6 +28,8 @@
 #include "dvi_read.h"
 #include "dvi_lib.h"
 
+#define SHORT_STRLEN 2048
+
 // Interpreter functions for various types of dvi operators
 int dviInOpChar(dviInterpreterState *interp, DVIOperator *op);
 int dviInOpSet1234(dviInterpreterState *interp, DVIOperator *op);
@@ -197,8 +199,9 @@ int dviInOpPush(dviInterpreterState *interp, DVIOperator *op) {
       newItem = dlAppendItem(interp->stack);
    }
    // Create a new stack object and clone the stack on to it
-   newItem->p = mallocx(sizeof(dviStackState));
-   memcpy(newItem->p, (void *)interp->state, sizeof(dviStackState));
+   newItem->p = (void *)dviCloneInterpState(interp->state);
+   /* mallocx(sizeof(dviStackState));
+   memcpy(newItem->p, (void *)interp->state, sizeof(dviStackState)); */
    return 0;
 }
 //
@@ -391,7 +394,6 @@ void dviDeleteInterpreter(dviInterpreterState *interp) {
    
    // Delete the interpreter shell
    free(interp);
-   printf("Freeing the interpreter!\n");
 }
    
 
@@ -432,9 +434,10 @@ postscriptPage *dviNewPostscriptPage() {
    postscriptPage *page;
    page = (postscriptPage *)mallocx(sizeof(postscriptPage));
    page->boundingBox = NULL;
-   page->position[0] = 0;
-   page->position[1] = 0;
+   //page->position[0] = 0;
+   //page->position[1] = 0;
    page->text = NULL;
+   //page->currentPosition = NULL; // No position set initially
    return page;
 }
 
@@ -463,8 +466,86 @@ void dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op) {
       printf("FAILed to find function for operator %d i=%d !\n", op->op, i);
       return;
    }
+
+   // If we are not typesetting a character and moving right, check if we need to set accumulated text
+   if (op->op > DVI_SET1234+3 && interp->currentString != NULL)
+      dviTypeset(interp);
+
    ret = (*func)(interp, op);
    printf("State: h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", interp->state->h, interp->state->v, interp->state->w, interp->state->x, interp->state->y, interp->state->z);
    printf("\n");
    return;
 }
+
+// Clone an interpreter state, returning a pointer to the new version
+// XXX Make the name of this function consistent with usage elsewhere or vice versa
+dviStackState *dviCloneInterpState(dviStackState *orig) {
+   void *clone;
+   clone = mallocx(sizeof(dviStackState));
+   memcpy(clone, (void *)orig, sizeof(dviStackState));
+   return (dviStackState *) clone;
+}
+
+// Write some postscript to move to the current co-ordinates
+void dviPostscriptMoveto(dviInterpreterState *interp) {
+   char s[SHORT_STRLEN];
+   double x, y;
+   x = interp->state->h * interp->scale;
+   y = -1 * interp->state->v * interp->scale;
+   snprintf(s, SHORT_STRLEN, "%f %f moveto\n", x, y);
+   dviPostscriptAppend(interp, s);
+   // If we don't have a current position make one, else set the current ps position to the dvi one
+   if (interp->output->currentPosition == NULL) {
+      interp->output->currentPosition = dviCloneInterpState(interp->state);
+   } else {
+      interp->output->currentPosition->h = interp->state->h;
+      interp->output->currentPosition->v = interp->state->v;
+   }
+}
+
+// Append a string to the set of postscript strings
+void dviPostscriptAppend(dviInterpreterState *interp, char *new) {
+   dlListItem *item;   // Temporary storage for a list item
+   char *s;            // A temporary string pointer
+   int len;
+   // Check to see if there are any strings there already
+   if (interp->output->currentPage->text == NULL) {
+      interp->output->currentPage->text = dlNewList();
+      item = interp->output->currentPage->text;
+   } else {
+      item = dlAppendItem(interp->output->currentPage->text);
+   }
+   // Grab the new string and copy it into place
+   len = strlen(new)+1;
+   s = (char *)mallocx(len*sizeof(char));
+   strncpy(s, new, len);
+   item->p = (void *)s;
+   return;
+}
+
+
+
+
+
+// Typeset some text
+void dviTypeset(dviInterpreterState *interp) {
+   // This subroutine does the bulk of the actual postscript work, typesetting runs of characters
+   // XXX Currently assume that all characters are the same width and height
+   dviStackState *postPos, *dviPos;   // Current positions in dvi and postscript code
+   postPos = interp->output->currentPosition;
+   dviPos = interp->state;
+   
+   // First check if we need to move before typesetting
+   if (postPos== NULL) {
+      dviPostscriptMoveto(interp);
+      interp->output->currentPosition = dviCloneInterpState(dviPos);
+   } else if (postPos->h != dviPos->h || postPos->v != dviPos->h) {
+      dviPostscriptMoveto(interp);
+   }
+
+
+   // XXX Do some more stuff here!
+}
+
+
+                   

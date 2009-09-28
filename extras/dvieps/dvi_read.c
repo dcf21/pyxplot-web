@@ -93,7 +93,6 @@ int ReadDviFile(char *filename) {
 
    fclose(fp);
 
-   printf("About to delete the interpreter!\n");
    dviDeleteInterpreter(interpreter);
 
 
