@@ -89,6 +89,8 @@ void dviDeletePostscriptState(postscriptState *state);
 void dviPostscriptMoveto(dviInterpreterState *interp);
 void dviPostscriptAppend(dviInterpreterState *interp, char *s);
 
+float dviGetCharWidth(dviInterpreterState *interp, char s);
+float dviGetCharHeight(dviInterpreterState *interp, char s);
 
 #define DVI_ERRORSTR_LEN 2048
 extern char DviErrorString[DVI_ERRORSTR_LEN];

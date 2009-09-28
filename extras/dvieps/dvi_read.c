@@ -33,6 +33,8 @@ int ReadSignedInt (FILE *fp, signed long int *sli, int n);
 int DisplayDVIOperator(DVIOperator *op);
 int GetDVIOperator(DVIOperator *op, FILE *fp);
 
+void outputPostscript(FILE *fp, dviInterpreterState *interp);
+
 // The following is useful for output sometimes
 const char *dviops[58] = {
    "set1", "set2", "set3", "set4",
@@ -91,6 +93,10 @@ int ReadDviFile(char *filename) {
          break;
    }
 
+   fclose(fp);
+
+   fp = fopen("output.ps", "w");
+   outputPostscript(fp, interpreter);
    fclose(fp);
 
    dviDeleteInterpreter(interpreter);
@@ -406,3 +412,31 @@ int DisplayDVIOperator(DVIOperator *op) {
    printf("%s\n", s);
    return 0;
 }
+
+
+void outputPostscript(FILE *fp, dviInterpreterState *interp) {
+   dlListItem *page = interp->output->pages;
+   dlListItem *text;
+   int i=0;
+
+
+   fprintf(fp, "%%!PS-Adobe-2.0\n");
+   fprintf(fp, "%%%%Title: pp output\n");
+   fprintf(fp, "%%%%Pages: %d\n", interp->output->Npages);
+   fprintf(fp, "%%%%EndComments\n");
+   fprintf(fp, "\n");
+   while (page != NULL) {
+      ++i;
+      fprintf(fp, "%%%%Page: %d %d\n", i, i);
+      fprintf(fp, "/Times-Roman 12 selectfont\n");
+      text = ((postscriptPage *)(page->p))->text;
+      while (text != NULL) {
+         fprintf(fp, "%s", (char *)text->p);
+         text = text->nxt;
+      }
+      fprintf(fp, "showpage\n");
+      page = page->nxt;
+   }
+}
+
+

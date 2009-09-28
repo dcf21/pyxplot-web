@@ -127,8 +127,29 @@ void makeDviOpTable() {
 
 // Interpreter functions for various types of dvi operators
 int dviInOpChar(dviInterpreterState *interp, DVIOperator *op) {
+   int charToTypeset = op->op;
+   char *s;
+
+   // XXX fix up typesetting of odd characters
+   if (charToTypeset<31 || charToTypeset > 126)
+      return 0;
+
+   // See if we have anywhere to put the character
+   if (interp->currentString == NULL) {
+      interp->currentString = (char *)mallocx(SHORT_STRLEN*sizeof(char));
+      *(interp->currentString) = '\0';
+      interp->currentStrlen = SHORT_STRLEN;
+   // If the string is full, extend it
+   } else if (strlen(interp->currentString) == interp->currentStrlen-1) {
+      interp->currentStrlen += SHORT_STRLEN;
+      interp->currentString = (char *) realloc(interp->currentString, interp->currentStrlen*sizeof(char));
+   }
+   // Write the character to the string
+   s = interp->currentString+strlen(interp->currentString); // s now points to the \0
+   snprintf(s, 2, "%s", (char *)&charToTypeset);
    return 0;
 }
+
 int dviInOpSet1234(dviInterpreterState *interp, DVIOperator *op) {
    return 0;
 }
@@ -468,7 +489,8 @@ void dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op) {
    }
 
    // If we are not typesetting a character and moving right, check if we need to set accumulated text
-   if (op->op > DVI_SET1234+3 && interp->currentString != NULL)
+   // if (op->op > DVI_SET1234+3 && interp->currentString != NULL)
+   if (interp->currentString != NULL)
       dviTypeset(interp);
 
    ret = (*func)(interp, op);
@@ -491,7 +513,7 @@ void dviPostscriptMoveto(dviInterpreterState *interp) {
    char s[SHORT_STRLEN];
    double x, y;
    x = interp->state->h * interp->scale;
-   y = -1 * interp->state->v * interp->scale;
+   y = 200 - interp->state->v * interp->scale;
    snprintf(s, SHORT_STRLEN, "%f %f moveto\n", x, y);
    dviPostscriptAppend(interp, s);
    // If we don't have a current position make one, else set the current ps position to the dvi one
@@ -532,6 +554,10 @@ void dviTypeset(dviInterpreterState *interp) {
    // This subroutine does the bulk of the actual postscript work, typesetting runs of characters
    // XXX Currently assume that all characters are the same width and height
    dviStackState *postPos, *dviPos;   // Current positions in dvi and postscript code
+   char *s;
+   double width, height;
+   int chars;
+
    postPos = interp->output->currentPosition;
    dviPos = interp->state;
    
@@ -542,10 +568,46 @@ void dviTypeset(dviInterpreterState *interp) {
    } else if (postPos->h != dviPos->h || postPos->v != dviPos->h) {
       dviPostscriptMoveto(interp);
    }
+   s = interp->currentString;
+   width = 0.;
+   height = 0.;
+   while (*s != '\0') {
+      double h = dviGetCharHeight(interp, *s);
+      width += dviGetCharWidth(interp, *s);
+      height = h>height?h:height;
+      s++;
+   }
+   // Convert back into dvi units
+   width /= interp->scale;
+   height /= interp->scale;
+   // XXX Here check up on the bounding box
+   
+   // Count the number of characters to write to the ps string
+   chars = strlen(interp->currentString)+9;
+   s = (char *)mallocx(chars*sizeof(char));
+   snprintf(s, chars, "(%s) show\n", interp->currentString);
+   
+   // Send the string off to the postscript routine and clean up memory
+   dviPostscriptAppend(interp, s);
+   free(s);
+   free(interp->currentString);
+   interp->currentString = NULL;
+   interp->currentStrlen = 0;
 
-
-   // XXX Do some more stuff here!
+   // Adjust the current position
+   interp->state->h += width;
+   interp->output->currentPosition->h += width;
+   return;
 }
 
+// Get the height of a character to be rendered
+float dviGetCharHeight(dviInterpreterState *interp, char s) {
+   // XXX Write this function (requires font knowledge...)
+   return 12.;
+}
 
-                   
+// Get the width of a character to be rendered
+float dviGetCharWidth(dviInterpreterState *interp, char s) {
+   // XXX Write this function (requires font knowledge...)
+   return 8.;
+}

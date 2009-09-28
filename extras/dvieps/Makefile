@@ -53,7 +53,7 @@ BINDIR  = bin
 
 
 SRC = dvi_read.c ppl_dvips.c dvi_error.c dvi_list.c dvi_lib.c dvi_interpreter.c
-HDR = dvi_read.h 
+HDR = dvi_read.h dvi_lib.h dvi_list.h
 
 OBJ = $(SRC:%.c=%.o)
 
