@@ -40,7 +40,7 @@ VERSION = 0.8.0
 DATE    = 36/15/2012
 
 COMPILE = $(CC) -Wall -c -g 
-LINK    = $(CC) -Wall -lm -lreadline -ljpeg -g 
+LINK    = $(CC) -Wall -lm -lreadline -ljpeg -lkpathsea -g 
 
 OPTIMISATION = -O0
 
@@ -52,8 +52,8 @@ OBJDIR  = obj
 BINDIR  = bin
 
 
-SRC = dvi_read.c ppl_dvips.c dvi_error.c dvi_list.c dvi_lib.c dvi_interpreter.c
-HDR = dvi_read.h dvi_lib.h dvi_list.h
+SRC = dvi_read.c ppl_dvips.c dvi_error.c dvi_list.c dvi_lib.c dvi_interpreter.c dvi_font.c
+HDR = dvi_read.h dvi_lib.h dvi_list.h dvi_font.h
 
 OBJ = $(SRC:%.c=%.o)
 

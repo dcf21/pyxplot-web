@@ -27,6 +27,7 @@
 
 #include "dvi_read.h"
 #include "dvi_lib.h"
+#include "dvi_font.h"
 
 #define SHORT_STRLEN 2048
 
@@ -326,7 +327,40 @@ int dviInOpSpecial1234(dviInterpreterState *interp, DVIOperator *op) {
    return 0;
 }
 
+// DVI_FNTDEF1234
 int dviInOpFntdef1234(dviInterpreterState *interp, DVIOperator *op) {
+   // XXX Should perhaps check that we're not re-defining an existing font here
+   // XXX Should check that we're not after POST and hence that we need to do this
+   dlListItem *item;
+   dviFontDetails *font;
+   int i;
+
+   // Create a list place to put the font in and a structure for it
+   if (interp->fonts == NULL) {
+      item = dlNewList();
+      interp->fonts = item;
+   } else {
+      item = dlAppendItem(interp->fonts);
+   }
+   font = mallocx(sizeof(dviFontDetails));
+   item->p = (void *)font;
+   // Populate with information from operator
+   font->number = op->ul[0];
+   font->area = (char *)mallocx((op->ul[4]+1)*sizeof(char));
+   for (i=0; i<op->ul[4]; i++)
+      font->area[i] = op->s[0][i];
+   font->area[op->ul[4]] = '\0';
+   font->name = (char *)malloc((op->ul[5]+1)*sizeof(char));
+   for (i=0; i<op->ul[5]; i++)
+      font->name[i] = op->s[0][op->ul[4]+i];
+   font->name[op->ul[5]] = '\0';
+   font->useSize = op->ul[2];
+   font->desSize = op->ul[3];
+
+   // parse the TFM file for useful data
+   dviGetTFM(font);
+
+   // XXX Do some more funky shit
    return 0;
 }
 
@@ -379,6 +413,8 @@ dviInterpreterState *dviNewInterpreter() {
    // No string currently being assembled
    interp->currentString = NULL;
    interp->currentStrlen = 0;
+   // No fonts currently
+   interp->fonts = NULL;
 
    // Make the big table of operators
    makeDviOpTable();

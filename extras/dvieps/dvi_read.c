@@ -26,10 +26,13 @@
 #include <string.h>
 
 #include "dvi_read.h"
+#include "dvi_lib.h"
+#include "dvi_font.h"
 
 int ReadUChar (FILE *fp, int *uc);
 int ReadLongInt (FILE *fp, unsigned long int *uli, int n);
 int ReadSignedInt (FILE *fp, signed long int *sli, int n);
+double ReadFixWord(FILE *fp);
 int DisplayDVIOperator(DVIOperator *op);
 int GetDVIOperator(DVIOperator *op, FILE *fp);
 
@@ -101,12 +104,12 @@ int ReadDviFile(char *filename) {
 
    dviDeleteInterpreter(interpreter);
 
-
    return 0;
 }
 
-
-   
+// Read in a DVI Operator and any additional data that it comes with   
+// A useful reference for the meaning and size of the additional data is
+// http://www-users.math.umd.edu/~asnowden/comp-cont/dvi.html
 int GetDVIOperator(DVIOperator *op, FILE *fp) {
    int i, v, err;
 
@@ -257,10 +260,7 @@ int GetDVIOperator(DVIOperator *op, FILE *fp) {
             return err;
       }
       Ndata = op->ul[4] + op->ul[5];
-      // XXX In pyxplot, replace this with a call to crackmalloc XXX
-      op->s[0] = (char *)malloc((Ndata+1)*sizeof(char));
-      if (op->s==NULL) 
-         dvi_fatal("dvi_read.c", 1, "malloc");
+      op->s[0] = (char *)mallocx((Ndata+1)*sizeof(char));
       op->s[0][Ndata] = '\0';
       for (i=0; i<Ndata; i++) {
          int j;
@@ -384,10 +384,15 @@ int DisplayDVIOperator(DVIOperator *op) {
          snprintf(s2, 128, "Character %d", i);
       }
       s = s2;
-      //////printf("XXX 1\n");
+
+      // Special cases
    } else if (op->op == DVI_PRE) {
       snprintf(s2, 128, "%s %lu %lu %lu %lu", "pre", *(op->ul), *(op->ul+1), *(op->ul+2), *(op->ul+3));
       s=s2;
+   } else if (op->op == DVI_FNTDEF1234) {
+      snprintf(s2, 128, "%s N=%lu d=%lu n=%s", "fnt def", *(op->ul), *(op->ul+4), (op->s[0]));
+      s=s2;
+
    } else if (op->op < DVI_FNTNUMMIN) {
       s = (char *)dviops[op->op-DVI_CHARMAX-1];
       if (strlen(s)==2 && (char)s[1]>'0') {
@@ -414,11 +419,13 @@ int DisplayDVIOperator(DVIOperator *op) {
 }
 
 
+// This is a test routine that turns the output of parsing the dvi file
+// into a multi-page (if appropriate) ps file (so emulates dvips) for testing
+// purposes.
 void outputPostscript(FILE *fp, dviInterpreterState *interp) {
    dlListItem *page = interp->output->pages;
    dlListItem *text;
    int i=0;
-
 
    fprintf(fp, "%%!PS-Adobe-2.0\n");
    fprintf(fp, "%%%%Title: pp output\n");
@@ -437,6 +444,124 @@ void outputPostscript(FILE *fp, dviInterpreterState *interp) {
       fprintf(fp, "showpage\n");
       page = page->nxt;
    }
+}
+
+// TFM-related routines
+dviTFM *dviReadTFM(FILE *fp) {
+   dviTFM *tfm;
+   unsigned long int buff[12];
+   int i;
+   int lh;
+   int Nchars;
+
+   tfm = (dviTFM *)mallocx(sizeof(dviTFM));
+
+   // Read the file header
+   for (i=0; i<12; i++) {
+      ReadLongInt(fp, buff+i, 2);
+   }
+   tfm->lf = buff[0];
+   tfm->lh = buff[1];
+   tfm->bc = buff[2];
+   tfm->ec = buff[3];
+   tfm->nw = buff[4];
+   tfm->nh = buff[5];
+   tfm->nd = buff[6];
+   tfm->ni = buff[7];
+   tfm->nl = buff[8];
+   tfm->nk = buff[9];
+   tfm->ne = buff[10];
+   tfm->np = buff[11];
+   // We should have lf=6+lh+(ec-bc+1)+nw+nh+nd+ni+nl+nk+ne+np
+
+   // Read the header (distinct from the file header...)
+   lh = tfm->lh;
+   ReadLongInt(fp, buff, 4); tfm->checksum = buff[0]; 
+   lh--;
+   tfm->ds = ReadFixWord(fp);
+   lh--;
+   if (lh>40) {
+      int len;
+      ReadUChar(fp, &len);
+      if (len>39) {
+         dvi_error("Malformed DVI header!  coding len>40!");
+         len=39;
+      }
+      for (i=0; i<39; i++) {
+         ReadUChar(fp,&len); tfm->coding[i] = len;
+      }
+      tfm->coding[len] = '\0';
+      lh-=10;
+   }
+   if (lh>20) {
+      int len;
+      ReadUChar(fp, &len);
+      if (len>19) {
+         dvi_error("Malformed DVI header!  coding len>19!");
+         len=19;
+      }
+      for (i=0; i<19; i++) {
+         int t;
+         ReadUChar(fp,&t); tfm->family[i] = t;
+      }
+      tfm->family[len] = '\0';
+      lh-=5;
+   }
+   if (lh>0) {
+      int temp;
+      ReadUChar(fp, &temp);
+      ReadUChar(fp, &temp);
+      tfm->face = temp;
+      ReadUChar(fp, &temp);
+      ReadUChar(fp, &temp);
+      lh--;
+   }
+   while (lh>0) {
+      unsigned long int i;
+      ReadLongInt(fp, &i, 4);
+      lh--;
+   }
+
+   // Good, now we've got that over with...
+   // Read the char info tables
+   Nchars = tfm->ec - tfm->bc + 1;
+   tfm->charInfo = (TFMcharInfo *)mallocx(Nchars*sizeof(TFMcharInfo));
+   for (i=0; i<Nchars; i++) {
+      int j;
+      int t[4];
+      for (j=0; j<4; j++) {
+         ReadUChar(fp, t+j);
+      }
+      (tfm->charInfo+i)->wi = t[0];
+      (tfm->charInfo+i)->hi = t[1]<<4;
+      (tfm->charInfo+i)->di = t[1]&0xf;
+      (tfm->charInfo+i)->ii = t[2]<<2;
+      (tfm->charInfo+i)->tag = t[2]&0x3;
+      (tfm->charInfo+i)->remainder = t[3];
+   }
+
+   // Read the width, height and depth tables
+   tfm->width = (double *)mallocx(tfm->nw*sizeof(double));
+
+      
+
+
+
+
+
+
+   return tfm;
+}
+
+// Read a TFM "fix_word", a signed four-byte int with the dp after 12 bits
+// Note the lack of error handling!
+double ReadFixWord(FILE *fp) {
+   double fw;
+   long signed int li;
+   const long int twoP20 = 1048576; // 2**20
+   ReadSignedInt(fp, &li, 4);
+   fw = (double) li / (double) twoP20;
+   return fw;
 }
 
 

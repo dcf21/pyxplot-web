@@ -71,6 +71,7 @@ typedef struct dviInterpreterState {
    int currentStrlen;            //       and its current length
    double scale;                 // Scale from dvi->ps units
    dlListItem *stack;            // The stack
+   dlListItem *fonts;            // The fonts currently defined
    postscriptState *output;      // The output postscript
 } dviInterpreterState;
 
@@ -122,7 +123,7 @@ extern char DviErrorString[DVI_ERRORSTR_LEN];
 #define DVI_FNTNUMMAX   234 // set current font (range max)
 #define DVI_FNT1234     238 // set current font
 #define DVI_SPECIAL1234 242 // special (dvi extention)
-#define DVI_FNTDEF1234  246 // define the meaning of a font number
+#define DVI_FNTDEF1234  243 // define the meaning of a font number
 #define DVI_PRE         247 // preamble
 #define DVI_POST        248 // postamble beginning
 #define DVI_POSTPOST    249 // postamble ending
