@@ -537,7 +537,7 @@ dviTFM *dviReadTFM(FILE *fp) {
       (tfm->charInfo+i)->di = t[1]&0xf;
       (tfm->charInfo+i)->ii = t[2]<<2;
       (tfm->charInfo+i)->tag = t[2]&0x3;
-      (tfm->charInfo+i)->remainder = t[3];
+      (tfm->charInfo+i)->rem = t[3];
    }
 
    // Read the width, height and depth tables
