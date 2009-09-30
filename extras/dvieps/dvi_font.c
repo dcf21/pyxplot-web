@@ -33,6 +33,7 @@
 void dviGetTFM(dviFontDetails *font) {
    char *TFMpath;
    char *s;
+   FILE *TFMfp;
    // Prod kpathsea
    kpse_set_program_name("pyxplot8", NULL);
    // kpse_init_prog();
@@ -40,5 +41,8 @@ void dviGetTFM(dviFontDetails *font) {
    sprintf(s, "%s.tfm", font->name);
    TFMpath = (char *)kpse_find_tfm(s);
    printf("Font file %s: TFM path: %s\n", font->name, TFMpath);
+   TFMfp = fopen(TFMpath, "r");
+   font->tfm = dviReadTFM(TFMfp);
+
    return;
 }

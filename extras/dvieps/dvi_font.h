@@ -69,7 +69,7 @@ typedef struct dviTFM {
    double *width, *height, *depth, *italic;
    TFMligKern *ligKern;
    double *kern;
-   TFMextRec * extensibleRecipie;
+   TFMextRec * extensibleRecipe;
    double *param;
 } dviTFM;
 

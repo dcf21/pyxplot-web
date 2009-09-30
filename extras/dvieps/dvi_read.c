@@ -401,7 +401,7 @@ int DisplayDVIOperator(DVIOperator *op) {
       }
       //printf("XXX 2\n");
    } else if (op->op <= DVI_FNTNUMMAX) {
-      snprintf(s2, 128, "Font number %d", op->op);
+      snprintf(s2, 128, "Font number %d", op->op-DVI_FNTNUMMIN);
       s = s2;
       //printf("XXX 3\n");
    } else if (op->op <= DVI_POSTPOST) {
@@ -454,6 +454,8 @@ dviTFM *dviReadTFM(FILE *fp) {
    int lh;
    int Nchars;
 
+   char *tit[12] = {"lf", "lh", "bc", "ec", "nw", "nh", "nd", "ni", "nl", "nk", "ne", "np"};
+
    tfm = (dviTFM *)mallocx(sizeof(dviTFM));
 
    // Read the file header
@@ -472,7 +474,17 @@ dviTFM *dviReadTFM(FILE *fp) {
    tfm->nk = buff[9];
    tfm->ne = buff[10];
    tfm->np = buff[11];
+   // XXX Debugging output
+   printf("TFM! ");
+   for (i=0; i<12; i++) {
+      printf("%s:%lu  ", tit[i], buff[i]);
+   }
+   printf("\n");
+   
    // We should have lf=6+lh+(ec-bc+1)+nw+nh+nd+ni+nl+nk+ne+np
+   if (tfm->lf != 6 + tfm->lh + tfm->ec - tfm->bc + 1 + tfm->nw + tfm->nh + tfm->nd + tfm->ni + tfm->nl + tfm->nk + tfm->ne + tfm->np) {
+      dvi_fatal("ReadTFM", -1, "TFM fail");
+   }
 
    // Read the header (distinct from the file header...)
    lh = tfm->lh;
@@ -480,20 +492,23 @@ dviTFM *dviReadTFM(FILE *fp) {
    lh--;
    tfm->ds = ReadFixWord(fp);
    lh--;
-   if (lh>40) {
+   printf("TFM: lh now %d\n", lh);
+   if (lh>10) {
       int len;
       ReadUChar(fp, &len);
+      printf("TFM: Coding length: %d\n", len);
       if (len>39) {
          dvi_error("Malformed DVI header!  coding len>40!");
          len=39;
       }
       for (i=0; i<39; i++) {
-         ReadUChar(fp,&len); tfm->coding[i] = len;
+         int t;
+         ReadUChar(fp,&t); tfm->coding[i] = t;
       }
       tfm->coding[len] = '\0';
       lh-=10;
    }
-   if (lh>20) {
+   if (lh>5) {
       int len;
       ReadUChar(fp, &len);
       if (len>19) {
@@ -507,6 +522,7 @@ dviTFM *dviReadTFM(FILE *fp) {
       tfm->family[len] = '\0';
       lh-=5;
    }
+   printf("TFM: coding:%s: family:%s: lh now %d\n", tfm->coding, tfm->family, lh);
    if (lh>0) {
       int temp;
       ReadUChar(fp, &temp);
@@ -540,15 +556,61 @@ dviTFM *dviReadTFM(FILE *fp) {
       (tfm->charInfo+i)->rem = t[3];
    }
 
-   // Read the width, height and depth tables
-   tfm->width = (double *)mallocx(tfm->nw*sizeof(double));
+   // Read the width, height, depth & italic tables
+   tfm->width  = (double *)mallocx(tfm->nw*sizeof(double));
+   tfm->height = (double *)mallocx(tfm->nh*sizeof(double));
+   tfm->depth  = (double *)mallocx(tfm->nd*sizeof(double));
+   tfm->italic = (double *)mallocx(tfm->ni*sizeof(double));
+   for (i=0; i<tfm->nw; i++) {
+      tfm->width[i] = ReadFixWord(fp);
+   }
+   for (i=0; i<tfm->nh; i++) {
+      tfm->height[i] = ReadFixWord(fp);
+   }
+   for (i=0; i<tfm->nd; i++) {
+      tfm->depth[i] = ReadFixWord(fp);
+   }
+   for (i=0; i<tfm->ni; i++) {
+      tfm->italic[i] = ReadFixWord(fp);
+   }
 
-      
+   // Read the lig_kern table
+   tfm->ligKern = (TFMligKern *)mallocx(tfm->nl*sizeof(TFMligKern));
+   for (i=0; i<tfm->nl; i++) {
+      int j;
 
+      ReadUChar(fp, &j);
+      (tfm->ligKern+i)->skip_byte = j;
+      ReadUChar(fp, &j);
+      (tfm->ligKern+i)->next_char = j;
+      ReadUChar(fp, &j);
+      (tfm->ligKern+i)->op_byte = j;
+      ReadUChar(fp, &j);
+      (tfm->ligKern+i)->remainder = j;
+   }
 
+   // Read the kern table
+   tfm->kern = (double *)mallocx(tfm->nk*sizeof(double));
+   for (i=0; i<tfm->nk; i++) {
+      tfm->kern[i] = ReadFixWord(fp);
+   }
 
+   // Read the extensible character recipies
+   tfm->extensibleRecipe = (TFMextRec *)mallocx(tfm->ne*sizeof(TFMextRec));
+   for (i=0; i<tfm->ne; i++) {
+      int j;
+      ReadUChar(fp, &j);
+      (tfm->extensibleRecipe+i)->top = j;
+      ReadUChar(fp, &j);
+      (tfm->extensibleRecipe+i)->mid = j;
+      ReadUChar(fp, &j);
+      (tfm->extensibleRecipe+i)->bot = j;
+      ReadUChar(fp, &j);
+      (tfm->extensibleRecipe+i)->rep = j;
+   }
 
-
+   // We should read in the param aray at this point, but let's see if 
+   // we can get away without doing, eh?
 
    return tfm;
 }
