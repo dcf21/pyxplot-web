@@ -425,13 +425,30 @@ int DisplayDVIOperator(DVIOperator *op) {
 void outputPostscript(FILE *fp, dviInterpreterState *interp) {
    dlListItem *page = interp->output->pages;
    dlListItem *text;
+   dlListItem *font;
+   char *pfaFile;
+   FILE *fp2;
    int i=0;
+   int c;
 
    fprintf(fp, "%%!PS-Adobe-2.0\n");
    fprintf(fp, "%%%%Title: pp output\n");
    fprintf(fp, "%%%%Pages: %d\n", interp->output->Npages);
    fprintf(fp, "%%%%EndComments\n");
    fprintf(fp, "\n");
+   // Include the fonts
+   font = interp->fonts;
+   while (font != NULL) {
+      pfaFile = ((dviFontDetails *)font->p)->pfbPath;
+      fp2 = fopen(pfaFile, "r");
+      while ((c=getc(fp2))!=EOF) {
+         putc(c, fp);
+      }
+      fclose(fp2);
+      font = font->nxt;
+   }
+
+
    while (page != NULL) {
       ++i;
       fprintf(fp, "%%%%Page: %d %d\n", i, i);

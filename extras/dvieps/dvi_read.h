@@ -67,6 +67,7 @@ typedef struct postscriptState {
 typedef struct dviInterpreterState {
    dviStackState *state;         // h,v,w,x,y,z;  // Positions
    unsigned int f;               // Current font
+   dlListItem *curFnt;           //       and a pointer to it
    char *currentString;          // The string, if any, currently being rendered
    int currentStrlen;            //       and its current length
    double scale;                 // Scale from dvi->ps units

@@ -313,7 +313,35 @@ int dviInOpZ1234(dviInterpreterState *interp, DVIOperator *op) {
    return 0;
 }
 
+// DVI_FNTi
 int dviInOpFnt(dviInterpreterState *interp, DVIOperator *op) {
+   dlListItem *item;
+   int len;
+   char *s;
+   int fn = op->op - DVI_FNTNUMMIN;
+   interp->f = fn;
+   // Find the font in the list
+   interp->curFnt = NULL;
+   item = interp->fonts;
+   while (item != NULL) {
+      if (((dviFontDetails *)item->p)->number == fn) {
+         interp->curFnt = item;
+         break;
+      }
+      item = item->nxt;
+   }
+   if (interp->curFnt == NULL) {
+      dvi_error("Corrupt DVI file: failed to find current font!");
+      return 2;
+   }
+
+   // XXX Font size???
+   len = strlen(((dviFontDetails *)item->p)->name) + 18;
+   //\XXX 12 selectfont\n\0
+   s = (char *)mallocx(len*sizeof(char));
+   snprintf(s, len, "\\%s 12 selectfont\n", ((dviFontDetails *)item->p)->name);
+   dviPostscriptAppend(interp, s);
+   free(s);
    return 0;
 }
 
@@ -378,6 +406,7 @@ int dviInOpPre(dviInterpreterState *interp, DVIOperator *op) {
    // Convert mag, num and den into points (for ps)
    interp->scale = (double)mag / 1000. * (double)num / (double)den
            / 1.e4 / 25.4 * 72.;    
+   printf("Scale %g\n", interp->scale);
    return 0;
 }
 int dviInOpPost(dviInterpreterState *interp, DVIOperator *op) {
@@ -409,6 +438,7 @@ dviInterpreterState *dviNewInterpreter() {
    interp->state->y=0;
    interp->state->z=0;
    interp->f=0;
+   interp->curFnt = NULL;
    interp->scale=0.;
    // No string currently being assembled
    interp->currentString = NULL;
@@ -616,6 +646,7 @@ void dviTypeset(dviInterpreterState *interp) {
    // Convert back into dvi units
    width /= interp->scale;
    height /= interp->scale;
+   printf("width of glyph %g height of glyph %g\n", width, height);
    // XXX Here check up on the bounding box
    
    // Count the number of characters to write to the ps string
@@ -645,5 +676,18 @@ float dviGetCharHeight(dviInterpreterState *interp, char s) {
 // Get the width of a character to be rendered
 float dviGetCharWidth(dviInterpreterState *interp, char s) {
    // XXX Write this function (requires font knowledge...)
-   return 8.;
+   dviTFM *tfm;       // Details of this font
+   int chnum;                 // Character number in this font
+   TFMcharInfo *chin;         // Character info for this character
+   int wi;                    // Width index
+   double width;              // Final character width
+   
+   tfm = ((dviFontDetails *)interp->curFnt->p)->tfm;
+   chnum = s - tfm->bc;
+   chin = tfm->charInfo+chnum;
+   wi = (int)chin->wi;
+   width = tfm->width[wi]*tfm->ds;
+
+   printf("Character %d chnum %d has width index %d width %g\n", s, chnum, wi, width);
+   return width;
 }

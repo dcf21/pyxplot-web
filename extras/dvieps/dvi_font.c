@@ -31,18 +31,24 @@
 #include <kpathsea/kpathsea.h>
 
 void dviGetTFM(dviFontDetails *font) {
-   char *TFMpath;
+   char *TFMpath, *PFBpath;
    char *s;
    FILE *TFMfp;
    // Prod kpathsea
    kpse_set_program_name("pyxplot8", NULL);
    // kpse_init_prog();
+   // Get the TFM file
    s = (char *)mallocx((strlen(font->name)+5)*sizeof(char));
+   PFBpath = (char *)mallocx((strlen(font->name)+10)*sizeof(char));
    sprintf(s, "%s.tfm", font->name);
    TFMpath = (char *)kpse_find_tfm(s);
    printf("Font file %s: TFM path: %s\n", font->name, TFMpath);
    TFMfp = fopen(TFMpath, "r");
    font->tfm = dviReadTFM(TFMfp);
-
+   // Additionally get the pfb file
+   sprintf(PFBpath, "/tmp/%s.pfa", font->name);
+   //PFBpath = (char *)kpse_find_file(s, kpse_type1_format, true);
+   printf("Font file %s: PFB path: %s\n", font->name, PFBpath);
+   font->pfbPath = PFBpath;
    return;
 }

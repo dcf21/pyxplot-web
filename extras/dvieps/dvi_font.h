@@ -79,6 +79,7 @@ typedef struct dviFontDetails {
    char *name;               // Font name
    int useSize, desSize;     // Use and design sizes
    dviTFM *tfm;              // Data from tfm file
+   char *pfbPath;            // Path to PFB file
 } dviFontDetails;
 
 // Call the first of these two functions, passing it a font structure
