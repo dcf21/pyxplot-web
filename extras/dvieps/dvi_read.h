@@ -61,7 +61,6 @@ typedef struct postscriptState {
    int Npages;                         // The number of pages
    postscriptPage *currentPage;        // The current page
    dviStackState *currentPosition;     // The current position in dvi units
-	dlListItem *fontDefs;               // Font definitions necessary to render text
 } postscriptState;
 
 // Structure to store the entire internal state of a dvi interpreter

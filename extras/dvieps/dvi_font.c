@@ -30,10 +30,17 @@
 #include "dvi_lib.h"
 #include <kpathsea/kpathsea.h>
 
+#define SHORT_STRLEN 2048
+
 void dviGetTFM(dviFontDetails *font) {
    char *TFMpath, *PFXpath;
    char *s;
+	char buf[SHORT_STRLEN];
    FILE *TFMfp;
+	FILE *fp;
+	dlListItem *item;
+	int len;
+
    // Prod kpathsea
    kpse_set_program_name("pyxplot8", NULL);
    // kpse_init_prog();
@@ -45,18 +52,44 @@ void dviGetTFM(dviFontDetails *font) {
    TFMfp = fopen(TFMpath, "r");
    font->tfm = dviReadTFM(TFMfp);
 	
-   // Additionally locate the pfa or pfb file
-   PFXpath = (char *)mallocx((strlen(font->name)+10)*sizeof(char));
+   // Additionally obtain the pfa or pfb file
+	// Make a list to put it in (first item is needlessly blank)
+	item = dlNewList();
+	dviFontDetails->pfa = item;
+	s = (char *)mallocx(sizeof(char));
+	*s = '\0';
+	item->p = (void *)s;
 
-   sprintf(PFXpath, "/tmp/%s.pfa", font->name);
-   font->pfaPath = (char *)kpse_find_file(s, kpse_type1_format, true);
-   if (font->pfaPath != NULL) 
-		printf("Font %s: PFA path: %s\n", font->name, font->pfaPath);
-
-   sprintf(PFXpath, "/tmp/%s.pfb", font->name);
-   font->pfbPath = (char *)kpse_find_file(s, kpse_type1_format, true);
-   if (font->pfbPath != NULL) 
-		printf("Font %s: PFB path: %s\n", font->name, font->pfbPath);
-
-   return;
+   sprintf(s, "%s.pfa", font->name);
+   PFXpath = (char *)kpse_find_file(s, kpse_type1_format, true);
+   if (PFXpath != NULL) {
+		// Download the PFA file
+		fp = fopen(PFXpath, "r");
+		if (fp==NULL) dvi_fatal("dvi_font.c", "Failed to open PFA file!", -1);
+		while (!feof(fp)) {
+			file_readline(fp, buf, SHORT_STRLEN);
+		   // XXX The next bit of code should be re-written to handle truncated strings properly!
+			len = strlen(buf)+1;
+			if (len==SHORT_STRLEN)
+				dvi_error("Warning!  Possible truncation of dvi file!");
+			s = (char *)mallocx(len*sizeof(char));
+			snprintf(s, len, "%s", buf);
+			item = dlAppendItem(item);
+			item->p = (char *)s;
+		}
+		fclose(fp);
+	} else {
+		// We can't find a pfa file to grab, so make one from a pfb file if available
+		sprintf(s, "%s.pfb", font->name);
+		PFXpath = (char *)kpse_find_file(s, kpse_type1_format, true);
+		if (PFXpath == NULL) 
+			dvi_fatal("dvi_font.c", "Cannot find PFB path corresponding to font!", "-1");
+		fp = fopen(PFXpath, "r");
+		if (fp==NULL) dvi_fatal("dvi_font.c", "Failed to open PFB file!", -1);
+		while (!feof(fp)) {
+			// XXX grab the PFB and turn it into a PFA!
+	   }
+		fclose(fp);
+	}
+	return;
 }

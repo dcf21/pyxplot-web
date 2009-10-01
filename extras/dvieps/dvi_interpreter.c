@@ -429,6 +429,7 @@ dviInterpreterState *dviNewInterpreter() {
    interp->output->pages = NULL;
    interp->output->Npages = 0;
    interp->output->currentPage = NULL;
+	interp->output->fontDefs = NULL;
    // Set default positional variables etc.
    interp->state = (dviStackState *)mallocx(sizeof(dviStackState));
    interp->state->h=0;
