@@ -31,7 +31,7 @@
 #include <kpathsea/kpathsea.h>
 
 void dviGetTFM(dviFontDetails *font) {
-   char *TFMpath, *PFBpath;
+   char *TFMpath, *PFXpath;
    char *s;
    FILE *TFMfp;
    // Prod kpathsea
@@ -39,16 +39,24 @@ void dviGetTFM(dviFontDetails *font) {
    // kpse_init_prog();
    // Get the TFM file
    s = (char *)mallocx((strlen(font->name)+5)*sizeof(char));
-   PFBpath = (char *)mallocx((strlen(font->name)+10)*sizeof(char));
    sprintf(s, "%s.tfm", font->name);
    TFMpath = (char *)kpse_find_tfm(s);
    printf("Font file %s: TFM path: %s\n", font->name, TFMpath);
    TFMfp = fopen(TFMpath, "r");
    font->tfm = dviReadTFM(TFMfp);
-   // Additionally get the pfb file
-   sprintf(PFBpath, "/tmp/%s.pfa", font->name);
-   //PFBpath = (char *)kpse_find_file(s, kpse_type1_format, true);
-   printf("Font file %s: PFB path: %s\n", font->name, PFBpath);
-   font->pfbPath = PFBpath;
+	
+   // Additionally locate the pfa or pfb file
+   PFXpath = (char *)mallocx((strlen(font->name)+10)*sizeof(char));
+
+   sprintf(PFXpath, "/tmp/%s.pfa", font->name);
+   font->pfaPath = (char *)kpse_find_file(s, kpse_type1_format, true);
+   if (font->pfaPath != NULL) 
+		printf("Font %s: PFA path: %s\n", font->name, font->pfaPath);
+
+   sprintf(PFXpath, "/tmp/%s.pfb", font->name);
+   font->pfbPath = (char *)kpse_find_file(s, kpse_type1_format, true);
+   if (font->pfbPath != NULL) 
+		printf("Font %s: PFB path: %s\n", font->name, font->pfbPath);
+
    return;
 }
