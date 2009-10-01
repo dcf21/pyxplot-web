@@ -24,6 +24,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 #include "dvi_read.h"
 #include "dvi_lib.h"
@@ -59,6 +60,10 @@ int dviInOpFntdef1234(dviInterpreterState *interp, DVIOperator *op);
 int dviInOpPre(dviInterpreterState *interp, DVIOperator *op);
 int dviInOpPost(dviInterpreterState *interp, DVIOperator *op);
 int dviInOpPostPost(dviInterpreterState *interp, DVIOperator *op);
+
+
+void  dviPostscriptLineto(dviInterpreterState *interp);
+void  dviPostscriptClosepathFill(dviInterpreterState *interp);
 
 // Big table of the operator functions to allow quick lookup without a big fat if statement
 int (*dviOpTable[58])(dviInterpreterState *interp, DVIOperator *op);
@@ -132,6 +137,7 @@ int dviInOpChar(dviInterpreterState *interp, DVIOperator *op) {
    char *s;
 
    // XXX fix up typesetting of odd characters
+   // XXX Use octal value (%o format specifier)
    if (charToTypeset<31 || charToTypeset > 126)
       return 0;
 
@@ -141,28 +147,72 @@ int dviInOpChar(dviInterpreterState *interp, DVIOperator *op) {
       *(interp->currentString) = '\0';
       interp->currentStrlen = SHORT_STRLEN;
    // If the string is full, extend it
-   } else if (strlen(interp->currentString) == interp->currentStrlen-1) {
+   } else if (strlen(interp->currentString) == interp->currentStrlen-2) {
       interp->currentStrlen += SHORT_STRLEN;
       interp->currentString = (char *) realloc(interp->currentString, interp->currentStrlen*sizeof(char));
    }
    // Write the character to the string
    s = interp->currentString+strlen(interp->currentString); // s now points to the \0
-   snprintf(s, 2, "%s", (char *)&charToTypeset);
+   if (charToTypeset == 40) {
+      snprintf(s, 3, "%s", "\\(");
+   } else if (charToTypeset == 41) {
+      snprintf(s, 3, "%s", "\\)");
+   } else {
+      snprintf(s, 2, "%s", (char *)&charToTypeset);
+   }
    return 0;
 }
 
 int dviInOpSet1234(dviInterpreterState *interp, DVIOperator *op) {
    return 0;
 }
+
+// DVI_SETRULE
+// Set a rule and move right
 int dviInOpSetRule(dviInterpreterState *interp, DVIOperator *op) {
+   // Don't set a rule if movements are -ve
+   if (op->sl[0]<0 || op->sl[1]<0) {
+      printf("Silent Rule!\n");
+      interp->state->h += op->sl[1];
+      dviPostscriptMoveto(interp);
+   } else {
+      dviPostscriptMoveto(interp);
+      interp->state->v += op->sl[0];
+      dviPostscriptLineto(interp);
+      interp->state->h += op->sl[1];
+      dviPostscriptLineto(interp);
+      interp->state->v -= op->sl[0];
+      dviPostscriptLineto(interp);
+      dviPostscriptClosepathFill(interp);
+   }
    return 0;
 }
+
 int dviInOpPut1234(dviInterpreterState *interp, DVIOperator *op) {
    return 0;
 }
+
+// DVI_PUTRULE
+// Set a rule and don't move right
 int dviInOpPutRule(dviInterpreterState *interp, DVIOperator *op) {
+   // Don't set a rule if movements are -ve
+   if (op->sl[0]<0 || op->sl[1]<0) {
+      printf("Silent Rule!\n");
+   } else {
+      dviPostscriptMoveto(interp);
+      interp->state->v += op->sl[0];
+      dviPostscriptLineto(interp);
+      interp->state->h += op->sl[1];
+      dviPostscriptLineto(interp);
+      interp->state->v -= op->sl[0];
+      dviPostscriptLineto(interp);
+      dviPostscriptClosepathFill(interp);
+      interp->state->h -= op->sl[1];
+   }
    return 0;
 }
+
+// DVI_NOP
 int dviInOpNop(dviInterpreterState *interp, DVIOperator *op) {
    return 0;
 }
@@ -318,7 +368,10 @@ int dviInOpFnt(dviInterpreterState *interp, DVIOperator *op) {
    dlListItem *item;
    int len;
    char *s;
-   int fn = op->op - DVI_FNTNUMMIN;
+   int fn;
+   dviFontDetails *font;
+   
+   fn = op->op - DVI_FNTNUMMIN;
    interp->f = fn;
    // Find the font in the list
    interp->curFnt = NULL;
@@ -335,11 +388,12 @@ int dviInOpFnt(dviInterpreterState *interp, DVIOperator *op) {
       return 2;
    }
 
-   // XXX Font size???
-   len = strlen(((dviFontDetails *)item->p)->name) + 18;
+   // XXX Fount size???
+   font = (dviFontDetails *)item->p;
+   len = strlen(font->name) + 20;
    //\XXX 12 selectfont\n\0
    s = (char *)mallocx(len*sizeof(char));
-   snprintf(s, len, "\\%s 12 selectfont\n", ((dviFontDetails *)item->p)->name);
+   snprintf(s, len, "/%s %d selectfont\n", font->psName, (int)ceil(font->useSize*interp->scale));
    dviPostscriptAppend(interp, s);
    free(s);
    return 0;
@@ -405,7 +459,7 @@ int dviInOpPre(dviInterpreterState *interp, DVIOperator *op) {
    }
    // Convert mag, num and den into points (for ps)
    interp->scale = (double)mag / 1000. * (double)num / (double)den
-           / 1.e4 / 25.4 * 72.;    
+           / 1.e4 * 72.;    
    printf("Scale %g\n", interp->scale);
    return 0;
 }
@@ -429,7 +483,6 @@ dviInterpreterState *dviNewInterpreter() {
    interp->output->pages = NULL;
    interp->output->Npages = 0;
    interp->output->currentPage = NULL;
-	interp->output->fontDefs = NULL;
    // Set default positional variables etc.
    interp->state = (dviStackState *)mallocx(sizeof(dviStackState));
    interp->state->h=0;
@@ -535,6 +588,14 @@ void dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op) {
    int ret;
    int (*func)(dviInterpreterState *interp, DVIOperator *op) = NULL;
    int i=0;
+   dviStackState *state;
+
+   state = interp->state;
+   printf("State:   h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", state->h, state->v, state->w, state->x, state->y, state->z);
+   state = interp->output->currentPosition;
+   if (state != NULL) {
+      printf("psState: h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", state->h, state->v, state->w, state->x, state->y, state->z);
+   }
 
    if (op->op <= DVI_CHARMAX) {
       func = dviInOpChar;
@@ -556,12 +617,18 @@ void dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op) {
    }
 
    // If we are not typesetting a character and moving right, check if we need to set accumulated text
-   // if (op->op > DVI_SET1234+3 && interp->currentString != NULL)
-   if (interp->currentString != NULL)
+   // if (interp->currentString != NULL)
+   if (op->op > DVI_SET1234+3 && interp->currentString != NULL)
       dviTypeset(interp);
 
    ret = (*func)(interp, op);
-   printf("State: h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", interp->state->h, interp->state->v, interp->state->w, interp->state->x, interp->state->y, interp->state->z);
+
+   state = interp->state;
+   printf("State:   h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", state->h, state->v, state->w, state->x, state->y, state->z);
+   state = interp->output->currentPosition;
+   if (state != NULL) {
+      printf("psState: h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", state->h, state->v, state->w, state->x, state->y, state->z);
+   }
    printf("\n");
    return;
 }
@@ -575,12 +642,45 @@ dviStackState *dviCloneInterpState(dviStackState *orig) {
    return (dviStackState *) clone;
 }
 
+// Write some postscript to close a path
+void dviPostscriptClosepathFill(dviInterpreterState *interp) {
+   char s[SHORT_STRLEN];
+   double x, y;
+   x = interp->state->h * interp->scale;
+   y = 765 - interp->state->v * interp->scale;
+   snprintf(s, SHORT_STRLEN, "closepath fill\n");
+   dviPostscriptAppend(interp, s);
+   if (interp->output->currentPosition == NULL) {
+      dvi_fatal("dviPostscriptClosepathFill", -1, "Closepath command issued with NULL current state!");
+   } else {
+      free(interp->output->currentPosition);
+      interp->output->currentPosition = NULL;
+   }
+}
+
+// Write some postscript to draw a line to the current co-ordinates
+void dviPostscriptLineto(dviInterpreterState *interp) {
+   char s[SHORT_STRLEN];
+   double x, y;
+   x = interp->state->h * interp->scale;
+   y = 765 - interp->state->v * interp->scale;
+   snprintf(s, SHORT_STRLEN, "%f %f lineto\n", x, y);
+   dviPostscriptAppend(interp, s);
+   // If we don't have a current position make one, else set the current ps position to the dvi one
+   if (interp->output->currentPosition == NULL) {
+      dvi_fatal("dviPostscriptLineto", -1, "Lineto command issued with NULL current state!");
+   } else {
+      interp->output->currentPosition->h = interp->state->h;
+      interp->output->currentPosition->v = interp->state->v;
+   }
+}
+
 // Write some postscript to move to the current co-ordinates
 void dviPostscriptMoveto(dviInterpreterState *interp) {
    char s[SHORT_STRLEN];
    double x, y;
    x = interp->state->h * interp->scale;
-   y = 200 - interp->state->v * interp->scale;
+   y = 765 - interp->state->v * interp->scale;
    snprintf(s, SHORT_STRLEN, "%f %f moveto\n", x, y);
    dviPostscriptAppend(interp, s);
    // If we don't have a current position make one, else set the current ps position to the dvi one
@@ -623,6 +723,7 @@ void dviTypeset(dviInterpreterState *interp) {
    dviStackState *postPos, *dviPos;   // Current positions in dvi and postscript code
    char *s;
    double width, height;
+   int magic;
    int chars;
 
    postPos = interp->output->currentPosition;
@@ -632,13 +733,23 @@ void dviTypeset(dviInterpreterState *interp) {
    if (postPos== NULL) {
       dviPostscriptMoveto(interp);
       interp->output->currentPosition = dviCloneInterpState(dviPos);
-   } else if (postPos->h != dviPos->h || postPos->v != dviPos->h) {
+   } else if (postPos->h != dviPos->h || postPos->v != dviPos->v) {
       dviPostscriptMoveto(interp);
    }
    s = interp->currentString;
    width = 0.;
    height = 0.;
+   magic=0;          // Was the last character typeset a /?
    while (*s != '\0') {
+      if (s[0] == '\\') {
+         if (magic == 0) {
+            magic = 1;
+            s++;
+            continue;
+         } 
+      } else {
+         magic = 0;
+      }
       double h = dviGetCharHeight(interp, *s);
       width += dviGetCharWidth(interp, *s);
       height = h>height?h:height;

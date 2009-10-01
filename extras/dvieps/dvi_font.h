@@ -77,9 +77,10 @@ typedef struct dviFontDetails {
    int number;
    char *area;               // "Area" that the font is given as living in
    char *name;               // Font name
+   char *psName;             // Name to use for font in postscript file
    int useSize, desSize;     // Use and design sizes
    dviTFM *tfm;              // Data from tfm file
-	dlListItem *pfa;          // PFA data to allow font to be included
+	char *pfaPath;            // PFA file location
 } dviFontDetails;
 
 // Call the first of these two functions, passing it a font structure

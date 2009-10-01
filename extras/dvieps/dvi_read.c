@@ -188,8 +188,9 @@ int GetDVIOperator(DVIOperator *op, FILE *fp) {
    } else if (v < DVI_W1234 + 4) {
       int Ndata;
       Ndata = v - DVI_W1234 + 1;
-      if ((err=ReadSignedInt(fp, op->sl, Ndata))!=0)
+      if ((err=ReadLongInt(fp, op->ul, Ndata))!=0)
          return err;
+      op->sl[0] = op->ul[0];
       return 0;
 
    } else if (v == DVI_X0) {
@@ -439,8 +440,12 @@ void outputPostscript(FILE *fp, dviInterpreterState *interp) {
    // Include the fonts
    font = interp->fonts;
    while (font != NULL) {
-      pfaFile = ((dviFontDetails *)font->p)->pfbPath;
+      pfaFile = ((dviFontDetails *)font->p)->pfaPath;
       fp2 = fopen(pfaFile, "r");
+      if (fp2==NULL) {
+         fprintf(stderr, "OutputPostscript: Failed to open file %s\n", pfaFile);
+         exit(1);
+      }
       while ((c=getc(fp2))!=EOF) {
          putc(c, fp);
       }
