@@ -132,7 +132,7 @@ void makeDviOpTable() {
    return;
 }
 
-// Interperate an operator
+// Interpret an operator
 // This is a wrapper round the functions below
 void dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op) {
    int ret;

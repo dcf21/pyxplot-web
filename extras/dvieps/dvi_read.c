@@ -397,20 +397,16 @@ int DisplayDVIOperator(DVIOperator *op) {
          snprintf(s2, 128, "%s %lu", dviops[op->op-DVI_CHARMAX-1], *(op->ul));
          s=s2;
       }
-      //printf("XXX 2\n");
    } else if (op->op <= DVI_FNTNUMMAX) {
       snprintf(s2, 128, "Font number %d", op->op-DVI_FNTNUMMIN);
       s = s2;
-      //printf("XXX 3\n");
    } else if (op->op <= DVI_POSTPOST) {
       int i;
       i = op->op-DVI_CHARMAX-1-(DVI_FNTNUMMAX-DVI_FNTNUMMIN+1);
       s = (char *)dviops[i];
-      //printf("XXX 4 %d %d\n",i, op->op);
    } else {
       snprintf(s2, 128, "ERROR!!!");
       s=s2;
-      printf("XXX 5\n");
    }
    printf("%s\n", s);
    return 0;
