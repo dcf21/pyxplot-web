@@ -510,8 +510,8 @@ int dviInOpFnt(dviInterpreterState *interp, DVIOperator *op) {
    //\XXX 12 selectfont\n\0
    s = (char *)mallocx(len*sizeof(char));
    size = font->useSize*interp->scale;
-   printf("Font useSize %d size %g changed to %d\n", font->useSize, size, (int)ceil(size));
-   snprintf(s, len, "/%s %d selectfont\n", font->psName, (int)ceil(size));
+   printf("Font useSize %d size %g changed to %d\n", font->useSize, size, (int)ceil(size-.5));
+   snprintf(s, len, "/%s %d selectfont\n", font->psName, (int)ceil(size-.5));
    dviPostscriptAppend(interp, s);
    free(s);
    return 0;
