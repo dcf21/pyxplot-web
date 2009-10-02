@@ -32,6 +32,10 @@
 
 #define SHORT_STRLEN 2048
 
+// Postscript functions
+void  dviPostscriptLineto(dviInterpreterState *interp);
+void  dviPostscriptClosepathFill(dviInterpreterState *interp);
+
 // Interpreter functions for various types of dvi operators
 int dviInOpSpecialChar(dviInterpreterState *interp, DVIOperator *op);
 int dviInOpChar(dviInterpreterState *interp, DVIOperator *op);
@@ -62,9 +66,6 @@ int dviInOpPre(dviInterpreterState *interp, DVIOperator *op);
 int dviInOpPost(dviInterpreterState *interp, DVIOperator *op);
 int dviInOpPostPost(dviInterpreterState *interp, DVIOperator *op);
 
-
-void  dviPostscriptLineto(dviInterpreterState *interp);
-void  dviPostscriptClosepathFill(dviInterpreterState *interp);
 
 // Big table of the operator functions to allow quick lookup without a big fat if statement
 int (*dviOpTable[58])(dviInterpreterState *interp, DVIOperator *op);
@@ -131,6 +132,65 @@ void makeDviOpTable() {
    return;
 }
 
+// Interperate an operator
+// This is a wrapper round the functions below
+void dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op) {
+   int ret;
+   int (*func)(dviInterpreterState *interp, DVIOperator *op) = NULL;
+   int i=0;
+   dviStackState *state;
+
+	// Debugging output
+   state = interp->state;
+   printf("State:   h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", state->h, state->v, state->w, state->x, state->y, state->z);
+   state = interp->output->currentPosition;
+   if (state != NULL) {
+      printf("psState: h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", state->h, state->v, state->w, state->x, state->y, state->z);
+   }
+
+	// This if statement extends the lookup table of operator functions
+   if (op->op <= DVI_CHARMAX) {
+      func = dviInOpChar;
+   } else if (op->op < DVI_FNTNUMMIN) {
+      i = op->op-DVI_CHARMAX-1;
+      func = (dviOpTable[i]);
+   } else if (op->op < DVI_FNTNUMMAX) {
+      func = dviInOpFnt;
+   } else if (op->op <= DVI_POSTPOST) {
+      i = op->op-DVI_CHARMAX-1-(DVI_FNTNUMMAX-DVI_FNTNUMMIN+1);
+      func = (dviOpTable[i]);
+   } else {
+      dvi_error("ERROR: DVI interpreter found illegal operator!");
+      func = NULL;
+   }
+   if (func==NULL) {
+      printf("FAILed to find function for operator %d i=%d !\n", op->op, i);
+      return;
+   }
+
+   // If we are not typesetting a character and moving right, check if we need to set accumulated text
+   // if (interp->currentString != NULL)
+   if (op->op > DVI_SET1234+3 && interp->currentString != NULL)
+      dviTypeset(interp);
+
+	// Call the function to interpret the operator
+   ret = (*func)(interp, op);
+	// XXX do something with the return value!
+
+	// Debugging output
+   state = interp->state;
+   printf("State:   h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", state->h, state->v, state->w, state->x, state->y, state->z);
+   state = interp->output->currentPosition;
+   if (state != NULL) {
+      printf("psState: h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", state->h, state->v, state->w, state->x, state->y, state->z);
+   }
+   printf("\n");
+   return;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+// Functions that implement operators
+//
 // Typeset a special character
 int dviInOpSpecialChar(dviInterpreterState *interp, DVIOperator *op) {
    char c = op->op;
@@ -513,14 +573,19 @@ int dviInOpPre(dviInterpreterState *interp, DVIOperator *op) {
    printf("Scale %g\n", interp->scale);
    return 0;
 }
+
+// DVI_POST -- nop
 int dviInOpPost(dviInterpreterState *interp, DVIOperator *op) {
    return 0;
 }
+// DVI_POSTPOST -- nop
 int dviInOpPostPost(dviInterpreterState *interp, DVIOperator *op) {
    return 0;
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Functions for manipulating interpreters
 
 // Produce a new dvi interpreter (for a new dvi file, say)
 dviInterpreterState *dviNewInterpreter() {
@@ -586,7 +651,31 @@ void dviDeleteInterpreter(dviInterpreterState *interp) {
    // Delete the interpreter shell
    free(interp);
 }
-   
+
+// Clone an interpreter state, returning a pointer to the new version
+// XXX Make the name of this function consistent with usage elsewhere or vice versa
+dviStackState *dviCloneInterpState(dviStackState *orig) {
+   void *clone;
+   clone = mallocx(sizeof(dviStackState));
+   memcpy(clone, (void *)orig, sizeof(dviStackState));
+   return (dviStackState *) clone;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Functions for producing and manipulating postscript pages
+
+// Produce a new page of postscript
+postscriptPage *dviNewPostscriptPage() {
+   postscriptPage *page;
+   page = (postscriptPage *)mallocx(sizeof(postscriptPage));
+   page->boundingBox = NULL;
+   //page->position[0] = 0;
+   //page->position[1] = 0;
+   page->text = NULL;
+   //page->currentPosition = NULL; // No position set initially
+   return page;
+}
 
 // Delete a page of postscript output
 void dviDeletePostscriptPage(postscriptPage *page) {
@@ -615,132 +704,9 @@ void dviDeletePostscriptState(postscriptState *state) {
    free(state);
 }
 
-
-
-
-
-
-// Produce a new page of postscript
-postscriptPage *dviNewPostscriptPage() {
-   postscriptPage *page;
-   page = (postscriptPage *)mallocx(sizeof(postscriptPage));
-   page->boundingBox = NULL;
-   //page->position[0] = 0;
-   //page->position[1] = 0;
-   page->text = NULL;
-   //page->currentPosition = NULL; // No position set initially
-   return page;
-}
-
-
-// Interperate an operator
-void dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op) {
-   int ret;
-   int (*func)(dviInterpreterState *interp, DVIOperator *op) = NULL;
-   int i=0;
-   dviStackState *state;
-
-   state = interp->state;
-   printf("State:   h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", state->h, state->v, state->w, state->x, state->y, state->z);
-   state = interp->output->currentPosition;
-   if (state != NULL) {
-      printf("psState: h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", state->h, state->v, state->w, state->x, state->y, state->z);
-   }
-
-   if (op->op <= DVI_CHARMAX) {
-      func = dviInOpChar;
-   } else if (op->op < DVI_FNTNUMMIN) {
-      i = op->op-DVI_CHARMAX-1;
-      func = (dviOpTable[i]);
-   } else if (op->op < DVI_FNTNUMMAX) {
-      func = dviInOpFnt;
-   } else if (op->op <= DVI_POSTPOST) {
-      i = op->op-DVI_CHARMAX-1-(DVI_FNTNUMMAX-DVI_FNTNUMMIN+1);
-      func = (dviOpTable[i]);
-   } else {
-      dvi_error("ERROR: DVI interpreter found illegal operator!");
-      func = NULL;
-   }
-   if (func==NULL) {
-      printf("FAILed to find function for operator %d i=%d !\n", op->op, i);
-      return;
-   }
-
-   // If we are not typesetting a character and moving right, check if we need to set accumulated text
-   // if (interp->currentString != NULL)
-   if (op->op > DVI_SET1234+3 && interp->currentString != NULL)
-      dviTypeset(interp);
-
-   ret = (*func)(interp, op);
-
-   state = interp->state;
-   printf("State:   h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", state->h, state->v, state->w, state->x, state->y, state->z);
-   state = interp->output->currentPosition;
-   if (state != NULL) {
-      printf("psState: h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", state->h, state->v, state->w, state->x, state->y, state->z);
-   }
-   printf("\n");
-   return;
-}
-
-// Clone an interpreter state, returning a pointer to the new version
-// XXX Make the name of this function consistent with usage elsewhere or vice versa
-dviStackState *dviCloneInterpState(dviStackState *orig) {
-   void *clone;
-   clone = mallocx(sizeof(dviStackState));
-   memcpy(clone, (void *)orig, sizeof(dviStackState));
-   return (dviStackState *) clone;
-}
-
-// Write some postscript to close a path
-void dviPostscriptClosepathFill(dviInterpreterState *interp) {
-   char s[SHORT_STRLEN];
-   double x, y;
-   x = interp->state->h * interp->scale;
-   y = 765 - interp->state->v * interp->scale;
-   snprintf(s, SHORT_STRLEN, "closepath fill\n");
-   dviPostscriptAppend(interp, s);
-   if (interp->output->currentPosition == NULL) {
-      dvi_fatal("dviPostscriptClosepathFill", -1, "Closepath command issued with NULL current state!");
-   } else {
-      free(interp->output->currentPosition);
-      interp->output->currentPosition = NULL;
-   }
-}
-
-// Write some postscript to draw a line to the current co-ordinates
-void dviPostscriptLineto(dviInterpreterState *interp) {
-   char s[SHORT_STRLEN];
-   double x, y;
-   x = interp->state->h * interp->scale;
-   y = 765 - interp->state->v * interp->scale;
-   snprintf(s, SHORT_STRLEN, "%f %f lineto\n", x, y);
-   dviPostscriptAppend(interp, s);
-   // If we don't have a current position make one, else set the current ps position to the dvi one
-   if (interp->output->currentPosition == NULL) {
-      dvi_fatal("dviPostscriptLineto", -1, "Lineto command issued with NULL current state!");
-   } else {
-      interp->output->currentPosition->h = interp->state->h;
-      interp->output->currentPosition->v = interp->state->v;
-   }
-}
-
-// Write some postscript to move to the current co-ordinates
-void dviPostscriptMoveto(dviInterpreterState *interp) {
-   char s[SHORT_STRLEN];
-   double x, y;
-   x = interp->state->h * interp->scale;
-   y = 765 - interp->state->v * interp->scale;
-   snprintf(s, SHORT_STRLEN, "%f %f moveto\n", x, y);
-   dviPostscriptAppend(interp, s);
-   // If we don't have a current position make one, else set the current ps position to the dvi one
-   if (interp->output->currentPosition == NULL) {
-      interp->output->currentPosition = dviCloneInterpState(interp->state);
-   } else {
-      interp->output->currentPosition->h = interp->state->h;
-      interp->output->currentPosition->v = interp->state->v;
-   }
-}
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Functions for producing postscript commands
 
 // Append a string to the set of postscript strings
 void dviPostscriptAppend(dviInterpreterState *interp, char *new) {
@@ -762,14 +728,59 @@ void dviPostscriptAppend(dviInterpreterState *interp, char *new) {
    return;
 }
 
+// Write some postscript to move to the current co-ordinates
+void dviPostscriptMoveto(dviInterpreterState *interp) {
+   char s[SHORT_STRLEN];
+   double x, y;
+   x = interp->state->h * interp->scale;
+   y = 765 - interp->state->v * interp->scale;
+   snprintf(s, SHORT_STRLEN, "%f %f moveto\n", x, y);
+   dviPostscriptAppend(interp, s);
+   // If we don't have a current position make one, else set the current ps position to the dvi one
+   if (interp->output->currentPosition == NULL) {
+      interp->output->currentPosition = dviCloneInterpState(interp->state);
+   } else {
+      interp->output->currentPosition->h = interp->state->h;
+      interp->output->currentPosition->v = interp->state->v;
+   }
+}
 
+// Write some postscript to draw a line to the current co-ordinates
+void dviPostscriptLineto(dviInterpreterState *interp) {
+   char s[SHORT_STRLEN];
+   double x, y;
+   x = interp->state->h * interp->scale;
+   y = 765 - interp->state->v * interp->scale;
+   snprintf(s, SHORT_STRLEN, "%f %f lineto\n", x, y);
+   dviPostscriptAppend(interp, s);
+   // If we don't have a current position make one, else set the current ps position to the dvi one
+   if (interp->output->currentPosition == NULL) {
+      dvi_fatal("dviPostscriptLineto", -1, "Lineto command issued with NULL current state!");
+   } else {
+      interp->output->currentPosition->h = interp->state->h;
+      interp->output->currentPosition->v = interp->state->v;
+   }
+}
 
+// Write some postscript to close a path
+void dviPostscriptClosepathFill(dviInterpreterState *interp) {
+   char s[SHORT_STRLEN];
+   double x, y;
+   x = interp->state->h * interp->scale;
+   y = 765 - interp->state->v * interp->scale;
+   snprintf(s, SHORT_STRLEN, "closepath fill\n");
+   dviPostscriptAppend(interp, s);
+   if (interp->output->currentPosition == NULL) {
+      dvi_fatal("dviPostscriptClosepathFill", -1, "Closepath command issued with NULL current state!");
+   } else {
+      free(interp->output->currentPosition);
+      interp->output->currentPosition = NULL;
+   }
+}
 
-
-// Typeset some text
+// Typeset the current buffered text
 void dviTypeset(dviInterpreterState *interp) {
    // This subroutine does the bulk of the actual postscript work, typesetting runs of characters
-   // XXX Currently assume that all characters are the same width and height
    dviStackState *postPos, *dviPos;   // Current positions in dvi and postscript code
    char *s;
    double width, height;
