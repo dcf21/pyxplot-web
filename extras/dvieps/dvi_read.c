@@ -350,7 +350,7 @@ int ReadLongInt (FILE *fp, unsigned long int *uli, int n) {
    for (i=0; i<n-1; i++) {
       if ((err=ReadUChar(fp, &v))!=0)
          return err;
-      fv = fv * 256 + v;
+      fv = (fv<<8) |  v;
    }
    *uli = fv;
    return 0;
@@ -366,7 +366,7 @@ int ReadSignedInt (FILE *fp, signed long int *sli, int n) {
    for (i=0; i<n-1; i++) {
       if ((err=ReadUChar(fp, &v))!=0)
          return err;
-      fv = fv * 256 + v;
+      fv = (fv<<8) |  v;
    }
    *sli = fv;
    return 0;
@@ -435,6 +435,13 @@ void outputPostscript(FILE *fp, dviInterpreterState *interp) {
    fprintf(fp, "%%!PS-Adobe-2.0\n");
    fprintf(fp, "%%%%Title: pp output\n");
    fprintf(fp, "%%%%Pages: %d\n", interp->output->Npages);
+   fprintf(fp, "%%%%DocumentFonts: ");
+   font = interp->fonts;
+   while (font != NULL) {
+      fprintf(fp, "%s ", ((dviFontDetails *)(font->p))->psName);
+      font = font->nxt;
+   }
+   fprintf(fp, "\n");
    fprintf(fp, "%%%%EndComments\n");
    fprintf(fp, "\n");
    // Include the fonts
@@ -457,7 +464,6 @@ void outputPostscript(FILE *fp, dviInterpreterState *interp) {
    while (page != NULL) {
       ++i;
       fprintf(fp, "%%%%Page: %d %d\n", i, i);
-      fprintf(fp, "/Times-Roman 12 selectfont\n");
       text = ((postscriptPage *)(page->p))->text;
       while (text != NULL) {
          fprintf(fp, "%s", (char *)text->p);
