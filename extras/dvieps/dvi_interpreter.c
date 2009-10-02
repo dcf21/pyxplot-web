@@ -33,6 +33,7 @@
 #define SHORT_STRLEN 2048
 
 // Interpreter functions for various types of dvi operators
+int dviInOpSpecialChar(dviInterpreterState *interp, DVIOperator *op);
 int dviInOpChar(dviInterpreterState *interp, DVIOperator *op);
 int dviInOpSet1234(dviInterpreterState *interp, DVIOperator *op);
 int dviInOpSetRule(dviInterpreterState *interp, DVIOperator *op);
@@ -130,16 +131,65 @@ void makeDviOpTable() {
    return;
 }
 
+// Typeset a special character
+int dviInOpSpecialChar(dviInterpreterState *interp, DVIOperator *op) {
+   char c = op->op;
+   char *s;
+   dviStackState *postPos, *dviPos;   // Current positions in dvi and postscript code
+   double width, height;
+   int chars;
+
+   postPos = interp->output->currentPosition;
+   dviPos = interp->state;
+   
+   // First check if we need to move before typesetting
+   if (postPos== NULL) {
+      dviPostscriptMoveto(interp);
+      interp->output->currentPosition = dviCloneInterpState(dviPos);
+   } else if (postPos->h != dviPos->h || postPos->v != dviPos->v) {
+      dviPostscriptMoveto(interp);
+   }
+   // Bounding box stuff
+   width = dviGetCharWidth(interp, (char)c);
+   height = dviGetCharHeight(interp, (char)c);
+   
+   // Convert back into dvi units
+   width /= interp->scale;
+   height /= interp->scale;
+   printf("width of glyph %g height of glyph %g\n", width, height);
+   // XXX Here check up on the bounding box
+   
+   // Count the number of characters to write to the ps string
+   chars = 15;
+   s = (char *)mallocx(chars*sizeof(char));
+   snprintf(s, chars, "(\\%o) show\n", c);
+   
+   // Send the string off to the postscript routine and clean up memory
+   dviPostscriptAppend(interp, s);
+   free(s);
+   free(interp->currentString);
+   interp->currentString = NULL;
+   interp->currentStrlen = 0;
+
+   // Adjust the current position
+   interp->state->h += width;
+   interp->output->currentPosition->h += width;
+   return 0;
+}
 
 // Interpreter functions for various types of dvi operators
 int dviInOpChar(dviInterpreterState *interp, DVIOperator *op) {
    int charToTypeset = op->op;
    char *s;
 
-   // XXX fix up typesetting of odd characters
-   // XXX Use octal value (%o format specifier)
-   if (charToTypeset<31 || charToTypeset > 126)
+   // Typeset non-printable characters separately
+   if (charToTypeset<31 || charToTypeset > 126) {
+      // Clear the queue if there's anything on it
+      if (interp->currentString != NULL) 
+         dviTypeset(interp);
+      dviInOpSpecialChar(interp, op);
       return 0;
+   }
 
    // See if we have anywhere to put the character
    if (interp->currentString == NULL) {
