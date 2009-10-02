@@ -24,6 +24,8 @@
 #ifndef _PPL_DVI
 #define _PPL_DVI 1
 
+#include <stdlib.h>
+#include <stdio.h>
 #include "dvi_list.h"
 
 // "Public" function definitions
@@ -94,6 +96,13 @@ void dviPostscriptAppend(dviInterpreterState *interp, char *s);
 float dviGetCharWidth(dviInterpreterState *interp, char s);
 float dviGetCharHeight(dviInterpreterState *interp, char s);
 
+// Routines for reading from files
+int ReadUChar(FILE *fp, int *uc);
+int ReadLongInt(FILE *fp, unsigned long int *uli, int n);
+int ReadSignedInt(FILE *fp, signed long int *sli, int n);
+double ReadFixWord(FILE *fp);
+
+// (currently unimplemented) error handling
 #define DVI_ERRORSTR_LEN 2048
 extern char DviErrorString[DVI_ERRORSTR_LEN];
 
