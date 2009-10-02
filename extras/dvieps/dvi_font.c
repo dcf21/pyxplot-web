@@ -1,4 +1,4 @@
-// dvi_read.c
+// dvi_font.c
 //
 // The code in this file is part of PyXPlot
 // <http://www.pyxplot.org.uk>

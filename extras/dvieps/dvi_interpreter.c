@@ -1,4 +1,4 @@
-// dvi_read.c
+// dvi_interpreter.c
 //
 // The code in this file is part of PyXPlot
 // <http://www.pyxplot.org.uk>
@@ -440,7 +440,7 @@ int dviInOpFnt(dviInterpreterState *interp, DVIOperator *op) {
 
    // XXX Fount size???
    font = (dviFontDetails *)item->p;
-   len = strlen(font->name) + 20;
+   len = strlen(font->psName) + 20;
    //\XXX 12 selectfont\n\0
    s = (char *)mallocx(len*sizeof(char));
    snprintf(s, len, "/%s %d selectfont\n", font->psName, (int)ceil(font->useSize*interp->scale));
