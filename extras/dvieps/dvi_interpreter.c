@@ -152,6 +152,9 @@ void dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op) {
 	// This if statement extends the lookup table of operator functions
    if (op->op <= DVI_CHARMAX) {
       func = dviInOpChar;
+      // XXX Do soemthing with this data!
+      if (interp->special == 1)
+         func = dviInOpNop;
    } else if (op->op < DVI_FNTNUMMIN) {
       i = op->op-DVI_CHARMAX-1;
       func = (dviOpTable[i]);
@@ -245,7 +248,10 @@ int dviInOpChar(dviInterpreterState *interp, DVIOperator *op) {
    char *s;
 
    // Typeset non-printable characters separately
-   if (charToTypeset<31 || charToTypeset > 126) {
+   if (charToTypeset<48 || 
+                   (charToTypeset>57 && charToTypeset<65) ||
+                   (charToTypeset>90 && charToTypeset<97) ||
+                   charToTypeset > 126) {
       // Clear the queue if there's anything on it
       if (interp->currentString != NULL) 
          dviTypeset(interp);
@@ -411,6 +417,8 @@ int dviInOpPop(dviInterpreterState *interp, DVIOperator *op) {
    // If the stack is now empty remove the dangling pointer
    if (item==interp->stack)
       interp->stack = NULL;
+   // Unset the special flag
+   interp->special = 0;
    return 0;
 }
 
@@ -523,6 +531,10 @@ int dviInOpFnt1234(dviInterpreterState *interp, DVIOperator *op) {
 
 // DVI_SPECIAL1234
 int dviInOpSpecial1234(dviInterpreterState *interp, DVIOperator *op) {
+   int spesh;
+   spesh = op->op - DVI_SPECIAL1234+1;
+   interp->special = spesh;
+   printf("Special! %d\n", spesh);
    // NOP
    return 0;
 }
@@ -622,6 +634,8 @@ dviInterpreterState *dviNewInterpreter() {
    interp->currentStrlen = 0;
    // No fonts currently
    interp->fonts = NULL;
+
+   interp->special = 0;  // Not in special mode
 
    // Make the big table of operators
    makeDviOpTable();
