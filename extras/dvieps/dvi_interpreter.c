@@ -460,7 +460,7 @@ int dviInOpY0(dviInterpreterState *interp, DVIOperator *op) {
 
 // DVI_Y1234
 int dviInOpY1234(dviInterpreterState *interp, DVIOperator *op) {
-   interp->state->y += op->sl[0];
+   interp->state->y = op->sl[0];
    interp->state->v += interp->state->y;
    return 0;
 }
@@ -473,7 +473,7 @@ int dviInOpZ0(dviInterpreterState *interp, DVIOperator *op) {
 
 // DVI_Z1234
 int dviInOpZ1234(dviInterpreterState *interp, DVIOperator *op) {
-   interp->state->z += op->sl[0];
+   interp->state->z = op->sl[0];
    interp->state->v += interp->state->z;
    return 0;
 }
