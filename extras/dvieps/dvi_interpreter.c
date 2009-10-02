@@ -37,7 +37,6 @@ void  dviPostscriptLineto(dviInterpreterState *interp);
 void  dviPostscriptClosepathFill(dviInterpreterState *interp);
 
 // Interpreter functions for various types of dvi operators
-int dviInOpSpecialChar(dviInterpreterState *interp, DVIOperator *op);
 int dviInOpChar(dviInterpreterState *interp, DVIOperator *op);
 int dviInOpSet1234(dviInterpreterState *interp, DVIOperator *op);
 int dviInOpSetRule(dviInterpreterState *interp, DVIOperator *op);
@@ -66,6 +65,8 @@ int dviInOpPre(dviInterpreterState *interp, DVIOperator *op);
 int dviInOpPost(dviInterpreterState *interp, DVIOperator *op);
 int dviInOpPostPost(dviInterpreterState *interp, DVIOperator *op);
 
+// This is not strictly an operator interpreter function, but typesets characters for dviInOpChar
+int dviSpecialChar(dviInterpreterState *interp, int c, char move);
 
 // Big table of the operator functions to allow quick lookup without a big fat if statement
 int (*dviOpTable[58])(dviInterpreterState *interp, DVIOperator *op);
@@ -138,15 +139,15 @@ void dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op) {
    int ret;
    int (*func)(dviInterpreterState *interp, DVIOperator *op) = NULL;
    int i=0;
-   dviStackState *state;
+   //dviStackState *state;
 
 	// Debugging output
-   state = interp->state;
+   /* state = interp->state;
    printf("State:   h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", state->h, state->v, state->w, state->x, state->y, state->z);
    state = interp->output->currentPosition;
    if (state != NULL) {
       printf("psState: h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", state->h, state->v, state->w, state->x, state->y, state->z);
-   }
+   } */
 
 	// This if statement extends the lookup table of operator functions
    if (op->op <= DVI_CHARMAX) {
@@ -178,13 +179,13 @@ void dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op) {
 	// XXX do something with the return value!
 
 	// Debugging output
-   state = interp->state;
+   /* state = interp->state;
    printf("State:   h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", state->h, state->v, state->w, state->x, state->y, state->z);
    state = interp->output->currentPosition;
    if (state != NULL) {
       printf("psState: h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", state->h, state->v, state->w, state->x, state->y, state->z);
    }
-   printf("\n");
+   printf("\n"); */
    return;
 }
 
@@ -192,8 +193,7 @@ void dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op) {
 // Functions that implement operators
 //
 // Typeset a special character
-int dviInOpSpecialChar(dviInterpreterState *interp, DVIOperator *op) {
-   char c = op->op;
+int dviSpecialChar(dviInterpreterState *interp, int c, char move) {
    char *s;
    dviStackState *postPos, *dviPos;   // Current positions in dvi and postscript code
    double width, height;
@@ -232,8 +232,10 @@ int dviInOpSpecialChar(dviInterpreterState *interp, DVIOperator *op) {
    interp->currentStrlen = 0;
 
    // Adjust the current position
-   interp->state->h += width;
-   interp->output->currentPosition->h += width;
+   if (move == DVI_YES) {
+      interp->state->h += width;
+      interp->output->currentPosition->h += width;
+   }
    return 0;
 }
 
@@ -247,7 +249,7 @@ int dviInOpChar(dviInterpreterState *interp, DVIOperator *op) {
       // Clear the queue if there's anything on it
       if (interp->currentString != NULL) 
          dviTypeset(interp);
-      dviInOpSpecialChar(interp, op);
+      dviSpecialChar(interp, charToTypeset, DVI_YES);
       return 0;
    }
 
@@ -273,8 +275,9 @@ int dviInOpChar(dviInterpreterState *interp, DVIOperator *op) {
    return 0;
 }
 
+// DVI_SET1234
 int dviInOpSet1234(dviInterpreterState *interp, DVIOperator *op) {
-   return 0;
+   return dviSpecialChar(interp, op->ul[0], DVI_YES);
 }
 
 // DVI_SETRULE
@@ -298,7 +301,9 @@ int dviInOpSetRule(dviInterpreterState *interp, DVIOperator *op) {
    return 0;
 }
 
+// DVI_PUT
 int dviInOpPut1234(dviInterpreterState *interp, DVIOperator *op) {
+   dviSpecialChar(interp, op->ul[0], DVI_NO);
    return 0;
 }
 
@@ -480,6 +485,7 @@ int dviInOpFnt(dviInterpreterState *interp, DVIOperator *op) {
    char *s;
    int fn;
    dviFontDetails *font;
+   double size;
    
    fn = op->op - DVI_FNTNUMMIN;
    interp->f = fn;
@@ -503,7 +509,9 @@ int dviInOpFnt(dviInterpreterState *interp, DVIOperator *op) {
    len = strlen(font->psName) + 20;
    //\XXX 12 selectfont\n\0
    s = (char *)mallocx(len*sizeof(char));
-   snprintf(s, len, "/%s %d selectfont\n", font->psName, (int)ceil(font->useSize*interp->scale));
+   size = font->useSize*interp->scale;
+   printf("Font useSize %d size %g changed to %d\n", font->useSize, size, (int)ceil(size));
+   snprintf(s, len, "/%s %d selectfont\n", font->psName, (int)ceil(size));
    dviPostscriptAppend(interp, s);
    free(s);
    return 0;
@@ -560,17 +568,17 @@ int dviInOpFntdef1234(dviInterpreterState *interp, DVIOperator *op) {
 int dviInOpPre(dviInterpreterState *interp, DVIOperator *op) {
    unsigned long i, num, den, mag;
    i = op->ul[0];
-   num = op->ul[0];
-   den = op->ul[0];
-   mag = op->ul[0];
+   num = op->ul[1];
+   den = op->ul[2];
+   mag = op->ul[3];
    if (i != 2) {
       dvi_error("Error interpreting dvi file: not dvi version 2!");
       return 1;
    }
    // Convert mag, num and den into points (for ps)
    interp->scale = (double)mag / 1000. * (double)num / (double)den
-           / 1.e4 * 72.;    
-   printf("Scale %g\n", interp->scale);
+           / 1.e3 * 72. / 254;    
+   printf("Scale %g V=%lu num=%lu den=%lu mag=%lu\n", interp->scale,i,num,den,mag);
    return 0;
 }
 
@@ -794,6 +802,7 @@ void dviTypeset(dviInterpreterState *interp) {
    if (postPos== NULL) {
       dviPostscriptMoveto(interp);
       interp->output->currentPosition = dviCloneInterpState(dviPos);
+   //} else {//if (postPos->h != dviPos->h || postPos->v != dviPos->v) {
    } else if (postPos->h != dviPos->h || postPos->v != dviPos->v) {
       dviPostscriptMoveto(interp);
    }

@@ -140,4 +140,9 @@ extern char DviErrorString[DVI_ERRORSTR_LEN];
 
 #define DVI_VERSION     2   // dvi version
 
+// true and false
+
+#define DVI_YES 1
+#define DVI_NO 0
+
 #endif
