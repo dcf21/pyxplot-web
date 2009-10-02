@@ -837,19 +837,20 @@ float dviGetCharHeight(dviInterpreterState *interp, char s) {
 
 // Get the width of a character to be rendered
 float dviGetCharWidth(dviInterpreterState *interp, char s) {
-   // XXX Write this function (requires font knowledge...)
    dviTFM *tfm;       // Details of this font
    int chnum;                 // Character number in this font
    TFMcharInfo *chin;         // Character info for this character
    int wi;                    // Width index
    double width;              // Final character width
+	dviFontDetails *font;      // Font information (for tfm and use size)
    
-   tfm = ((dviFontDetails *)interp->curFnt->p)->tfm;
+	font = (dviFontDetails *)interp->curFnt->p;
+   tfm = font->tfm;
    chnum = s - tfm->bc;
    chin = tfm->charInfo+chnum;
    wi = (int)chin->wi;
-   width = tfm->width[wi]*tfm->ds;
+   width = tfm->width[wi] * font->useSize * interp->scale;
 
-   printf("Character %d chnum %d has width index %d width %g\n", s, chnum, wi, width);
+   printf("Character %d chnum %d has width index %d width %g useSize %g\n", s, chnum, wi, width, font->useSize*interp->scale);
    return width;
 }

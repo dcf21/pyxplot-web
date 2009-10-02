@@ -91,8 +91,8 @@ int ReadDviFile(char *filename) {
             op.s[i] = NULL;
          }
       }
-      // If we've hit the post post then we can break out
-      if (op.op==DVI_POSTPOST)
+      // If we've hit the post then we can break out
+      if (op.op==DVI_POST)
          break;
    }
 
