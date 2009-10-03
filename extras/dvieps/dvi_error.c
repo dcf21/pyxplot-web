@@ -26,11 +26,14 @@
 
 #include "dvi_read.h"
 
+#define DVI_ERROR_STRLEN 2048
+char dviErrorMessage[DVI_ERROR_STRLEN];
 
 // Deal with non-fatal errors
 void dvi_error(char *error) {
-   fprintf(stderr, "dvi: ERROR: %s\n", error);
+   snprintf(dviErrorMessage, DVI_ERROR_STRLEN, "%s\n", error);
    return;
+   // fprintf(stderr, "dvi: ERROR: %s\n", error);
 }
 
 // Deal with fatal errors

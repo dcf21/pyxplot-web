@@ -85,7 +85,7 @@ typedef struct dviFontDetails {
 
 // Call the first of these two functions, passing it a font structure
 // It will find and read the corresponding TFM file
-void dviGetTFM(dviFontDetails *font);
+int dviGetTFM(dviFontDetails *font);
 dviTFM *dviReadTFM(FILE *fp);
 
 #endif

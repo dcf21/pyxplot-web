@@ -33,8 +33,8 @@
 #define SHORT_STRLEN 2048
 
 // Postscript functions
-void  dviPostscriptLineto(dviInterpreterState *interp);
-void  dviPostscriptClosepathFill(dviInterpreterState *interp);
+int dviPostscriptLineto(dviInterpreterState *interp);
+int dviPostscriptClosepathFill(dviInterpreterState *interp);
 int dviChngFnt(dviInterpreterState *interp, int fn);
 int dviSpecialColourCommand(dviInterpreterState *interp, char *command);
 int dviSpecialColourStackPush(dviInterpreterState *interp, char *psText);
@@ -71,7 +71,7 @@ int dviInOpPostPost(dviInterpreterState *interp, DVIOperator *op);
 
 // Functions called by operator interpreter functions
 void dviSpecialChar(dviInterpreterState *interp, DVIOperator *op);
-void dviSpecialImplement(dviInterpreterState *interp);
+int dviSpecialImplement(dviInterpreterState *interp);
 int dviNonAsciiChar(dviInterpreterState *interp, int c, char move);
 void dviUpdateBoundingBox(dviInterpreterState *interp, double width, double height, double depth);
 
@@ -143,38 +143,29 @@ void makeDviOpTable() {
 
 // Interpret an operator
 // This is a wrapper round the functions below
-void dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op) {
-   int ret;
+int dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op) {
    int (*func)(dviInterpreterState *interp, DVIOperator *op) = NULL;
    int i=0;
-   //dviStackState *state;
-
-	// Debugging output
-   /* state = interp->state;
-   printf("State:   h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", state->h, state->v, state->w, state->x, state->y, state->z);
-   state = interp->output->currentPosition;
-   if (state != NULL) {
-      printf("psState: h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", state->h, state->v, state->w, state->x, state->y, state->z);
-   } */
+   int err;
+   char errStr[SHORT_STRLEN];
 
    // Deal with the processing of DVI extensions (DIV_XXX/SPECIAL)
    if (interp->special > 0) {
       if (op->op <= DVI_CHARMAX) {
          dviSpecialChar(interp, op);
-         return;
+         return DVIE_SUCCESS;
       } else {
          // The following function turns the special flag off, and hence 
          // op is evaluated below
-         dviSpecialImplement(interp);
+         if ((err=dviSpecialImplement(interp)) > DVIE_WARNING) {
+            return err;
+         }
       }
    }
 
 	// This if statement extends the lookup table of operator functions
    if (op->op <= DVI_CHARMAX) {
       func = dviInOpChar;
-      // XXX Do soemthing with this data!
-      /* if (interp->special == 1)
-         func = dviInOpNop; */
    } else if (op->op < DVI_FNTNUMMIN) {
       i = op->op-DVI_CHARMAX-1;
       func = (dviOpTable[i]);
@@ -184,12 +175,13 @@ void dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op) {
       i = op->op-DVI_CHARMAX-1-(DVI_FNTNUMMAX-DVI_FNTNUMMIN+1);
       func = (dviOpTable[i]);
    } else {
-      dvi_error("ERROR: DVI interpreter found illegal operator!");
-      func = NULL;
+      dvi_error("DVI interpreter found illegal operator!");
+      return DVIE_CORRUPT;
    }
    if (func==NULL) {
-      printf("FAILed to find function for operator %d i=%d !\n", op->op, i);
-      return;
+      snprintf(errStr, SHORT_STRLEN, "FAILed to find function for operator %d i=%d !\n", op->op, i);
+      dvi_error(errStr);
+      return DVIE_CORRUPT;
    }
 
    // If we are not typesetting a character and moving right, check if we need to set accumulated text
@@ -198,18 +190,7 @@ void dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op) {
       dviTypeset(interp);
 
 	// Call the function to interpret the operator
-   ret = (*func)(interp, op);
-	// XXX do something with the return value!
-
-	// Debugging output
-   /* state = interp->state;
-   printf("State:   h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", state->h, state->v, state->w, state->x, state->y, state->z);
-   state = interp->output->currentPosition;
-   if (state != NULL) {
-      printf("psState: h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", state->h, state->v, state->w, state->x, state->y, state->z);
-   }
-   printf("\n"); */
-   return;
+   return (*func)(interp, op);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -309,6 +290,8 @@ int dviInOpSet1234(dviInterpreterState *interp, DVIOperator *op) {
 // DVI_SETRULE
 // Set a rule and move right
 int dviInOpSetRule(dviInterpreterState *interp, DVIOperator *op) {
+   int err = DVIE_SUCCESS;
+   //
    // Don't set a rule if movements are -ve
    if (op->sl[0]<0 || op->sl[1]<0) {
       printf("Silent Rule!\n");
@@ -318,14 +301,18 @@ int dviInOpSetRule(dviInterpreterState *interp, DVIOperator *op) {
       dviUpdateBoundingBox(interp, (int)op->sl[1], (int)op->sl[0], 0.);
       dviPostscriptMoveto(interp);
       interp->state->v -= op->sl[0];
-      dviPostscriptLineto(interp);
+      if ((err=dviPostscriptLineto(interp)) > DVIE_WARNING)
+         return err;
       interp->state->h += op->sl[1];
-      dviPostscriptLineto(interp);
+      if ((err=dviPostscriptLineto(interp)) > DVIE_WARNING)
+         return err;
       interp->state->v += op->sl[0];
-      dviPostscriptLineto(interp);
-      dviPostscriptClosepathFill(interp);
+      if ((err=dviPostscriptLineto(interp)) > DVIE_WARNING)
+         return err;
+      if ((err=dviPostscriptClosepathFill(interp)) > DVIE_WARNING)
+         return err;
    }
-   return 0;
+   return err;
 }
 
 // DVI_PUT
@@ -337,6 +324,7 @@ int dviInOpPut1234(dviInterpreterState *interp, DVIOperator *op) {
 // DVI_PUTRULE
 // Set a rule and don't move right
 int dviInOpPutRule(dviInterpreterState *interp, DVIOperator *op) {
+   int err=DVIE_SUCCESS;
    // Don't set a rule if movements are -ve
    if (op->sl[0]<0 || op->sl[1]<0) {
       printf("Silent Rule!\n");
@@ -344,15 +332,19 @@ int dviInOpPutRule(dviInterpreterState *interp, DVIOperator *op) {
       dviUpdateBoundingBox(interp, (int)op->sl[1], (int)op->sl[0], 0.);
       dviPostscriptMoveto(interp);
       interp->state->v -= op->sl[0];
-      dviPostscriptLineto(interp);
+      if ((err=dviPostscriptLineto(interp)) > DVIE_WARNING)
+         return err;
       interp->state->h += op->sl[1];
-      dviPostscriptLineto(interp);
+      if ((err=dviPostscriptLineto(interp)) > DVIE_WARNING)
+         return err;
       interp->state->v += op->sl[0];
-      dviPostscriptLineto(interp);
-      dviPostscriptClosepathFill(interp);
+      if ((err=dviPostscriptLineto(interp)) > DVIE_WARNING)
+         return err;
+      if ((err=dviPostscriptClosepathFill(interp)) > DVIE_WARNING)
+         return err;
       interp->state->h -= op->sl[1];
    }
-   return 0;
+   return err;
 }
 
 // DVI_NOP
@@ -549,7 +541,7 @@ int dviInOpSpecial1234(dviInterpreterState *interp, DVIOperator *op) {
 // DVI_FNTDEF1234
 int dviInOpFntdef1234(dviInterpreterState *interp, DVIOperator *op) {
    // XXX Should perhaps check that we're not re-defining an existing font here
-   // XXX Should check that we're not after POST and hence that we need to do this
+   // XXX Could check that we're not after POST and hence that we need to do this
    dlListItem *item;
    dviFontDetails *font;
    int i;
@@ -577,10 +569,7 @@ int dviInOpFntdef1234(dviInterpreterState *interp, DVIOperator *op) {
    font->desSize = op->ul[3];
 
    // parse the TFM file for useful data
-   dviGetTFM(font);
-
-   // XXX Do some more funky shit
-   return 0;
+   return dviGetTFM(font);
 }
 
 // DVI_PRE
@@ -626,24 +615,26 @@ void dviSpecialChar(dviInterpreterState *interp, DVIOperator *op) {
 }
 
 // Implement an accumulated special-mode command
-void dviSpecialImplement(dviInterpreterState *interp) {
+int dviSpecialImplement(dviInterpreterState *interp) {
+   int err = DVIE_SUCCESS;
    char errString[SHORT_STRLEN];
+
    printf("Special!  Final string=%s\n", interp->spString);
    // Test for a colour string
    if (strncmp(interp->spString, "color ", 6) == 0) {
       dviSpecialColourCommand(interp, interp->spString+6);
    } else {
-      // Unhandled special command
-      // E.g. includegraphics
+      // Unhandled special command (e.g. includegraphics)
       snprintf(errString, SHORT_STRLEN, "Warning! ignoring unhandled DVI special string %s\n", interp->spString);
       dvi_error(errString);
+      err = DVIE_WARNING;
    }
 
    // Clean up
    free(interp->spString);
    interp->spString = NULL;
    interp->special = 0;
-   return;
+   return err;
 }
 
 // Handle latex colour commands
@@ -911,7 +902,7 @@ void dviPostscriptMoveto(dviInterpreterState *interp) {
 }
 
 // Write some postscript to draw a line to the current co-ordinates
-void dviPostscriptLineto(dviInterpreterState *interp) {
+int dviPostscriptLineto(dviInterpreterState *interp) {
    char s[SHORT_STRLEN];
    double x, y;
    x = interp->state->h * interp->scale;
@@ -920,15 +911,17 @@ void dviPostscriptLineto(dviInterpreterState *interp) {
    dviPostscriptAppend(interp, s);
    // If we don't have a current position make one, else set the current ps position to the dvi one
    if (interp->output->currentPosition == NULL) {
-      dvi_fatal("dviPostscriptLineto", -1, "Lineto command issued with NULL current state!");
+      dvi_error("Postscript error: lineto command issued with NULL current state!");
+      return DVIE_INTERNAL;
    } else {
       interp->output->currentPosition->h = interp->state->h;
       interp->output->currentPosition->v = interp->state->v;
    }
+   return DVIE_SUCCESS;
 }
 
 // Write some postscript to close a path
-void dviPostscriptClosepathFill(dviInterpreterState *interp) {
+int dviPostscriptClosepathFill(dviInterpreterState *interp) {
    char s[SHORT_STRLEN];
    double x, y;
    x = interp->state->h * interp->scale;
@@ -936,11 +929,13 @@ void dviPostscriptClosepathFill(dviInterpreterState *interp) {
    snprintf(s, SHORT_STRLEN, "closepath fill\n");
    dviPostscriptAppend(interp, s);
    if (interp->output->currentPosition == NULL) {
-      dvi_fatal("dviPostscriptClosepathFill", -1, "Closepath command issued with NULL current state!");
+      dvi_error("Postscript error: closepath command issued with NULL current state!");
+      return DVIE_INTERNAL;
    } else {
       free(interp->output->currentPosition);
       interp->output->currentPosition = NULL;
    }
+   return DVIE_SUCCESS;
 }
 
 // Typeset the current buffered text
@@ -950,7 +945,6 @@ void dviTypeset(dviInterpreterState *interp) {
    char *s;
    double width, height, depth;
    double size[3];               // Width, height, depth
-   //int magic;
    int chars;
 
    postPos = interp->output->currentPosition;
@@ -968,17 +962,7 @@ void dviTypeset(dviInterpreterState *interp) {
    width = 0.;
    height = 0.;
    depth = 0.;
-   //magic=0;          // Was the last character typeset a /?
    while (*s != '\0') {
-      /* if (s[0] == '\\') {
-         if (magic == 0) {
-            magic = 1;
-            s++;
-            continue;
-         } 
-      } else {
-         magic = 0;
-      } */
       dviGetCharSize(interp, *s, size);
       width += size[0];
       height = size[1]>height ? size[1] : height;

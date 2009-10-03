@@ -84,7 +84,7 @@ typedef struct dviInterpreterState {
 
 // Functions allowing dvi interpreters to be manipulated
 dviInterpreterState *dviNewInterpreter();
-void dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op);
+int dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op);
 void dviDeleteInterpreter(dviInterpreterState *interp);
 void dviTypeset(dviInterpreterState *interp);
 
@@ -149,5 +149,24 @@ extern char DviErrorString[DVI_ERRORSTR_LEN];
 
 #define DVI_YES 1
 #define DVI_NO 0
+
+// Error states
+
+// Overall error states (success, warning of some kind, unspecified fatal error)
+#define DVIE_SUCCESS 0
+#define DVIE_WARNING 1
+#define DVIE_FATAL   9
+
+// Errors related to file operations
+#define DVIE_NOENT   10
+#define DVIE_EOF     11
+#define DVIE_ACCESS  12
+
+// Errors related to malformed/corrupted/missing files
+#define DVIE_CORRUPT 20
+#define DVIE_NOFONT  21
+
+// Internal errors (inconsistent internal state => bug!)
+#define DVIE_INTERNAL 30
 
 #endif

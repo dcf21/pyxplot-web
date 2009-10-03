@@ -56,9 +56,10 @@ const char *dviops[58] = {
 int ReadDviFile(char *filename) {
    FILE *fp;
    DVIOperator op;
-   int err, i;
+   int i;
    dviInterpreterState *interpreter;
    int POST=0;
+   int err;
 
    op.s[0] = NULL;
    op.s[1] = NULL;
@@ -74,15 +75,19 @@ int ReadDviFile(char *filename) {
    while (!feof(fp)) {
 		// Read the next operator from the dvi file
       if ((err=GetDVIOperator(&op, fp))!=0) {
-         char s[1024];
-         snprintf(s, 1024, "Error %d in getting operator!", err);
-         dvi_error(s);
-         break;
-         return err;
+         if (err > DVIE_WARNING) {
+            return err;
+         } else {
+            continue;
+         }
       }
       DisplayDVIOperator(&op);
       // A slightly more sophisticated interpreter that makes some postscript
-      if (!POST) dviInterpretOperator(interpreter, &op);
+      if (!POST) {
+         err = dviInterpretOperator(interpreter, &op);
+         if (err > DVIE_WARNING) 
+            return err;
+      }
       for (i=0; i<2; i++) {
          if (op.s[i]!=NULL) {
             free(op.s[i]);

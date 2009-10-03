@@ -36,9 +36,11 @@
 int pfb2pfa(FILE *in, FILE *out);
 char *psNameFromPFA(char *PFApath);
 
-void dviGetTFM(dviFontDetails *font) {
+int dviGetTFM(dviFontDetails *font) {
    char *TFMpath, *PFApath, *PFBpath;
    char *s;
+   char errStr[SHORT_STRLEN];
+   int err;
    FILE *TFMfp;
 	FILE *fpin, *fpout;
 
@@ -51,6 +53,7 @@ void dviGetTFM(dviFontDetails *font) {
    TFMpath = (char *)kpse_find_tfm(s);
    printf("Font file %s: TFM path: %s\n", font->name, TFMpath);
    TFMfp = fopen(TFMpath, "r");
+   // XXX Exercise for the reader: implement the ability of dviReadTFM to return errors
    font->tfm = dviReadTFM(TFMfp);
 	
    // Additionally obtain the pfa file
@@ -63,21 +66,30 @@ void dviGetTFM(dviFontDetails *font) {
       // Make a PFA file from the PFB file (assuming that one exists)
       sprintf(s, "%s.pfb", font->name);
       PFBpath = (char *)kpse_find_file(s, kpse_type1_format, true);
-      if (PFBpath == NULL)
-         dvi_fatal("dviGetTfm", -1, "Cannot find pfa or pfb file for font!");
+      if (PFBpath == NULL) {
+         snprintf(errStr, SHORT_STRLEN, "dviGetTfm: Cannot find pfa or pfb file for font %s", font->name);
+         dvi_error(errStr);
+         return DVIE_NOFONT;
+      }
       fpin = fopen(PFBpath, "r");
-      if (fpin==NULL) 
-         dvi_fatal("dviGetTfm", -1, "Cannot open pfb file!");
+      if (fpin==NULL) {
+         snprintf(errStr, SHORT_STRLEN, "dviGetTfm: Cannot open pfb file %s", PFBpath);
+         dvi_error(errStr);
+         return DVIE_ACCESS;
+      }
       
       // Make a filename for the destination pfa file
       //free(PFApath);
       PFApath = (char *)mallocx(SHORT_STRLEN*sizeof(char));
       snprintf(PFApath, SHORT_STRLEN, "%s%s.pfa", TEMPDIR, font->name);
       fpout = fopen(PFApath, "w");
-      if (fpout == NULL)
-         dvi_fatal("dviGetTfm", -1, "Cannot write to pfa file!");
-      if (pfb2pfa(fpin, fpout)!=0)
-         dvi_error("Error from pfa2pfb!");
+      if (fpout == NULL) {
+         snprintf(errStr, SHORT_STRLEN, "dviGetTfm: Cannot write to pfa file %s", PFApath);
+         dvi_error(errStr);
+         return DVIE_ACCESS;
+      }
+      if ((err=pfb2pfa(fpin, fpout))!=0)
+         return err;
       fclose(fpin);
       fclose(fpout);
       font->pfaPath = PFApath;
@@ -85,7 +97,7 @@ void dviGetTFM(dviFontDetails *font) {
 
    // Obtain the font name from the PFA file
    font->psName = psNameFromPFA(PFApath);
-   return;
+   return DVIE_SUCCESS;
 }
 
 // Extract the font name from a PFA file
