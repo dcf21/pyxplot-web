@@ -99,6 +99,7 @@ void dviPostscriptAppend(dviInterpreterState *interp, char *s);
 
 float dviGetCharWidth(dviInterpreterState *interp, char s);
 float dviGetCharHeight(dviInterpreterState *interp, char s);
+void dviGetCharSize(dviInterpreterState *interp, char s, double *size);
 
 // Routines for reading from files
 int ReadUChar(FILE *fp, int *uc);

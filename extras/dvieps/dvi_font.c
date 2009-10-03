@@ -262,11 +262,15 @@ dviTFM *dviReadTFM(FILE *fp) {
          ReadUChar(fp, t+j);
       }
       (tfm->charInfo+i)->wi = t[0];
-      (tfm->charInfo+i)->hi = t[1]<<4;
+      (tfm->charInfo+i)->hi = t[1]>>4;
       (tfm->charInfo+i)->di = t[1]&0xf;
-      (tfm->charInfo+i)->ii = t[2]<<2;
+      (tfm->charInfo+i)->ii = t[2]>>2;
       (tfm->charInfo+i)->tag = t[2]&0x3;
       (tfm->charInfo+i)->rem = t[3];
+      /* printf("TFM i=%d t=%d,%d,%d w,h,di=%d,%d,%d\n", i, t[0],t[1],t[2],
+                      (tfm->charInfo+i)->wi,
+                      (tfm->charInfo+i)->hi,
+                      (tfm->charInfo+i)->di); */
    }
 
    // Read the width, height, depth & italic tables

@@ -219,7 +219,7 @@ void dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op) {
 int dviNonAsciiChar(dviInterpreterState *interp, int c, char move) {
    char *s;
    dviStackState *postPos, *dviPos;   // Current positions in dvi and postscript code
-   double width, height;
+   double width, height, depth, size[3];
    int chars;
 
    postPos = interp->output->currentPosition;
@@ -232,22 +232,21 @@ int dviNonAsciiChar(dviInterpreterState *interp, int c, char move) {
    } else if (postPos->h != dviPos->h || postPos->v != dviPos->v) {
       dviPostscriptMoveto(interp);
    }
+
    // Bounding box stuff
-   width = dviGetCharWidth(interp, (char)c);
-   height = dviGetCharHeight(interp, (char)c);
-   
+   dviGetCharSize(interp, (char)c, size);
    // Convert back into dvi units
-   width /= interp->scale;
-   height /= interp->scale;
+   width  = size[0] / interp->scale;
+   height = size[1] / interp->scale;
+   depth  = size[2] / interp->scale;
    printf("width of glyph %g height of glyph %g\n", width, height);
-   dviUpdateBoundingBox(interp, width, height, 0.);
-   // XXX Here check up on the bounding box
-   
+   dviUpdateBoundingBox(interp, width, height, depth);
+
    // Count the number of characters to write to the ps string
    chars = 15;
    s = (char *)mallocx(chars*sizeof(char));
    snprintf(s, chars, "(\\%o) show\n", c);
-   
+
    // Send the string off to the postscript routine and clean up memory
    dviPostscriptAppend(interp, s);
    free(s);
@@ -316,6 +315,7 @@ int dviInOpSetRule(dviInterpreterState *interp, DVIOperator *op) {
       interp->state->h += op->sl[1];
       dviPostscriptMoveto(interp);
    } else {
+      dviUpdateBoundingBox(interp, (int)op->sl[1], (int)op->sl[0], 0.);
       dviPostscriptMoveto(interp);
       interp->state->v -= op->sl[0];
       dviPostscriptLineto(interp);
@@ -341,6 +341,7 @@ int dviInOpPutRule(dviInterpreterState *interp, DVIOperator *op) {
    if (op->sl[0]<0 || op->sl[1]<0) {
       printf("Silent Rule!\n");
    } else {
+      dviUpdateBoundingBox(interp, (int)op->sl[1], (int)op->sl[0], 0.);
       dviPostscriptMoveto(interp);
       interp->state->v -= op->sl[0];
       dviPostscriptLineto(interp);
@@ -947,8 +948,9 @@ void dviTypeset(dviInterpreterState *interp) {
    // This subroutine does the bulk of the actual postscript work, typesetting runs of characters
    dviStackState *postPos, *dviPos;   // Current positions in dvi and postscript code
    char *s;
-   double width, height;
-   int magic;
+   double width, height, depth;
+   double size[3];               // Width, height, depth
+   //int magic;
    int chars;
 
    postPos = interp->output->currentPosition;
@@ -965,9 +967,10 @@ void dviTypeset(dviInterpreterState *interp) {
    s = interp->currentString;
    width = 0.;
    height = 0.;
-   magic=0;          // Was the last character typeset a /?
+   depth = 0.;
+   //magic=0;          // Was the last character typeset a /?
    while (*s != '\0') {
-      if (s[0] == '\\') {
+      /* if (s[0] == '\\') {
          if (magic == 0) {
             magic = 1;
             s++;
@@ -975,17 +978,19 @@ void dviTypeset(dviInterpreterState *interp) {
          } 
       } else {
          magic = 0;
-      }
-      double h = dviGetCharHeight(interp, *s);
-      width += dviGetCharWidth(interp, *s);
-      height = h>height?h:height;
+      } */
+      dviGetCharSize(interp, *s, size);
+      width += size[0];
+      height = size[1]>height ? size[1] : height;
+      depth = size[2]>depth ? size[2] : depth;
       s++;
    }
    // Convert back into dvi units
    width /= interp->scale;
    height /= interp->scale;
+   depth /= interp->scale;
    printf("width of glyph %g height of glyph %g\n", width, height);
-   // XXX Here check up on the bounding box
+   dviUpdateBoundingBox(interp, width, height, depth);
    
    // Count the number of characters to write to the ps string
    chars = strlen(interp->currentString)+9;
@@ -1042,6 +1047,32 @@ int dviChngFnt(dviInterpreterState *interp, int fn) {
    return 0;
 }
 
+// Get the size (width, height, depth) of a glyph
+void dviGetCharSize(dviInterpreterState *interp, char s, double *size) {
+   dviTFM *tfm;       // Details of this font
+   int chnum;                 // Character number in this font
+   TFMcharInfo *chin;         // Character info for this character
+   int wi, hi, di;            // Index
+   //double width;              // Final character width
+	dviFontDetails *font;      // Font information (for tfm and use size)
+   
+	font = (dviFontDetails *)interp->curFnt->p;
+   tfm = font->tfm;
+   chnum = s - tfm->bc;
+   chin = tfm->charInfo+chnum;
+
+   wi = (int)chin->wi;
+   hi = (int)chin->hi;
+   di = (int)chin->di;
+   size[0] = tfm->width[wi] * font->useSize * interp->scale;
+   size[1] = tfm->height[hi] * font->useSize * interp->scale;
+   size[2] = tfm->depth[di] * font->useSize * interp->scale;
+
+   printf("Character %d chnum %d has indices %d %d %d width %g height %g depth %g useSize %g\n", s, chnum, wi, di, hi, size[0], size[1], size[2], font->useSize*interp->scale);
+   return;
+}
+
+/*
 // Get the height of a character to be rendered
 float dviGetCharHeight(dviInterpreterState *interp, char s) {
    // XXX Write this function (requires font knowledge...)
@@ -1067,6 +1098,7 @@ float dviGetCharWidth(dviInterpreterState *interp, char s) {
    printf("Character %d chnum %d has width index %d width %g useSize %g\n", s, chnum, wi, width, font->useSize*interp->scale);
    return width;
 }
+*/
 
 // Update a bounding box with the position and size of the current object to be typeset
 void dviUpdateBoundingBox(dviInterpreterState *interp, double width, double height, double depth) {
@@ -1092,10 +1124,10 @@ void dviUpdateBoundingBox(dviInterpreterState *interp, double width, double heig
    } else {
       // Check against current bounding box
       bb = interp->boundingBox;
-      bb[0] = bb[0]<bbObj[0]?bb[0]:bbObj[0];
-      bb[1] = bb[1]>bbObj[1]?bb[1]:bbObj[1];
-      bb[2] = bb[2]>bbObj[2]?bb[2]:bbObj[2];
-      bb[3] = bb[3]<bbObj[3]?bb[3]:bbObj[3];
+      bb[0] = bb[0] < bbObj[0] ? bb[0] : bbObj[0];
+      bb[1] = bb[1] > bbObj[1] ? bb[1] : bbObj[1];
+      bb[2] = bb[2] > bbObj[2] ? bb[2] : bbObj[2];
+      bb[3] = bb[3] < bbObj[3] ? bb[3] : bbObj[3];
    }
    return;
 }
