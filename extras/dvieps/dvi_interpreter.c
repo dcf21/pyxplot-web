@@ -35,6 +35,7 @@
 // Postscript functions
 void  dviPostscriptLineto(dviInterpreterState *interp);
 void  dviPostscriptClosepathFill(dviInterpreterState *interp);
+int dviChngFnt(dviInterpreterState *interp, int fn);
 
 // Interpreter functions for various types of dvi operators
 int dviInOpChar(dviInterpreterState *interp, DVIOperator *op);
@@ -296,11 +297,11 @@ int dviInOpSetRule(dviInterpreterState *interp, DVIOperator *op) {
       dviPostscriptMoveto(interp);
    } else {
       dviPostscriptMoveto(interp);
-      interp->state->v += op->sl[0];
+      interp->state->v -= op->sl[0];
       dviPostscriptLineto(interp);
       interp->state->h += op->sl[1];
       dviPostscriptLineto(interp);
-      interp->state->v -= op->sl[0];
+      interp->state->v += op->sl[0];
       dviPostscriptLineto(interp);
       dviPostscriptClosepathFill(interp);
    }
@@ -321,11 +322,11 @@ int dviInOpPutRule(dviInterpreterState *interp, DVIOperator *op) {
       printf("Silent Rule!\n");
    } else {
       dviPostscriptMoveto(interp);
-      interp->state->v += op->sl[0];
+      interp->state->v -= op->sl[0];
       dviPostscriptLineto(interp);
       interp->state->h += op->sl[1];
       dviPostscriptLineto(interp);
-      interp->state->v -= op->sl[0];
+      interp->state->v += op->sl[0];
       dviPostscriptLineto(interp);
       dviPostscriptClosepathFill(interp);
       interp->state->h -= op->sl[1];
@@ -377,7 +378,9 @@ int dviInOpBop(dviInterpreterState *interp, DVIOperator *op) {
    return 0;
 }
 
+// DVI_EOP
 int dviInOpEop(dviInterpreterState *interp, DVIOperator *op) {
+   // Don't currently need to do anything for an EOP...
    return 0;
 }
 
@@ -397,7 +400,7 @@ int dviInOpPush(dviInterpreterState *interp, DVIOperator *op) {
    memcpy(newItem->p, (void *)interp->state, sizeof(dviStackState)); */
    return 0;
 }
-//
+
 // DVI_POP
 int dviInOpPop(dviInterpreterState *interp, DVIOperator *op) {
    // Pop the previous state off the stack
@@ -488,44 +491,14 @@ int dviInOpZ1234(dviInterpreterState *interp, DVIOperator *op) {
 
 // DVI_FNTi
 int dviInOpFnt(dviInterpreterState *interp, DVIOperator *op) {
-   dlListItem *item;
-   int len;
-   char *s;
    int fn;
-   dviFontDetails *font;
-   double size;
-   
    fn = op->op - DVI_FNTNUMMIN;
-   interp->f = fn;
-   // Find the font in the list
-   interp->curFnt = NULL;
-   item = interp->fonts;
-   while (item != NULL) {
-      if (((dviFontDetails *)item->p)->number == fn) {
-         interp->curFnt = item;
-         break;
-      }
-      item = item->nxt;
-   }
-   if (interp->curFnt == NULL) {
-      dvi_error("Corrupt DVI file: failed to find current font!");
-      return 2;
-   }
-
-   // XXX Fount size???
-   font = (dviFontDetails *)item->p;
-   len = strlen(font->psName) + 20;
-   //\XXX 12 selectfont\n\0
-   s = (char *)mallocx(len*sizeof(char));
-   size = font->useSize*interp->scale;
-   printf("Font useSize %d size %g changed to %d\n", font->useSize, size, (int)ceil(size-.5));
-   snprintf(s, len, "/%s %d selectfont\n", font->psName, (int)ceil(size-.5));
-   dviPostscriptAppend(interp, s);
-   free(s);
-   return 0;
+   return dviChngFnt(interp, fn);
 }
 
+// DVI_FNT1234
 int dviInOpFnt1234(dviInterpreterState *interp, DVIOperator *op) {
+   dviChngFnt(interp, op->ul[0]);
    return 0;
 }
 
@@ -598,6 +571,7 @@ int dviInOpPre(dviInterpreterState *interp, DVIOperator *op) {
 int dviInOpPost(dviInterpreterState *interp, DVIOperator *op) {
    return 0;
 }
+
 // DVI_POSTPOST -- nop
 int dviInOpPostPost(dviInterpreterState *interp, DVIOperator *op) {
    return 0;
@@ -861,6 +835,43 @@ void dviTypeset(dviInterpreterState *interp) {
    interp->state->h += width;
    interp->output->currentPosition->h += width;
    return;
+}
+
+// Change to a new font
+int dviChngFnt(dviInterpreterState *interp, int fn) {
+   dlListItem *item;
+   int len;
+   char *s;
+   dviFontDetails *font;
+   double size;
+   
+   interp->f = fn;
+   // Find the font in the list
+   interp->curFnt = NULL;
+   item = interp->fonts;
+   while (item != NULL) {
+      if (((dviFontDetails *)item->p)->number == fn) {
+         interp->curFnt = item;
+         break;
+      }
+      item = item->nxt;
+   }
+   if (interp->curFnt == NULL) {
+      dvi_error("Corrupt DVI file: failed to find current font!");
+      return 2;
+   }
+
+   // XXX Fount size???
+   font = (dviFontDetails *)item->p;
+   len = strlen(font->psName) + 20;
+   //\XXX 12 selectfont\n\0
+   s = (char *)mallocx(len*sizeof(char));
+   size = font->useSize*interp->scale;
+   printf("Font useSize %d size %g changed to %d\n", font->useSize, size, (int)ceil(size-.5));
+   snprintf(s, len, "/%s %d selectfont\n", font->psName, (int)ceil(size-.5));
+   dviPostscriptAppend(interp, s);
+   free(s);
+   return 0;
 }
 
 // Get the height of a character to be rendered
