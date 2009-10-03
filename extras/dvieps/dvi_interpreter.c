@@ -1015,20 +1015,19 @@ int dviChngFnt(dviInterpreterState *interp, int fn) {
    }
    if (interp->curFnt == NULL) {
       dvi_error("Corrupt DVI file: failed to find current font!");
-      return 2;
+      return DVIE_CORRUPT;
    }
 
-   // XXX Fount size???
+   // Produce an appropriate postscript command
    font = (dviFontDetails *)item->p;
    len = strlen(font->psName) + 20;
-   //\XXX 12 selectfont\n\0
    s = (char *)mallocx(len*sizeof(char));
    size = font->useSize*interp->scale;
-   printf("Font useSize %d size %g changed to %d\n", font->useSize, size, (int)ceil(size-.5));
+   // printf("Font useSize %d size %g changed to %d\n", font->useSize, size, (int)ceil(size-.5));
    snprintf(s, len, "/%s %d selectfont\n", font->psName, (int)ceil(size-.5));
    dviPostscriptAppend(interp, s);
    free(s);
-   return 0;
+   return DVIE_SUCCESS;
 }
 
 // Get the size (width, height, depth) of a glyph
@@ -1055,34 +1054,6 @@ void dviGetCharSize(dviInterpreterState *interp, char s, double *size) {
    printf("Character %d chnum %d has indices %d %d %d width %g height %g depth %g useSize %g\n", s, chnum, wi, di, hi, size[0], size[1], size[2], font->useSize*interp->scale);
    return;
 }
-
-/*
-// Get the height of a character to be rendered
-float dviGetCharHeight(dviInterpreterState *interp, char s) {
-   // XXX Write this function (requires font knowledge...)
-   return 12.;
-}
-
-// Get the width of a character to be rendered
-float dviGetCharWidth(dviInterpreterState *interp, char s) {
-   dviTFM *tfm;       // Details of this font
-   int chnum;                 // Character number in this font
-   TFMcharInfo *chin;         // Character info for this character
-   int wi;                    // Width index
-   double width;              // Final character width
-	dviFontDetails *font;      // Font information (for tfm and use size)
-   
-	font = (dviFontDetails *)interp->curFnt->p;
-   tfm = font->tfm;
-   chnum = s - tfm->bc;
-   chin = tfm->charInfo+chnum;
-   wi = (int)chin->wi;
-   width = tfm->width[wi] * font->useSize * interp->scale;
-
-   printf("Character %d chnum %d has width index %d width %g useSize %g\n", s, chnum, wi, width, font->useSize*interp->scale);
-   return width;
-}
-*/
 
 // Update a bounding box with the position and size of the current object to be typeset
 void dviUpdateBoundingBox(dviInterpreterState *interp, double width, double height, double depth) {

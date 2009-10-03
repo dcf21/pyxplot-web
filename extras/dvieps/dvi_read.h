@@ -97,8 +97,6 @@ void dviDeletePostscriptState(postscriptState *state);
 void dviPostscriptMoveto(dviInterpreterState *interp);
 void dviPostscriptAppend(dviInterpreterState *interp, char *s);
 
-float dviGetCharWidth(dviInterpreterState *interp, char s);
-float dviGetCharHeight(dviInterpreterState *interp, char s);
 void dviGetCharSize(dviInterpreterState *interp, char s, double *size);
 
 // Routines for reading from files
