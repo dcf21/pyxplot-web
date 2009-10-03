@@ -73,6 +73,7 @@ int dviInOpPostPost(dviInterpreterState *interp, DVIOperator *op);
 void dviSpecialChar(dviInterpreterState *interp, DVIOperator *op);
 void dviSpecialImplement(dviInterpreterState *interp);
 int dviNonAsciiChar(dviInterpreterState *interp, int c, char move);
+void dviUpdateBoundingBox(dviInterpreterState *interp, double width, double height, double depth);
 
 // Big table of the operator functions to allow quick lookup without a big fat if statement
 int (*dviOpTable[58])(dviInterpreterState *interp, DVIOperator *op);
@@ -239,6 +240,7 @@ int dviNonAsciiChar(dviInterpreterState *interp, int c, char move) {
    width /= interp->scale;
    height /= interp->scale;
    printf("width of glyph %g height of glyph %g\n", width, height);
+   dviUpdateBoundingBox(interp, width, height, 0.);
    // XXX Here check up on the bounding box
    
    // Count the number of characters to write to the ps string
@@ -398,7 +400,18 @@ int dviInOpBop(dviInterpreterState *interp, DVIOperator *op) {
 
 // DVI_EOP
 int dviInOpEop(dviInterpreterState *interp, DVIOperator *op) {
-   // Don't currently need to do anything for an EOP...
+   double *bb;
+   // Set appropriate postscript bounding box from dvi bb
+   // left bottom right top
+   bb = interp->boundingBox;
+   // Convert bounding box from DVI to PS units
+   bb[0] *= interp->scale;
+   bb[1] = 765 - bb[1] * interp->scale;
+   bb[2] *= interp->scale;
+   bb[3] = 765 - bb[3] * interp->scale;
+   // Move pointer to postscript
+   interp->output->currentPage->boundingBox = bb;
+   interp->boundingBox = NULL;
    return 0;
 }
 
@@ -1053,4 +1066,36 @@ float dviGetCharWidth(dviInterpreterState *interp, char s) {
 
    printf("Character %d chnum %d has width index %d width %g useSize %g\n", s, chnum, wi, width, font->useSize*interp->scale);
    return width;
+}
+
+// Update a bounding box with the position and size of the current object to be typeset
+void dviUpdateBoundingBox(dviInterpreterState *interp, double width, double height, double depth) {
+   double *bb;
+   double bbObj[4];      // Bounding box of the object that we are typeseting
+   
+   // left bottom right top
+   // DVI counts down from the top (and this is all DVI units)
+   bbObj[0] = interp->state->h;
+   bbObj[1] = interp->state->v + depth;
+   bbObj[2] = interp->state->h + width;
+   bbObj[3] = interp->state->v - height;
+
+   // Check to see if we already have a bounding box
+   if (interp->boundingBox == NULL) {
+      bb = (double *)mallocx(4*sizeof(double));
+      bb[0] = bbObj[0];
+      bb[1] = bbObj[1];
+      bb[2] = bbObj[2];
+      bb[3] = bbObj[3];
+      interp->boundingBox = bb;
+      
+   } else {
+      // Check against current bounding box
+      bb = interp->boundingBox;
+      bb[0] = bb[0]<bbObj[0]?bb[0]:bbObj[0];
+      bb[1] = bb[1]>bbObj[1]?bb[1]:bbObj[1];
+      bb[2] = bb[2]>bbObj[2]?bb[2]:bbObj[2];
+      bb[3] = bb[3]<bbObj[3]?bb[3]:bbObj[3];
+   }
+   return;
 }

@@ -426,6 +426,7 @@ void outputPostscript(FILE *fp, dviInterpreterState *interp) {
    FILE *fp2;
    int i=0;
    int c;
+   double *bb;
 
    fprintf(fp, "%%!PS-Adobe-2.0\n");
    fprintf(fp, "%%%%Title: pp output\n");
@@ -459,6 +460,14 @@ void outputPostscript(FILE *fp, dviInterpreterState *interp) {
    while (page != NULL) {
       ++i;
       fprintf(fp, "%%%%Page: %d %d\n", i, i);
+      // Paint on the bounding box
+      bb = ((postscriptPage *)(page->p))->boundingBox;
+      fprintf(fp, "gsave\n");
+      fprintf(fp, "%f %f moveto\n", bb[0], bb[1]);
+      fprintf(fp, "%f %f lineto\n", bb[0], bb[3]);
+      fprintf(fp, "%f %f lineto\n", bb[2], bb[3]);
+      fprintf(fp, "%f %f lineto closepath stroke\n", bb[2], bb[1]);
+      fprintf(fp, "grestore\n");
       text = ((postscriptPage *)(page->p))->text;
       while (text != NULL) {
          fprintf(fp, "%s", (char *)text->p);

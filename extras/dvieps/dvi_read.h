@@ -79,6 +79,7 @@ typedef struct dviInterpreterState {
    int special;                  // A magic flag for special actions
    char *spString;               // String to store special information
    dlListItem *colStack;         // Stack of colour items
+   double *boundingBox;          // Current bounding box
 } dviInterpreterState;
 
 // Functions allowing dvi interpreters to be manipulated
