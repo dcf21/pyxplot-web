@@ -36,6 +36,9 @@
 void  dviPostscriptLineto(dviInterpreterState *interp);
 void  dviPostscriptClosepathFill(dviInterpreterState *interp);
 int dviChngFnt(dviInterpreterState *interp, int fn);
+int dviSpecialColourCommand(dviInterpreterState *interp, char *command);
+int dviSpecialColourStackPush(dviInterpreterState *interp, char *psText);
+int dviSpecialColourStackPop(dviInterpreterState *interp);
 
 // Interpreter functions for various types of dvi operators
 int dviInOpChar(dviInterpreterState *interp, DVIOperator *op);
@@ -66,8 +69,10 @@ int dviInOpPre(dviInterpreterState *interp, DVIOperator *op);
 int dviInOpPost(dviInterpreterState *interp, DVIOperator *op);
 int dviInOpPostPost(dviInterpreterState *interp, DVIOperator *op);
 
-// This is not strictly an operator interpreter function, but typesets characters for dviInOpChar
-int dviSpecialChar(dviInterpreterState *interp, int c, char move);
+// Functions called by operator interpreter functions
+void dviSpecialChar(dviInterpreterState *interp, DVIOperator *op);
+void dviSpecialImplement(dviInterpreterState *interp);
+int dviNonAsciiChar(dviInterpreterState *interp, int c, char move);
 
 // Big table of the operator functions to allow quick lookup without a big fat if statement
 int (*dviOpTable[58])(dviInterpreterState *interp, DVIOperator *op);
@@ -134,6 +139,7 @@ void makeDviOpTable() {
    return;
 }
 
+
 // Interpret an operator
 // This is a wrapper round the functions below
 void dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op) {
@@ -150,12 +156,24 @@ void dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op) {
       printf("psState: h=%ld v=%ld w=%ld x=%ld y=%ld z=%ld\n", state->h, state->v, state->w, state->x, state->y, state->z);
    } */
 
+   // Deal with the processing of DVI extensions (DIV_XXX/SPECIAL)
+   if (interp->special > 0) {
+      if (op->op <= DVI_CHARMAX) {
+         dviSpecialChar(interp, op);
+         return;
+      } else {
+         // The following function turns the special flag off, and hence 
+         // op is evaluated below
+         dviSpecialImplement(interp);
+      }
+   }
+
 	// This if statement extends the lookup table of operator functions
    if (op->op <= DVI_CHARMAX) {
       func = dviInOpChar;
       // XXX Do soemthing with this data!
-      if (interp->special == 1)
-         func = dviInOpNop;
+      /* if (interp->special == 1)
+         func = dviInOpNop; */
    } else if (op->op < DVI_FNTNUMMIN) {
       i = op->op-DVI_CHARMAX-1;
       func = (dviOpTable[i]);
@@ -197,7 +215,7 @@ void dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op) {
 // Functions that implement operators
 //
 // Typeset a special character
-int dviSpecialChar(dviInterpreterState *interp, int c, char move) {
+int dviNonAsciiChar(dviInterpreterState *interp, int c, char move) {
    char *s;
    dviStackState *postPos, *dviPos;   // Current positions in dvi and postscript code
    double width, height;
@@ -256,7 +274,7 @@ int dviInOpChar(dviInterpreterState *interp, DVIOperator *op) {
       // Clear the queue if there's anything on it
       if (interp->currentString != NULL) 
          dviTypeset(interp);
-      dviSpecialChar(interp, charToTypeset, DVI_YES);
+      dviNonAsciiChar(interp, charToTypeset, DVI_YES);
       return 0;
    }
 
@@ -284,7 +302,7 @@ int dviInOpChar(dviInterpreterState *interp, DVIOperator *op) {
 
 // DVI_SET1234
 int dviInOpSet1234(dviInterpreterState *interp, DVIOperator *op) {
-   return dviSpecialChar(interp, op->ul[0], DVI_YES);
+   return dviNonAsciiChar(interp, op->ul[0], DVI_YES);
 }
 
 // DVI_SETRULE
@@ -310,7 +328,7 @@ int dviInOpSetRule(dviInterpreterState *interp, DVIOperator *op) {
 
 // DVI_PUT
 int dviInOpPut1234(dviInterpreterState *interp, DVIOperator *op) {
-   dviSpecialChar(interp, op->ul[0], DVI_NO);
+   dviNonAsciiChar(interp, op->ul[0], DVI_NO);
    return 0;
 }
 
@@ -507,7 +525,9 @@ int dviInOpSpecial1234(dviInterpreterState *interp, DVIOperator *op) {
    int spesh;
    spesh = op->op - DVI_SPECIAL1234+1;
    interp->special = spesh;
-   printf("Special! %d\n", spesh);
+   interp->spString = (char *)mallocx(SHORT_STRLEN*sizeof(char));
+   *(interp->spString) = '\0';
+   printf("Special! %d %lu %d\n", spesh, op->ul[0], strlen(interp->spString));
    // NOP
    return 0;
 }
@@ -579,6 +599,139 @@ int dviInOpPostPost(dviInterpreterState *interp, DVIOperator *op) {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Functions for implementing special operators (DVI_SPECIAL)
+
+// Accumulate characters output in special mode into a string
+void dviSpecialChar(dviInterpreterState *interp, DVIOperator *op) {
+   int c;
+   char *s;
+   c = op->op;
+   s = interp->spString+strlen(interp->spString);
+   snprintf(s, SHORT_STRLEN, "%s", (char *)&c);
+   return;
+}
+
+// Implement an accumulated special-mode command
+void dviSpecialImplement(dviInterpreterState *interp) {
+   char errString[SHORT_STRLEN];
+   printf("Special!  Final string=%s\n", interp->spString);
+   // Test for a colour string
+   if (strncmp(interp->spString, "color ", 6) == 0) {
+      dviSpecialColourCommand(interp, interp->spString+6);
+   } else {
+      // Unhandled special command
+      // E.g. includegraphics
+      snprintf(errString, SHORT_STRLEN, "Warning! ignoring unhandled DVI special string %s\n", interp->spString);
+      dvi_error(errString);
+   }
+
+   // Clean up
+   free(interp->spString);
+   interp->spString = NULL;
+   interp->special = 0;
+   return;
+}
+
+// Handle latex colour commands
+int dviSpecialColourCommand(dviInterpreterState *interp, char *command) {
+   char psText[SHORT_STRLEN];
+   // Skip over any leading spaces
+   while (command[0] == ' ') 
+      command++;
+   // See what sort of colour command it is
+
+   if (strncmp(command, "push ", 4)==0) {
+      // New colour to push onto stack
+      printf("%s says push\n", command);
+      command += 5;
+      while (command[0] == ' ')
+         command++;
+      if (strncmp(command, "cmyk ", 5)==0) {
+         // CMKY colour
+         command += 5;
+         snprintf(psText, SHORT_STRLEN, "%s setcmykcolor\n", command);
+      } else if (strncmp(command, "rgb ", 4)==0) {
+         // rgb colour
+         command += 4;
+         snprintf(psText, SHORT_STRLEN, "%s setrgbcolor\n", command);
+      } else if (strncmp(command, "Black", 5)==0) {
+         snprintf(psText, SHORT_STRLEN, "0 0 0 setrgbcolor\n");
+      } else if (strncmp(command, "gray ", 5)==0 || strncmp(command, "grey ", 5)==0) {
+         command += 5;
+         snprintf(psText, SHORT_STRLEN, "%s %s %s setrgbcolor\n", command, command, command);
+      } else {
+         snprintf(psText, SHORT_STRLEN, "Failed to comprehend colour %s\n", command);
+         dvi_error(psText);
+         return 1;
+      }
+      dviSpecialColourStackPush(interp, psText);
+      return 0;
+
+   } else if (strncmp(command, "pop", 3)==0) {
+      // Pop a colour off the stack
+      return dviSpecialColourStackPop(interp);
+
+   } else {
+      snprintf(psText, SHORT_STRLEN, "Warning! Ignoring incomprehensible colour command %s\n", command);
+      dvi_error(psText);
+      return 3;
+   }
+   return 0;
+}
+
+// Pop a colour instruction off the end of the stack
+int dviSpecialColourStackPop(dviInterpreterState *interp) {
+   dlListItem *item;
+   
+   // Find the end of the colour stack
+   item = interp->colStack;
+   if (item==NULL) {
+      dvi_error("Warning!  DVI colour pop from empty stack!\n");
+      return 1;
+   }
+   while (item->nxt != NULL) 
+      item = item->nxt;
+
+   // Lop off the last item
+   item = dlDeleteItem(item);
+   // Set colour to item on top of stack
+   if (item==NULL) {
+      // Hit the bottom of the colour stack; default colour is black
+      interp->colStack = NULL;
+      dviPostscriptAppend(interp, "0 0 0 setrgbcolor\n");
+   } else {
+      dviPostscriptAppend(interp, (char *)item->p);
+   }
+   return 0;
+}
+
+// Push a colour onto the colour stack
+int dviSpecialColourStackPush(dviInterpreterState *interp, char *psText) {
+   dlListItem *item;
+   char *s;
+   int len;
+   // Make a new stack item and list if necessary
+   if (interp->colStack == NULL) {
+      item = dlNewList();
+      interp->colStack = item;
+   } else {
+      item = dlAppendItem(interp->colStack);
+   }
+   // Stick the string onto the stack
+   len = strlen(psText)+1;
+   s = (char *)mallocx(len*sizeof(char));
+   snprintf(s, len, "%s", psText);
+   item->p = (void *)s;
+
+   // Also append to the postscript stack
+   dviPostscriptAppend(interp, psText);
+
+   return 0;
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
 // Functions for manipulating interpreters
 
 // Produce a new dvi interpreter (for a new dvi file, say)
@@ -609,7 +762,9 @@ dviInterpreterState *dviNewInterpreter() {
    // No fonts currently
    interp->fonts = NULL;
 
+   // Nothing special occuring
    interp->special = 0;  // Not in special mode
+   interp->spString = NULL;
 
    // Make the big table of operators
    makeDviOpTable();

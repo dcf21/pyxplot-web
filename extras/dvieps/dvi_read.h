@@ -77,6 +77,8 @@ typedef struct dviInterpreterState {
    dlListItem *fonts;            // The fonts currently defined
    postscriptState *output;      // The output postscript
    int special;                  // A magic flag for special actions
+   char *spString;               // String to store special information
+   dlListItem *colStack;         // Stack of colour items
 } dviInterpreterState;
 
 // Functions allowing dvi interpreters to be manipulated

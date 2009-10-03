@@ -58,6 +58,7 @@ int ReadDviFile(char *filename) {
    DVIOperator op;
    int err, i;
    dviInterpreterState *interpreter;
+   int POST=0;
 
    op.s[0] = NULL;
    op.s[1] = NULL;
@@ -81,7 +82,7 @@ int ReadDviFile(char *filename) {
       }
       DisplayDVIOperator(&op);
       // A slightly more sophisticated interpreter that makes some postscript
-      dviInterpretOperator(interpreter, &op);
+      if (!POST) dviInterpretOperator(interpreter, &op);
       for (i=0; i<2; i++) {
          if (op.s[i]!=NULL) {
             free(op.s[i]);
@@ -89,8 +90,10 @@ int ReadDviFile(char *filename) {
          }
       }
       // If we've hit the post then we can break out
-      if (op.op==DVI_POST)
+      if (op.op==DVI_POST) {
+         POST = 1;
          break;
+      }
    }
 
    fclose(fp);
