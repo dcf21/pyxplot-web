@@ -1,0 +1,431 @@
+<!-- Andrew Snowden 5/7/04 -->
+
+<html>
+<head>
+<title>DVI Specification</title>
+</head>
+<body>
+
+<h1> 0. Foreword </h1>
+
+<p>
+This purpose of this page is to provide documentation for the <code>DVI</code> file format.
+Much of the content on this page was taken directly from the <code>dvitype.web</code> program,
+written by Donald Knuth (this explains the several references to the <code>DVItype</code>
+program; these can be ignored).
+
+<h1> 1. The <code>DVI</code> File Format </h1>
+
+<p>
+Before we get into the details of <code>DVItype</code>, we need to know exactly what <code>DVI</code>
+files are. The form of such files was designed by David R. Fuchs in 1979. Almost any reasonable
+typesetting device can be driven by a program that takes <code>DVI</code> files as input, and dozens
+of such <code>DVI</code>-to-whatever programs have been written. Thus, it is possible to print the
+output of document compilers like <code>TeX</code> on many different kinds of equipment.
+<p>
+A <code>DVI</code> file is a stream of 8-bit bytes, which may be regarded as a series of commands
+in a machine-like language. The first byte of each command is the operation code, and this code is
+followed by zero or more bytes that provide parameters to the command. The parameters themselves
+may consist of several consecutive bytes; for example, the <code>set_rule</code> command has two
+parameters, each of which is four bytes long. Parameters are usually regarded as nonnegative
+integers; but four-byte-long parameters, and shorter parameters that denote distances, can be either
+positive or negative. Such parameters are given in two's complement notation. For example, a
+two-byte-long distance parameter has a value between <code>-2^15</code> and <code>2^15-1</code>.
+<b>[NOTE: <code>DVI</code> files use big endian format for multiple byte integer parameters.]</b>
+<p>
+A <code>DVI</code> file consists of a ``preamble,'' followed by a sequence of one or more ``pages,''
+followed by a ``postamble.'' The preamble is simply a <code>pre</code> command, with its parameters
+that define the dimensions used in the file; this must come first.  Each ``page'' consists of a
+<code>bop</code> command, followed by any number of other commands that tell where characters are to
+be placed on a physical page, followed by an <code>eop</code> command. The pages appear in the order
+that they were generated, not in any particular numerical order. If we ignore <code>nop</code>
+commands and <code>fnt_def</code> commands (which are allowed between any two commands in the file),
+each <code>eop</code> command is immediately followed by a <code>bop</code> command, or by a
+<code>post</code> command; in the latter case, there are no more pages in the file, and the
+remaining bytes form the postamble.  Further details about the postamble will be explained later.
+<p>
+Some parameters in <code>DVI</code> commands are ``pointers.'' These are four-byte quantities that
+give the location number of some other byte in the file; the first byte is number 0, then comes
+number 1, and so on. For example, one of the parameters of a <code>bop</code> command points to the
+previous <code>bop</code>; this makes it feasible to read the pages in backwards order, in case the
+results are being directed to a device that stacks its output face up. Suppose the preamble of a
+<code>DVI</code> file occupies bytes 0 to 99. Now if the first page occupies bytes 100 to 999, say,
+and if the second page occupies bytes 1000 to 1999, then the <code>bop</code> that starts in byte
+1000 points to 100 and the <code>bop</code> that starts in byte 2000 points to 1000. (The very first
+<code>bop</code>, i.e., the one that starts in byte 100, has a pointer of -1.)
+<p>
+The <code>DVI</code> format is intended to be both compact and easily interpreted by a machine.
+Compactness is achieved by making most of the information implicit instead of explicit. When a
+<code>DVI</code>-reading program reads the commands for a page, it keeps track of several quantities:
+(a) The current font <code>f</code> is an integer; this value is changed only by <code>fnt</code> and
+<code>fnt_num</code> commands. (b) The current position on the page is given by two numbers called
+the horizontal and vertical coordinates, <code>h</code> and <code>v</code>. Both coordinates are
+zero at the upper left corner of the page; moving to the right corresponds to increasing the
+horizontal coordinate, and moving down corresponds to increasing the vertical coordinate. Thus, the
+coordinates are essentially Cartesian, except that vertical directions are flipped; the Cartesian
+version of <code>(h,v)</code> would be <code>(h,-v)</code>.  (c) The current spacing amounts are
+given by four numbers <code>w</code>, <code>x</code>, <code>y</code>, and <code>z</code>, where
+<code>w</code> and <code>x</code> are used for horizontal spacing and where <code>y</code> and
+<code>z</code> are used for vertical spacing. (d) There is a stack containing
+<code>(h,v,w,x,y,z)</code> values; the <code>DVI</code> commands <code>push</code> and <code>pop</code>
+are used to change the current level of operation. Note that the current font <code>f</code> is
+not pushed and popped; the stack contains only information about positioning.
+<p>
+The values of <code>h</code>, <code>v</code>, <code>w</code>, <code>x</code>, <code>y</code>, and
+<code>z</code> are signed integers having up to 32 bits, including the sign. Since they represent
+physical distances, there is a small unit of measurement such that increasing <code>h</code> by 1
+means moving a certain tiny distance to the right. The actual unit of measurement is variable, as
+explained below.
+
+<h1> 3. Table of Opcodes </h1>
+
+<p>
+The following table gives the instruction set for <code>DVI</code>.  The parameters are
+listed in the order they would appear in a <code>DVI</code> file; the number in brackets
+gives the size of the parameter (in bytes).
+
+<p>
+<center> <table border=yes>
+<tr><th colspan=4> The <code>DVI</code> Instruction Set </th></tr>
+<tr><th> Opcode </th><th> Instruction Name </th><th> Parameters </th><th> Description </th></tr>
+<tr><td> 0...127 </td><td><code> <a href="#setchar">set_char_<i>i</i></a> </code></td><td></td><td>typeset a character and move right</td></tr>
+<tr><td> 128 </td><td><code> <a href="#set">set1</a> </code></td><td><code> c[1] </code></td><td rowspan=4> typeset a character and move right </td></tr>
+<tr><td> 129 </td><td><code> <a href="#set">set2</a> </code></td><td><code> c[2] </code></td></tr>
+<tr><td> 130 </td><td><code> <a href="#set">set3</a> </code></td><td><code> c[3] </code></td></tr>
+<tr><td> 131 </td><td><code> <a href="#set">set4</a> </code></td><td><code> c[4] </code></td></tr>
+<tr><td> 132 </td><td><code> <a href="#setrule">set_rule</a> </code></td><td><code> a[4], b[4] </code></td><td> typeset a rule and move right </td></tr>
+<tr><td> 133 </td><td><code> <a href="#put">put1</a> </code></td><td><code> c[1] </code></td><td rowspan=4> typeset a character </td></tr>
+<tr><td> 134 </td><td><code> <a href="#put">put2</a> </code></td><td><code> c[2] </code></td></tr>
+<tr><td> 135 </td><td><code> <a href="#put">put3</a> </code></td><td><code> c[3] </code></td></tr>
+<tr><td> 136 </td><td><code> <a href="#put">put4</a> </code></td><td><code> c[4] </code></td></tr>
+<tr><td> 137 </td><td><code> <a href="#putrule">put_rule</a> </code></td><td><code> a[4], b[4] </code></td><td> typeset a rule </td></tr>
+<tr><td> 138 </td><td><code> <a href="#nop">nop</a> </code></td><td></td><td> no operation </td></tr>
+<tr><td> 139 </td><td><code> <a href="#bop">bop</a> </code></td><td><code> c_0[4]..c_9[4], p[4] </code></td><td> beginning of page </td></tr>
+<tr><td> 140 </td><td><code> <a href="#eop">eop</a> </code></td><td></td><td> ending of page </td></tr>
+<tr><td> 141 </td><td><code> <a href="#push">push</a> </code></td><td></td><td> save the current positions </td></tr>
+<tr><td> 142 </td><td><code> <a href="#pop">pop</a> </code></td><td></td><td> restore previous positions </td></tr>
+<tr><td> 143 </td><td><code> <a href="#right">right1</a> </code></td><td><code> b[1] </code></td><td rowspan=4> move right </td></tr>
+<tr><td> 144 </td><td><code> <a href="#right">right2</a> </code></td><td><code> b[2] </code></td></tr>
+<tr><td> 145 </td><td><code> <a href="#right">right3</a> </code></td><td><code> b[3] </code></td></tr>
+<tr><td> 146 </td><td><code> <a href="#right">right4</a> </code></td><td><code> b[4] </code></td></tr>
+<tr><td> 147 </td><td><code> <a href="#w">w0</a> </code></td><td></td><td> move right by <code>w</code> </td></tr>
+<tr><td> 148 </td><td><code> <a href="#w">w1</a> </code></td><td><code> b[1] </code></td><td rowspan=4> move right and set <code>w</code> </td></tr>
+<tr><td> 149 </td><td><code> <a href="#w">w2</a> </code></td><td><code> b[2] </code></td></tr>
+<tr><td> 150 </td><td><code> <a href="#w">w3</a> </code></td><td><code> b[3] </code></td></tr>
+<tr><td> 151 </td><td><code> <a href="#w">w4</a> </code></td><td><code> b[4] </code></td></tr>
+<tr><td> 152 </td><td><code> <a href="#x">x0</a> </code></td><td></td><td> move right by <code>x</code> </td></tr>
+<tr><td> 153 </td><td><code> <a href="#x">x1</a> </code></td><td><code> b[1] </code></td><td rowspan=4> move right and set <code>x</code> </td></tr>
+<tr><td> 154 </td><td><code> <a href="#x">x2</a> </code></td><td><code> b[2] </code></td></tr>
+<tr><td> 155 </td><td><code> <a href="#x">x3</a> </code></td><td><code> b[3] </code></td></tr>
+<tr><td> 156 </td><td><code> <a href="#x">x4</a> </code></td><td><code> b[4] </code></td></tr>
+<tr><td> 157 </td><td><code> <a href="#down">down1</a> </code></td><td><code> a[1] </code></td><td rowspan=4> move down </td></tr>
+<tr><td> 158 </td><td><code> <a href="#down">down2</a> </code></td><td><code> a[2] </code></td></tr>
+<tr><td> 159 </td><td><code> <a href="#down">down3</a> </code></td><td><code> a[3] </code></td></tr>
+<tr><td> 160 </td><td><code> <a href="#down">down4</a> </code></td><td><code> a[4] </code></td></tr>
+<tr><td> 161 </td><td><code> <a href="#y">y0</a> </code></td><td></td><td> move down by <code>y</code> </td></tr>
+<tr><td> 162 </td><td><code> <a href="#y">y1</a> </code></td><td><code> a[1] </code></td><td rowspan=4> move down and set <code>y</code> </td></tr>
+<tr><td> 163 </td><td><code> <a href="#y">y2</a> </code></td><td><code> a[2] </code></td></tr>
+<tr><td> 164 </td><td><code> <a href="#y">y3</a> </code></td><td><code> a[3] </code></td></tr>
+<tr><td> 165 </td><td><code> <a href="#y">y4</a> </code></td><td><code> a[4] </code></td></tr>
+<tr><td> 166 </td><td><code> <a href="#z">z0</a> </code></td><td></td><td> move down by <code>z</code> </td></tr>
+<tr><td> 167 </td><td><code> <a href="#z">z1</a> </code></td><td><code> a[1] </code></td><td rowspan=4> move down and set <code>z</code> </td></tr>
+<tr><td> 168 </td><td><code> <a href="#z">z2</a> </code></td><td><code> a[2] </code></td></tr>
+<tr><td> 169 </td><td><code> <a href="#z">z3</a> </code></td><td><code> a[3] </code></td></tr>
+<tr><td> 170 </td><td><code> <a href="#z">z4</a> </code></td><td><code> a[4] </code></td></tr>
+<tr><td> 171...234 </td><td><code> <a href="#fntnum">fnt_num_<i>i</i></a> </code></td><td></td><td> set current font to <code>i</code> </td></tr>
+<tr><td> 235 </td><td><code> <a href="#fnt">fnt1</a> </code></td><td><code> k[1] </code></td><td rowspan=4> set current font </td></tr>
+<tr><td> 236 </td><td><code> <a href="#fnt">fnt2</a> </code></td><td><code> k[2] </code></td></tr>
+<tr><td> 237 </td><td><code> <a href="#fnt">fnt3</a> </code></td><td><code> k[3] </code></td></tr>
+<tr><td> 238 </td><td><code> <a href="#fnt">fnt4</a> </code></td><td><code> k[4] </code></td></tr>
+<tr><td> 239 </td><td><code> <a href="#xxx">xxx1</a> </code></td><td><code> k[1], x[k] </code></td><td rowspan=4> extension to <code>DVI</code> primitives </td></tr>
+<tr><td> 240 </td><td><code> <a href="#xxx">xxx2</a> </code></td><td><code> k[2], x[k] </code></td></tr>
+<tr><td> 241 </td><td><code> <a href="#xxx">xxx3</a> </code></td><td><code> k[3], x[k] </code></td></tr>
+<tr><td> 242 </td><td><code> <a href="#xxx">xxx4</a> </code></td><td><code> k[4], x[k] </code></td></tr>
+<tr><td> 243 </td><td><code> <a href="#fntdef">fnt_def1</a> </code></td><td><code> k[1], c[4], s[4], d[4],
+<br> a[1], l[1], n[a+l]</code></td><td rowspan=4> define the meaning of a font number </td></tr>
+<tr><td> 244 </td><td><code> <a href="#fntdef">fnt_def2</a> </code></td><td rowspan><code> k[2], c[4], s[4], d[4],
+<br> a[1], l[1], n[a+l] </code></td></tr>
+<tr><td> 245 </td><td><code> <a href="#fntdef">fnt_def3</a> </code></td><td><code> k[3], c[4], s[4], d[4],
+<br> a[1], l[1], n[a+l] </code></td></tr>
+<tr><td> 246 </td><td><code> <a href="#fntdef">fnt_def4</a> </code></td><td><code> k[4], c[4], s[4], d[4],
+<br> a[1], l[1], n[a+l] </code></td></tr>
+<tr><td> 247 </td><td><code> <a href="#preamble">pre</a> </code></td><td><code> i[1], num[4], den[4], mag[4],
+<br> k[1], x[k] </code></td><td> preamble </td></tr>
+<tr><td> 248 </td><td><code> <a href="#postamble">post</a> </code></td><td><code> p[4], num[4], den[4], mag[4],
+<br> l[4], u[4], s[2], t[2]</code><br> &lt <i>font definitions</i> &gt </td><td> postamble beginning </td></tr>
+<tr><td> 249 </td><td><code> <a href="#postpost">post_post</a> </code></td><td><code> q[4], i[1]; 223's</code></td><td> postamble ending </td></tr>
+<tr><td> 250...255 </td><td> <i>undefined</i> </td><td><code> </code></td> </tr>
+</table> </center>
+
+<h1> 4. Description of Opcodes </h1>
+
+<ul>
+<a name="setchar">
+<li> Opcodes 0-127: <code>set_char_<i>i</i> (0 &lt= i &lt= 127) </code>
+<p> Typeset character number <code>i</code> from font <code>f</code> such that the
+reference point of the character is at <code>(h,v)</code>. Then increase <code>h</code>
+by the width of that character. Note that a character may have zero or negative width,
+so one cannot be sure that <code>h</code> will advance after this command; but
+<code>h</code> usually does increase. <br>
+
+<a name="set">
+<li> Opcodes 128-131: <code>set<i>i</i> (1 &lt= i &lt= 4); c[<i>i</i>]</code>
+<p> Same as <code>set_char_0</code>, except that character number <code>c</code> is typeset.
+<code>TeX82</code> uses the <code>set1</code> command for characters in the range
+<code>128 &lt= c &lt 256</code>.  <code>TeX82</code> never uses the <code>set2</code>,
+command which is intended for processors that deal with oriental languages; but
+<code>DVItype</code> will allow character codes greater than 255, assuming that they
+all have the same width as the character whose code is <code>c mod 256</code>. <br>
+
+<a name="setrule">
+<li> Opcode 132: <code>set_rule; a[4], b[4] </code>
+<p> Typeset a solid black rectangle of height <code>a</code> and width <code>b</code>, with
+its bottom left corner at <code>(h,v)</code>. Then set <code>h:=h+b</code>. If either
+<code>a &lt =0</code> or <code>b &lt =0</code>, nothing should be typeset. Note that if
+<code>b &lt 0<code>, the value of <code>h</code> will decrease even though nothing else
+happens.  Programs that typeset from <code>DVI</code> files should be careful to make the
+rules line up carefully with digitized characters, as explained in connection with the
+<code>rule_pixels</code> subroutine below. <br>
+
+<a name="put">
+<li> Opcodes 133-136: <code>put<i>i</i> (1 &lt= i &lt= 4); c[<i>i</i>]</code>
+<p> Typeset character number <code>c</code> from font <code>f</code> such that the reference
+point of the character is at <code>(h,v)</code>. (The <code>put</code> commands are
+exactly like the <code>set</code> commands, except that they simply put out a character
+or a rule without moving the reference point afterwards.) <br>
+
+<a name="putrule">
+<li> Opcode 137: <code>put_rule; a[4], b[4] </code>
+<p> Same as <code>set_rule</code>, except that <code>h</code> is not changed. <br>
+
+<a name="nop">
+<li> Opcode 138: <code>nop</code>
+<p> No operation, do nothing. Any number of <code>nop</code>'s may occur between
+<code>DVI</code> commands, but a <code>nop</code> cannot be inserted between a command
+and its parameters or between two parameters. <br>
+
+<a name="bop">
+<li> Opcode 139: <code>bop; c_0[4]..c_9[4], p[4]</code>
+<p> Beginning of a page: Set <code>(h,v,w,x,y,z):=(0,0,0,0,0,0)</code> and set the stack
+empty. Set the current font <code>f</code> to an undefined value.  The ten
+<code>c_i</code> parameters can be used to identify pages, if a user wants to print
+only part of a <code>DVI</code> file; <code>TeX82</code> gives them the values of
+<code>\count0...\count9</code> at the time <code>\shipout</code> was invoked for this
+page.  The parameter <code>p</code> points to the previous <code>bop</code> command in
+the file, where the first <code>bop</code> has <code>p=-1</code>. <br>
+
+<a name="eop">
+<li> Opcode 140: <code>eop</code>
+<p> End of page: Print what you have read since the previous <code>bop</code>. At this point
+the stack should be empty. (The <code>DVI</code>-reading programs that drive most output
+devices will have kept a buffer of the material that appears on the page that has just
+ended. This material is largely, but not entirely, in order by <code>v</code> coordinate
+and (for fixed <code>v</code>) by <code>h</code> coordinate; so it usually needs to be
+sorted into some order that is appropriate for the device in question. <code>DVItype</code>
+does not do such sorting.) <br>
+
+<a name="push">
+<li> Opcode 141: <code>push</code>
+<p> Push the current values of <code>(h,v,w,x,y,z)</code> onto the top of the stack; do
+not change any of these values. Note that <code>f</code> is not pushed. <br>
+
+<a name="pop">
+<li> Opcode 142: <code>pop</code>
+<p> Pop the top six values off of the stack and assign them to <code>(h,v,w,x,y,z)</code>.
+The number of pops should never exceed the number of pushes, since it would be highly
+embarrassing if the stack were empty at the time of a <code>pop</code> command. <br>
+
+<a name="right">
+<li> Opcodes 143-146: <code>right<i>i</i> (1 &lt= i &lt= 4); b[i]</code>
+<p> Set <code>h:=h+b</code>, i.e., move right <code>b</code> units. The parameter is a signed
+number in two's complement notation; if <code>b &lt 0</code>,
+the reference point actually moves left. <br>
+
+<a name="w">
+<li> Opcodes 147-151: <code>w<i>i</i> (0 &lt= i &lt= 4); b[i]</code>
+<p> The <code>w0</code> command sets <code>h:=h+w</code>; i.e., moves right <code>w</code>
+units. With luck, this parameterless command will usually suffice, because the same kind
+of motion will occur several times in succession.
+The other <code>w</code> commands set <code>w:=b</code> and </code>h:=h+b</code>. The
+value of <code>b</code> is a signed quantity in two's complement notation. This command
+changes the current <code>w</code> spacing and moves right by <code>b</code>. <br>
+
+
+<a name="x">
+<li> Opcodes 152-156: <code>x<i>i</i> (0 &lt= i &lt= 4); b[i]</code>
+<p> The parameterless <code>x0</code> command sets <code>h:=h+x</code>; i.e., moves right
+<code>x</code> units. The <code>x</code> commands are like the <code>w</code> commands
+except that they involve <code>x</code> instead of <code>w</code>.
+The other <code>x</code> commands set <code>x:=b</code> and <code>h:=h+b</code>. The
+value of <code>b</code> is a signed quantity in two's complement notation.  This
+command changes the current <code>x</code> spacing and moves right by <code>b</code>. <br>
+
+<a name="down">
+<li> Opcodes 157-160: <code>down<i>i</i> (1 &lt= i &lt= 4); a[i]</code>
+<p> Set <code>v:=v+a</code>, i.e., move down <code>a</code> units.  The parameter is a
+signed number in two's complement notation; if <code>a &lt 0</code>, the reference point
+actually moves up. <br>
+
+<a name="y">
+<li> Opcodes 161-165: <code>y<i>i</i> (0 &lt= i &lt= 4); a[i]</code>
+<p> The <code>y0</code> command sets <code>v:=v+y</code>; i.e., moves down <code>y</code>
+units. With luck, this parameterless command will usually suffice, because the same kind
+of motion will occur several times in succession.
+The other <code>y</code> commands set <code>y:=a</code> and <code>v:=v+a</code>. The
+value of <code>a</code> is a signed quantity in two's complement notation. This command
+changes the current <code>y</code> spacing and moves down by <code>a</code>. <br>
+
+<a name="z">
+<li> Opcodes 166-170: <code>z<i>i</i> (0 &lt= i &lt= 4); a[i]</code>
+<p> The <code>z0</code> command sets <code>v:=v+z</code>; i.e., moves down <code>z</code>
+units. The <code>z</code> commands are like the <code>y</code> commands except that they
+involve <code>z</code> instead of <code>y</code>.
+The other <code>z</code> commands set <code>z:=a</code> and <code>v:=v+a</code>. The value
+of <code>a</code> is a signed quantity in two's complement notation. This command
+changes the current <code>z</code> spacing and moves down by <code>a</code>. <br>
+
+<a name="fntnum">
+<li> Opcodes 171-234: <code>fnt_num_<i>i</i> (0 &lt= i &lt= 63)</code>
+<p> Set <code>f:=i</code>.  Font <code>i</code> must previously have been defined by a
+<code>fnt_def</code> instruction, as explained below. <br>
+
+<a name="fnt">
+<li> Opcodes 235-238: <code>fnt<i>i</i> (1 &lt= i &lt= 4); k[i]</code>
+<p> Set <code>f:=k</code>.  <code>TeX82</code> uses the <code>fnt1</code> command for
+font numbers in the range <code>64 &lt =k &lt 256</code>.
+<code>TeX82</code> never generates the <code>fnt2</code> command, but large font
+numbers may prove useful for specifications of color or texture, or they may be used
+for special fonts that have fixed numbers in some external coding scheme. <br>
+
+<a name="xxx">
+<li> Opcodes 239-242: <code>xxx<i>i</i> (1 &lt= i &lt= 4); k[i], x[k]</code>
+<p> This command is undefined in general; it functions as a <code>k+i+1$-byte
+<code>nop</code> unless special <code>DVI</code>-reading programs are being used.
+<code>TeX82</code> generates <code>xxx1</code> when a short enough <code>\special</code>
+appears, setting <code>k</code> to the number of bytes being sent. It is recommended that
+<code>x</code> be a string having the form of a keyword followed by possible parameters
+relevant to that keyword. <br>
+
+<a name="fntdef">
+<li> Opcodes 243-246: <code>fnt_def<i>i</i> (1 &lt= i &lt= 4);  k[i], c[4], s[4], d[4],
+a[1], l[1], n[a+l]</code>
+<p>
+The four-byte value <code>c</code> is the check sum that <code>TeX</code> (or whatever
+program generated the <code>DVI</code> file) found in the <code>TFM</code> file for this
+font; <code>c</code> should match the check sum of the font found by programs that read
+this <code>DVI</code> file.
+<p>
+Parameter <code>s</code> contains a fixed-point scale factor that is applied to the
+character widths in font <code>k</code>; font dimensions in <code>TFM</code> files and
+other font files are relative to this quantity, which is always positive and less than
+<code>2^27</code>. It is given in the same units as the other dimensions of the
+<code>DVI</code> file.  Parameter <code>d</code> is similar to <code>s</code>; it is the
+``design size,'' and (like <code>s</code>) it is given in <code>DVI</code> units. Thus,
+font <code>k</code> is to be used at <code>mag s / 1000 d</code> times its normal size.
+<p>
+The remaining part of a font definition gives the external name of the font, which is
+an ASCII string of length <code>a+l</code>. The number <code>a</code> is the length of
+the ``area'' or directory, and <code>l</code> is the length of the font name itself;
+the standard local system font area is supposed to be used when <code>a=0</code>.
+The <code>n</code> field contains the area in its first <code>a</code> bytes.
+<p>
+Font definitions must appear before the first use of a particular font number.  Once
+font <code>k</code> is defined, it must not be defined again; however, we shall see
+below that font definitions appear in the postamble as well as in the pages, so in
+this sense each font number is defined exactly twice, if at all. Like <code>nop</code>
+commands, font definitions can appear before the first <code>bop</code>, or between an
+<code>eop</code> and a <code>bop</code>. <br>
+
+<a name="preamble">
+<li> Opcodes 247: <code>pre; i[1], num[4], den[4], mag[4], k[1], x[k]</code>
+<p>
+The preamble contains basic information about the file as a whole and
+must come at the very beginning of the file.  The <code>i</code> byte identifies
+<code>DVI</code> format; currently this byte is always set to 2. (The value
+<code>i=3</code> is currently used for an extended format that allows a mixture of
+right-to-left and left-to-right typesetting.  Some day we will set <code>i=4</code>,
+when <code>DVI</code> format makes another  incompatible change - perhaps in the year
+2048.)
+<p>
+The next two parameters, <code>num</code> and <code>den</code>, are positive integers
+that define the units of measurement; they are the numerator and denominator of a
+fraction by which all dimensions in the <code>DVI</code> file could be multiplied in
+order to get lengths in units of <code>10^(-7)</code> meters. (For example, there are
+exactly 7227 <code>TeX</code> points in 254 centimeters, and <code>TeX82</code> works
+with scaled points where there are <code>2^16</code> sp in a point, so <code>TeX82</code>
+sets <code>num=25400000</code> and <code>den=7227 2^16=473628672</code>.
+<p>
+The <code>mag</code> parameter is what <code>TeX82</code> calls <code>\mag</code>,
+i.e., 1000 times the desired magnification. The actual fraction by which dimensions are
+multiplied is therefore <code>m n /1000 d</code>. Note that if a <code>TeX</code> source
+document does not call for any true dimensions, and if you change it only by specifying
+a different <code>\mag</code> setting, the <code>DVI</code> file that <code>TeX</code>
+creates will be completely unchanged except for the value of <code>mag</code> in the
+preamble and postamble. (Fancy <code>DVI</code>-reading programs allow users to override
+the <code>mag</code> setting when a <code>DVI</code> file is being printed.)
+<p>
+Finally, <code>k</code> and <code>x</code> allow the <code>DVI</code> writer to include
+a comment, which is not interpreted further. The length of comment <code>x</code> is
+<code>k</code>, where <code>0 &lt = k &lt 256</code>. <br>
+
+<a name="postamble">
+<li> Opcodes 248: <code>post; p[4], num[4], den[4], mag[4], l[4], u[4], s[2], t[2]</code>;
+&lt <i>font definitions</i> &gt
+<p>
+The last page in a <code>DVI</code> file is followed by <code>post</code>; this command
+introduces the postamble, which summarizes important facts that <code>TeX</code> has
+accumulated about the file, making it possible to print subsets of the data with
+reasonable efficiency.  The parameter <code>p</coder> is a pointer to the final
+<code>bop</code> in the file. The next three parameters, <code>num</code>, <code>den</code>,
+and <code>mag</code>, are duplicates of the quantities that appeared in the preamble.
+<p>
+Parameters <code>l</code> and <code>u</code> give respectively the height-plus-depth of
+the tallest page and the width of the widest page, in the same units as other dimensions
+of the file. These numbers might be used by a <code>DVI</code>-reading program to position
+individual ``pages'' on large sheets of film or paper; however, the standard convention
+for output on normal size paper is to position each page so that the upper left-hand
+corner is exactly one inch from the left and the top. Experience has shown that it is
+unwise to design <code>DVI</code>-to-printer software that attempts cleverly to center
+the output; a fixed position of the upper left corner is easiest for users to understand
+and to work with.  Therefore <code>l</code> and <code>u</code> are often ignored.
+<p>
+Parameter <code>s</code> is the maximum stack depth (i.e., the largest excess of
+<code>push</code> commands over <code>pop</code> commands) needed to process this file.
+Then comes <code>t</code>, the total number of pages (<code>bop</code> commands) present.
+<p>
+The postamble continues with font definitions, which are any number of <code>fnt_def</code>
+commands as described above, possibly interspersed with <code>nop<code> commands. Each
+font number that is used in the <code>DVI</code> file must be defined exactly twice: Once
+before it is first selected by a <code>fnt</code> command, and once in the postamble. <br>
+
+<a name="postpost">
+<li> Opcodes 249: <code>post_post; q[4], i[1]; 223's </code>
+<p>
+The last part of the postamble, following the <code>post_post</code> byte that signifies
+the end of the font definitions, contains <code>q</code> a pointer to the <code>post</code>
+command that started the postamble.  An identification byte, <code>i</code>, comes next;
+this currently equals 2, as in the preamble.
+<p>
+The <code>i</code> byte is followed by four or more bytes that are all equal to the
+decimal number 223 (i.e., 337 in octal).  <code>TeX</code> puts out four to seven of
+these trailing bytes, until the total length of the file is a multiple of four bytes,
+since this works out best on machines that pack four bytes per word; but any number of
+223's is allowed, as long as there are at least four of them. In effect, 223 is a sort
+of signature that is added at the very end.
+<p>
+This curious way to finish off a <code>DVI</code> file makes it feasible for
+<code>DVI</code>-reading programs to find the postamble first, on most computers, even
+though <code>TeX</code> wants to write the postamble last. Most operating systems permit
+random access to individual words or bytes of a file, so the <code>DVI</code> reader can
+start at the end and skip backwards over the 223's until finding the identification byte.
+Then it can back up four bytes, read <code>q</code>, and move to byte <code>q</code> of
+the file. This byte should, of course, contain the value 248 (<code>post</code>); now the
+postamble can be read, so the <code>DVI</code> reader discovers all the information
+needed for typesetting the pages. Note that it is also possible to skip through the
+<code>DVI</code> file at reasonably high speed to locate a particular page, if that
+proves desirable. This saves a lot of time, since <code>DVI</code> files used in
+production jobs tend to be large.
+</ul>
+
+</body>
+</html>
