@@ -200,7 +200,7 @@ int dviInterpretOperator(dviInterpreterState *interp, DVIOperator *op) {
 int dviNonAsciiChar(dviInterpreterState *interp, int c, char move) {
    char *s;
    dviStackState *postPos, *dviPos;   // Current positions in dvi and postscript code
-   double width, height, depth, size[3];
+   double width, height, depth, italic, size[4];
    int chars;
 
    postPos = interp->output->currentPosition;
@@ -220,8 +220,9 @@ int dviNonAsciiChar(dviInterpreterState *interp, int c, char move) {
    width  = size[0] / interp->scale;
    height = size[1] / interp->scale;
    depth  = size[2] / interp->scale;
+   italic = size[3] / interp->scale;
    printf("width of glyph %g height of glyph %g\n", width, height);
-   dviUpdateBoundingBox(interp, width, height, depth);
+   dviUpdateBoundingBox(interp, width+italic, height, depth);
 
    // Count the number of characters to write to the ps string
    chars = 15;
@@ -943,8 +944,8 @@ void dviTypeset(dviInterpreterState *interp) {
    // This subroutine does the bulk of the actual postscript work, typesetting runs of characters
    dviStackState *postPos, *dviPos;   // Current positions in dvi and postscript code
    char *s;
-   double width, height, depth;
-   double size[3];               // Width, height, depth
+   double width, height, depth, italic;
+   double size[4];               // Width, height, depth
    int chars;
 
    postPos = interp->output->currentPosition;
@@ -967,14 +968,17 @@ void dviTypeset(dviInterpreterState *interp) {
       width += size[0];
       height = size[1]>height ? size[1] : height;
       depth = size[2]>depth ? size[2] : depth;
+      italic = size[3];
       s++;
    }
    // Convert back into dvi units
    width /= interp->scale;
    height /= interp->scale;
    depth /= interp->scale;
+   italic /= interp->scale;
    printf("width of glyph %g height of glyph %g\n", width, height);
-   dviUpdateBoundingBox(interp, width, height, depth);
+   // Only need to consider extra italic width for the final glyph
+   dviUpdateBoundingBox(interp, width+italic, height, depth);
    
    // Count the number of characters to write to the ps string
    chars = strlen(interp->currentString)+9;
@@ -1032,26 +1036,29 @@ int dviChngFnt(dviInterpreterState *interp, int fn) {
 
 // Get the size (width, height, depth) of a glyph
 void dviGetCharSize(dviInterpreterState *interp, char s, double *size) {
-   dviTFM *tfm;       // Details of this font
+   dviTFM *tfm;               // Details of this font
    int chnum;                 // Character number in this font
    TFMcharInfo *chin;         // Character info for this character
-   int wi, hi, di;            // Index
-   //double width;              // Final character width
+   int wi, hi, di, ii;        // Indices
 	dviFontDetails *font;      // Font information (for tfm and use size)
+   double scale;              // Font use size * unit scaling
    
 	font = (dviFontDetails *)interp->curFnt->p;
    tfm = font->tfm;
    chnum = s - tfm->bc;
    chin = tfm->charInfo+chnum;
+   scale = font->useSize * interp->scale;
 
    wi = (int)chin->wi;
    hi = (int)chin->hi;
    di = (int)chin->di;
-   size[0] = tfm->width[wi] * font->useSize * interp->scale;
-   size[1] = tfm->height[hi] * font->useSize * interp->scale;
-   size[2] = tfm->depth[di] * font->useSize * interp->scale;
+   ii = (int)chin->ii;
+   size[0] = tfm->width[wi]  * scale;
+   size[1] = tfm->height[hi] * scale;
+   size[2] = tfm->depth[di]  * scale;
+   size[3] = tfm->italic[ii] * scale;
 
-   printf("Character %d chnum %d has indices %d %d %d width %g height %g depth %g useSize %g\n", s, chnum, wi, di, hi, size[0], size[1], size[2], font->useSize*interp->scale);
+   printf("Character %d chnum %d has indices %d %d %d %d width %g height %g depth %g italic %g useSize %g\n", s, chnum, wi, di, hi, ii, size[0], size[1], size[2], size[3], font->useSize*interp->scale);
    return;
 }
 
