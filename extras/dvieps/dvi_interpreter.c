@@ -699,6 +699,7 @@ int dviSpecialColourStackPop(dviInterpreterState *interp) {
       item = item->nxt;
 
    // Lop off the last item
+   free(item->p);
    item = dlDeleteItem(item);
    // Set colour to item on top of stack
    if (item==NULL) {
