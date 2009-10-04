@@ -751,6 +751,7 @@ dviInterpreterState *dviNewInterpreter() {
    interp->output->pages = NULL;
    interp->output->Npages = 0;
    interp->output->currentPage = NULL;
+   interp->output->currentPosition = NULL;
    // Set default positional variables etc.
    interp->state = (dviStackState *)mallocx(sizeof(dviStackState));
    interp->state->h=0;
@@ -761,6 +762,7 @@ dviInterpreterState *dviNewInterpreter() {
    interp->state->z=0;
    interp->f=0;
    interp->curFnt = NULL;
+   interp->boundingBox = NULL;
    interp->scale=0.;
    // No string currently being assembled
    interp->currentString = NULL;
@@ -771,6 +773,7 @@ dviInterpreterState *dviNewInterpreter() {
    // Nothing special occuring
    interp->special = 0;  // Not in special mode
    interp->spString = NULL;
+   interp->colStack = NULL;
 
    // Make the big table of operators
    makeDviOpTable();
