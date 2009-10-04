@@ -221,7 +221,7 @@ int dviNonAsciiChar(dviInterpreterState *interp, int c, char move) {
    height = size[1] / interp->scale;
    depth  = size[2] / interp->scale;
    italic = size[3] / interp->scale;
-   printf("width of glyph %g height of glyph %g\n", width, height);
+   if (DVI_DEBUG) printf("width of glyph %g height of glyph %g\n", width, height);
    dviUpdateBoundingBox(interp, width+italic, height, depth);
 
    // Count the number of characters to write to the ps string
@@ -295,7 +295,7 @@ int dviInOpSetRule(dviInterpreterState *interp, DVIOperator *op) {
    //
    // Don't set a rule if movements are -ve
    if (op->sl[0]<0 || op->sl[1]<0) {
-      printf("Silent Rule!\n");
+      if (DVI_DEBUG) printf("Silent Rule!\n");
       interp->state->h += op->sl[1];
       dviPostscriptMoveto(interp);
    } else {
@@ -328,7 +328,7 @@ int dviInOpPutRule(dviInterpreterState *interp, DVIOperator *op) {
    int err=DVIE_SUCCESS;
    // Don't set a rule if movements are -ve
    if (op->sl[0]<0 || op->sl[1]<0) {
-      printf("Silent Rule!\n");
+      if (DVI_DEBUG) printf("Silent Rule!\n");
    } else {
       dviUpdateBoundingBox(interp, (int)op->sl[1], (int)op->sl[0], 0.);
       dviPostscriptMoveto(interp);
@@ -534,7 +534,7 @@ int dviInOpSpecial1234(dviInterpreterState *interp, DVIOperator *op) {
    interp->special = spesh;
    interp->spString = (char *)mallocx(SHORT_STRLEN*sizeof(char));
    *(interp->spString) = '\0';
-   printf("Special! %d %lu %d\n", spesh, op->ul[0], strlen(interp->spString));
+   if (DVI_DEBUG) printf("Special! %d %lu %d\n", spesh, op->ul[0], strlen(interp->spString));
    // NOP
    return 0;
 }
@@ -587,7 +587,7 @@ int dviInOpPre(dviInterpreterState *interp, DVIOperator *op) {
    // Convert mag, num and den into points (for ps)
    interp->scale = (double)mag / 1000. * (double)num / (double)den
            / 1.e3 * 72. / 254;    
-   printf("Scale %g V=%lu num=%lu den=%lu mag=%lu\n", interp->scale,i,num,den,mag);
+   if (DVI_DEBUG) printf("Scale %g V=%lu num=%lu den=%lu mag=%lu\n", interp->scale,i,num,den,mag);
    return 0;
 }
 
@@ -620,7 +620,7 @@ int dviSpecialImplement(dviInterpreterState *interp) {
    int err = DVIE_SUCCESS;
    char errString[SHORT_STRLEN];
 
-   printf("Special!  Final string=%s\n", interp->spString);
+   if (DVI_DEBUG) printf("Special!  Final string=%s\n", interp->spString);
    // Test for a colour string
    if (strncmp(interp->spString, "color ", 6) == 0) {
       dviSpecialColourCommand(interp, interp->spString+6);
@@ -648,7 +648,7 @@ int dviSpecialColourCommand(dviInterpreterState *interp, char *command) {
 
    if (strncmp(command, "push ", 4)==0) {
       // New colour to push onto stack
-      printf("%s says push\n", command);
+      if (DVI_DEBUG) printf("%s says push\n", command);
       command += 5;
       while (command[0] == ' ')
          command++;
@@ -976,7 +976,7 @@ void dviTypeset(dviInterpreterState *interp) {
    height /= interp->scale;
    depth /= interp->scale;
    italic /= interp->scale;
-   printf("width of glyph %g height of glyph %g\n", width, height);
+   if (DVI_DEBUG) printf("width of glyph %g height of glyph %g\n", width, height);
    // Only need to consider extra italic width for the final glyph
    dviUpdateBoundingBox(interp, width+italic, height, depth);
    
@@ -1027,7 +1027,7 @@ int dviChngFnt(dviInterpreterState *interp, int fn) {
    len = strlen(font->psName) + 20;
    s = (char *)mallocx(len*sizeof(char));
    size = font->useSize*interp->scale;
-   // printf("Font useSize %d size %g changed to %d\n", font->useSize, size, (int)ceil(size-.5));
+   if (DVI_DEBUG) printf("Font useSize %d size %g changed to %d\n", font->useSize, size, (int)ceil(size-.5));
    snprintf(s, len, "/%s %d selectfont\n", font->psName, (int)ceil(size-.5));
    dviPostscriptAppend(interp, s);
    free(s);
@@ -1058,7 +1058,7 @@ void dviGetCharSize(dviInterpreterState *interp, char s, double *size) {
    size[2] = tfm->depth[di]  * scale;
    size[3] = tfm->italic[ii] * scale;
 
-   printf("Character %d chnum %d has indices %d %d %d %d width %g height %g depth %g italic %g useSize %g\n", s, chnum, wi, di, hi, ii, size[0], size[1], size[2], size[3], font->useSize*interp->scale);
+   if (DVI_DEBUG) printf("Character %d chnum %d has indices %d %d %d %d width %g height %g depth %g italic %g useSize %g\n", s, chnum, wi, di, hi, ii, size[0], size[1], size[2], size[3], font->useSize*interp->scale);
    return;
 }
 

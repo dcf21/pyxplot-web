@@ -51,7 +51,7 @@ int dviGetTFM(dviFontDetails *font) {
    s = (char *)mallocx((strlen(font->name)+5)*sizeof(char));
    sprintf(s, "%s.tfm", font->name);
    TFMpath = (char *)kpse_find_tfm(s);
-   printf("Font file %s: TFM path: %s\n", font->name, TFMpath);
+   if (DVI_DEBUG) printf("Font file %s: TFM path: %s\n", font->name, TFMpath);
    TFMfp = fopen(TFMpath, "r");
    // XXX Exercise for the reader: implement the ability of dviReadTFM to return errors
    font->tfm = dviReadTFM(TFMfp);
@@ -200,11 +200,13 @@ dviTFM *dviReadTFM(FILE *fp) {
    tfm->ne = buff[10];
    tfm->np = buff[11];
    // XXX Debugging output
-   printf("TFM! ");
-   for (i=0; i<12; i++) {
-      printf("%s:%lu  ", tit[i], buff[i]);
+   if (DVI_DEBUG) {
+      printf("TFM! ");
+      for (i=0; i<12; i++) {
+         printf("%s:%lu  ", tit[i], buff[i]);
+      }
+      printf("\n");
    }
-   printf("\n");
    
    // We should have lf=6+lh+(ec-bc+1)+nw+nh+nd+ni+nl+nk+ne+np
    if (tfm->lf != 6 + tfm->lh + tfm->ec - tfm->bc + 1 + tfm->nw + tfm->nh + tfm->nd + tfm->ni + tfm->nl + tfm->nk + tfm->ne + tfm->np) {
@@ -217,11 +219,11 @@ dviTFM *dviReadTFM(FILE *fp) {
    lh--;
    tfm->ds = ReadFixWord(fp);
    lh--;
-   printf("TFM: lh now %d\n", lh);
+   if (DVI_DEBUG) printf("TFM: lh now %d\n", lh);
    if (lh>10) {
       int len;
       ReadUChar(fp, &len);
-      printf("TFM: Coding length: %d\n", len);
+      if (DVI_DEBUG) printf("TFM: Coding length: %d\n", len);
       if (len>39) {
          dvi_error("Malformed DVI header!  coding len>40!");
          len=39;
@@ -247,7 +249,7 @@ dviTFM *dviReadTFM(FILE *fp) {
       tfm->family[len] = '\0';
       lh-=5;
    }
-   printf("TFM: coding:%s: family:%s: lh now %d\n", tfm->coding, tfm->family, lh);
+   if (DVI_DEBUG) printf("TFM: coding:%s: family:%s: lh now %d\n", tfm->coding, tfm->family, lh);
    if (lh>0) {
       int temp;
       ReadUChar(fp, &temp);

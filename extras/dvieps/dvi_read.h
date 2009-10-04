@@ -28,6 +28,8 @@
 #include <stdio.h>
 #include "dvi_list.h"
 
+#define DVI_DEBUG 0
+
 // "Public" function definitions
 int ReadDviFile(char *filename);
 int ReadDviErrorString(char *error, int stlen);

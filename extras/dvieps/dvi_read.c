@@ -415,7 +415,7 @@ int DisplayDVIOperator(DVIOperator *op) {
       snprintf(s2, 128, "ERROR!!!");
       s=s2;
    }
-   printf("%s\n", s);
+   if (DVI_DEBUG) printf("%s\n", s);
    return 0;
 }
 
