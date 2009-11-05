@@ -1,0 +1,36 @@
+The setup is as follows:
+
+* Each test is contained within a directory, which contains:
+  - A configuration file
+  - A test script (either test.ppl or test.sh)
+  - A .pyxplotrc (optional)
+  - Data files needed for the test (optional)
+
+* The confiuguration file contains:
+  - A list of output files to be checked, specifying:
+    + Their name (field name:)
+    + Their type (text, eps, binary) (field type:)
+    + Any regexes to be excluded from the (field exclude:, optional, can have >1)
+  - A list of notes about what the test is checking for
+
+* The test script:
+ - If named test.ppl, will be evaluated using PYXPLOT test.ppl > output 2> errors
+ - If named test.sh, will firstly be parsed and occurances of PYXPLOT changed to the correct pyxplot binary, then executed > output 2> errors
+
+* Command line options
+  - Should be passed as name=value,value2,...
+  - pyxplot: Change path to binary to be tested ("pyxplot8" by default)
+  - run: List of test directories to be run
+  - compare: List of test directories to compare
+  - version: Name of the current version of pyxplot
+  - compareversion: Name of the version to compare against
+  - scriptdir: directory containing library of tests (input)
+  - workdir: directory containing set of executed tests (output)
+
+* Naming of tests
+  - Six-digit numbers
+  - First three digits are the thing being tested
+    + 0xx: Mathematical functionality
+    + 1xx: Simple commands
+    + 2xx: Set/show
+  - Second three digits are the test number
