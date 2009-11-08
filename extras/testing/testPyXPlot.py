@@ -6,7 +6,7 @@
 
 # Default options (change with foo=bar on command line)
 
-import sys, os, re
+import sys, os, re, subprocess
 
 options = {'pyxplot'       : "pyxplot8",  # Default config goes here 
            'run'           : [ '000000' ],
@@ -44,25 +44,36 @@ def parseCommandLine(options, argv):
       # Didn't understand this item
       print "Failed to understand command-line argument %s: skipping"%argument
 
-   # If we are doing comparions we need to have a directory to do them in
+# Prepare working directories
+def prepareDirs(options):
+   # Make an appropriate working directory for this version
+   options['runningdir'] = options['workdir'] + "/" + options['version']
+   os.mkdir(options['runningdir'])
+
+   # If we are doing comparions...
    if (len(options['compare']) > 0):
-      options['comparedir'] = options['workdir'] + "/" + options['compareversion']
+      # Version to compare to
+      options['comparetodir'] = options['workdir'] + "/" + options['compareversion']
+      # Place to put comparisons
+      options['comparedir'] = options['workdir'] + "/%s%s%s"%(options['version'],"VS",options['compareversion'])
+      os.mkdir(options['comparedir'])
 
 # Some basic checks on the sanity of the supplied options
 def sanityCheck(options):
    print "Sanity check..."
    assert(os.path.isdir(options['scriptdir']))
    assert(os.path.isdir(options['workdir']))
-   # Obviously you can fool the following test.  Don't.
-   assert(options['workdir'] != options['scriptdir'])
+   assert(os.path.isdir(options['runningdir']))
    # Checks we need if we're doing comparisons
    if (len(options['compare']) > 0):
       assert(os.path.isdir(options['comparedir']))
 
+######################################################################
+# Run a test
 def runTest(test, options):
    print "running test %s"%test
    scriptdir = options['scriptdir'] + '/' + test
-   workdir = options['workdir'] + '/' + test
+   workdir = options['runningdir'] + '/' + test
    # Check that the scripts exist
    try:    assert(os.path.isdir(scriptdir))
    except:
@@ -98,14 +109,97 @@ def runTest(test, options):
 
    print "Cannot find script for test %s: skipping"%test
 
+######################################################################
+# Test comparion routines
+def parseConfigFile(configFile, filesToCompare):
+   try: f = open(configFile, "r")
+   except:
+      print "Failed to open config file %s"%configFile
+      raise
+   name = ""
+   for line in f:
+      try: [key, value] = re.split(':\s+', line, 1)
+      except: 
+         print "Failed to parse config file entry %s"%line
+         continue
+      if (key == 'name'):
+         name = value
+         # Check that we already have this filename and add a default entry if not
+         try:    test = filesToCompare[name]
+         except: filesToCompare[name] = {'type':'text', 'exclude':[]}
+      elif (key == 'type'):    filesToCompare[name]['type'] = value
+      elif (key == 'exclude'): filesToCompare[name]['exclude'].append(value) 
+      elif (key == 'notes'):   break
+      else:                    print "Incomprehensible config file key %s"%key
+   f.close()
 
+   # Add default entries for eps files
+   for key in filesToCompare.keys():
+      if (filesToCompare[key]['type'] == 'eps'):
+         filesToCompare[key]['exclude'].append("^%%CreationDate: ")
+
+######################################################################
+# Compare two tests
 def compareTest(test, options):
    print "comparing test %s"%test
+   runningDir = options['runningdir'] + "/%s"%test
+   comparetoDir = options['comparetodir'] + "/%s"%test
+   testDir = options['comparedir'] + "/%s"%test
+   try: assert(not os.path.exists(testDir))
+   except: 
+      print "Output of comparison %s already exists!  Skipping."%testDir
+   os.mkdir(testDir)
+   assert(os.path.isdir(testDir))
+
+   # The set of files to compare.  Always compare output and errors
+   filesToCompare = {'output': {'type':'text', 'exclude':[]}, 
+                     'errors': {'type':'text', 'exclude':[]}}
+   # Parse the config file for this test
+   configFile = runningDir + "/config"
+   parseConfigFile(configFile, filesToCompare)
+
+   # Loop through the output files doing the comparison
+   for file in filesToCompare.keys():
+      file1 = "%s/%s"%(runningDir,file)
+      file2 = "%s/%s"%(comparetoDir,file)
+      if (not (os.path.isfile(file1) and os.path.isfile(file2))):
+         print "Can't find one of two files to compare: %s %s"%(file1,file2)
+         continue
+      diffobj = subprocess.Popen("diff %s %s"%(file1,file2), shell=True, stdout=subprocess.PIPE)
+      diff = re.split("\n",diffobj.communicate()[0])
+      # Parse the diff
+      output = []
+      header = ''
+      cache = []
+      for line in diff:
+         if (len(line)==0): continue
+         # Check for a new section of diff
+         if (line[0] != ">" and line[0] != "<"):
+            if (len(cache) > 0):
+               output.append(header)
+               for l in cache: output.append(l)
+               cache = []
+            header = line
+         else:
+            # Check against all the exclusion regexes
+            exclude = False
+            for regex in filesToCompare[file]['exclude']:
+               if (re.search(regex, line) != None):
+                  exclude = True
+                  break
+            if (not exclude): cache.append(line)
+      if (len(output) > 0):
+         outputFile = testDir + "/%s"%file
+         f = open(outputFile, "w")
+         for line in output: f.write(line)
+         f.close()
+         os.system("wc -l %s"%outputFile)
+
 
 ##################################################
 # MAIN ROUTINE STARTS HERE
 parseCommandLine(options, sys.argv)
-
+prepareDirs(options)
 sanityCheck(options)
 
 # Run the requested tests

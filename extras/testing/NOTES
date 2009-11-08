@@ -11,7 +11,7 @@ The setup is as follows:
     + Their name (field name:)
     + Their type (text, eps, binary) (field type:)
     + Any regexes to be excluded from the (field exclude:, optional, can have >1)
-  - A list of notes about what the test is checking for
+  - A list of notes about what the test is checking for (this entry terminates the config file)
 
 * The test script:
  - If named test.ppl, will be evaluated using PYXPLOT test.ppl > output 2> errors
