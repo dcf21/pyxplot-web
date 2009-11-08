@@ -9,7 +9,7 @@
 import sys, os, re, subprocess
 
 options = {'pyxplot'       : "pyxplot8",  # Default config goes here 
-           'run'           : [ '000000' ],
+           'run'           : [ ],
            'compare'       : [ ],
            'version'       : "current",
            'compareversion': "current",
@@ -48,7 +48,13 @@ def parseCommandLine(options, argv):
 def prepareDirs(options):
    # Make an appropriate working directory for this version
    options['runningdir'] = options['workdir'] + "/" + options['version']
-   os.mkdir(options['runningdir'])
+   if (os.path.exists(options['runningdir'])):
+      print "Directory %s already exists!"%options['runningdir']
+      try: assert(os.path.isdir(options['runningdir']))
+      except: 
+         print "FAIL: %s is not a directory!"%options['runningdir']
+         raise
+   else: os.mkdir(options['runningdir'])
 
    # If we are doing comparions...
    if (len(options['compare']) > 0):
@@ -144,6 +150,10 @@ def compareTest(test, options):
    print "comparing test %s"%test
    runningDir = options['runningdir'] + "/%s"%test
    comparetoDir = options['comparetodir'] + "/%s"%test
+   for dir in [runningDir, comparetoDir]:
+      if (not os.path.isdir(dir)):
+         print "Skipping test %s: directory %s missing"%(test,dir)
+         return
    testDir = options['comparedir'] + "/%s"%test
    try: assert(not os.path.exists(testDir))
    except: 
@@ -173,6 +183,9 @@ def compareTest(test, options):
       cache = []
       for line in diff:
          if (len(line)==0): continue
+         if (line[0:3] == '---'):
+            if (len(cache)>0): cache.append(line)
+            continue
          # Check for a new section of diff
          if (line[0] != ">" and line[0] != "<"):
             if (len(cache) > 0):
@@ -188,10 +201,16 @@ def compareTest(test, options):
                   exclude = True
                   break
             if (not exclude): cache.append(line)
+      # Catch any output cached but not written to output buffer yet
+      if (len(cache) > 0):
+         output.append(header)
+         for l in cache: output.append(l)
+         cache = []
+
       if (len(output) > 0):
          outputFile = testDir + "/%s"%file
          f = open(outputFile, "w")
-         for line in output: f.write(line)
+         for line in output: f.write("%s\n"%line)
          f.close()
          os.system("wc -l %s"%outputFile)
 
