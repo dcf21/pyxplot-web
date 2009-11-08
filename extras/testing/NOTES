@@ -30,7 +30,7 @@ The setup is as follows:
 * Naming of tests
   - Six-digit numbers
   - First three digits are the thing being tested
-    + 0xx: Mathematical functionality
-    + 1xx: Simple commands
+    + 0xx: Basic functionality
+    + 1xx: Mathematics
     + 2xx: Set/show
   - Second three digits are the test number
