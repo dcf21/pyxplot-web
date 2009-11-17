@@ -3,7 +3,7 @@
 			<a href="http://www.pyxplot.org.uk/">Home</a>
 		</div>
       <div class="menuitem">
-			<a href="http://www.pyxplot.org.uk/0.6/download/">Download</a>
+			<a href="http://www.pyxplot.org.uk/0.7/download/">Download</a>
          <!-- 
 			<ul>
             <li><a href="http://www.pyxplot.org.uk/0.5/download/">0.5 (stable)</a></li>
@@ -12,7 +12,7 @@
          -->
       </div>
       <div class="menuitem">
-      <a href="http://www.pyxplot.org.uk/0.6/doc/">Documentation</a>
+      <a href="http://www.pyxplot.org.uk/0.7/doc/">Documentation</a>
          <!-- 
          <ul style="font-size: 80%">
             <li><a href="http://www.pyxplot.org.uk/0.5/doc/">0.5 (stable)</a>

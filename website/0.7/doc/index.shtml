@@ -5,7 +5,7 @@
 <!--  #include virtual="inc/warning.shtml" -->
 
 <p>
-	This documentation describes the 0.7.0 stable beta release of PyXPlot.  The
+	This documentation describes the 0.7.1 stable beta release of PyXPlot.  The
 	<a href="pyxplot.pdf">manual</a> can be downloaded (pdf, 1.1 MB) or viewed as
 	<a href="html/">html</a>.
 </p>

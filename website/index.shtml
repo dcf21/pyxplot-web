@@ -10,6 +10,13 @@
 
 		<h3> News </h3>
 		<ul>
+			<li>17/11/2009 - <b>PyXPlot 0.7.1 released</b><br />
+			    The new 0.7.1 release of PyXPlot has a few minor bug-fixes over
+				 version 0.7.0.  Work is ongoing on a major update in version 0.8.
+				 Release 0.7.1 can be <a href="0.7/download/">downloaded here</a>.
+			<p></p>
+		   </li>
+
 			<li>2/12/2008 - <b>PyXPlot 0.7.0 released</b><br />
 			  The new stable 0.7 version of PyXPlot is now available.  The new
 				 version comes with additional features such as histograms and data
