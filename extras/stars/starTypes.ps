@@ -1,0 +1,92 @@
+%!
+
+/ps { 30 } def            % Point size
+/ps75 { ps .75 mul } def
+/ps15 { ps 1.5 mul } def
+/ps6  { ps 6 div } def
+/ps3  { ps 3 div } def
+/lw { 2 } def             % Standard line width
+/tlw { lw 3 div } def     % Thin line width
+/angle { 0 } def          % Angle to the vertical
+
+% Subroutine library
+/point { 2 { 2 copy } repeat 
+     /theta theta 30 add def exch lin theta cos mul add exch lin theta sin mul add lineto   % Inner vertex
+     /theta theta 30 add def exch lout theta cos mul add exch lout theta sin mul add lineto   % Outer point 
+     } bind def
+
+% Before calling star set lin=radius of inner vertices, 
+%                         lout=radius of outer vertices
+%                         theta=angle of outer points to the vertical
+% Leaves you with a path that looks like a star
+/star { 2 copy
+   exch lout theta cos mul add exch lout theta sin mul add moveto  % Tip of first point
+   6 { point } repeat 
+   } bind def
+
+/tau {                    % Tau Orionis
+   % First do the six main points
+   lw setlinewidth
+   /theta angle 90 add def
+   /lout ps def
+   /lin ps3 def
+   star closepath stroke
+
+   % Now do the six outer points
+   /theta angle 90 add def
+   6 {
+   gsave
+   2 copy
+   newpath
+   /lout ps def
+   /lin ps3 def
+   exch lout theta cos mul add exch lout theta sin mul add moveto  % Tip of point
+   point
+   /theta theta 30 sub def
+   2 copy exch ps15 theta cos mul add exch ps15 theta sin mul add lineto % Tip of where outer point will be 
+   closepath clip
+
+   newpath
+   /theta theta 30 sub def
+   2 copy
+   /lout ps6 def
+   /lin ps15 def
+   exch lout theta cos mul add exch lout theta sin mul add moveto
+   point
+   closepath stroke
+   grestore
+   } repeat
+
+   % Do the lines within the main star
+   tlw setlinewidth
+   /theta angle 120 add def
+   3 {
+     2 copy exch ps3 theta cos mul add exch ps3 theta sin mul add moveto
+     ps3 -2 theta cos mul mul ps3 -2 theta sin mul mul rlineto stroke
+     /theta theta 60 add def
+   } repeat
+
+   % And the outside short lines
+   /theta angle 90 add def
+   60 { 2 copy exch ps theta cos mul add exch ps theta sin mul add 2 copy moveto 
+               exch ps3 theta cos mul add exch ps3 theta sin mul add lineto closepath stroke
+        /theta theta 6 add def
+      } repeat
+   pop pop   % Tidy up stack
+} bind def
+
+
+100 700 moveto
+/Times-Roman 12 selectfont
+(PyXPlot draft star types) show
+
+%100 120 moveto ps -1 mul 0 rlineto ps 0 rlineto closepath stroke
+
+% gsave
+% 2 2 scale 
+
+/Times-Roman 6 selectfont
+
+200 500 tau
+
+showpage
