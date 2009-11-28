@@ -34,6 +34,7 @@
 /pt27 {10 {2 copy} repeat ps add moveto /theta 126 def 5 { exch ps 4 div theta cos mul add exch ps 4 div theta sin mul add lineto /theta theta 36 add def exch ps theta cos mul add exch ps theta sin mul add lineto /theta theta 36 add def } repeat closepath fill} bind def
 /pt28 { moveto ps75 dup rlineto ps -1.5 mul 0 rlineto ps 1.5 mul dup dup neg rlineto neg 0 rlineto closepath fill} bind def
 /pt29 { moveto ps75 dup rlineto 0 ps -1.5 mul rlineto ps 1.5 mul neg dup dup neg rlineto 0 exch rlineto closepath fill} bind def
+/pt30 {11 {2 copy} repeat /theta 90 def 6 { exch ps theta cos mul add exch ps theta sin mul add moveto lineto stroke /theta theta 60 add def} repeat } bind def
 
 100 700 moveto
 /Times-Roman 12 selectfont
@@ -99,7 +100,7 @@ gsave
 210 230 moveto (Point type 27) show
 210 260 moveto (Point type 28) show
 210 290 moveto (Point type 29) show
-%%210 320 moveto (Point type 30) show
+210 320 moveto (Point type 30) show
 
 260 50 pt21
 260 80 pt22
@@ -110,7 +111,7 @@ gsave
 260 230 pt27
 260 260 pt28
 260 290 pt29
-%%260 320 pt30
+260 320 pt30
 
 grestore
 showpage
