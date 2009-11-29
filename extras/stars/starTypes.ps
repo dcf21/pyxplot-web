@@ -5,6 +5,8 @@
 /ps15 { ps 1.5 mul } bind def
 /ps125 { ps 1.25 mul } bind def
 /ps10 { ps 10 div } bind def
+/ps20 { ps 20 div } bind def
+/ps40 { ps 40 div } bind def
 /ps6  { ps 6 div } bind def
 /ps4  { ps 4 div } bind def
 /ps3  { ps 3 div } bind def
@@ -150,8 +152,27 @@
      /theta thetasave def
    } repeat
 
+   gsave
+   % Shading of one half of the main point
+   /theta angle 90 add def
+   /lout ps def
+   /lin ps3 def
+   6 {
+     2 copy lout theta cpos moveto  % Tip of first point
+     2 copy lineto
+     2 copy lin theta 30 add cpos lineto closepath clip
+     2 copy
+     10 {
+       ps40 theta 60 add cpos 2 copy moveto 
+       2 copy ps theta cpos lineto closepath stroke
+     } repeat
+     pop pop
+     grestore
+     /theta theta 60 add def
+   } repeat
+
    % Do the lines within the main star
-   tlw setlinewidth
+   0 setlinewidth
    /theta angle 120 add def
    3 {
      2 { 2 copy } repeat ps3 theta cpos moveto
