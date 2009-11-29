@@ -1,11 +1,13 @@
 %!
 
 /ps 60 def            % Point size
+/ps2 { ps 2 mul } bind def
 /ps75 { ps .75 mul } bind def
 /ps15 { ps 1.5 mul } bind def
 /ps125 { ps 1.25 mul } bind def
 /ps10 { ps 10 div } bind def
 /ps20 { ps 20 div } bind def
+/ps30 { ps 30 div } bind def
 /ps40 { ps 40 div } bind def
 /ps6  { ps 6 div } bind def
 /ps4  { ps 4 div } bind def
@@ -37,16 +39,24 @@
 } bind def
 
 % Apply some shading
-/tauShade {
+/alphaShade { 
    /theta theta 30 sub def
-   5 { 
+   10 {
      % Inner shading (at radius ps3, length ps4)
      2 copy ps3 theta cpos 2 copy moveto 
      ps4 theta cpos lineto closepath stroke
+     2 copy ps75 theta cpos 2 copy moveto
+     ps10 theta cpos lineto closepath stroke
      % Outer shading (at radius ps, length ps3)
      2 copy ps theta cpos 2 copy moveto 
-     ps3 theta cpos lineto closepath stroke
-     /theta theta 6 add def
+     ps10 theta cpos lineto closepath stroke
+     /theta theta 3 add def
+   } repeat
+   /theta theta 30 sub def
+   15 {
+     2 copy ps125 theta cpos 2 copy moveto 
+     ps10 theta cpos lineto closepath stroke
+     /theta theta 2 add def
    } repeat
 } bind def
 /betaShade { 
@@ -76,7 +86,115 @@
      ps10 theta cpos lineto closepath stroke
      /theta theta 2 add def
    } repeat
+} bind def
+/tauShade {
+   /theta theta 30 sub def
+   5 { 
+     % Inner shading (at radius ps3, length ps4)
+     2 copy ps3 theta cpos 2 copy moveto 
+     ps4 theta cpos lineto closepath stroke
+     % Outer shading (at radius ps, length ps3)
+     2 copy ps theta cpos 2 copy moveto 
+     ps3 theta cpos lineto closepath stroke
+     /theta theta 6 add def
+   } repeat
+} bind def
+
+/alpha {                    % Beta Orionis
+   % First do the six main points
+   lw setlinewidth
+   /theta angle 90 add def
+   /lout ps def
+   /lin ps3 def
+   star closepath stroke
+
+   % Now do the six outer points
+   /theta angle 90 add def
+   % Theta gets a bit confusing later on, so
+   /thetasave theta def
+   tlw setlinewidth
+   6 {
+     gsave
+       % Clip out the inside of the main points
+       newpath
+       /lout ps def
+       /lin ps3 def
+       2 copy lout theta cpos moveto
+       point
+       % Then take an arc round to include the tip of the outer point
+       2 copy ps2 theta cpos lineto
+       2 copy ps2 theta theta 60 sub arcn
+       closepath clip
       
+       % draw the outer point
+       newpath
+       /theta theta 60 sub def
+       /lout ps6 def
+       /lin ps2  def
+       2 copy lout theta cpos moveto
+       point
+       closepath stroke
+      
+       % Now put a mask round the smaller-angle part of the outer point
+       /lout ps2  def
+       /lin ps6 def
+       gsave
+         newpath
+         /theta theta 90 sub def
+         2 copy lout theta cpos moveto point
+         2 copy ps2  theta theta 60 sub arcn closepath clip
+         % Shade in the space between main and outer points (phew)
+         newpath
+         alphaShade
+       grestore
+      
+       % Then repeat for the other side of the outer point
+       % Put a mask round the larger-angle part of the outer point
+       gsave
+         newpath
+         2 copy lout theta cpos moveto point
+         2 copy ps2  theta theta 60 sub arcn closepath clip
+         % Shade in the space between main and outer points
+         newpath
+         /theta theta 30 sub def
+         alphaShade
+       grestore
+
+     grestore
+     % Reset and increment angle for next point
+     /thetasave thetasave 60 add def
+     /theta thetasave def
+   } repeat
+
+   % Shading of one half of the main point
+   /theta angle 90 add def
+   /lout ps def
+   /lin ps3 def
+   6 {
+     gsave
+       2 copy lout theta cpos moveto  % Tip of first point
+       2 copy lineto
+       2 copy lin theta 30 add cpos lineto closepath clip
+       2 copy
+       8 {
+         ps30 theta 60 add cpos 2 copy moveto 
+         2 copy ps theta cpos lineto closepath stroke
+       } repeat
+       pop pop
+     grestore
+     /theta theta 60 add def
+   } repeat
+
+   % Do the lines within the main star
+   0 setlinewidth
+   /theta angle 120 add def
+   3 {
+     2 { 2 copy } repeat ps3 theta cpos moveto
+     ps3 -1 mul theta cpos lineto stroke
+     /theta theta 60 add def
+   } repeat
+
+   pop pop   % Tidy up stack
 } bind def
 
 /beta {                    % Beta Orionis
@@ -94,57 +212,50 @@
    tlw setlinewidth
    6 {
      gsave
-     % Clip out the inside of the main points
-     newpath
-     /lout ps def
-     /lin ps3 def
-     2 copy lout theta cpos moveto
-     point
-     % Then take an arc round to include the tip of the outer point
-     2 copy ps15 theta cpos lineto
-     2 copy ps15 theta theta 60 sub arcn
-     closepath clip
-
-     % draw the outer point
-     newpath
-     /theta theta 60 sub def
-     /lout ps6 def
-     /lin ps15 def
-     2 copy lout theta cpos moveto
-     point
-     closepath stroke
-
-     % Now put a mask round the smaller-angle part of the outer point
-     /lout ps15 def
-     /lin ps6 def
-     gsave
+       % Clip out the inside of the main points
        newpath
-       /theta theta 90 sub def
+       /lout ps def
+       /lin ps3 def
        2 copy lout theta cpos moveto
        point
+       % Then take an arc round to include the tip of the outer point
+       2 copy ps15 theta cpos lineto
        2 copy ps15 theta theta 60 sub arcn
        closepath clip
       
-       % Shade in the space between main and outer points (phew)
+       % draw the outer point
        newpath
-       betaShade
-
-     grestore
-     % Then repeat for the other side of the outer point
-     % Put a mask round the larger-angle part of the outer point
-     gsave
-       newpath
-       %/theta theta 60 sub def
+       /theta theta 60 sub def
+       /lout ps6 def
+       /lin ps15 def
        2 copy lout theta cpos moveto
        point
-       2 copy ps15 theta theta 60 sub arcn
-       closepath clip
+       closepath stroke
       
-       % Shade in the space between main and outer points (phew)
-       newpath
-       /theta theta 30 sub def
-       betaShade
-     grestore
+       % Now put a mask round the smaller-angle part of the outer point
+       /lout ps15 def
+       /lin ps6 def
+       gsave
+         newpath
+         /theta theta 90 sub def
+         2 copy lout theta cpos moveto point
+         2 copy ps15 theta theta 60 sub arcn closepath clip
+         % Shade in the space between main and outer points (phew)
+         newpath
+         betaShade
+       grestore
+      
+       % Then repeat for the other side of the outer point
+       % Put a mask round the larger-angle part of the outer point
+       gsave
+         newpath
+         2 copy lout theta cpos moveto point
+         2 copy ps15 theta theta 60 sub arcn closepath clip
+         % Shade in the space between main and outer points
+         newpath
+         /theta theta 30 sub def
+         betaShade
+       grestore
 
      grestore
      % Reset and increment angle for next point
@@ -152,21 +263,21 @@
      /theta thetasave def
    } repeat
 
-   gsave
    % Shading of one half of the main point
    /theta angle 90 add def
    /lout ps def
    /lin ps3 def
    6 {
-     2 copy lout theta cpos moveto  % Tip of first point
-     2 copy lineto
-     2 copy lin theta 30 add cpos lineto closepath clip
-     2 copy
-     10 {
-       ps40 theta 60 add cpos 2 copy moveto 
-       2 copy ps theta cpos lineto closepath stroke
-     } repeat
-     pop pop
+     gsave
+       2 copy lout theta cpos moveto  % Tip of first point
+       2 copy lineto
+       2 copy lin theta 30 add cpos lineto closepath clip
+       2 copy
+       10 {
+         ps40 theta 60 add cpos 2 copy moveto 
+         2 copy ps theta cpos lineto closepath stroke
+       } repeat
+       pop pop
      grestore
      /theta theta 60 add def
    } repeat
@@ -185,7 +296,6 @@
      ps15 -1 mul theta cpos lineto stroke
      /theta theta 60 add def
    } repeat
-     
 
    pop pop   % Tidy up stack
 } bind def
@@ -278,7 +388,7 @@
 } bind def
 
 
-100 700 moveto
+100 800 moveto
 /Times-Roman 12 selectfont
 (PyXPlot draft star types) show
 
@@ -288,6 +398,14 @@
 % 2 2 scale 
 
 /Times-Roman 12 selectfont
+
+10 675 moveto (Alpha Orionis) show
+/ps 10 def
+90 675 alpha
+/ps { 30 } def            % Point size
+160 675 alpha
+/ps { 60 } def            % Point size
+300 675 alpha
 
 10 300 moveto (Tau Orionis) show
 /ps 10 def
