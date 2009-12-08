@@ -16,7 +16,8 @@
 /ps4d  { ps 4 div } bind def
 /ps3d  { ps 3 div } bind def
 /lw  2  def             % Standard line width
-/tlw { lw 3 div } bind def     % Thin line width
+/blw { ps 50 div lw mul } bind def
+/tlw { blw 3 div } bind def     % Thin line width
 
 % Subroutine library
 % x y l theta cpos: leave x+lcos theta, y+l sin theta on the stack
@@ -107,7 +108,7 @@
 
 /alpha {                    % Beta Orionis
    % First do the six main points
-   lw setlinewidth
+   blw setlinewidth
    /theta angle 90 add def
    /lout ps def
    /lin ps3d def
@@ -191,7 +192,7 @@
    } repeat
 
    % Do the lines within the main star
-   0 setlinewidth
+   tlw setlinewidth
    /theta angle 120 add def
    3 {
      2 { 2 copy } repeat ps3d theta cpos moveto
@@ -204,7 +205,7 @@
 
 /beta {                    % Beta Orionis
    % First do the six main points
-   lw setlinewidth
+   blw setlinewidth
    /theta angle 90 add def
    /lout ps def
    /lin ps3d def
@@ -288,7 +289,7 @@
    } repeat
 
    % Do the lines within the main star
-   0 setlinewidth
+   tlw setlinewidth
    /theta angle 120 add def
    3 {
      2 { 2 copy } repeat ps3d theta cpos moveto
@@ -320,14 +321,17 @@
      star closepath clip
      2 copy 2 copy ps15 theta 45 add cpos
      4 2 roll ps15 theta 45 sub cpos
+     theta angle 90 sub def
      31 {
-       ps15d sub 4 2 roll ps15d sub 4 copy moveto lineto closepath stroke
+        ps15d theta sin mul sub exch ps15d theta cos mul sub exch  4 2 roll 
+        ps15d theta sin mul sub exch ps15d theta cos mul sub exch  4 2 roll 
+        4 copy moveto lineto closepath stroke
      } repeat
      4 { pop } repeat
   grestore
 
    % Do the thicker lines on one side of the main star
-   lw setlinewidth
+   blw setlinewidth
    /theta angle 90 add def
    3 {
      2 copy ps3d theta 30 add cpos moveto 
@@ -400,7 +404,7 @@
    } repeat
 
    % Do the lines within the main star
-   0 setlinewidth
+   tlw setlinewidth
    /theta angle 120 add def
    3 {
      2 { 2 copy } repeat ps3d theta cpos moveto
@@ -420,7 +424,7 @@
 
 /tau {                    % Tau Orionis
    % First do the six main points
-   lw setlinewidth
+   blw setlinewidth
    /theta angle 90 add def
    /lout ps def
    /lin ps3d def
@@ -524,21 +528,8 @@
    /lin ps3d def
    star closepath stroke
 
-   % Shading inside the main star
-   tlw setlinewidth
-   /theta angle 90 add def
-   gsave
-     star closepath clip
-     2 copy 2 copy ps15 theta 45 add cpos
-     4 2 roll ps15 theta 45 sub cpos
-     31 {
-       ps15d sub 4 2 roll ps15d sub 4 copy moveto lineto closepath stroke
-     } repeat
-     4 { pop } repeat
-  grestore
-
    % Do the thicker lines on one side of the main star
-   lw setlinewidth
+   blw setlinewidth
    /theta angle 90 add def
    3 {
      2 copy ps3d theta 30 add cpos moveto 
@@ -611,7 +602,7 @@
    } repeat
 
    % Do the lines within the main star
-   0 setlinewidth
+   tlw setlinewidth
    /theta angle 120 add def
    3 {
      2 { 2 copy } repeat ps3d theta cpos moveto
