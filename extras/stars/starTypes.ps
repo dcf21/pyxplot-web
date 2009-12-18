@@ -4,6 +4,7 @@
 /ps 60 def            % Point size
 /ps2 { ps 2 mul } bind def
 /ps75 { ps .75 mul } bind def
+/ps95 { ps .95 mul } bind def
 /ps15 { ps 1.5 mul } bind def
 /ps125 { ps 1.25 mul } bind def
 
@@ -12,6 +13,7 @@
 /ps20d { ps 20 div } bind def
 /ps30d { ps 30 div } bind def
 /ps40d { ps 40 div } bind def
+/ps8d  { ps 8 div } bind def
 /ps6d  { ps 6 div } bind def
 /ps4d  { ps 4 div } bind def
 /ps3d  { ps 3 div } bind def
@@ -56,6 +58,37 @@
      /theta theta 3 add def
    } repeat
 } bind def
+/gammaShade {
+   /theta theta 30 sub def
+   10 {
+     % Inner shading (at radius ps3, length ps4d)
+     2 copy ps3d theta cpos 2 copy moveto 
+     ps4d theta cpos lineto closepath stroke
+     %2 copy ps95 theta cpos 2 copy moveto
+     %ps8d theta cpos lineto closepath stroke
+     % Outer shading (at radius ps, length ps3d)
+     2 copy ps125 theta cpos 2 copy moveto 
+     ps10d theta cpos lineto closepath stroke
+     /theta theta 3 add def
+   } repeat
+   % Middle shading with longer lines
+   /theta theta 30 sub def
+   3 {
+     2 copy ps95 theta cpos 2 copy moveto 
+     ps8d theta cpos lineto closepath stroke
+     /theta theta 30 7 div add def
+   } repeat
+   2 copy ps95 theta cpos ps10d -1 mul theta cpos 2 copy moveto
+   ps10d 3 mul theta cpos lineto closepath stroke
+   /theta theta 30 7 div add def
+   3 {
+     2 copy ps95 theta cpos 2 copy moveto 
+     ps8d theta cpos lineto closepath stroke
+     /theta theta 30 7 div add def
+   } repeat
+   
+} bind def
+
 /alphaShade { 
    qShade
    /theta theta 30 sub def
@@ -93,6 +126,7 @@
      /theta theta 2 add def
    } repeat
 } bind def
+
 /tauShade {
    /theta theta 30 sub def
    5 { 
@@ -565,13 +599,13 @@
        newpath
        /theta theta 60 sub def
        /lout ps6d def
-       /lin ps15 def
+       /lin ps125 def
        2 copy lout theta cpos moveto
        point
        closepath stroke
       
        % Now put a mask round the smaller-angle part of the outer point
-       /lout ps15 def
+       /lout ps125 def
        /lin ps6d def
        gsave
          newpath
@@ -580,7 +614,7 @@
          2 copy ps15 theta theta 60 sub arcn closepath clip
          % Shade in the space between main and outer points (phew)
          newpath
-         qShade
+         gammaShade
        grestore
       
        % Then repeat for the other side of the outer point
@@ -592,7 +626,7 @@
          % Shade in the space between main and outer points
          newpath
          /theta theta 30 sub def
-         qShade
+         gammaShade
        grestore
 
      grestore
@@ -665,7 +699,7 @@
 /ps { 60 } def            % Point size
 300 100 tau
 
-/angle { 40 } def          % Angle to the vertical
+/angle { 0 } def          % Angle to the vertical
 410 300 moveto (gamma Orionis) show
 /ps 10 def
 490 300 gamma
