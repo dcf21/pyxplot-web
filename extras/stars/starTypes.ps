@@ -24,6 +24,11 @@
 % Subroutine library
 % x y l theta cpos: leave x+lcos theta, y+l sin theta on the stack
 /cpos { 2 copy cos mul 3 1 roll sin mul exch 4 3 roll add 3 1 roll add } bind def
+% x y inner length theta radLine: draws a radial line, length length from centre x,y at angle theta to vertical from inner radius 
+/radLine {   
+   dup 3 1 roll 6 2 roll cpos 2 copy moveto 
+   4 2 roll cpos lineto closepath stroke
+} bind def
 
 % From outer point, go in to inner vertex and out to next outer point
 % call with centre on stack; leave stack unchanged
@@ -44,17 +49,16 @@
 } bind def
 
 % Apply some shading
+   
 /qShade {
    /theta theta 30 sub def
    10 {
      % Inner shading (at radius ps3, length ps4d)
-     2 copy ps3d theta cpos 2 copy moveto 
-     ps4d theta cpos lineto closepath stroke
-     2 copy ps75 theta cpos 2 copy moveto
-     ps10d theta cpos lineto closepath stroke
-     % Outer shading (at radius ps, length ps3d)
-     2 copy ps theta cpos 2 copy moveto 
-     ps10d theta cpos lineto closepath stroke
+     2 copy ps3d ps4d theta radLine
+     % Middle shading
+     2 copy ps75 ps10d theta radLine
+     % Outer shading 
+     2 copy ps ps10d theta radLine
      /theta theta 3 add def
    } repeat
 } bind def
@@ -62,67 +66,44 @@
    /theta theta 30 sub def
    10 {
      % Inner shading (at radius ps3, length ps4d)
-     2 copy ps3d theta cpos 2 copy moveto 
-     ps4d theta cpos lineto closepath stroke
-     %2 copy ps95 theta cpos 2 copy moveto
-     %ps8d theta cpos lineto closepath stroke
+     2 copy ps3d ps4d theta radLine
      % Outer shading (at radius ps, length ps3d)
-     2 copy ps125 theta cpos 2 copy moveto 
-     ps10d theta cpos lineto closepath stroke
+     2 copy ps125 ps10d theta radLine
      /theta theta 3 add def
    } repeat
    % Middle shading with longer lines
    /theta theta 30 sub def
    3 {
-     2 copy ps95 theta cpos 2 copy moveto 
-     ps8d theta cpos lineto closepath stroke
+     2 copy ps95 ps8d theta radLine
      /theta theta 30 7 div add def
    } repeat
-   2 copy ps95 theta cpos ps10d -1 mul theta cpos 2 copy moveto
-   ps10d 3 mul theta cpos lineto closepath stroke
+   2 copy ps95 ps10d sub ps10d 3 mul theta radLine
    /theta theta 30 7 div add def
    3 {
-     2 copy ps95 theta cpos 2 copy moveto 
-     ps8d theta cpos lineto closepath stroke
+     2 copy ps95 ps8d theta radLine
      /theta theta 30 7 div add def
    } repeat
-   
 } bind def
 
 /alphaShade { 
    qShade
    /theta theta 30 sub def
    15 {
-     2 copy ps125 theta cpos 2 copy moveto 
-     ps10d theta cpos lineto closepath stroke
+     2 copy ps125 ps10d theta radLine
      /theta theta 2 add def
    } repeat
 } bind def
 /betaShade { 
-   /theta theta 30 sub def
-   10 {
-     % Inner shading (at radius ps3, length ps4d)
-     2 copy ps3d theta cpos 2 copy moveto 
-     ps4d theta cpos lineto closepath stroke
-     2 copy ps75 theta cpos 2 copy moveto
-     ps10d theta cpos lineto closepath stroke
-     % Outer shading (at radius ps, length ps3d)
-     2 copy ps theta cpos 2 copy moveto 
-     ps10d theta cpos lineto closepath stroke
-     /theta theta 3 add def
-   } repeat
+   qShade
    /theta theta 30 sub def
    7 {
-     2 copy ps125 theta cpos 2 copy moveto 
-     ps10d theta cpos lineto closepath stroke
+     2 copy ps125 ps10d theta radLine
      /theta theta 2 add def
    } repeat
-   2 copy ps125 theta cpos ps10d -1 mul theta cpos 2 copy moveto
-   ps10d 3 mul theta cpos lineto closepath stroke
+   2 copy ps125 ps10d sub ps10d 3 mul theta radLine
    /theta theta 2 add def
    7 {
-     2 copy ps125 theta cpos 2 copy moveto 
-     ps10d theta cpos lineto closepath stroke
+     2 copy ps125 ps10d theta radLine
      /theta theta 2 add def
    } repeat
 } bind def
@@ -131,16 +112,75 @@
    /theta theta 30 sub def
    5 { 
      % Inner shading (at radius ps3, length ps4d)
-     2 copy ps3d theta cpos 2 copy moveto 
-     ps4d theta cpos lineto closepath stroke
+     2 copy ps3d ps4d theta radLine
      % Outer shading (at radius ps, length ps3d)
-     2 copy ps theta cpos 2 copy moveto 
-     ps3d theta cpos lineto closepath stroke
+     2 copy ps   ps4d theta radLine
      /theta theta 6 add def
    } repeat
 } bind def
 
+% Two sorts of points, "main" (inner, wide point) and "sharp" (outer, thin point)
+% Both have inner and outer radii (so lmin, lmout, lsin, lsout)
+% This routine draws the outer point and puts the shading in place
+/dopoint {
+   /theta thetasave def
+   gsave newpath
+     % Clip out the inside of the main points
+     /lout lmout def
+     /lin  lmin def
+     2 copy lout theta cpos moveto
+     point
+     % Then take an arc round to include the tip of the outer point
+     2 copy lsout theta cpos lineto
+     2 copy lsout theta theta 60 sub arcn
+     closepath clip
+    
+     % draw the outer point
+     newpath
+     /theta theta 60 sub def
+     /lout lsin def
+     /lin lsout def
+     2 copy lout theta cpos moveto
+     point
+     closepath stroke
+    
+     % Now put a mask round the smaller-angle part of the outer point
+     /lout lsout def
+     /lin lsin def
+     gsave
+       newpath
+       /theta theta 90 sub def
+       2 copy lout theta cpos moveto point
+       2 copy lsout theta theta 60 sub arcn closepath clip
+       % Shade in the space between main and outer points (phew)
+       newpath
+       shade
+     grestore
+    
+     % Then repeat for the other side of the outer point
+     % Put a mask round the larger-angle part of the outer point
+     gsave
+       newpath
+       2 copy lout theta cpos moveto point
+       2 copy lsout theta theta 60 sub arcn closepath clip
+       % Shade in the space between main and outer points
+       newpath
+       /theta theta 30 sub def
+       shade
+     grestore
+
+   grestore
+} bind def
+
 /alpha {                    % Beta Orionis
+   % Inner and outer radii of main and sharp points
+   /lmout ps def
+   /lmin ps3d def
+   /lsout ps2 def
+   /lsin ps6d def
+   % Shading type
+   /shade { alphaShade } bind def
+
    % First do the six main points
    blw setlinewidth
    /theta angle 90 add def
@@ -154,53 +194,7 @@
    /thetasave theta def
    tlw setlinewidth
    6 {
-     gsave
-       % Clip out the inside of the main points
-       newpath
-       /lout ps def
-       /lin ps3d def
-       2 copy lout theta cpos moveto
-       point
-       % Then take an arc round to include the tip of the outer point
-       2 copy ps2 theta cpos lineto
-       2 copy ps2 theta theta 60 sub arcn
-       closepath clip
-      
-       % draw the outer point
-       newpath
-       /theta theta 60 sub def
-       /lout ps6d def
-       /lin ps2  def
-       2 copy lout theta cpos moveto
-       point
-       closepath stroke
-      
-       % Now put a mask round the smaller-angle part of the outer point
-       /lout ps2  def
-       /lin ps6d def
-       gsave
-         newpath
-         /theta theta 90 sub def
-         2 copy lout theta cpos moveto point
-         2 copy ps2  theta theta 60 sub arcn closepath clip
-         % Shade in the space between main and outer points (phew)
-         newpath
-         alphaShade
-       grestore
-      
-       % Then repeat for the other side of the outer point
-       % Put a mask round the larger-angle part of the outer point
-       gsave
-         newpath
-         2 copy lout theta cpos moveto point
-         2 copy ps2  theta theta 60 sub arcn closepath clip
-         % Shade in the space between main and outer points
-         newpath
-         /theta theta 30 sub def
-         alphaShade
-       grestore
-
-     grestore
+     dopoint
      % Reset and increment angle for next point
      /thetasave thetasave 60 add def
      /theta thetasave def
@@ -238,11 +232,19 @@
 } bind def
 
 /beta {                    % Beta Orionis
+   % Inner and outer radii of main and sharp points
+   /lmout ps def
+   /lmin ps3d def
+   /lsout ps15 def
+   /lsin ps6d def
+   % Shading type
+   /shade { betaShade } bind def
+
    % First do the six main points
    blw setlinewidth
    /theta angle 90 add def
-   /lout ps def
-   /lin ps3d def
+   /lout lmout def
+   /lin  lmin def
    star closepath stroke
 
    % Now do the six outer points
@@ -251,62 +253,16 @@
    /thetasave theta def
    tlw setlinewidth
    6 {
-     gsave
-       % Clip out the inside of the main points
-       newpath
-       /lout ps def
-       /lin ps3d def
-       2 copy lout theta cpos moveto
-       point
-       % Then take an arc round to include the tip of the outer point
-       2 copy ps15 theta cpos lineto
-       2 copy ps15 theta theta 60 sub arcn
-       closepath clip
-      
-       % draw the outer point
-       newpath
-       /theta theta 60 sub def
-       /lout ps6d def
-       /lin ps15 def
-       2 copy lout theta cpos moveto
-       point
-       closepath stroke
-      
-       % Now put a mask round the smaller-angle part of the outer point
-       /lout ps15 def
-       /lin ps6d def
-       gsave
-         newpath
-         /theta theta 90 sub def
-         2 copy lout theta cpos moveto point
-         2 copy ps15 theta theta 60 sub arcn closepath clip
-         % Shade in the space between main and outer points (phew)
-         newpath
-         betaShade
-       grestore
-      
-       % Then repeat for the other side of the outer point
-       % Put a mask round the larger-angle part of the outer point
-       gsave
-         newpath
-         2 copy lout theta cpos moveto point
-         2 copy ps15 theta theta 60 sub arcn closepath clip
-         % Shade in the space between main and outer points
-         newpath
-         /theta theta 30 sub def
-         betaShade
-       grestore
-
-     grestore
+     dopoint
      % Reset and increment angle for next point
      /thetasave thetasave 60 add def
      /theta thetasave def
    } repeat
 
-   % Shading of one half of the main point
+   % Internal shading of one half of the main point
    /theta angle 90 add def
-   /lout ps def
-   /lin ps3d def
+   /lout lmout def
+   /lin lmin def
    6 {
      gsave
        2 copy lout theta cpos moveto  % Tip of first point
@@ -324,17 +280,12 @@
 
    % Do the lines within the main star
    tlw setlinewidth
-   /theta angle 120 add def
-   3 {
-     2 { 2 copy } repeat ps3d theta cpos moveto
-     ps3d -1 mul theta cpos lineto stroke
-     /theta theta 60 add def
-   } repeat
    /theta angle 90 add def
    3 {
-     2 { 2 copy } repeat ps15 theta cpos moveto
-     ps15 -1 mul theta cpos lineto stroke
-     /theta theta 60 add def
+     2 copy ps15 ps15 -2 mul theta radLine
+     /theta theta 30 add def
+     2 copy ps3d ps3d -2 mul theta radLine
+     /theta theta 30 add def
    } repeat
 
    pop pop   % Tidy up stack
