@@ -17,7 +17,8 @@
 /ps6d  { ps 6 div } bind def
 /ps4d  { ps 4 div } bind def
 /ps3d  { ps 3 div } bind def
-/lw  2  def             % Standard line width
+/ps2d  { ps 2 div } bind def
+/lw  1.5  def             % Standard line width
 /blw { ps 50 div lw mul } bind def
 /tlw { blw 3 div } bind def     % Thin line width
 
@@ -93,6 +94,7 @@
      /theta theta 2 add def
    } repeat
 } bind def
+
 /betaShade { 
    qShade
    /theta theta 30 sub def
@@ -105,6 +107,29 @@
    7 {
      2 copy ps125 ps10d theta radLine
      /theta theta 2 add def
+   } repeat
+} bind def
+
+/epsilonShade { 
+   /theta theta 30 sub def
+   4 {
+     2 copy ps ps8d theta radLine
+     /theta theta 10 3 div add def
+   } repeat
+   2 copy ps ps8d sub ps8d 3 mul theta radLine
+   /theta theta 10 3 div add def
+   4 {
+     2 copy ps ps8d theta radLine
+     /theta theta 10 3 div add def
+   } repeat
+} bind def
+
+/mShade {
+   /theta theta 30 sub def
+   6 { 
+     % Inner shading (at radius ps3, length ps4d)
+     2 copy ps3d ps2d theta radLine
+     /theta theta 5 add def
    } repeat
 } bind def
 
@@ -291,6 +316,66 @@
    pop pop   % Tidy up stack
 } bind def
 
+/epsilon {                    % Beta Orionis
+   % Inner and outer radii of main and sharp points
+   /lmout ps def
+   /lmin ps3d def
+   /lsout ps15 def
+   /lsin ps6d def
+   % Shading type
+   /shade { epsilonShade } bind def
+
+   % First do the six main points
+   blw setlinewidth
+   /theta angle 90 add def
+   /lout lmout def
+   /lin  lmin def
+   star closepath stroke
+
+   % Now do the six outer points
+   /theta angle 90 add def
+   % Theta gets a bit confusing later on, so
+   /thetasave theta def
+   tlw setlinewidth
+   6 {
+     dopoint
+     % Reset and increment angle for next point
+     /thetasave thetasave 60 add def
+     /theta thetasave def
+   } repeat
+
+   % Internal shading of one half of the main point
+   /theta angle 90 add def
+   /lout lmout def
+   /lin lmin def
+   6 {
+     gsave
+       2 copy lout theta cpos moveto  % Tip of first point
+       2 copy lineto
+       2 copy lin theta 30 add cpos lineto closepath clip
+       2 copy
+       8 {
+         ps30d theta 60 add cpos 2 copy moveto 
+         2 copy ps theta cpos lineto closepath stroke
+       } repeat
+       pop pop
+     grestore
+     /theta theta 60 add def
+   } repeat
+
+   % Do the lines within the main star
+   tlw setlinewidth
+   /theta angle 90 add def
+   3 {
+     2 copy ps ps4d add dup -2 mul theta radLine
+     /theta theta 30 add def
+     2 copy ps3d ps3d -2 mul theta radLine
+     /theta theta 30 add def
+   } repeat
+
+   pop pop   % Tidy up stack
+} bind def
+
 /q {                    % q Orionis
    % First do the six main points
    tlw setlinewidth
@@ -363,13 +448,18 @@
    pop pop   % Tidy up stack
 } bind def
 
-
-/tau {                    % Tau Orionis
+/m {                    % Tau Orionis
    % First do the six main points
    blw setlinewidth
    /theta angle 90 add def
-   /lout ps def
-   /lin ps3d def
+   /lmin ps3d def
+   /lmout ps def
+   /lsin ps6d def
+   /lsout ps15 def
+   /shade { mShade } bind def
+
+   /lin lmin def
+   /lout lmout def
    star closepath stroke
 
    % Now do the six outer points
@@ -378,64 +468,46 @@
    /thetasave theta def
    tlw setlinewidth
    6 {
-     gsave
-     % Clip out the inside of the main points
-     newpath
-     /lout ps def
-     /lin ps3d def
-     2 copy lout theta cpos moveto
-     point
-     % Then take an arc round to include the tip of the outer point
-     2 copy ps15 theta cpos lineto
-     2 copy ps15 theta theta 60 sub arcn
-     closepath clip
-
-     % draw the outer point
-     tlw setlinewidth
-     newpath
-     /theta theta 60 sub def
-     /lout ps6d def
-     /lin ps15 def
-     2 copy lout theta cpos moveto
-     point
-     closepath stroke
-
-     % Now put a mask round the smaller-angle part of the outer point
-     /lout ps15 def
-     /lin ps6d def
-     gsave
-       newpath
-       /theta theta 90 sub def
-       2 copy lout theta cpos moveto
-       point
-       2 copy ps15 theta theta 60 sub arcn
-       closepath clip
-      
-       % Shade in the space between main and outer points (phew)
-       newpath
-       tauShade
-
-     grestore
-     % Then repeat for the other side of the outer point
-     % Put a mask round the larger-angle part of the outer point
-     gsave
-       newpath
-       %/theta theta 60 sub def
-       2 copy lout theta cpos moveto
-       point
-       2 copy ps15 theta theta 60 sub arcn
-       closepath clip
-      
-       % Shade in the space between main and outer points (phew)
-       newpath
-       /theta theta 30 sub def
-       tauShade
-     grestore
-
-     grestore
+     dopoint
      % Reset and increment angle for next point
      /thetasave thetasave 60 add def
-     /theta thetasave def
+   } repeat
+
+   % Do the lines within the main star
+   tlw setlinewidth
+   /theta angle 120 add def
+   3 {
+     2 { 2 copy } repeat ps3d theta cpos moveto
+     ps3d -1 mul theta cpos lineto stroke
+     /theta theta 60 add def
+   } repeat
+
+   pop pop   % Tidy up stack
+} bind def
+
+/tau {                    % Tau Orionis
+   % First do the six main points
+   blw setlinewidth
+   /theta angle 90 add def
+   /lmin ps3d def
+   /lmout ps def
+   /lsin ps6d def
+   /lsout ps15 def
+   /shade { tauShade } bind def
+
+   /lin lmin def
+   /lout lmout def
+   star closepath stroke
+
+   % Now do the six outer points
+   /theta angle 90 add def
+   % Theta gets a bit confusing later on, so
+   /thetasave theta def
+   tlw setlinewidth
+   6 {
+     dopoint
+     % Reset and increment angle for next point
+     /thetasave thetasave 60 add def
    } repeat
 
    % Do the lines within the main star
@@ -573,7 +645,8 @@
 /Times-Roman 12 selectfont
 
 /angle { 40 } def          % Angle to the vertical
-10 675 moveto (Alpha Orionis) show
+10 675 moveto (Alpha) show
+10 660 moveto (Orionis) show
 /ps 10 def
 90 675 alpha
 /ps { 30 } def            % Point size
@@ -581,22 +654,54 @@
 /ps { 60 } def            % Point size
 300 675 alpha
 
-10 475 moveto (Beta Orionis) show
+/angle { 40 } def          % Angle to the vertical
+410 675 moveto (Beta) show
+410 660 moveto (Orionis) show
 /ps 10 def
-90 475 beta
+490 675 beta 
 /ps { 30 } def            % Point size
-160 475 beta
+560 675 beta 
 /ps { 60 } def            % Point size
-300 475 beta
+700 675 beta 
+
+10 475 moveto (Epsilon) show
+10 460 moveto (Orionis) show
+/ps 10 def
+90 475 epsilon
+/ps { 30 } def            % Point size
+160 475 epsilon
+/ps { 60 } def            % Point size
+300 475 epsilon
 
 /angle { 0 } def          % Angle to the vertical
-10 300 moveto (Q Orionis) show
+410 475 moveto (Q) show
+410 460 moveto (Orionis) show
 /ps 10 def
-90 300 q
+490 475 q
 /ps { 30 } def            % Point size
-160 300 q
+560 475 q
 /ps { 60 } def            % Point size
-300 300 q
+700 475 q
+
+/angle { 40 } def          % Angle to the vertical
+10 300 moveto (Gamma) show
+10 285 moveto (Orionis) show
+/ps 10 def
+90 300 gamma
+/ps { 30 } def            % Point size
+160 300 gamma
+/ps { 60 } def            % Point size
+300 300 gamma
+
+/angle { 40 } def          % Angle to the vertical
+410 300 moveto (pi) show
+410 285 moveto (Orionis) show
+/ps 10 def
+490 300 pi
+/ps { 30 } def            % Point size
+560 300 pi
+/ps { 60 } def            % Point size
+700 300 pi
 
 /angle { 40 } def          % Angle to the vertical
 10 100 moveto (Tau Orionis) show
@@ -607,23 +712,15 @@
 /ps { 60 } def            % Point size
 300 100 tau
 
-/angle { 0 } def          % Angle to the vertical
-410 300 moveto (gamma Orionis) show
-/ps 10 def
-490 300 gamma
-/ps { 30 } def            % Point size
-560 300 gamma
-/ps { 60 } def            % Point size
-700 300 gamma
-
 /angle { 40 } def          % Angle to the vertical
-410 100 moveto (o Orionis) show
+410 100 moveto (m ) show
+410  90 moveto (Orionis) show
 /ps 10 def
-490 100 pi
+490 100 m
 /ps { 30 } def            % Point size
-560 100 pi
+560 100 m
 /ps { 60 } def            % Point size
-700 100 pi
+700 100 m
 
 % 100 100 moveto 100 100 100 0 60 arc closepath stroke
 showpage
