@@ -172,7 +172,7 @@
    grestore
 } bind def
 
-/alpha {                    % Beta Orionis
+/alpha {                    % Alpha Orionis
    % Inner and outer radii of main and sharp points
    /lmout ps def
    /lmin ps3d def
@@ -294,9 +294,15 @@
 /q {                    % q Orionis
    % First do the six main points
    tlw setlinewidth
+   /lmin ps3d def
+   /lmout ps def
+   /lsin ps6d def
+   /lsout ps15 def
+   /shade { qShade } bind def
+
    /theta angle 90 add def
-   /lout ps def
-   /lin ps3d def
+   /lout lmout def
+   /lin lmin def
    star closepath stroke
 
    % Shading inside the main star
@@ -336,70 +342,21 @@
    /thetasave theta def
    tlw setlinewidth
    6 {
-     gsave
-       % Clip out the inside of the main points
-       newpath
-       /lout ps def
-       /lin ps3d def
-       2 copy lout theta cpos moveto
-       point
-       % Then take an arc round to include the tip of the outer point
-       2 copy ps15 theta cpos lineto
-       2 copy ps15 theta theta 60 sub arcn
-       closepath clip
-      
-       % draw the outer point
-       newpath
-       /theta theta 60 sub def
-       /lout ps6d def
-       /lin ps15 def
-       2 copy lout theta cpos moveto
-       point
-       closepath stroke
-      
-       % Now put a mask round the smaller-angle part of the outer point
-       /lout ps15 def
-       /lin ps6d def
-       gsave
-         newpath
-         /theta theta 90 sub def
-         2 copy lout theta cpos moveto point
-         2 copy ps15 theta theta 60 sub arcn closepath clip
-         % Shade in the space between main and outer points (phew)
-         newpath
-         qShade
-       grestore
-      
-       % Then repeat for the other side of the outer point
-       % Put a mask round the larger-angle part of the outer point
-       gsave
-         newpath
-         2 copy lout theta cpos moveto point
-         2 copy ps15 theta theta 60 sub arcn closepath clip
-         % Shade in the space between main and outer points
-         newpath
-         /theta theta 30 sub def
-         qShade
-       grestore
-
-     grestore
+     dopoint
      % Reset and increment angle for next point
      /thetasave thetasave 60 add def
-     /theta thetasave def
    } repeat
 
    % Do the lines within the main star
    tlw setlinewidth
    /theta angle 120 add def
    3 {
-     2 { 2 copy } repeat ps3d theta cpos moveto
-     ps3d -1 mul theta cpos lineto stroke
+     2 copy lmin lmin -2 mul theta radLine
      /theta theta 60 add def
    } repeat
    /theta angle 90 add def
    3 {
-     2 { 2 copy } repeat ps125 theta cpos moveto
-     ps125 -1 mul theta cpos lineto stroke
+     2 copy ps125 ps125 -2 mul theta radLine
      /theta theta 60 add def
    } repeat
 
