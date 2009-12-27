@@ -1,0 +1,191 @@
+# Test the set and show commands
+set term eps
+show term
+set out '5.eps'
+show out
+unset out
+show out
+
+set autoscale x1
+show autoscale
+unset autoscale
+show autosc
+
+show axescolour
+set axescolour green
+show axescolour
+unset axescol
+show axescolour
+
+set x2label 'Cracktastic axis bollocks'
+show axis
+unset axis x2
+show axis
+
+set backup
+set nobackup
+
+show bar
+set bar 3
+show bar
+set bar small
+show bar
+set bar large
+show bar
+unset bar
+show bar
+
+set boxwid 3
+show boxwidth
+
+set boxfrom 2
+
+set display
+set nodisplay
+unset nodisplay
+show dis
+
+set dpi pi/2
+show dpi
+
+set fontsize 13
+show fonts
+
+show grid
+se gri x1y2
+show gri
+unset grid
+show gri
+
+set gridmajcolour blue
+set gridmincolour red
+set key top
+set key bottom
+set key lef
+set key ri
+set key bel
+set key out
+set key xcen
+set key ycen
+se key top right -.5, -.5
+show key
+
+se keycolumns 2
+
+show key
+show keycol
+
+set label 1 'hello' 0,0
+set label 2 'goodbye' axis1 1, axis25 2 rot 405
+show labels
+set nolabel
+
+set linewid 2
+show linesty
+
+set logsc x
+unset logsc y
+show log
+
+set mult
+unset mult
+
+set arrow 1 from 0,1 to 1,1
+set noarrow 1
+set noarrow
+
+set title 'This is a title'
+show tit
+set notit
+unset tit
+unset notit
+
+set origin 0,0
+show orig
+unset orig
+show origin
+
+show pale
+set pal yellow, red, blue
+show palette
+unset pal
+show pal
+
+set paper government_letter
+show paper
+unset paper
+show paper
+
+set plw 100
+show plw
+unset plw
+
+set pointsize 3
+show ps
+
+set samp 20
+show samples
+unset sam
+show sam
+
+show size
+set size 5
+show size
+set size ratio 2
+show size
+set size square
+show size
+set size noratio
+show size
+unset size
+show size
+
+set term post land
+set term eps
+set term gif mono noinv
+set term png trans
+set term jpg color
+set term eps mono port inv
+# unset term
+
+show textc
+set textcolour blue
+show textc
+unset textcolor
+show textcolour
+
+set texthal left
+set texthal cen
+set texthalign r
+unset texthalign
+
+set textval t
+set textval c
+set textvalign bottom
+unset textvalign
+
+set wid 20
+
+set xlabel 'hello'
+show label
+set ylabel 'Hello'
+show label
+set x5label 'Badger'
+show label
+set zlabel 'd00d'
+show label
+unset xlabel
+show lab
+
+set xrange [0:1]
+set y2range [0:0]
+set zrange [:]
+unset xrange
+unset x3range
+show axes
+
+se x2ticdir in
+set xticdir out
+set yticdir both
+unset y78ticdir
+

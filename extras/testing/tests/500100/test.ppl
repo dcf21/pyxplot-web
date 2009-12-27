@@ -1,0 +1,22 @@
+set term eps
+set out 'ellipse.eps'
+
+set mul
+set nodis
+
+for i = 10 to 360 step 30
+{
+ellipse centre 5,5 semilatusrectum 2 ecc 1-i/360 rot i
+}
+
+for i = 0 to 360 step 10
+{
+r=3
+j=i*unit(degrees)
+k = j+10*unit(degrees)
+ellipse focus r*cos(j), r*sin(j) centre r*cos(k), r*sin(k) ecc .95
+}
+
+
+set dis
+ref
