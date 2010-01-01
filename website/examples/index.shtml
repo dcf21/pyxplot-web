@@ -41,7 +41,7 @@
 		</ul>
 
 		<h3>
-			<a href="presentations">Using PyXPlot in presentations</a>
+			<a href="presentations/">Using PyXPlot in presentations</a>
 		</h3>
 		<ul>
 			<li><a href="presentations/01equations/">Equations for presentations</a></li>
