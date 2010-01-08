@@ -1,0 +1,38 @@
+/* CSS definitions for the PyXPlot website topbox */
+#topbox {
+    height: 132px;
+    border-top: #d2d2d2 solid 1px;
+    border-bottom: #d2d2d2 solid 1px;
+    margin-left: 0px;
+    margin-right: 0px;
+	 margin-top: 0.7em;
+	 margin-bottom: 0.7em;
+    background: #ccddff;
+    color: #333333;     
+/* 
+    margin-top: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+	 bottom: 0;
+    padding-right:20px;
+    padding-left:20px;
+    padding-top:0;
+    padding-bottom:0;
+	 height: 150px;
+	 */
+}
+
+#topbox h1 {
+   text-align: center;
+}
+
+#topbox h2 {
+   text-align: center;
+}
+
+#topbox img {
+   float:left;
+	border: 0;
+	padding: 0;
+}

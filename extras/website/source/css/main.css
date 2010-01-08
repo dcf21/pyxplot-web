@@ -1,0 +1,85 @@
+BODY { 	
+font: 12pt;
+background: #ffe8ba;
+color: black;
+}
+			
+
+DIV.normal
+{font: 12pt;
+color: white;
+margin-left: 20pt;
+margin-right: 20pt;
+}
+
+DIV.centred
+{font: 12pt;
+color: white;
+margin-left: 20pt;
+margin-right: 20pt;
+text-align: center;
+}
+DIV.centred table
+{font: 12pt;
+margin-left: auto;
+margin-right: auto;
+color: white;
+text-align: left;
+}
+
+DIV.heading1
+{font: 24pt "Times New Roman";
+color: black;
+text-align: center;
+font-weight: bold;
+line-height: 30pt;}
+
+DIV.footnote
+{font: 10pt "Times New Roman";
+color: white;
+line-height: 12pt;
+text-align: center;
+}
+
+DIV.list1
+{font: 12pt;
+color: white;
+text-align: left;
+margin-left: 40pt;
+}
+
+DIV.redheading
+{font: 18pt "Times New Roman";
+font-weight: bold;
+color: red;
+text-align: left;
+margin-left: 40pt;
+}
+
+DIV.table
+{font: 12pt;
+color: white;
+margin-left: 20pt;
+margin-right: 20pt;
+}
+
+TABLE
+{font: 12pt;
+color: black;
+margin-left: 20pt;
+margin-right: 20pt;
+}
+
+THEAD
+{font: 12pt;
+color: black;
+font-weight: bold;
+margin-left: 20pt;
+margin-right: 20pt;
+}
+
+A:link {color: #0000FF;
+}
+
+A:visited {color: #7777FF;
+}
