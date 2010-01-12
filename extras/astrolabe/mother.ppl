@@ -93,8 +93,8 @@ for theta=-180*unit(deg) to 170*unit(deg) step 10*unit(deg)
   text "%d"%(theta_disp%10) at RT2*cos(theta2),RT2*sin(theta2) rot theta+90*unit(deg)
  }
 
-RT1 = (R6+R7 )/2
-RT2 = (R9+R10)/2
+RT1 = (R6+R7)/2
+RT2 = (R8+R9)/2
 foreach datum m,d,last,z1394,a1394,z1974,a1974 in "tuckerman.dat"
  {
   theta = 30*unit(deg)*(z1974-1) + a1974*unit(deg)
@@ -111,7 +111,7 @@ foreach datum m,d,last,z1394,a1394,z1974,a1974 in "tuckerman.dat"
 
   theta = 30*unit(deg)*(z1394-1) + a1394*unit(deg)
   if (last) { line from R8*cos(theta),R8*sin(theta) to R10*cos(theta),R10*sin(theta) ; } \
-  else      { line from R9*cos(theta),R9*sin(theta) to R10*cos(theta),R10*sin(theta) ; }
+  else      { line from R8*cos(theta),R8*sin(theta) to R9 *cos(theta),R9 *sin(theta) ; }
 
   if (((d%10)==0) | (d>26))
    {
@@ -120,8 +120,12 @@ foreach datum m,d,last,z1394,a1394,z1974,a1974 in "tuckerman.dat"
     set texthalign left ; theta2 = theta+0.2*unit(deg)
     text "%d"%(d%10) at RT2*cos(theta2),RT2*sin(theta2) rot theta+90*unit(deg)
    }
-
  }
+
+RT1 = (R4+R5 )/2
+RT2 = (R5+R6 )/2
+RT3 = (R9+R10)/2
+load "mother_back_text.dat"
 
 set term eps
 set output 'mother_back.eps'
