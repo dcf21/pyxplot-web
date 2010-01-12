@@ -25,13 +25,13 @@ line from 0,R1-2*unit(cm) to 0,R1+2*unit(cm)
 circle at 0,0 radius R1 w fillc white
 circle at 0,0 radius R2
 circle at 0,0 radius R3
-circle at 0,0 radius R4
-circle at 0,0 radius R5
+circle at 0,0 radius R4 with lw 2
+circle at 0,0 radius R5 with lw 2
 circle at 0,0 radius R6
 circle at 0,0 radius R7
 circle at 0,0 radius R8
 circle at 0,0 radius R9
-circle at 0,0 radius R10
+circle at 0,0 radius R10 with lw 2
 circle at 0,0 radius R11
 circle at 0,0 radius R12
 circle at 0,0 radius R13
