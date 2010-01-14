@@ -2,10 +2,8 @@
 
 set mult ; set nodisp
 set preamble "\usepackage{wasysym}"
-set fontsize 1.2
-
-R1 = 10*unit(cm)
-D12 = 0.07*R1
+load "settings.ppl"
+set fontsize 1.2*FS
 
 R2 = R1 - D12
 R3 = R2 - D12/2
@@ -150,7 +148,7 @@ line from RS2*cos(thetaB),RS2*sin(thetaB) to RS2*cos(thetaB),0
 line from RS2*cos(thetaB),RS2*sin(thetaB) to RS2*cos(thetaC),RS2*sin(thetaC)
 line from RS2*cos(thetaC),RS2*sin(thetaC) to RS2*cos(thetaC),0
 
-set fontsize 0.6
+set fontsize 0.6*FS
 text "UMBRA" at 0,RS2*sin(thetaC) hal r val b gap 0.7*unit(mm)
 text "UMBRA" at RS2*cos(thetaC),0 hal l val b gap 0.7*unit(mm) rot -90
 text "RECTA" at 0,RS2*sin(thetaC) hal l val b gap 0.7*unit(mm)
@@ -202,7 +200,7 @@ set disp ; refresh
 # FRONT OF MOTHER
 
 set mult ; set nodisp ; clear
-set fontsize 1.2
+set fontsize 1.2*FS
 R2 = R1 - D12 * 1.5
 R3 = R2 - D12
 R4 = R3 - D12/2
@@ -215,17 +213,17 @@ line from 0,R1-2*unit(cm) to 0,R1+2*unit(cm)
 circle at 0,0 radius R1 w fillc white
 circle at 0,0 radius R2
 circle at 0,0 radius R3
-circle at 0,0 radius R4
+arc    at 0,0 radius R4 from TabSize to 360*unit(deg)-TabSize
 circle at 0,0 radius R5
 
-for theta=0*unit(deg) to 359*unit(deg) step 5*unit(deg)
+for theta=5*unit(deg) to 359*unit(deg) step 5*unit(deg)
  {
-  line from R2*cos(theta),R2*sin(theta) to R4*cos(theta),R4*sin(theta)
+  line from R2*sin(theta),R2*cos(theta) to R4*sin(theta),R4*cos(theta)
  }
 
-for theta=0*unit(deg) to 359.9*unit(deg) step 1*unit(deg)
+for theta=TabSize to 360.9*unit(deg)-TabSize step 1*unit(deg)
  {
-  line from R3*cos(theta),R3*sin(theta) to R4*cos(theta),R4*sin(theta)
+  line from R3*sin(theta),R3*cos(theta) to R4*sin(theta),R4*cos(theta)
  }
 
 RT1 = (R2+R3)/2
@@ -260,15 +258,13 @@ for theta=-180*unit(deg) to 170*unit(deg) step 10*unit(deg)
 
 RT1 = (R1+R2)/2
 set texthalign centre ; set textvalign centre
-for i=0 to 27
+set fontsize 2*FS
+i=0
+foreach t in ("\LARGE\kreuz","A","B","C","D","E","F","G","H","I","K","L","M","N","O","P","Q","R","S","T","U","X","Y","Z")
  {
-  theta = i/27*unit(rev)
-  if (i==0)
-   {
-    text "\LARGE\kreuz" at RT1*sin(theta),RT1*cos(theta) rot -theta
-   } else {
-    text "A" at RT1*sin(theta),RT1*cos(theta) rot -theta
-   }
+  theta = i/24*unit(rev)
+  text "%s"%(t) at RT1*sin(theta),RT1*cos(theta) rot -theta
+  i=i+1
  }
 
 set term eps
