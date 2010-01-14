@@ -24,8 +24,8 @@ line from 0,R1-2*unit(cm) to 0,R1+2*unit(cm)
 
 circle at 0,0 radius R1 w fillc white
 circle at 0,0 radius R2
-circle at 0,0 radius R3
-circle at 0,0 radius R4 with lw 2
+circle at 0,0 radius R3 with lw 2
+circle at 0,0 radius R4
 circle at 0,0 radius R5 with lw 2
 circle at 0,0 radius R6
 circle at 0,0 radius R7

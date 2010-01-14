@@ -3,7 +3,7 @@
 set mult ; set nodisp
 set preamble "\usepackage{wasysym}"
 load "settings.ppl"
-set fontsize 1.2*FS
+set fontsize 0.8*FS
 
 Rtab = R1 - D12*2.5 - unit(mm)
 R2   = R1 - D12*3 - unit(mm)
@@ -60,7 +60,7 @@ foreach c in (-6,0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85)
      }
    }
 
-  arc at 0,(yA+yB)/2 radius (yB-yA)/2 from start to end with linetype 1+(c<0) linewidth 1+(c==0)
+  arc at 0,(yA+yB)/2 radius (yB-yA)/2 from start to end with linetype 1+(c<0) linewidth 0.5+1.5*(c==0)
  }
 
 # Find coordinates of P
@@ -103,7 +103,7 @@ foreach dir in ("","NNW","","NW","","WNW","","W","","WSW","","SW","","SSW","")
   start2= -phi-theta
   end2  = -phi+theta
 
-  arc at Tx,Ty radius Tr from max(start,start2) to min(end,end2)
+  arc at Tx,Ty radius Tr from max(start,start2) to min(end,end2) with lw 0.5
 
   if (end < end2-unit(2*deg))
    {

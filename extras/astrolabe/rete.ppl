@@ -1,0 +1,41 @@
+# THE RETE
+
+set mult ; set nodisp
+set preamble "\usepackage{wasysym}"
+load "settings.ppl"
+set fontsize 1.2*FS
+
+Rtab = R1 - D12*2.5 - unit(mm)
+R2   = R1 - D12*3 - unit(mm)
+R3   =      D12
+
+R4 = R2 * tan((90-iEarth)/2*unit(deg))
+R5 = R4 * tan((90-iEarth)/2*unit(deg))
+
+circle at 0,0 radius R2
+circle at 0,0 radius R4
+circle at 0,0 radius R5
+
+# Make tab
+arc at 0,0 radius Rtab from -TabSize to TabSize
+line from  Rtab*sin(TabSize),Rtab*cos(TabSize) to  R2*sin(TabSize),R2*cos(TabSize)
+line from -Rtab*sin(TabSize),Rtab*cos(TabSize) to -R2*sin(TabSize),R2*cos(TabSize)
+
+# Draw ecliptic
+R_ecl_outer = (R2+R5)/2
+R_ecl_inner = R_ecl_outer*0.9
+
+circle 0,(R2-R5)/2 radius (R_ecl_outer+R_ecl_inner)/2 with lw (R_ecl_outer-R_ecl_inner)/unit(0.2*mm) col white
+circle 0,(R2-R5)/2 radius R_ecl_outer
+circle 0,(R2-R5)/2 radius R_ecl_inner
+
+# White out R3
+circle at 0,0 radius R3 w fillc white
+
+set term eps
+set output 'rete.eps'
+set disp ; refresh
+set term pdf
+set output 'rete.pdf'
+set disp ; refresh
+
