@@ -16,7 +16,7 @@ R9 = R8 - D12
 R10= R9 - D12
 R11= R10- D12
 R12= R11- D12
-R13=      D12
+R13=      D12*CENTRE_SCALING
 
 # Handle
 circle at 0,R1 radius 2*unit(cm)
@@ -204,7 +204,7 @@ set fontsize 1.2*FS
 R2 = R1 - D12 * 1.5
 R3 = R2 - D12
 R4 = R3 - D12/2
-R5 =      D12
+R5 =      D12*CENTRE_SCALING
 
 # Handle
 circle at 0,R1 radius 2*unit(cm)

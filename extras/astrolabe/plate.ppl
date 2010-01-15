@@ -7,7 +7,7 @@ set fontsize 0.8*FS
 
 Rtab = R1 - D12*2.5 - unit(mm)
 R2   = R1 - D12*3 - unit(mm)
-R3   =      D12
+R3   =      D12*CENTRE_SCALING
 
 R4 = R2 * tan((90-iEarth)/2*unit(deg))
 R5 = R4 * tan((90-iEarth)/2*unit(deg))

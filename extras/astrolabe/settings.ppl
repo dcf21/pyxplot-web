@@ -1,7 +1,8 @@
-R1 = 10*unit(cm)
+R1 = 9*unit(cm)
 D12 = 0.07*R1
-FS = 1.0
+FS = 0.9
 TabSize = 4*unit(deg)
+CENTRE_SCALING = 1/2.5
 
 iEarth   = 23.5
 latitude = 52.0

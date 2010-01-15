@@ -7,7 +7,7 @@ set fontsize 1.2*FS
 
 Rtab = R1 - D12*2.5 - unit(mm)
 R2   = R1 - D12*3 - unit(mm)
-R3   =      D12
+R3   =      D12*CENTRE_SCALING
 
 R4 = R2 * tan((90-iEarth)/2*unit(deg))
 R5 = R4 * tan((90-iEarth)/2*unit(deg))
@@ -17,9 +17,35 @@ circle at 0,0 radius R4
 circle at 0,0 radius R5
 
 # Make tab
-arc at 0,0 radius Rtab from -TabSize to TabSize
-line from  Rtab*sin(TabSize),Rtab*cos(TabSize) to  R2*sin(TabSize),R2*cos(TabSize)
-line from -Rtab*sin(TabSize),Rtab*cos(TabSize) to -R2*sin(TabSize),R2*cos(TabSize)
+#arc at 0,0 radius Rtab from -TabSize to TabSize
+#line from  Rtab*sin(TabSize),Rtab*cos(TabSize) to  R2*sin(TabSize),R2*cos(TabSize)
+#line from -Rtab*sin(TabSize),Rtab*cos(TabSize) to -R2*sin(TabSize),R2*cos(TabSize)
+
+# Draw stars
+foreach datum ra,dec,mag in "bright_stars.out" using 2:3:4
+ {
+  if (mag > 4.0) { continue; }
+  theta = (90-dec)*unit(deg) / 2
+  r = R4 * tan(theta)
+  if (r>R2) { continue; }
+  point -r*cos(ra*unit(deg)),-r*sin(ra*unit(deg)) with pt 10 ps 0.18*(5-mag)
+ }
+
+# Draw RA scale
+Rtick = R2*0.98
+for ra=0 to 23.9 step 1
+ {
+  theta = ra/24*unit(rev)
+  line from -R2*cos(theta),-R2*sin(theta) to -Rtick*cos(theta),-Rtick*sin(theta)
+  text "%d$^\mathrm{h}$"%(ra) at -Rtick*cos(theta),-Rtick*sin(theta) rot (-90*unit(deg)+theta) hal c val b gap unit(mm)
+ }
+
+Rtick = R2*0.99
+for ra=0 to 23.9 step 1/6
+ {
+  theta = ra/24*unit(rev)
+  line from -R2*cos(theta),-R2*sin(theta) to -Rtick*cos(theta),-Rtick*sin(theta)
+ }
 
 # Draw ecliptic
 R_ecl_outer = (R2+R5)/2
