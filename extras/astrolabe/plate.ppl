@@ -130,6 +130,33 @@ foreach dir in ("","NNW","","NW","","WNW","","W","","WSW","","SW","","SSW","")
 
 text "N" at 0,Hcentre-Hradius hal c val t gap unit(mm)
 
+# Draw lines of unequal hours
+for h=1 to 12
+ {
+  for r=R5 to R2 step unit(mm)
+   {
+    r0 = r
+    r1 = r+unit(mm)
+    theta0 = acos((r0**2 + Hcentre**2 - Hradius**2)/(2*r0*Hcentre))
+    theta1 = acos((r1**2 + Hcentre**2 - Hradius**2)/(2*r1*Hcentre))
+    psi0   = theta0 + (360*unit(deg)-2*theta0)/12*h
+    psi1   = theta1 + (360*unit(deg)-2*theta1)/12*h
+    line from r0*sin(psi0),r0*cos(psi0) to r1*sin(psi1),r1*cos(psi1)
+   }
+ }
+
+set fontsize 2*FS
+h = 0.5
+r = R2-unit(2*mm)
+foreach hr in ("I","II","III","IV","V","VI","VII","VII","IX","X","XI","XII")
+ {
+  theta0 = acos((r**2 + Hcentre**2 - Hradius**2)/(2*r*Hcentre))
+  psi0   = theta0 + (360*unit(deg)-2*theta0)/12*h
+  psi0   = (psi0-180*unit(deg))*0.95+180*unit(deg)
+  text "%s"%(hr) at r*sin(psi0),r*cos(psi0) rot (180*unit(deg)-psi0) hal c val b gap unit(mm)
+  h=h+1
+ }
+
 # White out R3
 line from -R2,0 to R2,0
 line from 0,-R2 to 0,R2
