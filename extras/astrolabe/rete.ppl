@@ -55,6 +55,25 @@ circle 0,(R2-R5)/2 radius (R_ecl_outer+R_ecl_inner)/2 with lw (R_ecl_outer-R_ecl
 circle 0,(R2-R5)/2 radius R_ecl_outer
 circle 0,(R2-R5)/2 radius R_ecl_inner
 
+# Draw tick marks along ecliptic
+y_ecl = (R2-R5)/2
+for theta=0*unit(deg) to 359*unit(deg) step 2*unit(deg)
+ {
+  alpha = asin(y_ecl * sin(theta) / R_ecl_outer) # Sine rule
+  psi   = theta + alpha # Angles in triangle add up to 180 degrees
+
+  t = floor((theta/unit(deg))+0.01)
+  if      ((t%30)==0) { Rtick_inner = R_ecl_inner;   } \
+  else if ((t%10)==0) { Rtick_inner = (  R_ecl_outer+R_ecl_inner)/2; } \
+  else                { Rtick_inner = (3*R_ecl_outer+R_ecl_inner)/4; }
+
+  line from R_ecl_outer*sin(psi) , y_ecl+R_ecl_outer*cos(psi) to Rtick_inner*sin(psi) , y_ecl+Rtick_inner*cos(psi)
+ }
+
+set fontsize 0.75*FS
+RT = (1*R_ecl_outer+3*R_ecl_inner)/4
+load "rete_text.dat"
+
 # White out R3
 circle at 0,0 radius R3 w fillc white
 
