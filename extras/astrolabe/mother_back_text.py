@@ -1,3 +1,5 @@
+# Horrible fudge way to write text in circles around the mother
+# $Id$
 
 out = open("mother_back_text.dat","w")
 

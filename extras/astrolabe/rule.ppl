@@ -1,0 +1,71 @@
+# THE RULE
+# $Id$
+
+set mult ; set nodisp
+set preamble "\usepackage{wasysym}"
+load "settings.ppl"
+set fontsize 1.2*FS
+
+R2   = R1 - D12*3 - unit(mm) + unit(2*cm)
+R3   =      D12*CENTRE_SCALING
+
+R4 = R2 * tan((90-iEarth)/2*unit(deg))
+R5 = R4 * tan((90-iEarth)/2*unit(deg))
+
+R6 = 0.8*unit(cm)
+
+# Draw outlines of rules
+
+subroutine RuleDraw(xpos,ypos)
+ {
+  circle at xpos,ypos radius R3
+  arc    at xpos,ypos radius R6 from   0 to  90
+  arc    at xpos,ypos radius R6 from 180 to 270
+  line from xpos,ypos-R6 to xpos,ypos-R2-R6
+  line from xpos,ypos+R6 to xpos,ypos+R2+R6
+  line from xpos,ypos+R2+R6 to xpos-R6,ypos+R2
+  line from xpos,ypos-R2-R6 to xpos+R6,ypos-R2
+  line from xpos-R6,ypos+R2 to xpos-R6,ypos
+  line from xpos+R6,ypos-R2 to xpos+R6,ypos
+ }
+
+call RuleDraw (0*unit(cm),0*unit(cm))
+call RuleDraw (5*unit(cm),0*unit(cm))
+
+# Draw declination scale on rule
+BTL = 4*unit(mm)
+STL = 2*unit(mm)
+for dec=-25 to 70 step 5
+ {
+  theta = (90-dec)*unit(deg) / 2
+  r = R4 * tan(theta)
+  if ((dec%10)==0)
+   {
+    line from 0, r to -BTL, r
+    text "$%d$"%(dec) at -BTL, r hal c val t rot -90
+    line from 0,-r to  BTL,-r
+    text "$%d$"%(dec) at  BTL,-r hal c val t rot  90
+   } else {
+    line from 0, r to -STL, r
+    line from 0,-r to  STL,-r
+   }
+ }
+
+# Draw numbers on second rule
+for i=0 to 8
+ {
+  r = R6+unit(5*mm) + i*unit(5*mm)
+  line from unit(5*cm), r to unit(5*cm)-BTL, r
+  text "$%d$"%(i) at unit(5*cm)-BTL, r hal c val t rot -90
+  line from unit(5*cm),-r to unit(5*cm)+BTL,-r
+  text "$%d$"%(i) at unit(5*cm)+BTL,-r hal c val t rot  90
+ }
+
+
+set term eps
+set output 'rule.eps'
+set disp ; refresh
+set term pdf
+set output 'rule.pdf'
+set disp ; refresh
+

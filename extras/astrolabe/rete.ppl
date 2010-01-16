@@ -1,4 +1,5 @@
 # THE RETE
+# $Id$
 
 set mult ; set nodisp
 set preamble "\usepackage{wasysym}"

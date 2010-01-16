@@ -6,7 +6,7 @@ astrolabe.pdf: astrolabe.ps
 astrolabe.ps: astrolabe.dvi
 	dvips astrolabe.dvi -o astrolabe.ps
 
-astrolabe.dvi: astrolabe.tex mother_back.eps plate.eps rete.eps
+astrolabe.dvi: astrolabe.tex mother_back.eps plate.eps rete.eps rule.eps
 	latex astrolabe.tex
 
 rete.eps: rete.ppl bright_stars.out rete_text.dat
@@ -17,6 +17,9 @@ bright_stars.out: bright_stars.py bright_stars.dat bright_star_names.dat
 
 rete_text.dat: rete_text.py
 	python rete_text.py
+
+rule.eps: rule.ppl
+	../../pyxplot8/bin/pyxplot rule.ppl
 
 plate.eps: plate.ppl
 	../../pyxplot8/bin/pyxplot plate.ppl

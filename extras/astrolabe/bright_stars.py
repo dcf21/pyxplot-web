@@ -1,4 +1,5 @@
 # bright_stars.py
+# $Id$
 
 # Takes the Bright Star Catalogue, and adds names of objects
 
