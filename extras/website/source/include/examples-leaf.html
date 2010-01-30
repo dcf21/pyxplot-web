@@ -1,21 +1,22 @@
 <<SET title: Examples -- <<VARIABLE examplename>>>>
 <<INCLUDE header.html>>
       <div id="navline">
-      <a href="<<ROOT>>">PyXPlot</a> -&gt; <a href="../../">Examples</a> -&gt; <a href="../"><<VARIABLE nodename>></a> -&gt; <<VARIABLE examplename>>
+      <a href="<<ROOT>>index.html">PyXPlot</a> -&gt; <a href="../../index.html">Examples</a> -&gt; <a href="../index.html"><<VARIABLE nodename>></a> -&gt; <<VARIABLE examplename>>
       </div>
+<<NAVBOXES>>
       <!-- <div id="navline" style="min-height: 29px">
          <a href="../02datafiles/"><img src="../../../img/rArrow.png" style="float: left; margin: 0px; margin-right: 0.7em;" alt="Right arrow" />(Data files)</a>
       </div> -->
       <br>
       <div class="examplebox">
-      <img width="600px" src="output.png" />
+      <img src="output.png" />
       </div>
       <p style="clear: both">
          <<VARIABLE caption>>
       </p>
       <h3>Script</h3>
       <pre>
-         <<INCLUDE <<VARIABLE scriptfile>>>>
+<<INCLUDE <<VARIABLE scriptfile>>>>
       </pre>
       <h3>Notes</h3>
       <p>

@@ -339,6 +339,12 @@ def renderExamples(tree):
       node['uri'] = tree['uri'] + node['dir'] + '/'
       for leaf in node['leaves']:
          leaf['uri'] = node['uri'] + leaf['dir'] + '/'
+      # Generate 'next' and 'previous' uris for the leaves where appropriate
+      for i in range(len(node['leaves'])):
+         if (i==0) : node['leaves'][i]['prevuri'] = None
+         else      : node['leaves'][i]['prevuri'] = node['leaves'][i-1]['uri']
+         if (i==len(node['leaves'])-1): node['leaves'][i]['nexturi'] = None
+         else                         : node['leaves'][i]['nexturi'] = node['leaves'][i+1]['uri'] 
 
    # Render root node
    object['target'] = "%sindex.html"%tree['root']
@@ -419,7 +425,33 @@ def renderExamplesLeaf(leaf, node, tree, opt, var):
    var['scriptfile'] = leaf['scriptfile']
    var['notes'] = leaf['notes']
    fin = open(os.path.join(options['includedir'],tree['leafpage']), 'r')
-   for line in fin: ftmp.write(line)
+   line = fin.readline()
+   while (line.strip() != '<<NAVBOXES>>'):
+      ftmp.write(line)
+      line = fin.readline()
+      assert(line != '')
+   # Write example downloads box
+   ftmp.write('<div class="exampledownloads">Download\n')
+   filelist = ['script.ppl', 'output.eps', 'output.png']
+   for file in leaf['datafiles']: 
+      m = re.match('.*/(.*?)$', file)
+      filelist.append(m.group(1))
+   for file in filelist:
+      ftmp.write('<div class="exampledownload"><a href="%s/%s">%s</a></div>\n'%(leaf['uri'],file,file))
+   ftmp.write('</div>\n')
+   # Write navboxes
+   ftmp.write('<div class="examplebutton">\n')
+   if (leaf['prevuri']!=None): ftmp.write('<a href="%sindex.html">Prev</a>\n'%leaf['prevuri'])
+   else                      : ftmp.write('Prev\n')
+   ftmp.write('</div>\n<div class="examplebutton">\n')
+   if (leaf['nexturi']!=None): ftmp.write('<a href="%sindex.html">Next</a>\n'%leaf['nexturi'])
+   else                      : ftmp.write('Next\n')
+   ftmp.write('</div>\n')
+   line = fin.readline()
+   while (line != ''): 
+      ftmp.write(line)
+      line = fin.readline()
+   #for line in fin: ftmp.write(line)
    ftmp.write("EOD\n")
    # Now render the leaf
    ftmp.seek(0,0)
@@ -432,11 +464,11 @@ def renderExamplesLeaf(leaf, node, tree, opt, var):
    shutil.copy2(os.path.join(options['includedir'],leaf['scriptfile']), "%s/script.ppl"%tempdir)
    for datafile in leaf['datafiles']: shutil.copy2(os.path.join(options['includedir'],datafile), tempdir)
    pplobj = subprocess.Popen(opt['pyxplot'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, cwd=tempdir)
-   [output, errors] = pplobj.communicate('set term eps\nset out "output.eps"\nload "script.ppl"\nset term png\nset output "output.png"\nrefresh\n')
+   [output, errors] = pplobj.communicate('set term eps\nset out "output.eps"\nload "script.ppl"\nset term png dpi 100\nset output "output.png"\nrefresh\n')
    # In an ideal world we'd do something useful with the output here
    leafdir = os.path.join(opt['targetRoot'],tree['root'], node['dir'], leaf['dir'])
    for file in ['output.eps', 'output.png', 'script.ppl']: shutil.copy2("%s/%s"%(tempdir,file), leafdir)
-   for file in leaf['datafiles']: shutil.copy2(os.path.join(options['includedir'],datafile), leafdir)
+   for file in leaf['datafiles']: shutil.copy2(os.path.join(options['includedir'],file), leafdir)
    shutil.rmtree(tempdir)
 
 
