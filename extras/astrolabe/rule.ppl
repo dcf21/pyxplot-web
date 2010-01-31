@@ -6,7 +6,9 @@ set preamble "\usepackage{wasysym}"
 load "settings.ppl"
 set fontsize 1.2*FS
 
-R2   = R1 - D12*3 - unit(mm) + unit(2*cm)
+margin = 2*unit(cm)
+
+R2   = R1 - D12*3 - unit(mm)
 R3   =      D12*CENTRE_SCALING
 
 R4 = R2 * tan((90-iEarth)/2*unit(deg))
@@ -21,12 +23,12 @@ subroutine RuleDraw(xpos,ypos)
   circle at xpos,ypos radius R3
   arc    at xpos,ypos radius R6 from   0 to  90
   arc    at xpos,ypos radius R6 from 180 to 270
-  line from xpos,ypos-R6 to xpos,ypos-R2-R6
-  line from xpos,ypos+R6 to xpos,ypos+R2+R6
-  line from xpos,ypos+R2+R6 to xpos-R6,ypos+R2
-  line from xpos,ypos-R2-R6 to xpos+R6,ypos-R2
-  line from xpos-R6,ypos+R2 to xpos-R6,ypos
-  line from xpos+R6,ypos-R2 to xpos+R6,ypos
+  line from xpos,ypos-R6 to xpos,ypos-(R2+margin)-R6
+  line from xpos,ypos+R6 to xpos,ypos+(R2+margin)+R6
+  line from xpos,ypos+(R2+margin)+R6 to xpos-R6,ypos+(R2+margin)
+  line from xpos,ypos-(R2+margin)-R6 to xpos+R6,ypos-(R2+margin)
+  line from xpos-R6,ypos+(R2+margin) to xpos-R6,ypos
+  line from xpos+R6,ypos-(R2+margin) to xpos+R6,ypos
  }
 
 call RuleDraw (0*unit(cm),0*unit(cm))

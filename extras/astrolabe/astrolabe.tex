@@ -1,19 +1,72 @@
 \documentclass[a4paper,onecolumn,10pt]{article}
 \usepackage[dvips]{graphicx}
-\pagestyle{headings}
+\usepackage{fancyhdr,url}
+\pagestyle{fancy}
 
-\setlength{\textwidth}{21cm}
-\setlength{\oddsidemargin}{-1in}
-\addtolength{\textheight}{5cm}
+\lhead{\it FLATPACK ASTROLABE KIT}
+\chead{}
+\rhead{\thepage}
+\lfoot{}\rfoot{}
+\cfoot{\vspace{-13mm}\bf\footnotesize\copyright\ 2010 Dominic Ford. All Rights Reserved. Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version~1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, with no Front-Cover Texts, and with no Back-Cover Texts.}
 
-\addtolength{\textwidth}{8cm}
-\addtolength{\oddsidemargin}{-4cm}
+%\setlength{\textwidth}{21cm}
+%\setlength{\oddsidemargin}{-1in}
+%\addtolength{\textheight}{5cm}
+
+%\addtolength{\textwidth}{-7mm}
+%\addtolength{\oddsidemargin}{-4cm}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\setcounter{footnote}{1}
+
+\title{\vspace{-3cm}Flatpack Astrolabe Kit}
+\author{Dominic Ford\footnote{Cavendish Laboratory, J.J.\ Thomson Ave, Cambridge, CB3 0HE, UK.}}
+\date{35th February 2009}
 
 \begin{document}
-\centerline{\includegraphics{mother_back.eps}}
-\centerline{\includegraphics{mother_front.eps}}
+\maketitle
+\setcounter{footnote}{2}
+
+This document contains a series of images which should be printed and cut out
+to make a simple cardboard version of a medieval astrolabe. The resulting
+astrolabe is a simplified version of that described in Geoffrey Chaucer's 1391
+{\it Treatise on the Astrolabe}, and has been constructed following the
+prescription described in Eisner (1975, 1976a, 1976b). The diagrams in this
+document have been produced using
+PyXPlot.\footnote{\url{http://www.pyxplot.org.uk}}
+
+Pages~2, 3, 4 and~6 should be printed out onto paper, or more preferably card.
+Page~5 should be printed onto a sheet of transparent acetate. The two sides of
+the Mother (pages~2 and~3) should be glued back-to-back on a piece of rigid
+card. The Plate fits inside the space left in the centre of the front of the
+Mother, with the tab at the top slotting into the corresponding gap in the
+degrees scale on the Mother. A medieval astrolabe would have had many plates
+prepared for different latitudes; we provide a single plate prepared for a
+latitude of $52^\circ$N, suitable for use in northern Europe and the northern
+USA. The Rete, printed onto transparent acetate, should be placed over the
+Plate.  The Label and the Rule should be placed on either side of the
+astrolabe: the Rule, marked out with a declination scale, should be placed over
+the Plate and the Rete, whilst the Label should be placed on the back of the
+Mother. The whole construction may then be fastened together by placing a
+split-pin paper fastener through the centre.
+
+\begin{thebibliography}{9}
+\bibitem{chaucer}Chaucer, G., \textit{Treatise on the Astrolabe} (1391)
+\bibitem{pap1}Eisner, S., \textit{J.\ Brit. astr. Ass.}, \textbf{86}(1), 18-29 (1975)
+\bibitem{pap2}Eisner, S., \textit{J.\ Brit. astr. Ass.}, \textbf{86}(2), 125-132 (1976a)
+\bibitem{pap3}Eisner, S., \textit{J.\ Brit. astr. Ass.}, \textbf{86}(3), 219-227 (1976b)
+\end{thebibliography}
+
+\newpage
+\section*{Mother: Back}
+\vspace{-1cm}\centerline{\includegraphics{mother_back.eps}}
+\section*{Mother: Front}
+\vspace{-1cm}\centerline{\includegraphics{mother_front.eps}}
+\section*{The Plate}
 \centerline{\includegraphics{plate.eps}}
+\section*{The Rete}
 \centerline{\includegraphics{rete.eps}}
+\section*{The Label and Rule}
 \centerline{\includegraphics{rule.eps}}
 \end{document}
 
