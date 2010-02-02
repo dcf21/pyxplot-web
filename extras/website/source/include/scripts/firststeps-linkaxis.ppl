@@ -37,7 +37,7 @@ plot sin(x)**2 + 1 with colour green
 set xlabel ''
 set ylabel ''
 set key top xcentre
-set fontsize -3
+set fontsize .5
 set origin 1.1*width, 1.15*height
 set width width/3
 p [-5:5] x**2

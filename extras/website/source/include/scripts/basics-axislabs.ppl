@@ -1,0 +1,6 @@
+# Main body of figure script
+set xlabel "Horizontal axis"
+set ylabel "Vertical axis"
+set title 'A plot with labelled axes'
+plot
+
