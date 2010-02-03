@@ -33,20 +33,20 @@ foreach datum ra,dec,mag in "bright_stars.out" using 2:3:4
  }
 
 # Draw RA scale
-Rtick = R2*0.98
-for ra=0 to 23.9 step 1
- {
-  theta = ra/24*unit(rev)
-  line from -R2*cos(theta),-R2*sin(theta) to -Rtick*cos(theta),-Rtick*sin(theta)
-  text "%d$^\mathrm{h}$"%(ra) at -Rtick*cos(theta),-Rtick*sin(theta) rot (-90*unit(deg)+theta) hal c val b gap unit(mm)
- }
+#Rtick = R2*0.98
+#for ra=0 to 23.9 step 1
+# {
+#  theta = ra/24*unit(rev)
+#  line from -R2*cos(theta),-R2*sin(theta) to -Rtick*cos(theta),-Rtick*sin(theta)
+#  text "%d$^\mathrm{h}$"%(ra) at -Rtick*cos(theta),-Rtick*sin(theta) rot (-90*unit(deg)+theta) hal c val b gap unit(mm)
+# }
 
-Rtick = R2*0.99
-for ra=0 to 23.9 step 1/6
- {
-  theta = ra/24*unit(rev)
-  line from -R2*cos(theta),-R2*sin(theta) to -Rtick*cos(theta),-Rtick*sin(theta)
- }
+#Rtick = R2*0.99
+#for ra=0 to 23.9 step 1/6
+# {
+#  theta = ra/24*unit(rev)
+#  line from -R2*cos(theta),-R2*sin(theta) to -Rtick*cos(theta),-Rtick*sin(theta)
+# }
 
 # Draw ecliptic
 R_ecl_outer = (R2+R5)/2

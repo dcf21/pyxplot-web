@@ -15,22 +15,29 @@ set axis y invisible
 set nokey
 logo_x = 0.0
 logo_y = 0.0
-set textcolour rgb(255):(255):(230)
+set textcolour rgb(  0):( 64):(255)
 text '$\displaystyle \frac{\hbar^2}{2m}\frac{\partial^2 \psi}{\partial  x^2} + V\psi = E\psi$' at logo_x+14.0, logo_y+0.5
-set textcolour rgb(255):(230):(255)
+set textcolour rgb(120):(255):( 20)
 text '$\displaystyle d \sin \theta = n\lambda$' at logo_x+0.5, logo_y+3.5
-set textcolour rgb(230):(255):(255)
+set textcolour rgb(120):(255):( 20)
 text '$\displaystyle \nabla \cdot D = \rho_{\mathrm{free}}$' at logo_x+8.2, logo_y+3.9
+set textcolour rgb( 50):( 96):( 50)
 text '$\displaystyle \nabla \times E = - \frac{\partial \bf B} {\partial t}$' at logo_x+17.9, logo_y+1.1
 text '$\displaystyle \nabla \times E = - \frac{\partial \bf B} {\partial t}$' at logo_x+17.9-7.5*unit(inch)/unit(cm), logo_y+1.1
+set textcolour rgb(255):( 64):(224)
 text '$\displaystyle \nabla \cdot B = 0$' at logo_x+0.5, logo_y+0.4
+set textcolour rgb(128):(255):( 64)
 text '$\displaystyle \nabla \times H = J_{\mathrm{free}} - \frac{\partial \bf D}{\partial t}$' at logo_x+3.5,logo_y+0.8
 
-set textcolour Grey55
+set textcolour rgb(255):( 96):(128)
 text '$\displaystyle ds^2=\left(1-\frac{2GM}{rc^2}\right) dt^2$' at logo_x+6.1, logo_y+2.6
+set textcolour rgb(255):( 96):(180)
 text '$\displaystyle H(t)=\frac{\dot R}{R}$' at logo_x+11.6,logo_y+2.1
+set textcolour rgb(255):( 64):(  0)
 text '$\displaystyle q(t) = - \frac{\ddot R R}{\dot R^2}$' at logo_x+15.0, logo_y+3.2
+set textcolour rgb(255):( 50):(220)
 text '$\displaystyle d_\mathrm{L} = \left( \frac{L}{4\pi F} \right)^\frac{1}{2}$' at logo_x+8.8, logo_y+0.4
+set textcolour rgb(120):(255):( 20)
 text '$\displaystyle \ddot x^a + \Gamma^a_{\phantom{a}bc} \dot x^b \dot x^c = 0$' at logo_x+17.5, logo_y+2.3
 text '$\displaystyle \ddot x^a + \Gamma^a_{\phantom{a}bc} \dot x^b \dot x^c = 0$' at logo_x+17.5-7.5*unit(inch)/unit(cm), logo_y+2.3
 

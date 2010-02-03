@@ -54,14 +54,14 @@ for dec=-25 to 70 step 5
  }
 
 # Draw numbers on second rule
-for i=0 to 8
- {
-  r = R6+unit(5*mm) + i*unit(5*mm)
-  line from unit(5*cm), r to unit(5*cm)-BTL, r
-  text "$%d$"%(i) at unit(5*cm)-BTL, r hal c val t rot -90
-  line from unit(5*cm),-r to unit(5*cm)+BTL,-r
-  text "$%d$"%(i) at unit(5*cm)+BTL,-r hal c val t rot  90
- }
+#for i=0 to 8
+# {
+#  r = R6+unit(5*mm) + i*unit(5*mm)
+#  line from unit(5*cm), r to unit(5*cm)-BTL, r
+#  text "$%d$"%(i) at unit(5*cm)-BTL, r hal c val t rot -90
+#  line from unit(5*cm),-r to unit(5*cm)+BTL,-r
+#  text "$%d$"%(i) at unit(5*cm)+BTL,-r hal c val t rot  90
+# }
 
 
 set term eps
