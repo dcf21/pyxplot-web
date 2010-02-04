@@ -3,6 +3,8 @@
 
 out1 = open("mother_back_text.dat","w")
 out2 = open("mother_back_text_simple.dat","w")
+out3 = open("mother_front_text_simple.dat","w")
+out4 = open("plate_text_simple.dat","w")
 
 # Signs of the zodiac
 strings = [["ARIES",r"\aries"],["TAURUS",r"\taurus"],["GEMINI",r"\gemini"],["CANCER",r"\cancer"],["LEO",r"\leo"],["VIRGO",r"\virgo"],["LIBRA",r"\libra"],["SCORPIO",r"\scorpio"],["SAGITTARIUS",r"\sagittarius"],["CAPRICORNUS",r"\capricornus"],["AQUARIUS",r"\aquarius"],["PISCES",r"\pisces"]]
@@ -38,5 +40,31 @@ for i in range(len(strings)):
   out2.write("RT = RT2 ; theta=%f*unit(deg) ; text \"%s\" at RT*cos(theta),RT*sin(theta) rot theta+90*unit(deg) hal c val c\n"%(ang1 - LetterSep1*L/2 + j*LetterSep1, word[j]))
   out1.write("RT = RT3 ; theta=%f*unit(deg) ; text \"%s\" at RT*cos(theta),RT*sin(theta) rot theta+90*unit(deg) hal c val c\n"%(ang2 - LetterSep2*L/2 + j*LetterSep2, word[j]))
 
+# Times on front of the mother
+strings = [[" Midnight"]]
+LetterSep = 1.8
+for i in range(len(strings)):
+ item = strings[i]
+ [word] = item
+ L = len(word)
+ ang = -90.0 - 360.0/24*i
+
+ for j in range(L):
+  out3.write("theta=%f*unit(deg) ; text \"\\footnotesize %s\" at RT*cos(theta),RT*sin(theta) rot theta-90*unit(deg) hal c val b\n"%(ang + LetterSep*L/2 - j*LetterSep, word[j]))
+
+# Name text on the plate
+strings = [["Name:"]]
+LetterSep = 1.8
+for i in range(len(strings)):
+ item = strings[i]
+ [word] = item
+ L = len(word)
+ ang = -113.0
+
+ for j in range(L):
+  out4.write("theta=%f*unit(deg) ; text \"%s\" at RT*cos(theta),RT*sin(theta) rot theta+90*unit(deg) hal c val b\n"%(ang - LetterSep*L/2 + j*LetterSep, word[j]))
+
 out1.close()
 out2.close()
+out3.close()
+out4.close()

@@ -199,16 +199,18 @@ for theta=-180*unit(deg) to 170*unit(deg) step 10*unit(deg)
    }
  }
 
-RT1 = (R1+R2)/2
-set texthalign centre ; set textvalign centre
+RT1 = (R1+R2)/2-0.2*unit(cm)
+set texthalign centre ; set textvalign bottom
 set fontsize 2*FS
 i=0
-foreach t in ("\LARGE\kreuz","13","14","15","16","17","18","19","20","21","22","23","\footnotesize Midnight","1","2","3","4","5","6","7","8","9","10","11")
+foreach t in ("\LARGE\kreuz","13","14","15","16","17","18","19","20","21","22","23","","1","2","3","4","5","6","7","8","9","10","11")
  {
   theta = i/24*unit(rev)
   text "%s"%(t) at RT1*sin(theta),RT1*cos(theta) rot -theta
   i=i+1
  }
+RT = RT1
+load "mother_front_text_simple.dat"
 
 set term eps
 set output 'mother_front_simple.eps'
