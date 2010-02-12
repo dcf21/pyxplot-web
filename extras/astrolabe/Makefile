@@ -12,12 +12,12 @@ astrolabe.ps: astrolabe.dvi
 astrolabe2.ps: astrolabe2.dvi
 	dvips astrolabe2.dvi -o astrolabe2.ps
 
-astrolabe.dvi: astrolabe.tex mother_back.eps mother_back_simple.eps plate.eps plate_simple.eps rete.eps rule.eps
+astrolabe.dvi: astrolabe.tex mother_back_simple.eps rete.eps rule.eps
 	latex astrolabe.tex
 	latex astrolabe.tex
 	latex astrolabe.tex
 
-astrolabe2.dvi: astrolabe2.tex mother_back.eps mother_back_simple.eps plate.eps plate_simple.eps rete.eps rule.eps
+astrolabe2.dvi: astrolabe2.tex mother_back.eps plate.eps rete.eps rule.eps
 	latex astrolabe2.tex
 	latex astrolabe2.tex
 	latex astrolabe2.tex
@@ -33,9 +33,6 @@ rete_text.dat: rete_text.py
 
 rule.eps: rule.ppl
 	../../pyxplot8/bin/pyxplot rule.ppl
-
-plate_simple.eps: plate_simple.ppl mother_back_text.dat
-	../../pyxplot8/bin/pyxplot plate_simple.ppl
 
 plate.eps: plate.ppl
 	../../pyxplot8/bin/pyxplot plate.ppl

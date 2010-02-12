@@ -211,6 +211,7 @@ foreach t in ("\LARGE\kreuz","13","14","15","16","17","18","19","20","21","22","
  }
 RT = RT1
 load "mother_front_text_simple.dat"
+load "plate_simple.ppl"
 
 set term eps
 set output 'mother_front_simple.eps'

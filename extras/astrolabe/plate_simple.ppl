@@ -1,9 +1,9 @@
 # THE PLATE (SIMPLE VERSION)
 # $Id$
 
-set mult ; set nodisp
-set preamble "\usepackage{wasysym}"
-load "settings.ppl"
+# set mult ; set nodisp
+# set preamble "\usepackage{wasysym}"
+# load "settings.ppl"
 set fontsize 1.2*FS
 
 Rtab = R1 - D12*2.5 - unit(mm)
@@ -172,10 +172,10 @@ line from -R2,0 to R2,0
 line from 0,-Rnamebox to 0,R2
 circle at 0,0 radius R3 w fillc white
 
-set term eps
-set output 'plate_simple.eps'
-set disp ; refresh
-set term pdf
-set output 'plate_simple.pdf'
-set disp ; refresh
+#set term eps
+#set output 'plate_simple.eps'
+#set disp ; refresh
+#set term pdf
+#set output 'plate_simple.pdf'
+#set disp ; refresh
 
