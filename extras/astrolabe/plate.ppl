@@ -162,10 +162,14 @@ line from -R2,0 to R2,0
 line from 0,-R2 to 0,R2
 circle at 0,0 radius R3 w fillc white
 
+!mkdir output
 set term eps
-set output 'plate.eps'
+set output 'output/plate.eps'
 set disp ; refresh
 set term pdf
-set output 'plate.pdf'
-set disp ; refresh
+set output 'output/plate.pdf'
+refresh
+set term gif
+set output 'output/plate.gif'
+refresh
 

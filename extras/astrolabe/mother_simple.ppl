@@ -131,13 +131,16 @@ load "mother_back_text_simple.dat"
 # White out R13
 circle at 0,0 radius R13 w fillc white
 
+!mkdir output
 set term eps
-set output 'mother_back_simple.eps'
+set output 'output/mother_back_simple.eps'
 set disp ; refresh
 set term pdf
-set output 'mother_back_simple.pdf'
-set disp ; refresh
-
+set output 'output/mother_back_simple.pdf'
+refresh
+set term gif
+set output 'output/mother_back_simple.gif'
+refresh
 
 
 # FRONT OF MOTHER
@@ -213,10 +216,14 @@ RT = RT1
 load "mother_front_text_simple.dat"
 load "plate_simple.ppl"
 
+!mkdir output
 set term eps
-set output 'mother_front_simple.eps'
+set output 'output/mother_front_simple.eps'
 set disp ; refresh
 set term pdf
-set output 'mother_front_simple.pdf'
-set disp ; refresh
+set output 'output/mother_front_simple.pdf'
+refresh
+set term gif
+set output 'output/mother_front_simple.gif'
+refresh
 

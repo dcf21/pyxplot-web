@@ -64,10 +64,14 @@ for dec=-25 to 70 step 5
 # }
 
 
+!mkdir output
 set term eps
-set output 'rule.eps'
+set output 'output/rule.eps'
 set disp ; refresh
 set term pdf
-set output 'rule.pdf'
-set disp ; refresh
+set output 'output/rule.pdf'
+refresh
+set term gif
+set output 'output/rule.gif'
+refresh
 

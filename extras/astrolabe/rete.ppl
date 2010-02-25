@@ -78,10 +78,14 @@ load "rete_text.dat"
 # White out R3
 circle at 0,0 radius R3 w fillc white
 
+!mkdir output
 set term eps
-set output 'rete.eps'
+set output 'output/rete.eps'
 set disp ; refresh
 set term pdf
-set output 'rete.pdf'
-set disp ; refresh
+set output 'output/rete.pdf'
+refresh
+set term gif
+set output 'output/rete.gif'
+refresh
 

@@ -47,4 +47,4 @@ mother_back_text.dat: mother_back_text.py
 	python mother_back_text.py
 
 clean:
-	rm mother_back_text.dat mother_back_text_simple.dat mother_front_text_simple.dat plate_text_simple.dat rete_text.dat bright_stars.out *.eps *.ps *.dvi *.aux *.log *.pdf
+	rm -Rf mother_back_text.dat mother_back_text_simple.dat mother_front_text_simple.dat plate_text_simple.dat rete_text.dat bright_stars.out output *.ps *.dvi *.aux *.log *.pdf

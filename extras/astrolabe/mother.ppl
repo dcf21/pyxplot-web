@@ -189,12 +189,16 @@ for theta = 15*unit(deg) to 75*unit(deg) step 15*unit(deg)
 # White out R13
 circle at 0,0 radius R13 w fillc white
 
+!mkdir output
 set term eps
-set output 'mother_back.eps'
+set output 'output/mother_back.eps'
 set disp ; refresh
 set term pdf
-set output 'mother_back.pdf'
-set disp ; refresh
+set output 'output/mother_back.pdf'
+refresh
+set term gif
+set output 'output/mother_back.gif'
+refresh
 
 
 
@@ -268,10 +272,14 @@ foreach t in ("\LARGE\kreuz","A","B","C","D","E","F","G","H","I","K","L","M","N"
   i=i+1
  }
 
+!mkdir output
 set term eps
-set output 'mother_front.eps'
+set output 'output/mother_front.eps'
 set disp ; refresh
 set term pdf
-set output 'mother_front.pdf'
-set disp ; refresh
+set output 'output/mother_front.pdf'
+refresh
+set term gif
+set output 'output/mother_front.gif'
+refresh
 
