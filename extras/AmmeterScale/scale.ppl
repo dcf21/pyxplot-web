@@ -1,0 +1,75 @@
+# SCALE.PPL
+# $Id$
+
+Ticksize_Small = 4.0*unit(mm)
+Ticksize_Large = 8.0*unit(mm)
+
+Radius = 12*unit(cm)
+AngularSize = 35*unit(deg)
+
+UpperScaleMin       = -10
+UpperScaleMax       =  10
+UpperScaleIntervals =  10
+UpperScaleSmallTicksPerInterval = 10
+
+LowerScaleMin       = -30
+LowerScaleMax       =  30
+LowerScaleIntervals =   6
+LowerScaleSmallTicksPerInterval = 10
+
+# --------------------------
+
+# Set up pyxplot to produce eps output
+set term eps
+set output 'scale.eps'
+set multiplot
+set nodisplay
+set texthalign centre
+set fontsize 1.5
+
+# Draw central line
+arc at 0,0 radius Radius from -AngularSize to AngularSize with linewidth 3
+
+# Draw minor ticks, upper scale
+for i=0 to UpperScaleIntervals*UpperScaleSmallTicksPerInterval+0.1
+ {
+  if (i%UpperScaleSmallTicksPerInterval==0) { ; continue ; }
+  pos = -AngularSize + i*2*AngularSize/UpperScaleIntervals/UpperScaleSmallTicksPerInterval
+  line from Radius*sin(pos),Radius*cos(pos) to (Radius+Ticksize_Small)*sin(pos),(Radius+Ticksize_Small)*cos(pos)
+ }
+
+# Draw major ticks, upper scale
+set textvalign bottom
+for i=0 to UpperScaleIntervals+0.1
+ {
+  pos = -AngularSize + i*2*AngularSize/UpperScaleIntervals
+  line from Radius*sin(pos),Radius*cos(pos) to (Radius+Ticksize_Large)*sin(pos),(Radius+Ticksize_Large)*cos(pos)
+  text "%s"%(UpperScaleMin + (UpperScaleMax-UpperScaleMin)*i/UpperScaleIntervals) \
+               at (Radius+2*Ticksize_Large)*sin(pos),(Radius+2*Ticksize_Large)*cos(pos)
+ }
+
+# Draw minor ticks, lower scale
+for i=0 to LowerScaleIntervals*LowerScaleSmallTicksPerInterval+0.1
+ {
+  if (i%LowerScaleSmallTicksPerInterval==0) { ; continue ; }
+  pos = -AngularSize + i*2*AngularSize/LowerScaleIntervals/LowerScaleSmallTicksPerInterval
+  line from Radius*sin(pos),Radius*cos(pos) to (Radius-Ticksize_Small)*sin(pos),(Radius-Ticksize_Small)*cos(pos)
+ }
+
+# Draw major ticks, lower scale
+set textvalign top
+for i=0 to LowerScaleIntervals+0.1
+ {
+  pos = -AngularSize + i*2*AngularSize/LowerScaleIntervals
+  line from Radius*sin(pos),Radius*cos(pos) to (Radius-Ticksize_Large)*sin(pos),(Radius-Ticksize_Large)*cos(pos)
+  text "%s"%(LowerScaleMin + (LowerScaleMax-LowerScaleMin)*i/LowerScaleIntervals) \
+               at (Radius-2*Ticksize_Large)*sin(pos),(Radius-2*Ticksize_Large)*cos(pos)
+ }
+
+# Add some text labels
+set textvalign centre
+text "Octipodes" at Radius*1.35*sin(30*unit(deg)), Radius*1.25*cos(30*unit(deg))
+text "Elephants" at Radius*0.75*sin(35*unit(deg)), Radius*0.75*cos(35*unit(deg))
+set display
+refresh
+
