@@ -12,17 +12,17 @@ astrolabe.ps: astrolabe.dvi
 astrolabe2.ps: astrolabe2.dvi
 	dvips astrolabe2.dvi -o astrolabe2.ps
 
-astrolabe.dvi: astrolabe.tex mother_back_simple.eps rete.eps rule.eps
+astrolabe.dvi: astrolabe.tex output/mother_back_simple.eps output/rete.eps output/rule.eps
 	latex astrolabe.tex
 	latex astrolabe.tex
 	latex astrolabe.tex
 
-astrolabe2.dvi: astrolabe2.tex mother_back.eps plate.eps rete.eps rule.eps
+astrolabe2.dvi: astrolabe2.tex output/mother_back.eps output/plate.eps output/rete.eps output/rule.eps
 	latex astrolabe2.tex
 	latex astrolabe2.tex
 	latex astrolabe2.tex
 
-rete.eps: rete.ppl bright_stars.out rete_text.dat
+output/rete.eps: rete.ppl bright_stars.out rete_text.dat
 	../../pyxplot8/bin/pyxplot rete.ppl
 
 bright_stars.out: bright_stars.py bright_stars.dat bright_star_names.dat
@@ -31,16 +31,16 @@ bright_stars.out: bright_stars.py bright_stars.dat bright_star_names.dat
 rete_text.dat: rete_text.py
 	python rete_text.py
 
-rule.eps: rule.ppl
+output/rule.eps: rule.ppl
 	../../pyxplot8/bin/pyxplot rule.ppl
 
-plate.eps: plate.ppl
+output/plate.eps: plate.ppl
 	../../pyxplot8/bin/pyxplot plate.ppl
 
-mother_back_simple.eps: mother_simple.ppl mother_back_text.dat
+output/mother_back_simple.eps: mother_simple.ppl mother_back_text.dat
 	../../pyxplot8/bin/pyxplot mother_simple.ppl
 
-mother_back.eps: mother.ppl mother_back_text.dat
+output/mother_back.eps: mother.ppl mother_back_text.dat
 	../../pyxplot8/bin/pyxplot mother.ppl
 
 mother_back_text.dat: mother_back_text.py
