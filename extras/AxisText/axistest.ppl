@@ -1,0 +1,38 @@
+# axistest.ppl
+# Test of automatic ticking
+# $Id$
+
+!mkdir -p output
+set multiplot
+set term eps
+set axis y  left  invisible
+set axis y2 right invisible
+set axis x  bott  nomirror
+set axis x2 top   invisible
+set size ratio 1e-2
+
+subroutine AxisTest(id,min,max)
+ {
+  set nodisplay
+  set output "output/%02d.eps"%(id)
+  set xrange[min:max]
+  clear
+  for j=0 to 12
+   {
+    set origin 0,-1.5*j
+    set width 4+2*j
+    plot
+   }
+  set display
+  refresh
+ }
+
+call AxisTest(1,-10,10)
+call AxisTest(2,-15,15)
+call AxisTest(3,  0,60)
+
+set log x
+
+call AxisTest(4,1,1000)
+call AxisTest(5,2,3)
+
