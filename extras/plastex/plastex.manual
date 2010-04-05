@@ -2,7 +2,7 @@
 
 import os, sys, codecs, string, glob, re
 sys.path.append("/home/rpc25/plastex/lib/python2.4/site-packages")
-sys.path.append("/home/rchurch/sw/plasTeX-0.8.3")
+sys.path.append("/home/rpc25/pyxplot/plastex/lib/python2.4/site-packages")
 import plasTeX
 
 
@@ -77,6 +77,8 @@ def section(node):
        title = u'pling'
     elif title == u'?':
        title = u'questionmark'
+    elif re.search('|', title):
+       title = title.replace('|', '--')
        
     # Remove any spaces in the title
     title = re.sub('\s+', '_', title)
