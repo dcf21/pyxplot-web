@@ -4,7 +4,6 @@
 
 !mkdir -p output
 set multiplot
-set term eps
 set axis y  left  invisible
 set axis y2 right invisible
 set axis x  bott  nomirror
@@ -14,7 +13,6 @@ set size ratio 1e-2
 subroutine AxisTest(id,min,max)
  {
   set nodisplay
-  set output "output/%02d.eps"%(id)
   set xrange[min:max]
   clear
   for j=0 to 12
@@ -24,25 +22,31 @@ subroutine AxisTest(id,min,max)
     plot
    }
   set display
+  set output "output/%02d.eps"%(id)
+  set term eps port
+  refresh
+  set output "output/%02d.ps"%(id)
+  set term ps land
   refresh
  }
 
-call AxisTest(1,-10,   10)
-call AxisTest(2,-15,   15)
-call AxisTest(3,  0,   60)
-call AxisTest(4,  1, 1000)
-call AxisTest(5,  0, 1e20)
-call AxisTest(6,  0,1e-20)
+#call AxisTest(1,-10,   10)
+#call AxisTest(2,-15,   15)
+#call AxisTest(3,  0,   60)
+#call AxisTest(4,  1, 1000)
+#call AxisTest(5,  0, 1e20)
+#call AxisTest(6,  0,1e-20)
 
-set log x
+#set log x
 
-call AxisTest(7,1,1000)
-call AxisTest(8,2,3)
+#call AxisTest(7,1,1000)
+#call AxisTest(8,2,3)
 
 set linear x
-set xformat "%s$\pi$"%(x/pi)
-call AxisTest(9,-10,10)
+#set xformat "%s$\pi$"%(x/pi)
+#call AxisTest(9,-10,10)
 
-set xformat "%s$^\prime$%s$^{\prime\prime}$"%(floor(x/unit(foot)),(x/unit(inch)+1e-15)%12)
+# set xformat "%s$^\prime$%s$^{\prime\prime}$"%(floor(x/unit(foot)),((x/unit(foot))%1)*12)
+set xformat "%s$^\prime$%s$^{\prime\prime}$"%(floor(x/unit(foot)),(x/unit(inch))%12)
 call AxisTest(10,0*unit(m),2*unit(m))
 
