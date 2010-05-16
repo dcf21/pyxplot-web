@@ -43,6 +43,10 @@ class Renderer(Renderer):
         text = unicode(node)
         text2 = text.encode('ascii', 'xmlcharrefreplace')
         text2 = text2.replace('&#8217;', "'").replace('&#8216;', "`")
-        text2 = text2.replace('&#8211;', "-").replace('&#960;', "pi")
-        return text2.replace('&','&amp;').replace('<','\\lab').replace('>','\\rab')
-
+        text2 = text2.replace('&#8211;', "-").replace('&#8201;', " ")
+        text2 = text2.replace('&#215;', " x ")
+        text2 = text2.replace('&#960;', "pi").replace('&#173;', "")
+        text2 = text2.replace('&#8230;', "...").replace('&#8734;', "infinity")
+        text2 = text2.replace('&','&amp;').replace('<','\\lab').replace('>','\\rab')
+        text2 = text2.replace('#', "\\#")
+        return text2

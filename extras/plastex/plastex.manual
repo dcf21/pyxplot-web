@@ -28,27 +28,6 @@ listType = u''
 
 document = tex.parse()
 
-# Now we've rendered the tex, we need to prepend the other manual section
-plastexOutput = open('test.xml', 'r')
-gphelpPreamble = open('preamble.xml', 'r')
-gphelp = open('gp_help.xml', 'w')
-
-# Write the preamble to gp_help.xml
-for line in gphelpPreamble:
-   gphelp.write(line)
-# Write the xml that we've generated, skipping the first line
-plastexOutput.readline()
-for line in plastexOutput.readlines():
-   gphelp.write(line)
-# And write a footer
-gphelp.write('\n\n</commands>\n\n</help>\n')
-plastexOutput.close()
-gphelpPreamble.close()
-gphelp.close()
-
-# Apply remaining changes
-os.system('patch < gp_help.xml.diff')
-
 
 def section(node):
     text = unicode(node)
@@ -132,6 +111,31 @@ def silent(node):
     """ Rendering method for nodes that should produce no output """
     return u''
 
+def doVerbatim(node):
+    """ Rendering method for nodes that shouldn't produce a tag """
+    s = []
+
+    # Handle characters like \&, \$, \%, etc.
+    if len(node.nodeName) == 1 and node.nodeName not in string.letters:
+        return self.textDefault(node.nodeName)
+
+    # No start tag
+    s.append('\n\n')
+
+    # Invoke rendering on child nodes
+    str = unicode(node)
+    # str = re.sub(r'\n', '\\', str)
+    if (str[0] == u'\n'):
+       str = str[1:]
+    str = str.replace(u'\n', u'\\\\')
+    str = str.replace(u' ', u'#')
+    s.append('%s'%str)
+
+    # And no end tag
+    s.append('\n\n')
+
+    return u''.join(s)
+
 def noTag(node):
     """ Rendering method for nodes that shouldn't produce a tag """
     s = []
@@ -142,16 +146,12 @@ def noTag(node):
 
     # No start tag
     # s.append('<%s>' % node.nodeName)
-    if node.nodeName == 'verbatim':
-        s.append('\n')
 
     # Invoke rendering on child nodes
-    s.append(unicode(node))
+    s.append("%s"%unicode(node))
 
     # And no end tag
     # s.append('</%s>' % node.nodeName)
-    if node.nodeName == 'verbatim':
-        s.append('\n')
 
     return u''.join(s)
 
@@ -250,6 +250,9 @@ def tableCell(node):
    
    return u''
 
+def doRef(node):
+   return " XXX of the Users' Guide"
+
 def printSelf(node):
    return u'%s'%node.nodeName
 
@@ -308,6 +311,13 @@ def startList(node):
 
    return u'\n\n' + output + u'\n'
 
+def special(node):
+   if (node.nodeName == '#'):
+      return 'Elephants'
+   if (node.nodeName == 'HashMark'):
+      return 'Badgers'
+   print 'FAILED to understand node %s in special()'%(node.nodeName)
+   assert(1==0)
 
 # Render the document
 renderer = Renderer()
@@ -331,6 +341,7 @@ renderer['sin'] = printSelf
 renderer['cos'] = printSelf
 renderer['log'] = printSelf
 renderer['sqrt'] = printSelf
+renderer['to'] = printSelf
 renderer['datafile'] = printSelf
 renderer['gnuplot'] = printSelf
 # Footnotes use a queue
@@ -339,11 +350,13 @@ renderer['footnote'] = footnote
 # e.g. references aren't going to work, so bin them
 renderer['active::~'] = silent
 renderer['active::^'] = silent
-renderer['ref'] = silent
+renderer['active::_'] = silent
+renderer['ref'] = doRef
 renderer['index'] = silent
 renderer['noindent'] = silent
 renderer['newline'] = silent
 renderer['label'] = silent
+renderer['vspace'] = silent
 # None of the index commands need to produce tags
 renderer['indcmd'] = silent
 renderer['indmodt'] = silent
@@ -351,13 +364,17 @@ renderer['indkeyt'] = silent
 # Lots of things should not prouce an xml tag but have content that needs to be 
 # rendred
 renderer['par'] = noTag
-renderer['verbatim'] = noTag
+renderer['verbatim'] = doVerbatim
 renderer['bgroup'] = noTag
 renderer['tt'] = noTag
 renderer['it'] = noTag
+renderer['bf'] = noTag
+renderer['emph'] = noTag
 renderer['textit'] = noTag
 renderer['texttt'] = noTag
 renderer['math'] = noTag
+renderer['mathrm'] = noTag
+renderer['footnotesize'] = noTag
 renderer['include'] = noTag
 renderer['document'] = noTag
 # Need to keep a record of what sort of list we're using
@@ -366,4 +383,29 @@ renderer['itemize'] = startList
 renderer['enumerate'] = startList
 # <sim> is ~
 renderer['sim'] = renderSim
+# Some things need to produce a custom string.  Ugh.
+renderer['#'] = special
+renderer['HashMark'] = special
 renderer.render(document)
+
+# Now we've rendered the tex, we need to prepend the other manual section
+plastexOutput = open('test.xml', 'r')
+gphelpPreamble = open('preamble.xml', 'r')
+gphelp = open('gp_help.xml', 'w')
+
+# Write the preamble to gp_help.xml
+for line in gphelpPreamble:
+   gphelp.write(line)
+# Write the xml that we've generated, skipping the first line
+plastexOutput.readline()
+for line in plastexOutput.readlines():
+   gphelp.write(line)
+# And write a footer
+# gphelp.write('\n\n</commands>\n\n</help>\n')
+gphelp.write('\n\n</help>\n')
+plastexOutput.close()
+gphelpPreamble.close()
+gphelp.close()
+
+# Apply remaining changes
+os.system('patch < gp_help.xml.diff')
