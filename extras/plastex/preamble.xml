@@ -4,20 +4,21 @@
 Welcome to the PyXPlot help system. The 'help' command provides an
 easily-navigable source of information which is supplementary to that in the
 Users' Guide. To obtain information on any particular topic, type 'help'
-followed by the name of the topic. For example:
+followed by the name of the topic. For example,
 
-help commands
+help plot
 
-provides information on PyXPlot's commands. Some topics have subtopics, this
-being one example; these are listed at the end of each help page. To view them,
-add further words to the end of your help request, as in the example:
+provides information on PyXPlot's plot command. Some topics have subtopics,
+this being one example; these are listed at the end of each help page. To view
+them, add further words to the end of your help request, as in the example:
 
-help commands help
+help set title
 
 Information is arranged with general information about PyXPlot under the
-heading 'about' and information about PyXPlot's commands under 'commands'.
-Information about the format that input datafiles should take can be found
-under 'datafile'. Other categories, listed below, are self-explanatory.
+heading 'about' and information about the format that input datafiles should
+take under the heading 'datafile'. Information about each of PyXPlot's commands
+can be found under the name of that command. Other categories, listed below,
+are self-explanatory.
 
 To exit any help page, press the 'Q' key.
 
@@ -30,30 +31,30 @@ email: \labcoders@pyxplot.org.uk\rab
  </authors>
  <credits>
 
-The original inspiration for PyXPlot came primarily from two sources, to which
-PyXPlot owes a considerable historical debt. PyXPlot's interface was heavily
-motivated by gnuplot's simple and intuitive interface, which was devised by
-Thomas Williams and Colin Kelley and has more recently been developed by many
-others. PyXPlot's graphical output engine was heavily motivated by the PyX
-graphics library for Python, originally written by Joerg Lehmann and Andre
-Wobst and more recently developed by a larger team. Versions of PyXPlot prior
-to 0.8.0 used PyX to produce their graphical output, and though version 0.8.0
-uses its own graphics engine, it continues to bear many similarities to PyX.
+The inspiration for PyXPlot came from two sources, to which PyXPlot owes a
+considerable historical debt. PyXPlot's interface was heavily motivated by
+gnuplot's simple and intuitive interface, which was devised by Thomas Williams
+and Colin Kelley and has more recently been developed by many others. PyXPlot's
+graphical output engine was heavily motivated by the PyX graphics library for
+Python, originally written by Joerg Lehmann and Andre Wobst and more recently
+developed by a larger team. Versions of PyXPlot prior to 0.8.0 used PyX to
+produce their graphical output, and though version 0.8.0 uses its own graphics
+engine, it continues to bear many similarities to PyX.
 
 Several other people have made very substantial contributions to PyXPlot's
 development. Matthew Smith provided extensive advice on many mathematical
 matters which arose during its development, provided C implementations of the
 Airy functions and the Riemann zeta function for general complex inputs, and
 suggested many mathematical functions which ought to be made available. Dave
-Ansell provided many good ideas which have shaped PyXPlot's interface. The
-writing of PyXPlot's postscript engine was substantially eased thanks to the
-help of Michael Rutter, who happily shared his code and past experiences with
-us; the implementation of the image command is substantially his work.
+Ansell provided many good ideas which have helped to shape PyXPlot's interface.
+The writing of PyXPlot's PostScript engine was substantially eased thanks to
+the help of Michael Rutter, who happily shared his code and past experiences
+with us; the implementation of the image command is substantially his work.
 
 We are also very grateful to our team of alpha testers, without whose work this
-release of PyXPlot would doubtless contain many more bugs than it does: thanks
-go to XXX. Of course, the authors remain solely responsible for any bugs which
-remain.
+release of PyXPlot would doubtless contain many more bugs than it does:
+especial thanks go to Ian Abel and Rachel Holdforth. Of course, the authors
+remain solely responsible for any bugs which remain.
 
 Finally, we would like to think all of the users who have got in touch with us
 by email since PyXPlot was first released on the web in 2006. Your feedback and
@@ -233,10 +234,4 @@ PyXPlot is distributed under the Gnu General Public License, Version 2. A copy
 of this can be downloaded from: http://www.gnu.org/copyleft/gpl.html .
 
  </license>
- <commands>
-
-This section of PyXPlot's help system provides specific help on each of its
-commands. The following list of subtopics represents a complete list of
-PyXPlot's commands:
-
 
