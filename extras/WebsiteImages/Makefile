@@ -3,9 +3,9 @@
 
 PYXPLOT = ../../pyxplot8/bin/pyxplot
 
-all: output/ex_euclid_I_47.jpg output/ex_fft.jpg output/ex_hrdiagram.jpg
+all: output/ex_blackbodies.png output/ex_euclid_I_47.png output/ex_fft.png output/ex_hrdiagram.png
 
-output/%.jpg: %.ppl $(PYXPLOT)
+output/%.png: %.ppl fig_init.ppl $(PYXPLOT)
 	mkdir -p output
 	$(PYXPLOT) $<
 

@@ -33,3 +33,6 @@ set xlabel '$B-V$ colour'
 set ylabel 'Absolute magnitude $M$'
 plot [-0.4:2][14:-4] 'ex_hrdiagram.dat.gz' w d ps 5
 
+set display
+refresh
+

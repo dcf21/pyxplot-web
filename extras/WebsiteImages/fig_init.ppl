@@ -21,11 +21,14 @@
 
 # This script initialises the figures in the PyXPlot Users' Guide
 
-set term jpeg colour portrait
-set term dpi 120
+set term png colour portrait notrans
+set term dpi 90
 set linewidth 2
-set output "output/%s.eps"%(title)
+set output "output/%s.png"%(title)
 gold_ratio = 1/((1+sqrt(5))/2)
 set width 10.0
 set fontsize 1.5
+
+set multiplot
+box from -3,-9 to 12,11 with colour null fillc rgb0.8637:0.8637:1
 

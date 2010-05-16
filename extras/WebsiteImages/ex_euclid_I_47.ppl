@@ -28,7 +28,6 @@ load "fig_init.ppl"
 
 # Main body of figure script
 set unit angle nodimensionless
-set multiplot ; set nodisplay
 
 # Lengths of three sides of triangle
 AB = 2*unit(cm)
