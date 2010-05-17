@@ -1,0 +1,6 @@
+set samples 80
+set key bottom right
+set xformat "%s$\pi$"%(x/pi)
+set yformat "%s$\pi$"%(y/pi)
+set xrange [-5*pi:5*pi]
+plot int_dz(sinc(z),0,x)
