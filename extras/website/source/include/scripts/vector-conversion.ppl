@@ -1,0 +1,35 @@
+# Generalised routine for making conversion scales
+subroutine ConversionScale(origin_x,origin_y,ConversionFactor,UnitA,UnitB)
+ {
+  set size ratio 1e-2
+  exec "set axis x2 linked x using x*%s"%(ConversionFactor)
+  set axis y invisible
+  set xlabel UnitA
+  set x2label UnitB
+  set origin origin_x,origin_y
+  plot
+ }
+
+set nodisplay
+set multiplot
+
+# Make a temperature conversion scale
+set xtics outward -10,10
+set x2tics outward 20,20
+set xrange[-10:100]
+call ConversionScale(0,0,"unit(oC)/unit(oF)","$^\circ$C","$^\circ$F")
+
+# Make a mass conversion scale
+set xtics outward 0,1
+set x2tics outward 2,2
+set xrange[0:10]
+call ConversionScale(0,3.2,"unit(kg)/unit(lb)","kg","lb")
+
+# Make a length conversion scale
+set xtics outward 0,2
+set x2tics outward 1,1
+set xrange[0:20]
+call ConversionScale(0,6.4,"unit(cm)/unit(in)","cm","in")
+
+set display
+refresh

@@ -1,0 +1,16 @@
+set multiplot ; set nodisplay
+
+w = 4 # Width of sign / cm
+
+# Make no-entry sign
+circle at 0,0 radius w with col null fillcol red 
+box from -(0.8*w),-(0.2*w) to (0.8*w),(0.2*w) \
+    with col null fillcol white
+
+# Put a warning beneath the sign
+set fontsize 1.5
+set texthalign centre ; set textvalign centre
+text "\bf Keep Out! Code Monkey at work!" at 0,-1.2*w
+
+# Display sign
+set display ; refresh

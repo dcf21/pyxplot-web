@@ -1,0 +1,3 @@
+set palette grey40, grey60, grey80
+set width 6
+piechart 'pie-mass.dat' using $1 label key "%s"%($2)
