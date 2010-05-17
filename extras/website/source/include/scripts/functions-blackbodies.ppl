@@ -1,0 +1,28 @@
+set numeric display latex
+set log x y
+set key below
+set ylabel "Flux density / W/Hz/m$^2$/sterad"
+set x1label "Wavelength"
+set x2label "Frequency"     ; set unit of frequency Hz
+set x3label "Photon Energy" ; set unit of energy eV
+set axis x2 bottom linked x1 using phy_c/x
+set axis x3 bottom linked x2 using phy_h*x
+set x2tics (1e12,1e13,1e14,1e15)
+set mx2tics (2e11,2e12,2e13,2e14,2e15,5e11,5e12,5e13,5e14,5e15)
+set ytics (1e-21,1e-18,1e-15,1e-12,1e-9)
+set mytics (1e-20,1e-19,1e-17,1e-16,1e-14,1e-13,1e-11,1e-10)
+eV=unit(eV)/unit(J)
+set x3tics (0.01*eV,0.1*eV,1*eV,10*eV)
+set mx3tics (0.02*eV,0.05*eV,0.2*eV,0.5*eV,2*eV,5*eV,20*eV)
+
+bb(wlen,T) = Bv(phy_c/wlen,T)/unit(W/Hz/m^2/sterad)
+
+plot [80*unit(nm):unit(mm)][1e-20:] \
+  bb(x,  30) title "$T=  30$\,K", \
+  bb(x, 100) title "$T= 100$\,K", \
+  bb(x, 300) title "$T= 300$\,K", \
+  bb(x,1000) title "$T=1000$\,K", \
+  bb(x,3000) title "$T=3000$\,K"
+
+set display
+refresh
