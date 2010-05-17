@@ -1,4 +1,4 @@
-# Main body of figure script
+set unit angle nodimensionless
 set multiplot ; set nodisplay
 
 # Lengths of three sides of triangle
@@ -53,4 +53,3 @@ text "L" at Lx,Ly gap TG   hal c val t
 
 # Display diagram
 set display ; refresh
-

@@ -1,3 +1,0 @@
-set xlabel 'x'
-set ylabel 'y'
-plot sin(x), cos(x)
