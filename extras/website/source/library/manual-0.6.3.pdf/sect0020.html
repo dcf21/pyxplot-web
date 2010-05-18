@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Basic Operation</title>
+
+<link href="sect0021.html" title="Stacked Bar Charts" rel="next" />
+<link href="barcharts.html" title="Barcharts and Histograms" rel="prev" />
+<link href="barcharts.html" title="Barcharts and Histograms" rel="up" />
+<link rel="stylesheet" href="styles/plastex-styles.css" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="barcharts.html" title="Barcharts and Histograms"><img alt="Previous: Barcharts and Histograms" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="barcharts.html" title="Barcharts and Histograms"><img alt="Up: Barcharts and Histograms" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0021.html" title="Stacked Bar Charts"><img alt="Next: Stacked Bar Charts" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="new_features.html">Extensions of Gnuplot’s Interface</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="barcharts.html">Barcharts and Histograms</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Basic Operation</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="a-1228292244">3.6.1 Basic Operation</h2>
+<p>As in gnuplot, bar charts and histograms can be produced using the <tt class="ttfamily">boxes</tt><span id="a-1228269428"></span> plot style: </p><pre> 
+plot 'datafile' with boxes
+</pre><p>Horizontally, the interfaces between the bars are, by default, at the midpoints along the <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis between the specified datapoints (see, for example, Panel (a) of Figure <a href="sect0020.html#fig:ex_barchart2">3.5</a>). Alternatively, the widths of the bars may be set using the <tt class="ttfamily">set boxwidth</tt> command. In this case, all of the bars will be centred upon their specified <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-coordinates, and have total widths equalling that specified in the <tt class="ttfamily">set boxwidth</tt><span id="a-1228294676"></span> command. Consequently, there may be gaps between them, or they may overlap, as seen in Panel (c) of Figure <a href="sect0020.html#fig:ex_barchart2">3.5</a>. </p><div id="fig:ex_barchart2" class="figure"><center> <img src="images/img-0071.png" alt="\includegraphics{examples/eps/ex_barchart2.eps}" style="width:345px; height:220px" />
+ </center><b>Figure 3.5</b>: <span>A gallery of different bar chart styles which PyXPlot can produce. See the text for more details.</span><p>  </p></div><p>Having set a fixed box width, the default automatic width mode may be restored either with the <tt class="ttfamily">unset boxwidth</tt> command, or by setting the boxwidth to a negative width. </p><p>As a third alternative, it is also possible to specify different widths for each bar manually, in a column of the input datafile. For this, the <tt class="ttfamily">wboxes</tt><span id="a-1227582164"></span> plot style should be used: </p><pre> 
+plot 'datafile' using 1:2:3 with wboxes
+</pre><p>This plot style expects three columns of data to be specified: the <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />- and <img src="images/img-0005.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-coordinates of each bar, and the width in the third column. Panel (b) of Figure <a href="sect0020.html#fig:ex_barchart2">3.5</a> shows an example of this plot style in use. </p><p>By default, the bars all originate from the line <img src="images/img-0072.png" alt="$y=0$" style="position:relative; bottom:-4px; width:43px; height:17px" class="math" />, as is normal for a histogram. However, should it be desired for the bars to start from a different vertical point, that may be achieved with the <tt class="ttfamily">set boxfrom</tt> command, for example: </p><pre> 
+set boxfrom 5
+</pre><p>All of the bars would then originate from the line <img src="images/img-0073.png" alt="$y=5$" style="position:relative; bottom:-4px; width:43px; height:16px" class="math" />. Panel (f) of Figure <a href="sect0020.html#fig:ex_barchart1">3.6</a> shows the kind of effect that is achieved; for comparison, panel (b) of the same figure shows the same bar chart with the boxes starting from their default position at <img src="images/img-0072.png" alt="$y=0$" style="position:relative; bottom:-4px; width:43px; height:17px" class="math" />. </p><div id="fig:ex_barchart1" class="figure"><center> <img src="images/img-0074.png" alt="\includegraphics{examples/eps/ex_barchart1.eps}" style="width:345px; height:316px" />
+ </center><b>Figure 3.6</b>: <span>A second gallery of different bar chart styles which PyXPlot can produce. See the text for more details.</span><p>  </p></div><p>The bars may be filled using the <tt class="ttfamily">with fillcolour</tt><span id="a-1228270004"></span> modifier, followed by the name of a colour: </p><pre> 
+plot 'datafile' with boxes fillcolour blue
+plot 'datafile' with boxes fc 4
+</pre><p>Panels (c) and (d) of Figure <a href="sect0020.html#fig:ex_barchart2">3.5</a> demonstrate the use of filled bars. </p><p>Finally, the <tt class="ttfamily">impulses</tt> plot style, as in gnuplot, produces bars of zero width; see Panel (e) of Figure <a href="sect0020.html#fig:ex_barchart1">3.6</a> for an example. </p></div>
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="barcharts.html" title="Barcharts and Histograms"><img alt="Previous: Barcharts and Histograms" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="barcharts.html" title="Barcharts and Histograms"><img alt="Up: Barcharts and Histograms" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0021.html" title="Stacked Bar Charts"><img alt="Next: Stacked Bar Charts" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

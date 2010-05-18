@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Formatting and Terminals</title>
+
+<link href="sect0012.html" title="Paper Sizes" rel="next" />
+<link href="sect0011.html" title="The Commandline Environment" rel="prev" />
+<link href="new_features.html" title="Extensions of Gnuplot’s Interface" rel="up" />
+<link rel="stylesheet" href="styles/plastex-styles.css" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0011.html" title="The Commandline Environment"><img alt="Previous: The Commandline Environment" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="new_features.html" title="Extensions of Gnuplot’s Interface"><img alt="Up: Extensions of Gnuplot’s Interface" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0012.html" title="Paper Sizes"><img alt="Next: Paper Sizes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="new_features.html">Extensions of Gnuplot’s Interface</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Formatting and Terminals</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="terminals">3.2 Formatting and Terminals</h1>
+<p>  </p><p>In this section I shall outline the new and modified commands for controlling the graphic output format of PyXPlot. </p><p>The widths of plots may be set be means of two commands – <tt class="ttfamily">set size</tt><span id="a-1224946452"></span> and <tt class="ttfamily">set width</tt><span id="a-1224946100"></span>. Both are equivalent, and should be followed by the desired width measured in centimetres, for example: </p><pre>
+set width 20
+</pre><p>The <tt class="ttfamily">set size</tt> command can also be used to set the aspect ratio of plots by following it with the keyword <tt class="ttfamily">ratio</tt><span id="a-1224947828"></span>. The number which follows should be the desired ratio of height to width. The following, for example would produce plots three times as high as they are wide: </p><pre>
+set size ratio 3.0
+</pre><p>The command <tt class="ttfamily">set size noratio</tt> returns to PyXPlot’s default aspect ratio of the golden ratio, i.e. <img src="images/img-0045.png" alt="$\left((1+\sqrt {5})/2\right)^{-1}$" style="position:relative; bottom:-7px; width:120px; height:27px" class="math" />, which matches that of a sheet of A4 paper<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">Of less practical significance, it has been in use since the time of the Pythagoreans, and is seen repeatedly in the architecture of the Parthenon.</span></a>. The special command <tt class="ttfamily">set size square</tt><span id="a-1226089684"></span> sets the aspect ratio to unity. </p><p>If the <tt class="ttfamily">enlarge</tt> modifier is used with the <tt class="tt">set terminal</tt> command then the whole plot is enlarged or, in the case of large plots, shrunk to the current paper size (minus a small margin). The aspect ratio of the plot is preserved. This is perhaps most useful when preparing a plot to send to a printer with the postscript terminal. </p><p>In Section <a href="directing_output.html">2.6</a> I described how the <tt class="ttfamily">set terminal</tt> command<span id="a-1226119412"></span> can be used to produce plots in various graphic formats. In addition, I here describe how the way in which plots are displayed on the screen can be changed. The default terminal, <tt class="ttfamily">X11</tt>, is used to send output to screen. </p><p>By default, each time a new plot is generated, if the previous plot is still open on the display, the X11 terminal will replace it with the new one, thus keeping only one plot window open at a time. This has the advantage that the desktop does not become flooded with plot windows. </p><p>If this behaviour is not desired, old plots can be kept visible when plotting further graphs by using the the <tt class="ttfamily">X11_multiwindow</tt> terminal: <span id="a-1226091572"></span><span id="a-1226089204"></span> </p><pre> 
+set terminal X11_singlewindow
+plot sin(x)
+plot cos(x)  &lt;-- first plot window disappears
+</pre><p>c.f.: </p><pre> 
+set terminal X11_multiwindow
+plot sin(x)
+plot cos(x)  &lt;-- first plot window remains
+</pre><p>As an additional option, the <tt class="ttfamily">X11_persist</tt> terminal keeps plot windows open after PyXPlot exits; the above two terminals close all plot windows upon exit. </p><p><span id="a-1226089044"></span> As there are many changes to the options accepted by the <tt class="ttfamily">set terminal</tt> command in comparison to those understood by gnuplot, the syntax of PyXPlot’s command is given below, followed by a list of the recognised settings: </p><pre> 
+set terminal { X11_singlewindow | X11_multiwindow | X11_persist |
+               postscript | eps | pdf | gif | png | jpg }
+             { colour | color | monochrome }
+             { portrait | landscape }
+             { invert | noinvert }
+             { transparent | solid }
+             { enlarge | noenlarge }
+</pre><table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="text-align:left"><p> <tt class="ttfamily">x11_singlewindow</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Displays plots on the screen (in X11 windows, using ghostview). Each time a new plot is generated, it replaces the old one, preventing the desktop from becoming flooded with old plots.<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">The author is aware of a bug, that this terminal can occasionally go blank when a new plot is generated. This is a known bug in ghostview, and can be worked around by selecting File <img src="images/img-0046.png" alt="$\to $" style="position:relative; bottom:1px; width:16px; height:7px" class="math" /> Reload within the ghostview window.</span></a> <b class="bfseries">[default when running interactively; see below]</b></p></td>
+
+</tr>
+</table><table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="text-align:left"><p> <tt class="ttfamily">x11_multiwindow</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> As above, but each new plot appears in a new window, and the old plots remain visible. As many plots as may be desired can be left on the desktop simultaneously.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">x11_persist</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> As above, but plot windows remain open after PyXPlot closes.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">postscript</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Sends output to a postscript file. The filename for this file should be set using <tt class="ttfamily">set output</tt>. <b class="bfseries">[default when running non-interactively; see below]</b><span id="a-1226357876"></span></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">eps</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> As above, but produces encapsulated postscript.<span id="a-1226356724"></span><span id="a-1226356628"></span></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">pdf</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> As above, but produces pdf output.<span id="a-1226355892"></span></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">gif</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Sends output to a gif image file; as above, the filename should be set using <tt class="ttfamily">set output</tt>.<span id="a-1226355476"></span></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">png</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> As above, but produces a png image.<span id="a-1226329780"></span></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">jpg</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> As above, but produces a jpeg image.<span id="a-1226328564"></span></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">colour</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Allows datasets to be plotted in colour. Automatically they will be displayed in a series of different colours, or alternatively colours may be specified using the <tt class="ttfamily">with colour</tt> plot modifier (see below). <b class="bfseries">[default]</b><span id="a-1226326132"></span></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">color</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Equivalent to the above; provided for users of nationalities which can’t spell. <span style="" class="mbox">Uwasy,</span></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">monochrome</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Opposite to the above; all datasets will be plotted in black.<span id="a-1226355252"></span></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">portrait</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Sets plots to be displayed in upright (normal) orientation. <b class="bfseries">[default]</b><span id="a-1226052788"></span></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">landscape</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Opposite of the above; produces side-ways plots. Not very useful when displayed on the screen, but you fit more on a sheet of paper that way around.<span id="a-1226295508"></span></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">invert</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Modifier for the gif, png and jpg terminals; produces output with inverted colours.<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">This terminal setting is useful for producing plots to embed in talk slideshows, which often contain bright text on a dark background. It only works when producing bitmapped output, though a similar effect can be achieved in postscript using the <tt class="ttfamily">set textcolour</tt> and <tt class="ttfamily">set axescolour</tt> commands (see Section <a href="set_colours.html">3.4.3</a>).</span></a><span id="a-1224947348"></span></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">noinvert</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Modifier for the gif, png and jpg terminals; opposite to the above. <b class="bfseries">[default]</b></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">transparent</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Modifier for the gif and png terminals; produces output with a transparent background.<span id="a-1226247284"></span><span id="a-1226247188"></span><span id="a-1226246996"></span></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">solid</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Modifier for the gif and png terminals; opposite to the above. <b class="bfseries">[default]</b></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">enlarge</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Enlarge or shrink contents to fit the current paper size.<span id="a-1226238260"></span></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="ttfamily">noenlarge</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Do not enlarge output; opposite to the above. <b class="bfseries">[default]</b></p></td>
+
+</tr>
+</table><p>  </p><p>The default terminal is normally <tt class="ttfamily">x11_singlewindow</tt>, matching approximately the behaviour of gnuplot. However, there is an exception to this. When PyXPlot is used non-interactively – i.e. one or more command scripts are specified on the command line, and PyXPlot exits as soon as it finishes executing them – the <tt class="ttfamily">x11_singlewindow</tt> is not a very sensible terminal to use. Any plot window would close as soon as PyXPlot exited. The default terminal in this case changes to <tt class="ttfamily">postscript</tt>. </p><p>One exception to this is when the special ‘–’ filename is specified in a list of command scripts on the command line, to produce an interactive terminal between running a series of scripts. In this case, PyXPlot detects that the session will be interactive, and defaults to the usual <tt class="ttfamily">x11_singlewindow</tt> terminal. </p><p>An additional exception is on machines where the <tt class="ttfamily">DISPLAY</tt> environment variable<span id="a-1226246164"></span> is not set. In this case, PyXPlot detects that it has access to no X-terminal on which to display plots, and defaults to the <tt class="ttfamily">postscript</tt> terminal. </p><p>The <tt class="ttfamily">gif</tt>, <tt class="ttfamily">png</tt> and <tt class="ttfamily">jpg</tt> terminals result in some loss of quality, since the plot has to be sampled into a bitmapped graphic format. By default, this sampling is performed at 300 dpi, though this may be changed using the command <tt class="ttfamily">set dpi &lt;value&gt;</tt>. Alternatively, it may be changed using the <tt class="ttfamily">DPI</tt> option in the <tt class="ttfamily">settings</tt> section of a configuration file (see Section <a href="configuration.html">4.1</a>).<span id="a-1226246644"></span><span id="a-1226245428"></span><span id="a-1226294132"></span> </p></div>
+
+<div class="contents"><!--<strong>Subsections</strong>-->
+<ul>
+<li><a href="sect0012.html">3.2.1 Paper Sizes</a>
+   
+</li>
+
+
+
+</ul>
+</div>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0011.html" title="The Commandline Environment"><img alt="Previous: The Commandline Environment" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="new_features.html" title="Extensions of Gnuplot’s Interface"><img alt="Up: Extensions of Gnuplot’s Interface" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0012.html" title="Paper Sizes"><img alt="Next: Paper Sizes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

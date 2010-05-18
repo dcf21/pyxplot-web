@@ -1,0 +1,1391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Paper Sizes</title>
+
+<link href="sect0013.html" title="Plotting" rel="next" />
+<link href="terminals.html" title="Formatting and Terminals" rel="prev" />
+<link href="terminals.html" title="Formatting and Terminals" rel="up" />
+<link rel="stylesheet" href="styles/plastex-styles.css" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="terminals.html" title="Formatting and Terminals"><img alt="Previous: Formatting and Terminals" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="terminals.html" title="Formatting and Terminals"><img alt="Up: Formatting and Terminals" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0013.html" title="Plotting"><img alt="Next: Plotting" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="new_features.html">Extensions of Gnuplot’s Interface</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="terminals.html">Formatting and Terminals</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Paper Sizes</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="a-1226329332">3.2.1 Paper Sizes</h2>
+<p>By default, when the postscript terminal produces printable, i.e. not encapsulated, output, the paper size for this output is read from your system locale settings. It may be changed, however, with the <tt class="ttfamily">set papersize</tt><span id="a-1226354772"></span> command, which may be followed either by the name of a recognised paper size, or by the dimensions of a user-defined size, specified as a <tt class="ttfamily">height</tt>, <tt class="ttfamily">width</tt> pair, both being measured in millimetres. For example: </p><pre>
+set papersize a4
+set papersize 100,100
+</pre><p>A list of recognised paper size names is given in Figure <a href="sect0012.html#paper_sizes">3.1</a>. </p><div id="paper_sizes" class="figure"><p><small class="tiny"><center><table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; text-align:right; border-top-color:black; border-top-width:1px; border-left:1px solid black"><p> <b class="bfseries">Name</b> </p></td>
+
+    
+    <td style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:right"><p> <b class="bfseries"><img src="images/img-0047.png" alt="$h$" style="position:relative; bottom:-1px; width:9px; height:14px" class="math" />/mm</b> </p></td>
+
+    
+    <td style="border-top-style:solid; text-align:right; border-top-color:black; border-top-width:1px; border-right:1px solid black"><p> <b class="bfseries"><img src="images/img-0048.png" alt="$w$" style="position:relative; bottom:-1px; width:13px; height:9px" class="math" />/mm</b> </p></td>
+
+    
+    <td style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:right"><p> <b class="bfseries">Name</b> </p></td>
+
+    
+    <td style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:right"><p> <b class="bfseries"><img src="images/img-0047.png" alt="$h$" style="position:relative; bottom:-1px; width:9px; height:14px" class="math" />/mm</b> </p></td>
+
+    
+    <td style="border-top-style:solid; text-align:right; border-top-color:black; border-top-width:1px; border-right:1px solid black"><p> <b class="bfseries"><img src="images/img-0048.png" alt="$w$" style="position:relative; bottom:-1px; width:13px; height:9px" class="math" />/mm</b> </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-top-style:solid; text-align:right; border-top-color:black; border-top-width:1px; border-left:1px solid black"><p>2a0 </p></td>
+
+    
+    <td style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:right"><p> 1681 </p></td>
+
+    
+    <td style="border-top-style:solid; text-align:right; border-top-color:black; border-top-width:1px; border-right:1px solid black"><p> 1189 </p></td>
+
+    
+    <td style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:right"><p> medium </p></td>
+
+    
+    <td style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:right"><p> 584 </p></td>
+
+    
+    <td style="border-top-style:solid; text-align:right; border-top-color:black; border-top-width:1px; border-right:1px solid black"><p> 457 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>4a0 </p></td>
+
+    
+    <td style="text-align:right"><p> 2378 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 1681 </p></td>
+
+    
+    <td style="text-align:right"><p> monarch </p></td>
+
+    
+    <td style="text-align:right"><p> 267 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 184 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>a0 </p></td>
+
+    
+    <td style="text-align:right"><p> 1189 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 840 </p></td>
+
+    
+    <td style="text-align:right"><p> post </p></td>
+
+    
+    <td style="text-align:right"><p> 489 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 394 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>a1 </p></td>
+
+    
+    <td style="text-align:right"><p> 840 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 594 </p></td>
+
+    
+    <td style="text-align:right"><p> quad_demy </p></td>
+
+    
+    <td style="text-align:right"><p> 1143 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 889 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>a10 </p></td>
+
+    
+    <td style="text-align:right"><p> 37 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 26 </p></td>
+
+    
+    <td style="text-align:right"><p> quarto </p></td>
+
+    
+    <td style="text-align:right"><p> 254 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 203 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>a2 </p></td>
+
+    
+    <td style="text-align:right"><p> 594 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 420 </p></td>
+
+    
+    <td style="text-align:right"><p> royal </p></td>
+
+    
+    <td style="text-align:right"><p> 635 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 508 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>a3 </p></td>
+
+    
+    <td style="text-align:right"><p> 420 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 297 </p></td>
+
+    
+    <td style="text-align:right"><p> statement </p></td>
+
+    
+    <td style="text-align:right"><p> 216 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 140 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>a4 </p></td>
+
+    
+    <td style="text-align:right"><p> 297 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 210 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_d0 </p></td>
+
+    
+    <td style="text-align:right"><p> 1542 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 1090 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>a5 </p></td>
+
+    
+    <td style="text-align:right"><p> 210 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 148 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_d1 </p></td>
+
+    
+    <td style="text-align:right"><p> 1090 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 771 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>a6 </p></td>
+
+    
+    <td style="text-align:right"><p> 148 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 105 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_d10 </p></td>
+
+    
+    <td style="text-align:right"><p> 48 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 34 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>a7 </p></td>
+
+    
+    <td style="text-align:right"><p> 105 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 74 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_d2 </p></td>
+
+    
+    <td style="text-align:right"><p> 771 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 545 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>a8 </p></td>
+
+    
+    <td style="text-align:right"><p> 74 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 52 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_d3 </p></td>
+
+    
+    <td style="text-align:right"><p> 545 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 385 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>a9 </p></td>
+
+    
+    <td style="text-align:right"><p> 52 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 37 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_d4 </p></td>
+
+    
+    <td style="text-align:right"><p> 385 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 272 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>b0 </p></td>
+
+    
+    <td style="text-align:right"><p> 1414 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 999 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_d5 </p></td>
+
+    
+    <td style="text-align:right"><p> 272 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 192 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>b1 </p></td>
+
+    
+    <td style="text-align:right"><p> 999 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 707 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_d6 </p></td>
+
+    
+    <td style="text-align:right"><p> 192 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 136 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>b10 </p></td>
+
+    
+    <td style="text-align:right"><p> 44 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 31 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_d7 </p></td>
+
+    
+    <td style="text-align:right"><p> 136 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 96 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>b2 </p></td>
+
+    
+    <td style="text-align:right"><p> 707 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 499 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_d8 </p></td>
+
+    
+    <td style="text-align:right"><p> 96 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 68 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>b3 </p></td>
+
+    
+    <td style="text-align:right"><p> 499 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 353 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_d9 </p></td>
+
+    
+    <td style="text-align:right"><p> 68 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 48 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>b4 </p></td>
+
+    
+    <td style="text-align:right"><p> 353 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 249 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_e0 </p></td>
+
+    
+    <td style="text-align:right"><p> 1241 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 878 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>b5 </p></td>
+
+    
+    <td style="text-align:right"><p> 249 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 176 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_e1 </p></td>
+
+    
+    <td style="text-align:right"><p> 878 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 620 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>b6 </p></td>
+
+    
+    <td style="text-align:right"><p> 176 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 124 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_e10 </p></td>
+
+    
+    <td style="text-align:right"><p> 38 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 27 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>b7 </p></td>
+
+    
+    <td style="text-align:right"><p> 124 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 88 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_e2 </p></td>
+
+    
+    <td style="text-align:right"><p> 620 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 439 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>b8 </p></td>
+
+    
+    <td style="text-align:right"><p> 88 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 62 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_e3 </p></td>
+
+    
+    <td style="text-align:right"><p> 439 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 310 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>b9 </p></td>
+
+    
+    <td style="text-align:right"><p> 62 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 44 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_e4 </p></td>
+
+    
+    <td style="text-align:right"><p> 310 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 219 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>c0 </p></td>
+
+    
+    <td style="text-align:right"><p> 1296 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 917 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_e5 </p></td>
+
+    
+    <td style="text-align:right"><p> 219 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 155 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>c1 </p></td>
+
+    
+    <td style="text-align:right"><p> 917 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 648 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_e6 </p></td>
+
+    
+    <td style="text-align:right"><p> 155 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 109 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>c10 </p></td>
+
+    
+    <td style="text-align:right"><p> 40 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 28 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_e7 </p></td>
+
+    
+    <td style="text-align:right"><p> 109 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 77 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>c2 </p></td>
+
+    
+    <td style="text-align:right"><p> 648 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 458 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_e8 </p></td>
+
+    
+    <td style="text-align:right"><p> 77 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 54 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>c3 </p></td>
+
+    
+    <td style="text-align:right"><p> 458 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 324 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_e9 </p></td>
+
+    
+    <td style="text-align:right"><p> 54 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 38 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>c4 </p></td>
+
+    
+    <td style="text-align:right"><p> 324 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 229 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_f0 </p></td>
+
+    
+    <td style="text-align:right"><p> 1476 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 1044 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>c5 </p></td>
+
+    
+    <td style="text-align:right"><p> 229 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 162 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_f1 </p></td>
+
+    
+    <td style="text-align:right"><p> 1044 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 738 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>c6 </p></td>
+
+    
+    <td style="text-align:right"><p> 162 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 114 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_f10 </p></td>
+
+    
+    <td style="text-align:right"><p> 46 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 32 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>c7 </p></td>
+
+    
+    <td style="text-align:right"><p> 114 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 81 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_f2 </p></td>
+
+    
+    <td style="text-align:right"><p> 738 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 522 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>c8 </p></td>
+
+    
+    <td style="text-align:right"><p> 81 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 57 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_f3 </p></td>
+
+    
+    <td style="text-align:right"><p> 522 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 369 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>c9 </p></td>
+
+    
+    <td style="text-align:right"><p> 57 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 40 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_f4 </p></td>
+
+    
+    <td style="text-align:right"><p> 369 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 261 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>crown </p></td>
+
+    
+    <td style="text-align:right"><p> 508 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 381 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_f5 </p></td>
+
+    
+    <td style="text-align:right"><p> 261 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 184 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>demy </p></td>
+
+    
+    <td style="text-align:right"><p> 572 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 445 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_f6 </p></td>
+
+    
+    <td style="text-align:right"><p> 184 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 130 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>double_demy </p></td>
+
+    
+    <td style="text-align:right"><p> 889 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 597 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_f7 </p></td>
+
+    
+    <td style="text-align:right"><p> 130 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 92 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>elephant </p></td>
+
+    
+    <td style="text-align:right"><p> 711 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 584 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_f8 </p></td>
+
+    
+    <td style="text-align:right"><p> 92 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 65 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>envelope_dl </p></td>
+
+    
+    <td style="text-align:right"><p> 110 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 220 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_f9 </p></td>
+
+    
+    <td style="text-align:right"><p> 65 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 46 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>executive </p></td>
+
+    
+    <td style="text-align:right"><p> 267 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 184 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_g0 </p></td>
+
+    
+    <td style="text-align:right"><p> 1354 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 957 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>foolscap </p></td>
+
+    
+    <td style="text-align:right"><p> 330 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 203 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_g1 </p></td>
+
+    
+    <td style="text-align:right"><p> 957 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 677 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>government_letter </p></td>
+
+    
+    <td style="text-align:right"><p> 267 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 203 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_g10 </p></td>
+
+    
+    <td style="text-align:right"><p> 42 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 29 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>international_businesscard </p></td>
+
+    
+    <td style="text-align:right"><p> 85 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 53 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_g2 </p></td>
+
+    
+    <td style="text-align:right"><p> 677 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 478 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>japanese_b0 </p></td>
+
+    
+    <td style="text-align:right"><p> 1435 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 1015 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_g3 </p></td>
+
+    
+    <td style="text-align:right"><p> 478 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 338 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>japanese_b1 </p></td>
+
+    
+    <td style="text-align:right"><p> 1015 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 717 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_g4 </p></td>
+
+    
+    <td style="text-align:right"><p> 338 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 239 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>japanese_b10 </p></td>
+
+    
+    <td style="text-align:right"><p> 44 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 31 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_g5 </p></td>
+
+    
+    <td style="text-align:right"><p> 239 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 169 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>japanese_b2 </p></td>
+
+    
+    <td style="text-align:right"><p> 717 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 507 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_g6 </p></td>
+
+    
+    <td style="text-align:right"><p> 169 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 119 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>japanese_b3 </p></td>
+
+    
+    <td style="text-align:right"><p> 507 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 358 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_g7 </p></td>
+
+    
+    <td style="text-align:right"><p> 119 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 84 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>japanese_b4 </p></td>
+
+    
+    <td style="text-align:right"><p> 358 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 253 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_g8 </p></td>
+
+    
+    <td style="text-align:right"><p> 84 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 59 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>japanese_b5 </p></td>
+
+    
+    <td style="text-align:right"><p> 253 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 179 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_g9 </p></td>
+
+    
+    <td style="text-align:right"><p> 59 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 42 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>japanese_b6 </p></td>
+
+    
+    <td style="text-align:right"><p> 179 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 126 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_h0 </p></td>
+
+    
+    <td style="text-align:right"><p> 1610 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 1138 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>japanese_b7 </p></td>
+
+    
+    <td style="text-align:right"><p> 126 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 89 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_h1 </p></td>
+
+    
+    <td style="text-align:right"><p> 1138 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 805 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>japanese_b8 </p></td>
+
+    
+    <td style="text-align:right"><p> 89 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 63 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_h10 </p></td>
+
+    
+    <td style="text-align:right"><p> 50 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 35 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>japanese_b9 </p></td>
+
+    
+    <td style="text-align:right"><p> 63 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 44 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_h2 </p></td>
+
+    
+    <td style="text-align:right"><p> 805 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 569 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>japanese_kiku4 </p></td>
+
+    
+    <td style="text-align:right"><p> 306 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 227 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_h3 </p></td>
+
+    
+    <td style="text-align:right"><p> 569 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 402 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>japanese_kiku5 </p></td>
+
+    
+    <td style="text-align:right"><p> 227 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 151 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_h4 </p></td>
+
+    
+    <td style="text-align:right"><p> 402 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 284 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>japanese_shiroku4 </p></td>
+
+    
+    <td style="text-align:right"><p> 379 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 264 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_h5 </p></td>
+
+    
+    <td style="text-align:right"><p> 284 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 201 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>japanese_shiroku5 </p></td>
+
+    
+    <td style="text-align:right"><p> 262 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 189 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_h6 </p></td>
+
+    
+    <td style="text-align:right"><p> 201 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 142 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>japanese_shiroku6 </p></td>
+
+    
+    <td style="text-align:right"><p> 188 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 127 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_h7 </p></td>
+
+    
+    <td style="text-align:right"><p> 142 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 100 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>large_post </p></td>
+
+    
+    <td style="text-align:right"><p> 533 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 419 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_h8 </p></td>
+
+    
+    <td style="text-align:right"><p> 100 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 71 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>ledger </p></td>
+
+    
+    <td style="text-align:right"><p> 432 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 279 </p></td>
+
+    
+    <td style="text-align:right"><p> swedish_h9 </p></td>
+
+    
+    <td style="text-align:right"><p> 71 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 50 </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right; border-left:1px solid black"><p>legal </p></td>
+
+    
+    <td style="text-align:right"><p> 356 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 216 </p></td>
+
+    
+    <td style="text-align:right"><p> tabloid </p></td>
+
+    
+    <td style="text-align:right"><p> 432 </p></td>
+
+    
+    <td style="text-align:right; border-right:1px solid black"><p> 279 </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-color:black; border-bottom-width:1px; text-align:right; border-bottom-style:solid; border-left:1px solid black"><p>letter </p></td>
+
+    
+    <td style="border-bottom-width:1px; border-bottom-color:black; border-bottom-style:solid; text-align:right"><p> 279 </p></td>
+
+    
+    <td style="border-bottom-color:black; border-bottom-width:1px; text-align:right; border-bottom-style:solid; border-right:1px solid black"><p> 216 </p></td>
+
+    
+    <td style="border-bottom-width:1px; border-bottom-color:black; border-bottom-style:solid; text-align:right"><p> us_businesscard </p></td>
+
+    
+    <td style="border-bottom-width:1px; border-bottom-color:black; border-bottom-style:solid; text-align:right"><p> 89 </p></td>
+
+    
+    <td style="border-bottom-color:black; border-bottom-width:1px; text-align:right; border-bottom-style:solid; border-right:1px solid black"><p> 51 </p></td>
+
+</tr>
+</table> <b>Figure 3.1</b>: <span>A list of all of the named paper sizes recognised by the <tt class="ttfamily">set papersize</tt><span id="a-1227011444"></span> command, with their heights, <img src="images/img-0047.png" alt="$h$" style="position:relative; bottom:-1px; width:9px; height:14px" class="math" />, and widths, <img src="images/img-0048.png" alt="$w$" style="position:relative; bottom:-1px; width:13px; height:9px" class="math" />, measured in millimetres.</span>  </center></small></p></div></div>
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="terminals.html" title="Formatting and Terminals"><img alt="Previous: Formatting and Terminals" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="terminals.html" title="Formatting and Terminals"><img alt="Up: Formatting and Terminals" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0013.html" title="Plotting"><img alt="Next: Plotting" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>
