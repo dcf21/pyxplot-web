@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: display</title>
+
+<link href="sect0087.html" title="dpi" rel="next" />
+<link href="sect0085.html" title="data style" rel="prev" />
+<link href="sect0074.html" title="set" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0085.html" title="data style"><img alt="Previous: data style" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0074.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0087.html" title="dpi"><img alt="Next: dpi" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0158.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0046.html">Command Reference</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0074.html">set</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">display</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="a0000000097">8.27.12 display</h2>
+<p><span id="a0000000690"></span> </p><pre>
+set [no]display
+</pre><p>By default, whenever an item is added to a multiplot, or an existing item moved or replotted, the whole multiplot is replotted to show the change. This can be a time-consuming process on large and complex multiplots. For this reason, the <tt class="tt">set nodisplay</tt> command is provided, which stops PyXPlot from producing any output. The <tt class="tt">set display</tt> command can subsequently be issued to return to normal behaviour. </p><p>This can be especially useful in scripts which produce large multiplots. There is no point in producing output at each step in the construction of a large multiplot, and so a great speed increase can be achieved by wrapping the script with: </p><pre>
+set nodisplay 
+[...prepare large multiplot...] 
+set display 
+refresh
+</pre></div>
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0085.html" title="data style"><img alt="Previous: data style" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0074.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0087.html" title="dpi"><img alt="Next: dpi" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0158.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

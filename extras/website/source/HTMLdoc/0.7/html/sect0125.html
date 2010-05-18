@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: terminal</title>
+
+<link href="sect0126.html" title="textcolour" rel="next" />
+<link href="sect0124.html" title="style" rel="prev" />
+<link href="sect0074.html" title="set" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0124.html" title="style"><img alt="Previous: style" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0074.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0126.html" title="textcolour"><img alt="Next: textcolour" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0158.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0046.html">Command Reference</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0074.html">set</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">terminal</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="a0000000136">8.27.51 terminal</h2>
+<p><span id="a0000000735"></span> </p><pre>
+set terminal &lt;terminal type&gt; [&lt;option&gt; ... ]
+</pre><p>Syntax: </p><pre>
+set terminal { X11_singlewindow | X11_multiwindow | X11_persist | 
+               postscript | eps | pdf | gif | png | jpg } 
+             { colour | color | monochrome } 
+             { portrait | landscape } 
+             { invert | noinvert } 
+             { transparent | solid }
+             { antialias | noantialias }
+             { enlarge | noenlarge }
+</pre><p>The <tt class="tt">set terminal</tt> command controls the graphic format in which PyXPlot should output plots, for example setting whether it should output plots to files or display them in a window on the screen. Various options can also be set within many of the graphic formats which PyXPlot supports using this command. </p><p>The following graphic formats are supported: <tt class="tt">X11_singlewindow</tt>, <br /><tt class="tt">X11_multiwindow</tt>, <tt class="tt">X11_persist</tt>, <tt class="tt">postscript</tt>, <tt class="tt">eps</tt>, <tt class="tt">pdf</tt>, <tt class="tt">gif</tt>, <tt class="tt">jpeg</tt>, <tt class="tt">png</tt>. To select one of these formats, simply type the name of the desired format after the <tt class="tt">set terminal</tt> command. To obtain more details on each, see the subtopics below. </p><p>The following settings, which can also be typed following the <tt class="tt">set terminal</tt> command, are used to change the options within some of these graphic formats: <tt class="tt">colour</tt>, <tt class="tt">monochrome</tt>, <tt class="tt">enhanced</tt>, <tt class="tt">noenhanced</tt>, <tt class="tt">portrait</tt>, <tt class="tt">landscape</tt>, <tt class="tt">invert</tt>, <tt class="tt">noinvert</tt>, <tt class="tt">transparent</tt>, <tt class="tt">solid</tt>, <tt class="tt">enlarge</tt>, <tt class="tt">noenlarge</tt>. Details of each of these can be found below. </p><h3 id="a0000000736">antialias</h3>
+<p><span id="a0000000737"></span> </p><p>The <tt class="tt">antialias</tt> terminal option causes plots produced with the bitmap (gif, jpg and png) terminals to be antialiased; this is the default behaviour. </p><h3 id="a0000000738">colour</h3>
+<p><span id="a0000000739"></span> </p><p>The <tt class="tt">colour</tt> terminal option causes plots to be produced in colour; this is the default behaviour. </p><h3 id="a0000000740">color</h3>
+<p><span id="a0000000741"></span> </p><p>The <tt class="tt">color</tt> terminal option is provided for the convenience of users unable to spell <tt class="tt">colour</tt>. </p><h3 id="a0000000742">enlarge</h3>
+<p><span id="a0000000743"></span> </p><p>The <tt class="tt">enlarge</tt> terminal option causes the complete plot to be enlarged or shrunk to fit the current paper size. </p><h3 id="a0000000744">eps</h3>
+<p><span id="a0000000745"></span> </p><p>Sends output to eps files. The filename to which output is to be sent should be set using the <tt class="tt">set output</tt> command; the default is <tt class="tt">pyxplot.eps</tt>. This terminal produces encapsulated postscript suitable for including in, for example, L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>Xdocuments. </p><h3 id="a0000000746">gif</h3>
+<p><span id="a0000000747"></span> </p><p>The <tt class="tt">gif</tt> terminal renders output as gif files. The filename to which output is to be sent should be set using the <tt class="tt">set output</tt> command; the default is <tt class="tt">pyxplot.gif</tt>. The number of dots per inch used can be changed using the dpi option; the filename using <tt class="tt">set output</tt>. Transparent gifs can be produced with the <tt class="tt">transparent</tt> option. Also of relevance is the <tt class="tt">invert</tt> option for producing gifs with inverted colours. </p><h3 id="a0000000748">invert</h3>
+<p><span id="a0000000749"></span> </p><p>The <tt class="tt">invert</tt> terminal option causes the bitmap terminals (<tt class="tt">gif</tt>, <tt class="tt">jpeg</tt>, <tt class="tt">png</tt>) to produce output with inverted colours. This is useful for producing plots for slideshows, where bright colours on a dark background may be desired. </p><h3 id="a0000000750">jpeg</h3>
+<p><span id="a0000000751"></span> </p><p>The <tt class="tt">jpeg</tt> terminal renders output as jpeg files. The filename to which output is to be sent should be set using the <tt class="tt">set output</tt> command; the default is <tt class="tt">pyxplot.jpg</tt>. The number of dots per inch used can be changed using the dpi option. Of relevance is the <tt class="tt">invert</tt> option for producing jpegs with inverted colours. </p><h3 id="a0000000752">landscape</h3>
+<p><span id="a0000000753"></span> </p><p>The <tt class="tt">landscape</tt> terminal option causes PyXPlot’s output to be displayed in rotated orientation. This is useful for printing as you get more on your sheet of paper that way around; probably less useful for plotting things on screen. </p><h3 id="a0000000754">monochrome</h3>
+<p><span id="a0000000755"></span> </p><p>The <tt class="tt">monochrome</tt> terminal option causes plots to be rendered in black and white; by default, different dash styles are used to differentiate between lines on plots with several datasets. </p><h3 id="a0000000756">noantialias</h3>
+<p><span id="a0000000757"></span> </p><p>The <tt class="tt">noantialias</tt> terminal option causes plots produced with the bitmap (gif, jpg and png) terminals not to be antialiased. </p><h3 id="a0000000758">noenlarge</h3>
+<p><span id="a0000000759"></span> </p><p>The <tt class="tt">noenlarge</tt> terminal option causes the output not to be scaled (the opposite of <tt class="tt">enlarge</tt> above). </p><h3 id="a0000000760">noinvert</h3>
+<p><span id="a0000000761"></span> </p><p>The <tt class="tt">noinvert</tt> terminal option causes the bitmap terminals (<tt class="tt">gif</tt>, <tt class="tt">jpeg</tt>, <tt class="tt">png</tt>) to produce normal output without inverted colours. The converse of <tt class="tt">inverse</tt>. </p><h3 id="a0000000762">pdf</h3>
+<p><span id="a0000000763"></span> </p><p>The <tt class="tt">pdf</tt> terminal options causes pdf format output files to be produced. </p><h3 id="a0000000764">png</h3>
+<p><span id="a0000000765"></span> </p><p>The <tt class="tt">png</tt> terminal renders output as png files. The filename to which output is to be sent should be set using the <tt class="tt">set output</tt> command; the default is <tt class="tt">pyxplot.png</tt>. The number of dots per inch used can be changed using the dpi option; the filename using <tt class="tt">set output</tt>. Transparent pngs can be produced with the <tt class="tt">transparent</tt> option. Also of relevance is the <tt class="tt">invert</tt> option for producing pngs with inverted colours. </p><h3 id="a0000000766">portrait</h3>
+<p><span id="a0000000767"></span> </p><p>The <tt class="tt">portrait</tt> terminal option causes PyXPlot’s output to be displayed in upright (normal) orientation. </p><h3 id="a0000000768">postscript</h3>
+<p><span id="a0000000769"></span> </p><p>Sends output to postscript files. The filename to which output is to be sent should be set using the <tt class="tt">set output</tt> command; the default is <tt class="tt">pyxplot.ps</tt>. This terminal produces non-encapsulated postscript suitable for sending directly to a printer. </p><h3 id="a0000000770">solid</h3>
+<p><span id="a0000000771"></span> </p><p>The solid option causes the <tt class="tt">gif</tt> and <tt class="tt">png</tt> terminals to produce output with a non-transparent background, the converse of <tt class="tt">transparent</tt>. </p><h3 id="a0000000772">transparent</h3>
+<p><span id="a0000000773"></span> </p><p>The <tt class="tt">transparent</tt> terminal option causes the <tt class="tt">gif</tt> and <tt class="tt">png</tt> terminals to produce output with a transparent background. </p><h3 id="a0000000774">X11_multiwindow</h3>
+<p><span id="a0000000775"></span> </p><p>Displays plots on the screen (in X11 windows, using Ghostview). Each time a new plot is generated it appears in a new window, and the old plots remain visible. As many plots as may be desired can be left on the desktop simultaneously. </p><h3 id="a0000000776">X11_persist</h3>
+<p><span id="a0000000777"></span> </p><p>Displays plots on the screen in X11 windows, using Ghostview. Each time a new plot is generated it appears in a new window, and the old plots remain visible. When PyXPlot is exited the windows remain in place until they are closed manually. </p><h3 id="a0000000778">X11_singlewindow</h3>
+<p><span id="a0000000779"></span> </p><p>Displays plots on the screen (in X11 windows, using Ghostview). Each time a new plot is generated it replaces the old one, preventing the desktop from becoming flooded with old plots. This terminal is the default when running interactively. </p></div>
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0124.html" title="style"><img alt="Previous: style" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0074.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0126.html" title="textcolour"><img alt="Next: textcolour" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0158.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

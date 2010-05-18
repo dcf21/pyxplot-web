@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: The Covariance Matrix</title>
+
+<link href="correlation_matrix.html" title="The Correlation Matrix" rel="next" />
+<link href="sect0152.html" title="Estimating the Error in &lt;img src=&quot;images/img-0149.png&quot; alt=&quot;$\mathbf{u}^0$&quot; style=&quot;position:relative; bottom:&amp;images/img-0149.png-depth;px;; width:&amp;images/img-0149.png-width;px;; height:&amp;images/img-0149.png-height;px;&quot; class=&quot;math&quot;&gt;" rel="prev" />
+<link href="fit_math.html" title="The &lt;tt class=&quot;tt&quot;&gt;fit&lt;/tt&gt; Command: Mathematical Details" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0152.html" title="Estimating the Error in "><img alt="Previous: Estimating the Error in " border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="fit_math.html" title="The fit Command: Mathematical Details"><img alt="Up: The fit Command: Mathematical Details" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="correlation_matrix.html" title="The Correlation Matrix"><img alt="Next: The Correlation Matrix" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0158.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="fit_math.html">The <tt class="tt">fit</tt> Command: Mathematical Details</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">The Covariance Matrix</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="a0000000164">D.4 The Covariance Matrix</h1>
+<p> <span id="a0000000826"></span> </p><p>The terms of the covariance matrix <img src="images/img-0169.png" alt="$V_{ij}$" style="position:relative; bottom:-5px; width:21px; height:17px" class="math" /> are defined by: </p><table id="&lt;plasTeX.TeXFragment object at 0x36d1530&gt;" class="equation" width="100%">
+<tr>
+<td>
+<img src="images/img-0170.png" alt="\begin{equation}  \label{def_ covar} V_{ij} = \left&lt; \left(u_ i - u^0_ i\right) \left(u_ j - u^0_ j\right) \right&gt; \end{equation}" style="width:404px; height:24px" />
+<td class="eqnnum"><span>(<span>D.8</span>)</span></td>
+</tr>
+</table><p>Its leading diagonal terms may be recognised as equalling the variances of each of our <img src="images/img-0137.png" alt="$n_\mathrm {u}$" style="position:relative; bottom:-2px; width:19px; height:10px" class="math" /> variables; its cross terms measure the correlation between the variables. If a component <img src="images/img-0171.png" alt="$V_{ij} &gt; 0$" style="position:relative; bottom:-5px; width:55px; height:17px" class="math" />, it implies that higher estimates of the coefficient <img src="images/img-0168.png" alt="$u_ i$" style="position:relative; bottom:-2px; width:15px; height:10px" class="math" /> make higher estimates of <img src="images/img-0172.png" alt="$u_ j$" style="position:relative; bottom:-5px; width:16px; height:13px" class="math" /> more favourable also; if <img src="images/img-0173.png" alt="$V_{ij} &lt; 0$" style="position:relative; bottom:-5px; width:55px; height:17px" class="math" />, the converse is true. </p><p>It is a standard statistical result that <img src="images/img-0174.png" alt="$\mathbf{V} = (-\mathbf{A})^{-1}$" style="position:relative; bottom:-4px; width:102px; height:20px" class="math" />. In the remainder of this section we prove this; readers who are willing to accept this may skip onto Section <a href="correlation_matrix.html">D.5</a>. </p><p>Using <img src="images/img-0175.png" alt="$\Delta u_ i$" style="position:relative; bottom:-2px; width:29px; height:15px" class="math" /> to denote <img src="images/img-0176.png" alt="$\left(u_ i - u^0_ i\right)$" style="position:relative; bottom:-6px; width:69px; height:22px" class="math" />, we may proceed by rewriting equation (<a></a>) as: </p><table id="a0000000827" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
+<tr id="a0000000828">
+    <td>&nbsp;</td>
+    
+    
+        <td style="width:1.400em; vertical-align:baseline; text-align:right"><img src="images/img-0177.png" alt="$\displaystyle  V_{ij}  $" style="position:relative; bottom:13.0px; width:21px; height:17px" class="math" /></td>
+    
+    
+    
+        <td style="width:0.800em; vertical-align:baseline; text-align:center"><img src="images/img-0152.png" alt="$\displaystyle  =  $" style="position:relative; bottom:20.0px; width:12px; height:4px" class="math" /></td>
+    
+    
+    
+        <td style="width:23.133em; vertical-align:baseline; text-align:left"><img src="images/img-0178.png" alt="$\displaystyle  \idotsint _{u_ i=-\infty }^{\infty } \Delta u_ i \Delta u_ j \mathrm{P}\left( \mathbf{u} | \left\{  \mathbf{x}_ i, f_ i, \sigma _ i \right\}  \right) \, \mathrm{d}^{n_\mathrm {u}}\mathbf{u}  $" style="position:relative; bottom:0.0px; width:347px; height:44px" class="math" /></td>
+    
+    
+    <td>&nbsp;</td>
+    <td class="eqnnum"><span>(<span>D.9</span>)</span></td>
+</tr><tr id="a0000000829">
+    <td>&nbsp;</td>
+    
+    
+        <td style="width:0.067em; vertical-align:baseline; text-align:right"><img src="images/img-0154.png" alt="$\displaystyle  $" style="position:relative; bottom:22.0px; width:1px; height:1px" class="math" /></td>
+    
+    
+    
+        <td style="width:0.800em; vertical-align:baseline; text-align:center"><img src="images/img-0152.png" alt="$\displaystyle  =  $" style="position:relative; bottom:24.0px; width:12px; height:4px" class="math" /></td>
+    
+    
+    
+        <td style="width:18.533em; vertical-align:baseline; text-align:left"><img src="images/img-0179.png" alt="$\displaystyle  \frac{ \idotsint _{u_ i=-\infty }^{\infty } \Delta u_ i \Delta u_ j \exp (-Q) \, \mathrm{d}^{n_\mathrm {u}}\mathbf{u} }{ \idotsint _{u_ i=-\infty }^{\infty } \exp (-Q) \, \mathrm{d}^{n_\mathrm {u}}\mathbf{u} } \nonumber  $" style="position:relative; bottom:0.0px; width:278px; height:53px" class="math" /></td>
+    
+    
+    <td>&nbsp;</td>
+    <td class="eqnnum">&nbsp;</td>
+</tr>
+</table><p>The normalisation factor in the denominator of this expression, which we denote as <img src="images/img-0180.png" alt="$Z$" style="position:relative; bottom:0px; width:12px; height:12px" class="math" />, the <i class="itshape">partition function</i>, may be evaluated by <img src="images/img-0137.png" alt="$n_\mathrm {u}$" style="position:relative; bottom:-2px; width:19px; height:10px" class="math" />-dimensional Gaussian integration, and is a standard result: </p><table id="a0000000830" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
+<tr id="a0000000831">
+    <td>&nbsp;</td>
+    
+    
+        <td style="width:0.800em; vertical-align:baseline; text-align:right"><img src="images/img-0181.png" alt="$\displaystyle  Z  $" style="position:relative; bottom:18.0px; width:12px; height:12px" class="math" /></td>
+    
+    
+    
+        <td style="width:0.800em; vertical-align:baseline; text-align:center"><img src="images/img-0152.png" alt="$\displaystyle  =  $" style="position:relative; bottom:20.0px; width:12px; height:4px" class="math" /></td>
+    
+    
+    
+        <td style="width:20.333em; vertical-align:baseline; text-align:left"><img src="images/img-0182.png" alt="$\displaystyle  \idotsint _{u_ i=-\infty }^{\infty } \exp \left(\frac{1}{2} \Delta \mathbf{u}^\mathbf {T} \mathbf{A} \Delta \mathbf{u} \right) \, \mathrm{d}^{n_\mathrm {u}}\mathbf{u}  $" style="position:relative; bottom:0.0px; width:305px; height:45px" class="math" /></td>
+    
+    
+    <td>&nbsp;</td>
+    <td class="eqnnum"><span>(<span>D.10</span>)</span></td>
+</tr><tr id="a0000000832">
+    <td>&nbsp;</td>
+    
+    
+        <td style="width:0.067em; vertical-align:baseline; text-align:right"><img src="images/img-0154.png" alt="$\displaystyle  $" style="position:relative; bottom:17.0px; width:1px; height:1px" class="math" /></td>
+    
+    
+    
+        <td style="width:0.800em; vertical-align:baseline; text-align:center"><img src="images/img-0152.png" alt="$\displaystyle  =  $" style="position:relative; bottom:19.0px; width:12px; height:4px" class="math" /></td>
+    
+    
+    
+        <td style="width:4.933em; vertical-align:baseline; text-align:left"><img src="images/img-0183.png" alt="$\displaystyle  \frac{(2\pi )^{n_\mathrm {u}/2}}{\mathrm{Det}(\mathbf{-A})} \nonumber  $" style="position:relative; bottom:0.0px; width:74px; height:47px" class="math" /></td>
+    
+    
+    <td>&nbsp;</td>
+    <td class="eqnnum">&nbsp;</td>
+</tr>
+</table><p>Differentiating <img src="images/img-0184.png" alt="$\log _ e(Z)$" style="position:relative; bottom:-4px; width:58px; height:18px" class="math" /> with respect of any given component of the Hessian matrix <img src="images/img-0185.png" alt="$A_{ij}$" style="position:relative; bottom:-5px; width:25px; height:17px" class="math" /> yields: </p><table id="a0000000833" class="equation" width="100%">
+<tr>
+<td>
+<img src="images/img-0186.png" alt="\begin{equation}  -2 \frac{\partial }{\partial A_{ij}} \left[ \log _ e(Z) \right] = \frac{1}{Z} \idotsint _{u_ i=-\infty }^{\infty } \Delta u_ i \Delta u_ j \exp (-Q) \, \mathrm{d}^{n_\mathrm {u}}\mathbf{u} \end{equation}" style="width:531px; height:44px" />
+<td class="eqnnum"><span>(<span>D.11</span>)</span></td>
+</tr>
+</table><p>which we may identify as equalling <img src="images/img-0169.png" alt="$V_{ij}$" style="position:relative; bottom:-5px; width:21px; height:17px" class="math" />: </p><table id="&lt;plasTeX.TeXFragment object at 0x36e5530&gt;" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
+<tr id="a0000000834">
+    <td>&nbsp;</td>
+    
+    
+        <td style="width:1.400em; vertical-align:baseline; text-align:right"><img src="images/img-0187.png" alt="$\displaystyle  \label{v_ zrelate} V_{ij}  $" style="position:relative; bottom:14.0px; width:21px; height:17px" class="math" /></td>
+    
+    
+    
+        <td style="width:0.800em; vertical-align:baseline; text-align:center"><img src="images/img-0152.png" alt="$\displaystyle  =  $" style="position:relative; bottom:21.0px; width:12px; height:4px" class="math" /></td>
+    
+    
+    
+        <td style="width:8.867em; vertical-align:baseline; text-align:left"><img src="images/img-0188.png" alt="$\displaystyle  -2 \frac{\partial }{\partial A_{ij}} \left[ \log _ e(Z) \right]  $" style="position:relative; bottom:0.0px; width:133px; height:44px" class="math" /></td>
+    
+    
+    <td>&nbsp;</td>
+    <td class="eqnnum"><span>(<span>D.12</span>)</span></td>
+</tr><tr id="a0000000835">
+    <td>&nbsp;</td>
+    
+    
+        <td style="width:0.067em; vertical-align:baseline; text-align:right"><img src="images/img-0154.png" alt="$\displaystyle  $" style="position:relative; bottom:19.0px; width:1px; height:1px" class="math" /></td>
+    
+    
+    
+        <td style="width:0.800em; vertical-align:baseline; text-align:center"><img src="images/img-0152.png" alt="$\displaystyle  =  $" style="position:relative; bottom:21.0px; width:12px; height:4px" class="math" /></td>
+    
+    
+    
+        <td style="width:22em; vertical-align:baseline; text-align:left"><img src="images/img-0189.png" alt="$\displaystyle  -2 \frac{\partial }{\partial A_{ij}} \left[ \log _ e((2\pi )^{n_\mathrm {u}/2}) - \log _ e(\mathrm{Det}(\mathbf{-A})) \right] \nonumber  $" style="position:relative; bottom:0.0px; width:330px; height:44px" class="math" /></td>
+    
+    
+    <td>&nbsp;</td>
+    <td class="eqnnum">&nbsp;</td>
+</tr><tr id="a0000000836">
+    <td>&nbsp;</td>
+    
+    
+        <td style="width:0.067em; vertical-align:baseline; text-align:right"><img src="images/img-0154.png" alt="$\displaystyle  $" style="position:relative; bottom:19.0px; width:1px; height:1px" class="math" /></td>
+    
+    
+    
+        <td style="width:0.800em; vertical-align:baseline; text-align:center"><img src="images/img-0152.png" alt="$\displaystyle  =  $" style="position:relative; bottom:21.0px; width:12px; height:4px" class="math" /></td>
+    
+    
+    
+        <td style="width:11.867em; vertical-align:baseline; text-align:left"><img src="images/img-0190.png" alt="$\displaystyle  2 \frac{\partial }{\partial A_{ij}} \left[ \log _ e(\mathrm{Det}(\mathbf{-A})) \right] \nonumber  $" style="position:relative; bottom:0.0px; width:178px; height:44px" class="math" /></td>
+    
+    
+    <td>&nbsp;</td>
+    <td class="eqnnum">&nbsp;</td>
+</tr>
+</table><p>This expression may be simplified by recalling that the determinant of a matrix is equal to the scalar product of any of its rows with its cofactors, yielding the result: </p><table id="a0000000837" class="equation" width="100%">
+<tr>
+<td>
+<img src="images/img-0191.png" alt="\begin{equation}  \frac{\partial }{\partial A_{ij}} \left[\mathrm{Det}(\mathbf{-A})\right] = -a_{ij} \end{equation}" style="width:389px; height:44px" />
+<td class="eqnnum"><span>(<span>D.13</span>)</span></td>
+</tr>
+</table><p>where <img src="images/img-0192.png" alt="$a_{ij}$" style="position:relative; bottom:-5px; width:21px; height:13px" class="math" /> is the cofactor of <img src="images/img-0185.png" alt="$A_{ij}$" style="position:relative; bottom:-5px; width:25px; height:17px" class="math" />. Substituting this into equation (<a></a>) yields: </p><table id="a0000000838" class="equation" width="100%">
+<tr>
+<td>
+<img src="images/img-0193.png" alt="\begin{equation}  V_{ij} = \frac{-a_{ij}}{\mathrm{Det}(\mathbf{-A})} \end{equation}" style="width:359px; height:37px" />
+<td class="eqnnum"><span>(<span>D.14</span>)</span></td>
+</tr>
+</table><p>Recalling that the adjoint <img src="images/img-0194.png" alt="$\mathbf{A}^\dagger $" style="position:relative; bottom:0px; width:22px; height:17px" class="math" /> of the Hessian matrix is the matrix of cofactors of its transpose, and that <img src="images/img-0159.png" alt="$\mathbf{A}$" style="position:relative; bottom:0px; width:15px; height:12px" class="math" /> is symmetric, we may write: </p><table id="a0000000839" class="equation" width="100%">
+<tr>
+<td>
+<img src="images/img-0195.png" alt="\begin{equation}  V_{ij} = \frac{-\mathbf{A}^\dagger }{\mathrm{Det}(\mathbf{-A})} \equiv (-\mathbf{A})^{-1} \end{equation}" style="width:403px; height:45px" />
+<td class="eqnnum"><span>(<span>D.15</span>)</span></td>
+</tr>
+</table><p>which proves the result stated earlier. </p></div>
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0152.html" title="Estimating the Error in "><img alt="Previous: Estimating the Error in " border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="fit_math.html" title="The fit Command: Mathematical Details"><img alt="Up: The fit Command: Mathematical Details" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="correlation_matrix.html" title="The Correlation Matrix"><img alt="Next: The Correlation Matrix" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0158.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>
