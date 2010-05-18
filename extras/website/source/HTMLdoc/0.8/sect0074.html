@@ -62,9 +62,9 @@ arc [ item &lt;id&gt; ] [at] &lt;x&gt;, &lt;y&gt; radius &lt;r&gt;
     from &lt;start&gt; to &lt;finish&gt; [ with {&lt;option&gt;} ]
 </pre><p>Arcs (curves with constant radius of curvature, that is, segments of circles) may be drawn on multiplot canvases using the <tt class="tt">arc</tt> command<a name="a0000000916" id="a0000000916"></a>. The <tt class="tt">at</tt> modifier specifies the coordinates of the centre of curvature, from which all points on the arc are at the distance given following the <tt class="tt">radius</tt> modifier. The angles <tt class="tt">start</tt> and <tt class="tt">finish</tt>, measured clockwise from the vertical, control where the arc begins and ends. For example, the command </p><pre>
 arc at 0,0 radius 2 from 90 to 270
-</pre><p>would draw a semi-circle beneath the line <img src="images/img-0131.png" alt="$x=0$" style="vertical-align:0px; 
+</pre><p>would draw a semi-circle beneath the line <img src="images/img-0130.png" alt="$x=0$" style="vertical-align:0px; 
                                      width:43px; 
-                                     height:12px" class="math gen" />, centred on the origin with radius <img src="images/img-0517.png" alt="$2\, \mathrm{cm}$" style="vertical-align:0px; 
+                                     height:12px" class="math gen" />, centred on the origin with radius <img src="images/img-0516.png" alt="$2\, \mathrm{cm}$" style="vertical-align:0px; 
                                      width:34px; 
                                      height:12px" class="math gen" />. The usual style modifiers for lines may be passed after the keyword <tt class="tt">with</tt>; if the <tt class="tt">fillcolour</tt> modifier is specified then the arc will be filled to form a pie-chart slice. </p><p>All vector graphics objects placed on multiplot canvases receive unique identification numbers which count sequentially from one, and which may be listed using the <tt class="tt">list</tt> command. By reference to these numbers, they can be deleted and subsequently restored with the <tt class="tt">delete</tt> and <tt class="tt">undelete</tt> commands respectively. </p></div>
 

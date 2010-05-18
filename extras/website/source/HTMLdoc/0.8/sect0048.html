@@ -64,19 +64,19 @@
 <div><h2 id="a0000000049">1.2.6 Arrows</h2>
 <p>The following plot styles allow arrows or lines to be drawn on graphs with positions dictated by a series of datapoints: </p><ul class="itemize">
 <li><p><tt class="tt">arrows_head</tt><a name="a0000000681" id="a0000000681"></a><a name="a0000000682" id="a0000000682"></a> </p></li><li><p><tt class="tt">arrows_nohead</tt><a name="a0000000683" id="a0000000683"></a><a name="a0000000684" id="a0000000684"></a> </p></li><li><p><tt class="tt">arrows_twohead</tt><a name="a0000000685" id="a0000000685"></a><a name="a0000000686" id="a0000000686"></a> </p></li>
-</ul><p> The plot style of <tt class="tt">arrows</tt><a name="a0000000687" id="a0000000687"></a><a name="a0000000688" id="a0000000688"></a> is an alias for <tt class="tt">arrows_head</tt><a name="a0000000689" id="a0000000689"></a><a name="a0000000690" id="a0000000690"></a>. Each of these plot styles take four columns of data – <img src="images/img-0352.png" alt="$x_1$" style="vertical-align:-2px; 
+</ul><p> The plot style of <tt class="tt">arrows</tt><a name="a0000000687" id="a0000000687"></a><a name="a0000000688" id="a0000000688"></a> is an alias for <tt class="tt">arrows_head</tt><a name="a0000000689" id="a0000000689"></a><a name="a0000000690" id="a0000000690"></a>. Each of these plot styles take four columns of data – <img src="images/img-0351.png" alt="$x_1$" style="vertical-align:-2px; 
                                      width:16px; 
-                                     height:10px" class="math gen" />, <img src="images/img-0353.png" alt="$y_1$" style="vertical-align:-4px; 
+                                     height:10px" class="math gen" />, <img src="images/img-0352.png" alt="$y_1$" style="vertical-align:-4px; 
                                      width:15px; 
-                                     height:12px" class="math gen" />, <img src="images/img-0354.png" alt="$x_2$" style="vertical-align:-2px; 
+                                     height:12px" class="math gen" />, <img src="images/img-0353.png" alt="$x_2$" style="vertical-align:-2px; 
                                      width:17px; 
-                                     height:10px" class="math gen" /> and <img src="images/img-0355.png" alt="$y_2$" style="vertical-align:-4px; 
+                                     height:10px" class="math gen" /> and <img src="images/img-0354.png" alt="$y_2$" style="vertical-align:-4px; 
                                      width:16px; 
-                                     height:12px" class="math gen" /> – and each datapoint results in an arrow being drawn from the point <img src="images/img-0356.png" alt="$(x_1,y_1)$" style="vertical-align:-4px; 
+                                     height:12px" class="math gen" /> – and each datapoint results in an arrow being drawn from the point <img src="images/img-0355.png" alt="$(x_1,y_1)$" style="vertical-align:-4px; 
                                      width:55px; 
-                                     height:18px" class="math gen" /> to the point <img src="images/img-0357.png" alt="$(x_2,y_2)$" style="vertical-align:-4px; 
+                                     height:18px" class="math gen" /> to the point <img src="images/img-0356.png" alt="$(x_2,y_2)$" style="vertical-align:-4px; 
                                      width:55px; 
-                                     height:18px" class="math gen" />. The three plot styles differ in the kinds of arrows that they draw. <tt class="tt">arrows_head</tt><a name="a0000000691" id="a0000000691"></a><a name="a0000000692" id="a0000000692"></a> draws an arrow head at the point <img src="images/img-0357.png" alt="$(x_2,y_2)$" style="vertical-align:-4px; 
+                                     height:18px" class="math gen" />. The three plot styles differ in the kinds of arrows that they draw. <tt class="tt">arrows_head</tt><a name="a0000000691" id="a0000000691"></a><a name="a0000000692" id="a0000000692"></a> draws an arrow head at the point <img src="images/img-0356.png" alt="$(x_2,y_2)$" style="vertical-align:-4px; 
                                      width:55px; 
                                      height:18px" class="math gen" />; <tt class="tt">arrows_nohead</tt><a name="a0000000693" id="a0000000693"></a><a name="a0000000694" id="a0000000694"></a> draws a simple line without arrow heads on either end; <tt class="tt">arrows_twohead</tt><a name="a0000000695" id="a0000000695"></a><a name="a0000000696" id="a0000000696"></a> draws arrow heads on both ends of the arrow. </p><p> <span class="upshape"><span class="mdseries"><span class="rm">A diagram of fluid flow around a vortex.</span></span></span></p><div>
 
@@ -84,18 +84,18 @@
 <tr>
 
     
-    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this example we produce a velocity map of fluid circulating in a vortex. For simplicity, we assume that the fluid in the core of the vortex, at radii <img src="images/img-0358.png" alt="$r&lt;1$" style="vertical-align:0px; 
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this example we produce a velocity map of fluid circulating in a vortex. For simplicity, we assume that the fluid in the core of the vortex, at radii <img src="images/img-0357.png" alt="$r&lt;1$" style="vertical-align:0px; 
                                      width:41px; 
-                                     height:12px" class="math gen" />, is undergoing solid body rotation with velocity <img src="images/img-0359.png" alt="$v\propto r$" style="vertical-align:0px; 
+                                     height:12px" class="math gen" />, is undergoing solid body rotation with velocity <img src="images/img-0358.png" alt="$v\propto r$" style="vertical-align:0px; 
                                      width:41px; 
-                                     height:8px" class="math gen" />, and that the fluid outside this core is behaving as a free vortex with velocity <img src="images/img-0360.png" alt="$v\propto 1/r$" style="vertical-align:-5px; 
+                                     height:8px" class="math gen" />, and that the fluid outside this core is behaving as a free vortex with velocity <img src="images/img-0359.png" alt="$v\propto 1/r$" style="vertical-align:-5px; 
                                      width:59px; 
                                      height:18px" class="math gen" />. First of all, we use a simple python script to generate a datafile with the four columns: </p></td>
 
 </tr><tr>
 
     
-    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">from math import *</tt><br /><tt class="tt">for i in range(-19,20,2):</tt><br /><tt class="tt">for j in range(-19,20,2):</tt><br /><tt class="tt">x = float(i)/2</tt><br /><tt class="tt">y = float(j)/2</tt><br /><tt class="tt">r = sqrt(x**2 + y**2) / 4</tt><br /><tt class="tt">theta = atan2(y,x)</tt><br /><tt class="tt">if (r <img src="images/img-0034.png" alt="$&lt;$" style="vertical-align:0px; 
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">from math import *</tt><br /><tt class="tt">for i in range(-19,20,2):</tt><br /><tt class="tt">for j in range(-19,20,2):</tt><br /><tt class="tt">x = float(i)/2</tt><br /><tt class="tt">y = float(j)/2</tt><br /><tt class="tt">r = sqrt(x**2 + y**2) / 4</tt><br /><tt class="tt">theta = atan2(y,x)</tt><br /><tt class="tt">if (r <img src="images/img-0033.png" alt="$&lt;$" style="vertical-align:0px; 
                                      width:12px; 
                                      height:11px" class="math gen" /> 1.0): v = 1.3*r</tt><br /><tt class="tt">else : v = 1.3/r</tt><br /><tt class="tt">vy = v * cos(theta)</tt><br /><tt class="tt">vx = v * -sin(theta)</tt><br /><tt class="tt">print "%7.3f %7.3f %7.3f %7.3f"%(x,y,vx,vy)</tt> </p></td>
 
@@ -117,7 +117,7 @@
 
     
     <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><p><center>
-<img src="images/img-0362.png" alt="\includegraphics[width=10cm]{examples/eps/ex_vortex}" style="width:10cm" /></center>  </p></td>
+<img src="images/img-0361.png" alt="\includegraphics[width=10cm]{examples/eps/ex_vortex}" style="width:10cm" /></center>  </p></td>
 
 </tr>
 </table>

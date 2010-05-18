@@ -62,9 +62,9 @@
 </div>
 
 <div><h2 id="a0000000024">4.7.2 Changing the Accuracy to which Numbers are Displayed</h2>
-<p>By default, when numbers are displayed, they are printed accurate to eight significant figures, although fewer figures may actually be displayed if the final digits are zeros or nines. </p><p>This is generally a helpful convention: PyXPlot’s internal arithmetic is generally accurate to around 16 significant figures, and so it is quite conceivable that a calculation which is supposed to return, say <img src="images/img-0127.png" alt="$1$" style="vertical-align:0px; 
+<p>By default, when numbers are displayed, they are printed accurate to eight significant figures, although fewer figures may actually be displayed if the final digits are zeros or nines. </p><p>This is generally a helpful convention: PyXPlot’s internal arithmetic is generally accurate to around 16 significant figures, and so it is quite conceivable that a calculation which is supposed to return, say <img src="images/img-0126.png" alt="$1$" style="vertical-align:0px; 
                                      width:7px; 
-                                     height:12px" class="math gen" />, may in fact return 0.999 999 999 999 999 9. Likewise, when complex arithmetic is enabled, routines which are expected to return real numbers may in fact return results with imaginary parts at the level of one part in <img src="images/img-0128.png" alt="$10^{16}$" style="vertical-align:0px; 
+                                     height:12px" class="math gen" />, may in fact return 0.999 999 999 999 999 9. Likewise, when complex arithmetic is enabled, routines which are expected to return real numbers may in fact return results with imaginary parts at the level of one part in <img src="images/img-0127.png" alt="$10^{16}$" style="vertical-align:0px; 
                                      width:31px; 
                                      height:16px" class="math gen" />. By displaying numbers to only eight significant figures in such cases, the user is usually shown the ‘right’ answer, instead of a noisy and unattractive one. </p><p>However, there may also be cases where more accuracy is desirable, in which case, the number of significant figures to which output is displayed can be set using the command<a name="a0000000438" id="a0000000438"></a> </p><pre>
 n = 12

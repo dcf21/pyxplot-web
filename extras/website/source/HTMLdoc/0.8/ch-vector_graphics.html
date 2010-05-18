@@ -6,8 +6,8 @@
 <title>: Producing Vector Graphics</title>
 
 <link href="sec-multiplot.html" title="Multiplot Mode" rel="next" />
-<link href="sec-file_backup.html" title="Backing Up Over-Written Files" rel="prev" />
-<link href="sect0042.html" title="Plotting and Vector Graphics" rel="up" />
+<link href="index.html" rel="prev" />
+<link href="index.html" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-file_backup.html" title="Backing Up Over-Written Files"><img alt="Previous: Backing Up Over-Written Files" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="index.html" title=""><img alt="Previous: " border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0042.html" title="Plotting and Vector Graphics"><img alt="Up: Plotting and Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="index.html" title=""><img alt="Up: " border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="sec-multiplot.html" title="Multiplot Mode"><img alt="Next: Multiplot Mode" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0010.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -38,11 +38,6 @@
 </span>
 
 </span><span>
-<span>
-<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
-</span>
-
-</span><span>
 
 <span>
 <b class="current">Producing Vector Graphics</b>
@@ -51,80 +46,83 @@
 <hr />
 </div>
 
-<div><h1 id="ch:vector_graphics">3 Producing Vector Graphics</h1>
-<p>In the previous two chapters, we have seen how the <tt class="tt">plot</tt> command<a name="a0000000835" id="a0000000835"></a> may be used to produce single graphs of functions and datafiles, how the <tt class="tt">set terminal</tt> command<a name="a0000000836" id="a0000000836"></a> can be used to produce graphical output in a wide range of different image formats (see Section <a href="sec-set_terminal.html">2.1</a>), and how the <tt class="tt">set papersize</tt> command<a name="a0000000837" id="a0000000837"></a> can be used to produce PostScript output to fit on different sizes of paper (see Section <a href="sec-set_papersize.html">2.3.1</a>). Often, however, there is a need to produce more sophisticated vector graphics. For example, several plots may be wanted side-by-side, or some line-art annotations may be wanted on top of a graph. Additionally, PyXPlot can also produce technical diagrams as well as graphs. In this chapter, we turn our attention to such cases. </p><p>Several of the vector graphics commands described in this chapter take rotation angles as one of their inputs. It should be stressed that PyXPlot has two modes for handling angles: they can either be treated as dimensionless numbers or as being an additional base unit within the SI system (see Section <a href="sec-angles.html">4.6.1</a>). Where the vector graphics commands described in this chapter take rotation angles, a choice is always provided between expressing the angles as dimensionless numbers, measured in degrees, or as quantities with physical dimensions of angle. Thus, the following ways of specifying angles are all valid: </p><p><table cellspacing="0" class="tabular">
+<div><h1 id="ch:vector_graphics">1 Producing Vector Graphics</h1>
+<p>In the previous two chapters, we have seen how the <tt class="tt">plot</tt> command<a name="a0000000012" id="a0000000012"></a> may be used to produce single graphs of functions and datafiles, how the <tt class="tt">set terminal</tt> command<a name="a0000000013" id="a0000000013"></a> can be used to produce graphical output in a wide range of different image formats (see Section <a href="sec-set_terminal.html">2.1</a>), and how the <tt class="tt">set papersize</tt> command<a name="a0000000014" id="a0000000014"></a> can be used to produce PostScript output to fit on different sizes of paper (see Section <a href="sec-set_papersize.html">2.3.1</a>). Often, however, there is a need to produce more sophisticated vector graphics. For example, several plots may be wanted side-by-side, or some line-art annotations may be wanted on top of a graph. Additionally, PyXPlot can also produce technical diagrams as well as graphs. In this chapter, we turn our attention to such cases. </p><p>Several of the vector graphics commands described in this chapter take rotation angles as one of their inputs. It should be stressed that PyXPlot has two modes for handling angles: they can either be treated as dimensionless numbers or as being an additional base unit within the SI system (see Section <a href="sec-angles.html">1.6.1</a>). Where the vector graphics commands described in this chapter take rotation angles, a choice is always provided between expressing the angles as dimensionless numbers, measured in degrees, or as quantities with physical dimensions of angle. Thus, the following ways of specifying angles are all valid: </p><p><table cellspacing="0" class="tabular">
 <tr>
 
     
-    <td style="text-align:left"><p><big class="xlarge">Uding<img src="images/img-0030.png" alt="\symbol{'042}" style="vertical-align:6px; width:7px; height:6px" class="symbol gen" /></big></p></td>
+    <td style="text-align:left"><p>
+<img src="images/img-0004.png" alt="\includegraphics[width=0.9cm]{tick.eps}" style="width:0.9cm" /> </p></td>
 
     
-    <td style="text-align:left"><p><div style="width:0.0pt" class="minipage"><tt class="tt"> set unit angle nodimensionless<br />text "foo" rotate unit(pi*rad)<br />text "foo" rotate 180<br />text "foo" rotate unit(0.25*revolution) </tt></div></p></td>
+    <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> set unit angle nodimensionless<br />text "foo" rotate unit(pi*rad)<br />text "foo" rotate 180<br />text "foo" rotate unit(0.25*revolution) </tt></div></p></td>
 
 </tr>
 </table> </p><p>as are these ways: </p><p><table cellspacing="0" class="tabular">
 <tr>
 
     
-    <td style="text-align:left"><p><big class="xlarge">Uding<img src="images/img-0030.png" alt="\symbol{'042}" style="vertical-align:6px; width:7px; height:6px" class="symbol gen" /></big></p></td>
+    <td style="text-align:left"><p>
+<img src="images/img-0004.png" alt="\includegraphics[width=0.9cm]{tick.eps}" style="width:0.9cm" /> </p></td>
 
     
-    <td style="text-align:left"><p><div style="width:0.0pt" class="minipage"><tt class="tt"> set unit angle dimensionless<br />text "foo" rotate 180<br />text "foo" rotate degrees(pi) </tt></div></p></td>
+    <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> set unit angle dimensionless<br />text "foo" rotate 180<br />text "foo" rotate degrees(pi) </tt></div></p></td>
 
 </tr>
-</table> </p><p>The following is <i class="it">not</i> valid, because the angle of <img src="images/img-0443.png" alt="$180^\circ $" style="vertical-align:0px; 
+</table> </p><p>The following is <i class="it">not</i> valid, because the angle of <img src="images/img-0005.png" alt="$180^\circ $" style="vertical-align:0px; 
                                      width:33px; 
                                      height:13px" class="math gen" /> is passed to the <tt class="tt">text</tt> command in radians: </p><p><table cellspacing="0" class="tabular">
 <tr>
 
     
-    <td style="text-align:left"><p><big class="xlarge">Uding<img src="images/img-0029.png" alt="\symbol{'045}" style="vertical-align:-1px; width:13px; height:15px" class="symbol gen" /></big></p></td>
+    <td style="text-align:left"><p>
+<img src="images/img-0006.png" alt="\includegraphics[width=0.9cm]{cross.eps}" style="width:0.9cm" /></p></td>
 
     
-    <td style="text-align:left"><p><div style="width:0.0pt" class="minipage"><tt class="tt"> set unit angle dimensionless<br />text "foo" rotate unit(180*deg) </tt></div></p></td>
+    <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> set unit angle dimensionless<br />text "foo" rotate unit(180*deg) </tt></div></p></td>
 
 </tr>
 </table> </p></div>
 
 <div class="contents chapter-contents"><!--<strong>Subsections</strong>-->
 <ul>
-<li><a href="sec-multiplot.html">3.1 Multiplot Mode</a>
+<li><a href="sec-multiplot.html">1.1 Multiplot Mode</a>
    <ul>
-   <li><a href="sect0062.html">3.1.1 Settings Associated with Multiplot Items</a>
+   <li><a href="sect0001.html">1.1.1 Settings Associated with Multiplot Items</a>
        
-   </li><li><a href="sect0063.html">3.1.2 Reordering Multiplot Items</a>
+   </li><li><a href="sect0002.html">1.1.2 Reordering Multiplot Items</a>
        
-   </li><li><a href="sec-set_display.html">3.1.3 The Construction of Large Multiplots</a>
+   </li><li><a href="sec-set_display.html">1.1.3 The Construction of Large Multiplots</a>
        
    </li>
    </ul>
-</li><li><a href="sect0064.html">3.2 Linked Axes and Galleries of Plots</a>
+</li><li><a href="sect0003.html">1.2 Linked Axes and Galleries of Plots</a>
    
-</li><li><a href="sect0065.html">3.3 The <tt class="tt">replot</tt> Command Revisited</a>
+</li><li><a href="sect0004.html">1.3 The <tt class="tt">replot</tt> Command Revisited</a>
    
-</li><li><a href="sect0066.html">3.4 Adding Other Vector Graphics Objects</a>
+</li><li><a href="sect0005.html">1.4 Adding Other Vector Graphics Objects</a>
    <ul>
-   <li><a href="sect0067.html">3.4.1 The <tt class="tt">text</tt> Command</a>
+   <li><a href="sect0006.html">1.4.1 The <tt class="tt">text</tt> Command</a>
        
-   </li><li><a href="ex-nanotubes.html">3.4.2 The <tt class="tt">arrow</tt> and <tt class="tt">line</tt> Commands</a>
+   </li><li><a href="ex-nanotubes.html">1.4.2 The <tt class="tt">arrow</tt> and <tt class="tt">line</tt> Commands</a>
        
-   </li><li><a href="sect0068.html">3.4.3 The <tt class="tt">image</tt> Command</a>
+   </li><li><a href="sect0007.html">1.4.3 The <tt class="tt">image</tt> Command</a>
        
-   </li><li><a href="sect0069.html">3.4.4 The <tt class="tt">eps</tt> Command</a>
+   </li><li><a href="sect0008.html">1.4.4 The <tt class="tt">eps</tt> Command</a>
        
-   </li><li><a href="ex-mandelbrot.html">3.4.5 The <tt class="tt">box</tt> and <tt class="tt">circle</tt> Commands</a>
+   </li><li><a href="ex-mandelbrot.html">1.4.5 The <tt class="tt">box</tt> and <tt class="tt">circle</tt> Commands</a>
        
-   </li><li><a href="ex-lens.html">3.4.6 The <tt class="tt">arc</tt> Command</a>
+   </li><li><a href="ex-lens.html">1.4.6 The <tt class="tt">arc</tt> Command</a>
        
-   </li><li><a href="sec-point.html">3.4.7 The <tt class="tt">point</tt> Command</a>
+   </li><li><a href="sec-point.html">1.4.7 The <tt class="tt">point</tt> Command</a>
        
-   </li><li><a href="sec-ellipse.html">3.4.8 The <tt class="tt">ellipse</tt> Command</a>
+   </li><li><a href="sec-ellipse.html">1.4.8 The <tt class="tt">ellipse</tt> Command</a>
        
-   </li><li><a href="sec-piechart.html">3.4.9 The <tt class="tt">piechart</tt> Command</a>
+   </li><li><a href="sec-piechart.html">1.4.9 The <tt class="tt">piechart</tt> Command</a>
        
    </li>
    </ul>
-</li><li><a href="sect0070.html">3.5 LaTeX and PyXPlot</a>
+</li><li><a href="sect0009.html">1.5 LaTeX and PyXPlot</a>
    
 </li>
 
@@ -138,16 +136,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-file_backup.html" title="Backing Up Over-Written Files"><img alt="Previous: Backing Up Over-Written Files" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="index.html" title=""><img alt="Previous: " border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0042.html" title="Plotting and Vector Graphics"><img alt="Up: Plotting and Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="index.html" title=""><img alt="Up: " border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="sec-multiplot.html" title="Multiplot Mode"><img alt="Next: Multiplot Mode" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0010.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

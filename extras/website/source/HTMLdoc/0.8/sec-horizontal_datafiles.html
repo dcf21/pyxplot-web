@@ -66,11 +66,11 @@
 plot 'data.dat' index 1 using rows 1:2
 </pre><p>For completeness, the syntax <tt class="tt">using</tt> <tt class="tt">columns</tt><a name="a0000000336" id="a0000000336"></a> is also accepted, specifying that columns should be plotted against one another as happens by default: </p><pre>
 plot 'data.dat' index 1 using columns 1:2
-</pre><p>When plotting horizontally-arranged datafiles, the meanings of the <tt class="tt">index</tt> and <tt class="tt">every</tt> modifiers are altered slightly. The former continues to refer to vertically-displaced blocks of data separated by two blank lines. Blocks, as referenced in the <tt class="tt">every</tt> modifier, likewise continue to refer to vertically-displaced blocks of datapoints, separated by single blank lines. The row numbers passed to the <tt class="tt">using</tt> modifier are counted from the top of the current block. </p><p>However, the line numbers specified in the <tt class="tt">every</tt><a name="a0000000337" id="a0000000337"></a> modifier – i.e. variables <img src="images/img-0036.png" alt="$a$" style="vertical-align:0px; 
+</pre><p>When plotting horizontally-arranged datafiles, the meanings of the <tt class="tt">index</tt> and <tt class="tt">every</tt> modifiers are altered slightly. The former continues to refer to vertically-displaced blocks of data separated by two blank lines. Blocks, as referenced in the <tt class="tt">every</tt> modifier, likewise continue to refer to vertically-displaced blocks of datapoints, separated by single blank lines. The row numbers passed to the <tt class="tt">using</tt> modifier are counted from the top of the current block. </p><p>However, the line numbers specified in the <tt class="tt">every</tt><a name="a0000000337" id="a0000000337"></a> modifier – i.e. variables <img src="images/img-0035.png" alt="$a$" style="vertical-align:0px; 
                                      width:9px; 
-                                     height:8px" class="math gen" />, <img src="images/img-0040.png" alt="$c$" style="vertical-align:0px; 
+                                     height:8px" class="math gen" />, <img src="images/img-0039.png" alt="$c$" style="vertical-align:0px; 
                                      width:8px; 
-                                     height:8px" class="math gen" /> and <img src="images/img-0042.png" alt="$e$" style="vertical-align:0px; 
+                                     height:8px" class="math gen" /> and <img src="images/img-0041.png" alt="$e$" style="vertical-align:0px; 
                                      width:8px; 
                                      height:8px" class="math gen" /> in the system introduced in the previous section – now refer to vertical column numbers. For example, </p><pre>
 plot 'data.dat' using rows 1:2 every 2::3::9

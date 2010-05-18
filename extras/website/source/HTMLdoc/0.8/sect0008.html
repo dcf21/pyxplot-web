@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Installation</title>
+<title>: The eps Command</title>
 
-<link href="sect0009.html" title="Installation within Linux Distributions" rel="next" />
-<link href="sect0007.html" title="System Requirements" rel="prev" />
-<link href="ch-installation.html" title="Installation" rel="up" />
+<link href="ex-mandelbrot.html" title="The box and circle Commands" rel="next" />
+<link href="sect0007.html" title="The image Command" rel="prev" />
+<link href="sect0005.html" title="Adding Other Vector Graphics Objects" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0007.html" title="System Requirements"><img alt="Previous: System Requirements" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0007.html" title="The image Command"><img alt="Previous: The image Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-installation.html" title="Installation"><img alt="Up: Installation" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0005.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0009.html" title="Installation within Linux Distributions"><img alt="Next: Installation within Linux Distributions" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ex-mandelbrot.html" title="The box and circle Commands"><img alt="Next: The box and circle Commands" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0010.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,56 +39,47 @@
 
 </span><span>
 <span>
-<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+<a href="ch-vector_graphics.html">Producing Vector Graphics</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="ch-installation.html">Installation</a> <b>:</b>
+<a href="sect0005.html">Adding Other Vector Graphics Objects</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">Installation</b>
+<b class="current">The <tt class="tt">eps</tt> Command</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000009">2.2 Installation</h1>
-<p> <a name="a0000000268" id="a0000000268"></a> </p></div>
-
-<div class="contents section-contents"><!--<strong>Subsections</strong>-->
-<ul>
-<li><a href="sect0009.html">2.2.1 Installation within Linux Distributions</a>
-   
-</li><li><a href="sect0010.html">2.2.2 Installation as User</a>
-   
-</li><li><a href="sect0011.html">2.2.3 System-wide Installation</a>
-   
-</li>
+<div><h2 id="a0000000009">1.4.4 The <tt class="tt">eps</tt> Command</h2>
+<p>Vector graphic images in eps format may be placed on multiplot canvases using the <tt class="tt">eps</tt> command<a name="a0000000068" id="a0000000068"></a>, which has a syntax analogous to the <tt class="tt">image</tt> command. However neither height nor width need be specified; in this case the image will be included at its native size. For example: </p><pre>
+eps 'filename' at 3,2 rotate 5
+</pre><p>will place the eps file with its bottom-left corner at position <img src="images/img-0028.png" alt="$(3,2)$" style="vertical-align:-4px; 
+                                     width:38px; 
+                                     height:18px" class="math gen" /> cm from the origin, rotated counter-clockwise through 5 degrees. </p></div>
 
 
-
-</ul>
-</div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0007.html" title="System Requirements"><img alt="Previous: System Requirements" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0007.html" title="The image Command"><img alt="Previous: The image Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-installation.html" title="Installation"><img alt="Up: Installation" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0005.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0009.html" title="Installation within Linux Distributions"><img alt="Next: Installation within Linux Distributions" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ex-mandelbrot.html" title="The box and circle Commands"><img alt="Next: The box and circle Commands" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0010.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

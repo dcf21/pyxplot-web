@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: A Whirlwind Tour</title>
+<title>: The replot Command Revisited</title>
 
-<link href="sect0005.html" title="Acknowledgments" rel="next" />
-<link href="sect0003.html" title="The Structure of this Manual" rel="prev" />
-<link href="ch-introduction.html" title="Introduction" rel="up" />
+<link href="sect0005.html" title="Adding Other Vector Graphics Objects" rel="next" />
+<link href="sect0003.html" title="Linked Axes and Galleries of Plots" rel="prev" />
+<link href="ch-vector_graphics.html" title="Producing Vector Graphics" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0003.html" title="The Structure of this Manual"><img alt="Previous: The Structure of this Manual" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0003.html" title="Linked Axes and Galleries of Plots"><img alt="Previous: Linked Axes and Galleries of Plots" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-introduction.html" title="Introduction"><img alt="Up: Introduction" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-vector_graphics.html" title="Producing Vector Graphics"><img alt="Up: Producing Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0005.html" title="Acknowledgments"><img alt="Next: Acknowledgments" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0005.html" title="Adding Other Vector Graphics Objects"><img alt="Next: Adding Other Vector Graphics Objects" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0010.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,79 +39,49 @@
 
 </span><span>
 <span>
-<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
-</span>
-
-</span><span>
-<span>
-<a href="ch-introduction.html">Introduction</a> <b>:</b>
+<a href="ch-vector_graphics.html">Producing Vector Graphics</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">A Whirlwind Tour</b>
+<b class="current">The <tt class="tt">replot</tt> Command Revisited</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000005">1.3 A Whirlwind Tour</h1>
-<p>Before beginning a more systematic tutorial in Chapter <a href="ch-first_steps.html">3</a>, we provide a brief tour of a subset of PyXPlot’s features, with references to those chapters of this manual where further details can be found. This section should provide some flavour of the wide range of tasks for which PyXPlot can be used. This is not the place for long-winded explanations of the syntax of each of the quoted PyXPlot commands, but most of the examples will work if pasted directly into a PyXPlot command prompt. </p><p>We will assume that the user has already successfully installed PyXPlot, and has just opened a new PyXPlot command prompt. For instructions on how to install PyXPlot, see Chapter <a href="ch-installation.html">2</a>. </p><p>The first command which any such tour must visit – the workhorse command of PyXPlot – is the <tt class="tt">plot</tt> command<a name="a0000000238" id="a0000000238"></a>. This can be used to plot graphs of either mathematical functions, by typing, for example </p><pre>
-plot log(x)
-</pre><p>or datafiles, by typing<a href="#a0000000239" class="footnote"><sup class="footnotemark">1</sup></a> </p><pre>
-plot 'datafile.dat'
-</pre><p>There are many commands which allow you to configure the appearance of the plots produced by the <tt class="tt">plot</tt> command<a name="a0000000240" id="a0000000240"></a>, or to select which data from a datafile are plotted; these will be discussed at length in Chapters <a href="ch-first_steps.html">3</a> and <a href="ch-plotting.html">1</a>. </p><p>PyXPlot has extensive facilities for converting datafiles between different physical units – for example, you can tell it that a column of a datafile represents lengths measured in inches, and request it to plot those lengths on a graph in millimetres. These facilities can also be applied to numerical quantities entered by the user. For example, you can define a variable which has physical dimensions of length, and then display its value in different units as follows: </p><pre>
-x = 2 * unit(m)
-print x / unit(inch)
-</pre><p>When arithmetic operations are applied to numerical quantities which have physical units, the units propagate intuitively: in the above example, <tt class="tt">x*x</tt> would compute to four square metres. However, the expression <tt class="tt">x*x+x</tt> would throw an error message because it is not dimensionally correct: the first term has dimensions of area whilst the second term has dimensions of length, and these cannot be added. More details of the use of physical units in PyXPlot are given in Section <a href="sec-units.html">1.6</a>, and Appendix <a href="ch-unit_list.html">4</a> lists all of the physical units which PyXPlot recognises by default. </p><p>Users can add their own units to those recognised by PyXPlot by means of a configuration file, and these can be declared either as alternative measures of existing quantities such as length or mass, or as measures of new base quantities such as man-hours of labour or numbers of CPU cycles. More details about how to do this are given in Chapter <a href="ch-configuration.html">8</a>. </p><p>The way in which physical units are displayed can be extensively configured – for example, the automatic use of SI prefixes such as milli- and kilo- is optional, and the user can request that quantities be displayed in CGS or imperial units by default. Other settings instruct PyXPlot to display numerical results in a way which can be pasted into future PyXPlot sessions – <tt class="tt">2*unit(m)</tt> instead of <img src="images/img-0004.png" alt="$2\, \mathrm{m}$" style="vertical-align:0px; 
-                                     width:26px; 
-                                     height:12px" class="math gen" /> – or in LaTeX source code, as <tt class="tt">$<img src="images/img-0005.png" alt="$2\backslash $" style="vertical-align:-5px; 
-                                     width:16px; 
-                                     height:18px" class="math gen" />,<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
-                                     width:7px; 
-                                     height:18px" class="math gen" />mathrm{m}$</tt>. </p><p>PyXPlot can perform algebra on complex as well as real numbers. By default, evaluation of <tt class="tt">sqrt(-1)</tt> throws an error, as the emergence of complex numbers is often an indication that a calculation has gone wrong. Complex arithmetic can be enabled by typing<a name="a0000000241" id="a0000000241"></a> </p><pre>
-set numerics complex
-print sqrt(-1)
-</pre><p>Many of the mathematical functions which are built into PyXPlot, a complete list of which can be found in Appendix <a href="ch-function_list.html">2</a> or by typing <tt class="tt">show functions</tt>, can take complex arguments, for example </p><pre>
-print exp(2+3*i)
-print sin(i)
-</pre><p>For more details, see Section <a href="sec-complex_numbers.html">1.5</a>. </p><p>In the above example, the variable <tt class="tt">i</tt> is a pre-defined constant in PyXPlot, in this case set to equal <img src="images/img-0007.png" alt="$\sqrt {-1}$" style="vertical-align:-3px; 
-                                     width:38px; 
-                                     height:19px" class="math gen" />. PyXPlot has many other pre-defined physical and mathematical constants, and complete list of which can found in Appendix <a href="ch-constants.html">3</a> or by typing <tt class="tt">show variables</tt>. These, together with the physical units which are built into PyXPlot make it easy to answer a wide range of questions very quickly. In the following examples, and throughout this Users’ Guide, we show the commands typed by the user in <tt class="tt"><b class="bf">bold face</b></tt>, preceded by PyXPlot prompts <tt class="tt">pyxplot&gt;</tt> and followed by the text returned by PyXPlot. Any comments are shown in <tt class="tt"><i class="it">italic face</i></tt> preceded by a hash character (<tt class="tt"><i class="it">#</i></tt>). </p><ul class="itemize">
-<li><p>What is <img src="images/img-0008.png" alt="$80^\circ $" style="vertical-align:0px; 
-                                     width:25px; 
-                                     height:13px" class="math gen" />F in Celsius? </p><p> <tt class="tt">pyxplot&gt; <b class="bf">print 80*unit(oF) / unit(oC)</b></tt><br /><tt class="tt">26.666667</tt>  </p></li><li><p>How long does it take for light to travel from the Sun to the Earth? </p><p> <tt class="tt">pyxplot&gt; <b class="bf">print unit(AU) / phy_c</b></tt><br /><tt class="tt">499.00478 s</tt>  </p></li><li><p>What wavelength of light corresponds to the ionisation energy of hydrogen (13.6 eV)? </p><p> <tt class="tt">pyxplot&gt; <b class="bf">print phy_c * phy_h / (13.6 * unit(eV))</b></tt><br /><tt class="tt">91.164844 nm</tt>  </p></li><li><p>What is the escape velocity of the Earth? </p><p> <tt class="tt">pyxplot&gt; <b class="bf">print sqrt(2 * phy_G * unit(Mearth) / unit(Rearth))</b></tt><br /><tt class="tt">11.186948 km/s</tt>  </p></li>
-</ul><p>In addition, PyXPlot provides extensive functions for numerically solving equations, which will be described in detail in Chapter <a href="ch-numerics.html">5</a>. The following example evaluates <img src="images/img-0009.png" alt="$\int _{0\, \mathrm{s}}^{2\, \mathrm{s}} x^2\, \mathrm{d}x$" style="vertical-align:-6px; 
-                                     width:71px; 
-                                     height:25px" class="math gen" />: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">print int_dx(x**2,0*unit(s),2*unit(s))</b></tt><br /><tt class="tt">2.6666667 s**3</tt>  </p><p>This example solves a simple pair of simultaneous equations of two variables: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">solve x+y=1 , 2*x+3*y=7 via x,y</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print "x=%s; y=%s"%(x,y)</b></tt><br /><tt class="tt">x=-4; y=5</tt>  </p><p>And this third example searches for the minimum of the function <img src="images/img-0010.png" alt="$\cos (x)$" style="vertical-align:-4px; 
-                                     width:47px; 
-                                     height:18px" class="math gen" /> closest to <img src="images/img-0011.png" alt="$x=0.5$" style="vertical-align:0px; 
-                                     width:57px; 
-                                     height:13px" class="math gen" />: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">x=0.5</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">minimise cos(x) via x</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print x</b></tt><br /><tt class="tt">3.1415927</tt>  </p><p>This tour has touched briefly upon a few areas of PyXPlot’s functionality, but has not described its facilities for producing vector graphics, which will be discussed in detail in Chapter <a href="ch-vector_graphics.html">2</a> with numerous examples. </p></div>
+<div><h1 id="a0000000005">1.3 The <tt class="tt">replot</tt> Command Revisited</h1>
+<p>In multiplot mode, the <tt class="tt">replot</tt> command<a name="a0000000033" id="a0000000033"></a> can be used to modify the last plot added to the page. For example, the following would change the title of the latest plot to ‘foo’, and add a plot of the function <img src="images/img-0016.png" alt="$g(x)$" style="vertical-align:-4px; 
+                                     width:32px; 
+                                     height:18px" class="math gen" /> to it: </p><pre>
+set title 'foo'
+replot cos(x)
+</pre><p>Additionally, it is possible to modify any plot on the page by adding an <tt class="tt">item</tt> modifier to the <tt class="tt">replot</tt> statement to specify which plot should be replotted. The following example would produce two plots, and then add an additional function to the first plot: </p><pre>
+set multiplot
+plot f(x)
+set origin 10,0
+plot g(x)
+replot item 1 h(x)
+</pre><p>If no <tt class="tt">item</tt> number is specified, then the <tt class="tt">replot</tt> command<a name="a0000000034" id="a0000000034"></a> acts by default upon the most recent plot to have been added to the multiplot canvas. </p></div>
 
 
 
-<div id="footnotes">
-<p><b>Footnotes</b></p>
-<ol>
-<li id="a0000000239">This example requires you to have a plain text data file called <tt class="tt">datafile.dat</tt> in your current working directory, and is the only example in this section which may not work out of the box.</li>
-</ol>
-</div>
+
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0003.html" title="The Structure of this Manual"><img alt="Previous: The Structure of this Manual" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0003.html" title="Linked Axes and Galleries of Plots"><img alt="Previous: Linked Axes and Galleries of Plots" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-introduction.html" title="Introduction"><img alt="Up: Introduction" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-vector_graphics.html" title="Producing Vector Graphics"><img alt="Up: Producing Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0005.html" title="Acknowledgments"><img alt="Next: Acknowledgments" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0005.html" title="Adding Other Vector Graphics Objects"><img alt="Next: Adding Other Vector Graphics Objects" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0010.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

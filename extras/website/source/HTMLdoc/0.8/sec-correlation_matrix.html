@@ -57,25 +57,25 @@
 </div>
 
 <div><h1 id="sec:correlation_matrix">C.5 The Correlation Matrix</h1>
-<p>  <a name="a0000001526" id="a0000001526"></a> </p><p>Having evaluated the covariance matrix, we may straightforwardly find the standard deviations in each of our variables, by taking the square roots of the terms along its leading diagonal. For datafiles where the user does not specify the standard deviations <img src="images/img-0671.png" alt="$\sigma _ i$" style="vertical-align:-2px; 
+<p>  <a name="a0000001526" id="a0000001526"></a> </p><p>Having evaluated the covariance matrix, we may straightforwardly find the standard deviations in each of our variables, by taking the square roots of the terms along its leading diagonal. For datafiles where the user does not specify the standard deviations <img src="images/img-0670.png" alt="$\sigma _ i$" style="vertical-align:-2px; 
                                      width:15px; 
-                                     height:10px" class="math gen" /> in each value <img src="images/img-0670.png" alt="$f_ i$" style="vertical-align:-4px; 
+                                     height:10px" class="math gen" /> in each value <img src="images/img-0669.png" alt="$f_ i$" style="vertical-align:-4px; 
                                      width:13px; 
-                                     height:16px" class="math gen" />, the task is not quite complete, as the Hessian matrix depends critically upon these uncertainties, even if they are assumed the same for all of our <img src="images/img-0670.png" alt="$f_ i$" style="vertical-align:-4px; 
+                                     height:16px" class="math gen" />, the task is not quite complete, as the Hessian matrix depends critically upon these uncertainties, even if they are assumed the same for all of our <img src="images/img-0669.png" alt="$f_ i$" style="vertical-align:-4px; 
                                      width:13px; 
-                                     height:16px" class="math gen" />. This point is returned to in Section <a href="sec-finding_sigmai.html">C.6</a>. </p><p>The correlation matrix <img src="images/img-0728.png" alt="$\mathbf{C}$" style="vertical-align:0px; 
+                                     height:16px" class="math gen" />. This point is returned to in Section <a href="sec-finding_sigmai.html">C.6</a>. </p><p>The correlation matrix <img src="images/img-0727.png" alt="$\mathbf{C}$" style="vertical-align:0px; 
                                      width:13px; 
                                      height:12px" class="math gen" />, whose terms are given by: </p><table id="a0000001527" class="equation" width="100%" cellspacing="0" cellpadding="7">
 <tr>
     
     <td style="width:40%">&nbsp;</td>
-    <td><img src="images/img-0729.png" alt="\begin{equation}  C_{ij} = \frac{V_{ij}}{\sigma _ i\sigma _ j} \end{equation}" style="width:341px; 
+    <td><img src="images/img-0728.png" alt="\begin{equation}  C_{ij} = \frac{V_{ij}}{\sigma _ i\sigma _ j} \end{equation}" style="width:341px; 
                             height:42px" class="math gen" /></td>
     
     <td style="width:40%">&nbsp;</td>
     <td class="eqnnum" style="width:20%"><span>(<span>C.16</span>)</span></td>
 </tr>
-</table><p>may be considered a more user-friendly version of the covariance matrix for inspecting the correlation between parameters. The leading diagonal terms are all clearly equal unity by construction. The cross terms lie in the range <img src="images/img-0730.png" alt="$-1 \leq C_{ij} \leq 1$" style="vertical-align:-5px; 
+</table><p>may be considered a more user-friendly version of the covariance matrix for inspecting the correlation between parameters. The leading diagonal terms are all clearly equal unity by construction. The cross terms lie in the range <img src="images/img-0729.png" alt="$-1 \leq C_{ij} \leq 1$" style="vertical-align:-5px; 
                                      width:103px; 
                                      height:17px" class="math gen" />, the upper limit of this range representing perfect correlation between parameters, and the lower limit perfect anti-correlation. </p></div>
 
