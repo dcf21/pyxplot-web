@@ -38,8 +38,9 @@ set x2label "Frequency"     ; set unit of frequency Hz
 #set x3label "Photon Energy" ; set unit of energy eV
 set axis x2 bottom linked x1 using phy_c/x
 #set axis x3 bottom linked x2 using phy_h*x
-set x2tics (1e12,1e13,1e14,1e15)
-set mx2tics (2e11,2e12,2e13,2e14,2e15,5e11,5e12,5e13,5e14,5e15)
+Hz=unit(Hz)
+set x2tics (1e12*Hz,1e13*Hz,1e14*Hz,1e15*Hz)
+set mx2tics (2e11*Hz,2e12*Hz,2e13*Hz,2e14*Hz,2e15*Hz,5e11*Hz,5e12*Hz,5e13*Hz,5e14*Hz,5e15*Hz)
 set ytics (1e-21,1e-18,1e-15,1e-12,1e-9)
 set mytics (1e-20,1e-19,1e-17,1e-16,1e-14,1e-13,1e-11,1e-10)
 #set x3tics (0.01,0.1,1,10)
