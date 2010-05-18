@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Differences Between PyXPlot and Gnuplot</title>
+
+<link href="new_features.html" title="Extensions of Gnuplot’s Interface" rel="next" />
+<link href="sect0010.html" title="Interactive Help" rel="prev" />
+<link href="gnuplot_intro.html" title="First Steps With PyXPlot" rel="up" />
+<link rel="stylesheet" href="styles/plastex-styles.css" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0010.html" title="Interactive Help"><img alt="Previous: Interactive Help" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="new_features.html" title="Extensions of Gnuplot’s Interface"><img alt="Next: Extensions of Gnuplot’s Interface" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="gnuplot_intro.html">First Steps With PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Differences Between PyXPlot and Gnuplot</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="missing_features">2.11 Differences Between PyXPlot and Gnuplot</h1>
+<p>  </p><p>The commands supported by PyXPlot are only a subset of those available in gnuplot, although most of its functionality is present. Features which are supported by this version include: </p><ul class="itemize">
+<li><p>Allocation of user-defined variables and functions. </p></li><li><p>The <tt class="ttfamily">print</tt>, <tt class="ttfamily">help</tt>, <tt class="ttfamily">exit</tt> and <tt class="ttfamily">quit</tt> commands. </p></li><li><p>The <tt class="ttfamily">reset</tt> and <tt class="ttfamily">clear</tt> commands. </p></li><li><p>The <tt class="ttfamily">!</tt> command, to execute the remainder of the line as a shell command, e.g. <tt class="ttfamily">!ls</tt>. </p></li><li><p>The <tt class="ttfamily">cd</tt> and <tt class="ttfamily">pwd</tt> commands, to change and display the current working directory. </p></li><li><p>The use of ‘ ‘ back-quotes to substitute the output of a shell command.<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">It should be noted that back-quotes can only be used outside quotes. For example, <tt class="ttfamily">set xlabel ’‘ls‘’</tt> will not work. The best way to do this would be: <tt class="ttfamily">set xlabel ‘echo "’" ; ls ; echo "’"‘</tt>.</span></a> </p></li><li><p>Set plot titles, axis labels, axis ranges, pointsize, linestyles, etc. </p></li><li><p>Fitting of functions to data via the <tt class="ttfamily">fit</tt> command. </p></li><li><p>Basic 2d plotting and replotting of functions and datafiles, with the following styles: <tt class="ttfamily">lines</tt>, <tt class="ttfamily">points</tt>, <tt class="ttfamily">linespoints</tt>, <tt class="ttfamily">dots</tt>, <tt class="ttfamily">boxes</tt>, <tt class="ttfamily">steps</tt>, <tt class="ttfamily">fsteps</tt>, <tt class="ttfamily">histeps</tt>, <tt class="ttfamily">impulses</tt>, <tt class="ttfamily">csplines</tt>, <tt class="ttfamily">acsplines</tt> and errorbars of all flavours (see Section <a href="filebackup.html">3.3.5</a> for details of changes to errorbars). </p></li><li><p>Automatic and manual selection of linestyles, linetypes, linewidths, pointtypes and pointsizes. </p></li><li><p>Use of dual axes. Note: Operation here differs slightly from original gnuplot; dual axes are displayed whenever they are defined, there is no need to <tt class="ttfamily">set xtics nomirror</tt>. See the details in the following chapter. </p></li><li><p>Placing arrows and textual labels on plots. </p></li><li><p>Putting grids on plots (colour can be set, but not linestyle). </p></li><li><p>Setting plot aspect ratios with <tt class="ttfamily">set size ratio</tt> or <tt class="ttfamily">set size square</tt>. </p></li><li><p>Multiplot (which is very significantly improved over gnuplot; see Section <a href="multiplot.html">3.5</a>). </p></li><li><p>Setting major/minor tics with the <tt class="ttfamily">set xtics</tt> and <tt class="ttfamily">set mxtics</tt> commands. </p></li>
+</ul><p>Gnuplot features which PyXPlot does not presently support include: </p><ul class="itemize">
+<li><p>Parametric function plotting. </p></li><li><p>Three-dimensional plotting (i.e. gnuplot’s <tt class="ttfamily">splot</tt> command). </p></li>
+</ul></div>
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0010.html" title="Interactive Help"><img alt="Previous: Interactive Help" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="new_features.html" title="Extensions of Gnuplot’s Interface"><img alt="Next: Extensions of Gnuplot’s Interface" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

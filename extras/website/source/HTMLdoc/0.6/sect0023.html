@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Function Splicing</title>
+
+<link href="spline_command.html" title="Datafile Interpolation: Spline Fitting" rel="next" />
+<link href="sect0022.html" title="Steps" rel="prev" />
+<link href="new_features.html" title="Extensions of Gnuplot’s Interface" rel="up" />
+<link rel="stylesheet" href="styles/plastex-styles.css" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0022.html" title="Steps"><img alt="Previous: Steps" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="new_features.html" title="Extensions of Gnuplot’s Interface"><img alt="Up: Extensions of Gnuplot’s Interface" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="spline_command.html" title="Datafile Interpolation: Spline Fitting"><img alt="Next: Datafile Interpolation: Spline Fitting" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="new_features.html">Extensions of Gnuplot’s Interface</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Function Splicing</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="a-1227729012">3.7 Function Splicing</h1>
+<p> <span id="a-1228268788"></span> <span id="a-1227959764"></span> </p><p>In PyXPlot, as in gnuplot, user-defined functions may be declared on the command line: </p><pre>
+f(x) = x*sin(x)
+</pre><p>As an extension to what is possible in gnuplot, it is also possible to declare functions which are only valid over a certain range of argument space. For example, the following function would only be valid in the range <img src="images/img-0077.png" alt="$-2&lt;x&lt;2$" style="position:relative; bottom:-1px; width:90px; height:14px" class="math" />:<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">The syntax <tt class="ttfamily">[-2:2]</tt> can also be written <tt class="ttfamily">[-2 to 2]</tt>.</span></a> </p><pre>
+f(x)[-2:2] = x*sin(x)
+</pre><p>The following function would only be valid when all of <img src="images/img-0078.png" alt="${a,b,c}$" style="position:relative; bottom:-4px; width:42px; height:17px" class="math" /> were in the range <img src="images/img-0079.png" alt="$-1 \to 1$" style="position:relative; bottom:0px; width:59px; height:12px" class="math" />: </p><pre>
+f(a,b,c)[-1:1][-1:1][-1:1] = a+b+c
+</pre><p>If an attempt is made to evaluate a function outside of its specified range, then an error results. This may be useful, for example, for plotting a function, but not continuing it outside some specified range. The following would print the function <img src="images/img-0003.png" alt="$\sin (x)$" style="position:relative; bottom:-5px; width:45px; height:19px" class="math" />, but only in the range <img src="images/img-0080.png" alt="$-2&lt;x&lt;7$" style="position:relative; bottom:-1px; width:91px; height:14px" class="math" />: </p><pre>
+f(x)[-2:7] = sin(x)
+plot f(x)
+</pre><div id="splice" class="figure"><center> <img src="images/img-0081.png" alt="\includegraphics{examples/eps/ex_funcsplice1.eps}" style="width:335px; height:211px" />
+ </center><b>Figure 3.7</b>: <span>A simple example of the use of function splicing to truncate the function <img src="images/img-0003.png" alt="$\sin (x)$" style="position:relative; bottom:-5px; width:45px; height:19px" class="math" /> at <img src="images/img-0082.png" alt="$x=-2$" style="position:relative; bottom:-1px; width:58px; height:14px" class="math" /> and <img src="images/img-0083.png" alt="$x=7$" style="position:relative; bottom:-1px; width:44px; height:14px" class="math" />. See details in the text.</span><p>  </p></div><p> The output of this particular example can be seen in Figure <a href="sect0023.html#splice">3.7</a>. A similar effect could also have been achieved with the <tt class="ttfamily">select</tt> keyword; see Section <a href="filebackup.html">3.3.5</a>. </p><p>It is possible to make multiple declarations of the same function, over different regions of argument space; if there is an overlap in the valid argument space for multiple definitions, then later declarations take precedence. This makes it possible to use different functional forms for a function in different parts of parameter space, and is especially useful when fitting a function to data, if different functional forms are to be spliced together to fit different regimes in the data. </p><p>Another application of function splicing is to work with functions which do not have analytic forms, or which are, by definition, discontinuous, such as top-hat functions or Heaviside functions. The following example would define <img src="images/img-0061.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> to be a Heaviside function: </p><pre>
+f(x) = 0
+f(x)[0:] = 1
+</pre><p>The following example would define <img src="images/img-0061.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> to follow the Fibonacci sequence, though it is not at all computationally efficient, and it is inadvisable to evaluate it for <img src="images/img-0084.png" alt="$x&gt;8$" style="position:relative; bottom:-1px; width:44px; height:14px" class="math" />: </p><pre>
+f(x) = 1
+f(x)[2:] = f(x-1) + f(x-2)
+plot [0:8] f(x)
+</pre><div id="fig:ex_funcsplice2" class="figure"><center> <img src="images/img-0085.png" alt="\includegraphics{examples/eps/ex_funcsplice2.eps}" style="width:320px; height:210px" />
+ </center><b>Figure 3.8</b>: <span>An example of the use of function splicing to define a function which does not have an analytic form – in this case, the Fibonacci sequence. See the text for details.</span><p>  </p></div><p>The output of this example can be seen in Figure <a href="sect0023.html#fig:ex_funcsplice2">3.8</a> </p></div>
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0022.html" title="Steps"><img alt="Previous: Steps" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="new_features.html" title="Extensions of Gnuplot’s Interface"><img alt="Up: Extensions of Gnuplot’s Interface" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="spline_command.html" title="Datafile Interpolation: Spline Fitting"><img alt="Next: Datafile Interpolation: Spline Fitting" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

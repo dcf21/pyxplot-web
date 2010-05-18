@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Gridlines</title>
+
+<link href="multiplot.html" title="Multi-plotting" rel="next" />
+<link href="sect0018.html" title="Text Labels" rel="prev" />
+<link href="sect0017.html" title="Sundry Items (Arrows, Text Labels, and More)" rel="up" />
+<link rel="stylesheet" href="styles/plastex-styles.css" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0018.html" title="Text Labels"><img alt="Previous: Text Labels" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0017.html" title="Sundry Items (Arrows, Text Labels, and More)"><img alt="Up: Sundry Items (Arrows, Text Labels, and More)" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="multiplot.html" title="Multi-plotting"><img alt="Next: Multi-plotting" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="new_features.html">Extensions of Gnuplot’s Interface</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0017.html">Sundry Items (Arrows, Text Labels, and More)</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Gridlines</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="set_colours">3.4.3 Gridlines</h2>
+<p>Gridlines may be placed on a plot and subsequently removed via the statements: </p><pre>
+set grid
+set nogrid
+</pre><p>respectively. The following commands are also valid: </p><pre>
+unset grid
+unset nogrid
+</pre><p>By default, gridlines are drawn from the major and minor ticks of the <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />- and <img src="images/img-0005.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-axes. However, the axes which should be used may be specified after the <tt class="ttfamily">set grid</tt> command<span id="a-1228045684"></span><span id="a-1228045396"></span>: </p><pre>
+set grid x2y2
+set grid x x2y2
+</pre><p>The top example would connect the gridlines to the ticks of the <img src="images/img-0039.png" alt="$x2$" style="position:relative; bottom:-1px; width:19px; height:14px" class="math" />- and <img src="images/img-0040.png" alt="$y2$" style="position:relative; bottom:-4px; width:19px; height:17px" class="math" />- axes, whilst the lower would draw gridlines from both the <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />- and the <img src="images/img-0039.png" alt="$x2$" style="position:relative; bottom:-1px; width:19px; height:14px" class="math" />-axes. </p><p>If one of the specified axes does not exist, then no gridlines will be drawn in that direction. Gridlines can subsequently be removed selectively from some axes via: </p><pre>
+unset grid x2x3
+</pre><p>The colours of gridlines can be controlled via the <tt class="ttfamily">set gridmajcolour</tt><span id="a-1227384276"></span><span id="a-1227619668"></span><span id="a-1227692980"></span><span id="a-1227690932"></span> and <tt class="ttfamily">set gridmincolour</tt> commands, which control the gridlines emanating from major and minor axis ticks respectively. An example would be: </p><pre>
+set gridmincolour blue
+</pre><p>Any of the colour names listed in Section <a href="colour_names.html">4.6</a> can be used. </p><p>A related command is <tt class="ttfamily">set axescolour</tt><span id="a-1227693460"></span><span id="a-1227692052"></span><span id="a-1227691828"></span>, which has a syntax similar to that above, and sets the colour of the graph’s axes.  </p></div>
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0018.html" title="Text Labels"><img alt="Previous: Text Labels" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0017.html" title="Sundry Items (Arrows, Text Labels, and More)"><img alt="Up: Sundry Items (Arrows, Text Labels, and More)" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="multiplot.html" title="Multi-plotting"><img alt="Next: Multi-plotting" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center"></td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0124.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>
