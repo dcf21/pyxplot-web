@@ -4,7 +4,9 @@ This file is to be used to generate tex for the HTML manual that goes on the PyX
 
 (b) make a copy of the manual tex files, examples and figures directories.
 
-(c) Insert this file in with the other tex files.
+(c) Insert pyxplot-plastex.tex file in with the other tex files.
+
+(c.5) Edit definitions.tex to have the definition of the dodo and dontdo environments given here
 
 (d) Modify all the tex files that are using \begin{enumerate}[(i)] by removing the [(i)]
 
