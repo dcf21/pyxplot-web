@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: The arc Command</title>
+
+<link href="sec-point.html" title="The point Command" rel="next" />
+<link href="ex-mandelbrot.html" title="The box and circle Commands" rel="prev" />
+<link href="sect0066.html" title="Adding Other Vector Graphics Objects" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="ex-mandelbrot.html" title="The box and circle Commands"><img alt="Previous: The box and circle Commands" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0066.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-point.html" title="The point Command"><img alt="Next: The point Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-vector_graphics.html">Producing Vector Graphics</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0066.html">Adding Other Vector Graphics Objects</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">The <tt class="tt">arc</tt> Command</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="ex:lens">3.4.6 The <tt class="tt">arc</tt> Command</h2>
+<p>Partial arcs of circles may be drawn using the <tt class="tt">arc</tt> command<a name="a0000000898" id="a0000000898"></a>. This has similar syntax to the <tt class="tt">circle</tt> command<a name="a0000000899" id="a0000000899"></a>, but takes two additional angles, measured clockwise from the upward vertical direction, which specify the extent of the arc to be drawn. The arc is drawn clockwise from start to end, and hence the following two instructions draw two complementary arcs which together form a complete circle: </p><pre>
+set multiplot
+arc at 0,0 radius 5 from -90 to   0 with lw 3 col red
+arc at 0,0 radius 5 from   0 to -90 with lw 3 col green
+</pre><p>If a <tt class="tt">fillcolour</tt> is specified, then a pie-wedge is drawn: </p><pre>
+arc at 0,0 radius 5 from 0 to 30 with lw 3 fillcolour red
+</pre><p> <span class="upshape"><span class="mdseries"><span class="rm">A labelled diagram of a triangle.</span></span></span></p><div>
+
+<table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this example, we make a subroutine to draw labelled diagrams of the interior angles of triangles, taking as its inputs the lengths of the three sides of the triangle to be drawn and the position of its lower-left corner. The subroutine calculates the positions of the three vertices of the triangle and then labels them. We use PyXPlot’s automatic handling of physical units to generate the L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X strings required to label the side lengths in centimetres and the angles in degrees. We use PyXPlot’s <tt class="tt">arc</tt> command to draw angle symbols in the three corners of a triangle. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Define subroutine for drawing triangles</tt><br /><tt class="tt">subroutine TriangleDraw(Bx,By,AB,AC,BC)</tt><br /><tt class="tt">{</tt><br /><tt class="tt"># Use cosine rule to find interior angles</tt><br /><tt class="tt">ABC = acos((AB**2 + BC**2 - AC**2) / (2*AB*BC))</tt><br /><tt class="tt">BCA = acos((BC**2 + AC**2 - AB**2) / (2*BC*AC))</tt><br /><tt class="tt">CAB = acos((AC**2 + AB**2 - BC**2) / (2*AC*AB))</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Positions of three corners of triangle</tt><br /><tt class="tt">Cx = Bx + BC          ; Cy = By</tt><br /><tt class="tt">Ax = Bx + AB*cos(ABC) ; Ay = By + AB*sin(ABC)</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Draw triangle</tt><br /><tt class="tt">line from Ax,Ay to Bx,By</tt><br /><tt class="tt">line from Ax,Ay to Cx,Cy</tt><br /><tt class="tt">line from Bx,By to Cx,Cy</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Draw angle symbols</tt><br /><tt class="tt">ArcRad = 4*unit(mm) # Radius of angle arcs</tt><br /><tt class="tt">arc at Bx,By radius ArcRad from  90*unit(deg)-ABC to  90*unit(deg)</tt><br /><tt class="tt">arc at Cx,Cy radius ArcRad from -90*unit(deg)     to -90*unit(deg)+BCA</tt><br /><tt class="tt">arc at Ax,Ay radius ArcRad from  90*unit(deg)+BCA to 270*unit(deg)-ABC</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Label lengths of sides</tt><br /><tt class="tt">set unit of length cm # Display lengths in cm</tt><br /><tt class="tt">set numeric sigfig 3 display latex # Correct to 3 significant figure</tt><br /><tt class="tt">set fontsize 1.2 # And in slightly bigger text than normal</tt><br /><tt class="tt">TextGap = 1*unit(mm)</tt><br /><tt class="tt">text "%s"%(BC) at (Bx+Cx)/2,(By+Cy)/2 gap TextGap hal c val t</tt><br /><tt class="tt">text "%s"%(AB) at (Ax+Bx)/2,(Ay+By)/2 gap TextGap rot ABC hal c val b</tt><br /><tt class="tt">text "%s"%(AC) at (Ax+Cx)/2,(Ay+Cy)/2 gap TextGap rot -BCA hal c val b</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Label angles</tt><br /><tt class="tt">set unit of angle degree # Display angles in degrees</tt><br /><tt class="tt">ArcRad2 = 1.4 * ArcRad # Distance of text from apex of angles</tt><br /><tt class="tt">text "%s"%(CAB) at Ax+ArcRad2*sin(ABC-BCA),Ay-ArcRad2*cos(ABC-BCA) hal c val t</tt><br /><tt class="tt">text "%s"%(ABC) at Bx+ArcRad2*cos(ABC/2),By+ArcRad2*sin(ABC/2) hal l val c</tt><br /><tt class="tt">text "%s"%(BCA) at Cx-ArcRad2*cos(BCA/2),Cy+ArcRad2*sin(BCA/2) hal r val c</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Label points ABC</tt><br /><tt class="tt">text "A" at Ax,Ay gap TextGap hal c val b</tt><br /><tt class="tt">text "B" at Bx,By gap TextGap hal r val c</tt><br /><tt class="tt">text "C" at Cx,Cy gap TextGap hal l val c</tt><br /><tt class="tt">}</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Display diagram with three triangles</tt><br /><tt class="tt">set multiplot ; set nodisplay</tt><br /><tt class="tt">call TriangleDraw(2.8*unit(cm),3.4*unit(cm), 3*unit(cm),4*unit(cm),4*unit(cm))</tt><br /><tt class="tt">call TriangleDraw(0.0*unit(cm),0.0*unit(cm), 3*unit(cm),4*unit(cm),5*unit(cm))</tt><br /><tt class="tt">call TriangleDraw(6.5*unit(cm),0.0*unit(cm), 3*unit(cm),3*unit(cm),3*unit(cm))</tt><br /><tt class="tt">set display ; refresh</tt><br /></small> </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>The resulting diagram is shown below: </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><p><center><img src="images/img-0472.png" alt="\includegraphics{examples/eps/ex_triangle}" style="width:481px; height:316px" />
+</center>  </p></td>
+
+</tr>
+</table>
+</div><p> <span class="upshape"><span class="mdseries"><span class="rm">A labelled diagram of a converging lens forming a real image.</span></span></span></p><div>
+
+<table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this example, we make a subroutine to draw labelled diagrams of converging lenses forming real images. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt">subroutine LensDraw(x0,y0,u,h,f)</tt><br /><tt class="tt">{</tt><br /><tt class="tt"># Use the thin-lens equation to find v and H</tt><br /><tt class="tt">v = 1/(1/f - 1/u)</tt><br /><tt class="tt">H = h * v / u</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Draw lens</tt><br /><tt class="tt">lc = 5.5*unit(cm) # Radius of curvature of lens</tt><br /><tt class="tt">lt = 0.5*unit(cm) # Thickness of lens</tt><br /><tt class="tt">la = acos((lc-lt/2)/lc) # Angular size of lens from centre of curvature</tt><br /><tt class="tt">lh = lc*sin(la) # Physical height of lens on paper</tt><br /><tt class="tt">arc at x0-(lc-lt/2),y0 radius lc from  90*unit(deg)-la to  90*unit(deg)+la</tt><br /><tt class="tt">arc at x0+(lc-lt/2),y0 radius lc from 270*unit(deg)-la to 270*unit(deg)+la</tt><br /><tt class="tt">set texthalign right ; set textvalign top</tt><br /><tt class="tt">point at x0-f,y0 label "$f$"</tt><br /><tt class="tt">set texthalign left  ; set textvalign bottom</tt><br /><tt class="tt">point at x0+f,y0 label "$f$"</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Draw object and image</tt><br /><tt class="tt">arrow from x0-u,y0 to x0-u,y0+h with lw 2</tt><br /><tt class="tt">arrow from x0+v,y0 to x0+v,y0-H with lw 2</tt><br /><tt class="tt">text "$h$" at x0-u,y0+h/2 hal l val c gap unit(mm)</tt><br /><tt class="tt">text "$H$" at x0+v,y0-H/2 hal l val c gap unit(mm)</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Draw construction lines</tt><br /><tt class="tt">line from x0-u,y0 to x0+v,y0 with lt 2 # Optic axis</tt><br /><tt class="tt">line from x0-u,y0+h to x0+v,y0-H # Undeflected ray through origin</tt><br /><tt class="tt">line from x0-u,y0+h to x0,y0+h</tt><br /><tt class="tt">line from x0,y0+h to x0+v,y0-H</tt><br /><tt class="tt">line from x0+v,y0-H to x0,y0-H</tt><br /><tt class="tt">line from x0,y0-H to x0-u,y0+h</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Label distances u and v</tt><br /><tt class="tt">ylabel = y0-lh-2*unit(mm)</tt><br /><tt class="tt">arrow from x0-u,ylabel to x0,ylabel with twoway lt 2</tt><br /><tt class="tt">arrow from x0+v,ylabel to x0,ylabel with twoway lt 2</tt><br /><tt class="tt">text "$u$" at x0-u/2,ylabel hal c val t gap unit(mm)</tt><br /><tt class="tt">text "$v$" at x0+v/2,ylabel hal c val t gap unit(mm)</tt><br /><tt class="tt">}</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Display diagram of lens</tt><br /><tt class="tt">set unit angle nodimensionless</tt><br /><tt class="tt">set multiplot ; set nodisplay</tt><br /><tt class="tt">call LensDraw(0*unit(cm),0*unit(cm), 5*unit(cm),1.5*unit(cm),2*unit(cm))</tt><br /><tt class="tt">set display ; refresh</tt><br /></small> </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>The resulting diagram is shown below: </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><p><center><img src="images/img-0479.png" alt="\includegraphics{examples/eps/ex_lenses}" style="width:422px; height:178px" />
+</center>  </p></td>
+
+</tr>
+</table>
+</div></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="ex-mandelbrot.html" title="The box and circle Commands"><img alt="Previous: The box and circle Commands" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0066.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-point.html" title="The point Command"><img alt="Next: The point Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

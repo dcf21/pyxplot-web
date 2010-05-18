@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: First Plots</title>
+
+<link href="sect0012.html" title="Comments" rel="next" />
+<link href="box-CommandHistory.html" title="Getting Started" rel="prev" />
+<link href="ch-first_steps.html" title="First Steps With PyXPlot" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="box-CommandHistory.html" title="Getting Started"><img alt="Previous: Getting Started" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="ch-first_steps.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0012.html" title="Comments"><img alt="Next: Comments" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-first_steps.html">First Steps With PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">First Plots</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="sec:first_plots">3.2 First Plots</h1>
+<p>The basic workhorse command of PyXPlot is the <tt class="tt">plot</tt> command<a name="a0000000289" id="a0000000289"></a>, which is used to produce all plots. The following simple example would plot the trigonometric function <img src="images/img-0015.png" alt="$\sin (x)$" style="vertical-align:-4px; 
+                                     width:45px; 
+                                     height:18px" class="math gen" />: </p><pre>
+plot sin(x)
+</pre><center> 
+<img src="images/img-0017.png" alt="\includegraphics[width=8cm]{examples/eps/ex_intro_sine}" style="width:8cm" /> </center><p>This is one of a large number of standard mathematical functions which are built into PyXPlot. We will meet more of these in due course, but a complete list can be found in Appendix <a href="ch-function_list.html">2</a>. </p><p>As well as plotting functions, it is also possible to plot data stored in files. The following would plot data from a file <tt class="tt">data.dat</tt>, taking the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" />-coordinate of each point from the first column of the datafile, and the <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
+                                     width:9px; 
+                                     height:12px" class="math gen" />-coordinate from the second. The datafile is assumed to be in plain text format<a href="#a0000000290" class="footnote"><sup class="footnotemark">1</sup></a>, with columns separated by whitespace and/or commas<a href="#a0000000291" class="footnote"><sup class="footnotemark">2</sup></a><a name="a0000000292" id="a0000000292"></a><a name="a0000000293" id="a0000000293"></a><a name="a0000000294" id="a0000000294"></a><a name="a0000000295" id="a0000000295"></a>: </p><pre>
+plot 'data.dat'
+</pre><p>Several items can be plotted on the same graph by separating them by commas, as in </p><pre>
+plot 'data.dat', sin(x), cos(x)
+</pre><p>and it is possible to define one’s own variables and functions, and then plot them, as in the example </p><pre>
+a = 0.02
+b = -1
+c = 5
+f(x) = a*(x**3) + b*x + c
+plot f(x)
+</pre><center> 
+<img src="images/img-0022.png" alt="\includegraphics[width=8cm]{examples/eps/ex_intro_func}" style="width:8cm" /> </center><p>A complete list of the mathematical operators which can be used to put together algebraic expressions can be found in Table <a href="sec-first_plots.html#tab:operators_table">3.1</a>.<a name="a0000000296" id="a0000000296"></a><a name="a0000000297" id="a0000000297"></a> </p><div id="tab:operators_table" class="table"><center> <table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-left:1px solid black"><p> <b class="bf">Symbol</b> </p></td>
+
+    
+    <td style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left"><p> <b class="bf">Description</b> </p></td>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-right:1px solid black"><p> <b class="bf">Operator Associativity</b> </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-left:1px solid black"><p><tt class="tt">**</tt> </p></td>
+
+    
+    <td style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left"><p> Algebraic exponentiation </p></td>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-right:1px solid black"><p> right </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-left:1px solid black"><p><tt class="tt">-</tt> </p></td>
+
+    
+    <td style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left"><p> Unary minus sign </p></td>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-right:1px solid black"><p> left </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="tt">not</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Logical not </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> left </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-left:1px solid black"><p><tt class="tt">*</tt> </p></td>
+
+    
+    <td style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left"><p> Algebraic multiplication </p></td>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-right:1px solid black"><p> left </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="tt">/</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Algebraic division </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> left </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="tt">%</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Modulo operator </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> left </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-left:1px solid black"><p><tt class="tt">+</tt> </p></td>
+
+    
+    <td style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left"><p> Algebraic sum </p></td>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-right:1px solid black"><p> left </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="tt">-</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Algebraic subtraction </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> left </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-left:1px solid black"><p><tt class="tt">&lt;&lt;</tt> </p></td>
+
+    
+    <td style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left"><p> Left binary shift </p></td>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-right:1px solid black"><p> left </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="tt">&gt;&gt;</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Right binary shift </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> left </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-left:1px solid black"><p><tt class="tt">&lt;</tt> </p></td>
+
+    
+    <td style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left"><p> Magnitude comparison </p></td>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-right:1px solid black"><p> right </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="tt">&gt;</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Magnitude comparison </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> right </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="tt">&lt;=</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Magnitude comparison </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> right </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="tt">&gt;=</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Magnitude comparison </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> right </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-left:1px solid black"><p><tt class="tt">==</tt> </p></td>
+
+    
+    <td style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left"><p> Equality comparison </p></td>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-right:1px solid black"><p> right </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="tt">!=</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Equality comparison </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> right </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="tt">&lt;&gt;</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> Alias for <tt class="tt">!=</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> right </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-left:1px solid black"><p><tt class="tt">&amp;</tt> </p></td>
+
+    
+    <td style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left"><p> Binary and </p></td>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-right:1px solid black"><p> left </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-left:1px solid black"><p><tt class="tt"><img src="images/img-0024.png" alt="\^{}" style="vertical-align:9px; width:5px; height:4px" class="accent gen" /></tt> </p></td>
+
+    
+    <td style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left"><p> Binary exclusive or </p></td>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-right:1px solid black"><p> left </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-left:1px solid black"><p><tt class="tt">|</tt> </p></td>
+
+    
+    <td style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left"><p> Binary or </p></td>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-right:1px solid black"><p> left </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-left:1px solid black"><p><tt class="tt">and</tt> </p></td>
+
+    
+    <td style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left"><p> Logical and </p></td>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-right:1px solid black"><p> left </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-top-style:solid; border-bottom-style:solid; border-bottom-width:1px; border-bottom-color:black; border-left:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p><tt class="tt">or</tt> </p></td>
+
+    
+    <td style="border-top-style:solid; border-bottom-style:solid; text-align:left; border-bottom-width:1px; border-top-color:black; border-top-width:1px; border-bottom-color:black"><p> Logical or </p></td>
+
+    
+    <td style="border-top-style:solid; border-bottom-style:solid; border-bottom-width:1px; border-bottom-color:black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> left </p></td>
+
+</tr>
+</table> </center><div class="caption"><b>Table 3.1</b>: <span>A list of mathematical operators which PyXPlot recognises, in order of descending precedence. Items separated by horizontal rules are of differing precedence; those not separated by horizontal rules are of equivalent precedence. The third column indicates whether strings of operators are evaluated from left to right (left), or from right to left (right). For example, the expression <tt class="tt">x**y**z</tt> is evaluated as <tt class="tt">(x**(y**z))</tt>.</span></div></div></div>
+
+
+
+<div id="footnotes">
+<p><b>Footnotes</b></p>
+<ol>
+<li id="a0000000290">If the filename of a datafile ends with a <tt class="tt">.gz</tt> suffix, it is assuming to be gzipped plaintext, and is decoded accordingly. Other formats of datafile can be opened with the use of input filters; see Section <a href="sec-filters.html">5.1</a>.</li><li id="a0000000291">This format is compatible with the Comma Separated Values (CSV) format produced by many applications, including Microsoft Excel.</li>
+</ol>
+</div>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="box-CommandHistory.html" title="Getting Started"><img alt="Previous: Getting Started" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="ch-first_steps.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0012.html" title="Comments"><img alt="Next: Comments" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

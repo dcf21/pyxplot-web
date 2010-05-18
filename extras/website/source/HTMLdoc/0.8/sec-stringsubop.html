@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: The String Substitution Operator</title>
+
+<link href="sect0032.html" title="Regular Expressions" rel="next" />
+<link href="sec-stringvars.html" title="String Variables" rel="prev" />
+<link href="sec-stringvars.html" title="String Variables" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sec-stringvars.html" title="String Variables"><img alt="Previous: String Variables" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-stringvars.html" title="String Variables"><img alt="Up: String Variables" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0032.html" title="Regular Expressions"><img alt="Next: Regular Expressions" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0031.html">Programming and Flow Control</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sec-stringvars.html">String Variables</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">The String Substitution Operator</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="sec:stringsubop">6.1.1 The String Substitution Operator</h2>
+<p>Most string manipulations are performed using the string substitution operator, <tt class="tt">%</tt><a name="a0000000543" id="a0000000543"></a>. This operator should be preceeded by a format string, such as <tt class="tt">x=%f</tt>, in which tokens such as <tt class="tt">%f</tt> mark places where numbers and strings should be substituted. The substitution operator is followed by a bracketed list of the quantities which should be substituted in place of these tokens in the format string. This behaviour is similar to that of the Python programming language’s % operator<a href="#a0000000544" class="footnote"><sup class="footnotemark">1</sup></a> and of the <tt class="tt">printf</tt> statement in C. For example, to concatenate the two strings contained in the variables <tt class="tt">a</tt> and <tt class="tt">b</tt> into a single string variable <tt class="tt">c</tt>, one would issue the command:<a name="a0000000545" id="a0000000545"></a> </p><pre>
+c = "%s%s"%(a,b)
+</pre><p>One application of this operator might be to label plots with the title of the datafile being plotted, as in the following example: </p><pre>
+filename="data_file.dat"
+title="A plot of the data in {\tt %s}."%(filename)
+set title title
+plot filename
+</pre><p>The syntax of the substitution tokens placed in the format string is similar to that used by many other languages and is as follows. All substitution tokens begin with a <tt class="tt">%</tt> character, after which there may be placed, in order: </p><ol class="enumerate">
+<li><p>An optional minus sign, to specify that the substituted item should be left-justified. </p></li><li><p>An optional integer specifying the minimum character width of the substituted item, or a <tt class="tt">*</tt> (see below). </p></li><li><p>An optional decimal point/period (<tt class="tt">.</tt>) separator. </p></li><li><p>An optional integer, or a <tt class="tt">*</tt> (see below), specifying either (a) the maximum number of characters to be printed from a string, or (b) the number of decimal places of a floating-point number to be displayed, or (c) the minimum number of digits of an integer to be displayed, padded to the left with zeros. </p></li><li><p>A conversion character. </p></li>
+</ol><p>The conversion character is a single character which specifies what kind of substitution should take place. Its possible values are listed in Table <a href="sec-stringsubop.html#tab:conversion_chars">6.1</a>. Note that where numerical quantities with physical units are provided, the physical units are not displayed unless the <tt class="tt">%s</tt> token is used. Although it is not an error to pass a quantity with physical units to, for example, the <tt class="tt">%f</tt> substitution token, it is good practice to divide the quantity by a suitable unit first to make it dimensionless, to be certain of the unit in which it will be displayed. </p><div id="tab:conversion_chars" class="table"><center> <table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-left:1px solid black"><p> <b class="bf">Character</b> </p></td>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-right:1px solid black"><p> <b class="bf">Substitutes</b> </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-left:1px solid black"><p><tt class="tt">d</tt>, <tt class="tt">i</tt> </p></td>
+
+    
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-right:1px solid black"><p> An integer value. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="tt">e</tt>, <tt class="tt">E</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> A floating-point value in scientific notation using either the character <tt class="tt">e</tt> or <tt class="tt">E</tt> to indicate exponentiation. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="tt">f</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> A floating-point value without the use of scientific notation. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="tt">g</tt>, <tt class="tt">G</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> A floating-point value, either using scientific notation, if the exponent is greater than the precision or less than <img src="images/img-0282.png" alt="$-4$" style="vertical-align:0px; 
+                                     width:22px; 
+                                     height:12px" class="math gen" />, otherwise without the use of scientific notation. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="tt">o</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> An integer value in octal (base 8). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="tt">s</tt>, <tt class="tt">S</tt>, <tt class="tt">c</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> A string, if a string is provided, or a numerical quantity, with units, if such is provided. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-left:1px solid black"><p><tt class="tt">x</tt>, <tt class="tt">X</tt> </p></td>
+
+    
+    <td style="text-align:left; border-right:1px solid black"><p> An integer value in hexidecimal (base 16). </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-color:black; border-bottom-width:1px; text-align:left; border-bottom-style:solid; border-left:1px solid black"><p><tt class="tt">%</tt> </p></td>
+
+    
+    <td style="border-bottom-color:black; border-bottom-width:1px; text-align:left; border-bottom-style:solid; border-right:1px solid black"><p> A literal <tt class="tt">%</tt> sign. </p></td>
+
+</tr>
+</table> </center><div class="caption"><b>Table 6.1</b>: <span>The conversion characters recognised by the string substitution operator, <tt class="tt">%</tt>.</span></div></div><p>Where the character <tt class="tt">*</tt> is specified for either the character width or the precision of the substitution token, an integer is read from the list of items to be substituted, as happens in C’s <tt class="tt">printf</tt> command: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">print "%.*f"%(3,pi)</b></tt><br /><tt class="tt">3.142</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print "%.*f"%(6,pi)</b></tt><br /><tt class="tt">3.141593</tt>  </p></div>
+
+
+
+<div id="footnotes">
+<p><b>Footnotes</b></p>
+<ol>
+<li id="a0000000544">Unlike in Python, the brackets are obligatory; <tt class="tt">’%d’%2</tt> is <i class="it">not</i> valid in PyXPlot, and should be written as <tt class="tt">’%d’%(2)</tt>.</li>
+</ol>
+</div>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sec-stringvars.html" title="String Variables"><img alt="Previous: String Variables" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-stringvars.html" title="String Variables"><img alt="Up: String Variables" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0032.html" title="Regular Expressions"><img alt="Next: Regular Expressions" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

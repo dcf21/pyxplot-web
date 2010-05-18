@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: The piechart Command</title>
+
+<link href="sect0070.html" title="LaTeX and PyXPlot" rel="next" />
+<link href="sec-ellipse.html" title="The ellipse Command" rel="prev" />
+<link href="sect0066.html" title="Adding Other Vector Graphics Objects" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sec-ellipse.html" title="The ellipse Command"><img alt="Previous: The ellipse Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0066.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0070.html" title="LaTeX and PyXPlot"><img alt="Next: LaTeX and PyXPlot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-vector_graphics.html">Producing Vector Graphics</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0066.html">Adding Other Vector Graphics Objects</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">The <tt class="tt">piechart</tt> Command</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="sec:piechart">3.4.9 The <tt class="tt">piechart</tt> Command</h2>
+<p>The <tt class="tt">piechart</tt> command<a name="a0000000903" id="a0000000903"></a> produces piecharts based upon single columns of data read from datafiles, which are taken to indicate the sizes of the pie wedges. The <tt class="tt">piechart</tt> command<a name="a0000000904" id="a0000000904"></a> has the following syntax: </p><pre>
+piechart ('&lt;filename&gt;'|&lt;function&gt;)
+     [using &lt;using specifier&gt;]
+     [select &lt;select specifier&gt;]
+     [index &lt;index specifier&gt;]
+     [every &lt;every specifier&gt;]
+     [label &lt;auto|key|inside|outside&gt; &lt;label&gt;]
+     [format &lt;format string&gt;]
+     [with &lt;style&gt; [&lt;style modifier&gt; ... ] ]
+</pre><p>Immediately after the <tt class="tt">piechart</tt> keyword, the file (or indeed, function) from which the data is to be taken should be specified; any of the modifiers taken by the <tt class="tt">plot</tt> command – i.e. <tt class="tt">using</tt>, <tt class="tt">index</tt>, etc. – may be used to specify which data from this datafile should be used. The <tt class="tt">label</tt> modifier should be used to specify how a name for each pie wedge should be drawn from the datafile, and has a similar syntax to the equivalent modifier in the <tt class="tt">plot</tt> command, except that the name string may be prefixed by a keyword to specify how the pie wedge names should be positioned. Four options are available: </p><ul class="itemize">
+<li><p><tt class="tt">auto</tt> – specifies that the <tt class="tt">inside</tt> positioning mode should be used on wide pie wedges, and the <tt class="tt">outside</tt> positioning mode should be used on narrow pie wedges. <b class="bf">[default]</b> </p></li><li><p><tt class="tt">key</tt> – specifies that all of the labels should be arranged in a vertical list to the right-hand side of the piechart. </p></li><li><p><tt class="tt">inside</tt> – specifies that the labels should be placed within the pie wedges themselves. </p></li><li><p><tt class="tt">outside</tt> – specifies that the labels should be arranged around the circumference of the pie chart. </p></li>
+</ul><p>Having specified a name for each wedge using the <tt class="tt">label</tt> modifier, the <tt class="tt">format</tt> modifier determines the final text which is printed along side each wedge. For example, a wedge with name ‘Europe’ might be labelled as ‘27% Europe’, applying the default format string: </p><pre>
+"%.1d\%% %s"%(percentage,label)
+</pre><p> Three variables may be used in format strings: <tt class="tt">label</tt> contains the name of the wedge as specified by the <tt class="tt">label</tt> modifier, <tt class="tt">percentage</tt> contains the numerical percentage size of the wedge, and <tt class="tt">wedgesize</tt> contains the absolute unnormalised size of the wedge, as read from the input datafile, before the sizes were renormalised to sum to 100%. </p><p>The <tt class="tt">with</tt> modifier may be followed by the keywords <tt class="tt">colour</tt>, <tt class="tt">linewidth</tt>, <tt class="tt">style</tt>, which all apply to the lines drawn around the circumference of the piechart and between its wedges. The fill colour of the wedges themselves are taken sequentially from the current palette, as set by the <tt class="tt">set palette</tt> command. Note that PyXPlot’s default palette is optimised more for producing plots with datasets in different and distinct colours than for producing piecharts in asthetically pleasing shades, where a little more subtlely may be desirable. A suitable call to the <tt class="tt">set palette</tt> command is highly recommended before the <tt class="tt">piechart</tt> command<a name="a0000000905" id="a0000000905"></a> is used. </p><p>As with the <tt class="tt">plot</tt> command, the position and size of the piechart are governed by the <tt class="tt">set origin</tt> and <tt class="tt">set size</tt> commands. The former determines where the centre of the piechart is positioned; the latter determines its diameter. </p><p> <span class="upshape"><span class="mdseries"><span class="rm">A piechart of the composition of the Universe.</span></span></span></p><div>
+
+<table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this example, we use PyXPlot’s <tt class="tt">piechart</tt> command to produce a diagram of the composition of the Universe, showing that of the mass in the Universe, only 4% is in the form of the baryonic matter; of the rest, 22% is in the form of dark matter and 74% in the form of dark energy: </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">set palette grey40, grey60, grey80</tt><br /><tt class="tt">set width 6</tt><br /><tt class="tt">piechart ’–’ using $1 label key "%s"%($2)</tt><br /><tt class="tt">0.22 Dark<img src="images/img-0028.png" alt="$\sim $" style="vertical-align:2px; 
+                                     width:12px; 
+                                     height:5px" class="math gen" />Matter</tt><br /><tt class="tt">0.04 Baryonic<img src="images/img-0028.png" alt="$\sim $" style="vertical-align:2px; 
+                                     width:12px; 
+                                     height:5px" class="math gen" />Matter</tt><br /><tt class="tt">0.74 Dark<img src="images/img-0028.png" alt="$\sim $" style="vertical-align:2px; 
+                                     width:12px; 
+                                     height:5px" class="math gen" />Energy</tt><br /><tt class="tt">END</tt> </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><center><img src="images/img-0490.png" alt="\includegraphics{examples/eps/ex_piechart}" style="width:490px; height:285px" />
+</center> </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>Below, we show the change produced by replacing the line<br /><tt class="tt">piechart ’–’ using $1 label key "%s"%($2)</tt><br />with<br /><tt class="tt">piechart ’–’ using $1 label auto "%s"%($2)</tt><br />Note that the labels on the piechart are placed either within the pie, in the cases of large wedges, and around the edge of the pie for those wedges which are too narrow for this. </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><p><center><img src="images/img-0497.png" alt="\includegraphics{examples/eps/ex_piechart2}" style="width:541px; height:285px" />
+</center>  </p></td>
+
+</tr>
+</table>
+</div></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sec-ellipse.html" title="The ellipse Command"><img alt="Previous: The ellipse Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0066.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0070.html" title="LaTeX and PyXPlot"><img alt="Next: LaTeX and PyXPlot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

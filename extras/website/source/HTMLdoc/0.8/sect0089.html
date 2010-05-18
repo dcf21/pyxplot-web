@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: fft</title>
+
+<link href="sect0090.html" title="fit" rel="next" />
+<link href="sect0088.html" title="exit" rel="prev" />
+<link href="ch-reference.html" title="Command Reference" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0088.html" title="exit"><img alt="Previous: exit" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0090.html" title="fit"><img alt="Next: fit" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0071.html">Reference Manual</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-reference.html">Command Reference</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">fft</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="a0000000090">1.18 fft</h1>
+<p><a name="a0000000954" id="a0000000954"></a> </p><pre>
+fft {&lt;range&gt;} &lt;function&gt;"()"
+    of ( '&lt;filename&gt;' | &lt;function&gt;"()" )
+    [using &lt;expression&gt; {:&lt;expression&gt;} ]
+
+ifft {&lt;range&gt;} &lt;function&gt;"()"
+    of ( '&lt;filename&gt;' | &lt;function&gt;"()" )
+    [using &lt;expression&gt; {:&lt;expression&gt;} ]
+</pre><p>The <tt class="tt">fft</tt> command<a name="a0000000955" id="a0000000955"></a> calculates Fourier transforms of datafiles or functions. Transforms can be performed on datasets with arbitrary numbers of dimensions. To transform an algebraic expression with <img src="images/img-0014.png" alt="$n$" style="vertical-align:0px; 
+                                     width:11px; 
+                                     height:8px" class="math gen" /> degrees of freedom, it must be wrapped in a function of the form <img src="images/img-0518.png" alt="$f(i_2,i_2,\ldots ,i_ n)$" style="vertical-align:-4px; 
+                                     width:115px; 
+                                     height:18px" class="math gen" />. To transform an <img src="images/img-0014.png" alt="$n$" style="vertical-align:0px; 
+                                     width:11px; 
+                                     height:8px" class="math gen" />-dimensional dataset stored in a datafile, the samples must be arranged on a regular linearly-spaced grid and stored in row-major order. For each dimension of the transform, a range specification must be provided to the <tt class="tt">fft</tt> command in the form </p><pre>
+[ &lt;minimum&gt; : &lt;maximum&gt; : &lt;step&gt; ]
+</pre><p>When data from a datafile is being transformed, the specified range(s) must precisely match those of the samples read from the file; the first <img src="images/img-0014.png" alt="$n$" style="vertical-align:0px; 
+                                     width:11px; 
+                                     height:8px" class="math gen" /> columns of data should contain the values of the <img src="images/img-0014.png" alt="$n$" style="vertical-align:0px; 
+                                     width:11px; 
+                                     height:8px" class="math gen" /> real-space coordinates, and the <img src="images/img-0168.png" alt="$n+1$" style="vertical-align:-1px; 
+                                     width:41px; 
+                                     height:13px" class="math gen" />th column should contain the data to be transformed. After the range(s), a function name should be provided for the output transform: a function of <img src="images/img-0014.png" alt="$n$" style="vertical-align:0px; 
+                                     width:11px; 
+                                     height:8px" class="math gen" /> arguments with this name will be generated to represent the transformed data. Note that this function is in general complex – i.e. it has a non-zero imaginary component. Complex numerics can be enabled using the <tt class="tt">set numerics complex</tt> command and the <tt class="tt">fft</tt> command is of little use without doing so. The <tt class="tt">using</tt>, <tt class="tt">index</tt>, <tt class="tt">every</tt> and <tt class="tt">select</tt> modifiers can be used to specify how data will be sampled from the input function or datafile in an analogous manner to how they are used in the <tt class="tt">plot</tt> command. </p><p>The <tt class="tt">ifft</tt> command calculates inverse Fourier transforms; it has the same syntax as the <tt class="tt">fft</tt> command. </p></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0088.html" title="exit"><img alt="Previous: exit" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0090.html" title="fit"><img alt="Next: fit" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

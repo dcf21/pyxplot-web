@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: The image Command</title>
+
+<link href="sect0069.html" title="The eps Command" rel="next" />
+<link href="ex-nanotubes.html" title="The arrow and line Commands" rel="prev" />
+<link href="sect0066.html" title="Adding Other Vector Graphics Objects" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="ex-nanotubes.html" title="The arrow and line Commands"><img alt="Previous: The arrow and line Commands" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0066.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0069.html" title="The eps Command"><img alt="Next: The eps Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-vector_graphics.html">Producing Vector Graphics</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0066.html">Adding Other Vector Graphics Objects</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">The <tt class="tt">image</tt> Command</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="a0000000069">3.4.3 The <tt class="tt">image</tt> Command</h2>
+<p>Graphical images in <tt class="tt">bmp</tt>, <tt class="tt">gif</tt>, <tt class="tt">jpeg</tt> or <tt class="tt">png</tt> format may be placed on multiplot canvases using the <tt class="tt">image</tt> command<a name="a0000000884" id="a0000000884"></a><a href="#a0000000885" class="footnote"><sup class="footnotemark">1</sup></a>. In its simplest form, this has the syntax: </p><pre>
+image 'filename' at x,y width w
+</pre><p>As an alternative to the <tt class="tt">width</tt><a name="a0000000886" id="a0000000886"></a> keyword the height of the image can be specified, using the analogous <tt class="tt">height</tt><a name="a0000000887" id="a0000000887"></a> keyword. An optional angle can also be specified using the <tt class="tt">rotate</tt><a name="a0000000888" id="a0000000888"></a> keyword; this causes the included image to be rotated counter-clockwise by a specified angle, measured in degrees. The keyword <tt class="tt">smooth</tt> may optionally be supplied to cause the pixels of the image to be interpolated<a href="#a0000000889" class="footnote"><sup class="footnotemark">2</sup></a>. </p><p>Images which include transparency are supported. The optional keyword <tt class="tt">notransparent</tt> may be supplied to the <tt class="tt">image</tt> command<a name="a0000000890" id="a0000000890"></a> to cause transparent regions to be filled with the image’s default background colour. Alternatively, an RGB colour may be specified in the form <tt class="tt">rgb&lt;r&gt;:&lt;g&gt;:&lt;b&gt;</tt> after the keyword <tt class="tt">transparent</tt> to cause that particular colour to become transparent; the three components of the RGB colour should be in the range 0 to 255. </p></div>
+
+
+
+<div id="footnotes">
+<p><b>Footnotes</b></p>
+<ol>
+<li id="a0000000885">To maintain compatibility with historic versions of PyXPlot, the <tt class="tt">image</tt> command may also be spelt <tt class="tt">jpeg</tt>, with the identical syntax thereafter.</li><li id="a0000000889">Many commonly-used PostScript display engines, including Ghostscript, do not support this functionality.</li>
+</ol>
+</div>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="ex-nanotubes.html" title="The arrow and line Commands"><img alt="Previous: The arrow and line Commands" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0066.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0069.html" title="The eps Command"><img alt="Next: The eps Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

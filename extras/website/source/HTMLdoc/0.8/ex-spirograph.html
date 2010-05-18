@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Plotting Parametric Functions</title>
+
+<link href="sec-legends.html" title="Graph Legends" rel="next" />
+<link href="sect0050.html" title="Plotting Functions in Exotic Styles" rel="prev" />
+<link href="ch-plotting.html" title="Plotting: A Detailed Survey" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0050.html" title="Plotting Functions in Exotic Styles"><img alt="Previous: Plotting Functions in Exotic Styles" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="ch-plotting.html" title="Plotting: A Detailed Survey"><img alt="Up: Plotting: A Detailed Survey" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-legends.html" title="Graph Legends"><img alt="Next: Graph Legends" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-plotting.html">Plotting: A Detailed Survey</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Plotting Parametric Functions</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="ex:spirograph">1.5 Plotting Parametric Functions</h1>
+<p>Parametric functions are functions expressed in forms such as </p><table id="a0000000697" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
+<tr id="a0000000698">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0365.png" alt="$\displaystyle  x  $" style="vertical-align:0px; width:10px;                     height:8px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0366.png" alt="$\displaystyle  r \sin (t)  $" style="vertical-align:-4px; width:54px;                     height:18px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr><tr id="a0000000699">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0367.png" alt="$\displaystyle y  $" style="vertical-align:-4px; width:9px;                     height:12px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0368.png" alt="$\displaystyle  r \cos (t) ,  $" style="vertical-align:-4px; width:61px;                     height:18px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr>
+</table><p> where separate expressions are supplied for the ordinate and abscissa values as a function of some free parameter <img src="images/img-0056.png" alt="$t$" style="vertical-align:0px; 
+                                     width:6px; 
+                                     height:12px" class="math gen" />. The above example is a parametric representation of a circle of radius <img src="images/img-0369.png" alt="$r$" style="vertical-align:0px; 
+                                     width:8px; 
+                                     height:8px" class="math gen" />. Before PyXPlot can usefully plot parametric functions, it is generally necessary to stipulate the range of values of <img src="images/img-0056.png" alt="$t$" style="vertical-align:0px; 
+                                     width:6px; 
+                                     height:12px" class="math gen" /> over which the function should be sampled. This may be done using the <tt class="tt">set trange</tt> command<a name="a0000000700" id="a0000000700"></a>, as in the example </p><pre>
+set trange [unit(0*rad):unit(2*pi*rad)]
+</pre><p> or in the <tt class="tt">plot</tt> command itself. By default, values in the range <img src="images/img-0370.png" alt="$0\leq t\leq 1$" style="vertical-align:-3px; 
+                                     width:72px; 
+                                     height:15px" class="math gen" /> are used. Note that the <tt class="tt">set trange</tt> command<a name="a0000000701" id="a0000000701"></a> differs from other commands for setting axis ranges in that auto-scaling is not an allowed behaviour; an explicit range <i class="it">must</i> be specified for <img src="images/img-0056.png" alt="$t$" style="vertical-align:0px; 
+                                     width:6px; 
+                                     height:12px" class="math gen" />. </p><p>Having set an appropriate range for <img src="images/img-0056.png" alt="$t$" style="vertical-align:0px; 
+                                     width:6px; 
+                                     height:12px" class="math gen" />, parametric functions may be plotted by placing the keyword <tt class="tt">parametric</tt> before the list of functions to be plotted, as in the following simple example which plots a circle: </p><pre>
+set trange [unit(0*rev):unit(1*rev)]
+plot parametric sin(t):cos(t)
+</pre><p> Optionally, a range for <img src="images/img-0056.png" alt="$t$" style="vertical-align:0px; 
+                                     width:6px; 
+                                     height:12px" class="math gen" /> can be specified on a plot-by-plot basis immediately after the keyword <tt class="tt">parametric</tt>, and thus the effect above could also be achieved using: </p><pre>
+plot parametric [unit(0*rev):unit(1*rev)] sin(t):cos(t)
+</pre><p> The only difference between parametric function plotting and ordinary function plotting – other than the change of dummy variable from <tt class="tt">x</tt> to <tt class="tt">t</tt> – is that one fewer column of data is generated. Thus, whilst </p><pre>
+plot f(x)
+</pre><p> generates two columns of data, with values of <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" /> in the first column, </p><pre>
+plot parametric f(t)
+</pre><p> generates only one column of data. </p><p> <span class="upshape"><span class="mdseries"><span class="rm">Spirograph patterns.</span></span></span></p><div>
+
+<table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> Spirograph patterns are produced when a pen is tethered to the end of a rod which rotates at some angular speed <img src="images/img-0371.png" alt="$\omega _1$" style="vertical-align:-2px; 
+                                     width:17px; 
+                                     height:10px" class="math gen" /> about the end of another rod, which is itself rotating at some angular speed <img src="images/img-0372.png" alt="$\omega _2$" style="vertical-align:-2px; 
+                                     width:18px; 
+                                     height:10px" class="math gen" /> about a fixed central point. Spirographs are commonly implemented mechanically as wheels within wheels – epicycles within deferents, mathematically speaking – but in this example we implement them using the parametric functions </p><table id="a0000000702" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
+<tr id="a0000000703">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0365.png" alt="$\displaystyle  x  $" style="vertical-align:0px; width:10px;                     height:8px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0373.png" alt="$\displaystyle  r_1 \sin (t) + r_2 \sin (t r_1 / r_2)  $" style="vertical-align:-5px; width:186px;                     height:19px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr><tr id="a0000000704">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0367.png" alt="$\displaystyle y  $" style="vertical-align:-4px; width:9px;                     height:12px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0374.png" alt="$\displaystyle  r_1 \cos (t) + r_2 \cos (t r_1 / r_2)  $" style="vertical-align:-5px; width:190px;                     height:19px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr>
+</table><p> which are simply the sum of two circular motions with angular velocities inversely proportional to their radii. The complexity of the resulting spirograph pattern depends upon how rapidly the rods return to their starting configuration; if the two chosen angular speeds for the rods have a large lowest common multiple, then a highly complicated pattern will result. In the example below, we pick a ratio of <img src="images/img-0375.png" alt="$8:15$" style="vertical-align:0px; 
+                                     width:42px; 
+                                     height:13px" class="math gen" />: </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">r1 = 1.5</tt><br /><tt class="tt">r2 = 0.8</tt><br /><tt class="tt">set size square</tt><br /><tt class="tt">set trange[0:40*pi]</tt><br /><tt class="tt">set samples 2500</tt><br /><tt class="tt">plot parametric r1*sin(t) + r2*sin(t*(r1/r2)) : <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" /></tt><br /><tt class="tt">r1*cos(t) + r2*cos(t*(r1/r2))</tt> </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><center>
+<img src="images/img-0377.png" alt="\includegraphics[width=8cm]{examples/eps/ex_spirograph}" style="width:8cm" /></center> </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><p>Other ratios of <tt class="tt">r1</tt>:<tt class="tt">r2</tt> such as <img src="images/img-0379.png" alt="$7:19$" style="vertical-align:0px; 
+                                     width:41px; 
+                                     height:13px" class="math gen" /> and <img src="images/img-0380.png" alt="$5:19$" style="vertical-align:0px; 
+                                     width:41px; 
+                                     height:13px" class="math gen" /> also produce intricate patterns.  </p></td>
+
+</tr>
+</table>
+</div></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0050.html" title="Plotting Functions in Exotic Styles"><img alt="Previous: Plotting Functions in Exotic Styles" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="ch-plotting.html" title="Plotting: A Detailed Survey"><img alt="Up: Plotting: A Detailed Survey" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-legends.html" title="Graph Legends"><img alt="Next: Graph Legends" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

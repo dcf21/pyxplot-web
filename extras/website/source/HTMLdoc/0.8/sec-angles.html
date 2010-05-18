@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Treatment of Angles in PyXPlot</title>
+
+<link href="sect0021.html" title="Converting between different Temperature Scales" rel="next" />
+<link href="sec-units.html" title="Working with Physical Units" rel="prev" />
+<link href="sec-units.html" title="Working with Physical Units" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sec-units.html" title="Working with Physical Units"><img alt="Previous: Working with Physical Units" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-units.html" title="Working with Physical Units"><img alt="Up: Working with Physical Units" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0021.html" title="Converting between different Temperature Scales"><img alt="Next: Converting between different Temperature Scales" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0019.html">Performing Calculations</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sec-units.html">Working with Physical Units</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Treatment of Angles in PyXPlot</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="sec:angles">4.6.1 Treatment of Angles in PyXPlot</h2>
+<p>  <a name="a0000000415" id="a0000000415"></a><a name="a0000000416" id="a0000000416"></a> </p><p>By convention, the SI system of units does not have a base unit of angle: instead, the radian is considered to be a dimensionless unit. There are some strong mathematical reasons why this makes sense, since it makes it possible to write equations such as </p><table id="a0000000417" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td><img src="images/img-0102.png" alt="\[  d=\theta r  \]" style="width:51px; 
+                            height:13px" class="math gen" /></td>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td class="eqnnum" style="width:20%">&nbsp;</td>
+</tr>
+</table><p> and </p><table id="a0000000418" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td><img src="images/img-0103.png" alt="\[  x = \exp (a+i\theta ),  \]" style="width:127px; 
+                            height:18px" class="math gen" /></td>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td class="eqnnum" style="width:20%">&nbsp;</td>
+</tr>
+</table><p> which would otherwise have to be written as, for example, </p><table id="a0000000419" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td><img src="images/img-0104.png" alt="\[  d=2\pi \left(\frac{\theta }{2\pi \, \mathrm{rad}}\right) r=\left(\frac{\theta }{\mathrm{rad}}\right)  \]" style="width:227px; 
+                            height:44px" class="math gen" /></td>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td class="eqnnum" style="width:20%">&nbsp;</td>
+</tr>
+</table><p> in order to be strictly dimensionally correct. </p><p>However, it also has some disadvantages since some physical quantities such as fluxes per steradian are measured per unit angle or per unit solid angle, and the SI system traditionally<a href="#a0000000420" class="footnote"><sup class="footnotemark">1</sup></a> offers no way to dimensionally distinguish these from one another or from quantities with no angular dependence. Thus, in some branches of science, it is very useful to be able to keep track of dimensions of angle in a way incompatible with a system in which angles are fundamentally dimensionless. </p><p>In order to be useful in both mathematical and physical contexts, PyXPlot provides a switch which can be changed using the commands: </p><pre>
+set unit angle dimensionless
+set unit angle nodimensionless
+</pre><p> By default, angles are treated as being dimensionless, and expressions such as <img src="images/img-0105.png" alt="$a+i\theta $" style="vertical-align:-1px; 
+                                     width:46px; 
+                                     height:13px" class="math gen" /> are considered to be dimensionally correct. Inverse trigonometric functions such as <tt class="tt">asin</tt> return dimensionless numbers measured in radians. The unit of the degree is equal to the dimensionless constant <img src="images/img-0106.png" alt="$\pi /180$" style="vertical-align:-5px; 
+                                     width:47px; 
+                                     height:18px" class="math gen" />. However, when angles are set to have physical dimensions, the inverse trigonometric functions return values with dimensions of angle, and the above expression must be written as <img src="images/img-0107.png" alt="$a+i\theta /\mathrm{rad}$" style="vertical-align:-5px; 
+                                     width:82px; 
+                                     height:18px" class="math gen" /> in order to be dimensionally correct. Nonetheless, the <img src="images/img-0108.png" alt="$\exp ()$" style="vertical-align:-4px; 
+                                     width:40px; 
+                                     height:18px" class="math gen" /> function and all of the trigonometric functions continue to accept not only quantities with dimensions of angles, but also dimensionless numbers, as inputs. </p></div>
+
+
+
+<div id="footnotes">
+<p><b>Footnotes</b></p>
+<ol>
+<li id="a0000000420">Radians are sometimes treated in the SI system as <i class="it">supplementary</i> or derived units.</li>
+</ol>
+</div>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sec-units.html" title="Working with Physical Units"><img alt="Previous: Working with Physical Units" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-units.html" title="Working with Physical Units"><img alt="Up: Working with Physical Units" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0021.html" title="Converting between different Temperature Scales"><img alt="Next: Converting between different Temperature Scales" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

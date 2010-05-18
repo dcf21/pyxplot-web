@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Directing Where Output Goes</title>
+
+<link href="sect0017.html" title="Setting the Size of Output" rel="next" />
+<link href="sec-replot.html" title="The replot Command" rel="prev" />
+<link href="ch-first_steps.html" title="First Steps With PyXPlot" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sec-replot.html" title="The replot Command"><img alt="Previous: The replot Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="ch-first_steps.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0017.html" title="Setting the Size of Output"><img alt="Next: Setting the Size of Output" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-first_steps.html">First Steps With PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Directing Where Output Goes</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="sec:directing_output">3.11 Directing Where Output Goes</h1>
+<p>By default, when PyXPlot is used interactively, all plots are displayed on the screen. It is also possible to produce PostScript output, to be read into other programs or embedded into L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X documents, as well as a variety of other graphical formats. The <tt class="tt">set terminal</tt> command<a name="a0000000343" id="a0000000343"></a><a href="#a0000000344" class="footnote"><sup class="footnotemark">1</sup></a> is used to specify the output format that is required, and the <tt class="tt">set output</tt> command<a name="a0000000345" id="a0000000345"></a> is used to specify the file to which output should be directed. For example, </p><pre>
+set terminal postscript
+set output 'myplot.eps'
+plot 'datafile.dat'
+</pre><p>would output a PostScript plot of data from the file <tt class="tt">datafile.dat</tt> to the file <tt class="tt">myplot.eps</tt>. </p><p>The <tt class="tt">set terminal</tt> command<a name="a0000000346" id="a0000000346"></a> can also be used to configure various output options within each supported file format. For example, the following commands would produce black-and-white or colour output respectively: </p><pre>
+set terminal monochrome
+set terminal colour
+</pre><p>The former is useful for preparing plots for black-and-white publications, the latter for preparing plots for colourful presentations. </p><p>Both PostScript and Encapsulated PostScript can be produced. The former is recommended for producing figures to embed into documents, the latter for plots which are to be printed without further processing. The <tt class="tt">postscript</tt> terminal produces the latter; the <tt class="tt">eps</tt> terminal should be used to produce the former. Similarly the <tt class="tt">pdf</tt> terminal produces files in the Portable Document Format (PDF)<a name="a0000000347" id="a0000000347"></a> read by Adobe Acrobat<a name="a0000000348" id="a0000000348"></a>: </p><pre>
+set terminal postscript
+set terminal eps
+set terminal pdf
+</pre><p>It is also possible to produce plots in the gif, png and jpeg graphic formats, as follows: </p><pre>
+set terminal gif
+set terminal png
+set terminal jpg
+</pre><p>More than one of the above keywords can be combined on a single line, for example: </p><pre>
+set terminal postscript colour
+set terminal gif monochrome
+</pre><p>To return to the default state of displaying plots on screen, the <tt class="tt">x11</tt> terminal should be selected: </p><pre>
+set terminal x11
+</pre><p>After changing terminals, the <tt class="tt">refresh</tt> command<a name="a0000000349" id="a0000000349"></a><a href="#a0000000350" class="footnote"><sup class="footnotemark">2</sup></a> is especially useful; it reproduces the last plot to have been generated in the newly-selected graphical format. For more details of the <tt class="tt">set terminal</tt> command<a name="a0000000351" id="a0000000351"></a>, including how to produce gif and png images with transparent backgrounds, see Chapter <a href="ch-image_formats.html">2</a>. </p></div>
+
+
+
+<div id="footnotes">
+<p><b>Footnotes</b></p>
+<ol>
+<li id="a0000000344">Gnuplot users should note that the syntax of the <tt class="tt">set terminal</tt> command in PyXPlot is somewhat different from that used by Gnuplot; see Section <a href="sec-set_terminal.html">2.1</a>.</li><li id="a0000000350">The effect of the <tt class="tt">refresh</tt> command is very similar to that of the <tt class="tt">replot</tt> command with no arguments. The latter simply repeats the last <tt class="tt">plot</tt> command. We will see in Chapter <a href="ch-vector_graphics.html">2</a> that the <tt class="tt">refresh</tt> command is to be preferred in the current context because it is applicable to vector graphics as well as to graphs.</li>
+</ol>
+</div>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sec-replot.html" title="The replot Command"><img alt="Previous: The replot Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="ch-first_steps.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0017.html" title="Setting the Size of Output"><img alt="Next: Setting the Size of Output" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

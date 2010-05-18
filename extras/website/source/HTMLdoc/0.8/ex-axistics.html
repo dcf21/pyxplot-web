@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Specifying where Ticks should Appear along Axes</title>
+
+<link href="sec-set_xformat.html" title="Configuring how Tick Marks are Labelled" rel="next" />
+<link href="sect0053.html" title="Configuring the Appearance of Axes" rel="prev" />
+<link href="sec-multiple_axes.html" title="Configuring Axes" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0053.html" title="Configuring the Appearance of Axes"><img alt="Previous: Configuring the Appearance of Axes" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-multiple_axes.html" title="Configuring Axes"><img alt="Up: Configuring Axes" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-set_xformat.html" title="Configuring how Tick Marks are Labelled"><img alt="Next: Configuring how Tick Marks are Labelled" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-plotting.html">Plotting: A Detailed Survey</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sec-multiple_axes.html">Configuring Axes</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Specifying where Ticks should Appear along Axes</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="ex:axistics">1.7.5 Specifying where Ticks should Appear along Axes</h2>
+<p>By default, PyXPlot places a series of tick marks at significant points along each axis, with the most significant points being labelled. Labelled tick marks are termed <i class="it">major</i> ticks, and unlabelled tick marks are termed <i class="it">minor</i> ticks. The position and appearance of the major ticks along the <tt class="tt">x</tt>-axis can be configured using the <tt class="tt">set xtics</tt> command<a name="a0000000729" id="a0000000729"></a>, which has the following syntax: </p><pre>
+set xtics { axis | border | inward | outward | both }
+          {  autofreq
+           | &lt;increment&gt;
+           | { &lt;minimum&gt;, } &lt;increment&gt; { , &lt;maximum&gt; }
+           | (     {"label"} &lt;position&gt;
+               { , {"label"} &lt;position&gt; } .... )
+          }
+</pre><p>The corresponding <tt class="tt">set mxtics</tt> command, which has the same syntax as above, configures the appearance of the minor ticks along the <tt class="tt">x</tt>-axis. Analogous commands such as <tt class="tt">set ytics</tt> and <tt class="tt">set mx2tics</tt> configure the major and minor ticks along other axes. </p><p>The keywords <tt class="tt">inward</tt><a name="a0000000730" id="a0000000730"></a>, <tt class="tt">outward</tt><a name="a0000000731" id="a0000000731"></a> and <tt class="tt">both</tt><a name="a0000000732" id="a0000000732"></a> are used to configure how the ticks appear – whether they point inward, towards the plot, as is default, or outwards towards the axis labels, or in both directions. The keyword <tt class="tt">axis</tt><a name="a0000000733" id="a0000000733"></a> is an alias for <tt class="tt">inward</tt><a name="a0000000734" id="a0000000734"></a>, and <tt class="tt">border</tt><a name="a0000000735" id="a0000000735"></a> an alias for <tt class="tt">outward</tt><a name="a0000000736" id="a0000000736"></a>. </p><p>The remaining options are used to configure where along the axis ticks are placed. If a series of comma-separated values <tt class="tt">&lt;minimum&gt;, &lt;increment&gt;, &lt;maximum&gt;</tt> are specified, then ticks are placed at evenly spaced intervals between the specified limits. The <tt class="tt">&lt;minimum&gt;</tt> and <tt class="tt">&lt;maximum&gt;</tt> values are optional; if only one value is specified then it is taken to be the step size between ticks. If two values are specified, then the first is taken to be <tt class="tt">&lt;minimum&gt;</tt>. In the case of logarithmic axes, <tt class="tt">&lt;increment&gt;</tt> is applied as a multiplicative step size. </p><p>Alternatively, if a bracketed list of quoted tick labels and tick positions are provided, then ticks can be placed on an axis manually and each given its own textual label. The quoted tick labels may be omitted, in which case they are automatically generated: </p><pre>
+set xtics ("a" 1, "b" 2, "c" 3)
+set xtics (1,2,3)
+</pre><p> The keyword <tt class="tt">autofreq</tt><a name="a0000000737" id="a0000000737"></a> overrides any manual selection of ticks which may have been placed on an axis and resumes the automatic placement of ticks along it. The <tt class="tt">show xtics</tt> command<a name="a0000000738" id="a0000000738"></a>, together with its companions such as <tt class="tt">show x2tics</tt> and <tt class="tt">show ytics</tt>, may be used to query the current ticking options. The <tt class="tt">set noxtics</tt> command<a name="a0000000739" id="a0000000739"></a> may be used to stipulate that no ticks should appear along a particular axis: </p><pre>
+set noxtics
+show xtics
+</pre><p> <span class="upshape"><span class="mdseries"><span class="rm">A plot of the function <img src="images/img-0393.png" alt="$\exp (x)\sin (1/x)$" style="vertical-align:-5px; 
+                                     width:118px; 
+                                     height:19px" class="math gen" />.</span></span></span></p><div>
+
+<table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this example we produce a plot illustrating some of the crossing points of the function <img src="images/img-0393.png" alt="$\exp (x)\sin (1/x)$" style="vertical-align:-5px; 
+                                     width:118px; 
+                                     height:19px" class="math gen" />. We set the <tt class="tt">x</tt>-axis to have tick marks at <img src="images/img-0394.png" alt="$x=0.05$" style="vertical-align:0px; 
+                                     width:66px; 
+                                     height:13px" class="math gen" />, <img src="images/img-0172.png" alt="$0.1$" style="vertical-align:0px; 
+                                     width:22px; 
+                                     height:12px" class="math gen" />, <img src="images/img-0395.png" alt="$0.2$" style="vertical-align:0px; 
+                                     width:23px; 
+                                     height:12px" class="math gen" /> and <img src="images/img-0396.png" alt="$0.4$" style="vertical-align:0px; 
+                                     width:23px; 
+                                     height:12px" class="math gen" />. The <tt class="tt">x2</tt>-axis has custom labelled ticks at <img src="images/img-0397.png" alt="$x=1/\pi , 2/\pi $" style="vertical-align:-5px; 
+                                     width:101px; 
+                                     height:18px" class="math gen" />, etc., pointing outwards from the plot. The left-hand <tt class="tt">y</tt>-axis has tick marks placed automatically whereas the <tt class="tt">y2</tt>-axis has no tics at all. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">set log x1x2</tt><br /><tt class="tt">set xrange [0.05:0.5]</tt><br /><tt class="tt">set axis x2 top linked x</tt><br /><tt class="tt">set xtics 0.05, 2, 0.4</tt><br /><tt class="tt">set x2tics border <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" /></tt><br /><tt class="tt">("$<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />frac{1}{<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />pi}$" 1/pi, "$<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />frac{1}{2<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />pi}$" 1/(2*pi), <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" /></tt><br /><tt class="tt">"$<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />frac{1}{3<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />pi}$" 1/(3*pi), "$<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />frac{1}{4<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />pi}$" 1/(4*pi), <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" /></tt><br /><tt class="tt">"$<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />frac{1}{5<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />pi}$" 1/(5*pi), "$<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />frac{1}{6<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />pi}$" 1/(6*pi))</tt><br /><tt class="tt">set grid x2</tt><br /><tt class="tt">set nokey</tt><br /><tt class="tt">set xlabel ’$x$’</tt><br /><tt class="tt">set ylabel ’$<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />exp(x)<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />sin(1/x)$’</tt><br /><tt class="tt">plot exp(x)*sin(1/x), 0</tt> </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><p><center>
+<img src="images/img-0399.png" alt="\includegraphics[width=9cm]{examples/eps/ex_axistics}" style="width:9cm" /></center>  </p></td>
+
+</tr>
+</table>
+</div></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0053.html" title="Configuring the Appearance of Axes"><img alt="Previous: Configuring the Appearance of Axes" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-multiple_axes.html" title="Configuring Axes"><img alt="Up: Configuring Axes" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-set_xformat.html" title="Configuring how Tick Marks are Labelled"><img alt="Next: Configuring how Tick Marks are Labelled" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

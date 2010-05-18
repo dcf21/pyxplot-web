@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Writing A Short Example Talk</title>
+
+<link href="sect0221.html" title="Delivering your Talk" rel="next" />
+<link href="sect0219.html" title="Setting up Infrastructure" rel="prev" />
+<link href="sect0218.html" title="Delivering Talks in PyXPlot" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0219.html" title="Setting up Infrastructure"><img alt="Previous: Setting up Infrastructure" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0218.html" title="Delivering Talks in PyXPlot"><img alt="Up: Delivering Talks in PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0221.html" title="Delivering your Talk"><img alt="Next: Delivering your Talk" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0214.html">Appendices</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0215.html">Other Applications of PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0218.html">Delivering Talks in PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Writing A Short Example Talk</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="a0000000221">A.3.2 Writing A Short Example Talk</h2>
+<p>The infrastructure is now completely set up, and you are ready to start designing slides. We will now design an example talk with three slides. </p><ol class="enumerate">
+<li><p>Run the script <tt class="tt">compile</tt> and leave it running in the background. PyXPlot will then re-run the scripts describing your slides whenever you edit them. </p></li><li><p>As an example, we will now make a title slide. Paste the following script into the file <tt class="tt">scripts/0001</tt>: </p><pre>
+set output 'slides/0001.gif'
+load 'scripts/slide_init'
+
+text '\parbox[t]{10cm}{\center \LARGE \bf \
+  A Tutorial in the use of PyXPlot \\ \
+  to present Talks \
+} ' at x*50, y*75
+text '\Large \bf Prof A.N.\ Other' at x*50, y*45
+text '\parbox[t]{9cm}{\center \
+  Director, \\ \
+  Atlantis Island University \
+} ' at x*50, y*38
+text 'Annual Lecture, 1st January 2010' at x*50, y*22
+
+load 'scripts/slide_finish'
+</pre><p> Note that the variables <tt class="tt">x</tt> and <tt class="tt">y</tt> are defined to be 1 per cent of the width and height of your slides respectively, such that the bottom-left of each slide is at <img src="images/img-0522.png" alt="$(0,0)$" style="vertical-align:-4px; 
+                                     width:38px; 
+                                     height:18px" class="math gen" /> and the top-right of each slide is at <img src="images/img-0661.png" alt="$({\tt 100*x},{\tt 100*y})$" style="vertical-align:-4px; 
+                                     width:131px; 
+                                     height:18px" class="math gen" />. </p></li><li><p>Next we will make a second slide with a series of bullet points. Paste the following script into the file <tt class="tt">scripts/0002</tt>: </p><pre>
+set output 'slides/0002.gif'
+load 'scripts/slide_init'
+
+text '\Large \textbf{Talk Overview}' at x*50, y*92
+text "\parbox[t]{9cm}{\begin{itemize} \
+ \item Setting up the Infrastructure. \
+ \item Writing a Short Example Talk. \
+ \item Delivering your Talk. \
+ \item Conclusion. \
+ \end{itemize} \
+} " at x*50 , y*60
+
+set textcol cyan
+text '{\bf With thanks to my collaborator, \
+           Prof Y.E.\ Tanother.}' at x*50,y*15
+
+load 'scripts/slide_finish'
+</pre></li><li><p>Finally, we will make a third slide with a graph on it. Paste the following script into the file <tt class="tt">scripts/0003</tt>: </p><pre>
+set output 'slides/0003.gif'
+load 'scripts/slide_init'
+
+text '\Large \bf The Results of Our Model' at x*50, y*92
+set axescolour yellow ; set nogrid
+set origin x*17.5, y*20 ; set width x*70
+set xrange [0.01:0.7]
+set xlabel '$x$'
+set yrange [0.01:0.7]
+set ylabel '$f(x)$'
+set palette Red, Green, Orange, Purple
+
+set key top left
+plot x t 'Model 1', exp(x)-1 t 'Model 2', \
+     log(x+1) t 'Model 3', sin(x) t 'Model 4'
+
+load 'scripts/slide_finish'
+</pre></li><li><p>To view your slides, run the script <tt class="tt">make_slides</tt>. Afterwards, you will find your slides as a series of <img src="images/img-0660.png" alt="$1024\times 768$" style="vertical-align:0px; 
+                                     width:84px; 
+                                     height:13px" class="math gen" /> pixel jpeg images in the directory <tt class="tt">slides_cropped</tt>. If you have the <i class="it">Quick Image Viewer</i><a name="a0000001497" id="a0000001497"></a> (<tt class="tt">qiv</tt>) installed, then you can view them as follows: </p><pre>
+qiv slides_cropped/*
+</pre><p> If you’re in a hurry, you can skip the step of running the script <tt class="tt">make_slides</tt> and view your slides as images in the <tt class="tt">slides</tt> directory, but note that the slides in here may not be properly cropped. This approach is generally preferable when viewing your slides in a semi-live fashion as you are editing them. </p></li><li><p>If you’d like to make the text on your slides larger or smaller, you can do so by varying the <tt class="tt">scale</tt> parameter in the file <tt class="tt">scripts/slide_init</tt>. </p></li>
+</ol></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0219.html" title="Setting up Infrastructure"><img alt="Previous: Setting up Infrastructure" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0218.html" title="Delivering Talks in PyXPlot"><img alt="Up: Delivering Talks in PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0221.html" title="Delivering your Talk"><img alt="Next: Delivering your Talk" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

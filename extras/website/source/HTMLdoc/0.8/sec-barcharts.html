@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Barcharts and Histograms</title>
+
+<link href="sect0047.html" title="Steps" rel="next" />
+<link href="sect0046.html" title="Shaded Regions" rel="prev" />
+<link href="sec-list_of_plotstyles.html" title="PyXPlot’s Plot Styles" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0046.html" title="Shaded Regions"><img alt="Previous: Shaded Regions" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-list_of_plotstyles.html" title="PyXPlot’s Plot Styles"><img alt="Up: PyXPlot’s Plot Styles" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0047.html" title="Steps"><img alt="Next: Steps" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-plotting.html">Plotting: A Detailed Survey</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sec-list_of_plotstyles.html">PyXPlot’s Plot Styles</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Barcharts and Histograms</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="sec:barcharts">1.2.4 Barcharts and Histograms</h2>
+<p>  <a name="a0000000648" id="a0000000648"></a> </p><p>The following plot styles allow barcharts to be produced: </p><ul class="itemize">
+<li><p><tt class="tt">boxes</tt><a name="a0000000649" id="a0000000649"></a><a name="a0000000650" id="a0000000650"></a> </p></li><li><p><tt class="tt">impulses</tt><a name="a0000000651" id="a0000000651"></a><a name="a0000000652" id="a0000000652"></a> </p></li><li><p><tt class="tt">wboxes</tt><a name="a0000000653" id="a0000000653"></a><a name="a0000000654" id="a0000000654"></a> </p></li>
+</ul><p>These styles differ in where the horizontal interfaces between the bars are placed along the ordinate axis and how wide the bars are. In the <tt class="tt">boxes</tt><a name="a0000000655" id="a0000000655"></a><a name="a0000000656" id="a0000000656"></a> plot style, the interfaces between the bars are at the midpoints between the specified datapoints by default (see, for example, Figure <a href="sec-barcharts.html#fig:ex_barchart2">1.1</a>a). Alternatively, the widths of the bars may be set using the <tt class="tt">set boxwidth</tt> command. In this case, all of the bars will be centred upon their specified <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" />-coordinates, and have total widths equalling that specified in the <tt class="tt">set boxwidth</tt> command<a name="a0000000657" id="a0000000657"></a>. Consequently, there may be gaps between them, or they may overlap, as seen in Figure <a href="sec-barcharts.html#fig:ex_barchart2">1.1</a>(b). </p><div id="fig:ex_barchart2" class="figure"><center> 
+<img src="images/img-0343.png" alt="\includegraphics[width=\textwidth ]{examples/eps/ex_barchart2}" style="width:" /> </center><div class="caption"><b>Figure 1.1</b>: <span>A gallery of the various bar chart styles which PyXPlot can produce. See the text for more details. The script and data file used to produce this image are available on the PyXPlot website at http://www.pyxplot.org.uk/examples/Manual/04barchart2/.</span></div></div><p>Having set a fixed box width, the default behaviour of scaling box widths automatically may be restored either with the <tt class="tt">unset boxwidth</tt> command, or by setting the boxwidth to a negative width. </p><p>In the <tt class="tt">wboxes</tt><a name="a0000000658" id="a0000000658"></a><a name="a0000000659" id="a0000000659"></a> plot style, the width of each bar is specified manually as an additional column of the input datafile. This plot style expects three columns of data to be provided: the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" />- and <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
+                                     width:9px; 
+                                     height:12px" class="math gen" />-coordinates of each bar in the first two, and the width of the bars in the third. Figure <a href="sec-barcharts.html#fig:ex_barchart2">1.1</a>(c) shows an example of this plot style in use. </p><p>Finally, in the <tt class="tt">impulses</tt><a name="a0000000660" id="a0000000660"></a><a name="a0000000661" id="a0000000661"></a> plot style, the bars all have zero width; see Figure <a href="sec-barcharts.html#fig:ex_barchart1">1.2</a>(c) for an example. </p><p>In all of these plot styles, the bars originate from the line <img src="images/img-0345.png" alt="$y=0$" style="vertical-align:-4px; 
+                                     width:42px; 
+                                     height:16px" class="math gen" /> by default, as is normal for a histogram. However, should it be desired for the bars to start from a different vertical line, this may be achieved by using the <tt class="tt">set boxfrom</tt> command<a name="a0000000662" id="a0000000662"></a>, for example: </p><pre>
+set boxfrom 5
+</pre><p>In this case, all of the bars would now originate from the line <img src="images/img-0346.png" alt="$y=5$" style="vertical-align:-4px; 
+                                     width:42px; 
+                                     height:17px" class="math gen" />. Figure <a href="sec-barcharts.html#fig:ex_barchart1">1.2</a>(1) shows the kind of effect that is achieved; for comparison, Figure <a href="sec-barcharts.html#fig:ex_barchart1">1.2</a>(b) shows the same bar chart with the boxes starting from their default position of <img src="images/img-0345.png" alt="$y=0$" style="vertical-align:-4px; 
+                                     width:42px; 
+                                     height:16px" class="math gen" />. </p><div id="fig:ex_barchart1" class="figure"><center> 
+<img src="images/img-0348.png" alt="\includegraphics[width=\textwidth ]{examples/eps/ex_barchart1}" style="width:" /> </center><div class="caption"><b>Figure 1.2</b>: <span>A second gallery of the various bar chart styles which PyXPlot can produce. See the text for more details. The script and data file used to produce this image are available on the PyXPlot website at http://www.pyxplot.org.uk/examples/Manual/03barchart1/.</span></div></div><p>The bars may be filled using the <tt class="tt">with</tt> <tt class="tt">fillcolour</tt><a name="a0000000663" id="a0000000663"></a> modifier, followed by the name of a colour: </p><pre>
+plot 'data.dat' with boxes fillcolour blue
+plot 'data.dat' with boxes fc 4
+</pre><p>Figures <a href="sec-barcharts.html#fig:ex_barchart2">1.1</a>(b) and (d) demonstrate the use of filled bars. </p><h3 id="a0000000664">Stacked Bar Charts</h3>
+<p>If multiple datapoints are supplied to the <tt class="tt">boxes</tt><a name="a0000000665" id="a0000000665"></a><a name="a0000000666" id="a0000000666"></a> or <tt class="tt">wboxes</tt><a name="a0000000667" id="a0000000667"></a><a name="a0000000668" id="a0000000668"></a> plot styles at a common <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" />-coordinate, then the bars are stacked one above another into a stacked barchart. Consider the following datafile: </p><pre>
+1 1
+2 2
+2 3
+3 4
+</pre><p>The second bar at <img src="images/img-0350.png" alt="$x=2$" style="vertical-align:0px; 
+                                     width:43px; 
+                                     height:12px" class="math gen" /> would be placed on top of the first, spanning the range <img src="images/img-0351.png" alt="$2&lt;y&lt;5$" style="vertical-align:-4px; 
+                                     width:75px; 
+                                     height:17px" class="math gen" />, and having the same width as the first. If plot colours are being automatically selected from the palette, then a different palette colour is used to plot the upper bar. </p></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0046.html" title="Shaded Regions"><img alt="Previous: Shaded Regions" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-list_of_plotstyles.html" title="PyXPlot’s Plot Styles"><img alt="Up: PyXPlot’s Plot Styles" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0047.html" title="Steps"><img alt="Next: Steps" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: for</title>
+
+<link href="sect0092.html" title="foreach" rel="next" />
+<link href="sect0090.html" title="fit" rel="prev" />
+<link href="ch-reference.html" title="Command Reference" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0090.html" title="fit"><img alt="Previous: fit" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0092.html" title="foreach"><img alt="Next: foreach" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0071.html">Reference Manual</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-reference.html">Command Reference</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">for</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="a0000000092">1.20 for</h1>
+<p><a name="a0000000963" id="a0000000963"></a> </p><pre>
+for &lt;variable&gt; = &lt;start&gt; to &lt;end&gt; [step &lt;step&gt;]
+                          [loopname &lt;loopname&gt;]
+ "{"
+  ...
+ "}"
+</pre><p>The <tt class="tt">for</tt> command<a name="a0000000964" id="a0000000964"></a> executes a set of commands repeatedly, with a specified variable taking a different value on each iteration. The variable takes the value <tt class="tt">start</tt> on the first iteration, and increases by a fixed value <tt class="tt">step</tt> on each iteration; <tt class="tt">step</tt> may be negative if <tt class="tt">end</tt> <img src="images/img-0034.png" alt="$&lt;$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" /> <tt class="tt">start</tt>. If <tt class="tt">step</tt> is not specified then a value of unity is assumed. The loop terminates when the variable exceeds or equals <tt class="tt">end</tt>; note that the loop is not executed with the variable equalling <tt class="tt">end</tt>. The following example prints the squares of the first five natural numbers: </p><pre>
+for i = 1 to 6
+ {
+  print i**2
+ }
+</pre></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0090.html" title="fit"><img alt="Previous: fit" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0092.html" title="foreach"><img alt="Next: foreach" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

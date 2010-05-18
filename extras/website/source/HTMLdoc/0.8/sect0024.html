@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Solving Systems of Equations</title>
+
+<link href="ex-eqnsolve.html" title="Searching for Minima and Maxima of Functions" rel="next" />
+<link href="ex-calculus.html" title="Numerical Integration and Differentiation" rel="prev" />
+<link href="sect0019.html" title="Performing Calculations" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="ex-calculus.html" title="Numerical Integration and Differentiation"><img alt="Previous: Numerical Integration and Differentiation" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0019.html" title="Performing Calculations"><img alt="Up: Performing Calculations" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="ex-eqnsolve.html" title="Searching for Minima and Maxima of Functions"><img alt="Next: Searching for Minima and Maxima of Functions" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0019.html">Performing Calculations</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Solving Systems of Equations</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="a0000000025">4.9 Solving Systems of Equations</h1>
+<p>The <tt class="tt">solve</tt> command<a name="a0000000450" id="a0000000450"></a> can be used to solve simple systems of one or more equations numerically. It takes as its arguments a comma-separated list of the equations which are to be solved, and a comma-separated list of the variables which are to be found. The latter should be prefixed by the word <tt class="tt">via</tt>, to separate it from the list of equations: </p><pre>
+solve &lt;equation 1&gt;,... via &lt;variable 1&gt;, ...
+</pre><p>Note that the time taken by the solver dramatically increases with the number of variables which are simultaneously found, whereas the accuracy achieved simultaneously decreases. The following example solves a simple pair of simultaneous equations of two variables: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">solve x+y=10, x-y=3 via x,y</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print x</b></tt><br /><tt class="tt">6.5</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print y</b></tt><br /><tt class="tt">3.5</tt>  </p><p>No output is returned to the terminal if the numerical solver succeeds, otherwise an error message is displayed. If any of the fitting variables are already defined prior to the <tt class="tt">solve</tt> command’s being called, their values are used as initial guesses, otherwise an initial guess of unity for each fitting variable is assumed. Thus, the same <tt class="tt">solve</tt> command<a name="a0000000451" id="a0000000451"></a> returns two different values in the following two cases: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">x=</b> <i class="it"># Undefine x</i></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">solve cos(x)=0 via x</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print x/pi</b></tt><br /><tt class="tt">0.5</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">x=10</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">solve cos(x)=0 via x</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print x/pi</b></tt><br /><tt class="tt">3.5</tt>  </p><p>In cases where any of the variables being solved for are not dimensionless, it is essential that an initial guess with appropriate units be supplied, otherwise the solver will try and fail to solve the system of equations using dimensionless values: </p><p><table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="text-align:left"><p><big class="xlarge">Uding<img src="images/img-0029.png" alt="\symbol{'045}" style="vertical-align:-1px; width:13px; height:15px" class="symbol gen" /></big></p></td>
+
+    
+    <td style="text-align:left"><p><div style="width:0.0pt" class="minipage"><tt class="tt"> x =<br />y = 5*unit(km)<br />solve x=y via x </tt></div></p></td>
+
+</tr>
+</table> </p><p><table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="text-align:left"><p><big class="xlarge">Uding<img src="images/img-0030.png" alt="\symbol{'042}" style="vertical-align:6px; width:7px; height:6px" class="symbol gen" /></big></p></td>
+
+    
+    <td style="text-align:left"><p><div style="width:0.0pt" class="minipage"><tt class="tt"> x = unit(m)<br />y = 5*unit(km)<br />solve x=y via x </tt></div></p></td>
+
+</tr>
+</table> </p><p>The <tt class="tt">solve</tt> command<a name="a0000000452" id="a0000000452"></a> works by minimising the squares of the residuals of all of the equations supplied, and so even when no exact solution can be found, the best compromise is returned. The following example has no solution – a system of three equations with two variables is over-constrained – but PyXPlot nonetheless finds a compromise solution: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">solve x+y=10, x-y=3, 2*x+y=16 via x,y</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print x</b></tt><br /><tt class="tt">6.3571429</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print y</b></tt><br /><tt class="tt">3.4285714</tt>  </p><p>When complex arithmetic is enabled, the <tt class="tt">solve</tt> command<a name="a0000000453" id="a0000000453"></a> allows each of the variables being fitted to take any value in the complex plane, and thus the number of dimensions of the fitting problem is effectively doubled – the real and imaginary components of each variable are solved for separately – as in the following example: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">set numerics complex</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">solve exp(x)=e*i via x</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print Re(x)</b></tt><br /><tt class="tt">1</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print Im(x)/pi</b></tt><br /><tt class="tt">0.5</tt>  </p></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="ex-calculus.html" title="Numerical Integration and Differentiation"><img alt="Previous: Numerical Integration and Differentiation" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0019.html" title="Performing Calculations"><img alt="Up: Performing Calculations" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="ex-eqnsolve.html" title="Searching for Minima and Maxima of Functions"><img alt="Next: Searching for Minima and Maxima of Functions" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

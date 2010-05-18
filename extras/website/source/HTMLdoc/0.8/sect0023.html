@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Changing the Accuracy to which Numbers are Displayed</title>
+
+<link href="sec-pastable.html" title="Creating Pastable Text" rel="next" />
+<link href="sect0022.html" title="Units" rel="prev" />
+<link href="sec-unitdisp.html" title="Configuring how Numbers are Displayed" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0022.html" title="Units"><img alt="Previous: Units" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-unitdisp.html" title="Configuring how Numbers are Displayed"><img alt="Up: Configuring how Numbers are Displayed" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-pastable.html" title="Creating Pastable Text"><img alt="Next: Creating Pastable Text" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0019.html">Performing Calculations</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sec-unitdisp.html">Configuring how Numbers are Displayed</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Changing the Accuracy to which Numbers are Displayed</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="a0000000024">4.7.2 Changing the Accuracy to which Numbers are Displayed</h2>
+<p>By default, when numbers are displayed, they are printed accurate to eight significant figures, although fewer figures may actually be displayed if the final digits are zeros or nines. </p><p>This is generally a helpful convention: PyXPlot’s internal arithmetic is generally accurate to around 16 significant figures, and so it is quite conceivable that a calculation which is supposed to return, say <img src="images/img-0127.png" alt="$1$" style="vertical-align:0px; 
+                                     width:7px; 
+                                     height:12px" class="math gen" />, may in fact return 0.999 999 999 999 999 9. Likewise, when complex arithmetic is enabled, routines which are expected to return real numbers may in fact return results with imaginary parts at the level of one part in <img src="images/img-0128.png" alt="$10^{16}$" style="vertical-align:0px; 
+                                     width:31px; 
+                                     height:16px" class="math gen" />. By displaying numbers to only eight significant figures in such cases, the user is usually shown the ‘right’ answer, instead of a noisy and unattractive one. </p><p>However, there may also be cases where more accuracy is desirable, in which case, the number of significant figures to which output is displayed can be set using the command<a name="a0000000438" id="a0000000438"></a> </p><pre>
+n = 12
+set numerics sigfig n
+</pre><p>where <tt class="tt">n</tt> can be any number in the range 1-30. It should be noted that the number supplied is the <i class="it">minimum</i> number of significant figures to which numbers are displayed; on occasion an extra figure may be displayed. </p><p>Alternatively, the string substitution operator, described in Section <a href="sec-stringsubop.html">6.1.1</a> may be used to specify how a number should be displayed on a one-by-one basis, as in the examples: </p><p> <small class="footnotesize"><tt class="tt">pyxplot&gt; <b class="bf">print "%d"  %(pi)</b> <i class="it"># Print the integer part of pi</i></tt><br /><tt class="tt">3</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print "%.5f"%(pi)</b> <i class="it"># Print pi in non-scientific format, to 5 d.p.</i></tt><br /><tt class="tt">3.14159</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print "%.5e"%(pi)</b> <i class="it"># Print pi in scientific format, to 5 d.p.</i></tt><br /><tt class="tt">3.14159e+00</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print "%s"  %(pi)</b> <i class="it"># Print pi as normal</i></tt><br /><tt class="tt">3.1415927</tt> </small> </p></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0022.html" title="Units"><img alt="Previous: Units" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-unitdisp.html" title="Configuring how Numbers are Displayed"><img alt="Up: Configuring how Numbers are Displayed" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-pastable.html" title="Creating Pastable Text"><img alt="Next: Creating Pastable Text" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

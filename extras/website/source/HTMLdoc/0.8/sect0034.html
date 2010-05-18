@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Conditionals</title>
+
+<link href="sect0035.html" title="For Loops" rel="next" />
+<link href="sect0033.html" title="String Manipulation Functions" rel="prev" />
+<link href="sect0031.html" title="Programming and Flow Control" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0033.html" title="String Manipulation Functions"><img alt="Previous: String Manipulation Functions" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0031.html" title="Programming and Flow Control"><img alt="Up: Programming and Flow Control" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0035.html" title="For Loops"><img alt="Next: For Loops" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0031.html">Programming and Flow Control</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Conditionals</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="a0000000035">6.2 Conditionals</h1>
+<p>The <tt class="tt">if</tt> statement<a name="a0000000557" id="a0000000557"></a> can be used to conditionally execute a series of commands only when a certain criterion is satisfied. In its simplest form, its syntax is </p><pre>
+if &lt;expression&gt; {
+  ....
+ }
+</pre><p>where the expression can take the form of, for example, <tt class="tt">x&lt;0</tt> or <tt class="tt">y==1</tt>. Note that the operator <tt class="tt">==</tt> is used to test the equality of two algebraic expressions; the operator <tt class="tt">=</tt> is only used to assign values to variables and functions. A full list of the operators available can be found in Table <a href="sec-first_plots.html#tab:operators_table">3.1</a>. As in many other programming languages, algebraic expressions are deemed to be true if they evaluate to any non-zero value, and false if they exactly equal zero. Thus, the following two examples are entirely legal syntax, and the first <tt class="tt">print</tt> statement will execute, but the second will not: </p><pre>
+if 2*3 {
+  print "2*3 is True"
+ }
+
+if 2-2 {
+  print "2-2 is False"
+ }
+</pre><p>The variables <tt class="tt">True</tt> and <tt class="tt">False</tt> are predefined constants, which evaluate to 1 and 0 respectively, making the following syntax legal: </p><pre>
+if False {
+  print "Never gets here"
+ }
+</pre><p>As in C, the block of commands which are to be conditionally executed is enclosed in braces (i.e. <tt class="tt">{ }</tt>). There are, however, some rules about the arrangement of whitespace. The block of commands must begin on a new line after the <tt class="tt">if</tt> statement. The closing brace must be on a line by itself at the end of the block. Alternatively, semi-colons may, as always, be used in the place of new lines. The opening brace may be placed either on the same line as the <tt class="tt">if</tt> statement, or on the following line: </p><pre>
+if (x==0)
+ {
+  print "x is zero"
+ }
+
+if (x==0) { ; print "x is zero" ; }
+</pre><p>After such an <tt class="tt">if</tt> clause, it is possible to string together further conditions in <tt class="tt">else if</tt> clauses, perhaps with a final <tt class="tt">else</tt> clause, as in the example: </p><pre>
+if (x==0)
+ {
+  print "x is zero"
+ } else if (x&gt;0) {
+  print "x is positive"
+ } else {
+  print "x is negative"
+ }
+</pre><p>Here, as previously, the first script block is executed if the first conditional, <tt class="tt">x==0</tt>, is true. If this script block is not executed, the second conditional, <tt class="tt">x&gt;0</tt>, is then tested. If this is true, then the second script block is executed. The final script block, following the <tt class="tt">else</tt>, is executed if none of the preceeding conditionals have been true. Any number of <tt class="tt">else if</tt> statements can be chained one after another, and a final <tt class="tt">else</tt> statement can always be optionally supplied. The <tt class="tt">else</tt> and <tt class="tt">else if</tt> statements must always be placed on the same line as the closing brace of the preceeding script block. </p><p>The precise way in which a string of <tt class="tt">else if</tt> statements are arranged in a PyXPlot script is a matter of taste: the following is a more compact but equivalent version of the example given above: </p><pre>
+if      (x==0) { ; print "x is zero"     ; } \
+else if (x&gt; 0) { ; print "x is positive" ; } \
+else           { ; print "x is negative" ; }
+</pre></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0033.html" title="String Manipulation Functions"><img alt="Previous: String Manipulation Functions" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0031.html" title="Programming and Flow Control"><img alt="Up: Programming and Flow Control" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0035.html" title="For Loops"><img alt="Next: For Loops" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Handling Numerical Errors</title>
+
+<link href="sec-complex_numbers.html" title="Working with Complex Numbers" rel="next" />
+<link href="ex-funcsplice.html" title="Spliced Functions" rel="prev" />
+<link href="sect0019.html" title="Performing Calculations" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="ex-funcsplice.html" title="Spliced Functions"><img alt="Previous: Spliced Functions" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0019.html" title="Performing Calculations"><img alt="Up: Performing Calculations" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-complex_numbers.html" title="Working with Complex Numbers"><img alt="Next: Working with Complex Numbers" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0019.html">Performing Calculations</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Handling Numerical Errors</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="sec:num_errs">4.4 Handling Numerical Errors</h1>
+<p>  <a name="a0000000394" id="a0000000394"></a> </p><p>By default, an error message is returned whenever calculations return values which are infinite, as in the case of <tt class="tt">1/0</tt>, or when functions are evaluated outside the domain of parameter space in which they are defined, as in the case of <tt class="tt">besseli(-1,1)</tt>. Sometimes this behaviour is desirable: it flags up to the user that a calculation has gone wrong, and exactly what the problem is. At other times, however, these error messages can be undesirable and may lead you to miss more genuine and serious errors buried in their midst. </p><p>For this reason, the issuing of explicit error messages when calculations return non-finite numeric results can be switched off by typing: <a name="a0000000395" id="a0000000395"></a> </p><pre>
+set numeric errors quiet
+</pre><p>Having done this, expressions such as </p><pre>
+x = besseli(-1,1)
+</pre><p>fail silently, and variables which contain non-finite numeric results are displayed as <tt class="tt">NaN</tt><a name="a0000000396" id="a0000000396"></a>, which stands for <i class="it">Not a Number</i><a name="a0000000397" id="a0000000397"></a>. The issuing of explicit errors may subsequently be re-enabled by typing: <a name="a0000000398" id="a0000000398"></a> </p><pre>
+set numeric errors explicit
+</pre></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="ex-funcsplice.html" title="Spliced Functions"><img alt="Previous: Spliced Functions" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0019.html" title="Performing Calculations"><img alt="Up: Performing Calculations" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-complex_numbers.html" title="Working with Complex Numbers"><img alt="Next: Working with Complex Numbers" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

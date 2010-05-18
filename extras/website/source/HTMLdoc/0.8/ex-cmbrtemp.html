@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Linked Axes</title>
+
+<link href="sec-set_colours.html" title="Gridlines" rel="next" />
+<link href="sec-set_xformat.html" title="Configuring how Tick Marks are Labelled" rel="prev" />
+<link href="sec-multiple_axes.html" title="Configuring Axes" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sec-set_xformat.html" title="Configuring how Tick Marks are Labelled"><img alt="Previous: Configuring how Tick Marks are Labelled" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-multiple_axes.html" title="Configuring Axes"><img alt="Up: Configuring Axes" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-set_colours.html" title="Gridlines"><img alt="Next: Gridlines" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-plotting.html">Plotting: A Detailed Survey</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sec-multiple_axes.html">Configuring Axes</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Linked Axes</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="ex:cmbrtemp">1.7.7 Linked Axes</h2>
+<p>Often it may be desired that multiple axes on a graph share a common range, or be related to one another by some algebraic expression. For example, a plot with wavelength <img src="images/img-0407.png" alt="$\lambda $" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:13px" class="math gen" /> of light as one axis may usefully also have parallel axes showing frequency of light <img src="images/img-0408.png" alt="$\nu =c/\lambda $" style="vertical-align:-5px; 
+                                     width:60px; 
+                                     height:18px" class="math gen" /> or photon energy <img src="images/img-0409.png" alt="$E=hc/\lambda $" style="vertical-align:-5px; 
+                                     width:75px; 
+                                     height:18px" class="math gen" />. The following example sets the <tt class="tt">x2</tt> axis to share a common range with the <tt class="tt">x</tt> axis: </p><pre>
+set axis x2 linked x
+</pre><p> An algebraic relationship between two axes may be set by stating the algebraic relationship after the keyword <tt class="tt">using</tt>, as in the following example which implement the formulae shown above for the frequency and energy of photons of light as a function of their wavelength: </p><pre>
+set xrange [200*unit(nm):unit(800*nm)]
+set axis x2 linked x1 using phy\_c/x
+set axis x3 linked x2 using phy\_h*x
+</pre><p> As in the <tt class="tt">set xformat</tt> command, a dummy variable of <tt class="tt">x</tt>, <tt class="tt">y</tt> or <tt class="tt">z</tt> is used in the linkage expression depending upon the direction of the axis being linked to, but a dummy variable of <tt class="tt">x</tt> is still used when linking to, for example, the <tt class="tt">x2</tt> axis. </p><p>As these examples demonstrate, the functions used to link axes need not be linear. In fact, axes with any arbitrary mapping between distance and ordinate value can be produced by linked in a non-linear fashion to another linear axis, which, if desired, can then be hidden using the <tt class="tt">set axis invisible</tt> command. Multi-valued mappings are also permitted. Any data plotted against the following <tt class="tt">x2</tt>-axis for a suitable range of <tt class="tt">x</tt>-axis </p><pre>
+set axis x2 linked x1 using x**2
+</pre><p> would appear twice, symmetrically on either side of <img src="images/img-0131.png" alt="$x=0$" style="vertical-align:0px; 
+                                     width:43px; 
+                                     height:12px" class="math gen" />. </p><p>Insofar as is possible, linked axes autoscale intelligently when no range is set. Thus, if the <tt class="tt">x2</tt>-axis is linked to the <tt class="tt">x</tt>-axis, and no range to set for the <tt class="tt">x</tt>-axis, the <tt class="tt">x</tt>-axis will autoscale to include all of the data plotted against both itself and the <tt class="tt">x2</tt>-axis. Similarly, if the <tt class="tt">x2</tt>-axis is linked to the <tt class="tt">x</tt>-axis by means of some algebraic expression, the <tt class="tt">x</tt>-axis will attempt to autoscale to include the data plotted against the <tt class="tt">x2</tt>-axis, though in some cases – especially with non-monotonic linking functions – this may prove too difficult. Where PyXPlot detects that it has failed, a warning is issued recommending that a hard range be set for – in this example – the <tt class="tt">x</tt>-axis. </p><p> <span class="upshape"><span class="mdseries"><span class="rm">A plot of many blackbodies demonstrating the use of linked axes.</span></span></span></p><div>
+
+<table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this example we produce a plot of blackbody spectra for five different temperatures <img src="images/img-0142.png" alt="$T$" style="vertical-align:0px; 
+                                     width:13px; 
+                                     height:12px" class="math gen" />, using the Planck formula </p><table id="a0000000746" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td><img src="images/img-0143.png" alt="\[  B_\nu (\nu ,T)=\left(\frac{2h^3}{c^2}\right)\frac{\nu ^3}{\exp (h\nu /kT)-1}  \]" style="width:281px; 
+                            height:45px" class="math gen" /></td>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td class="eqnnum" style="width:20%">&nbsp;</td>
+</tr>
+</table><p> which is evaluated in PyXPlot by the system-defined mathematical function <tt class="tt">Bv(nu,T)</tt>. We use the axis linkage commands listed as an example in the text of Section <a href="ex-cmbrtemp.html">1.7.7</a> to produce three parallel horizontal axes showing wavelength of light, frequency of light and photon energy. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">set numeric display latex</tt><br /><tt class="tt">set log x y</tt><br /><tt class="tt">set key bottom right</tt><br /><tt class="tt">set ylabel "Flux density / W/Hz/m$<img src="images/img-0024.png" alt="\^{}" style="vertical-align:9px; width:5px; height:4px" class="accent gen" />2$/sterad"</tt><br /><tt class="tt">set x1label "Wavelength"</tt><br /><tt class="tt">set x2label "Frequency"     ; set unit of frequency Hz</tt><br /><tt class="tt">set x3label "Photon Energy" ; set unit of energy eV</tt><br /><tt class="tt">set axis x2 linked x1 using phy_c/x</tt><br /><tt class="tt">set axis x3 linked x2 using phy_h*x</tt><br /></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">bb(wlen,T) = Bv(phy_c/wlen,T)/unit(W/Hz/m<img src="images/img-0024.png" alt="\^{}" style="vertical-align:9px; width:5px; height:4px" class="accent gen" />2/sterad)</tt><br /></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">plot [80*unit(nm):unit(mm)][1e-20:] <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" /></tt><br /><tt class="tt">bb(x,  30) title "$T=  30$<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />,K", <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" /></tt><br /><tt class="tt">bb(x, 100) title "$T= 100$<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />,K", <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" /></tt><br /><tt class="tt">bb(x, 300) title "$T= 300$<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />,K", <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" /></tt><br /><tt class="tt">bb(x,1000) title "$T=1000$<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />,K", <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" /></tt><br /><tt class="tt">bb(x,3000) title "$T=3000$<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />,K"</tt> </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><p><center>
+<img src="images/img-0411.png" alt="\includegraphics[width=10cm]{examples/eps/ex_multiaxes}" style="width:10cm" /></center>  </p></td>
+
+</tr>
+</table>
+</div><p> <span class="upshape"><span class="mdseries"><span class="rm">A plot of the temperature of the CMB as a function of redshift demonstrating non-linear axis linkage.</span></span></span></p><div>
+
+<table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this example we produce a plot of the temperature of the cosmic microwave background radiation (CMBR) as a function of time <img src="images/img-0056.png" alt="$t$" style="vertical-align:0px; 
+                                     width:6px; 
+                                     height:12px" class="math gen" /> since the Big Bang, on the <tt class="tt">x</tt>-axis, and equivalently as a function of redshift <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:8px" class="math gen" />, on the <tt class="tt">x2</tt>-axis. The specialist cosmology function <tt class="tt">ast_­Lcdm_­z(<img src="images/img-0056.png" alt="$t$" style="vertical-align:0px; 
+                                     width:6px; 
+                                     height:12px" class="math gen" />,­<img src="images/img-0413.png" alt="$H_0$" style="vertical-align:-2px; 
+                                     width:22px; 
+                                     height:14px" class="math gen" />,­<img src="images/img-0414.png" alt="$\Omega _\mathrm {M}$" style="vertical-align:-3px; 
+                                     width:26px; 
+                                     height:16px" class="math gen" />,­<img src="images/img-0415.png" alt="$\Omega _\Uplambda $" style="vertical-align:-3px; 
+                                     width:24px; 
+                                     height:16px" class="math gen" />)</tt><a name="a0000000747" id="a0000000747"></a> is used to make the highly non-linear conversion between time <img src="images/img-0056.png" alt="$t$" style="vertical-align:0px; 
+                                     width:6px; 
+                                     height:12px" class="math gen" /> and redshift <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:8px" class="math gen" />, adopting some standard values for the cosmological parameters <img src="images/img-0413.png" alt="$H_0$" style="vertical-align:-2px; 
+                                     width:22px; 
+                                     height:14px" class="math gen" />, <img src="images/img-0414.png" alt="$\Omega _\mathrm {M}$" style="vertical-align:-3px; 
+                                     width:26px; 
+                                     height:16px" class="math gen" /> and <img src="images/img-0415.png" alt="$\Omega _\Uplambda $" style="vertical-align:-3px; 
+                                     width:24px; 
+                                     height:16px" class="math gen" />. Because the temperature of the CMBR is most easily expressed as a function of redshift as <img src="images/img-0416.png" alt="$T=2.73\, \mathrm{K}/(1+z)$" style="vertical-align:-5px; 
+                                     width:149px; 
+                                     height:19px" class="math gen" />, we plot this function against axis <tt class="tt">x2</tt>. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">h0 = 70</tt><br /><tt class="tt">omega_m = 0.27</tt><br /><tt class="tt">omega_l = 0.73</tt><br /><tt class="tt">age = ast_Lcdm_age(h0,omega_m,omega_l)</tt><br /><tt class="tt">set xrange [0.01*age:0.99*age]</tt><br /><tt class="tt">set unit of time Gyr</tt><br /><tt class="tt">set axis x2 linked x using ast_Lcdm_z(age-x,h0,omega_m,omega_l)</tt><br /><tt class="tt">set xlabel "Time since Big Bang $t$"</tt><br /><tt class="tt">set ylabel "CMB Temperature $T$"</tt><br /><tt class="tt">set x2label "Redshift $z$"</tt><br /><tt class="tt">plot unit(2.73*K)*(1+x) axes x2y1</tt> </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><p><center>
+<img src="images/img-0418.png" alt="\includegraphics[width=8cm]{examples/eps/ex_cmbrtemp}" style="width:8cm" /></center>  </p></td>
+
+</tr>
+</table>
+</div></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sec-set_xformat.html" title="Configuring how Tick Marks are Labelled"><img alt="Previous: Configuring how Tick Marks are Labelled" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-multiple_axes.html" title="Configuring Axes"><img alt="Up: Configuring Axes" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-set_colours.html" title="Gridlines"><img alt="Next: Gridlines" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: The Default Terminal</title>
+
+<link href="sect0061.html" title="PostScript Output" rel="next" />
+<link href="sect0059.html" title="The Complete Syntax of the set terminal Command" rel="prev" />
+<link href="ch-image_formats.html" title="Producing Image Files" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0059.html" title="The Complete Syntax of the set terminal Command"><img alt="Previous: The Complete Syntax of the set terminal Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="ch-image_formats.html" title="Producing Image Files"><img alt="Up: Producing Image Files" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0061.html" title="PostScript Output"><img alt="Next: PostScript Output" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-image_formats.html">Producing Image Files</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">The Default Terminal</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="a0000000061">2.2 The Default Terminal</h1>
+<p>The default terminal is normally <tt class="tt">X11_SingleWindow</tt>, except when PyXPlot is used non-interactively – i.e. one or more command scripts are specified on the command line, and PyXPlot exits as soon as it finishes executing them. In this case, the <tt class="tt">X11_SingleWindow</tt> would not be a very sensible terminal to use as any plot window would close as soon as PyXPlot exited. The default terminal in this case changes to <tt class="tt">eps</tt>. </p><p>This rule does not apply when the special ‘–’ filename is specified in a list of command scripts on the command line, where an interactive terminal will operate between running a series of scripts. In this case, PyXPlot detects that the session will be interactive, and defaults to the usual <tt class="tt">X11_SingleWindow</tt> terminal. Conversely, on machines where the <tt class="tt">DISPLAY</tt> environment variable<a name="a0000000826" id="a0000000826"></a> is not set, PyXPlot detects that it has access to no X-terminal on which to display plots, and defaults to the <tt class="tt">eps</tt> terminal. </p></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0059.html" title="The Complete Syntax of the set terminal Command"><img alt="Previous: The Complete Syntax of the set terminal Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="ch-image_formats.html" title="Producing Image Files"><img alt="Up: Producing Image Files" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0061.html" title="PostScript Output"><img alt="Next: PostScript Output" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

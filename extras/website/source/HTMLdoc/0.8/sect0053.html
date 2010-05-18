@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Configuring the Appearance of Axes</title>
+
+<link href="ex-axistics.html" title="Specifying where Ticks should Appear along Axes" rel="next" />
+<link href="sect0052.html" title="Specifying the Positioning of Axes" rel="prev" />
+<link href="sec-multiple_axes.html" title="Configuring Axes" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0052.html" title="Specifying the Positioning of Axes"><img alt="Previous: Specifying the Positioning of Axes" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-multiple_axes.html" title="Configuring Axes"><img alt="Up: Configuring Axes" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="ex-axistics.html" title="Specifying where Ticks should Appear along Axes"><img alt="Next: Specifying where Ticks should Appear along Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-plotting.html">Plotting: A Detailed Survey</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sec-multiple_axes.html">Configuring Axes</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Configuring the Appearance of Axes</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="a0000000054">1.7.4 Configuring the Appearance of Axes</h2>
+<p>The <tt class="tt">set axis</tt> command<a name="a0000000728" id="a0000000728"></a> also accepts the following keywords alongside the positional keywords listed above, which specify how the axis should appear: </p><ul class="itemize">
+<li><p><tt class="tt">arrow</tt> – Specifies that an arrowhead should be drawn on the right/top end of the axis. [<b class="bf">Not default</b>]. </p></li><li><p><tt class="tt">atzero</tt> – Specifies that rather than being placed along an edge of the plot, the axis should mark the lines where the perpendicular axes <tt class="tt">x1</tt>, <tt class="tt">y1</tt> and/or <tt class="tt">z1</tt> are zero. [<b class="bf">Not default</b>]. </p></li><li><p><tt class="tt">automirrored</tt> – Specifies that an automatic decision should be made between the behaviour of <tt class="tt">mirrored</tt> and <tt class="tt">nomirrored</tt>. If there are no axes on the opposite side of the graph, a mirror axis is produced. If there are already axes on the opposite side of the graph, no mirror axis is produced. [<b class="bf">Default</b>]. </p></li><li><p><tt class="tt">fullmirrored</tt> – Similar to <tt class="tt">mirrored</tt>. Specifies that this axis should have a corresponding twin placed on the opposite side of the graph with mirroring ticks and labelling. [<b class="bf">Not default</b>; see <tt class="tt">automirrored</tt>]. </p></li><li><p><tt class="tt">invisible</tt> – Specifies that the axis should not be drawn; data can still be plotted against it, but the axis is unseen. See Example <a href="ex-australia.html">1.10.2</a> for a plot where all of the axes are invisible. </p></li><li><p><tt class="tt">linked</tt> – Specifies that the axis should be linked to another axis; see Section <a href="ex-cmbrtemp.html">1.7.7</a>. </p></li><li><p><tt class="tt">mirrored</tt> – Specifies that this axis should have a corresponding twin placed on the opposite side of the graph with mirroring ticks but with no labels on the ticks. [<b class="bf">Not default</b>; see <tt class="tt">automirrored</tt>]. </p></li><li><p><tt class="tt">noarrow</tt> – Specifies that no arrowheads should be drawn on the ends of the axis. [<b class="bf">Default</b>]. </p></li><li><p><tt class="tt">nomirrored</tt> – Specifies that this axis should not have any corresponding twins. [<b class="bf">Not default</b>; see <tt class="tt">automirrored</tt>]. </p></li><li><p><tt class="tt">notatzero</tt> – Opposite of <tt class="tt">atzero</tt>; the axis should be placed along an edge of the plot. [<b class="bf">Default</b>]. </p></li><li><p><tt class="tt">notlinked</tt> – Specifies that the axis should no longer be linked to any other; see Section <a href="ex-cmbrtemp.html">1.7.7</a>. [<b class="bf">Default</b>]. </p></li><li><p><tt class="tt">reversearrow</tt> – Specifies that an arrowhead should be drawn on the left/bottom end of the axis. [<b class="bf">Not default</b>]. </p></li><li><p><tt class="tt">twowayarrow</tt> – Specifies that arrowheadsshould be drawn on both ends of the axis. [<b class="bf">Not default</b>]. </p></li><li><p><tt class="tt">visible</tt> – Specifies that the axis should be displayed; opposite of <tt class="tt">invisible</tt>. [<b class="bf">Default</b>]. </p></li>
+</ul><p>The following simple examples demonstrate the use of some of these configuration options: </p><pre>
+set axis x atzero twoway
+set axis y atzero twoway
+plot [-2:8][-10:10]
+</pre><p><center>
+<img src="images/img-0385.png" alt="\includegraphics[width=8cm]{examples/eps/ex_axisatzero}" style="width:8cm" /></center> </p><pre>
+set axis x atzero arrow
+set axis y atzero twoway
+plot [0:10][-10:10]
+</pre><p><center>
+<img src="images/img-0388.png" alt="\includegraphics[width=8cm]{examples/eps/ex_axisatzero2}" style="width:8cm" /></center> </p><pre>
+set axis x notatzero arrow nomirror
+set axis y notatzero arrow nomirror
+plot [0:10][0:20]
+</pre><p><center>
+<img src="images/img-0391.png" alt="\includegraphics[width=8cm]{examples/eps/ex_axisatzero3}" style="width:8cm" /></center> </p></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0052.html" title="Specifying the Positioning of Axes"><img alt="Previous: Specifying the Positioning of Axes" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-multiple_axes.html" title="Configuring Axes"><img alt="Up: Configuring Axes" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="ex-axistics.html" title="Specifying where Ticks should Appear along Axes"><img alt="Next: Specifying where Ticks should Appear along Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

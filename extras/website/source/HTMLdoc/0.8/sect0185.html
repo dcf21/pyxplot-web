@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: unit</title>
+
+<link href="sect0186.html" title="viewer" rel="next" />
+<link href="sect0184.html" title="trange" rel="prev" />
+<link href="sect0120.html" title="set" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0184.html" title="trange"><img alt="Previous: trange" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0120.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0186.html" title="viewer"><img alt="Next: viewer" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0071.html">Reference Manual</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-reference.html">Command Reference</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0120.html">set</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">unit</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="a0000000186">1.46.65 unit</h2>
+<p><a name="a0000001182" id="a0000001182"></a> </p><pre>
+set unit [ angle ( dimensionless | nodimensionless ) ]
+         [ of &lt;dimension&gt; &lt;unit&gt; ]
+         [ scheme &lt;unit scheme&gt; ]
+         [ preferred &lt;unit&gt; ]
+         [ nopreferred &lt;unit&gt; ]
+         [ display ( full | abbreviated | prefix | noprefix ) ]
+</pre><p>The <tt class="tt">set unit</tt> command<a name="a0000001183" id="a0000001183"></a> controls how quantities with physical units are displayed by PyXPlot. The <tt class="tt">set unit scheme</tt> command<a name="a0000001184" id="a0000001184"></a> provides the most general configuration option, allowing one of several <i class="it">units schemes</i><a name="a0000001185" id="a0000001185"></a> to be selected, each of which comprises a list of units which are deemed to be members of that particular scheme. For example, in the CGS unit scheme<a name="a0000001186" id="a0000001186"></a><a name="a0000001187" id="a0000001187"></a>, all lengths are displayed in centimetres, all masses are displayed in grammes, all energies are displayed in ergs, and so forth. In the imperial unit scheme<a name="a0000001188" id="a0000001188"></a><a name="a0000001189" id="a0000001189"></a>, quantities are displayed in British imperial units – inches, pounds, pints, and so forth – and in the US unit scheme, US customary units are used. The available schemes are: <tt class="tt">ancient</tt>, <tt class="tt">cgs</tt>, <tt class="tt">imperial</tt>, <tt class="tt">planck</tt>, <tt class="tt">si</tt>, and <tt class="tt">us</tt>. </p><p>To fine-tune the unit used to display quantities with a particular set of physical dimensions, the <tt class="tt">set unit of</tt> form of the command should be used. For example, the following command would cause all lengths to be displayed in inches: </p><pre>
+set unit of length inch
+</pre><p>The <tt class="tt">set unit preferred</tt> command<a name="a0000001190" id="a0000001190"></a> offers a slightly more flexible way of achieving the same result. Whereas the <tt class="tt">set unit of</tt> command<a name="a0000001191" id="a0000001191"></a> can only operate on named quanities such as lengths and powers, and cannot act upon compound units such as <tt class="tt">W/Hz</tt>, the <tt class="tt">set unit preferred</tt> command<a name="a0000001192" id="a0000001192"></a> can act upon any unit or combination of units, as in the examples: </p><pre>
+set unit preferred parsec
+set unit preferred W/Hz
+set unit preferred N*m
+</pre><p> The latter two examples are particularly useful when working with spectral densities (powers per unit frequency) or torques (forces multiplied by distances). Unfortunately, both of these units are dimensionally equal to energies, and so are displayed by PyXPlot in Joules by default. The above statement overrides such behaviour. Having set a particular unit to be preferred, this can be unset as in the following example: </p><pre>
+set unit nopreferred parsec
+</pre><p>By default, units are displayed in their abbreviated forms, for example <tt class="tt">A</tt> instead of <tt class="tt">amperes</tt> and <tt class="tt">W</tt> instead of <tt class="tt">watts</tt>. Furthermore, SI prefixes such as milli- and kilo- are applied to SI units where they are appropriate. Both of these behaviours can be turned on or off, in the former case with the commands </p><pre>
+set unit display abbreviated
+set unit display full
+</pre><p>and in the latter case using the following pair of commands: </p><pre>
+set unit display prefix
+set unit display noprefix
+</pre></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0184.html" title="trange"><img alt="Previous: trange" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0120.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0186.html" title="viewer"><img alt="Next: viewer" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

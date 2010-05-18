@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Conditional Functions</title>
+
+<link href="ex-pendulum.html" title="Subroutines" rel="next" />
+<link href="sec-breakcontinue.html" title="The break and continue statements" rel="prev" />
+<link href="sect0031.html" title="Programming and Flow Control" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sec-breakcontinue.html" title="The break and continue statements"><img alt="Previous: The break and continue statements" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0031.html" title="Programming and Flow Control"><img alt="Up: Programming and Flow Control" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="ex-pendulum.html" title="Subroutines"><img alt="Next: Subroutines" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0031.html">Programming and Flow Control</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Conditional Functions</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="a0000000039">6.8 Conditional Functions</h1>
+<p> <a name="a0000000570" id="a0000000570"></a> <a name="a0000000571" id="a0000000571"></a> </p><p>The pre-defined functions <tt class="tt">conditionalN()</tt> and <tt class="tt">conditionalS()</tt> provide a compact means of inserting conditional expressions into numerical and string expressions respectively. Each takes three arguments, the first of which is a truth criterion to be tested. If the criterion is true, then the function’s second argument is returned as its output. Otherwise, the function’s third argument is returned. This is similar to the behaviour of C’s ternary <tt class="tt">?:</tt> operator. The <tt class="tt">conditionalN()</tt> function should be passed two numerical expressions to select between, whilst the <tt class="tt">conditionalS()</tt> function should be passed two string expressions, as the following examples demonstrate: </p><p> <small class="footnotesize"><tt class="tt">pyxplot&gt; <b class="bf">f(x) = conditionalN(x<img src="images/img-0035.png" alt="$&gt;$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" />0,x,0)</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print "%s %s %s %s %s"%(f(-2),f(-1),f(0),f(1),f(2))</b></tt><br /><tt class="tt">0 0 0 1 2</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">x = 2</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print "x is %s"%(conditionalS(x<img src="images/img-0035.png" alt="$&gt;$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" />0,"positive","negative"))</b></tt><br /><tt class="tt">x is positive</tt><br /></small> </p></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sec-breakcontinue.html" title="The break and continue statements"><img alt="Previous: The break and continue statements" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0031.html" title="Programming and Flow Control"><img alt="Up: Programming and Flow Control" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="ex-pendulum.html" title="Subroutines"><img alt="Next: Subroutines" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

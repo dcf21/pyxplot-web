@@ -1,0 +1,2488 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<index>    
+<entry keyword="">
+   
+   
+   <entry keyword="">
+      
+      
+   </entry>
+</entry><entry keyword="? command">
+   <topic href="sect0072.html#a0000000913" />
+   
+   
+</entry><entry keyword="% operator">
+   
+   <topic href="sect0014.html#a0000000301" title="Printing Text" /><topic href="sec-stringsubop.html#a0000000543" title="The String Substitution Operator" />
+   
+</entry><entry keyword="= operator">
+   <topic href="sect0032.html#a0000000548" />
+   
+   
+</entry><entry keyword="above keyword">
+   <topic href="sec-legends.html#a0000000721" />
+   
+   
+</entry><entry keyword="abs(z) function">
+   <topic href="ch-function_list.html#a0000001246" />
+   
+   
+</entry><entry keyword="abs(z) function">
+   <topic href="sec-complex_numbers.html#a0000000405" />
+   
+   
+</entry><entry keyword="accented characters">
+   <topic href="sec-latex_incompatibility.html#a0000000306" />
+   
+   
+</entry><entry keyword="acos(z) function">
+   <topic href="ch-function_list.html#a0000001247" />
+   
+   
+</entry><entry keyword="acosh(z) function">
+   <topic href="ch-function_list.html#a0000001248" />
+   
+   
+</entry><entry keyword="acot(z) function">
+   <topic href="ch-function_list.html#a0000001249" />
+   
+   
+</entry><entry keyword="acoth(z) function">
+   <topic href="ch-function_list.html#a0000001250" />
+   
+   
+</entry><entry keyword="acsc(z) function">
+   <topic href="ch-function_list.html#a0000001251" />
+   
+   
+</entry><entry keyword="acsch(z) function">
+   <topic href="ch-function_list.html#a0000001252" />
+   
+   
+</entry><entry keyword="Adobe Acrobat">
+   <topic href="sec-directing_output.html#a0000000348" />
+   
+   
+</entry><entry keyword="airy­ai­diff(z) function">
+   <topic href="ch-function_list.html#a0000001254" />
+   
+   
+</entry><entry keyword="airy­ai(z) function">
+   <topic href="ch-function_list.html#a0000001253" />
+   
+   
+</entry><entry keyword="airy­bi­diff(z) function">
+   <topic href="ch-function_list.html#a0000001256" />
+   
+   
+</entry><entry keyword="airy­bi(z) function">
+   <topic href="ch-function_list.html#a0000001255" />
+   
+   
+</entry><entry keyword="alignment">
+   
+   
+   <entry keyword="text">
+      <topic href="ex-australia.html#a0000000784" />
+      
+   </entry>
+</entry><entry keyword="amsmath package">
+   <topic href="sect0070.html#a0000000909" />
+   
+   
+</entry><entry keyword="angles, handling of">
+   <topic href="sec-angles.html#a0000000416" />
+   
+   
+</entry><entry keyword="arc command">
+   
+   <topic href="sect0066.html#a0000000858" title="Adding Other Vector Graphics Objects" /><topic href="ex-lens.html#a0000000898" title="The arc Command" /><topic href="sect0074.html#a0000000915" title="arc" /><topic href="sect0074.html#a0000000916" title="arc" />
+   
+</entry><entry keyword="arg(z) function">
+   <topic href="ch-function_list.html#a0000001257" />
+   
+   
+</entry><entry keyword="arg(z) function">
+   <topic href="sec-complex_numbers.html#a0000000404" />
+   
+   
+</entry><entry keyword="arrow command">
+   
+   <topic href="sect0066.html#a0000000859" title="Adding Other Vector Graphics Objects" /><topic href="ex-nanotubes.html#a0000000879" title="The arrow and line Commands" /><topic href="ex-nanotubes.html#a0000000880" title="The arrow and line Commands" /><topic href="ex-nanotubes.html#a0000000882" title="The arrow and line Commands" /><topic href="sect0075.html#a0000000917" title="arrow" /><topic href="sect0075.html#a0000000918" title="arrow" />
+   
+</entry><entry keyword="arrows">
+   <topic href="sec-set_arrow.html#a0000000760" />
+   
+   
+</entry><entry keyword="arrows plot style">
+   <topic href="sect0048.html#a0000000687" />
+   
+   
+</entry><entry keyword="arrowshead plot style">
+   
+   <topic href="sect0048.html#a0000000681" title="Arrows" /><topic href="sect0048.html#a0000000689" title="Arrows" /><topic href="sect0048.html#a0000000691" title="Arrows" />
+   
+</entry><entry keyword="arrowsnohead plot style">
+   
+   <topic href="sect0048.html#a0000000683" title="Arrows" /><topic href="sect0048.html#a0000000693" title="Arrows" />
+   
+</entry><entry keyword="arrowstwohead plot style">
+   
+   <topic href="sect0048.html#a0000000685" title="Arrows" /><topic href="sect0048.html#a0000000695" title="Arrows" />
+   
+</entry><entry keyword="asec(z) function">
+   <topic href="ch-function_list.html#a0000001258" />
+   
+   
+</entry><entry keyword="asech(z) function">
+   <topic href="ch-function_list.html#a0000001259" />
+   
+   
+</entry><entry keyword="asin(z) function">
+   <topic href="ch-function_list.html#a0000001260" />
+   
+   
+</entry><entry keyword="asinh(z) function">
+   <topic href="ch-function_list.html#a0000001261" />
+   
+   
+</entry><entry keyword="ast­Lcdm­age(H0,­&#8486;M,­&#8486;) function">
+   <topic href="ch-function_list.html#a0000001262" />
+   
+   
+</entry><entry keyword="ast­Lcdm­angscale(z,­H0,­&#8486;M,­&#8486;) function">
+   <topic href="ch-function_list.html#a0000001263" />
+   
+   
+</entry><entry keyword="ast­Lcdm­DA(z,­H0,­&#8486;M,­&#8486;) function">
+   <topic href="ch-function_list.html#a0000001264" />
+   
+   
+</entry><entry keyword="ast­Lcdm­DL(z,­H0,­&#8486;M,­&#8486;) function">
+   <topic href="ch-function_list.html#a0000001265" />
+   
+   
+</entry><entry keyword="ast­Lcdm­DM(z,­H0,­&#8486;M,­&#8486;) function">
+   <topic href="ch-function_list.html#a0000001266" />
+   
+   
+</entry><entry keyword="ast­Lcdm­t(z,­H0,­&#8486;M,­&#8486;) function">
+   <topic href="ch-function_list.html#a0000001267" />
+   
+   
+</entry><entry keyword="ast­Lcdm­z(t,­H0,­&#8486;M,­&#8486;) function">
+   
+   <topic href="ex-cmbrtemp.html#a0000000747" title="Linked Axes" /><topic href="ch-function_list.html#a0000001268" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="ast­moonphase(JD) function">
+   <topic href="ch-function_list.html#a0000001269" />
+   
+   
+</entry><entry keyword="ast­sidereal­time(JD) function">
+   <topic href="ch-function_list.html#a0000001270" />
+   
+   
+</entry><entry keyword="atan(z) function">
+   <topic href="ch-function_list.html#a0000001271" />
+   
+   
+</entry><entry keyword="atan2(x,y) function">
+   <topic href="ch-function_list.html#a0000001273" />
+   
+   
+</entry><entry keyword="atanh(z) function">
+   <topic href="ch-function_list.html#a0000001272" />
+   
+   
+</entry><entry keyword="autofreq keyword">
+   
+   <topic href="ex-axistics.html#a0000000737" title="Specifying where Ticks should Appear along Axes" /><topic href="sect0191.html#a0000001211" title="xtics" />
+   
+</entry><entry keyword="axes">
+   
+   
+   <entry keyword="colour">
+      <topic href="sec-set_colours.html#a0000000754" />
+      
+   </entry><entry keyword="setting ranges">
+      <topic href="ex-axislab.html#a0000000371" />
+      
+   </entry>
+</entry><entry keyword="axis keyword">
+   
+   <topic href="ex-axistics.html#a0000000733" title="Specifying where Ticks should Appear along Axes" /><topic href="sect0191.html#a0000001207" title="xtics" />
+   
+</entry><entry keyword="backquote character">
+   <topic href="sect0040.html#a0000000578" />
+   
+   
+</entry><entry keyword="backslash character">
+   <topic href="sec-latex_incompatibility.html#a0000000305" />
+   
+   
+</entry><entry keyword="backup files">
+   <topic href="sec-file_backup.html#a0000000833" />
+   
+   
+</entry><entry keyword="bar charts">
+   <topic href="sec-barcharts.html#a0000000648" />
+   
+   
+</entry><entry keyword="below keyword">
+   <topic href="sec-legends.html#a0000000720" />
+   
+   
+</entry><entry keyword="besseli(l,x) function">
+   <topic href="ch-function_list.html#a0000001274" />
+   
+   
+</entry><entry keyword="besselI(l,x) function">
+   <topic href="ch-function_list.html#a0000001275" />
+   
+   
+</entry><entry keyword="besselj(l,x) function">
+   <topic href="ch-function_list.html#a0000001276" />
+   
+   
+</entry><entry keyword="besselJ(l,x) function">
+   <topic href="ch-function_list.html#a0000001277" />
+   
+   
+</entry><entry keyword="besselk(l,x) function">
+   <topic href="ch-function_list.html#a0000001278" />
+   
+   
+</entry><entry keyword="besselK(l,x) function">
+   <topic href="ch-function_list.html#a0000001279" />
+   
+   
+</entry><entry keyword="bessely(l,x) function">
+   <topic href="ch-function_list.html#a0000001280" />
+   
+   
+</entry><entry keyword="besselY(l,x) function">
+   <topic href="ch-function_list.html#a0000001281" />
+   
+   
+</entry><entry keyword="best fit lines">
+   
+   <topic href="sec-fit_command.html#a0000000490" title="Function Fitting" /><topic href="ex-interpolation.html#a0000000498" title="Datafile Interpolation" />
+   
+</entry><entry keyword="beta(a,b) function">
+   <topic href="ch-function_list.html#a0000001282" />
+   
+   
+</entry><entry keyword="binomialCDF(k,p,n) function">
+   <topic href="ch-function_list.html#a0000001283" />
+   
+   
+</entry><entry keyword="binomialPDF(k,p,n) function">
+   <topic href="ch-function_list.html#a0000001284" />
+   
+   
+</entry><entry keyword="binorigin modifier">
+   
+   <topic href="sec-histogram.html#a0000000525" title="Histograms" /><topic href="sect0094.html#a0000000973" title="histogram" />
+   
+</entry><entry keyword="bins modifier">
+   
+   <topic href="sec-histogram.html#a0000000527" title="Histograms" /><topic href="sect0094.html#a0000000975" title="histogram" />
+   
+</entry><entry keyword="binwidth modifier">
+   
+   <topic href="sec-histogram.html#a0000000524" title="Histograms" /><topic href="sect0094.html#a0000000972" title="histogram" />
+   
+</entry><entry keyword="bitmap output">
+   
+   
+   <entry keyword="resolution">
+      <topic href="sect0058.html#a0000000800" />
+      
+   </entry>
+</entry><entry keyword="bmp output">
+   <topic href="sect0059.html#a0000000805" />
+   
+   
+</entry><entry keyword="border keyword">
+   
+   <topic href="ex-axistics.html#a0000000735" title="Specifying where Ticks should Appear along Axes" /><topic href="sect0191.html#a0000001209" title="xtics" />
+   
+</entry><entry keyword="both keyword">
+   
+   <topic href="ex-axistics.html#a0000000732" title="Specifying where Ticks should Appear along Axes" /><topic href="sect0191.html#a0000001206" title="xtics" />
+   
+</entry><entry keyword="bottom keyword">
+   
+   <topic href="sec-legends.html#a0000000712" title="Graph Legends" /><topic href="ex-australia.html#a0000000790" title="Text Labels" />
+   
+</entry><entry keyword="box command">
+   
+   <topic href="sect0066.html#a0000000860" title="Adding Other Vector Graphics Objects" /><topic href="ex-mandelbrot.html#a0000000892" title="The box and circle Commands" /><topic href="ex-mandelbrot.html#a0000000894" title="The box and circle Commands" /><topic href="sect0076.html#a0000000928" title="box" /><topic href="sect0076.html#a0000000929" title="box" />
+   
+</entry><entry keyword="boxes plot style">
+   
+   <topic href="sec-histogram.html#a0000000532" title="Histograms" /><topic href="sec-barcharts.html#a0000000649" title="Barcharts and Histograms" /><topic href="sec-barcharts.html#a0000000655" title="Barcharts and Histograms" /><topic href="sec-barcharts.html#a0000000665" title="Stacked Bar Charts" /><topic href="sect0094.html#a0000000980" title="histogram" />
+   
+</entry><entry keyword="break command">
+   
+   <topic href="sec-breakcontinue.html#a0000000568" title="The break and continue statements" /><topic href="sect0077.html#a0000000930" title="break" /><topic href="sect0077.html#a0000000931" title="break" />
+   
+</entry><entry keyword="Bv(,T) function">
+   <topic href="ch-function_list.html#a0000001285" />
+   
+   
+</entry><entry keyword="Bvmax(T) function">
+   <topic href="ch-function_list.html#a0000001286" />
+   
+   
+</entry><entry keyword="call command">
+   <topic href="ex-pendulum.html#a0000000573" />
+   
+   
+</entry><entry keyword="cd command">
+   
+   <topic href="sect0040.html#a0000000580" title="Shell Commands" /><topic href="sect0078.html#a0000000932" title="cd" /><topic href="sect0078.html#a0000000933" title="cd" />
+   
+</entry><entry keyword="ceil(x) function">
+   <topic href="ch-function_list.html#a0000001287" />
+   
+   
+</entry><entry keyword="centre keyword">
+   
+   <topic href="ex-australia.html#a0000000788" title="Text Labels" /><topic href="ex-australia.html#a0000000791" title="Text Labels" />
+   
+</entry><entry keyword="CGS units">
+   
+   <topic href="sect0022.html#a0000000425" title="Units" /><topic href="sect0185.html#a0000001186" title="unit" />
+   
+</entry><entry keyword="ChangeLog">
+   <topic href="sect0230.html#a0000001538" />
+   
+   
+</entry><entry keyword="chisqCDF(x,nu) function">
+   <topic href="ch-function_list.html#a0000001288" />
+   
+   
+</entry><entry keyword="chisqCDFi(P,nu) function">
+   <topic href="ch-function_list.html#a0000001289" />
+   
+   
+</entry><entry keyword="chisqPDF(x,nu) function">
+   <topic href="ch-function_list.html#a0000001290" />
+   
+   
+</entry><entry keyword="circle command">
+   
+   <topic href="sect0066.html#a0000000861" title="Adding Other Vector Graphics Objects" /><topic href="ex-mandelbrot.html#a0000000893" title="The box and circle Commands" /><topic href="ex-lens.html#a0000000899" title="The arc Command" /><topic href="sect0079.html#a0000000934" title="circle" /><topic href="sect0079.html#a0000000935" title="circle" />
+   
+</entry><entry keyword="clear command">
+   
+   <topic href="sec-multiplot.html#a0000000843" title="Multiplot Mode" /><topic href="sec-multiplot.html#a0000000846" title="Multiplot Mode" /><topic href="sect0080.html#a0000000936" title="clear" /><topic href="sect0080.html#a0000000937" title="clear" />
+   
+</entry><entry keyword="colour keyword">
+   <topic href="sect0075.html#a0000000923" />
+   
+   
+</entry><entry keyword="colour modifier">
+   
+   <topic href="sect0043.html#a0000000588" title="The with modifier" /><topic href="sect0110.html#a0000001014" title="with" />
+   
+</entry><entry keyword="colour output">
+   <topic href="sect0059.html#a0000000816" />
+   
+   
+</entry><entry keyword="colours">
+   
+   
+   <entry keyword="axes">
+      <topic href="sec-set_colours.html#a0000000755" />
+      
+   </entry><entry keyword="charts">
+      <topic href="ch-colour_charts.html#a0000001396" />
+      
+   </entry><entry keyword="CMYK">
+      <topic href="sec-colour_names.html#a0000001484" />
+      
+   </entry><entry keyword="configuration file">
+      <topic href="sec-colour_names.html#a0000001481" />
+      
+   </entry><entry keyword="grid">
+      <topic href="sec-set_colours.html#a0000000751" />
+      
+   </entry><entry keyword="HSB">
+      <topic href="sec-colour_names.html#a0000001483" />
+      
+   </entry><entry keyword="inverting">
+      <topic href="sect0059.html#a0000000821" />
+      
+   </entry><entry keyword="RGB">
+      <topic href="sec-colour_names.html#a0000001482" />
+      
+   </entry><entry keyword="setting for datasets">
+      
+      <topic href="sect0043.html#a0000000589" title="The with modifier" /><topic href="sect0110.html#a0000001015" title="with" />
+   </entry><entry keyword="setting the palette">
+      <topic href="sec-palette.html#a0000000597" />
+      
+   </entry><entry keyword="shades of grey">
+      <topic href="ch-colour_charts.html#a0000001397" />
+      
+   </entry><entry keyword="text">
+      <topic href="ex-australia.html#a0000000781" />
+      
+   </entry>
+</entry><entry keyword="columns keyword">
+   <topic href="sec-horizontal_datafiles.html#a0000000336" />
+   
+   
+</entry><entry keyword="command line syntax">
+   <topic href="box-CommandHistory.html#a0000000279" />
+   
+   
+</entry><entry keyword="command scripts">
+   
+   
+   <entry keyword="comment lines">
+      <topic href="sect0012.html#a0000000299" />
+      
+   </entry>
+</entry><entry keyword="command-line syntax">
+   <topic href="box-CommandHistory.html#a0000000278" />
+   
+   
+</entry><entry keyword="comment lines">
+   <topic href="sect0012.html#a0000000298" />
+   
+   <entry keyword="in datafiles">
+      
+      <topic href="sec-plot_datafiles.html#a0000000325" title="Plotting Datafiles" /><topic href="sec-special_comments.html#a0000000482" title="Special Comment Lines in Datafiles" />
+   </entry>
+</entry><entry keyword="complex numbers">
+   <topic href="sec-complex_numbers.html#a0000000399" />
+   
+   
+</entry><entry keyword="conditionalN(a,b,c) function">
+   
+   <topic href="sect0038.html#a0000000570" title="Conditional Functions" /><topic href="ch-function_list.html#a0000001291" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="conditionalS(a,b,c) function">
+   
+   <topic href="sect0038.html#a0000000571" title="Conditional Functions" /><topic href="ch-function_list.html#a0000001292" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="configuration file">
+   
+   
+   <entry keyword="colours">
+      <topic href="sec-colour_names.html#a0000001480" />
+      
+   </entry>
+</entry><entry keyword="configuration files">
+   <topic href="sect0210.html#a0000001412" />
+   
+   
+</entry><entry keyword="conjugate(z) function">
+   <topic href="ch-function_list.html#a0000001293" />
+   
+   
+</entry><entry keyword="conjugate(z) function">
+   <topic href="sec-complex_numbers.html#a0000000406" />
+   
+   
+</entry><entry keyword="constants">
+   <topic href="sec-constants.html#a0000000386" />
+   
+   
+</entry><entry keyword="continue command">
+   
+   <topic href="sec-breakcontinue.html#a0000000569" title="The break and continue statements" /><topic href="sect0081.html#a0000000938" title="continue" /><topic href="sect0081.html#a0000000939" title="continue" />
+   
+</entry><entry keyword="coordinate systems">
+   
+   
+   <entry keyword="axis&lt;n&gt;">
+      <topic href="sec-set_arrow.html#a0000000773" />
+      
+   </entry><entry keyword="first">
+      <topic href="sec-set_arrow.html#a0000000769" />
+      
+   </entry><entry keyword="graph">
+      <topic href="sec-set_arrow.html#a0000000772" />
+      
+   </entry><entry keyword="screen">
+      <topic href="sec-set_arrow.html#a0000000771" />
+      
+   </entry><entry keyword="second">
+      <topic href="sec-set_arrow.html#a0000000770" />
+      
+   </entry>
+</entry><entry keyword="correlation matrix">
+   <topic href="sec-correlation_matrix.html#a0000001526" />
+   
+   
+</entry><entry keyword="cos(z) function">
+   <topic href="ch-function_list.html#a0000001294" />
+   
+   
+</entry><entry keyword="cosh(z) function">
+   <topic href="ch-function_list.html#a0000001295" />
+   
+   
+</entry><entry keyword="cot(z) function">
+   <topic href="ch-function_list.html#a0000001296" />
+   
+   
+</entry><entry keyword="coth(z) function">
+   <topic href="ch-function_list.html#a0000001297" />
+   
+   
+</entry><entry keyword="covariance matrix">
+   <topic href="sect0229.html#a0000001512" />
+   
+   
+</entry><entry keyword="csc(z) function">
+   <topic href="ch-function_list.html#a0000001298" />
+   
+   
+</entry><entry keyword="csch(z) function">
+   <topic href="ch-function_list.html#a0000001299" />
+   
+   
+</entry><entry keyword="csv files">
+   <topic href="sec-first_plots.html#a0000000292" />
+   
+   
+</entry><entry keyword="datafile format">
+   <topic href="sec-plot_datafiles.html#a0000000322" />
+   
+   
+</entry><entry keyword="datafiles">
+   
+   
+   <entry keyword="globbing">
+      <topic href="sect0016.html#a0000000328" />
+      
+   </entry><entry keyword="horizontal">
+      <topic href="sec-horizontal_datafiles.html#a0000000332" />
+      
+   </entry>
+</entry><entry keyword="Debian Linux">
+   <topic href="sect0007.html#a0000000262" />
+   
+   
+</entry><entry keyword="degrees(x) function">
+   <topic href="ch-function_list.html#a0000001300" />
+   
+   
+</entry><entry keyword="delete command">
+   
+   <topic href="sec-multiplot.html#a0000000844" title="Multiplot Mode" /><topic href="sect0082.html#a0000000940" title="delete" /><topic href="sect0082.html#a0000000941" title="delete" />
+   
+</entry><entry keyword="diffdx() function">
+   
+   <topic href="ex-calculus.html#a0000000443" title="Numerical Integration and Differentiation" /><topic href="ex-calculus.html#a0000000446" title="Numerical Integration and Differentiation" />
+   
+</entry><entry keyword="diffdx(e,x,step) function">
+   <topic href="ch-function_list.html#a0000001301" />
+   
+   
+</entry><entry keyword="differentiation">
+   <topic href="ex-calculus.html#a0000000440" />
+   
+   
+</entry><entry keyword="discontinuous modifier">
+   <topic href="sec-select_modifier.html#a0000000341" />
+   
+   
+</entry><entry keyword="DISPLAY environment variable">
+   <topic href="sect0060.html#a0000000826" />
+   
+   
+</entry><entry keyword="do command">
+   
+   <topic href="sect0037.html#a0000000566" title="While and Do Loops" /><topic href="sect0083.html#a0000000942" title="do" /><topic href="sect0083.html#a0000000943" title="do" /><topic href="sect0083.html#a0000000944" title="do" />
+   
+</entry><entry keyword="dots plot style">
+   <topic href="sect0045.html#a0000000600" />
+   
+   
+</entry><entry keyword="ellipse command">
+   
+   <topic href="sect0066.html#a0000000862" title="Adding Other Vector Graphics Objects" /><topic href="sec-ellipse.html#a0000000902" title="The ellipse Command" /><topic href="sect0084.html#a0000000945" title="ellipse" /><topic href="sect0084.html#a0000000946" title="ellipse" />
+   
+</entry><entry keyword="ellipticintE(k) function">
+   <topic href="ch-function_list.html#a0000001302" />
+   
+   
+</entry><entry keyword="ellipticintK(k) function">
+   <topic href="ch-function_list.html#a0000001304" />
+   
+   
+</entry><entry keyword="ellipticintP(k,n) function">
+   <topic href="ch-function_list.html#a0000001306" />
+   
+   
+</entry><entry keyword="else command">
+   
+   <topic href="sect0085.html#a0000000947" title="else" /><topic href="sect0096.html#a0000000986" title="if" />
+   
+</entry><entry keyword="else if command">
+   <topic href="sect0096.html#a0000000985" />
+   
+   
+</entry><entry keyword="Encapsulated PostScript">
+   <topic href="sect0059.html#a0000000806" />
+   
+   
+</entry><entry keyword="enlarging output">
+   <topic href="sect0059.html#a0000000825" />
+   
+   
+</entry><entry keyword="eps command">
+   
+   <topic href="sect0066.html#a0000000863" title="Adding Other Vector Graphics Objects" /><topic href="sect0069.html#a0000000891" title="The eps Command" /><topic href="sect0086.html#a0000000948" title="eps" /><topic href="sect0086.html#a0000000949" title="eps" /><topic href="sect0218.html#a0000001494" title="Delivering Talks in PyXPlot" />
+   
+</entry><entry keyword="erf(x) function">
+   <topic href="ch-function_list.html#a0000001308" />
+   
+   
+</entry><entry keyword="erfc(x) function">
+   <topic href="ch-function_list.html#a0000001309" />
+   
+   
+</entry><entry keyword="errorbars">
+   <topic href="sec-errorbars.html#a0000000616" />
+   
+   
+</entry><entry keyword="errorbars plot style">
+   <topic href="sec-errorbars.html#a0000000621" />
+   
+   
+</entry><entry keyword="errorrange plot style">
+   <topic href="sec-errorbars.html#a0000000633" />
+   
+   
+</entry><entry keyword="escape characters">
+   
+   <topic href="sec-latex_incompatibility.html#a0000000304" title="Axis Labels and Titles" /><topic href="sec-latex_incompatibility.html#a0000000307" title="Axis Labels and Titles" />
+   
+</entry><entry keyword="every modifier">
+   
+   <topic href="sec-plot_datafiles.html#a0000000324" title="Plotting Datafiles" /><topic href="sec-horizontal_datafiles.html#a0000000337" title="Horizontally arranged Datafiles" /><topic href="sec-tabulate.html#a0000000488" title="Tabulating Functions and Slicing Data Files" /><topic href="sec-fit_command.html#a0000000494" title="Function Fitting" /><topic href="sec-histogram.html#a0000000529" title="Histograms" /><topic href="sect0090.html#a0000000960" title="fit" /><topic href="sect0094.html#a0000000977" title="histogram" /><topic href="sect0204.html#a0000001237" title="tabulate" />
+   
+</entry><entry keyword="exec command">
+   
+   <topic href="sect0039.html#a0000000574" title="The exec command" /><topic href="sect0039.html#a0000000575" title="The exec command" /><topic href="sect0087.html#a0000000950" title="exec" /><topic href="sect0087.html#a0000000951" title="exec" />
+   
+</entry><entry keyword="exit command">
+   
+   <topic href="box-CommandHistory.html#a0000000276" title="Getting Started" /><topic href="box-CommandHistory.html#a0000000282" title="Getting Started" /><topic href="sect0088.html#a0000000952" title="exit" /><topic href="sect0088.html#a0000000953" title="exit" />
+   
+</entry><entry keyword="exp(z) function">
+   <topic href="ch-function_list.html#a0000001310" />
+   
+   
+</entry><entry keyword="expint(n,x) function">
+   <topic href="ch-function_list.html#a0000001311" />
+   
+   
+</entry><entry keyword="expm1(x) function">
+   <topic href="ch-function_list.html#a0000001313" />
+   
+   
+</entry><entry keyword="fft command">
+   
+   <topic href="sect0028.html#a0000000505" title="Fourier Transforms" /><topic href="sect0028.html#a0000000511" title="Fourier Transforms" /><topic href="sect0089.html#a0000000954" title="fft" /><topic href="sect0089.html#a0000000955" title="fft" />
+   
+</entry><entry keyword="fftw">
+   <topic href="sect0007.html#a0000000248" />
+   
+   
+</entry><entry keyword="fillcolour modifier">
+   
+   <topic href="sect0043.html#a0000000590" title="The with modifier" /><topic href="sec-barcharts.html#a0000000663" title="Barcharts and Histograms" /><topic href="sect0110.html#a0000001016" title="with" />
+   
+</entry><entry keyword="fit command">
+   
+   <topic href="sec-fit_command.html#a0000000489" title="Function Fitting" /><topic href="sec-fit_command.html#a0000000497" title="Function Fitting" /><topic href="ex-interpolation.html#a0000000502" title="Datafile Interpolation" /><topic href="sect0090.html#a0000000956" title="fit" /><topic href="sect0090.html#a0000000957" title="fit" /><topic href="ch-fit_maths.html#a0000001502" title="The fit Command: Mathematical Details" />
+   
+</entry><entry keyword="FITS format">
+   <topic href="sec-filters.html#a0000000479" />
+   
+   
+</entry><entry keyword="floor(x) function">
+   <topic href="ch-function_list.html#a0000001314" />
+   
+   
+</entry><entry keyword="fontsize">
+   <topic href="ex-australia.html#a0000000777" />
+   
+   
+</entry><entry keyword="for command">
+   
+   <topic href="sect0035.html#a0000000558" title="For Loops" /><topic href="sect0035.html#a0000000559" title="For Loops" /><topic href="sect0091.html#a0000000963" title="for" /><topic href="sect0091.html#a0000000964" title="for" />
+   
+</entry><entry keyword="foreach command">
+   
+   <topic href="sect0036.html#a0000000560" title="Foreach Loops" /><topic href="sect0092.html#a0000000965" title="foreach" /><topic href="sect0092.html#a0000000966" title="foreach" />
+   
+</entry><entry keyword="foreach datum command">
+   
+   <topic href="ex-meansd.html#a0000000562" title="Foreach Datum Loops" /><topic href="ex-meansd.html#a0000000563" title="Foreach Datum Loops" /><topic href="ex-meansd.html#a0000000564" title="Foreach Datum Loops" />
+   
+</entry><entry keyword="fsteps plot style">
+   
+   <topic href="sect0047.html#a0000000671" title="Steps" /><topic href="sect0047.html#a0000000677" title="Steps" />
+   
+</entry><entry keyword="FTP">
+   <topic href="sec-filters.html#a0000000481" />
+   
+   
+</entry><entry keyword="function splicing">
+   <topic href="ex-funcsplice.html#a0000000390" />
+   
+   
+</entry><entry keyword="functions">
+   
+   
+   <entry keyword="pre-defined">
+      <topic href="sec-first_plots.html#a0000000296" />
+      
+   </entry>
+</entry><entry keyword="gamma(x) function">
+   <topic href="ch-function_list.html#a0000001315" />
+   
+   
+</entry><entry keyword="gaussianCDF(x,&#963;) function">
+   <topic href="ch-function_list.html#a0000001316" />
+   
+   
+</entry><entry keyword="gaussianCDFi(x,&#963;) function">
+   <topic href="ch-function_list.html#a0000001317" />
+   
+   
+</entry><entry keyword="gaussianPDF(x,&#963;) function">
+   <topic href="ch-function_list.html#a0000001318" />
+   
+   
+</entry><entry keyword="General Public License">
+   <topic href="sect0006.html#a0000000243" />
+   
+   
+</entry><entry keyword="Gentoo Linux">
+   <topic href="sect0009.html#a0000000269" />
+   
+   
+</entry><entry keyword="Ghostscript">
+   <topic href="sect0007.html#a0000000249" />
+   
+   
+</entry><entry keyword="Ghostview">
+   
+   <topic href="sect0007.html#a0000000257" title="System Requirements" /><topic href="sect0041.html#a0000000585" title="Script Watching: pyxplotwatch" />
+   
+</entry><entry keyword="gif output">
+   <topic href="sect0059.html#a0000000808" />
+   
+   <entry keyword="transparency">
+      <topic href="sect0059.html#a0000000823" />
+      
+   </entry>
+</entry><entry keyword="globbing">
+   <topic href="sect0016.html#a0000000326" />
+   
+   
+</entry><entry keyword="grid">
+   <topic href="sec-set_colours.html#a0000000749" />
+   
+   <entry keyword="colour">
+      <topic href="sec-set_colours.html#a0000000750" />
+      
+   </entry>
+</entry><entry keyword="gsl">
+   <topic href="sect0007.html#a0000000250" />
+   
+   
+</entry><entry keyword="GSL">
+   <topic href="ex-calculus.html#a0000000445" />
+   
+   
+</entry><entry keyword="gunzip">
+   <topic href="sect0007.html#a0000000259" />
+   
+   
+</entry><entry keyword="gzip">
+   <topic href="sec-first_plots.html#a0000000295" />
+   
+   
+</entry><entry keyword="head keyword">
+   
+   <topic href="sec-set_arrow.html#a0000000765" title="Arrows" /><topic href="sect0075.html#a0000000921" title="arrow" />
+   
+</entry><entry keyword="heaviside(x) function">
+   <topic href="ch-function_list.html#a0000001319" />
+   
+   
+</entry><entry keyword="height keyword">
+   <topic href="sect0068.html#a0000000887" />
+   
+   
+</entry><entry keyword="help command">
+   
+   <topic href="sect0018.html#a0000000382" title="Interactive Help" /><topic href="sect0093.html#a0000000967" title="help" /><topic href="sect0093.html#a0000000968" title="help" />
+   
+</entry><entry keyword="Hessian matrix">
+   <topic href="sect0228.html#a0000001510" />
+   
+   
+</entry><entry keyword="histeps plot style">
+   
+   <topic href="sect0047.html#a0000000673" title="Steps" /><topic href="sect0047.html#a0000000679" title="Steps" />
+   
+</entry><entry keyword="histogram command">
+   
+   <topic href="sect0025.html#a0000000477" title="Time Intervals" /><topic href="sec-histogram.html#a0000000522" title="Histograms" /><topic href="sec-histogram.html#a0000000523" title="Histograms" /><topic href="sec-histogram.html#a0000000526" title="Histograms" /><topic href="sect0094.html#a0000000969" title="histogram" /><topic href="sect0094.html#a0000000970" title="histogram" /><topic href="sect0094.html#a0000000971" title="histogram" /><topic href="sect0094.html#a0000000974" title="histogram" /><topic href="sect0128.html#a0000001055" title="binorigin" /><topic href="sect0128.html#a0000001056" title="binorigin" /><topic href="sect0128.html#a0000001059" title="binorigin" /><topic href="sec-configfile_settings.html#a0000001419" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001421" title="The settings section" />
+   
+</entry><entry keyword="history command">
+   
+   <topic href="box-CommandHistory.html#a0000000287" title="Getting Started" /><topic href="box-CommandHistory.html#a0000000288" title="Getting Started" /><topic href="sect0095.html#a0000000982" title="history" /><topic href="sect0095.html#a0000000983" title="history" />
+   
+</entry><entry keyword="horizontal datafiles">
+   <topic href="sec-horizontal_datafiles.html#a0000000331" />
+   
+   
+</entry><entry keyword="HTTP">
+   <topic href="sec-filters.html#a0000000480" />
+   
+   
+</entry><entry keyword="hyperg0F1(c,x) function">
+   <topic href="ch-function_list.html#a0000001320" />
+   
+   
+</entry><entry keyword="hyperg1F1(a,b,x) function">
+   <topic href="ch-function_list.html#a0000001321" />
+   
+   
+</entry><entry keyword="hyperg2F0(a,b,x) function">
+   <topic href="ch-function_list.html#a0000001322" />
+   
+   
+</entry><entry keyword="hyperg2F1(a,b,x) function">
+   <topic href="ch-function_list.html#a0000001323" />
+   
+   
+</entry><entry keyword="hypergU(a,b,x) function">
+   <topic href="ch-function_list.html#a0000001324" />
+   
+   
+</entry><entry keyword="hypot(x,y) function">
+   <topic href="ch-function_list.html#a0000001325" />
+   
+   
+</entry><entry keyword="if command">
+   
+   <topic href="sect0034.html#a0000000557" title="Conditionals" /><topic href="sect0096.html#a0000000984" title="if" /><topic href="sect0096.html#a0000000987" title="if" />
+   
+</entry><entry keyword="ifft command">
+   
+   <topic href="sect0028.html#a0000000506" title="Fourier Transforms" /><topic href="sect0028.html#a0000000510" title="Fourier Transforms" /><topic href="sect0028.html#a0000000512" title="Fourier Transforms" /><topic href="sect0097.html#a0000000988" title="ifft" />
+   
+</entry><entry keyword="Im(z) function">
+   <topic href="ch-function_list.html#a0000001326" />
+   
+   
+</entry><entry keyword="Im(z) function">
+   <topic href="sec-complex_numbers.html#a0000000403" />
+   
+   
+</entry><entry keyword="image command">
+   
+   <topic href="sect0066.html#a0000000864" title="Adding Other Vector Graphics Objects" /><topic href="sect0068.html#a0000000884" title="The image Command" /><topic href="sect0068.html#a0000000890" title="The image Command" /><topic href="sect0098.html#a0000000989" title="image" /><topic href="sect0098.html#a0000000990" title="image" /><topic href="sect0216.html#a0000001487" title="Conversion of JPEG Images to PostScript" />
+   
+</entry><entry keyword="image resolution">
+   <topic href="sect0058.html#a0000000801" />
+   
+   
+</entry><entry keyword="ImageMagick">
+   
+   <topic href="sect0007.html#a0000000251" title="System Requirements" /><topic href="sect0216.html#a0000001486" title="Conversion of JPEG Images to PostScript" />
+   
+</entry><entry keyword="imperial units">
+   
+   <topic href="sect0022.html#a0000000427" title="Units" /><topic href="sect0185.html#a0000001188" title="unit" />
+   
+</entry><entry keyword="impulses plot style">
+   
+   <topic href="sec-barcharts.html#a0000000651" title="Barcharts and Histograms" /><topic href="sec-barcharts.html#a0000000660" title="Barcharts and Histograms" />
+   
+</entry><entry keyword="index modifier">
+   
+   <topic href="sec-plot_datafiles.html#a0000000323" title="Plotting Datafiles" /><topic href="sec-fit_command.html#a0000000493" title="Function Fitting" /><topic href="sec-histogram.html#a0000000528" title="Histograms" /><topic href="sect0090.html#a0000000959" title="fit" /><topic href="sect0094.html#a0000000976" title="histogram" />
+   
+</entry><entry keyword="installation">
+   <topic href="sect0008.html#a0000000268" />
+   
+   <entry keyword="system-wide">
+      <topic href="sect0011.html#a0000000275" />
+      
+   </entry><entry keyword="under Debian">
+      <topic href="sect0007.html#a0000000264" />
+      
+   </entry><entry keyword="under Gentoo">
+      <topic href="sect0009.html#a0000000270" />
+      
+   </entry><entry keyword="under Ubuntu">
+      
+      <topic href="sect0007.html#a0000000265" title="System Requirements" /><topic href="sect0009.html#a0000000273" title="Installation within Linux Distributions" />
+   </entry><entry keyword="user-level">
+      <topic href="sect0010.html#a0000000274" />
+      
+   </entry>
+</entry><entry keyword="intdx() function">
+   
+   <topic href="ex-calculus.html#a0000000442" title="Numerical Integration and Differentiation" /><topic href="ex-calculus.html#a0000000444" title="Numerical Integration and Differentiation" />
+   
+</entry><entry keyword="intdx(e,min,max) function">
+   <topic href="ch-function_list.html#a0000001327" />
+   
+   
+</entry><entry keyword="integration">
+   <topic href="ex-calculus.html#a0000000441" />
+   
+   
+</entry><entry keyword="interpolate command">
+   
+   <topic href="ex-interpolation.html#a0000000499" title="Datafile Interpolation" /><topic href="ex-interpolation.html#a0000000501" title="Datafile Interpolation" /><topic href="ex-interpolation.html#a0000000503" title="Datafile Interpolation" /><topic href="sect0099.html#a0000000992" title="interpolate" /><topic href="sect0099.html#a0000000993" title="interpolate" /><topic href="sect0099.html#a0000000994" title="interpolate" />
+   
+</entry><entry keyword="inward keyword">
+   
+   <topic href="ex-axistics.html#a0000000730" title="Specifying where Ticks should Appear along Axes" /><topic href="ex-axistics.html#a0000000734" title="Specifying where Ticks should Appear along Axes" /><topic href="sect0191.html#a0000001204" title="xtics" /><topic href="sect0191.html#a0000001208" title="xtics" />
+   
+</entry><entry keyword="jacobicn(u,m) function">
+   <topic href="ch-function_list.html#a0000001328" />
+   
+   
+</entry><entry keyword="jacobidn(u,m) function">
+   <topic href="ch-function_list.html#a0000001330" />
+   
+   
+</entry><entry keyword="jacobisn(u,m) function">
+   <topic href="ch-function_list.html#a0000001332" />
+   
+   
+</entry><entry keyword="jpeg command">
+   
+   <topic href="sect0100.html#a0000000996" title="jpeg" /><topic href="sect0218.html#a0000001493" title="Delivering Talks in PyXPlot" />
+   
+</entry><entry keyword="jpeg images">
+   <topic href="sect0216.html#a0000001485" />
+   
+   
+</entry><entry keyword="jpeg output">
+   <topic href="sect0059.html#a0000000809" />
+   
+   
+</entry><entry keyword="Julian Day numbers">
+   <topic href="sec-time_series.html#a0000000459" />
+   
+   
+</entry><entry keyword="keys">
+   <topic href="sec-legends.html#a0000000705" />
+   
+   
+</entry><entry keyword="Kuhn, Marcus">
+   <topic href="sec-set_papersize.html#a0000000830" />
+   
+   
+</entry><entry keyword="lambertW0(x) function">
+   <topic href="ch-function_list.html#a0000001334" />
+   
+   
+</entry><entry keyword="lambertW1(x) function">
+   <topic href="ch-function_list.html#a0000001335" />
+   
+   
+</entry><entry keyword="landscape orientation">
+   <topic href="sect0059.html#a0000000819" />
+   
+   
+</entry><entry keyword="latex">
+   
+   <topic href="sect0007.html#a0000000252" title="System Requirements" /><topic href="sect0070.html#a0000000907" title="LaTeX and PyXPlot" /><topic href="sect0222.html#a0000001499" title="The Typesetting of Text" />
+   
+</entry><entry keyword="ldexp(x,y) function">
+   <topic href="ch-function_list.html#a0000001336" />
+   
+   
+</entry><entry keyword="left keyword">
+   
+   <topic href="sec-legends.html#a0000000713" title="Graph Legends" /><topic href="sec-legends.html#a0000000718" title="Graph Legends" /><topic href="ex-australia.html#a0000000787" title="Text Labels" />
+   
+</entry><entry keyword="legendreP(l,x) function">
+   <topic href="ch-function_list.html#a0000001337" />
+   
+   
+</entry><entry keyword="legendreQ(l,x) function">
+   <topic href="ch-function_list.html#a0000001338" />
+   
+   
+</entry><entry keyword="legends">
+   <topic href="sec-legends.html#a0000000706" />
+   
+   
+</entry><entry keyword="let command">
+   
+   <topic href="sect0020.html#a0000000383" title="Variables" /><topic href="sect0101.html#a0000000997" title="let" /><topic href="sect0101.html#a0000000998" title="let" />
+   
+</entry><entry keyword="libkpathsea">
+   <topic href="sect0007.html#a0000000253" />
+   
+   
+</entry><entry keyword="libpng">
+   <topic href="sect0007.html#a0000000254" />
+   
+   
+</entry><entry keyword="libxml">
+   <topic href="sect0007.html#a0000000255" />
+   
+   
+</entry><entry keyword="license">
+   <topic href="sect0006.html#a0000000244" />
+   
+   
+</entry><entry keyword="line command">
+   
+   <topic href="sect0066.html#a0000000865" title="Adding Other Vector Graphics Objects" /><topic href="ex-nanotubes.html#a0000000883" title="The arrow and line Commands" />
+   
+</entry><entry keyword="lines plot style">
+   
+   <topic href="sec-select_modifier.html#a0000000339" title="Choosing which Data to Plot" /><topic href="sec-pointtype.html#a0000000361" title="Plotting Styles" /><topic href="sect0045.html#a0000000602" title="Lines and Points" />
+   
+</entry><entry keyword="linespoints plot style">
+   
+   <topic href="sec-pointtype.html#a0000000357" title="Plotting Styles" /><topic href="sect0045.html#a0000000604" title="Lines and Points" />
+   
+</entry><entry keyword="linetype keyword">
+   <topic href="sect0075.html#a0000000925" />
+   
+   
+</entry><entry keyword="linetype modifier">
+   
+   <topic href="sect0043.html#a0000000591" title="The with modifier" /><topic href="sect0110.html#a0000001017" title="with" />
+   
+</entry><entry keyword="linetype plot style">
+   <topic href="sec-pointtype.html#a0000000367" />
+   
+   
+</entry><entry keyword="linewidth keyword">
+   <topic href="sect0075.html#a0000000924" />
+   
+   
+</entry><entry keyword="linewidth modifier">
+   
+   <topic href="sect0043.html#a0000000592" title="The with modifier" /><topic href="sect0110.html#a0000001018" title="with" />
+   
+</entry><entry keyword="list command">
+   
+   <topic href="sec-multiplot.html#a0000000842" title="Multiplot Mode" /><topic href="sect0102.html#a0000000999" title="list" /><topic href="sect0102.html#a0000001000" title="list" />
+   
+</entry><entry keyword="load command">
+   
+   <topic href="box-CommandHistory.html#a0000000284" title="Getting Started" /><topic href="sect0103.html#a0000001001" title="load" /><topic href="sect0103.html#a0000001002" title="load" />
+   
+</entry><entry keyword="log(z) function">
+   <topic href="ch-function_list.html#a0000001339" />
+   
+   
+</entry><entry keyword="log10(z) function">
+   <topic href="ch-function_list.html#a0000001340" />
+   
+   
+</entry><entry keyword="lognormalCDF(x,,&#963;) function">
+   <topic href="ch-function_list.html#a0000001341" />
+   
+   
+</entry><entry keyword="lognormalCDFi(x,,&#963;) function">
+   <topic href="ch-function_list.html#a0000001342" />
+   
+   
+</entry><entry keyword="lognormalPDF(x,,&#963;) function">
+   <topic href="ch-function_list.html#a0000001343" />
+   
+   
+</entry><entry keyword="lower-limit datapoints">
+   <topic href="sect0045.html#a0000000608" />
+   
+   
+</entry><entry keyword="lowerlimits plot style">
+   <topic href="sect0045.html#a0000000606" />
+   
+   
+</entry><entry keyword="MacOS X">
+   
+   <topic href="sect0007.html#a0000000246" title="System Requirements" /><topic href="sect0007.html#a0000000266" title="System Requirements" />
+   
+</entry><entry keyword="MacPorts">
+   <topic href="sect0007.html#a0000000267" />
+   
+   
+</entry><entry keyword="max(x,y) function">
+   <topic href="ch-function_list.html#a0000001344" />
+   
+   
+</entry><entry keyword="maximise command">
+   
+   <topic href="ex-eqnsolve.html#a0000000455" title="Searching for Minima and Maxima of Functions" /><topic href="ex-eqnsolve.html#a0000000457" title="Searching for Minima and Maxima of Functions" /><topic href="sect0104.html#a0000001003" title="maximise" /><topic href="sect0104.html#a0000001004" title="maximise" />
+   
+</entry><entry keyword="Microsoft Excel">
+   <topic href="sec-first_plots.html#a0000000294" />
+   
+   
+</entry><entry keyword="Microsoft Powerpoint">
+   
+   <topic href="sect0217.html#a0000001488" title="Inserting Equations in Powerpoint Presentations" /><topic href="sect0217.html#a0000001491" title="Inserting Equations in Powerpoint Presentations" /><topic href="sect0218.html#a0000001495" title="Delivering Talks in PyXPlot" />
+   
+</entry><entry keyword="min(x,y) function">
+   <topic href="ch-function_list.html#a0000001345" />
+   
+   
+</entry><entry keyword="minimise command">
+   
+   <topic href="ex-eqnsolve.html#a0000000454" title="Searching for Minima and Maxima of Functions" /><topic href="sect0105.html#a0000001005" title="minimise" /><topic href="sect0105.html#a0000001006" title="minimise" />
+   
+</entry><entry keyword="mod(x,y) function">
+   <topic href="ch-function_list.html#a0000001346" />
+   
+   
+</entry><entry keyword="monochrome output">
+   <topic href="sect0059.html#a0000000817" />
+   
+   
+</entry><entry keyword="move command">
+   
+   <topic href="sec-multiplot.html#a0000000847" title="Multiplot Mode" /><topic href="sect0106.html#a0000001007" title="move" /><topic href="sect0106.html#a0000001008" title="move" />
+   
+</entry><entry keyword="multiple windows">
+   <topic href="sect0057.html#a0000000796" />
+   
+   
+</entry><entry keyword="multiplot">
+   <topic href="sec-multiplot.html#a0000000838" />
+   
+   
+</entry><entry keyword="NaN">
+   <topic href="sec-num_errs.html#a0000000396" />
+   
+   
+</entry><entry keyword="natural units">
+   <topic href="sect0022.html#a0000000430" />
+   
+   
+</entry><entry keyword="nohead keyword">
+   
+   <topic href="sec-set_arrow.html#a0000000764" title="Arrows" /><topic href="sect0075.html#a0000000920" title="arrow" /><topic href="sect0075.html#a0000000927" title="arrow" />
+   
+</entry><entry keyword="not a number">
+   <topic href="sec-num_errs.html#a0000000397" />
+   
+   
+</entry><entry keyword="Not So Short Guide to 2&#949;, The">
+   <topic href="sect0222.html#a0000001501" />
+   
+   
+</entry><entry keyword="numerical errors">
+   <topic href="sec-num_errs.html#a0000000394" />
+   
+   
+</entry><entry keyword="OpenOffice">
+   
+   <topic href="sect0217.html#a0000001492" title="Inserting Equations in Powerpoint Presentations" /><topic href="sect0218.html#a0000001496" title="Delivering Talks in PyXPlot" />
+   
+</entry><entry keyword="operators">
+   <topic href="sec-first_plots.html#a0000000297" />
+   
+   
+</entry><entry keyword="ordinal(x) function">
+   <topic href="ch-function_list.html#a0000001347" />
+   
+   
+</entry><entry keyword="outside keyword">
+   <topic href="sec-legends.html#a0000000719" />
+   
+   
+</entry><entry keyword="outward keyword">
+   
+   <topic href="ex-axistics.html#a0000000731" title="Specifying where Ticks should Appear along Axes" /><topic href="ex-axistics.html#a0000000736" title="Specifying where Ticks should Appear along Axes" /><topic href="sect0191.html#a0000001205" title="xtics" /><topic href="sect0191.html#a0000001210" title="xtics" />
+   
+</entry><entry keyword="overwriting files">
+   <topic href="sec-file_backup.html#a0000000832" />
+   
+   
+</entry><entry keyword="palette">
+   <topic href="sec-palette.html#a0000000596" />
+   
+   
+</entry><entry keyword="paper sizes">
+   <topic href="sec-set_papersize.html#a0000000831" />
+   
+   
+</entry><entry keyword="pdf format">
+   <topic href="sec-directing_output.html#a0000000347" />
+   
+   
+</entry><entry keyword="pdf output">
+   <topic href="sect0059.html#a0000000810" />
+   
+   
+</entry><entry keyword="physical constants">
+   <topic href="sec-constants.html#a0000000385" />
+   
+   
+</entry><entry keyword="physical units">
+   <topic href="sec-units.html#a0000000407" />
+   
+   
+</entry><entry keyword="piechart command">
+   
+   <topic href="sect0066.html#a0000000866" title="Adding Other Vector Graphics Objects" /><topic href="sec-piechart.html#a0000000903" title="The piechart Command" /><topic href="sec-piechart.html#a0000000904" title="The piechart Command" /><topic href="sec-piechart.html#a0000000905" title="The piechart Command" />
+   
+</entry><entry keyword="plot axes command">
+   <topic href="sect0108.html#a0000001011" />
+   
+   
+</entry><entry keyword="plot command">
+   
+   <topic href="sect0004.html#a0000000238" title="A Whirlwind Tour" /><topic href="sect0004.html#a0000000240" title="A Whirlwind Tour" /><topic href="sec-first_plots.html#a0000000289" title="First Plots" /><topic href="sect0016.html#a0000000329" title="Plotting Many Datafiles at Once" /><topic href="sect0016.html#a0000000330" title="Plotting Many Datafiles at Once" /><topic href="ch-plotting.html#a0000000586" title="Plotting: A Detailed Survey" /><topic href="sect0043.html#a0000000587" title="The with modifier" /><topic href="ch-vector_graphics.html#a0000000835" title="Producing Vector Graphics" /><topic href="sect0107.html#a0000001009" title="plot" /><topic href="sect0107.html#a0000001010" title="plot" /><topic href="sect0122.html#a0000001047" title="autoscale" />
+   
+</entry><entry keyword="plot styles">
+   
+   
+   <entry keyword="arrows">
+      <topic href="sect0048.html#a0000000688" />
+      
+   </entry><entry keyword="arrowshead">
+      
+      <topic href="sect0048.html#a0000000682" title="Arrows" /><topic href="sect0048.html#a0000000690" title="Arrows" /><topic href="sect0048.html#a0000000692" title="Arrows" />
+   </entry><entry keyword="arrowsnohead">
+      
+      <topic href="sect0048.html#a0000000684" title="Arrows" /><topic href="sect0048.html#a0000000694" title="Arrows" />
+   </entry><entry keyword="arrowstwohead">
+      
+      <topic href="sect0048.html#a0000000686" title="Arrows" /><topic href="sect0048.html#a0000000696" title="Arrows" />
+   </entry><entry keyword="boxes">
+      
+      <topic href="sec-histogram.html#a0000000533" title="Histograms" /><topic href="sec-barcharts.html#a0000000650" title="Barcharts and Histograms" /><topic href="sec-barcharts.html#a0000000656" title="Barcharts and Histograms" /><topic href="sec-barcharts.html#a0000000666" title="Stacked Bar Charts" /><topic href="sect0094.html#a0000000981" title="histogram" />
+   </entry><entry keyword="dots">
+      <topic href="sect0045.html#a0000000601" />
+      
+   </entry><entry keyword="errorbars">
+      <topic href="sec-errorbars.html#a0000000622" />
+      
+   </entry><entry keyword="errorrange">
+      <topic href="sec-errorbars.html#a0000000634" />
+      
+   </entry><entry keyword="fsteps">
+      
+      <topic href="sect0047.html#a0000000672" title="Steps" /><topic href="sect0047.html#a0000000678" title="Steps" />
+   </entry><entry keyword="histeps">
+      
+      <topic href="sect0047.html#a0000000674" title="Steps" /><topic href="sect0047.html#a0000000680" title="Steps" />
+   </entry><entry keyword="impulses">
+      
+      <topic href="sec-barcharts.html#a0000000652" title="Barcharts and Histograms" /><topic href="sec-barcharts.html#a0000000661" title="Barcharts and Histograms" />
+   </entry><entry keyword="lines">
+      
+      <topic href="sec-select_modifier.html#a0000000340" title="Choosing which Data to Plot" /><topic href="sec-pointtype.html#a0000000362" title="Plotting Styles" /><topic href="sect0045.html#a0000000603" title="Lines and Points" />
+   </entry><entry keyword="linespoints">
+      
+      <topic href="sec-pointtype.html#a0000000358" title="Plotting Styles" /><topic href="sect0045.html#a0000000605" title="Lines and Points" />
+   </entry><entry keyword="linetype">
+      <topic href="sec-pointtype.html#a0000000368" />
+      
+   </entry><entry keyword="lowerlimits">
+      <topic href="sect0045.html#a0000000607" />
+      
+   </entry><entry keyword="points">
+      
+      <topic href="sec-pointtype.html#a0000000360" title="Plotting Styles" /><topic href="sect0045.html#a0000000610" title="Lines and Points" />
+   </entry><entry keyword="pointtype">
+      <topic href="sec-pointtype.html#a0000000366" />
+      
+   </entry><entry keyword="shadedregion">
+      
+      <topic href="sect0046.html#a0000000641" title="Shaded Regions" /><topic href="sect0046.html#a0000000647" title="Shaded Regions" />
+   </entry><entry keyword="stars">
+      <topic href="sect0045.html#a0000000612" />
+      
+   </entry><entry keyword="steps">
+      
+      <topic href="sect0047.html#a0000000670" title="Steps" /><topic href="sect0047.html#a0000000676" title="Steps" />
+   </entry><entry keyword="upperlimits">
+      <topic href="sect0045.html#a0000000614" />
+      
+   </entry><entry keyword="wboxes">
+      
+      <topic href="sec-barcharts.html#a0000000654" title="Barcharts and Histograms" /><topic href="sec-barcharts.html#a0000000659" title="Barcharts and Histograms" /><topic href="sec-barcharts.html#a0000000668" title="Stacked Bar Charts" />
+   </entry><entry keyword="xerrorbars">
+      <topic href="sec-errorbars.html#a0000000620" />
+      
+   </entry><entry keyword="xerrorrange">
+      <topic href="sec-errorbars.html#a0000000628" />
+      
+   </entry><entry keyword="xyerrorbars">
+      <topic href="sec-errorbars.html#a0000000626" />
+      
+   </entry><entry keyword="xyerrorrange">
+      <topic href="sec-errorbars.html#a0000000632" />
+      
+   </entry><entry keyword="yerrorbars">
+      
+      <topic href="sec-pointtype.html#a0000000364" title="Plotting Styles" /><topic href="sec-errorbars.html#a0000000618" title="Error Bars" /><topic href="sec-errorbars.html#a0000000624" title="Error Bars" />
+   </entry><entry keyword="yerrorrange">
+      
+      <topic href="sec-errorbars.html#a0000000630" title="Error Bars" /><topic href="sec-errorbars.html#a0000000636" title="Error Bars" /><topic href="sect0046.html#a0000000645" title="Shaded Regions" />
+   </entry><entry keyword="yerrorshaded">
+      
+      <topic href="sect0046.html#a0000000639" title="Shaded Regions" /><topic href="sect0046.html#a0000000643" title="Shaded Regions" />
+   </entry>
+</entry><entry keyword="plot title command">
+   <topic href="sect0109.html#a0000001012" />
+   
+   
+</entry><entry keyword="plot with command">
+   <topic href="sect0110.html#a0000001013" />
+   
+   
+</entry><entry keyword="png output">
+   <topic href="sect0059.html#a0000000811" />
+   
+   <entry keyword="transparency">
+      <topic href="sect0059.html#a0000000824" />
+      
+   </entry>
+</entry><entry keyword="point command">
+   
+   <topic href="sect0066.html#a0000000867" title="Adding Other Vector Graphics Objects" /><topic href="sec-point.html#a0000000900" title="The point Command" /><topic href="sec-point.html#a0000000901" title="The point Command" /><topic href="sect0116.html#a0000001031" title="point" /><topic href="sect0116.html#a0000001032" title="point" />
+   
+</entry><entry keyword="pointlinewidth modifier">
+   
+   <topic href="sect0043.html#a0000000593" title="The with modifier" /><topic href="sect0110.html#a0000001019" title="with" />
+   
+</entry><entry keyword="points plot style">
+   
+   <topic href="sec-pointtype.html#a0000000359" title="Plotting Styles" /><topic href="sect0045.html#a0000000609" title="Lines and Points" />
+   
+</entry><entry keyword="pointsize modifier">
+   
+   <topic href="sect0043.html#a0000000594" title="The with modifier" /><topic href="sect0110.html#a0000001020" title="with" />
+   
+</entry><entry keyword="pointtype modifier">
+   
+   <topic href="sect0043.html#a0000000595" title="The with modifier" /><topic href="sect0110.html#a0000001021" title="with" />
+   
+</entry><entry keyword="pointtype plot style">
+   <topic href="sec-pointtype.html#a0000000365" />
+   
+   
+</entry><entry keyword="poissonCDF(x,&#956;) function">
+   <topic href="ch-function_list.html#a0000001348" />
+   
+   
+</entry><entry keyword="poissonPDF(x,&#956;) function">
+   <topic href="ch-function_list.html#a0000001349" />
+   
+   
+</entry><entry keyword="portrait orientation">
+   <topic href="sect0059.html#a0000000818" />
+   
+   
+</entry><entry keyword="PostScript">
+   
+   
+   <entry keyword="Encapsulated">
+      <topic href="sect0059.html#a0000000807" />
+      
+   </entry>
+</entry><entry keyword="PostScript output">
+   <topic href="sect0059.html#a0000000812" />
+   
+   
+</entry><entry keyword="pow(x,y) function">
+   <topic href="ch-function_list.html#a0000001350" />
+   
+   
+</entry><entry keyword="presentations">
+   
+   <topic href="sect0067.html#a0000000878" title="The text Command" /><topic href="sect0217.html#a0000001489" title="Inserting Equations in Powerpoint Presentations" /><topic href="sect0217.html#a0000001490" title="Inserting Equations in Powerpoint Presentations" />
+   
+</entry><entry keyword="print command">
+   
+   <topic href="sect0014.html#a0000000300" title="Printing Text" /><topic href="sect0111.html#a0000001022" title="print" /><topic href="sect0111.html#a0000001023" title="print" />
+   
+</entry><entry keyword="pwd command">
+   
+   <topic href="sect0040.html#a0000000581" title="Shell Commands" /><topic href="sect0112.html#a0000001024" title="pwd" /><topic href="sect0112.html#a0000001025" title="pwd" />
+   
+</entry><entry keyword="PyX">
+   <topic href="sect0005.html#a0000000242" />
+   
+   
+</entry><entry keyword="pyxplotwatch">
+   <topic href="sect0041.html#a0000000582" />
+   
+   
+</entry><entry keyword="Quick Image Viewer">
+   
+   <topic href="sect0220.html#a0000001497" title="Writing A Short Example Talk" /><topic href="sect0221.html#a0000001498" title="Delivering your Talk" />
+   
+</entry><entry keyword="quit command">
+   
+   <topic href="box-CommandHistory.html#a0000000277" title="Getting Started" /><topic href="box-CommandHistory.html#a0000000283" title="Getting Started" /><topic href="sect0113.html#a0000001026" title="quit" /><topic href="sect0113.html#a0000001027" title="quit" />
+   
+</entry><entry keyword="quote characters">
+   <topic href="sec-latex_incompatibility.html#a0000000308" />
+   
+   
+</entry><entry keyword="radians(x) function">
+   <topic href="ch-function_list.html#a0000001351" />
+   
+   
+</entry><entry keyword="random­binomial(p,n) function">
+   
+   <topic href="sect0030.html#a0000000535" title="Random Data Generation" /><topic href="ch-function_list.html#a0000001353" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="random­chisq() function">
+   
+   <topic href="sect0030.html#a0000000536" title="Random Data Generation" /><topic href="ch-function_list.html#a0000001354" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="random­gaussian(&#963;) function">
+   
+   <topic href="sect0030.html#a0000000537" title="Random Data Generation" /><topic href="ch-function_list.html#a0000001355" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="random­lognormal(,&#963;) function">
+   
+   <topic href="sect0030.html#a0000000538" title="Random Data Generation" /><topic href="ch-function_list.html#a0000001356" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="random­poisson(n) function">
+   
+   <topic href="sect0030.html#a0000000539" title="Random Data Generation" /><topic href="ch-function_list.html#a0000001357" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="random­tdist() function">
+   
+   <topic href="sect0030.html#a0000000540" title="Random Data Generation" /><topic href="ch-function_list.html#a0000001358" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="random() function">
+   
+   <topic href="sect0030.html#a0000000534" title="Random Data Generation" /><topic href="ch-function_list.html#a0000001352" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="Re(z) function">
+   <topic href="ch-function_list.html#a0000001359" />
+   
+   
+</entry><entry keyword="Re(z) function">
+   <topic href="sec-complex_numbers.html#a0000000402" />
+   
+   
+</entry><entry keyword="readline">
+   <topic href="sect0007.html#a0000000260" />
+   
+   
+</entry><entry keyword="rectangle command">
+   
+   <topic href="ex-mandelbrot.html#a0000000895" title="The box and circle Commands" /><topic href="ex-mandelbrot.html#a0000000897" title="The box and circle Commands" /><topic href="sect0114.html#a0000001028" title="rectangle" />
+   
+</entry><entry keyword="refresh command">
+   
+   <topic href="sec-directing_output.html#a0000000349" title="Directing Where Output Goes" /><topic href="sect0062.html#a0000000851" title="Settings Associated with Multiplot Items" /><topic href="sect0062.html#a0000000852" title="Settings Associated with Multiplot Items" /><topic href="sect0115.html#a0000001029" title="refresh" /><topic href="sect0115.html#a0000001030" title="refresh" />
+   
+</entry><entry keyword="regular expressions">
+   <topic href="sect0032.html#a0000000551" />
+   
+   
+</entry><entry keyword="replot command">
+   
+   <topic href="sec-replot.html#a0000000342" title="The replot Command" /><topic href="sect0065.html#a0000000856" title="The replot Command Revisited" /><topic href="sect0065.html#a0000000857" title="The replot Command Revisited" /><topic href="sect0117.html#a0000001033" title="replot" /><topic href="sect0117.html#a0000001034" title="replot" /><topic href="sect0117.html#a0000001035" title="replot" /><topic href="sect0117.html#a0000001036" title="replot" />
+   
+</entry><entry keyword="reset command">
+   
+   <topic href="sec-latex_incompatibility.html#a0000000312" title="Axis Labels and Titles" /><topic href="sect0118.html#a0000001037" title="reset" /><topic href="sect0118.html#a0000001038" title="reset" />
+   
+</entry><entry keyword="right keyword">
+   
+   <topic href="sec-legends.html#a0000000714" title="Graph Legends" /><topic href="ex-australia.html#a0000000789" title="Text Labels" />
+   
+</entry><entry keyword="root(z,n) function">
+   <topic href="ch-function_list.html#a0000001360" />
+   
+   
+</entry><entry keyword="rotate keyword">
+   
+   <topic href="ex-australia.html#a0000000776" title="Text Labels" /><topic href="sect0067.html#a0000000871" title="The text Command" /><topic href="sect0068.html#a0000000888" title="The image Command" />
+   
+</entry><entry keyword="rows keyword">
+   <topic href="sec-horizontal_datafiles.html#a0000000335" />
+   
+   
+</entry><entry keyword="save command">
+   
+   <topic href="box-CommandHistory.html#a0000000285" title="Getting Started" /><topic href="box-CommandHistory.html#a0000000286" title="Getting Started" /><topic href="sect0119.html#a0000001039" title="save" /><topic href="sect0119.html#a0000001040" title="save" />
+   
+</entry><entry keyword="sec(z) function">
+   <topic href="ch-function_list.html#a0000001361" />
+   
+   
+</entry><entry keyword="sech(z) function">
+   <topic href="ch-function_list.html#a0000001362" />
+   
+   
+</entry><entry keyword="sed shell command">
+   <topic href="sect0032.html#a0000000549" />
+   
+   
+</entry><entry keyword="select modifier">
+   
+   <topic href="sec-select_modifier.html#a0000000338" title="Choosing which Data to Plot" /><topic href="sec-tabulate.html#a0000000486" title="Tabulating Functions and Slicing Data Files" /><topic href="sec-fit_command.html#a0000000495" title="Function Fitting" /><topic href="sec-histogram.html#a0000000531" title="Histograms" /><topic href="sect0090.html#a0000000961" title="fit" /><topic href="sect0094.html#a0000000979" title="histogram" /><topic href="sect0204.html#a0000001235" title="tabulate" />
+   
+</entry><entry keyword="set arrow command">
+   
+   <topic href="sect0055.html#a0000000758" title="Labelling Graphs" /><topic href="sec-set_arrow.html#a0000000761" title="Arrows" /><topic href="sec-set_arrow.html#a0000000762" title="Arrows" /><topic href="sec-set_arrow.html#a0000000774" title="Arrows" /><topic href="sect0121.html#a0000001043" title="arrow" /><topic href="sect0121.html#a0000001044" title="arrow" />
+   
+</entry><entry keyword="set autoscale command">
+   
+   <topic href="ex-axislab.html#a0000000375" title="Setting Axis Ranges" /><topic href="sect0122.html#a0000001045" title="autoscale" /><topic href="sect0122.html#a0000001046" title="autoscale" />
+   
+</entry><entry keyword="set axescolour command">
+   
+   <topic href="sec-set_colours.html#a0000000756" title="Gridlines" /><topic href="sect0123.html#a0000001048" title="axescolour" /><topic href="sec-configfile_settings.html#a0000001414" title="The settings section" />
+   
+</entry><entry keyword="set axis command">
+   
+   <topic href="sec-multiple_axes.html#a0000000723" title="Configuring Axes" /><topic href="sect0053.html#a0000000728" title="Configuring the Appearance of Axes" /><topic href="sect0124.html#a0000001049" title="axis" /><topic href="sect0124.html#a0000001050" title="axis" />
+   
+</entry><entry keyword="set axisunitstyle command">
+   
+   <topic href="sec-set_axisunitstyle.html#a0000000725" title="Plotting Quantities with Physical Units" /><topic href="sect0125.html#a0000001051" title="axisunitstyle" /><topic href="sec-configfile_settings.html#a0000001415" title="The settings section" />
+   
+</entry><entry keyword="set backup command">
+   
+   <topic href="sec-file_backup.html#a0000000834" title="Backing Up Over-Written Files" /><topic href="sect0126.html#a0000001052" title="backup" /><topic href="sec-configfile_settings.html#a0000001416" title="The settings section" />
+   
+</entry><entry keyword="set bar command">
+   
+   <topic href="sect0127.html#a0000001053" title="bar" /><topic href="sec-configfile_settings.html#a0000001417" title="The settings section" />
+   
+</entry><entry keyword="set binorigin command">
+   
+   <topic href="sect0128.html#a0000001054" title="binorigin" /><topic href="sect0128.html#a0000001057" title="binorigin" /><topic href="sect0128.html#a0000001058" title="binorigin" /><topic href="sec-configfile_settings.html#a0000001418" title="The settings section" />
+   
+</entry><entry keyword="set binwidth command">
+   
+   <topic href="sect0129.html#a0000001060" title="binwidth" /><topic href="sec-configfile_settings.html#a0000001420" title="The settings section" />
+   
+</entry><entry keyword="set boxfrom command">
+   
+   <topic href="sec-barcharts.html#a0000000662" title="Barcharts and Histograms" /><topic href="sect0130.html#a0000001061" title="boxfrom" /><topic href="sec-configfile_settings.html#a0000001422" title="The settings section" />
+   
+</entry><entry keyword="set boxwidth command">
+   
+   <topic href="sec-barcharts.html#a0000000657" title="Barcharts and Histograms" /><topic href="sect0131.html#a0000001062" title="boxwidth" /><topic href="sec-configfile_settings.html#a0000001423" title="The settings section" />
+   
+</entry><entry keyword="set calendar command">
+   
+   <topic href="sec-time_series.html#a0000000461" title="Working with Time-Series Data" /><topic href="sec-time_series.html#a0000000462" title="Working with Time-Series Data" /><topic href="sec-time_series.html#a0000000473" title="Working with Time-Series Data" /><topic href="sect0132.html#a0000001063" title="calendar" /><topic href="sect0132.html#a0000001064" title="calendar" /><topic href="sec-configfile_settings.html#a0000001424" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001425" title="The settings section" />
+   
+</entry><entry keyword="set clip command">
+   
+   <topic href="sect0054.html#a0000000757" title="Clipping Behaviour" /><topic href="sect0133.html#a0000001065" title="clip" /><topic href="sect0133.html#a0000001066" title="clip" /><topic href="sec-configfile_settings.html#a0000001426" title="The settings section" />
+   
+</entry><entry keyword="set command">
+   
+   <topic href="sect0015.html#a0000000313" title="Querying the Values of Settings" /><topic href="sect0015.html#a0000000319" title="Querying the Values of Settings" /><topic href="sect0062.html#a0000000848" title="Settings Associated with Multiplot Items" /><topic href="sect0062.html#a0000000850" title="Settings Associated with Multiplot Items" /><topic href="sect0120.html#a0000001041" title="set" /><topic href="sect0120.html#a0000001042" title="set" /><topic href="ch-configuration.html#a0000001401" title="Configuring PyXPlot" /><topic href="sect0209.html#a0000001407" title="Configuration Files" /><topic href="sect0209.html#a0000001408" title="Configuration Files" /><topic href="sect0209.html#a0000001409" title="Configuration Files" /><topic href="sect0209.html#a0000001410" title="Configuration Files" /><topic href="sect0209.html#a0000001411" title="Configuration Files" />
+   
+</entry><entry keyword="set data style command">
+   
+   <topic href="sect0134.html#a0000001067" title="data style" /><topic href="sec-configfile_settings.html#a0000001428" title="The settings section" />
+   
+</entry><entry keyword="set display command">
+   
+   <topic href="sec-set_display.html#a0000000855" title="The Construction of Large Multiplots" /><topic href="sect0135.html#a0000001068" title="display" /><topic href="sec-configfile_settings.html#a0000001429" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001430" title="The settings section" />
+   
+</entry><entry keyword="set filter command">
+   
+   <topic href="sect0136.html#a0000001069" title="filter" /><topic href="sect0136.html#a0000001070" title="filter" />
+   
+</entry><entry keyword="set fontsize command">
+   
+   <topic href="ex-australia.html#a0000000779" title="Text Labels" /><topic href="sect0137.html#a0000001071" title="fontsize" /><topic href="sec-configfile_settings.html#a0000001432" title="The settings section" />
+   
+</entry><entry keyword="set function style command">
+   
+   <topic href="sect0138.html#a0000001072" title="function style" /><topic href="sec-configfile_settings.html#a0000001433" title="The settings section" />
+   
+</entry><entry keyword="set grid command">
+   
+   <topic href="sec-set_colours.html#a0000000748" title="Gridlines" /><topic href="sect0139.html#a0000001073" title="grid" /><topic href="sec-configfile_settings.html#a0000001434" title="The settings section" />
+   
+</entry><entry keyword="set gridmajcolour command">
+   
+   <topic href="sec-set_colours.html#a0000000752" title="Gridlines" /><topic href="sect0140.html#a0000001074" title="gridmajcolour" /><topic href="sec-configfile_settings.html#a0000001435" title="The settings section" />
+   
+</entry><entry keyword="set gridmincolour command">
+   
+   <topic href="sec-set_colours.html#a0000000753" title="Gridlines" /><topic href="sect0141.html#a0000001075" title="gridmincolour" /><topic href="sec-configfile_settings.html#a0000001436" title="The settings section" />
+   
+</entry><entry keyword="set key command">
+   
+   <topic href="sec-legends.html#a0000000709" title="Graph Legends" /><topic href="sec-legends.html#a0000000710" title="Graph Legends" /><topic href="sec-legends.html#a0000000717" title="Graph Legends" /><topic href="sect0142.html#a0000001076" title="key" /><topic href="sec-configfile_settings.html#a0000001437" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001439" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001440" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001441" title="The settings section" />
+   
+</entry><entry keyword="set keycolumns command">
+   
+   <topic href="sec-legends.html#a0000000722" title="Graph Legends" /><topic href="sect0143.html#a0000001077" title="keycolumns" /><topic href="sec-configfile_settings.html#a0000001438" title="The settings section" />
+   
+</entry><entry keyword="set label command">
+   
+   <topic href="sect0055.html#a0000000759" title="Labelling Graphs" /><topic href="ex-australia.html#a0000000775" title="Text Labels" /><topic href="sect0067.html#a0000000870" title="The text Command" /><topic href="sect0070.html#a0000000912" title="LaTeX and PyXPlot" /><topic href="sect0144.html#a0000001078" title="label" /><topic href="sect0144.html#a0000001079" title="label" />
+   
+</entry><entry keyword="set linewidth command">
+   
+   <topic href="sect0145.html#a0000001080" title="linewidth" /><topic href="sect0145.html#a0000001081" title="linewidth" /><topic href="sec-configfile_settings.html#a0000001443" title="The settings section" />
+   
+</entry><entry keyword="set logscale command">
+   
+   <topic href="ex-axislab.html#a0000000376" title="Setting Axis Ranges" /><topic href="sect0146.html#a0000001082" title="logscale" />
+   
+</entry><entry keyword="set logscale t command">
+   <topic href="sec-configfile_settings.html#a0000001469" />
+   
+   
+</entry><entry keyword="set multiplot command">
+   
+   <topic href="sec-multiplot.html#a0000000839" title="Multiplot Mode" /><topic href="sect0147.html#a0000001083" title="multiplot" /><topic href="sec-configfile_settings.html#a0000001444" title="The settings section" />
+   
+</entry><entry keyword="set mxtics command">
+   <topic href="sect0148.html#a0000001084" />
+   
+   
+</entry><entry keyword="set mytics command">
+   <topic href="sect0149.html#a0000001085" />
+   
+   
+</entry><entry keyword="set mztics command">
+   <topic href="sect0150.html#a0000001086" />
+   
+   
+</entry><entry keyword="set noarrow command">
+   
+   <topic href="sec-set_arrow.html#a0000000763" title="Arrows" /><topic href="sect0151.html#a0000001087" title="noarrow" />
+   
+</entry><entry keyword="set noaxis command">
+   <topic href="sect0152.html#a0000001088" />
+   
+   
+</entry><entry keyword="set nobackup command">
+   <topic href="sect0153.html#a0000001089" />
+   
+   
+</entry><entry keyword="set noclip command">
+   <topic href="sect0154.html#a0000001090" />
+   
+   
+</entry><entry keyword="set nodisplay command">
+   
+   <topic href="sec-set_display.html#a0000000854" title="The Construction of Large Multiplots" /><topic href="sect0155.html#a0000001091" title="nodisplay" />
+   
+</entry><entry keyword="set nogrid command">
+   <topic href="sect0156.html#a0000001092" />
+   
+   
+</entry><entry keyword="set nokey command">
+   
+   <topic href="sec-legends.html#a0000000708" title="Graph Legends" /><topic href="sect0157.html#a0000001093" title="nokey" />
+   
+</entry><entry keyword="set nolabel command">
+   <topic href="sect0158.html#a0000001094" />
+   
+   
+</entry><entry keyword="set nologscale command">
+   
+   <topic href="ex-axislab.html#a0000000377" title="Setting Axis Ranges" /><topic href="sect0159.html#a0000001095" title="nologscale" />
+   
+</entry><entry keyword="set nomultiplot command">
+   
+   <topic href="sec-multiplot.html#a0000000840" title="Multiplot Mode" /><topic href="sect0160.html#a0000001096" title="nomultiplot" /><topic href="sect0160.html#a0000001097" title="nomultiplot" />
+   
+</entry><entry keyword="set nostyle command">
+   <topic href="sect0161.html#a0000001098" />
+   
+   
+</entry><entry keyword="set notitle command">
+   <topic href="sect0162.html#a0000001099" />
+   
+   
+</entry><entry keyword="set noxtics command">
+   
+   <topic href="ex-axistics.html#a0000000739" title="Specifying where Ticks should Appear along Axes" /><topic href="sect0163.html#a0000001100" title="noxtics" /><topic href="sect0191.html#a0000001213" title="xtics" />
+   
+</entry><entry keyword="set noytics command">
+   <topic href="sect0164.html#a0000001101" />
+   
+   
+</entry><entry keyword="set noztics command">
+   <topic href="sect0165.html#a0000001102" />
+   
+   
+</entry><entry keyword="set numeric complex command">
+   <topic href="sec-complex_numbers.html#a0000000400" />
+   
+   
+</entry><entry keyword="set numeric errors explicit command">
+   <topic href="sec-num_errs.html#a0000000398" />
+   
+   
+</entry><entry keyword="set numeric errors quiet command">
+   
+   <topic href="sec-num_errs.html#a0000000395" title="Handling Numerical Errors" /><topic href="sec-units.html#a0000000414" title="Working with Physical Units" />
+   
+</entry><entry keyword="set numeric real command">
+   <topic href="sec-complex_numbers.html#a0000000401" />
+   
+   
+</entry><entry keyword="set numerics command">
+   
+   <topic href="sect0166.html#a0000001103" title="numerics" /><topic href="sect0166.html#a0000001104" title="numerics" /><topic href="sec-configfile_settings.html#a0000001445" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001446" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001447" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001448" title="The settings section" />
+   
+</entry><entry keyword="set numerics complex command">
+   <topic href="sect0004.html#a0000000241" />
+   
+   
+</entry><entry keyword="set numerics display command">
+   <topic href="sec-pastable.html#a0000000439" />
+   
+   
+</entry><entry keyword="set numerics sigfig command">
+   
+   <topic href="sect0023.html#a0000000438" title="Changing the Accuracy to which Numbers are Displayed" /><topic href="sec-set_xformat.html#a0000000740" title="Configuring how Tick Marks are Labelled" /><topic href="sect0188.html#a0000001197" title="xformat" />
+   
+</entry><entry keyword="set numerics typeable command">
+   <topic href="sect0015.html#a0000000320" />
+   
+   
+</entry><entry keyword="set origin command">
+   
+   <topic href="sec-multiplot.html#a0000000841" title="Multiplot Mode" /><topic href="sect0167.html#a0000001105" title="origin" /><topic href="sect0167.html#a0000001106" title="origin" /><topic href="sec-configfile_settings.html#a0000001449" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001450" title="The settings section" />
+   
+</entry><entry keyword="set output command">
+   
+   <topic href="sec-directing_output.html#a0000000345" title="Directing Where Output Goes" /><topic href="sect0058.html#a0000000797" title="Producing Images on Disk" /><topic href="sect0168.html#a0000001107" title="output" /><topic href="sec-configfile_settings.html#a0000001451" title="The settings section" />
+   
+</entry><entry keyword="set palette command">
+   
+   <topic href="sec-palette.html#a0000000599" title="The Palette" /><topic href="sect0169.html#a0000001108" title="palette" />
+   
+</entry><entry keyword="set papersize command">
+   
+   <topic href="sec-set_papersize.html#a0000000828" title="Paper Sizes" /><topic href="ch-vector_graphics.html#a0000000837" title="Producing Vector Graphics" /><topic href="sect0170.html#a0000001109" title="papersize" /><topic href="sec-configfile_settings.html#a0000001452" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001453" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001454" title="The settings section" />
+   
+</entry><entry keyword="set pointlinewidth command">
+   
+   <topic href="sect0171.html#a0000001110" title="pointlinewidth" /><topic href="sec-configfile_settings.html#a0000001455" title="The settings section" />
+   
+</entry><entry keyword="set pointsize command">
+   
+   <topic href="sect0172.html#a0000001111" title="pointsize" /><topic href="sec-configfile_settings.html#a0000001456" title="The settings section" />
+   
+</entry><entry keyword="set preamble command">
+   
+   <topic href="sect0070.html#a0000000910" title="LaTeX and PyXPlot" /><topic href="sect0173.html#a0000001112" title="preamble" /><topic href="sect0209.html#a0000001406" title="Configuration Files" />
+   
+</entry><entry keyword="set samples command">
+   
+   <topic href="sec-pointtype.html#a0000000356" title="Plotting Styles" /><topic href="sec-tabulate.html#a0000000485" title="Tabulating Functions and Slicing Data Files" /><topic href="sect0174.html#a0000001113" title="samples" /><topic href="sect0204.html#a0000001234" title="tabulate" /><topic href="sec-configfile_settings.html#a0000001457" title="The settings section" />
+   
+</entry><entry keyword="set seed command">
+   
+   <topic href="sect0030.html#a0000000541" title="Random Data Generation" /><topic href="sect0175.html#a0000001114" title="seed" /><topic href="sect0175.html#a0000001115" title="seed" />
+   
+</entry><entry keyword="set size command">
+   
+   <topic href="sect0017.html#a0000000352" title="Setting the Size of Output" /><topic href="sect0176.html#a0000001116" title="size" />
+   
+</entry><entry keyword="set size command">
+   
+   
+   <entry keyword="noratio modifier">
+      <topic href="sect0176.html#a0000001118" />
+      
+   </entry><entry keyword="ratio modifier">
+      <topic href="sect0176.html#a0000001120" />
+      
+   </entry><entry keyword="square modifier">
+      <topic href="sect0176.html#a0000001122" />
+      
+   </entry>
+</entry><entry keyword="set size command">
+   <topic href="sec-configfile_settings.html#a0000001477" />
+   
+   
+</entry><entry keyword="set size ratio command">
+   
+   <topic href="sect0017.html#a0000000354" title="Setting the Size of Output" /><topic href="sec-configfile_settings.html#a0000001413" title="The settings section" />
+   
+</entry><entry keyword="set size square command">
+   <topic href="sect0017.html#a0000000355" />
+   
+   
+</entry><entry keyword="set style command">
+   <topic href="sect0177.html#a0000001123" />
+   
+   
+</entry><entry keyword="set style data command">
+   
+   <topic href="sec-pointtype.html#a0000000369" title="Plotting Styles" /><topic href="sect0178.html#a0000001124" title="style data | style function" />
+   
+</entry><entry keyword="set style function command">
+   
+   <topic href="sec-pointtype.html#a0000000370" title="Plotting Styles" /><topic href="sect0178.html#a0000001125" title="style data | style function" />
+   
+</entry><entry keyword="set terminal command">
+   
+   <topic href="sec-directing_output.html#a0000000343" title="Directing Where Output Goes" /><topic href="sec-directing_output.html#a0000000346" title="Directing Where Output Goes" /><topic href="sec-directing_output.html#a0000000351" title="Directing Where Output Goes" /><topic href="sec-set_terminal.html#a0000000794" title="The set terminal Command" />
+   
+</entry><entry keyword="set terminal command">
+   
+   
+   <entry keyword="dpi modifier">
+      <topic href="sect0058.html#a0000000799" />
+      
+   </entry>
+</entry><entry keyword="set terminal command">
+   
+   <topic href="sect0059.html#a0000000802" title="The Complete Syntax of the set terminal Command" /><topic href="sect0061.html#a0000000827" title="PostScript Output" /><topic href="ch-vector_graphics.html#a0000000836" title="Producing Vector Graphics" /><topic href="sect0179.html#a0000001126" title="terminal" /><topic href="sect0179.html#a0000001127" title="terminal" />
+   
+</entry><entry keyword="set terminal command">
+   
+   
+   <entry keyword="antialias modifier">
+      <topic href="sect0179.html#a0000001130" />
+      
+   </entry><entry keyword="gif modifier">
+      <topic href="sect0179.html#a0000001132" />
+      
+   </entry><entry keyword="color modifier">
+      <topic href="sect0179.html#a0000001136" />
+      
+   </entry><entry keyword="colour modifier">
+      <topic href="sect0179.html#a0000001134" />
+      
+   </entry><entry keyword="dpi modifier">
+      <topic href="sect0179.html#a0000001138" />
+      
+   </entry><entry keyword="enlarge modifier">
+      <topic href="sect0179.html#a0000001140" />
+      
+   </entry><entry keyword="eps modifier">
+      <topic href="sect0179.html#a0000001142" />
+      
+   </entry><entry keyword="gif modifier">
+      <topic href="sect0179.html#a0000001144" />
+      
+   </entry><entry keyword="invert modifier">
+      <topic href="sect0179.html#a0000001146" />
+      
+   </entry><entry keyword="jpeg modifier">
+      <topic href="sect0179.html#a0000001148" />
+      
+   </entry><entry keyword="landscape modifier">
+      <topic href="sect0179.html#a0000001150" />
+      
+   </entry><entry keyword="monochrome modifier">
+      <topic href="sect0179.html#a0000001152" />
+      
+   </entry><entry keyword="noantialias modifier">
+      <topic href="sect0179.html#a0000001154" />
+      
+   </entry><entry keyword="noenlarge modifier">
+      <topic href="sect0179.html#a0000001156" />
+      
+   </entry><entry keyword="noinvert modifier">
+      <topic href="sect0179.html#a0000001158" />
+      
+   </entry><entry keyword="pdf modifier">
+      <topic href="sect0179.html#a0000001160" />
+      
+   </entry><entry keyword="png modifier">
+      <topic href="sect0179.html#a0000001162" />
+      
+   </entry><entry keyword="portrait modifier">
+      <topic href="sect0179.html#a0000001164" />
+      
+   </entry><entry keyword="postscript modifier">
+      <topic href="sect0179.html#a0000001166" />
+      
+   </entry><entry keyword="solid modifier">
+      <topic href="sect0179.html#a0000001168" />
+      
+   </entry><entry keyword="transparent modifier">
+      <topic href="sect0179.html#a0000001170" />
+      
+   </entry><entry keyword="X11multiwindow modifier">
+      <topic href="sect0179.html#a0000001172" />
+      
+   </entry><entry keyword="X11persist modifier">
+      <topic href="sect0179.html#a0000001174" />
+      
+   </entry><entry keyword="X11singlewindow modifier">
+      <topic href="sect0179.html#a0000001176" />
+      
+   </entry>
+</entry><entry keyword="set terminal command">
+   
+   <topic href="sec-configfile_settings.html#a0000001427" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001442" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001458" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001459" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001460" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001461" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001462" title="The settings section" />
+   
+</entry><entry keyword="set terminal dpi command">
+   
+   <topic href="sect0058.html#a0000000798" title="Producing Images on Disk" /><topic href="sec-configfile_settings.html#a0000001431" title="The settings section" />
+   
+</entry><entry keyword="set textcolour command">
+   
+   <topic href="ex-australia.html#a0000000782" title="Text Labels" /><topic href="sect0067.html#a0000000872" title="The text Command" /><topic href="sect0180.html#a0000001177" title="textcolour" /><topic href="sec-configfile_settings.html#a0000001463" title="The settings section" />
+   
+</entry><entry keyword="set texthalign command">
+   
+   <topic href="ex-australia.html#a0000000785" title="Text Labels" /><topic href="sect0067.html#a0000000873" title="The text Command" /><topic href="sect0181.html#a0000001178" title="texthalign" /><topic href="sec-configfile_settings.html#a0000001464" title="The settings section" />
+   
+</entry><entry keyword="set textvalign command">
+   
+   <topic href="ex-australia.html#a0000000786" title="Text Labels" /><topic href="sect0067.html#a0000000874" title="The text Command" /><topic href="sect0182.html#a0000001179" title="textvalign" /><topic href="sec-configfile_settings.html#a0000001465" title="The settings section" />
+   
+</entry><entry keyword="set title command">
+   
+   <topic href="sect0183.html#a0000001180" title="title" /><topic href="sec-configfile_settings.html#a0000001466" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001467" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001468" title="The settings section" />
+   
+</entry><entry keyword="set trange command">
+   
+   <topic href="ex-spirograph.html#a0000000700" title="Plotting Parametric Functions" /><topic href="ex-spirograph.html#a0000000701" title="Plotting Parametric Functions" /><topic href="sect0184.html#a0000001181" title="trange" /><topic href="sec-configfile_settings.html#a0000001470" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001471" title="The settings section" />
+   
+</entry><entry keyword="set unit command">
+   
+   <topic href="sect0185.html#a0000001182" title="unit" /><topic href="sect0185.html#a0000001183" title="unit" /><topic href="sec-configfile_settings.html#a0000001472" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001473" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001474" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001475" title="The settings section" />
+   
+</entry><entry keyword="set unit of command">
+   
+   <topic href="sect0022.html#a0000000432" title="Units" /><topic href="sect0022.html#a0000000434" title="Units" /><topic href="sect0185.html#a0000001191" title="unit" />
+   
+</entry><entry keyword="set unit preferred command">
+   
+   <topic href="sect0022.html#a0000000433" title="Units" /><topic href="sect0022.html#a0000000435" title="Units" /><topic href="sect0185.html#a0000001190" title="unit" /><topic href="sect0185.html#a0000001192" title="unit" />
+   
+</entry><entry keyword="set unit scheme command">
+   
+   <topic href="sect0022.html#a0000000429" title="Units" /><topic href="sect0185.html#a0000001184" title="unit" />
+   
+</entry><entry keyword="set view command">
+   
+   <topic href="sec-configfile_settings.html#a0000001478" title="The settings section" /><topic href="sec-configfile_settings.html#a0000001479" title="The settings section" />
+   
+</entry><entry keyword="set viewer command">
+   
+   <topic href="sect0007.html#a0000000258" title="System Requirements" /><topic href="sect0059.html#a0000000803" title="The Complete Syntax of the set terminal Command" /><topic href="sect0186.html#a0000001193" title="viewer" /><topic href="sect0186.html#a0000001194" title="viewer" />
+   
+</entry><entry keyword="set width command">
+   
+   <topic href="sect0017.html#a0000000353" title="Setting the Size of Output" /><topic href="sect0187.html#a0000001195" title="width" /><topic href="sec-configfile_settings.html#a0000001476" title="The settings section" />
+   
+</entry><entry keyword="set xformat command">
+   
+   <topic href="ex-calculus.html#a0000000449" title="Numerical Integration and Differentiation" /><topic href="sec-set_axisunitstyle.html#a0000000726" title="Plotting Quantities with Physical Units" /><topic href="sec-set_axisunitstyle.html#a0000000727" title="Plotting Quantities with Physical Units" /><topic href="sec-set_xformat.html#a0000000742" title="Configuring how Tick Marks are Labelled" /><topic href="sec-set_xformat.html#a0000000745" title="Changing the Slant of Axis Labels" /><topic href="sect0188.html#a0000001196" title="xformat" /><topic href="sect0188.html#a0000001199" title="xformat" />
+   
+</entry><entry keyword="set xlabel command">
+   <topic href="sect0189.html#a0000001200" />
+   
+   
+</entry><entry keyword="set xrange command">
+   
+   <topic href="ex-axislab.html#a0000000374" title="Setting Axis Ranges" /><topic href="sect0190.html#a0000001201" title="xrange" />
+   
+</entry><entry keyword="set xtics command">
+   
+   <topic href="ex-axistics.html#a0000000729" title="Specifying where Ticks should Appear along Axes" /><topic href="sect0191.html#a0000001202" title="xtics" /><topic href="sect0191.html#a0000001203" title="xtics" />
+   
+</entry><entry keyword="set yformat command">
+   <topic href="sect0192.html#a0000001214" />
+   
+   
+</entry><entry keyword="set ylabel command">
+   <topic href="sect0193.html#a0000001215" />
+   
+   
+</entry><entry keyword="set yrange command">
+   <topic href="sect0194.html#a0000001216" />
+   
+   
+</entry><entry keyword="set ytics command">
+   <topic href="sect0195.html#a0000001217" />
+   
+   
+</entry><entry keyword="set zformat command">
+   <topic href="sect0196.html#a0000001218" />
+   
+   
+</entry><entry keyword="set zlabel command">
+   <topic href="sect0197.html#a0000001219" />
+   
+   
+</entry><entry keyword="set zrange command">
+   <topic href="sect0198.html#a0000001220" />
+   
+   
+</entry><entry keyword="set ztics command">
+   <topic href="sect0199.html#a0000001221" />
+   
+   
+</entry><entry keyword="shadedregion plot style">
+   
+   <topic href="sect0046.html#a0000000640" title="Shaded Regions" /><topic href="sect0046.html#a0000000646" title="Shaded Regions" />
+   
+</entry><entry keyword="shell commands">
+   
+   
+   <entry keyword="executing">
+      <topic href="sect0040.html#a0000000576" />
+      
+   </entry><entry keyword="substituting">
+      <topic href="sect0040.html#a0000000579" />
+      
+   </entry>
+</entry><entry keyword="show command">
+   
+   <topic href="sect0015.html#a0000000314" title="Querying the Values of Settings" /><topic href="sect0015.html#a0000000315" title="Querying the Values of Settings" /><topic href="sect0015.html#a0000000316" title="Querying the Values of Settings" /><topic href="sect0015.html#a0000000317" title="Querying the Values of Settings" /><topic href="sect0015.html#a0000000318" title="Querying the Values of Settings" /><topic href="sect0062.html#a0000000849" title="Settings Associated with Multiplot Items" /><topic href="sect0200.html#a0000001222" title="show" /><topic href="sect0200.html#a0000001223" title="show" /><topic href="sect0209.html#a0000001403" title="Configuration Files" />
+   
+</entry><entry keyword="show functions command">
+   
+   <topic href="sec-functions.html#a0000000387" title="Functions" /><topic href="sec-functions.html#a0000000388" title="Functions" />
+   
+</entry><entry keyword="show palette command">
+   <topic href="sec-palette.html#a0000000598" />
+   
+   
+</entry><entry keyword="show userfunctions command">
+   <topic href="sec-functions.html#a0000000389" />
+   
+   
+</entry><entry keyword="show variables command">
+   <topic href="sect0020.html#a0000000384" />
+   
+   
+</entry><entry keyword="show xtics command">
+   
+   <topic href="ex-axistics.html#a0000000738" title="Specifying where Ticks should Appear along Axes" /><topic href="sect0191.html#a0000001212" title="xtics" />
+   
+</entry><entry keyword="SI prefixes">
+   <topic href="sect0022.html#a0000000436" />
+   
+   
+</entry><entry keyword="sin(z) function">
+   <topic href="ch-function_list.html#a0000001363" />
+   
+   
+</entry><entry keyword="sinc(z) function">
+   <topic href="ch-function_list.html#a0000001364" />
+   
+   
+</entry><entry keyword="sinh(z) function">
+   <topic href="ch-function_list.html#a0000001365" />
+   
+   
+</entry><entry keyword="Solaris">
+   <topic href="sect0007.html#a0000000245" />
+   
+   
+</entry><entry keyword="solve command">
+   
+   <topic href="sect0024.html#a0000000450" title="Solving Systems of Equations" /><topic href="sect0024.html#a0000000451" title="Solving Systems of Equations" /><topic href="sect0024.html#a0000000452" title="Solving Systems of Equations" /><topic href="sect0024.html#a0000000453" title="Solving Systems of Equations" /><topic href="sect0201.html#a0000001224" title="solve" /><topic href="sect0201.html#a0000001225" title="solve" /><topic href="sect0201.html#a0000001226" title="solve" />
+   
+</entry><entry keyword="special characters">
+   <topic href="sec-latex_incompatibility.html#a0000000309" />
+   
+   
+</entry><entry keyword="splicing functions">
+   <topic href="ex-funcsplice.html#a0000000391" />
+   
+   
+</entry><entry keyword="spline command">
+   
+   <topic href="ex-interpolation.html#a0000000504" title="Datafile Interpolation" /><topic href="sect0099.html#a0000000995" title="interpolate" /><topic href="sect0202.html#a0000001227" title="spline" /><topic href="sect0202.html#a0000001228" title="spline" />
+   
+</entry><entry keyword="spreadsheets, importing data from">
+   <topic href="sec-first_plots.html#a0000000293" />
+   
+   
+</entry><entry keyword="sqrt(z) function">
+   <topic href="ch-function_list.html#a0000001366" />
+   
+   
+</entry><entry keyword="stars plot style">
+   <topic href="sect0045.html#a0000000611" />
+   
+   
+</entry><entry keyword="steps plot style">
+   
+   <topic href="sect0047.html#a0000000669" title="Steps" /><topic href="sect0047.html#a0000000675" title="Steps" />
+   
+</entry><entry keyword="strcmp(s1,s2) function">
+   
+   <topic href="sect0033.html#a0000000552" title="String Manipulation Functions" /><topic href="ch-function_list.html#a0000001367" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="string operators">
+   
+   
+   <entry keyword="concatenation">
+      <topic href="sec-stringsubop.html#a0000000545" />
+      
+   </entry><entry keyword="search and replace">
+      <topic href="sect0032.html#a0000000546" />
+      
+   </entry><entry keyword="substitution">
+      <topic href="sect0014.html#a0000000302" />
+      
+   </entry>
+</entry><entry keyword="strlen(s) function">
+   
+   <topic href="sect0033.html#a0000000553" title="String Manipulation Functions" /><topic href="ch-function_list.html#a0000001368" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="strlower(s) function">
+   
+   <topic href="sect0033.html#a0000000554" title="String Manipulation Functions" /><topic href="ch-function_list.html#a0000001369" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="strrange(s,i,j) function">
+   
+   <topic href="sect0033.html#a0000000555" title="String Manipulation Functions" /><topic href="ch-function_list.html#a0000001370" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="strupper(s) function">
+   
+   <topic href="sect0033.html#a0000000556" title="String Manipulation Functions" /><topic href="ch-function_list.html#a0000001371" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="subroutine command">
+   <topic href="ex-pendulum.html#a0000000572" />
+   
+   
+</entry><entry keyword="svg output">
+   <topic href="sect0059.html#a0000000814" />
+   
+   
+</entry><entry keyword="swap command">
+   
+   <topic href="sect0063.html#a0000000853" title="Reordering Multiplot Items" /><topic href="sect0203.html#a0000001229" title="swap" /><topic href="sect0203.html#a0000001230" title="swap" />
+   
+</entry><entry keyword="system requirements">
+   <topic href="sect0007.html#a0000000247" />
+   
+   
+</entry><entry keyword="tabulate command">
+   
+   <topic href="sect0025.html#a0000000478" title="Time Intervals" /><topic href="sec-tabulate.html#a0000000483" title="Tabulating Functions and Slicing Data Files" /><topic href="sect0204.html#a0000001231" title="tabulate" /><topic href="sect0204.html#a0000001232" title="tabulate" />
+   
+</entry><entry keyword="tan(z) function">
+   <topic href="ch-function_list.html#a0000001372" />
+   
+   
+</entry><entry keyword="tanh(z) function">
+   <topic href="ch-function_list.html#a0000001373" />
+   
+   
+</entry><entry keyword="tdistCDF(x,nu) function">
+   <topic href="ch-function_list.html#a0000001374" />
+   
+   
+</entry><entry keyword="tdistCDFi(P,nu) function">
+   <topic href="ch-function_list.html#a0000001375" />
+   
+   
+</entry><entry keyword="tdistPDF(x,nu) function">
+   <topic href="ch-function_list.html#a0000001376" />
+   
+   
+</entry><entry keyword="temperature conversions">
+   <topic href="sect0021.html#a0000000421" />
+   
+   
+</entry><entry keyword="texify(&#8230;) function">
+   <topic href="ch-function_list.html#a0000001377" />
+   
+   
+</entry><entry keyword="texify() function">
+   <topic href="sec-latex_incompatibility.html#a0000000310" />
+   
+   
+</entry><entry keyword="text">
+   
+   
+   <entry keyword="alignment">
+      <topic href="ex-australia.html#a0000000783" />
+      
+   </entry><entry keyword="colour">
+      <topic href="ex-australia.html#a0000000780" />
+      
+   </entry><entry keyword="size">
+      <topic href="ex-australia.html#a0000000778" />
+      
+   </entry>
+</entry><entry keyword="text command">
+   
+   <topic href="sect0066.html#a0000000868" title="Adding Other Vector Graphics Objects" /><topic href="sect0067.html#a0000000869" title="The text Command" /><topic href="sect0067.html#a0000000875" title="The text Command" /><topic href="sect0067.html#a0000000876" title="The text Command" /><topic href="sect0067.html#a0000000877" title="The text Command" /><topic href="sect0070.html#a0000000906" title="LaTeX and PyXPlot" /><topic href="sect0070.html#a0000000911" title="LaTeX and PyXPlot" /><topic href="sect0205.html#a0000001238" title="text" /><topic href="sect0205.html#a0000001239" title="text" />
+   
+</entry><entry keyword="tiff output">
+   <topic href="sect0059.html#a0000000815" />
+   
+   
+</entry><entry keyword="time­daymonth(JD) function">
+   
+   <topic href="sec-time_series.html#a0000000464" title="Working with Time-Series Data" /><topic href="ch-function_list.html#a0000001378" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="time­dayweekname(JD) function">
+   
+   <topic href="sec-time_series.html#a0000000465" title="Working with Time-Series Data" /><topic href="ch-function_list.html#a0000001379" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="time­dayweeknum(JD) function">
+   
+   <topic href="sec-time_series.html#a0000000466" title="Working with Time-Series Data" /><topic href="ch-function_list.html#a0000001380" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="time­diff­string(JD1,­JD2,­format) function">
+   
+   <topic href="sect0025.html#a0000000476" title="Time Intervals" /><topic href="ch-function_list.html#a0000001382" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="time­diff(JD1,­JD2) function">
+   
+   <topic href="sect0025.html#a0000000475" title="Time Intervals" /><topic href="ch-function_list.html#a0000001381" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="time­hour(JD) function">
+   
+   <topic href="sec-time_series.html#a0000000467" title="Working with Time-Series Data" /><topic href="ch-function_list.html#a0000001383" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="time­julianday(year,­month,­day,­hour,­min,­sec) function">
+   
+   <topic href="sec-time_series.html#a0000000460" title="Working with Time-Series Data" /><topic href="ch-function_list.html#a0000001384" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="time­min(JD) function">
+   
+   <topic href="sec-time_series.html#a0000000468" title="Working with Time-Series Data" /><topic href="ch-function_list.html#a0000001385" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="time­monthname(JD) function">
+   
+   <topic href="sec-time_series.html#a0000000469" title="Working with Time-Series Data" /><topic href="ch-function_list.html#a0000001386" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="time­monthnum(JD) function">
+   
+   <topic href="sec-time_series.html#a0000000470" title="Working with Time-Series Data" /><topic href="ch-function_list.html#a0000001387" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="time­now() function">
+   
+   <topic href="sec-time_series.html#a0000000474" title="Working with Time-Series Data" /><topic href="ch-function_list.html#a0000001388" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="time­sec(JD) function">
+   
+   <topic href="sec-time_series.html#a0000000471" title="Working with Time-Series Data" /><topic href="ch-function_list.html#a0000001389" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="time­string(JD,­format) function">
+   
+   <topic href="sec-time_series.html#a0000000463" title="Working with Time-Series Data" /><topic href="ch-function_list.html#a0000001390" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="time­year(JD) function">
+   
+   <topic href="sec-time_series.html#a0000000472" title="Working with Time-Series Data" /><topic href="ch-function_list.html#a0000001391" title="List of Mathematical Functions" />
+   
+</entry><entry keyword="title modifier">
+   <topic href="sec-legends.html#a0000000707" />
+   
+   
+</entry><entry keyword="Tobias Oetiker">
+   <topic href="sect0222.html#a0000001500" />
+   
+   
+</entry><entry keyword="top keyword">
+   
+   <topic href="sec-legends.html#a0000000711" title="Graph Legends" /><topic href="ex-australia.html#a0000000792" title="Text Labels" />
+   
+</entry><entry keyword="tophat(x,&#963;) function">
+   <topic href="ch-function_list.html#a0000001392" />
+   
+   
+</entry><entry keyword="transparent terminal">
+   <topic href="sect0059.html#a0000000822" />
+   
+   
+</entry><entry keyword="twohead keyword">
+   
+   <topic href="sec-set_arrow.html#a0000000766" title="Arrows" /><topic href="sec-set_arrow.html#a0000000768" title="Arrows" /><topic href="sect0075.html#a0000000922" title="arrow" />
+   
+</entry><entry keyword="twoway keyword">
+   <topic href="sec-set_arrow.html#a0000000767" />
+   
+   
+</entry><entry keyword="Ubuntu Linux">
+   
+   <topic href="sect0007.html#a0000000263" title="System Requirements" /><topic href="sect0009.html#a0000000272" title="Installation within Linux Distributions" />
+   
+</entry><entry keyword="undelete command">
+   
+   <topic href="sec-multiplot.html#a0000000845" title="Multiplot Mode" /><topic href="sect0206.html#a0000001240" title="undelete" /><topic href="sect0206.html#a0000001241" title="undelete" />
+   
+</entry><entry keyword="unit(&#8230;) function">
+   <topic href="ch-function_list.html#a0000001393" />
+   
+   
+</entry><entry keyword="unit() function">
+   <topic href="sec-units.html#a0000000409" />
+   
+   
+</entry><entry keyword="units">
+   <topic href="sec-units.html#a0000000408" />
+   
+   <entry keyword="angle">
+      <topic href="sec-angles.html#a0000000415" />
+      
+   </entry><entry keyword="CGS">
+      
+      <topic href="sect0022.html#a0000000426" title="Units" /><topic href="sect0185.html#a0000001187" title="unit" />
+   </entry><entry keyword="dimensional analysis">
+      <topic href="sec-units.html#a0000000413" />
+      
+   </entry><entry keyword="imperial">
+      
+      <topic href="sect0022.html#a0000000428" title="Units" /><topic href="sect0185.html#a0000001189" title="unit" />
+   </entry><entry keyword="list">
+      <topic href="ch-unit_list.html#a0000001395" />
+      
+   </entry><entry keyword="natural">
+      <topic href="sect0022.html#a0000000431" />
+      
+   </entry><entry keyword="SI prefixes">
+      
+      <topic href="sec-units.html#a0000000411" title="Working with Physical Units" /><topic href="sect0022.html#a0000000437" title="Units" />
+   </entry><entry keyword="temperature">
+      <topic href="sect0021.html#a0000000422" />
+      
+   </entry><entry keyword="unit schemes">
+      
+      <topic href="sect0022.html#a0000000424" title="Units" /><topic href="sect0185.html#a0000001185" title="unit" />
+   </entry>
+</entry><entry keyword="unset axis command">
+   <topic href="sec-multiple_axes.html#a0000000724" />
+   
+   
+</entry><entry keyword="unset command">
+   
+   <topic href="sec-latex_incompatibility.html#a0000000311" title="Axis Labels and Titles" /><topic href="sect0207.html#a0000001242" title="unset" /><topic href="sect0207.html#a0000001243" title="unset" /><topic href="sect0209.html#a0000001402" title="Configuration Files" />
+   
+</entry><entry keyword="upper-limit datapoints">
+   <topic href="sect0045.html#a0000000615" />
+   
+   
+</entry><entry keyword="upperlimits plot style">
+   <topic href="sect0045.html#a0000000613" />
+   
+   
+</entry><entry keyword="using columns modifier">
+   <topic href="sec-horizontal_datafiles.html#a0000000334" />
+   
+   
+</entry><entry keyword="using modifier">
+   
+   <topic href="sec-plot_datafiles.html#a0000000321" title="Plotting Datafiles" /><topic href="sec-tabulate.html#a0000000484" title="Tabulating Functions and Slicing Data Files" /><topic href="sec-tabulate.html#a0000000487" title="Tabulating Functions and Slicing Data Files" /><topic href="sec-fit_command.html#a0000000496" title="Function Fitting" /><topic href="sec-histogram.html#a0000000530" title="Histograms" /><topic href="sect0090.html#a0000000962" title="fit" /><topic href="sect0094.html#a0000000978" title="histogram" /><topic href="sect0204.html#a0000001233" title="tabulate" /><topic href="sect0204.html#a0000001236" title="tabulate" />
+   
+</entry><entry keyword="using rows modifier">
+   <topic href="sec-horizontal_datafiles.html#a0000000333" />
+   
+   
+</entry><entry keyword="variables">
+   
+   
+   <entry keyword="string">
+      <topic href="sec-stringvars.html#a0000000542" />
+      
+   </entry>
+</entry><entry keyword="via keyword">
+   
+   <topic href="sec-fit_command.html#a0000000492" title="Function Fitting" /><topic href="sect0090.html#a0000000958" title="fit" />
+   
+</entry><entry keyword="watching scripts">
+   <topic href="sect0041.html#a0000000583" />
+   
+   
+</entry><entry keyword="wboxes plot style">
+   
+   <topic href="sec-barcharts.html#a0000000653" title="Barcharts and Histograms" /><topic href="sec-barcharts.html#a0000000658" title="Barcharts and Histograms" /><topic href="sec-barcharts.html#a0000000667" title="Stacked Bar Charts" />
+   
+</entry><entry keyword="wget">
+   <topic href="sect0007.html#a0000000261" />
+   
+   
+</entry><entry keyword="while command">
+   
+   <topic href="sect0037.html#a0000000565" title="While and Do Loops" /><topic href="sect0037.html#a0000000567" title="While and Do Loops" /><topic href="sect0208.html#a0000001244" title="while" /><topic href="sect0208.html#a0000001245" title="while" />
+   
+</entry><entry keyword="width keyword">
+   <topic href="sect0068.html#a0000000886" />
+   
+   
+</entry><entry keyword="wildcards">
+   
+   <topic href="sect0016.html#a0000000327" title="Plotting Many Datafiles at Once" /><topic href="sect0036.html#a0000000561" title="Foreach Loops" />
+   
+</entry><entry keyword="window functions">
+   <topic href="sect0029.html#a0000000521" />
+   
+   
+</entry><entry keyword="with modifier">
+   
+   <topic href="ex-nanotubes.html#a0000000881" title="The arrow and line Commands" /><topic href="sect0075.html#a0000000919" title="arrow" /><topic href="sect0075.html#a0000000926" title="arrow" />
+   
+</entry><entry keyword="X11 terminal">
+   <topic href="sect0057.html#a0000000795" />
+   
+   
+</entry><entry keyword="xcentre keyword">
+   <topic href="sec-legends.html#a0000000715" />
+   
+   
+</entry><entry keyword="xerrorbars plot style">
+   <topic href="sec-errorbars.html#a0000000619" />
+   
+   
+</entry><entry keyword="xerrorrange plot style">
+   <topic href="sec-errorbars.html#a0000000627" />
+   
+   
+</entry><entry keyword="xyerrorbars plot style">
+   <topic href="sec-errorbars.html#a0000000625" />
+   
+   
+</entry><entry keyword="xyerrorrange plot style">
+   <topic href="sec-errorbars.html#a0000000631" />
+   
+   
+</entry><entry keyword="ycentre keyword">
+   <topic href="sec-legends.html#a0000000716" />
+   
+   
+</entry><entry keyword="yerrorbars plot style">
+   
+   <topic href="sec-pointtype.html#a0000000363" title="Plotting Styles" /><topic href="sec-errorbars.html#a0000000617" title="Error Bars" /><topic href="sec-errorbars.html#a0000000623" title="Error Bars" />
+   
+</entry><entry keyword="yerrorrange plot style">
+   
+   <topic href="sec-errorbars.html#a0000000629" title="Error Bars" /><topic href="sec-errorbars.html#a0000000635" title="Error Bars" /><topic href="sect0046.html#a0000000644" title="Shaded Regions" />
+   
+</entry><entry keyword="yerrorshaded plot style">
+   
+   <topic href="sect0046.html#a0000000638" title="Shaded Regions" /><topic href="sect0046.html#a0000000642" title="Shaded Regions" />
+   
+</entry><entry keyword="zeta(x) function">
+   <topic href="ch-function_list.html#a0000001394" />
+   
+   
+</entry><entry keyword="zlib">
+   <topic href="sect0007.html#a0000000256" />
+   
+   
+</entry>
+</index>

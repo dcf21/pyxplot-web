@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: The units section</title>
+
+<link href="sec-colour_names.html" title="Recognised Colour Names" rel="next" />
+<link href="sec-configfile_terminal.html" title="The terminal section" rel="prev" />
+<link href="sect0211.html" title="Setting definitions" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sec-configfile_terminal.html" title="The terminal section"><img alt="Previous: The terminal section" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0211.html" title="Setting definitions"><img alt="Up: Setting definitions" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-colour_names.html" title="Recognised Colour Names"><img alt="Next: Recognised Colour Names" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0071.html">Reference Manual</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-configuration.html">Configuring PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0211.html">Setting definitions</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">The <tt class="tt">units</tt> section</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="sec:configfile_units">8.3.5 The <tt class="tt">units</tt> section</h2>
+<p>The <tt class="tt">units</tt> section can be used to define new physical units for use within PyXPlot’s mathematical environment. Each line should take the format of </p><pre>
+&lt;l_sing&gt; \[ / &lt;s_sing&gt; \] \[ / &lt;lt_sing&gt; \]
+   \[ / &lt;l_plur&gt; \] \[ / &lt;s_plur&gt; \] \[ / &lt;lt_plur&gt; \]
+   : &lt;quantity_name&gt; = \[ &lt;definition&gt; \]
+</pre><p> where </p><div>
+
+<table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="text-align:left"><p> <tt class="tt">l_sing</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> is the long singular name of the unit, e.g. <tt class="tt">metre</tt>.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">s_sing</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> is the short singular name of the unit, e.g. <tt class="tt">m</tt>.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">lt_sing</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> is the singular name of the unit to be used in L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">l_plur</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> is the long plural name of the unit, e.g. <tt class="tt">metres</tt>.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">s_plur</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> is the short plural name of the unit, e.g. <tt class="tt">m</tt>.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">lt_plur</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> is the plural name of the unit to be used in L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">quantity_name</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> is the physical quantity which the unit measures, e.g. <tt class="tt">length</tt>.</p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">definition</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> is a definition of the unit in terms of other units which PyXPlot already recognises, e.g. <tt class="tt">0.001*km</tt>. The syntax used is identical to that used in the <tt class="tt">unit()</tt> function.</p></td>
+
+</tr>
+</table>
+</div><p> For example, a definition of the metre would look like </p><pre>
+metre/m/m/metres/m/m:length=0.001*km
+</pre><p>Not all of the various names which a unit may have need to be specified. If plural names are not specified then they are assumed to be the same as the singular names. If short and/or L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>Xnames are not specified they are assumed to be the same as the long name. If the definition is left blank then the unit is assumed to be a new base unit which is not related to any pre-existing units. </p></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sec-configfile_terminal.html" title="The terminal section"><img alt="Previous: The terminal section" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0211.html" title="Setting definitions"><img alt="Up: Setting definitions" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-colour_names.html" title="Recognised Colour Names"><img alt="Next: Recognised Colour Names" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

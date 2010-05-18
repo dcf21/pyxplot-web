@@ -1,0 +1,474 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+
+<title></title>
+<link href="sect0001.html" title="Introduction to PyXPlot" rel="next" />
+
+
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+<td><a href="sect0001.html" title="Introduction to PyXPlot"><img alt="Next: Introduction to PyXPlot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+
+
+<div> <span class="normalsize"> <center> <big class="xhuge"><b class="bf">PyXPlot Users’ Guide</b></big><br /></center>  <center> <big class="xxlarge"><b class="bf">A Command-line Data Processing, <br /> Graph Plotting and <br /> Vector Graphics Suite. <br /></b></big> </center>  <center> <big class="xlarge">Version 0.8.0<br /></big> </center>  <center> 
+<img src="images/img-0002.png" alt="\includegraphics[width=10cm]{examples/eps/ex_cover}" style="width:10cm" /> </center>  <center> <big class="xlarge">Dominic Ford, Ross Church <br /> Email: <tt class="tt">coders@pyxplot.org.uk</tt> <br /></big> </center>  <center> <big class="xlarge">May 2010<br /></big> </center> </span></div>
+
+<div class="contents document-contents"><!--<strong>Subsections</strong>-->
+<ul>
+<li><a href="sect0001.html">1 Introduction to PyXPlot</a>
+   <ul>
+   <li><a href="ch-introduction.html">1 Introduction</a>
+       <ul>
+       <li><a href="sect0002.html">1.1 PyXPlot’s Heritage: Gnuplot</a>
+           
+       </li><li><a href="sect0003.html">1.2 The Structure of this Manual</a>
+           
+       </li><li><a href="sect0004.html">1.3 A Whirlwind Tour</a>
+           
+       </li><li><a href="sect0005.html">1.4 Acknowledgments</a>
+           
+       </li><li><a href="sect0006.html">1.5 License</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="ch-installation.html">2 Installation</a>
+       <ul>
+       <li><a href="sect0007.html">2.1 System Requirements</a>
+           
+       </li><li><a href="sect0008.html">2.2 Installation</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="ch-first_steps.html">3 First Steps With PyXPlot</a>
+       <ul>
+       <li><a href="box-CommandHistory.html">3.1 Getting Started</a>
+           
+       </li><li><a href="sec-first_plots.html">3.2 First Plots</a>
+           
+       </li><li><a href="sect0012.html">3.3 Comments</a>
+           
+       </li><li><a href="sect0013.html">3.4 Splitting Long Commands</a>
+           
+       </li><li><a href="sect0014.html">3.5 Printing Text</a>
+           
+       </li><li><a href="sec-latex_incompatibility.html">3.6 Axis Labels and Titles</a>
+           
+       </li><li><a href="sect0015.html">3.7 Querying the Values of Settings</a>
+           
+       </li><li><a href="sec-plot_datafiles.html">3.8 Plotting Datafiles</a>
+           
+       </li><li><a href="sect0016.html">3.9 Plotting Many Datafiles at Once</a>
+           
+       </li><li><a href="sec-replot.html">3.10 The <tt class="tt">replot</tt> Command</a>
+           
+       </li><li><a href="sec-directing_output.html">3.11 Directing Where Output Goes</a>
+           
+       </li><li><a href="sect0017.html">3.12 Setting the Size of Output</a>
+           
+       </li><li><a href="sec-pointtype.html">3.13 Plotting Styles</a>
+           
+       </li><li><a href="ex-axislab.html">3.14 Setting Axis Ranges</a>
+           
+       </li><li><a href="sect0018.html">3.15 Interactive Help</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="sect0019.html">4 Performing Calculations</a>
+       <ul>
+       <li><a href="sect0020.html">4.1 Variables</a>
+           
+       </li><li><a href="sec-constants.html">4.2 Physical Constants</a>
+           
+       </li><li><a href="sec-functions.html">4.3 Functions</a>
+           
+       </li><li><a href="sec-num_errs.html">4.4 Handling Numerical Errors</a>
+           
+       </li><li><a href="sec-complex_numbers.html">4.5 Working with Complex Numbers</a>
+           
+       </li><li><a href="sec-units.html">4.6 Working with Physical Units</a>
+           
+       </li><li><a href="sec-unitdisp.html">4.7 Configuring how Numbers are Displayed</a>
+           
+       </li><li><a href="ex-calculus.html">4.8 Numerical Integration and Differentiation</a>
+           
+       </li><li><a href="sect0024.html">4.9 Solving Systems of Equations</a>
+           
+       </li><li><a href="ex-eqnsolve.html">4.10 Searching for Minima and Maxima of Functions</a>
+           
+       </li><li><a href="sec-time_series.html">4.11 Working with Time-Series Data</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="ch-numerics.html">5 Working with Data</a>
+       <ul>
+       <li><a href="sec-filters.html">5.1 Input Filters</a>
+           
+       </li><li><a href="sect0026.html">5.2 Reading Data from a Pipe</a>
+           
+       </li><li><a href="sect0027.html">5.3 Including Data within Command Scripts</a>
+           
+       </li><li><a href="sec-special_comments.html">5.4 Special Comment Lines in Datafiles</a>
+           
+       </li><li><a href="sec-tabulate.html">5.5 Tabulating Functions and Slicing Data Files</a>
+           
+       </li><li><a href="sec-fit_command.html">5.6 Function Fitting</a>
+           
+       </li><li><a href="ex-interpolation.html">5.7 Datafile Interpolation</a>
+           
+       </li><li><a href="sect0028.html">5.8 Fourier Transforms</a>
+           
+       </li><li><a href="sec-histogram.html">5.9 Histograms</a>
+           
+       </li><li><a href="sect0030.html">5.10 Random Data Generation</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="sect0031.html">6 Programming and Flow Control</a>
+       <ul>
+       <li><a href="sec-stringvars.html">6.1 String Variables</a>
+           
+       </li><li><a href="sect0034.html">6.2 Conditionals</a>
+           
+       </li><li><a href="sect0035.html">6.3 For Loops</a>
+           
+       </li><li><a href="sect0036.html">6.4 Foreach Loops</a>
+           
+       </li><li><a href="ex-meansd.html">6.5 Foreach Datum Loops</a>
+           
+       </li><li><a href="sect0037.html">6.6 While and Do Loops</a>
+           
+       </li><li><a href="sec-breakcontinue.html">6.7 The <tt class="tt">break</tt> and <tt class="tt">continue</tt> statements</a>
+           
+       </li><li><a href="sect0038.html">6.8 Conditional Functions</a>
+           
+       </li><li><a href="ex-pendulum.html">6.9 Subroutines</a>
+           
+       </li><li><a href="sect0039.html">6.10 The <tt class="tt">exec</tt> command<a name="a0000000574" id="a0000000574"></a></a>
+           
+       </li><li><a href="sect0040.html">6.11 Shell Commands</a>
+           
+       </li><li><a href="sect0041.html">6.12 Script Watching: pyxplot_watch</a>
+           
+       </li>
+       </ul>
+   </li>
+   </ul>
+</li><li><a href="sect0042.html">2 Plotting and Vector Graphics</a>
+   <ul>
+   <li><a href="ch-plotting.html">1 Plotting: A Detailed Survey</a>
+       <ul>
+       <li><a href="sect0043.html">1.1 The <tt class="tt">with</tt> modifier</a>
+           
+       </li><li><a href="sec-list_of_plotstyles.html">1.2 PyXPlot’s Plot Styles</a>
+           
+       </li><li><a href="sect0049.html">1.3 The <tt class="tt">style</tt> Keyword</a>
+           
+       </li><li><a href="sect0050.html">1.4 Plotting Functions in Exotic Styles</a>
+           
+       </li><li><a href="ex-spirograph.html">1.5 Plotting Parametric Functions</a>
+           
+       </li><li><a href="sec-legends.html">1.6 Graph Legends</a>
+           
+       </li><li><a href="sec-multiple_axes.html">1.7 Configuring Axes</a>
+           
+       </li><li><a href="sec-set_colours.html">1.8 Gridlines</a>
+           
+       </li><li><a href="sect0054.html">1.9 Clipping Behaviour</a>
+           
+       </li><li><a href="sect0055.html">1.10 Labelling Graphs</a>
+           
+       </li><li><a href="sect0056.html">1.11 Three-Dimensional Plotting</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="ch-image_formats.html">2 Producing Image Files</a>
+       <ul>
+       <li><a href="sec-set_terminal.html">2.1 The <tt class="tt">set terminal</tt> Command</a>
+           
+       </li><li><a href="sect0060.html">2.2 The Default Terminal</a>
+           
+       </li><li><a href="sect0061.html">2.3 PostScript Output</a>
+           
+       </li><li><a href="sec-file_backup.html">2.4 Backing Up Over-Written Files</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="ch-vector_graphics.html">3 Producing Vector Graphics</a>
+       <ul>
+       <li><a href="sec-multiplot.html">3.1 Multiplot Mode</a>
+           
+       </li><li><a href="sect0064.html">3.2 Linked Axes and Galleries of Plots</a>
+           
+       </li><li><a href="sect0065.html">3.3 The <tt class="tt">replot</tt> Command Revisited</a>
+           
+       </li><li><a href="sect0066.html">3.4 Adding Other Vector Graphics Objects</a>
+           
+       </li><li><a href="sect0070.html">3.5 LaTeX and PyXPlot</a>
+           
+       </li>
+       </ul>
+   </li>
+   </ul>
+</li><li><a href="sect0071.html">3 Reference Manual</a>
+   <ul>
+   <li><a href="ch-reference.html">1 Command Reference</a>
+       <ul>
+       <li><a href="sect0072.html">1.1 ?</a>
+           
+       </li><li><a href="sect0073.html">1.2 !</a>
+           
+       </li><li><a href="sect0074.html">1.3 arc</a>
+           
+       </li><li><a href="sect0075.html">1.4 arrow</a>
+           
+       </li><li><a href="sect0076.html">1.5 box</a>
+           
+       </li><li><a href="sect0077.html">1.6 break</a>
+           
+       </li><li><a href="sect0078.html">1.7 cd</a>
+           
+       </li><li><a href="sect0079.html">1.8 circle</a>
+           
+       </li><li><a href="sect0080.html">1.9 clear</a>
+           
+       </li><li><a href="sect0081.html">1.10 continue</a>
+           
+       </li><li><a href="sect0082.html">1.11 delete</a>
+           
+       </li><li><a href="sect0083.html">1.12 do</a>
+           
+       </li><li><a href="sect0084.html">1.13 ellipse</a>
+           
+       </li><li><a href="sect0085.html">1.14 else</a>
+           
+       </li><li><a href="sect0086.html">1.15 eps</a>
+           
+       </li><li><a href="sect0087.html">1.16 exec</a>
+           
+       </li><li><a href="sect0088.html">1.17 exit</a>
+           
+       </li><li><a href="sect0089.html">1.18 fft</a>
+           
+       </li><li><a href="sect0090.html">1.19 fit</a>
+           
+       </li><li><a href="sect0091.html">1.20 for</a>
+           
+       </li><li><a href="sect0092.html">1.21 foreach</a>
+           
+       </li><li><a href="sect0093.html">1.22 help</a>
+           
+       </li><li><a href="sect0094.html">1.23 histogram</a>
+           
+       </li><li><a href="sect0095.html">1.24 history</a>
+           
+       </li><li><a href="sect0096.html">1.25 if</a>
+           
+       </li><li><a href="sect0097.html">1.26 ifft</a>
+           
+       </li><li><a href="sect0098.html">1.27 image</a>
+           
+       </li><li><a href="sect0099.html">1.28 interpolate</a>
+           
+       </li><li><a href="sect0100.html">1.29 jpeg</a>
+           
+       </li><li><a href="sect0101.html">1.30 let</a>
+           
+       </li><li><a href="sect0102.html">1.31 list</a>
+           
+       </li><li><a href="sect0103.html">1.32 load</a>
+           
+       </li><li><a href="sect0104.html">1.33 maximise</a>
+           
+       </li><li><a href="sect0105.html">1.34 minimise</a>
+           
+       </li><li><a href="sect0106.html">1.35 move</a>
+           
+       </li><li><a href="sect0107.html">1.36 plot</a>
+           
+       </li><li><a href="sect0111.html">1.37 print</a>
+           
+       </li><li><a href="sect0112.html">1.38 pwd</a>
+           
+       </li><li><a href="sect0113.html">1.39 quit</a>
+           
+       </li><li><a href="sect0114.html">1.40 rectangle</a>
+           
+       </li><li><a href="sect0115.html">1.41 refresh</a>
+           
+       </li><li><a href="sect0116.html">1.42 point</a>
+           
+       </li><li><a href="sect0117.html">1.43 replot</a>
+           
+       </li><li><a href="sect0118.html">1.44 reset</a>
+           
+       </li><li><a href="sect0119.html">1.45 save</a>
+           
+       </li><li><a href="sect0120.html">1.46 set</a>
+           
+       </li><li><a href="sect0200.html">1.47 show</a>
+           
+       </li><li><a href="sect0201.html">1.48 solve</a>
+           
+       </li><li><a href="sect0202.html">1.49 spline</a>
+           
+       </li><li><a href="sect0203.html">1.50 swap</a>
+           
+       </li><li><a href="sect0204.html">1.51 tabulate</a>
+           
+       </li><li><a href="sect0205.html">1.52 text</a>
+           
+       </li><li><a href="sect0206.html">1.53 undelete</a>
+           
+       </li><li><a href="sect0207.html">1.54 unset</a>
+           
+       </li><li><a href="sect0208.html">1.55 while</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="ch-function_list.html">2 List of Mathematical Functions</a>
+       
+   </li><li><a href="ch-constants.html">3 List of Physical Constants</a>
+       
+   </li><li><a href="ch-unit_list.html">4 List of Physical Units</a>
+       
+   </li><li><a href="ch-paper_sizes.html">5 List of Paper Sizes</a>
+       
+   </li><li><a href="ch-colour_charts.html">6 Colour Tables</a>
+       
+   </li><li><a href="ch-linetypes_table.html">7 Line and Point Types</a>
+       
+   </li><li><a href="ch-configuration.html">8 Configuring PyXPlot</a>
+       <ul>
+       <li><a href="sect0209.html">8.1 Configuration Files</a>
+           
+       </li><li><a href="sect0210.html">8.2 An Example Configuration File</a>
+           
+       </li><li><a href="sect0211.html">8.3 Setting definitions</a>
+           
+       </li><li><a href="sec-colour_names.html">8.4 Recognised Colour Names</a>
+           
+       </li>
+       </ul>
+   </li>
+   </ul>
+</li><li><a href="sect0214.html">4 Appendices</a>
+   <ul>
+   <li><a href="sect0215.html">A Other Applications of PyXPlot</a>
+       <ul>
+       <li><a href="sect0216.html">A.1 Conversion of JPEG Images to PostScript</a>
+           
+       </li><li><a href="sect0217.html">A.2 Inserting Equations in Powerpoint Presentations</a>
+           
+       </li><li><a href="sect0218.html">A.3 Delivering Talks in PyXPlot</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="ch-gnuplot_diffs.html">B Summary of Differences Between PyXPlot and Gnuplot</a>
+       <ul>
+       <li><a href="sect0222.html">B.1 The Typesetting of Text</a>
+           
+       </li><li><a href="sect0223.html">B.2 Complex Numbers</a>
+           
+       </li><li><a href="sect0224.html">B.3 The Multiplot Environment</a>
+           
+       </li><li><a href="sect0225.html">B.4 Plots with Multiple Axes</a>
+           
+       </li><li><a href="sect0226.html">B.5 Plotting Parametric Functions</a>
+           
+       </li><li><a href="sect0227.html">B.6 Displaying Times and Dates on Axes</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="ch-fit_maths.html">C The <tt class="tt">fit</tt> Command: Mathematical Details</a>
+       <ul>
+       <li><a href="sec-bayes_notation.html">C.1 Notation</a>
+           
+       </li><li><a href="sec-bayes_pdf.html">C.2 The Probability Density Function</a>
+           
+       </li><li><a href="sect0228.html">C.3 Estimating the Error in <img src="images/img-0683.png" alt="$\mathbf{u}^0$" style="vertical-align:0px; 
+                                     width:19px; 
+                                     height:16px" class="math gen" /></a>
+           
+       </li><li><a href="sect0229.html">C.4 The Covariance Matrix</a>
+           
+       </li><li><a href="sec-correlation_matrix.html">C.5 The Correlation Matrix</a>
+           
+       </li><li><a href="sec-finding_sigmai.html">C.6 Finding <img src="images/img-0671.png" alt="$\sigma _ i$" style="vertical-align:-2px; 
+                                     width:15px; 
+                                     height:10px" class="math gen" /></a>
+           
+       </li>
+       </ul>
+   </li><li><a href="sect0230.html">D ChangeLog</a>
+       <ul>
+       <li><a href="sect0231.html">2010 May 19: PyXPlot 0.8.0</a>
+           
+       </li><li><a href="sect0232.html">2009 May 24: PyXPlot 0.7.1</a>
+           
+       </li><li><a href="sect0233.html">2008 Oct 14: PyXPlot 0.7.0</a>
+           
+       </li><li><a href="sect0234.html">2007 Feb 26: PyXPlot 0.6.3</a>
+           
+       </li><li><a href="sect0235.html">2006 Sep 09: PyXPlot 0.5.8</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="sect0236.html">E Index</a>
+       
+   </li>
+   </ul>
+</li>
+
+
+
+</ul>
+</div>
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+<td><a href="sect0001.html" title="Introduction to PyXPlot"><img alt="Next: Introduction to PyXPlot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

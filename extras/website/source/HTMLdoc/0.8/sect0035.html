@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: For Loops</title>
+
+<link href="sect0036.html" title="Foreach Loops" rel="next" />
+<link href="sect0034.html" title="Conditionals" rel="prev" />
+<link href="sect0031.html" title="Programming and Flow Control" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0034.html" title="Conditionals"><img alt="Previous: Conditionals" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0031.html" title="Programming and Flow Control"><img alt="Up: Programming and Flow Control" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0036.html" title="Foreach Loops"><img alt="Next: Foreach Loops" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0031.html">Programming and Flow Control</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">For Loops</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="a0000000036">6.3 For Loops</h1>
+<p>For loops may be used to execute a series of commands multiple times. PyXPlot’s <tt class="tt">for</tt> command<a name="a0000000558" id="a0000000558"></a> has the syntax: </p><pre>
+for &lt;variable&gt; = &lt;start&gt; to &lt;end&gt; {step &lt;step&gt;} {loopname &lt;name&gt;}
+ {
+  ....
+ }
+</pre><p>The first time that the script block is executed, the variable named at the start of the <tt class="tt">for</tt> statement has the value given for <tt class="tt">start</tt>. Upon each iteration of the loop, this is incremented by amount <tt class="tt">step</tt>. The loop finishes when the value equals or exceeds <tt class="tt">end</tt>. If <tt class="tt">step</tt> is negative, then <tt class="tt">end</tt> is required to be less than <tt class="tt">start</tt>. A step size of zero is considered to be an error. The iterator variable can have any physical dimensions, so long as <tt class="tt">start</tt>, <tt class="tt">end</tt> and <tt class="tt">step</tt> all have the same dimensions, but the iterator variable must always be a real number. If no step size is given then a step size of unity is assumed. As an example, the following script would print the numbers 0, 2, 4, 6 and 8: </p><pre>
+for x = 0 to 10 step 2
+ {
+  print x
+ }
+</pre><p>The same rules concerning the placement of brace characters apply to the <tt class="tt">for</tt> command<a name="a0000000559" id="a0000000559"></a> as to the <tt class="tt">if</tt> command. </p><p>The optional <tt class="tt">loopname</tt> which can be specified in the <tt class="tt">for</tt> statement is used in conjunction with the <tt class="tt">break</tt> and <tt class="tt">continue</tt> statements which will be introduced in Section <a href="sec-breakcontinue.html">6.7</a>. </p></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0034.html" title="Conditionals"><img alt="Previous: Conditionals" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0031.html" title="Programming and Flow Control"><img alt="Up: Programming and Flow Control" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0036.html" title="Foreach Loops"><img alt="Next: Foreach Loops" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

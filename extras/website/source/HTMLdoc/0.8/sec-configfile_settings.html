@@ -1,0 +1,660 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: The settings section</title>
+
+<link href="sect0213.html" title="The styling section" rel="next" />
+<link href="sect0212.html" title="The filters section" rel="prev" />
+<link href="sect0211.html" title="Setting definitions" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0212.html" title="The filters section"><img alt="Previous: The filters section" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0211.html" title="Setting definitions"><img alt="Up: Setting definitions" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0213.html" title="The styling section"><img alt="Next: The styling section" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0071.html">Reference Manual</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-configuration.html">Configuring PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0211.html">Setting definitions</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">The <tt class="tt">settings</tt> section</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="sec:configfile_settings">8.3.2 The <tt class="tt">settings</tt> section</h2>
+<p>The <tt class="tt">settings</tt> section can contain any of the following settings in any order: </p><div>
+
+<table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="text-align:left"><p> <tt class="tt">Aspect</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set size ratio</tt><a name="a0000001413" id="a0000001413"></a> </p><p>Sets the aspect ratio of plots. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">AutoAspect</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">On</tt>, <tt class="tt">Off</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set size ratio</tt> </p><p>Sets whether plots have the automatic aspect ratio, which is the golden ratio. If <tt class="tt">On</tt>, then the above setting is ignored. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">AxesColour</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any recognised colour. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set axescolour</tt><a name="a0000001414" id="a0000001414"></a> </p><p>Sets the colour of axis lines and ticks. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">AxisUnitStyle</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">Bracketed</tt>, <tt class="tt">Ratio</tt>, <tt class="tt">SquareBracketed</tt> </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set axisunitstyle</tt><a name="a0000001415" id="a0000001415"></a> </p><p>Sets the style in which the physical units of quantities plotted against axes are appended to axis labels. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Backup</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">On</tt>, <tt class="tt">Off</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set backup</tt><a name="a0000001416" id="a0000001416"></a> </p><p>When this switch is set to <tt class="tt">On</tt>, and plot output is being directed to file, attempts to write output over existing files cause a copy of the existing file to be preserved, with a tilde after its old filename (see Section <a href="sec-file_backup.html">2.4</a>). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Bar</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set bar</tt><a name="a0000001417" id="a0000001417"></a> </p><p>Sets the horizontal length of the lines drawn at the end of errorbars, in units of their default length. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">BinOrigin</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set binorigin</tt><a name="a0000001418" id="a0000001418"></a> </p><p>Sets the point along the abscissa axis from which the bins used by the <tt class="tt">histogram</tt> command<a name="a0000001419" id="a0000001419"></a> originate. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">BinWidth</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set binwidth</tt><a name="a0000001420" id="a0000001420"></a> </p><p>Sets the widths of the bins used by the <tt class="tt">histogram</tt> command<a name="a0000001421" id="a0000001421"></a>. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">BoxFrom</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set boxfrom</tt><a name="a0000001422" id="a0000001422"></a> </p><p>Sets the horizontal point from which bars on bar charts appear to emanate. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">BoxWidth</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set boxwidth</tt><a name="a0000001423" id="a0000001423"></a> </p><p>Sets the default width of boxes on barcharts. If negative, then the boxes have automatically selected widths, so that the interfaces between bars occur at the horizontal midpoints between the specified datapoints. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">CalendarIn</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">British</tt>, <tt class="tt">French</tt>, <tt class="tt">Greek</tt>, <tt class="tt">Gregorian</tt>, <tt class="tt">Hebrew</tt>, <tt class="tt">Islamic</tt>, <tt class="tt">Julian</tt>, <tt class="tt">Papal</tt>, <tt class="tt">Russian</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set calendar</tt><a name="a0000001424" id="a0000001424"></a> </p><p>Sets the default calendar for the input of dates from day, month and year representation into Julian Date representation. See Section <a href="sec-time_series.html">4.11</a> for more details. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">CalendarOut</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">British</tt>, <tt class="tt">French</tt>, <tt class="tt">Greek</tt>, <tt class="tt">Gregorian</tt>, <tt class="tt">Hebrew</tt>, <tt class="tt">Islamic</tt>, <tt class="tt">Julian</tt>, <tt class="tt">Papal</tt>, <tt class="tt">Russian</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set calendar</tt><a name="a0000001425" id="a0000001425"></a> </p><p>Sets the default calendar for the output of dates from Julian Date representation to day, month and year representation. See Section <a href="sec-time_series.html">4.11</a> for more details. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Clip</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">On</tt>, <tt class="tt">Off</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set clip</tt><a name="a0000001426" id="a0000001426"></a> </p><p>Sets whether datapoints close to the edges of graphs should be clipped at the edges (<tt class="tt">On</tt>) or allowed to overrun the axes (<tt class="tt">Off</tt>). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Colour</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">On</tt>, <tt class="tt">Off</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set terminal</tt><a name="a0000001427" id="a0000001427"></a> </p><p>Sets whether output should be colour (<tt class="tt">On</tt>) or monochrome (<tt class="tt">Off</tt>). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">DataStyle</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any plot style. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set data style</tt><a name="a0000001428" id="a0000001428"></a> </p><p>Sets the plot style used by default when plotting datafiles. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Display</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">On</tt>, <tt class="tt">Off</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set display</tt><a name="a0000001429" id="a0000001429"></a> </p><p>When set to <tt class="tt">On</tt>, no output is produced until the <tt class="tt">set display</tt> command<a name="a0000001430" id="a0000001430"></a> is issued. This is useful for speeding up scripts which produce large multiplots; see Section <a href="sec-set_display.html">3.1.3</a> for more details. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">DPI</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set terminal dpi</tt><a name="a0000001431" id="a0000001431"></a> </p><p>Sets the sampling quality used, in dots per inch, when output is sent to a bitmapped terminal (the bmp, jpeg, gif, png and tif terminals). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">FontSize</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set fontsize</tt><a name="a0000001432" id="a0000001432"></a> </p><p>Sets the fontsize of text, where <img src="images/img-0169.png" alt="$1.0$" style="vertical-align:0px; 
+                                     width:22px; 
+                                     height:12px" class="math gen" /> represents 10-point text, and other values differ multiplicatively. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">FuncStyle</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any plot style. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set function style</tt><a name="a0000001433" id="a0000001433"></a> </p><p>Sets the plot style used by default when plotting functions. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Grid</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">On</tt>, <tt class="tt">Off</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set grid</tt><a name="a0000001434" id="a0000001434"></a> </p><p>Sets whether a grid should be displayed on plots. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">GridAxisX</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any integer. </p><p><b class="bf">Analogous set command:</b> None </p><p>Sets the default horizontal axis to which gridlines should attach, if the <tt class="tt">set grid</tt> command is called without specifying which axes to use. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">GridAxisY</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any integer. </p><p><b class="bf">Analogous set command:</b> None </p><p>Sets the default vertical axis to which gridlines should attach, if the <tt class="tt">set grid</tt> command is called without specifying which axes to use. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">GridAxisZ</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any integer. </p><p><b class="bf">Analogous set command:</b> None </p><p>Sets the default <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:8px" class="math gen" />-axis to which gridlines should attach, if the <tt class="tt">set grid</tt> command is called without specifying which axes to use. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">GridMajColour</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any recognised colour. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set gridmajcolour</tt><a name="a0000001435" id="a0000001435"></a> </p><p>Sets the colour of major grid lines. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">GridMinColour</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any recognised colour. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set gridmincolour</tt><a name="a0000001436" id="a0000001436"></a> </p><p>Sets the colour of minor grid lines. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Key</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">On</tt>, <tt class="tt">Off</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set key</tt><a name="a0000001437" id="a0000001437"></a> </p><p>Sets whether a legend is displayed on plots. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">KeyColumns</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any integer <img src="images/img-0655.png" alt="$\geq 0$" style="vertical-align:-3px; 
+                                     width:27px; 
+                                     height:15px" class="math gen" />. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set keycolumns</tt><a name="a0000001438" id="a0000001438"></a> </p><p>Sets the number of columns into which the legends of plots should be divided. If a value of zero is given, then the number of columns is decided automatically for each plot. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">KeyPos</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">Top Right</tt>, <tt class="tt">Top XCentre</tt>, <tt class="tt">Top Left</tt>, <tt class="tt">YCentre Right</tt>, <tt class="tt">YCentre XCentre</tt>, <tt class="tt">YCentre Left</tt>, <tt class="tt">Bottom Right</tt>, <tt class="tt">Bottom XCentre</tt>, <tt class="tt">Bottom Left</tt>, <tt class="tt">Above</tt>, <tt class="tt">Below</tt>, <tt class="tt">Outside</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set key</tt><a name="a0000001439" id="a0000001439"></a> </p><p>Sets where the legend should appear on plots. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Key_XOff</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set key</tt><a name="a0000001440" id="a0000001440"></a> </p><p>Sets the horizontal offset, in approximate graph-widths, that should be applied to the legend, relative to its default position, as set by <tt class="tt">KEYPOS</tt>. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Key_YOff</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set key</tt><a name="a0000001441" id="a0000001441"></a> </p><p>Sets the vertical offset, in approximate graph-heights, that should be applied to the legend, relative to its default position, as set by <tt class="tt">KEYPOS</tt>. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Landscape</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">On</tt>, <tt class="tt">Off</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set terminal</tt><a name="a0000001442" id="a0000001442"></a> </p><p>Sets whether output is in portrait orientation (<tt class="tt">Off</tt>), or landscape orientation (<tt class="tt">On</tt>). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">LineWidth</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set linewidth</tt><a name="a0000001443" id="a0000001443"></a> </p><p>Sets the width of lines on plots, as a multiple of the default. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">MultiPlot</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">On</tt>, <tt class="tt">Off</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set multiplot</tt><a name="a0000001444" id="a0000001444"></a> </p><p>Sets whether multiplot mode is on or off. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">NumComplex</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">On</tt>, <tt class="tt">Off</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set numerics</tt><a name="a0000001445" id="a0000001445"></a> </p><p>Sets whether complex arithmetic is enabled, or whether all non-real results to calculations should raise numerical exceptions. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">NumDisplay</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">LaTeX</tt>, <tt class="tt">Natural</tt>, <tt class="tt">Typeable</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set numerics</tt><a name="a0000001446" id="a0000001446"></a> </p><p>Sets whether numerical results are displayed in a natural human-readable way, e.g. <img src="images/img-0004.png" alt="$2\, \mathrm{m}$" style="vertical-align:0px; 
+                                     width:26px; 
+                                     height:12px" class="math gen" />, in LaTeX, e.g. <tt class="tt">$<img src="images/img-0005.png" alt="$2\backslash $" style="vertical-align:-5px; 
+                                     width:16px; 
+                                     height:18px" class="math gen" />,<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />mathrm{m}$</tt>, or in a way which may be pasted back into PyXPlot, e.g. <tt class="tt">2*unit(m)</tt>. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">NumErr</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">On</tt>, <tt class="tt">Off</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set numerics</tt><a name="a0000001447" id="a0000001447"></a> </p><p>Sets whether explicit error messages are thrown when calculations yield undefined results, as in the cases of division by zero or the evaluation of functions in regions where they are undefined or infinite. If explicit error messages are disabled, such calculations quietly return <tt class="tt">nan</tt>. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">NumSF</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any integer between 0 and 30. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set numerics</tt><a name="a0000001448" id="a0000001448"></a> </p><p>Sets the number of significant figures to which numerical quantities are displayed by default. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">OriginX</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set origin</tt><a name="a0000001449" id="a0000001449"></a> </p><p>Sets the horizontal position, in centimetres, of the default origin of plots on the page. Most useful when multiplotting many plots. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">OriginY</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set origin</tt><a name="a0000001450" id="a0000001450"></a> </p><p>Sets the vertical position, in centimetres, of the default origin of plots on the page. Most useful when multiplotting many plots. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Output</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any string (case sensitive). </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set output</tt><a name="a0000001451" id="a0000001451"></a> </p><p>Sets the output filename for plots. If blank, the default filename of <tt class="tt">pyxplot.foo</tt> is used, where <tt class="tt">foo</tt> is an extension appropriate for the file format. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">PaperHeight</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set papersize</tt><a name="a0000001452" id="a0000001452"></a> </p><p>Sets the height of the papersize for PostScript output in millimetres. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">PaperName</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> A string matching any of the papersizes listed in Chapter <a href="ch-paper_sizes.html">5</a>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set papersize</tt><a name="a0000001453" id="a0000001453"></a> </p><p>Sets the papersize for PostScript output to one of the pre-defined papersizes listed in Chapter <a href="ch-paper_sizes.html">5</a>. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">PaperWidth</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set papersize</tt><a name="a0000001454" id="a0000001454"></a> </p><p>Sets the width of the papersize for PostScript output in millimetres. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">PointLineWidth</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set pointlinewidth</tt><a name="a0000001455" id="a0000001455"></a> </p><p>Sets the linewidth used to stroke points onto plots, as a multiple of the default. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">PointSize</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set pointsize</tt><a name="a0000001456" id="a0000001456"></a> </p><p>Sets the sizes of points on plots, as a multiple of their normal sizes. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Samples</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any integer. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set samples</tt><a name="a0000001457" id="a0000001457"></a> </p><p>Sets the number of samples (datapoints) to be evaluated along the abscissa axis when plotting a function. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">TermAntiAlias</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">On</tt>, <tt class="tt">Off</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set terminal</tt><a name="a0000001458" id="a0000001458"></a> </p><p>Sets whether output sent to the bitmapped graphics output terminals – i.e. the bmp, jpeg, gif, png and tif terminals – is antialiased. Antialiasing smooths the colour boundaries to disguise the effects of pixelisation and is almost invariably desirable. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">TermEnlarge</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">On</tt>, <tt class="tt">Off</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set terminal</tt><a name="a0000001459" id="a0000001459"></a> </p><p>When set to <tt class="tt">On</tt> output is enlarged or shrunk to fit the current paper size. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">TermInvert</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">On</tt>, <tt class="tt">Off</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set terminal</tt><a name="a0000001460" id="a0000001460"></a> </p><p>Sets whether jpeg/gif/png output has normal colours (<tt class="tt">Off</tt>), or inverted colours (<tt class="tt">On</tt>). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">TermTransparent</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">On</tt>, <tt class="tt">Off</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set terminal</tt><a name="a0000001461" id="a0000001461"></a> </p><p>Sets whether jpeg/gif/png output has transparent background (<tt class="tt">On</tt>), or solid background (<tt class="tt">Off</tt>). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">TermType</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">bmp</tt>, <tt class="tt">eps</tt>, <tt class="tt">gif</tt>, <tt class="tt">jpg</tt>, <tt class="tt">pdf</tt>, <tt class="tt">png</tt>, <tt class="tt">ps</tt>, <tt class="tt">svg</tt>, <tt class="tt">tif</tt>, <tt class="tt">X11_multiwindow</tt>, <tt class="tt">X11_persist</tt>, <tt class="tt">X11_singlewindow</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set terminal</tt><a name="a0000001462" id="a0000001462"></a> </p><p>Sets whether output is sent to the screen, using one of the <tt class="tt">X11_</tt>... terminals, or to disk. In the latter case, output may be produced in a wide variety of graphical formats. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">TextColour</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any recognised colour. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set textcolour</tt><a name="a0000001463" id="a0000001463"></a> </p><p>Sets the colour of all text output. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">TextHAlign</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">Left</tt>, <tt class="tt">Centre</tt>, <tt class="tt">Right</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set texthalign</tt><a name="a0000001464" id="a0000001464"></a> </p><p>Sets the horizontal alignment of text labels to their given reference positions. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">TextVAlign</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">Top</tt>, <tt class="tt">Centre</tt>, <tt class="tt">Bottom</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set textvalign</tt><a name="a0000001465" id="a0000001465"></a> </p><p>Sets the vertical alignment of text labels to their given reference positions. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Title</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any string (case sensitive). </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set title</tt><a name="a0000001466" id="a0000001466"></a> </p><p>Sets the title to appear at the top of the plot. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Title_XOff</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set title</tt><a name="a0000001467" id="a0000001467"></a> </p><p>Sets the horizontal offset of the title of the plot from its default central location. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Title_YOff</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set title</tt><a name="a0000001468" id="a0000001468"></a> </p><p>Sets the vertical offset of the title of the plot from its default location at the top of the plot. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">TRange_Log</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">True</tt>, <tt class="tt">False</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set logscale t</tt><a name="a0000001469" id="a0000001469"></a> </p><p>Sets whether the <img src="images/img-0056.png" alt="$t$" style="vertical-align:0px; 
+                                     width:6px; 
+                                     height:12px" class="math gen" />-axis – used for parametric plotting – is linear or logarithmic. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">TRange_Max</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set trange</tt><a name="a0000001470" id="a0000001470"></a> </p><p>Sets upper limit of the <img src="images/img-0056.png" alt="$t$" style="vertical-align:0px; 
+                                     width:6px; 
+                                     height:12px" class="math gen" />-axis, used for parametric plotting. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">TRange_Min</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set trange</tt><a name="a0000001471" id="a0000001471"></a> </p><p>Sets lower limit of the <img src="images/img-0056.png" alt="$t$" style="vertical-align:0px; 
+                                     width:6px; 
+                                     height:12px" class="math gen" />-axis, used for parametric plotting. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">UnitAbbrev</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">On</tt>, <tt class="tt">Off</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set unit</tt><a name="a0000001472" id="a0000001472"></a> </p><p>Sets whether physical units are displayed in abbreviated form, e.g. <tt class="tt">mm</tt>, or in full, e.g. <tt class="tt">millimetres</tt>. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">UnitAngleDimless</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">On</tt>, <tt class="tt">Off</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set unit</tt><a name="a0000001473" id="a0000001473"></a> </p><p>Sets whether angles are treated as dimensionless units, or whether the radian is treated as a base unit. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">UnitPrefix</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">On</tt>, <tt class="tt">Off</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set unit</tt><a name="a0000001474" id="a0000001474"></a> </p><p>Sets whether SI prefixes, such as <tt class="tt">milli-</tt> and <tt class="tt">mega-</tt> are prepended to SI units where appropriate. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">UnitScheme</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> <tt class="tt">Ancient</tt>, <tt class="tt">CGS</tt>, <tt class="tt">Imperial</tt>, <tt class="tt">Planck</tt>, <tt class="tt">SI</tt>, <tt class="tt">USCustomary</tt>. </p><p><b class="bf">Analogous set command:</b> <tt class="tt">set unit</tt><a name="a0000001475" id="a0000001475"></a> </p><p>Sets the scheme of physical units in which quantities are displayed. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Width</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set commands:</b> <tt class="tt">set width</tt><a name="a0000001476" id="a0000001476"></a>, <tt class="tt">set size</tt><a name="a0000001477" id="a0000001477"></a> </p><p>Sets the width of plots in centimetres. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">View_XY</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set commands:</b> <tt class="tt">set view</tt><a name="a0000001478" id="a0000001478"></a> </p><p>Sets the viewing angle of three-dimensional plots in the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" />-<img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
+                                     width:9px; 
+                                     height:12px" class="math gen" /> plane in degrees. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">View_YZ</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p><b class="bf">Analogous set commands:</b> <tt class="tt">set view</tt><a name="a0000001479" id="a0000001479"></a> </p><p>Sets the viewing angle of three-dimensional plots in the <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
+                                     width:9px; 
+                                     height:12px" class="math gen" />-<img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:8px" class="math gen" /> plane in degrees. </p></td>
+
+</tr>
+</table>
+</div></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0212.html" title="The filters section"><img alt="Previous: The filters section" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0211.html" title="Setting definitions"><img alt="Up: Setting definitions" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0213.html" title="The styling section"><img alt="Next: The styling section" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

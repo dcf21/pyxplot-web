@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: The Correlation Matrix</title>
+
+<link href="sec-finding_sigmai.html" title="Finding σi" rel="next" />
+<link href="sect0229.html" title="The Covariance Matrix" rel="prev" />
+<link href="ch-fit_maths.html" title="The fit Command: Mathematical Details" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0229.html" title="The Covariance Matrix"><img alt="Previous: The Covariance Matrix" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="ch-fit_maths.html" title="The fit Command: Mathematical Details"><img alt="Up: The fit Command: Mathematical Details" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-finding_sigmai.html" title="Finding "><img alt="Next: Finding " border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0214.html">Appendices</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-fit_maths.html">The <tt class="tt">fit</tt> Command: Mathematical Details</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">The Correlation Matrix</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="sec:correlation_matrix">C.5 The Correlation Matrix</h1>
+<p>  <a name="a0000001526" id="a0000001526"></a> </p><p>Having evaluated the covariance matrix, we may straightforwardly find the standard deviations in each of our variables, by taking the square roots of the terms along its leading diagonal. For datafiles where the user does not specify the standard deviations <img src="images/img-0671.png" alt="$\sigma _ i$" style="vertical-align:-2px; 
+                                     width:15px; 
+                                     height:10px" class="math gen" /> in each value <img src="images/img-0670.png" alt="$f_ i$" style="vertical-align:-4px; 
+                                     width:13px; 
+                                     height:16px" class="math gen" />, the task is not quite complete, as the Hessian matrix depends critically upon these uncertainties, even if they are assumed the same for all of our <img src="images/img-0670.png" alt="$f_ i$" style="vertical-align:-4px; 
+                                     width:13px; 
+                                     height:16px" class="math gen" />. This point is returned to in Section <a href="sec-finding_sigmai.html">C.6</a>. </p><p>The correlation matrix <img src="images/img-0728.png" alt="$\mathbf{C}$" style="vertical-align:0px; 
+                                     width:13px; 
+                                     height:12px" class="math gen" />, whose terms are given by: </p><table id="a0000001527" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td><img src="images/img-0729.png" alt="\begin{equation}  C_{ij} = \frac{V_{ij}}{\sigma _ i\sigma _ j} \end{equation}" style="width:341px; 
+                            height:42px" class="math gen" /></td>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td class="eqnnum" style="width:20%"><span>(<span>C.16</span>)</span></td>
+</tr>
+</table><p>may be considered a more user-friendly version of the covariance matrix for inspecting the correlation between parameters. The leading diagonal terms are all clearly equal unity by construction. The cross terms lie in the range <img src="images/img-0730.png" alt="$-1 \leq C_{ij} \leq 1$" style="vertical-align:-5px; 
+                                     width:103px; 
+                                     height:17px" class="math gen" />, the upper limit of this range representing perfect correlation between parameters, and the lower limit perfect anti-correlation. </p></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0229.html" title="The Covariance Matrix"><img alt="Previous: The Covariance Matrix" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="ch-fit_maths.html" title="The fit Command: Mathematical Details"><img alt="Up: The fit Command: Mathematical Details" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-finding_sigmai.html" title="Finding "><img alt="Next: Finding " border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

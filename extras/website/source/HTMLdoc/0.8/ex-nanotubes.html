@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: The arrow and line Commands</title>
+
+<link href="sect0068.html" title="The image Command" rel="next" />
+<link href="sect0067.html" title="The text Command" rel="prev" />
+<link href="sect0066.html" title="Adding Other Vector Graphics Objects" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0067.html" title="The text Command"><img alt="Previous: The text Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0066.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0068.html" title="The image Command"><img alt="Next: The image Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-vector_graphics.html">Producing Vector Graphics</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0066.html">Adding Other Vector Graphics Objects</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">The <tt class="tt">arrow</tt> and <tt class="tt">line</tt> Commands</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="ex:nanotubes">3.4.2 The <tt class="tt">arrow</tt> and <tt class="tt">line</tt> Commands</h2>
+<p>Arrows may also be added to multiplot canvases using the <tt class="tt">arrow</tt> command<a name="a0000000879" id="a0000000879"></a>, which has syntax: </p><pre>
+arrow from x,y to x,y
+</pre><p>The <tt class="tt">arrow</tt> command<a name="a0000000880" id="a0000000880"></a> may be followed by the <tt class="tt">with</tt><a name="a0000000881" id="a0000000881"></a> keyword to specify to style of the arrow. The line type, line width and colour of the arrow, may be specified using the same syntax as used in the plot command, using the <tt class="tt">linetype</tt>, <tt class="tt">linewidth</tt> and <tt class="tt">colour</tt> modifiers after the word <tt class="tt">with</tt>, as in the example: </p><pre>
+arrow from 0,0 to 10,10 \
+with linetype 2 linewidth 5 colour red
+</pre><p>The style of the arrow may also be specified after the word <tt class="tt">with</tt>, and three options are available: <tt class="tt">head</tt> (the default), <tt class="tt">nohead</tt>, which produces line segments with no arrowheads on them, and <tt class="tt">twoway</tt>, which produces bidirectional arrows with heads on both ends. </p><p>The <tt class="tt">arrow</tt> command<a name="a0000000882" id="a0000000882"></a> has a twin, the <tt class="tt">line</tt> command<a name="a0000000883" id="a0000000883"></a>, which has the same syntax but with a different style setting of <tt class="tt">nohead</tt>. </p><p> <span class="upshape"><span class="mdseries"><span class="rm">A simple notice generated with the <tt class="tt">text</tt> and <tt class="tt">arrow</tt> commands.</span></span></span></p><div>
+
+<table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this example script, we use PyXPlot’s <tt class="tt">arrow</tt> and <tt class="tt">text</tt> commands to produce a simple notice advertising that a lecture has moved to a different seminar room: </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt"># Turn on multiplot mode </tt><br /><tt class="tt">set multiplot ; set nodisplay </tt><br /></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt"># Set the dimensions of the notice </tt><br /><tt class="tt">w = 20        # Width of notice / cm </tt><br /><tt class="tt">h = w/sqrt(2) # Height of notice / cm </tt><br /></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt"># Put a rectangular box around the notice </tt><br /><tt class="tt">line from 0,0 to w,0 with linewidth 5 </tt><br /><tt class="tt">line from w,0 to w,h with linewidth 5 </tt><br /><tt class="tt">line from w,h to 0,h with linewidth 5 </tt><br /><tt class="tt">line from 0,h to 0,0 with linewidth 5 </tt><br /></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt"># Write the text of the notice in big letters </tt><br /><tt class="tt">set texthalign centre ; set fontsize 3 </tt><br /><tt class="tt">text "<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />bf Astrophysical Fluids Lecture" at w/2,3/4*h </tt><br /><tt class="tt">text "<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />bf MOVED to Seminar Room 3" at w/2, h/2 </tt><br /><tt class="tt">arrow from w/4, h/4 to 3/4*w, h/4 with linewidth 8 </tt><br /></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt"># Display the notice </tt><br /><tt class="tt">set display ; refresh </tt><br /></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>The resulting notice is shown below: </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><p><center>
+<img src="images/img-0452.png" alt="\includegraphics[width=\textwidth ]{examples/eps/ex_notice}" style="width:" /></center>  </p></td>
+
+</tr>
+</table>
+</div><p> <span class="upshape"><span class="mdseries"><span class="rm">A diagram from Euclid’s <i class="it">Elements</i>.</span></span></span></p><div>
+
+<table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this more extended example script, we use PyXPlot’s <tt class="tt">arrow</tt> and <tt class="tt">text</tt> commands to reproduce a diagram illustrating the 47th Proposition from Euclid’s First Book of <i class="it">Elements</i>, better known as Pythagoras’ Theorem. A full text of the proof which accompanies this diagram can be found at http://www.gutenberg.org/etext/21076. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt">set multiplot ; set nodisplay</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Lengths of three sides of triangle</tt><br /><tt class="tt">AB = 2*unit(cm)</tt><br /><tt class="tt">AC = 4*unit(cm)</tt><br /><tt class="tt">BC = hypot(AC, AB) # Hypotenuse</tt><br /><tt class="tt">CBA = atan2(AC, AB) # Angle CBA</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Positions of three corners of triangle</tt><br /><tt class="tt">Bx = 0*unit(cm)       ; By = 0*unit(cm) # The origin</tt><br /><tt class="tt">Cx = Bx + BC          ; Cy = By</tt><br /><tt class="tt">Ax = Bx + AB*cos(CBA) ; Ay = By + AB*sin(CBA)</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Positions of constructed points</tt><br /><tt class="tt">Dx = Bx               ; Dy = -BC</tt><br /><tt class="tt">Lx = Ax               ; Ly = Dy</tt><br /><tt class="tt">Ex = Cx               ; Ey = Dy</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt">Hx = Bx + (AB + AC) * cos(CBA)</tt><br /><tt class="tt">Hy = By + (AB + AC) * sin(CBA)</tt><br /><tt class="tt">Kx = Cx + (     AC) * cos(CBA)</tt><br /><tt class="tt">Ky = Cy + (     AC) * sin(CBA)</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt">Fx = Bx + AB*cos(CBA+90*unit(deg))</tt><br /><tt class="tt">Fy = By + AB*sin(CBA+90*unit(deg))</tt><br /><tt class="tt">Gx = Ax + AB*cos(CBA+90*unit(deg))</tt><br /><tt class="tt">Gy = Ay + AB*sin(CBA+90*unit(deg))</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Construct diagram</tt><br /><tt class="tt">box from Dx,Dy to Cx,Cy with fillcol grey80</tt><br /><tt class="tt">box at Ax,Ay width AC height AC rot CBA-90*unit(deg) with fillcol grey80</tt><br /><tt class="tt">box at Bx,By width AB height AB rot CBA with fillcol grey80</tt><br /><tt class="tt">line from Bx,By to Kx,Ky</tt><br /><tt class="tt">line from Fx,Fy to Cx,Cy</tt><br /><tt class="tt">line from Ax,Ay to Dx,Dy</tt><br /><tt class="tt">line from Ax,Ay to Lx,Ly</tt><br /><tt class="tt">line from Ax,Ay to Ex,Ey</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Label diagram</tt><br /><tt class="tt">set fontsize 1.3</tt><br /><tt class="tt">TG = 0.5*unit(mm) # Gap left between labels and figure</tt><br /><tt class="tt">text "A" at Ax,Ay gap TG*5 hal c val b</tt><br /><tt class="tt">text "B" at Bx,By gap TG   hal r val t</tt><br /><tt class="tt">text "C" at Cx,Cy gap TG   hal l val t</tt><br /><tt class="tt">text "D" at Dx,Dy gap TG   hal c val t</tt><br /><tt class="tt">text "E" at Ex,Ey gap TG   hal c val t</tt><br /><tt class="tt">text "F" at Fx,Fy gap TG   hal r val c</tt><br /><tt class="tt">text "G" at Gx,Gy gap TG   hal c val b</tt><br /><tt class="tt">text "H" at Hx,Hy gap TG   hal c val b</tt><br /><tt class="tt">text "K" at Kx,Ky gap TG   hal l val c</tt><br /><tt class="tt">text "L" at Lx,Ly gap TG   hal c val t</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Display diagram</tt><br /><tt class="tt">set display ; refresh</tt><br /></small> </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>The resulting diagram is shown below: </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><p><center>
+<img src="images/img-0455.png" alt="\includegraphics[width=8cm]{examples/eps/ex_euclid_I_47}" style="width:8cm" /></center>  </p></td>
+
+</tr>
+</table>
+</div><p> <span class="upshape"><span class="mdseries"><span class="rm">A diagram of the conductivity of nanotubes.</span></span></span></p><div>
+
+<table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this example we produce a diagram of the <i class="it">irreducible wedge</i> of possible carbon nanotube configurations, highlighting those configurations which are electrically conductive. We use PyXPlot’s loop constructs to automate the production of the hexagonal grid which forms the basis of the diagram. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt">BASIS_ANGLE_X = (0 )*unit(deg)</tt><br /><tt class="tt">BASIS_ANGLE_Y = (120)*unit(deg)</tt><br /><tt class="tt">LINELEN = unit(5*mm)</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt">subroutine line(x1,y1,x2,y2,lw)</tt><br /><tt class="tt">{</tt><br /><tt class="tt">line from (x1*sin(BASIS_ANGLE_X)+y1*sin(BASIS_ANGLE_Y))*LINELEN, <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" /></tt><br /><tt class="tt">(x1*cos(BASIS_ANGLE_X)+y1*cos(BASIS_ANGLE_Y))*LINELEN <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" /></tt><br /><tt class="tt">to (x2*sin(BASIS_ANGLE_X)+y2*sin(BASIS_ANGLE_Y))*LINELEN, <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" /></tt><br /><tt class="tt">(x2*cos(BASIS_ANGLE_X)+y2*cos(BASIS_ANGLE_Y))*LINELEN <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" /></tt><br /><tt class="tt">with linewidth lw</tt><br /><tt class="tt">}</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt">subroutine hexagon(x,y,lw)</tt><br /><tt class="tt">{</tt><br /><tt class="tt">call line(x ,y ,x ,y-1,lw)</tt><br /><tt class="tt">call line(x ,y-1,x+1,y-1,lw)</tt><br /><tt class="tt">call line(x+1,y-1,x+2,y ,lw)</tt><br /><tt class="tt">call line(x+2,y ,x+2,y+1,lw)</tt><br /><tt class="tt">call line(x+2,y+1,x+1,y+1,lw)</tt><br /><tt class="tt">call line(x+1,y+1,x ,y ,lw)</tt><br /><tt class="tt">}</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt">set multiplot</tt><br /><tt class="tt">set nodisplay</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt">for XPOS=0 to 10</tt><br /><tt class="tt">{</tt><br /><tt class="tt">for YPOS=0 to XPOS+1</tt><br /><tt class="tt">{</tt><br /><tt class="tt">x = 1*XPOS + 2*YPOS</tt><br /><tt class="tt">y = 2*XPOS + 1*YPOS</tt><br /><tt class="tt">call hexagon(x,y, conditionalN((XPOS-YPOS)%3==0,4,1))</tt><br /><tt class="tt">text ’%d,%d’%(XPOS,YPOS) <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" /></tt><br /><tt class="tt">at ((x+1)*sin(BASIS_ANGLE_X)+y*sin(BASIS_ANGLE_Y))*LINELEN, <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" /></tt><br /><tt class="tt">((x+1)*cos(BASIS_ANGLE_X)+y*cos(BASIS_ANGLE_Y))*LINELEN <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" /></tt><br /><tt class="tt">hal cen val cen</tt><br /><tt class="tt">}</tt><br /><tt class="tt">}</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt">set display</tt><br /><tt class="tt">refresh</tt></small> </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><p><center>
+<img src="images/img-0458.png" alt="\includegraphics[width=9cm]{examples/eps/ex_nanotubes}" style="width:9cm" /></center>  </p></td>
+
+</tr>
+</table>
+</div></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0067.html" title="The text Command"><img alt="Previous: The text Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0066.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0068.html" title="The image Command"><img alt="Next: The image Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

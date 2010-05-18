@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Plotting Many Datafiles at Once</title>
+
+<link href="sec-horizontal_datafiles.html" title="Horizontally arranged Datafiles" rel="next" />
+<link href="sec-plot_datafiles.html" title="Plotting Datafiles" rel="prev" />
+<link href="ch-first_steps.html" title="First Steps With PyXPlot" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sec-plot_datafiles.html" title="Plotting Datafiles"><img alt="Previous: Plotting Datafiles" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="ch-first_steps.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-horizontal_datafiles.html" title="Horizontally arranged Datafiles"><img alt="Next: Horizontally arranged Datafiles" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-first_steps.html">First Steps With PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Plotting Many Datafiles at Once</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="a0000000017">3.9 Plotting Many Datafiles at Once</h1>
+<p><a name="a0000000326" id="a0000000326"></a><a name="a0000000327" id="a0000000327"></a><a name="a0000000328" id="a0000000328"></a> </p><p>The wildcards <tt class="tt">*</tt> and <tt class="tt">?</tt> may be used in filenames supplied to the <tt class="tt">plot</tt> command<a name="a0000000329" id="a0000000329"></a> to plot many datafiles at once. The following, for example, would plot all datafiles in the current directory with a <tt class="tt">.dat</tt> suffix, using the same plot options: </p><pre>
+plot '*.dat' with linewidth 2
+</pre><p>In the graph’s legend, full filenames are displayed, allowing the datafiles to be distinguished. </p><p>If a blank filename is supplied to the <tt class="tt">plot</tt> command<a name="a0000000330" id="a0000000330"></a>, the last used datafile is used again, as in the example: </p><pre>
+plot 'data.dat' using 1:2, '' using 2:3
+</pre><p>This can even be used with wildcards, as in the following example: </p><pre>
+plot '*.dat' using 1:2, '' using 2:3
+</pre></div>
+
+<div class="contents section-contents"><!--<strong>Subsections</strong>-->
+<ul>
+<li><a href="sec-horizontal_datafiles.html">3.9.1 Horizontally arranged Datafiles</a>
+   
+</li><li><a href="sec-select_modifier.html">3.9.2 Choosing which Data to Plot</a>
+   
+</li>
+
+
+
+</ul>
+</div>
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sec-plot_datafiles.html" title="Plotting Datafiles"><img alt="Previous: Plotting Datafiles" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="ch-first_steps.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-horizontal_datafiles.html" title="Horizontally arranged Datafiles"><img alt="Next: Horizontally arranged Datafiles" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

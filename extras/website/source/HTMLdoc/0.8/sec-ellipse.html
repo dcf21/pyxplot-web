@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: The ellipse Command</title>
+
+<link href="sec-piechart.html" title="The piechart Command" rel="next" />
+<link href="sec-point.html" title="The point Command" rel="prev" />
+<link href="sect0066.html" title="Adding Other Vector Graphics Objects" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sec-point.html" title="The point Command"><img alt="Previous: The point Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0066.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-piechart.html" title="The piechart Command"><img alt="Next: The piechart Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-vector_graphics.html">Producing Vector Graphics</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0066.html">Adding Other Vector Graphics Objects</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">The <tt class="tt">ellipse</tt> Command</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="sec:ellipse">3.4.8 The <tt class="tt">ellipse</tt> Command</h2>
+<p>Ellipses may be placed on multiplot canvases using the <tt class="tt">ellipse</tt> command<a name="a0000000902" id="a0000000902"></a>. The shape of the ellipse may be specified in many different ways, by specifying </p><ol class="enumerate">
+<li><p>the position of two corners of the smallest rectangle which can enclose the ellipse when its major axis is horizontal, together with an optional counter-clockwise rotation angle, applied about the centre of the ellipse. For example: </p><pre>
+ellipse from 0,0 to 4,1 rot 70
+</pre></li><li><p>the position of both the centre and one of the foci of the ellipse, together with any one of the following additional pieces of information: the ellipse’s major axis length, its semi-major axis length, its minor axis length, its semi-minor axis length, its eccentricity, its latus rectum, or its semi-latus rectum. For example: </p><pre>
+ellipse focus 0,0 centre 2,2 majoraxis 4
+ellipse focus 0,0 centre 2,2 minoraxis 4
+ellipse focus 0,0 centre 2,2 ecc 0.5
+ellipse focus 0,0 centre 2,2 LatusRectum 6
+ellipse focus 0,0 centre 2,2 slr 3
+</pre></li><li><p>the position of either the centre or one of the foci of the ellipse, together with any two of the following additional pieces of information: the ellipse’s major axis length, its semi-major axis length, its minor axis length, its semi-minor axis length, its eccentricity, its latus rectum, or its semi-latus rectum. An optional counter-clockwise rotation angle may also be specified, applied about either the centre or one of the foci of the ellipse, whichever is specified. If no rotation angle is given, then the major axis of the ellipse is horizontal. For example: </p><pre>
+ellipse centre 0,0 majoraxis 4 minoraxis 4
+</pre></li>
+</ol><p>The line type, line width, and colour of line with which the outlines of ellipses are drawn may be specified after the keyword <tt class="tt">with</tt>, as in the <tt class="tt">box</tt> and <tt class="tt">circle</tt> commands above. Likewise, ellipses may be filled in the same manner. </p><p> <span class="upshape"><span class="mdseries"><span class="rm">A labelled diagram of an ellipse.</span></span></span></p><div>
+
+<table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this example script, we illustrate the text of Section <a href="sec-ellipse.html">3.4.8</a> by using PyXPlot’s <tt class="tt">ellipse</tt> command, together with arrows and text labels, to produce a labelled diagram of an ellipse. We label the semi-major axis <img src="images/img-0036.png" alt="$a$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:8px" class="math gen" />, the semi-minor axis <img src="images/img-0038.png" alt="$b$" style="vertical-align:0px; 
+                                     width:8px; 
+                                     height:13px" class="math gen" />, the semi-latus rectum <img src="images/img-0329.png" alt="$L$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:12px" class="math gen" />, and the distance between the centre of the ellipse and one of its foci with the length <img src="images/img-0485.png" alt="$ae$" style="vertical-align:0px; 
+                                     width:18px; 
+                                     height:8px" class="math gen" />, where <img src="images/img-0042.png" alt="$e$" style="vertical-align:0px; 
+                                     width:8px; 
+                                     height:8px" class="math gen" /> is the eccentricity of the ellipse. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt">set multiplot ; set nodisplay </tt><br /><tt class="tt"></tt><br /><tt class="tt">a   = 6.0              # Semi-major axis </tt><br /><tt class="tt">b   = 4.0              # Semi-minor axis </tt><br /><tt class="tt">e   = sqrt(1-(b/a)**2) # Eccentricity </tt><br /><tt class="tt">slr = a*(1-e**2)       # Length of semi-latus rectum </tt><br /><tt class="tt">fd  = a*e              # Distance of focus from centre </tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Draw ellipse </tt><br /><tt class="tt">ellipse centre 0,0 SemiMajor a SemiMinor b with lw 3 </tt><br /><tt class="tt"></tt><br /><tt class="tt"># Draw points at centre and focus</tt><br /><tt class="tt">set texthalign centre ; set textvalign top</tt><br /><tt class="tt">set fontsize 1.5</tt><br /><tt class="tt">point at 0,0 label "Centre" with pointsize 2 plw 2</tt><br /><tt class="tt">point at -fd,0 label "Focus" with pointsize 2 plw 2</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Draw arrows and dotted lines on ellipse </tt><br /><tt class="tt">arrow from 0,0 to 0,b with twohead lw 2 lt 3   # Semi-minor axis</tt><br /><tt class="tt">arrow from 0,0 to a,0 with twohead lw 2 lt 3   # Semi-major axis</tt><br /><tt class="tt">arrow from -fd,0 to -fd,slr with tw lw 2 lt 3  # SLR</tt><br /><tt class="tt">arrow from 0,0 to -fd,0 with twohead lw 2 lt 3 # Focus <img src="images/img-0034.png" alt="$&lt;$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" />-<img src="images/img-0035.png" alt="$&gt;$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" /> Centre</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Label ellipse </tt><br /><tt class="tt">set texthalign centre ; set textvalign centre</tt><br /><tt class="tt">text ’$ae$’ at -fd/2,-0.3</tt><br /><tt class="tt">text ’$a$’ at a/2,+0.3</tt><br /><tt class="tt">text ’$b$’ at 0.3,b/2</tt><br /><tt class="tt">set texthalign left ; set textvalign centre</tt><br /><tt class="tt">text ’$L=a(1-e<img src="images/img-0024.png" alt="\^{}" style="vertical-align:9px; width:5px; height:4px" class="accent gen" />2)$’ at 0.2-fd,slr/2</tt><br /></small></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><small class="footnotesize"><tt class="tt"># Display diagram </tt><br /><tt class="tt">set display ; refresh </tt><br /></small> </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>The resulting diagram is shown below: </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><p><center>
+<img src="images/img-0487.png" alt="\includegraphics[width=8cm]{examples/eps/ex_ellipse}" style="width:8cm" /></center>  </p></td>
+
+</tr>
+</table>
+</div></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sec-point.html" title="The point Command"><img alt="Previous: The point Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0066.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-piechart.html" title="The piechart Command"><img alt="Next: The piechart Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

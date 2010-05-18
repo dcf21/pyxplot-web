@@ -1,0 +1,443 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Fourier Transforms</title>
+
+<link href="sect0029.html" title="Window Functions" rel="next" />
+<link href="ex-interpolation.html" title="Datafile Interpolation" rel="prev" />
+<link href="ch-numerics.html" title="Working with Data" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="ex-interpolation.html" title="Datafile Interpolation"><img alt="Previous: Datafile Interpolation" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="ch-numerics.html" title="Working with Data"><img alt="Up: Working with Data" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0029.html" title="Window Functions"><img alt="Next: Window Functions" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-numerics.html">Working with Data</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Fourier Transforms</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="a0000000029">5.8 Fourier Transforms</h1>
+<p>The <tt class="tt">fft</tt> and <tt class="tt">ifft</tt> commands<a name="a0000000505" id="a0000000505"></a><a name="a0000000506" id="a0000000506"></a> take Fourier transforms and inverse Fourier transforms respectively of data supplied either from a file or from a function. In each case, a regular grid of abscissa values must be specified on which to take the discrete Fourier transform, which can extend over an arbitrary number of dimensions. The following example demonstrates the syntax of these commands as applied to a two-dimensional top-hat function: </p><pre>
+step(x,y) = tophat(x,0.2) * tophat(y,0.4)
+fft  [  0: 1:0.01][  0: 1:0.01] f() of step()
+ifft [-50:49:1   ][-50:49:1   ] g() of f()
+</pre><p>In the <tt class="tt">fft</tt> command above, <img src="images/img-0176.png" alt="$N_ x=100$" style="vertical-align:-2px; 
+                                     width:74px; 
+                                     height:14px" class="math gen" /> equally-spaced samples of the function <tt class="tt">step</tt><img src="images/img-0177.png" alt="$(x,y)$" style="vertical-align:-4px; 
+                                     width:40px; 
+                                     height:18px" class="math gen" /> are taken between limits of <img src="images/img-0178.png" alt="$x_\mathrm {min}=0$" style="vertical-align:-2px; 
+                                     width:68px; 
+                                     height:14px" class="math gen" /> and <img src="images/img-0179.png" alt="$x_\mathrm {max}=1$" style="vertical-align:-2px; 
+                                     width:69px; 
+                                     height:14px" class="math gen" /> for each of <img src="images/img-0180.png" alt="$N_ y=100$" style="vertical-align:-5px; 
+                                     width:74px; 
+                                     height:17px" class="math gen" /> equally-spaced values of <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
+                                     width:9px; 
+                                     height:12px" class="math gen" /> on an identical raster, giving a total of <img src="images/img-0181.png" alt="$10^4$" style="vertical-align:0px; 
+                                     width:24px; 
+                                     height:16px" class="math gen" /> samples. These are converted into a rectangular grid of <img src="images/img-0181.png" alt="$10^4$" style="vertical-align:0px; 
+                                     width:24px; 
+                                     height:16px" class="math gen" /> samples of the Fourier transform <tt class="tt">f</tt><img src="images/img-0182.png" alt="$(\omega _ x,\omega _ y)$" style="vertical-align:-5px; 
+                                     width:59px; 
+                                     height:19px" class="math gen" /> at </p><table id="a0000000507" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
+<tr id="a0000000508">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0183.png" alt="$\displaystyle  \omega _ x = \frac{j}{\Delta x}  $" style="vertical-align:-12px; width:72px;                     height:37px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0184.png" alt="$\displaystyle  \textrm{for}  $" style="vertical-align:0px; width:22px;                     height:12px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0185.png" alt="$\displaystyle  -\frac{N_ x}{2}\leq j &lt;\frac{N_ x}{2} \;  \left(\textrm{equivalently, for} -\frac{N_ x}{2\Delta x}\leq \omega _ x &lt;\frac{N_ x}{2\Delta x} \right), \nonumber  $" style="vertical-align:-17px; width:461px;                     height:44px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr><tr id="a0000000509">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0186.png" alt="$\displaystyle \omega _ y = \frac{k}{\Delta y}  $" style="vertical-align:-17px; width:70px;                     height:42px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0184.png" alt="$\displaystyle  \textrm{for}  $" style="vertical-align:0px; width:22px;                     height:12px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0187.png" alt="$\displaystyle  -\frac{N_ y}{2}\leq k &lt;\frac{N_ y}{2} \;  \left(\textrm{equivalently, for} -\frac{N_ y}{2\Delta y}\leq \omega _ y &lt;\frac{N_ y}{2\Delta y} \right). \nonumber  $" style="vertical-align:-17px; width:459px;                     height:44px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr>
+</table><p>where <img src="images/img-0188.png" alt="$\Delta x=x_\mathrm {max}-x_\mathrm {min}$" style="vertical-align:-2px; 
+                                     width:142px; 
+                                     height:15px" class="math gen" /> and <img src="images/img-0189.png" alt="$\Delta y$" style="vertical-align:-4px; 
+                                     width:23px; 
+                                     height:17px" class="math gen" /> is analogously defined. These samples are interpolated stepwise, such that an evaluation of the function <tt class="tt">f</tt><img src="images/img-0182.png" alt="$(\omega _ x,\omega _ y)$" style="vertical-align:-5px; 
+                                     width:59px; 
+                                     height:19px" class="math gen" /> for general inputs yields the nearest sample, or zero outside the rectangular grid where samples are available. In general, even the Fourier transforms of real functions are complex, and their evaluation when complex arithmetic is not enabled (see Section <a href="sec-complex_numbers.html">4.5</a>) is likely to fail. For this reason, a warning is issued if complex arithmetic is disabled when a Fourier transform function is evaluated. </p><p>In the example above, we go on to convert this set of samples back into the function with which we started by instructing the <tt class="tt">ifft</tt> command<a name="a0000000510" id="a0000000510"></a> to take <img src="images/img-0176.png" alt="$N_ x=100$" style="vertical-align:-2px; 
+                                     width:74px; 
+                                     height:14px" class="math gen" /> equally-spaced samples along the <img src="images/img-0190.png" alt="$\omega _ x$" style="vertical-align:-2px; 
+                                     width:19px; 
+                                     height:10px" class="math gen" />-axis between <img src="images/img-0191.png" alt="$\omega _{x,\mathrm{min}}=-{N_ x}/{2\Delta x}$" style="vertical-align:-5px; 
+                                     width:152px; 
+                                     height:18px" class="math gen" /> and <img src="images/img-0192.png" alt="$\omega _{x,\mathrm{max}}=(N_ x-1)/{2\Delta x}$" style="vertical-align:-5px; 
+                                     width:186px; 
+                                     height:19px" class="math gen" />, with similar sampling along the <img src="images/img-0193.png" alt="$\omega _ y$" style="vertical-align:-5px; 
+                                     width:18px; 
+                                     height:13px" class="math gen" />-axis. </p><p>Taking the simpler example of a one-dimensional Fourier transform for clarity, as might be calculated by the instructions </p><pre>
+step(x) = tophat(x,0.2)
+fft  [  0: 1:0.01] f() of step()
+</pre><p> the <tt class="tt">fft</tt> and <tt class="tt">ifft</tt> commands<a name="a0000000511" id="a0000000511"></a><a name="a0000000512" id="a0000000512"></a> compute, respectively, discrete sets of samples <img src="images/img-0194.png" alt="$F_ m$" style="vertical-align:-2px; 
+                                     width:24px; 
+                                     height:14px" class="math gen" /> and <img src="images/img-0195.png" alt="$I_ n$" style="vertical-align:-2px; 
+                                     width:16px; 
+                                     height:14px" class="math gen" /> of the functions <img src="images/img-0196.png" alt="$F(\omega _ x)$" style="vertical-align:-4px; 
+                                     width:47px; 
+                                     height:18px" class="math gen" /> and <img src="images/img-0197.png" alt="$I(x)$" style="vertical-align:-4px; 
+                                     width:32px; 
+                                     height:18px" class="math gen" />, which are given by </p><table id="a0000000513" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td><img src="images/img-0198.png" alt="\[  F_ j = \sum _{m=0}^{N-1} I_ m e^{-2\pi ijm/N} \, \delta x,\; \textrm{for}\;  -\frac{N}{2}\leq j &lt;\frac{N}{2} ,  \]" style="width:363px; 
+                            height:54px" class="math gen" /></td>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td class="eqnnum" style="width:20%">&nbsp;</td>
+</tr>
+</table><p> and </p><table id="a0000000514" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td><img src="images/img-0199.png" alt="\[  I_ j = \sum _{m=0}^{N-1} F_ m e^{ 2\pi ijm/N} \, \delta \omega _ x,\; \textrm{for}\;  -\frac{N}{2}\leq j &lt;\frac{N}{2} ,  \]" style="width:362px; 
+                            height:54px" class="math gen" /></td>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td class="eqnnum" style="width:20%">&nbsp;</td>
+</tr>
+</table><p> where: </p><table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="text-align:right"><p> <img src="images/img-0197.png" alt="$I(x)$" style="vertical-align:-4px; 
+                                     width:32px; 
+                                     height:18px" class="math gen" /> </p></td>
+
+    
+    <td style="text-align:center"><p> = </p></td>
+
+    
+    <td style="text-align:left"><p> Function being Fourier transformed. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right"><p><img src="images/img-0196.png" alt="$F(\omega _ x)$" style="vertical-align:-4px; 
+                                     width:47px; 
+                                     height:18px" class="math gen" /> </p></td>
+
+    
+    <td style="text-align:center"><p> = </p></td>
+
+    
+    <td style="text-align:left"><p> Fourier transform of <img src="images/img-0200.png" alt="$I()$" style="vertical-align:-4px; 
+                                     width:22px; 
+                                     height:18px" class="math gen" />. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right"><p><img src="images/img-0151.png" alt="$N$" style="vertical-align:0px; 
+                                     width:16px; 
+                                     height:12px" class="math gen" /> </p></td>
+
+    
+    <td style="text-align:center"><p> = </p></td>
+
+    
+    <td style="text-align:left"><p> The number of values sampled along the abscissa axis. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right"><p><img src="images/img-0201.png" alt="$\delta x$" style="vertical-align:0px; 
+                                     width:18px; 
+                                     height:12px" class="math gen" /> </p></td>
+
+    
+    <td style="text-align:center"><p> = </p></td>
+
+    
+    <td style="text-align:left"><p> Spacing of values sampled along the abscissa axis. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right"><p><img src="images/img-0202.png" alt="$\delta \omega _ x$" style="vertical-align:-2px; 
+                                     width:27px; 
+                                     height:14px" class="math gen" /> </p></td>
+
+    
+    <td style="text-align:center"><p> = </p></td>
+
+    
+    <td style="text-align:left"><p> Spacing of abscissa values sampled along the <img src="images/img-0190.png" alt="$\omega _ x$" style="vertical-align:-2px; 
+                                     width:19px; 
+                                     height:10px" class="math gen" /> axis. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:right"><p><img src="images/img-0203.png" alt="$i$" style="vertical-align:0px; 
+                                     width:6px; 
+                                     height:12px" class="math gen" /> </p></td>
+
+    
+    <td style="text-align:center"><p> = </p></td>
+
+    
+    <td style="text-align:left"><p> <img src="images/img-0007.png" alt="$\sqrt {-1}$" style="vertical-align:-3px; 
+                                     width:38px; 
+                                     height:19px" class="math gen" />. </p></td>
+
+</tr>
+</table><p>It may be shown in the limit that <img src="images/img-0201.png" alt="$\delta x$" style="vertical-align:0px; 
+                                     width:18px; 
+                                     height:12px" class="math gen" /> becomes small – i.e. when the number of samples taken becomes very large – that these sums approximate the integrals </p><table id="a0000000515" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td><img src="images/img-0204.png" alt="\begin{equation}  F(\omega _ x) = \int I(x) e^{-2\pi ix\omega _ x} \, \mathrm{d}x , \end{equation}" style="width:409px; 
+                            height:41px" class="math gen" /></td>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td class="eqnnum" style="width:20%"><span>(<span>5.1</span>)</span></td>
+</tr>
+</table><p> and </p><table id="ex:fourier" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td><img src="images/img-0205.png" alt="\begin{equation}  I(x) = \int F(\omega _ x) e^{ 2\pi ix\omega _ x} \, \mathrm{d}\omega _ x . \end{equation}" style="width:408px; 
+                            height:41px" class="math gen" /></td>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td class="eqnnum" style="width:20%"><span>(<span>5.2</span>)</span></td>
+</tr>
+</table><p>Fourier transforms may also be taken of data stored in datafiles using syntax of the form </p><pre>
+fft [-10:10:0.1] f() of 'datafile.dat'
+</pre><p>In such cases, the data read from the datafile for an <img src="images/img-0151.png" alt="$N$" style="vertical-align:0px; 
+                                     width:16px; 
+                                     height:12px" class="math gen" />-dimensional FFT must be arranged in <img src="images/img-0206.png" alt="$N+1$" style="vertical-align:-1px; 
+                                     width:46px; 
+                                     height:13px" class="math gen" /> columns<a href="#a0000000516" class="footnote"><sup class="footnotemark">1</sup></a>, with the first <img src="images/img-0151.png" alt="$N$" style="vertical-align:0px; 
+                                     width:16px; 
+                                     height:12px" class="math gen" /> containing the abscissa values for each of the <img src="images/img-0151.png" alt="$N$" style="vertical-align:0px; 
+                                     width:16px; 
+                                     height:12px" class="math gen" /> dimensions, and the final column containing the data to be Fourier transformed. The abscissa values must strictly match those in the raster specified in the <tt class="tt">fft</tt> or <tt class="tt">ifft</tt> command, and must be arranged strictly in row-major order. </p><p> <span class="upshape"><span class="mdseries"><span class="rm">The Fourier transform of a top-hat function.</span></span></span></p><div>
+
+<table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> It is straightforward to show that the Fourier transform of a top-hat function of unit width is the function <img src="images/img-0207.png" alt="${\rm sinc}(x^\prime =\pi x)=\sin (x^\prime )/x^\prime $" style="vertical-align:-5px; 
+                                     width:204px; 
+                                     height:20px" class="math gen" />. If </p><table id="a0000000517" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td><img src="images/img-0208.png" alt="\[  f(x)=\left\{ \begin{array}{l}1\; |x|\leq \nicefrac {1}{2}\\ 0\; |x|&gt;\nicefrac {1}{2}\end{array}\right. ,  \]" style="width:177px; 
+                            height:44px" class="math gen" /></td>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td class="eqnnum" style="width:20%">&nbsp;</td>
+</tr>
+</table><p> the Fourier transform <img src="images/img-0209.png" alt="$F(\omega )$" style="vertical-align:-4px; 
+                                     width:39px; 
+                                     height:18px" class="math gen" /> of <img src="images/img-0078.png" alt="$f(x)$" style="vertical-align:-4px; 
+                                     width:32px; 
+                                     height:18px" class="math gen" /> is </p><table id="a0000000518" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
+<tr id="a0000000519">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0210.png" alt="$\displaystyle  F(\omega )  $" style="vertical-align:-4px; width:39px;                     height:18px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0211.png" alt="$\displaystyle  \int _0^\infty f(x) \exp \left(-2\pi ix\omega \right) \, \mathrm{d}x = \int _{-\nicefrac {1}{2}}^{\nicefrac {1}{2}} \exp \left(-2\pi ix\omega \right) \, \mathrm{d}x  $" style="vertical-align:-19px; width:408px;                     height:50px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr><tr id="a0000000520">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0212.png" alt="$\displaystyle  $" style="vertical-align:0px; width:1px;                     height:1px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0213.png" alt="$\displaystyle  \frac{1}{2\pi \omega }\left[ \exp \left(\pi i\omega \right) - \exp \left(-\pi i\omega \right) \right] = \frac{\sin (\pi \omega )}{\pi \omega } = {\rm sinc}(\pi \omega ).  $" style="vertical-align:-13px; width:415px;                     height:39px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr>
+</table></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>In this example, we demonstrate this numerically by taking the Fourier transform of such a step function, and comparing the result against the function <tt class="tt">sinc(x)</tt> which is pre-defined within PyXPlot: </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">set numerics complex</tt><br /><tt class="tt">step(x) = tophat(x,0.5)</tt><br /><tt class="tt">fft [-1:1:0.01] f() of step()</tt><br /><tt class="tt">plot [-10:10] Re(f(x)), sinc(pi*x)</tt> </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>Note that the function <tt class="tt">Re(x)</tt> is needed in the <tt class="tt">plot</tt> statement here, since although the Fourier transform of a symmetric function is in theory real, in practice any numerical Fourier transform will yield a small imaginary component at the level of the accuracy of the numerical method used. Although the calculated numerical Fourier transform is defined throughout the range <img src="images/img-0214.png" alt="$-50\leq x&lt;50$" style="vertical-align:-3px; 
+                                     width:108px; 
+                                     height:16px" class="math gen" />, discretised with steps of size <img src="images/img-0215.png" alt="$\Updelta x=0.5$" style="vertical-align:0px; 
+                                     width:70px; 
+                                     height:13px" class="math gen" />, we only plot the central region in order to show clearly the stepping of the function: </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><center> <img src="images/img-0217.png" alt="\includegraphics{examples/eps/ex_fft}" style="width:516px; height:318px" />
+ </center></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>In the following steps, we take the square of the function <img src="images/img-0223.png" alt="${\rm sinc}(\pi x)$" style="vertical-align:-4px; 
+                                     width:64px; 
+                                     height:18px" class="math gen" /> just calculated, and then plot the numerical inverse Fourier transform of the result: </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">g(x) = f(x)**2</tt><br /><tt class="tt">ifft [-50:49.5:0.5] h(x) of g(x)</tt><br /><tt class="tt">plot [-2:2] Re(h(x))</tt> </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><center> <img src="images/img-0225.png" alt="\includegraphics{examples/eps/ex_fft2}" style="width:520px; height:323px" />
+ </center></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><p>As can be seen, the result is a triangle function. This is the result which would be expected from the convolution theorem, which states that when the Fourier transforms of two functions are multiplied together and then inverse transformed, the result is the convolution of the two original functions. The convolution of a top-hat function with itself is, indeed, a triangle function.  </p></td>
+
+</tr>
+</table>
+</div></div>
+
+<div class="contents section-contents"><!--<strong>Subsections</strong>-->
+<ul>
+<li><a href="sect0029.html">5.8.1 Window Functions</a>
+   
+</li>
+
+
+
+</ul>
+</div>
+
+<div id="footnotes">
+<p><b>Footnotes</b></p>
+<ol>
+<li id="a0000000516">The <tt class="tt">using</tt>, <tt class="tt">every</tt>, <tt class="tt">index</tt> and <tt class="tt">select</tt> modifiers can be used to arrange it into this form.</li>
+</ol>
+</div>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="ex-interpolation.html" title="Datafile Interpolation"><img alt="Previous: Datafile Interpolation" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="ch-numerics.html" title="Working with Data"><img alt="Up: Working with Data" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0029.html" title="Window Functions"><img alt="Next: Window Functions" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Spliced Functions</title>
+
+<link href="sec-num_errs.html" title="Handling Numerical Errors" rel="next" />
+<link href="sec-functions.html" title="Functions" rel="prev" />
+<link href="sec-functions.html" title="Functions" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sec-functions.html" title="Functions"><img alt="Previous: Functions" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-functions.html" title="Functions"><img alt="Up: Functions" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-num_errs.html" title="Handling Numerical Errors"><img alt="Next: Handling Numerical Errors" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0019.html">Performing Calculations</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sec-functions.html">Functions</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Spliced Functions</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="ex:funcsplice">4.3.1 Spliced Functions</h2>
+<p> <a name="a0000000390" id="a0000000390"></a> <a name="a0000000391" id="a0000000391"></a> </p><p>The definitions of functions can be declared to be valid only within a certain domain of argument space, allowing for error checking when models are evaluated outside their domain of applicability. Furthermore, functions can be given multiple definitions which are specified to be valid in different parts of argument space. We term this <i class="it">function splicing</i>, since multiple algebraic definitions for a function are spliced together at the boundaries between their various domains. The following example would define a function which is only valid within the range <img src="images/img-0073.png" alt="$-\nicefrac {\pi }{2}&lt;x&lt;\nicefrac {\pi }{2}$" style="vertical-align:-5px; 
+                                     width:115px; 
+                                     height:18px" class="math gen" />:<a href="#a0000000392" class="footnote"><sup class="footnotemark">1</sup></a> </p><pre>
+truncated_cos(x)[-pi/2:pi/2] = cos(x)
+</pre><p>Attempts to evaluate this function outside of the range in which it is defined would return an error that the function is not defined at the requested argument value. Thus, if the above function were to be plotted, no line would be drawn outside of the range <img src="images/img-0073.png" alt="$-\nicefrac {\pi }{2}&lt;x&lt;\nicefrac {\pi }{2}$" style="vertical-align:-5px; 
+                                     width:115px; 
+                                     height:18px" class="math gen" />. A similar effect could also have been achieved using the <tt class="tt">select</tt> keyword (see Section <a href="sec-select_modifier.html">3.9.2</a>). Sometimes, however, the desired behaviour is rather that the function should be zero outside of some region of parameter space where it has a finite value. This can be achieved as in the following example: </p><pre>
+f(x) = 0
+f(x)[-pi/2:pi/2] = cos(x)
+</pre><p>Plotting this function would yield the following result: </p><center> 
+<img src="images/img-0075.png" alt="\includegraphics[width=8cm]{examples/eps/ex_intro_func_splice}" style="width:8cm" /> </center><p>To produce this function, we have made use of the fact that if there is an overlap in the domains of validity of multiple definitions of a function, then later declarations are guaranteed take precedence. The definition that the function equals zero is valid everywhere, but is overridden in the region <img src="images/img-0073.png" alt="$-\nicefrac {\pi }{2}&lt;x&lt;\nicefrac {\pi }{2}$" style="vertical-align:-5px; 
+                                     width:115px; 
+                                     height:18px" class="math gen" /> by the second function definition. </p><p>Where functions have been spliced together, the <tt class="tt">show functions</tt> command will show all of the definitions of the spliced function, together with the regions of parameter space in which they are used. This is indicated using the same syntax that is used for defining spliced functions, such that the output can be stored and pasted into a future PyXPlot session to redefine exactly the same spliced function. </p><p>When a function takes more than one argument, multiple ranges can be specified, one for each argument. Any of the limits can be left blank if there is no upper- or lower-limit upon the value of that particular argument. In the following example, the function <tt class="tt">f(a,b,c)</tt> would only be defined when all of <tt class="tt">a</tt>, <tt class="tt">b</tt> and <tt class="tt">c</tt> were in the range <img src="images/img-0077.png" alt="$-1 \to 1$" style="vertical-align:0px; 
+                                     width:58px; 
+                                     height:12px" class="math gen" />: </p><pre>
+f(a,b,c)[-1:1][-1:1][-1:1] = a+b+c
+</pre><p>Function splicing can be used to define functions which do not have analytic forms, or which are, by definition, discontinuous, such as top-hat functions or Heaviside functions. The following example would define <img src="images/img-0078.png" alt="$f(x)$" style="vertical-align:-4px; 
+                                     width:32px; 
+                                     height:18px" class="math gen" /> to be a Heaviside function: </p><pre>
+f(x) = 0
+f(x)[0:] = 1
+</pre><p> <span class="upshape"><span class="mdseries"><span class="rm">Modelling a physics problem using a spliced function.</span></span></span></p><div>
+
+<table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> <b class="bf">Question</b><br />A light bead is free to move from side to side between two walls which are placed at <img src="images/img-0079.png" alt="$x=-2l$" style="vertical-align:0px; 
+                                     width:62px; 
+                                     height:13px" class="math gen" /> and <img src="images/img-0080.png" alt="$x=2l$" style="vertical-align:0px; 
+                                     width:48px; 
+                                     height:13px" class="math gen" />. It is connected to each wall by a light elastic string of natural length <img src="images/img-0081.png" alt="$l$" style="vertical-align:0px; 
+                                     width:5px; 
+                                     height:13px" class="math gen" />, which applies a force <img src="images/img-0082.png" alt="$k\Updelta x$" style="vertical-align:0px; 
+                                     width:32px; 
+                                     height:13px" class="math gen" /> when extended by an amount <img src="images/img-0083.png" alt="$\Updelta x$" style="vertical-align:0px; 
+                                     width:23px; 
+                                     height:13px" class="math gen" />, but which applies no force when slack. What is the total horizontal force on the bead as a function of its horizontal position <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" />? </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><b class="bf">Answer</b><br />This system has three distinct regimes. In the region <img src="images/img-0084.png" alt="$-l&lt;x&lt;l$" style="vertical-align:0px; 
+                                     width:82px; 
+                                     height:13px" class="math gen" />, both strings are under tension. When <img src="images/img-0085.png" alt="$x&lt;-l$" style="vertical-align:0px; 
+                                     width:53px; 
+                                     height:13px" class="math gen" />, the left-hand string is slack, and only the right-hand string exerts a force. When <img src="images/img-0086.png" alt="$x&gt;l$" style="vertical-align:0px; 
+                                     width:39px; 
+                                     height:13px" class="math gen" />, the converse is true: only the left-hand string exerts a force. The case <img src="images/img-0087.png" alt="$|x|&gt;2l$" style="vertical-align:-5px; 
+                                     width:56px; 
+                                     height:18px" class="math gen" /> is not possible, as the bead would have to penetrate the hard walls. It is left as an exercise for the reader to use Hooke’s Law to derive the following expression, but in summary, the force on the bead can be defined in PyXPlot as: </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">F(x)[-2*l :-  l] = -k*(x+l)</tt><br /><tt class="tt">F(x)[-  l :   l] = -2*k*x</tt><br /><tt class="tt">F(x)[   l : 2*l] = -k*(x+l)</tt> </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>where it is necessary to first define a value for <tt class="tt">l</tt> and <tt class="tt">k</tt>. Plotting these functions yields the result: </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><center> 
+<img src="images/img-0089.png" alt="\includegraphics[width=\textwidth ]{examples/eps/ex_funcsplice2}" style="width:" /> </center></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><p>Attempting to plot this function with an <tt class="tt">x</tt>-axis which extends outside of the range of values of <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" /> for which <img src="images/img-0091.png" alt="$F(x)$" style="vertical-align:-4px; 
+                                     width:37px; 
+                                     height:18px" class="math gen" /> is defined, as above, will result in error messages being returned that the function could not be evaluated at all argument values. These can be suppressed by typing (see Section <a href="sec-num_errs.html">1.4</a>) <br /><tt class="tt">set numeric errors quiet</tt>  </p></td>
+
+</tr>
+</table>
+</div><p> <span class="upshape"><span class="mdseries"><span class="rm">Using a spliced function to calculate the Fibonacci numbers.</span></span></span></p><div>
+
+<table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> The Fibonacci numbers are defined to be the sequence of numbers in which each member is the sum of its two immediate predecessors, and the first three members of the sequence are <img src="images/img-0092.png" alt="${0,1,1}$" style="vertical-align:-4px; 
+                                     width:42px; 
+                                     height:16px" class="math gen" />. Thus, the sequence runs <img src="images/img-0093.png" alt="${0,1,1,2,3,5,8,13,21,34,55,...}$" style="vertical-align:-4px; 
+                                     width:239px; 
+                                     height:17px" class="math gen" />. In this example, we use function splicing to calculate the Fibonacci sequence in an iterative and highly inefficient way, hard-coding the first three members of the sequence and then using the knowledge that all of the subsequent members are the sums of their two immediate predecessors: </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">f(x) = 0.0</tt><br /><tt class="tt">f(x)[1:] = 1.0</tt><br /><tt class="tt">f(x)[3:] = f(x-1) + f(x-2)</tt> </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>This method is highly inefficient because each evaluation spawns two further evaluations of the function, and so the number of operations required to evaluate <tt class="tt">f(x)</tt> scales as <img src="images/img-0094.png" alt="$2^ x$" style="vertical-align:0px; 
+                                     width:16px; 
+                                     height:13px" class="math gen" />. It is inadvisable to evaluate it for <img src="images/img-0095.png" alt="$x\gtrsim 25$" style="vertical-align:-4px; 
+                                     width:52px; 
+                                     height:18px" class="math gen" /> unless you’re prepared for a long wait. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>A much more efficient method of calculating the Fibonacci numbers is to use Binet’s formula, </p><table id="a0000000393" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td><img src="images/img-0096.png" alt="\[  f(x) = {\psi ^ x - (1-\psi )^ x}{\sqrt {5}},  \]" style="width:197px; 
+                            height:21px" class="math gen" /></td>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td class="eqnnum" style="width:20%">&nbsp;</td>
+</tr>
+</table><p> where <img src="images/img-0097.png" alt="$\psi =1+\sqrt {5}/2$" style="vertical-align:-5px; 
+                                     width:110px; 
+                                     height:21px" class="math gen" /> is the golden ratio, which provides an analytic expression for the sequence. In the following script, we compare the values returned by these two implementations. We enable complex arithmetic as Binet’s formula returns complex numbers for non-integer values of <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" />. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">f(x)     = 0.0</tt><br /><tt class="tt">f(x)[1:] = 1.0</tt><br /><tt class="tt">f(x)[3:] = f(x-1) + f(x-2)</tt><br /></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt"># Binet’s Formula for the Fibonacci numbers</tt><br /><tt class="tt">set numerics complex</tt><br /><tt class="tt">binet(x) = Re((GoldenRatio**x - (1-GoldenRatio)**x) / sqrt(5))</tt><br /></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">set samples 100</tt><br /><tt class="tt">set xrange [0:9.5]</tt><br /><tt class="tt">set yrange [0:35]</tt><br /><tt class="tt">set xlabel "$x$"</tt><br /><tt class="tt">set ylabel "$y$"</tt><br /><tt class="tt">set key bottom right</tt><br /><tt class="tt">plot f(x) , binet(x)</tt> </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><center> 
+<img src="images/img-0099.png" alt="\includegraphics[width=\textwidth ]{examples/eps/ex_funcsplice}" style="width:" /> </center></td>
+
+</tr>
+</table>
+</div></div>
+
+
+
+<div id="footnotes">
+<p><b>Footnotes</b></p>
+<ol>
+<li id="a0000000392">The syntax <tt class="tt">[-pi/2:pi/2]</tt> can also be written <tt class="tt">[-pi/2 to pi/2]</tt>.</li>
+</ol>
+</div>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sec-functions.html" title="Functions"><img alt="Previous: Functions" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-functions.html" title="Functions"><img alt="Up: Functions" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-num_errs.html" title="Handling Numerical Errors"><img alt="Next: Handling Numerical Errors" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>
