@@ -1,0 +1,21 @@
+This file is to be used to generate tex for the HTML manual that goes on the PyXPlot website.  To use it:
+
+(a) make sure that you have plastex 0.9.1 installed and that it works.  Plastex 0.7 is not new enough.
+
+(b) make a copy of the manual tex files, examples and figures directories.
+
+(c) Insert this file in with the other tex files.
+
+(d) Modify all the tex files that are using \begin{enumerate}[(i)] by removing the [(i)]
+
+(e) Run plastex pyxplot-plastex.tex
+
+Then either
+
+(f) ...
+
+(g) PROFIT!
+
+Or, more likely
+
+(f) Start working out where it all went wrong...

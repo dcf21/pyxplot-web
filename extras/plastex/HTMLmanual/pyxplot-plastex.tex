@@ -1,0 +1,148 @@
+% PYXPLOT.TEX
+%
+% The documentation in this file is part of PyXPlot
+% <http://www.pyxplot.org.uk>
+%
+% Copyright (C) 2006-2010 Dominic Ford <coders@pyxplot.org.uk>
+%               2009-2010 Ross Church
+%
+% $Id: pyxplot.tex 21 2007-02-26 15:14:43Z rpc25 $
+%
+% PyXPlot is free software; you can redistribute it and/or modify it under the
+% terms of the GNU General Public License as published by the Free Software
+% Foundation; either version 2 of the License, or (at your option) any later
+% version.
+%
+% You should have received a copy of the GNU General Public License along with
+% PyXPlot; if not, write to the Free Software Foundation, Inc., 51 Franklin
+% Street, Fifth Floor, Boston, MA  02110-1301, USA
+
+% ----------------------------------------------------------------------------
+
+% LaTeX source for the PyXPlot Users' Guide
+
+\documentclass[a4paper,onecolumn,11pt]{book}
+\usepackage[dvips]{graphicx}
+%\usepackage{amssymb,amsmath,url,lscape,longtable,fancyvrb,makeidx,wasysym}
+\usepackage{afterpage,amssymb,amsmath,bbding,color,longtable,multirow,nicefrac,fancyvrb,makeidx,upgreek,wasysym}
+\makeindex
+\def\version{0.8.0}
+\def\reldate{May 2010}
+\include{definitions}
+
+%\newcommand\columncolor[1]{}
+
+\newcommand{\url}[1]{#1}
+
+% Make box and example float environments
+%\definecolor{LightGrey}{gray}{0.9}
+%\usepackage[bf]{caption}
+%\usepackage{float}
+%\floatstyle{plain}
+
+% Make box float environment
+%\newfloat{boxout2}{thp}{lob}
+%\floatname{boxout2}{Box}
+
+\newcommand{\boxout}[3]{
+%\begin{boxout2}
+\begin{tabular}{|>{\columncolor{LightGrey}}l|}
+%\begin{tabular}{|l|}
+\hline
+\begin{minipage}{\textwidth}
+\vspace{2.5mm}
+#3
+\vspace{2.5mm}
+\end{minipage} \\
+\hline
+\end{tabular}
+%\caption{#1}
+\label{#2}
+%\end{boxout2}
+}
+
+% Make example float environment
+%\newfloat{exampletag}{thp}{loe}
+%\floatname{exampletag}{Example}
+
+\newcommand{\example}[3]{
+%\afterpage{
+%
+%\begin{exampletag}[H]
+%\caption[#2]
+{\upshape\mdseries\rm #2.}\label{#1}\end
+%{exampletag}
+%\vspace{-5mm}
+\begin{longtable}{|>{\columncolor{LightGrey}}p{\textwidth}|}
+\hline \endfoot
+\hline \endhead
+#3
+\end{longtable}%\newpage
+%}
+}
+
+\newcommand{\nlnp} {\\\hspace{8mm}}
+\newcommand{\nlscf}{\vspace{3mm}\\\noindent}
+\newcommand{\nlfcf}{\vspace{3mm}\\\hspace{8mm}}
+
+
+\begin{document}
+
+\begin{titlepage}
+\normalsize
+\vspace*{0.5cm}
+\begin{center}
+{\Huge \bf PyXPlot Users' Guide}\\
+\end{center}
+\vspace*{0.5cm}
+\begin{center}
+{\LARGE \bf A Command-line Data Processing, \\ \vspace{2mm} Graph Plotting and \\ \vspace{2mm} Vector Graphics Suite. \\}
+\end{center}
+\vspace*{0.5cm}
+\begin{center}
+{\Large Version \version \\}
+\end{center}
+\vspace*{0.0cm}
+\begin{center}
+\includegraphics[width=10cm]{examples/eps/ex_cover}
+\end{center}
+\vspace*{0.0cm}
+\begin{center}
+{\Large Dominic Ford, Ross Church \\ \vspace{2mm} Email: \noindent {\tt coders@pyxplot.org.uk} \\ }
+\end{center}
+\vspace*{0.5cm}
+\begin{center}
+{\Large \reldate \\}
+\end{center}
+\end{titlepage}
+
+\part{Introduction to PyXPlot}
+\include{introduction}
+\include{installation}
+\include{first_steps}
+\include{calculations}
+\include{data}
+\include{programming}
+\part{Plotting and Vector Graphics}
+\include{plotting}
+\include{terminals}
+\include{vector_graphics}
+\part{Reference Manual}
+\include{reference}
+\include{functions}
+\include{constants}
+\include{units}
+\include{papersizes}
+\include{colours}
+\include{linestyles}
+\include{configuration}
+\part{Appendices}
+\appendix
+\include{other_apps}
+\include{gnuplot_diffs}
+\include{fit_maths}
+\include{changelog}
+
+\printindex
+
+\end{document}
