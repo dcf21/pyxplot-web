@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Multi-plotting</title>
+
+<link href="sect0036.html" title="Deleting, Moving and Changing Plots" rel="next" />
+<link href="set_colours.html" title="Gridlines" rel="prev" />
+<link href="sect0033.html" title="Labelling Plots and Producing Galleries" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="set_colours.html" title="Gridlines"><img alt="Previous: Gridlines" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0033.html" title="Labelling Plots and Producing Galleries"><img alt="Up: Labelling Plots and Producing Galleries" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0036.html" title="Deleting, Moving and Changing Plots"><img alt="Next: Deleting, Moving and Changing Plots" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0158.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0033.html">Labelling Plots and Producing Galleries</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Multi-plotting</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h1 id="multiplot">5.3 Multi-plotting</h1>
+<p>  <span id="a0000000495"></span> </p><p>Gnuplot has a plotting mode called <i class="it">multiplot</i> which allows many graphs to be plotted together and displayed side-by-side. The basic syntax of this mode is reproduced in PyXPlot, but it is hugely extended. </p><p>The mode is entered by the command <tt class="tt">set multiplot</tt><span id="a0000000496"></span>. This can be compared to taking a blank sheet of paper on which to place plots. Plots are then placed on that sheet of paper, as usual, with the <tt class="tt">plot</tt> command. The position of each plot is set using the <tt class="tt">set origin</tt> command<span id="a0000000497"></span>, which takes a comma-separated <img src="images/img-0079.png" alt="$(x,y)$" style="position:relative; bottom:-4px; width:40px; height:18px" class="math" /> co-ordinate pair, measured in centimetres. The following, for example, would plot a graph of <img src="images/img-0006.png" alt="$\sin (x)$" style="position:relative; bottom:-4px; width:46px; height:18px" class="math" /> to the left of a plot of <img src="images/img-0080.png" alt="$\cos (x)$" style="position:relative; bottom:-4px; width:48px; height:18px" class="math" />: </p><pre> 
+set multiplot
+plot sin(x)
+set origin 10,0
+plot cos(x)
+</pre><p>The multiplot page may subsequently be cleared with the <tt class="tt">clear</tt> command<span id="a0000000498"></span>, and multiplot mode may be left using the <tt class="tt">set nomultiplot</tt> command<span id="a0000000499"></span>. </p></div>
+
+<div class="contents"><!--<strong>Subsections</strong>-->
+<ul>
+<li><a href="sect0036.html">5.3.1 Deleting, Moving and Changing Plots</a>
+   
+</li><li><a href="sect0037.html">5.3.2 Listing Items on a Multiplot</a>
+   
+</li><li><a href="linked_axes.html">5.3.3 Linked Axes</a>
+   
+</li><li><a href="arrows.html">5.3.4 Text Labels, Arrows and Images</a>
+   
+</li><li><a href="set_display.html">5.3.5 Speed Issues</a>
+   
+</li><li><a href="sect0038.html">5.3.6 The <tt class="tt">refresh</tt> command<span id="a0000000535"></span></a>
+   
+</li>
+
+
+
+</ul>
+</div>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="set_colours.html" title="Gridlines"><img alt="Previous: Gridlines" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0033.html" title="Labelling Plots and Producing Galleries"><img alt="Up: Labelling Plots and Producing Galleries" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0036.html" title="Deleting, Moving and Changing Plots"><img alt="Next: Deleting, Moving and Changing Plots" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0158.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

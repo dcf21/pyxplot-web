@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: xrange</title>
+
+<link href="sect0133.html" title="xticdir" rel="next" />
+<link href="sect0131.html" title="xlabel" rel="prev" />
+<link href="sect0074.html" title="set" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0131.html" title="xlabel"><img alt="Previous: xlabel" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0074.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0133.html" title="xticdir"><img alt="Next: xticdir" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0158.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0046.html">Command Reference</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0074.html">set</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">xrange</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="a0000000143">8.27.58 xrange</h2>
+<p><span id="a0000000786"></span> </p><pre>
+set x[&lt;axisnumber&gt;]range '&lt;text&gt;'
+</pre><p>The <tt class="tt">xrange</tt> setting controls the range of values along the <img src="images/img-0007.png" alt="$x$" style="position:relative; bottom:0px; width:10px; height:8px" class="math" />-axes of plots. For function plots, this is also the domain across which the function will be evaluated. For example: </p><pre>
+set xrange [0:10]
+</pre><p>sets the first <img src="images/img-0007.png" alt="$x$" style="position:relative; bottom:0px; width:10px; height:8px" class="math" /> axis to be between 0 and 10. Higher numbered axes may be referred to be inserting their number after the <img src="images/img-0007.png" alt="$x$" style="position:relative; bottom:0px; width:10px; height:8px" class="math" />; <img src="images/img-0008.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-axes similarly be replacing the <img src="images/img-0007.png" alt="$x$" style="position:relative; bottom:0px; width:10px; height:8px" class="math" /> with a <img src="images/img-0008.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />. Hence: </p><pre>
+set y23range [-5:5]
+</pre><p>sets the range of the 23rd <img src="images/img-0008.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-axis to be between -5 and 5. To request a range to be automatically scaled an asterix can be used. The following command: </p><pre>
+set xrange [:10][*:*]
+</pre><p>would set the <img src="images/img-0007.png" alt="$x$" style="position:relative; bottom:0px; width:10px; height:8px" class="math" />-axis to have an upper limit of 10, but does not affect the lower limit; its range remains at its previous setting. The first y-axis is automatically scaled on both its upper and lower limits. </p></div>
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="sect0131.html" title="xlabel"><img alt="Previous: xlabel" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0074.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0133.html" title="xticdir"><img alt="Next: xticdir" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0158.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>
