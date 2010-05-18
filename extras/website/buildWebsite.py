@@ -384,6 +384,8 @@ def renderExamplesNode(node, tree, opt, var):
              'type'    : 'parsed'}
    object['target'] = os.path.join(tree['root'], node['dir'], 'index.html')
    ftmp = os.tmpfile()
+   # Set the "examplename" variable so that we get the page title correct
+   ftmp.write("<<SET examplename: %s>>\n"%node['name'])
    fin = open(os.path.join(options['includedir'],tree['nodepage']), 'r')
    line = fin.readline()
    while (line.strip() != '<<EXAMPLES>>'):
