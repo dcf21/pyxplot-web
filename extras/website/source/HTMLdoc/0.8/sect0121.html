@@ -69,9 +69,9 @@ set arrow &lt;arrow number&gt;
       [ with {&lt;option&gt;} ]
 </pre><p>where <tt class="tt">&lt;system&gt;</tt> may take any of the values <br /><tt class="tt">( first | second | screen | graph | axis&lt;number&gt; )</tt>  </p><p>The <tt class="tt">set arrow</tt> command<a name="a0000001044" id="a0000001044"></a> is used to add arrows to graphs. The example </p><pre>
 set arrow 1 from 0,0 to 1,1
-</pre><p>would draw an arrow between the points <img src="images/img-0521.png" alt="$(0,0)$" style="vertical-align:-4px; 
+</pre><p>would draw an arrow between the points <img src="images/img-0522.png" alt="$(0,0)$" style="vertical-align:-4px; 
                                      width:38px; 
-                                     height:18px" class="math gen" /> and <img src="images/img-0522.png" alt="$(1,1)$" style="vertical-align:-4px; 
+                                     height:18px" class="math gen" /> and <img src="images/img-0523.png" alt="$(1,1)$" style="vertical-align:-4px; 
                                      width:38px; 
                                      height:18px" class="math gen" />, as measured along the <tt class="tt">x</tt> and <tt class="tt">y</tt>-axes. The tag <tt class="tt">1</tt> immediately following the keyword <tt class="tt">arrow</tt> is an identification number and allows arrows to be subsequently removed using the <tt class="tt">unset arrow</tt> command. By default, the coordinates are specified relative to the first horizontal and vertical axes, but they can alternatively be specified any one of several of coordinate systems. The coordinate system to be used is specified as in the example: </p><pre>
 set arrow 1 from first 0, second 0 to axis3 1, axis4 1

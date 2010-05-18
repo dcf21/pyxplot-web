@@ -6,8 +6,8 @@
 <title>: The box and circle Commands</title>
 
 <link href="ex-lens.html" title="The arc Command" rel="next" />
-<link href="sect0008.html" title="The eps Command" rel="prev" />
-<link href="sect0005.html" title="Adding Other Vector Graphics Objects" rel="up" />
+<link href="sect0069.html" title="The eps Command" rel="prev" />
+<link href="sect0066.html" title="Adding Other Vector Graphics Objects" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0008.html" title="The eps Command"><img alt="Previous: The eps Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0069.html" title="The eps Command"><img alt="Previous: The eps Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0005.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0066.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="ex-lens.html" title="The arc Command"><img alt="Next: The arc Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0010.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,12 +39,17 @@
 
 </span><span>
 <span>
+<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
 <a href="ch-vector_graphics.html">Producing Vector Graphics</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="sect0005.html">Adding Other Vector Graphics Objects</a> <b>:</b>
+<a href="sect0066.html">Adding Other Vector Graphics Objects</a> <b>:</b>
 </span>
 
 </span><span>
@@ -56,11 +61,11 @@
 <hr />
 </div>
 
-<div><h2 id="ex:mandelbrot">1.4.5 The <tt class="tt">box</tt> and <tt class="tt">circle</tt> Commands</h2>
-<p>Rectangular boxes and circles may be placed on multiplot canvases using the <tt class="tt">box</tt> and <tt class="tt">circle</tt> commands<a name="a0000000069" id="a0000000069"></a><a name="a0000000070" id="a0000000070"></a>, as in: </p><pre>
+<div><h2 id="ex:mandelbrot">3.4.5 The <tt class="tt">box</tt> and <tt class="tt">circle</tt> Commands</h2>
+<p>Rectangular boxes and circles may be placed on multiplot canvases using the <tt class="tt">box</tt> and <tt class="tt">circle</tt> commands<a name="a0000000892" id="a0000000892"></a><a name="a0000000893" id="a0000000893"></a>, as in: </p><pre>
 box from 0*unit(mm),0*unit(mm) to 25*unit(mm),70*unit(mm)
 circle at 0*unit(mm),0*unit(mm) radius 70*unit(mm)
-</pre><p>In the former case, two corners of the rectangle are specified, meanwhile in the latter case the centre of the circle and its radius are specified. The <tt class="tt">box</tt> command<a name="a0000000071" id="a0000000071"></a> may also be invoked by the synonym <tt class="tt">rectangle</tt><a name="a0000000072" id="a0000000072"></a>. Boxes may be rotated using an optional <tt class="tt">rotate</tt> modifier, which may be followed by a counter-clockwise rotational angle which may either have dimensions of angle, or is assumed to be in degrees if dimensionless. The rotation is performed about the centre of the rectangle: </p><pre>
+</pre><p>In the former case, two corners of the rectangle are specified, meanwhile in the latter case the centre of the circle and its radius are specified. The <tt class="tt">box</tt> command<a name="a0000000894" id="a0000000894"></a> may also be invoked by the synonym <tt class="tt">rectangle</tt><a name="a0000000895" id="a0000000895"></a>. Boxes may be rotated using an optional <tt class="tt">rotate</tt> modifier, which may be followed by a counter-clockwise rotational angle which may either have dimensions of angle, or is assumed to be in degrees if dimensionless. The rotation is performed about the centre of the rectangle: </p><pre>
 box from 0,0 to 10,3 rotate 45
 </pre><p>The positions and dimensions of boxes may also be specified by giving the position of one of the corners of the box, together with its width and height. The specified corner is assumed to be the bottom-left corner if both the specified width and height are positive; other corners may be specified if the supplied width and/or height are negative. If such boxes are rotated, the rotation is about the specified corner: </p><pre>
 box at 0,0 width 10 height 3 rotate 45
@@ -84,14 +89,14 @@ circle at 0,0 radius 5 with lw 10 colour red fillcolour yellow
 </tr><tr>
 
     
-    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt"># Make no-entry sign</tt><br /><tt class="tt">circle at 0,0 radius w with col null fillcol red</tt><br /><tt class="tt">box from -(0.8*w),-(0.2*w) to (0.8*w),(0.2*w) <img src="images/img-0018.png" alt="$\backslash $" style="vertical-align:-5px; 
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt"># Make no-entry sign</tt><br /><tt class="tt">circle at 0,0 radius w with col null fillcol red</tt><br /><tt class="tt">box from -(0.8*w),-(0.2*w) to (0.8*w),(0.2*w) <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
                                      width:7px; 
                                      height:18px" class="math gen" /></tt><br /><tt class="tt">with col null fillcol white</tt><br /></p></td>
 
 </tr><tr>
 
     
-    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt"># Put a warning beneath the sign</tt><br /><tt class="tt">set fontsize 3</tt><br /><tt class="tt">set texthalign centre ; set textvalign centre</tt><br /><tt class="tt">text "<img src="images/img-0018.png" alt="$\backslash $" style="vertical-align:-5px; 
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt"># Put a warning beneath the sign</tt><br /><tt class="tt">set fontsize 3</tt><br /><tt class="tt">set texthalign centre ; set textvalign centre</tt><br /><tt class="tt">text "<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
                                      width:7px; 
                                      height:18px" class="math gen" />bf Keep Out! Code Monkey at work!"</tt><br /></p></td>
 
@@ -114,7 +119,7 @@ circle at 0,0 radius 5 with lw 10 colour red fillcolour yellow
 
     
     <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><p><center>
-<img src="images/img-0030.png" alt="\includegraphics[width=5cm]{examples/eps/ex_noentry}" style="width:5cm" /></center>  </p></td>
+<img src="images/img-0462.png" alt="\includegraphics[width=5cm]{examples/eps/ex_noentry}" style="width:5cm" /></center>  </p></td>
 
 </tr>
 </table>
@@ -129,39 +134,39 @@ circle at 0,0 radius 5 with lw 10 colour red fillcolour yellow
 </tr><tr>
 
     
-    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>A point <img src="images/img-0032.png" alt="$c$" style="vertical-align:0px; 
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>A point <img src="images/img-0040.png" alt="$c$" style="vertical-align:0px; 
                                      width:8px; 
-                                     height:8px" class="math gen" /> in the complex plane is defined to lie within the Mandelbrot set if the complex sequence of numbers </p><table id="a0000000073" class="equation" width="100%" cellspacing="0" cellpadding="7">
+                                     height:8px" class="math gen" /> in the complex plane is defined to lie within the Mandelbrot set if the complex sequence of numbers </p><table id="a0000000896" class="equation" width="100%" cellspacing="0" cellpadding="7">
 <tr>
     
     <td style="width:40%">&nbsp;</td>
-    <td><img src="images/img-0033.png" alt="\[  z_{n+1} = z_ n^2 + c,  \]" style="width:113px; 
+    <td><img src="images/img-0464.png" alt="\[  z_{n+1} = z_ n^2 + c,  \]" style="width:113px; 
                             height:21px" class="math gen" /></td>
     
     <td style="width:40%">&nbsp;</td>
     <td class="eqnnum" style="width:20%">&nbsp;</td>
 </tr>
-</table><p> subject to the starting condition <img src="images/img-0034.png" alt="$z_0=0$" style="vertical-align:-2px; 
+</table><p> subject to the starting condition <img src="images/img-0465.png" alt="$z_0=0$" style="vertical-align:-2px; 
                                      width:49px; 
-                                     height:14px" class="math gen" />, remains bounded. In practice, the sequence is certain to diverge if <img src="images/img-0035.png" alt="$|z_ n|$" style="vertical-align:-5px; 
+                                     height:14px" class="math gen" />, remains bounded. In practice, the sequence is certain to diverge if <img src="images/img-0466.png" alt="$|z_ n|$" style="vertical-align:-5px; 
                                      width:24px; 
-                                     height:18px" class="math gen" /> ever exceeds 2. It cannot generally be proven not to diverge at any particular point, but is considered to remain bounded in our algorithm if <img src="images/img-0035.png" alt="$|z_ n|$" style="vertical-align:-5px; 
+                                     height:18px" class="math gen" /> ever exceeds 2. It cannot generally be proven not to diverge at any particular point, but is considered to remain bounded in our algorithm if <img src="images/img-0466.png" alt="$|z_ n|$" style="vertical-align:-5px; 
                                      width:24px; 
-                                     height:18px" class="math gen" /> has not exceeded 2 within a certain number <tt class="tt">StepsMax</tt> of steps. To increase the aesthetic appeal of the fractal, pixels outside of the fractal are assigned different colours depending upon how many iterations were required before the sequence moved outside the circle <img src="images/img-0036.png" alt="$|z_ n|=2$" style="vertical-align:-5px; 
+                                     height:18px" class="math gen" /> has not exceeded 2 within a certain number <tt class="tt">StepsMax</tt> of steps. To increase the aesthetic appeal of the fractal, pixels outside of the fractal are assigned different colours depending upon how many iterations were required before the sequence moved outside the circle <img src="images/img-0467.png" alt="$|z_ n|=2$" style="vertical-align:-5px; 
                                      width:59px; 
                                      height:18px" class="math gen" />. </p></td>
 
 </tr><tr>
 
     
-    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>This script makes use of the <tt class="tt">rectangle</tt> command<a name="a0000000074" id="a0000000074"></a> to paint each pixel of the fractal one by one, which is highly inefficient, but demonstrates PyXPlot’s versatility. </p></td>
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>This script makes use of the <tt class="tt">rectangle</tt> command<a name="a0000000897" id="a0000000897"></a> to paint each pixel of the fractal one by one, which is highly inefficient, but demonstrates PyXPlot’s versatility. </p></td>
 
 </tr><tr>
 
     
-    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">set multiplot </tt><br /><tt class="tt">set nodisplay </tt><br /><tt class="tt">set numerics complex </tt><br /><tt class="tt">StepsMax=10 </tt><br /><tt class="tt">yn=0 </tt><br /><tt class="tt">for y=2 to -2 step -0.05 </tt><br /><tt class="tt">{ </tt><br /><tt class="tt">xn=0 </tt><br /><tt class="tt">for x=-2 to 2 step 0.05 </tt><br /><tt class="tt">{ </tt><br /><tt class="tt">zi = x+i*y; z=zi; iter=0; </tt><br /><tt class="tt">while (abs(z)&lt;2) and (iter&lt;StepsMax) <img src="images/img-0018.png" alt="$\backslash $" style="vertical-align:-5px; 
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">set multiplot </tt><br /><tt class="tt">set nodisplay </tt><br /><tt class="tt">set numerics complex </tt><br /><tt class="tt">StepsMax=10 </tt><br /><tt class="tt">yn=0 </tt><br /><tt class="tt">for y=2 to -2 step -0.05 </tt><br /><tt class="tt">{ </tt><br /><tt class="tt">xn=0 </tt><br /><tt class="tt">for x=-2 to 2 step 0.05 </tt><br /><tt class="tt">{ </tt><br /><tt class="tt">zi = x+i*y; z=zi; iter=0; </tt><br /><tt class="tt">while (abs(z)&lt;2) and (iter&lt;StepsMax) <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
                                      width:7px; 
-                                     height:18px" class="math gen" /> </tt><br /><tt class="tt">{ ; z = z**2 + zi ; iter=iter+1 ; } </tt><br /><tt class="tt">cd = iter/StepsMax </tt><br /><tt class="tt">rectangle from xn,yn to xn+0.21,yn+0.21 with col null <img src="images/img-0018.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     height:18px" class="math gen" /> </tt><br /><tt class="tt">{ ; z = z**2 + zi ; iter=iter+1 ; } </tt><br /><tt class="tt">cd = iter/StepsMax </tt><br /><tt class="tt">rectangle from xn,yn to xn+0.21,yn+0.21 with col null <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
                                      width:7px; 
                                      height:18px" class="math gen" /> </tt><br /><tt class="tt">fillc rgb(cd):(cd):(cd) </tt><br /><tt class="tt">xn=xn+0.2 </tt><br /><tt class="tt">} </tt><br /><tt class="tt">yn=yn+0.2 </tt><br /><tt class="tt">} </tt><br /><tt class="tt"></tt><br /><tt class="tt"># Display output </tt><br /><tt class="tt">set display </tt><br /><tt class="tt">refresh </tt><br /></p></td>
 
@@ -174,7 +179,7 @@ circle at 0,0 radius 5 with lw 10 colour red fillcolour yellow
 
     
     <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><center> 
-<img src="images/img-0038.png" alt="\includegraphics[width=8cm]{examples/eps/ex_mandelbrot}" style="width:8cm" /> </center></td>
+<img src="images/img-0469.png" alt="\includegraphics[width=8cm]{examples/eps/ex_mandelbrot}" style="width:8cm" /> </center></td>
 
 </tr>
 </table>
@@ -187,16 +192,16 @@ circle at 0,0 radius 5 with lw 10 colour red fillcolour yellow
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0008.html" title="The eps Command"><img alt="Previous: The eps Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0069.html" title="The eps Command"><img alt="Previous: The eps Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0005.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0066.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="ex-lens.html" title="The arc Command"><img alt="Next: The arc Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0010.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

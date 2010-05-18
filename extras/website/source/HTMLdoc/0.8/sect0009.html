@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: LaTeX and PyXPlot</title>
+<title>: Installation within Linux Distributions</title>
 
-<link href="sect0010.html" title="Index" rel="next" />
-<link href="sec-piechart.html" title="The piechart Command" rel="prev" />
-<link href="ch-vector_graphics.html" title="Producing Vector Graphics" rel="up" />
+<link href="sect0010.html" title="Installation as User" rel="next" />
+<link href="sect0008.html" title="Installation" rel="prev" />
+<link href="sect0008.html" title="Installation" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-piechart.html" title="The piechart Command"><img alt="Previous: The piechart Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0008.html" title="Installation"><img alt="Previous: Installation" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-vector_graphics.html" title="Producing Vector Graphics"><img alt="Up: Producing Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0008.html" title="Installation"><img alt="Up: Installation" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0010.html" title="Index"><img alt="Next: Index" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0010.html" title="Installation as User"><img alt="Next: Installation as User" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0010.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,56 +39,55 @@
 
 </span><span>
 <span>
-<a href="ch-vector_graphics.html">Producing Vector Graphics</a> <b>:</b>
+<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-installation.html">Installation</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0008.html">Installation</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">LaTeX and PyXPlot</b>
+<b class="current">Installation within Linux Distributions</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000010">1.5 LaTeX and PyXPlot</h1>
-<p>The <tt class="tt">text</tt> command<a name="a0000000083" id="a0000000083"></a> can straightforwardly be used to render simple one-line L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X<a name="a0000000084" id="a0000000084"></a> strings, but sometimes the need arises to place more substantial blocks of text onto a plot. For this purpose, it can be useful to use the L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X <tt class="tt">parbox</tt> or <tt class="tt">minipage</tt> environments<a href="#a0000000085" class="footnote"><sup class="footnotemark">1</sup></a>. For example: </p><pre>
-text '\parbox[t]{6cm}{\setlength{\parindent}{1cm} \
-\noindent There once was a lady from Hyde, \newline \
-Who ate a green apple and died, \newline \
-\indent While her lover lamented, \newline \
-\indent The apple fermented, \newline \
-and made cider inside her inside.}'
-</pre><center> <span style="border: 1px solid black"><img src="images/img-0081.png" alt="\includegraphics{examples/eps/ex_text1}" style="width:249px; height:91px" />
-</span> </center><p>If unusual mathematical symbols are required, for example those in the <tt class="tt">amsmath</tt> package<a name="a0000000086" id="a0000000086"></a>, such a package can be loaded using the <tt class="tt">set preamble</tt> command<a name="a0000000087" id="a0000000087"></a>. For example: </p><pre>
-set preamble \usepackage{marvosym}
-text "{\Huge\Dontwash\ \NoIroning\ \NoTumbler}$\;$ Do not \
-wash, iron or tumble-dry this plot."
-</pre><center> <span style="border: 1px solid black"><img src="images/img-0088.png" alt="\includegraphics{examples/eps/ex_text2}" style="width:474px; height:36px" />
-</span> </center></div>
+<div><h2 id="a0000000010">2.2.1 Installation within Linux Distributions</h2>
+<p>PyXPlot is available as a user-installable package within some Linux distributions. At the time of writing, Gentoo<a name="a0000000269" id="a0000000269"></a><a name="a0000000270" id="a0000000270"></a><a href="#a0000000271" class="footnote"><sup class="footnotemark">1</sup></a>, Ubuntu<a name="a0000000272" id="a0000000272"></a><a name="a0000000273" id="a0000000273"></a> and Debian provide packages containing PyXPlot 0.7.x. It should be noted that this manual describes PyXPlot 0.8.0, which is a very substantial upgrade to version 0.7.x. Many of the features described in this manual are not available in previous versions. </p><p>Under Debian and Ubuntu Linux, version 0.8.0 may be manually installed by downloading the appropriate <tt class="tt">.deb</tt> file for your distribution from the PyXPlot website and typing </p><pre>
+dpkg -i &lt;filename&gt;.deb
+</pre><p>Users of other distributions should use the <tt class="tt">.tar.gz</tt> archives available from the PyXPlot website as described below. </p></div>
 
 
 
 <div id="footnotes">
 <p><b>Footnotes</b></p>
 <ol>
-<li id="a0000000085">Remember, any valid L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X string can be passed to the <tt class="tt">text</tt> command<a name="a0000000088" id="a0000000088"></a> and <tt class="tt">set label</tt> command<a name="a0000000089" id="a0000000089"></a>.</li>
+<li id="a0000000271">See http://gentoo-portage.com/sci-visualization/pyxplot</li>
 </ol>
 </div>
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-piechart.html" title="The piechart Command"><img alt="Previous: The piechart Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0008.html" title="Installation"><img alt="Previous: Installation" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-vector_graphics.html" title="Producing Vector Graphics"><img alt="Up: Producing Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0008.html" title="Installation"><img alt="Up: Installation" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0010.html" title="Index"><img alt="Next: Index" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0010.html" title="Installation as User"><img alt="Next: Installation as User" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0010.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

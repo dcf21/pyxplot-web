@@ -70,7 +70,7 @@ plot 'datafile' using 1:2 with lp col 1 lw 2 ps 3
 </pre><p>Where modifiers take numerical values, expressions of the form <tt class="tt">$2+1</tt>, similar to those supplied to the <tt class="tt">using</tt> modifier, may be used to indicate that each datapoint should be displayed in a different style or in a different colour. The following example would plot a datafile with <tt class="tt">points</tt>, drawing the position of each point from the first two columns of the supplied datafile and the size of each point from the third column: </p><pre>
 plot 'datafile' using 1:2 with points pointsize $3
 </pre><p>Not all of these modifiers are applicable to all of PyXPlot’s plot styles. For example, the <tt class="tt">line­width</tt> modifier has no effect on plot styles which do not draw lines between datapoints. Where modifiers are applied to plot styles for which they have no defined effect, the modifier has no effect, but no error results. Table <a href="sect0043.html#tab:style_modifiers">1.1</a> lists which modifiers act upon which plot styles. </p><div id="tab:style_modifiers" class="table"><p><center>
-<img src="images/img-0309.png" alt="\includegraphics[width=\textwidth ]{examples/eps/ex_plotstyletab}" style="width:" /></center> </p><div class="caption"><b>Table 1.1</b>: <span>A list of the plot styles affected by each style modifiers.</span></div></div></div>
+<img src="images/img-0310.png" alt="\includegraphics[width=\textwidth ]{examples/eps/ex_plotstyletab}" style="width:" /></center> </p><div class="caption"><b>Table 1.1</b>: <span>A list of the plot styles affected by each style modifiers.</span></div></div></div>
 
 <div class="contents section-contents"><!--<strong>Subsections</strong>-->
 <ul>

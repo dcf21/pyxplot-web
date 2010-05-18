@@ -67,11 +67,11 @@ foreach x in "*.dat"
  {
   print x
  }
-</pre><p>The first of these loops would iterate three times, with the variable <tt class="tt">x</tt> holding the values <img src="images/img-0154.png" alt="$-1$" style="vertical-align:0px; 
+</pre><p>The first of these loops would iterate three times, with the variable <tt class="tt">x</tt> holding the values <img src="images/img-0155.png" alt="$-1$" style="vertical-align:0px; 
                                      width:21px; 
-                                     height:12px" class="math gen" />, <img src="images/img-0135.png" alt="$\pi $" style="vertical-align:0px; 
+                                     height:12px" class="math gen" />, <img src="images/img-0136.png" alt="$\pi $" style="vertical-align:0px; 
                                      width:11px; 
-                                     height:8px" class="math gen" /> and <img src="images/img-0284.png" alt="$10$" style="vertical-align:0px; 
+                                     height:8px" class="math gen" /> and <img src="images/img-0285.png" alt="$10$" style="vertical-align:0px; 
                                      width:17px; 
                                      height:12px" class="math gen" /> in turn. The second of these loops would search for any datafiles in the user’s current directory with filenames ending in <tt class="tt">.dat</tt> and iterate for each of them. As previously, the wildcard character <tt class="tt">*</tt> matches any string of characters, and the character <tt class="tt">?</tt> matches any single character. Thus, <tt class="tt">foo?.dat</tt> would match <tt class="tt">foo1.dat</tt> and fooX.dat, but not <tt class="tt">foo.dat</tt> or <tt class="tt">foo10.dat</tt>. The effect of the <tt class="tt">print</tt> statement in this particular example would be rather similar to typing: </p><pre>
 !ls *.dat

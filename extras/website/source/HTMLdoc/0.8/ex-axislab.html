@@ -57,16 +57,16 @@
 </div>
 
 <div><h1 id="ex:axislab">3.14 Setting Axis Ranges</h1>
-<p>By default, PyXPlot automatically scales axes to some sensible range which contains all of the plotted data. However, it is possible for the user to override this and set his own range.<a name="a0000000371" id="a0000000371"></a> This can be done directly from the plot command, by following the word <tt class="tt">plot</tt> with the syntax <tt class="tt">[minimum:maximum]</tt>.<a href="#a0000000372" class="footnote"><sup class="footnotemark">1</sup></a> The first specified range applies to the <tt class="tt">x</tt>-axis, and the second to the <tt class="tt">y</tt>-axis.<a href="#a0000000373" class="footnote"><sup class="footnotemark">2</sup></a> In the following example, the first three cylindrical Bessel functions are plotted in the range <img src="images/img-0046.png" alt="$0&lt;x&lt;10$" style="vertical-align:0px; 
+<p>By default, PyXPlot automatically scales axes to some sensible range which contains all of the plotted data. However, it is possible for the user to override this and set his own range.<a name="a0000000371" id="a0000000371"></a> This can be done directly from the plot command, by following the word <tt class="tt">plot</tt> with the syntax <tt class="tt">[minimum:maximum]</tt>.<a href="#a0000000372" class="footnote"><sup class="footnotemark">1</sup></a> The first specified range applies to the <tt class="tt">x</tt>-axis, and the second to the <tt class="tt">y</tt>-axis.<a href="#a0000000373" class="footnote"><sup class="footnotemark">2</sup></a> In the following example, the first three cylindrical Bessel functions are plotted in the range <img src="images/img-0047.png" alt="$0&lt;x&lt;10$" style="vertical-align:0px; 
                                      width:86px; 
                                      height:12px" class="math gen" />: </p><pre>
 plot [0:10][-0.5:1] besselJ(0,x), besselJ(1,x), besselJ(2,x)
 </pre><center> 
-<img src="images/img-0048.png" alt="\includegraphics[width=8cm]{examples/eps/ex_intro_bessel}" style="width:8cm" /> </center><p>Any of the values can be omitted, as in the following plot of three Legendre polynomials: </p><pre>
+<img src="images/img-0049.png" alt="\includegraphics[width=8cm]{examples/eps/ex_intro_bessel}" style="width:8cm" /> </center><p>Any of the values can be omitted, as in the following plot of three Legendre polynomials: </p><pre>
 set key xcentre
 plot [-1:1][:] legendreP(2,x), legendreP(4,x), legendreP(6,x)
 </pre><center> 
-<img src="images/img-0051.png" alt="\includegraphics[width=8cm]{examples/eps/ex_intro_legendre}" style="width:8cm" /> </center><p>Here, we have used the <tt class="tt">set key</tt> command to specify that the plot’s legend should be horizontally aligned in the centre of the plot, to complement the symmetry of the Legendre polynomials. This command will be described more fully in Section <a href="sec-legends.html">1.6</a>. </p><p>Alternatively, ranges can be set before the <tt class="tt">plot</tt> statement, using the <tt class="tt">set xrange</tt> command<a name="a0000000374" id="a0000000374"></a>, as in the examples: </p><pre>
+<img src="images/img-0052.png" alt="\includegraphics[width=8cm]{examples/eps/ex_intro_legendre}" style="width:8cm" /> </center><p>Here, we have used the <tt class="tt">set key</tt> command to specify that the plot’s legend should be horizontally aligned in the centre of the plot, to complement the symmetry of the Legendre polynomials. This command will be described more fully in Section <a href="sec-legends.html">1.6</a>. </p><p>Alternatively, ranges can be set before the <tt class="tt">plot</tt> statement, using the <tt class="tt">set xrange</tt> command<a name="a0000000374" id="a0000000374"></a>, as in the examples: </p><pre>
 set xrange [-2:2]
 set yrange [a:b]
 </pre><p>If an asterisk is supplied in place of either of the limits in this command, then any limit which had previously been set is switched off, and the axis returns to its default autoscaling behaviour: </p><pre>
@@ -88,11 +88,11 @@ set nologscale y x x2
 <tr>
 
     
-    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this example we produce a diagram of the trajectories of projectiles fired by a cannon at the origin with different initial velocities <img src="images/img-0053.png" alt="$v$" style="vertical-align:0px; 
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this example we produce a diagram of the trajectories of projectiles fired by a cannon at the origin with different initial velocities <img src="images/img-0054.png" alt="$v$" style="vertical-align:0px; 
                                      width:9px; 
-                                     height:8px" class="math gen" /> and different angles of inclination <img src="images/img-0054.png" alt="$\theta $" style="vertical-align:0px; 
+                                     height:8px" class="math gen" /> and different angles of inclination <img src="images/img-0055.png" alt="$\theta $" style="vertical-align:0px; 
                                      width:9px; 
-                                     height:12px" class="math gen" />. According to the equations of motion under constant acceleration, the distance of such a projectile from the origin after time <img src="images/img-0055.png" alt="$t$" style="vertical-align:0px; 
+                                     height:12px" class="math gen" />. According to the equations of motion under constant acceleration, the distance of such a projectile from the origin after time <img src="images/img-0056.png" alt="$t$" style="vertical-align:0px; 
                                      width:6px; 
                                      height:12px" class="math gen" /> is given by </p><table id="a0000000378" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
 <tr id="a0000000379">
@@ -100,15 +100,15 @@ set nologscale y x x2
     <td style="width:40%">&nbsp;</td>
     
     
-        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0056.png" alt="$\displaystyle  x(t)  $" style="vertical-align:-4px; width:30px;                     height:18px" class="math gen" /></td>
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0057.png" alt="$\displaystyle  x(t)  $" style="vertical-align:-4px; width:30px;                     height:18px" class="math gen" /></td>
     
     
     
-        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0057.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
     
     
     
-        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0058.png" alt="$\displaystyle  vt\cos \, \theta  $" style="vertical-align:0px; width:58px;                     height:12px" class="math gen" /></td>
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0059.png" alt="$\displaystyle  vt\cos \, \theta  $" style="vertical-align:0px; width:58px;                     height:12px" class="math gen" /></td>
     
     
     
@@ -119,32 +119,32 @@ set nologscale y x x2
     <td style="width:40%">&nbsp;</td>
     
     
-        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0059.png" alt="$\displaystyle h(t)  $" style="vertical-align:-4px; width:29px;                     height:18px" class="math gen" /></td>
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0060.png" alt="$\displaystyle h(t)  $" style="vertical-align:-4px; width:29px;                     height:18px" class="math gen" /></td>
     
     
     
-        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0057.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
     
     
     
-        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0060.png" alt="$\displaystyle  vt\sin \, \theta + \nicefrac {1}{2}gt^2  $" style="vertical-align:-5px; width:122px;                     height:22px" class="math gen" /></td>
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0061.png" alt="$\displaystyle  vt\sin \, \theta + \nicefrac {1}{2}gt^2  $" style="vertical-align:-5px; width:122px;                     height:22px" class="math gen" /></td>
     
     
     
     <td style="width:40%">&nbsp;</td>
     <td style="width:20%" class="eqnnum">&nbsp;</td>
 </tr>
-</table><p> where <img src="images/img-0061.png" alt="$x(t)$" style="vertical-align:-4px; 
+</table><p> where <img src="images/img-0062.png" alt="$x(t)$" style="vertical-align:-4px; 
                                      width:30px; 
-                                     height:18px" class="math gen" /> is the horizontal displacement of the projectile and <img src="images/img-0062.png" alt="$h(t)$" style="vertical-align:-4px; 
+                                     height:18px" class="math gen" /> is the horizontal displacement of the projectile and <img src="images/img-0063.png" alt="$h(t)$" style="vertical-align:-4px; 
                                      width:29px; 
-                                     height:18px" class="math gen" /> the vertical displacement. Eliminating <img src="images/img-0055.png" alt="$t$" style="vertical-align:0px; 
+                                     height:18px" class="math gen" /> the vertical displacement. Eliminating <img src="images/img-0056.png" alt="$t$" style="vertical-align:0px; 
                                      width:6px; 
                                      height:12px" class="math gen" /> from these equation gives the expression </p><table id="a0000000381" class="equation" width="100%" cellspacing="0" cellpadding="7">
 <tr>
     
     <td style="width:40%">&nbsp;</td>
-    <td><img src="images/img-0063.png" alt="\[  h(x) = x\tan \, \theta - \frac{gx^2}{2v^2\cos ^2\, \theta }.  \]" style="width:220px; 
+    <td><img src="images/img-0064.png" alt="\[  h(x) = x\tan \, \theta - \frac{gx^2}{2v^2\cos ^2\, \theta }.  \]" style="width:220px; 
                             height:40px" class="math gen" /></td>
     
     <td style="width:40%">&nbsp;</td>
@@ -155,9 +155,9 @@ set nologscale y x x2
 </tr><tr>
 
     
-    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>In the script below, we plot this function for five different values of <img src="images/img-0053.png" alt="$v$" style="vertical-align:0px; 
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>In the script below, we plot this function for five different values of <img src="images/img-0054.png" alt="$v$" style="vertical-align:0px; 
                                      width:9px; 
-                                     height:8px" class="math gen" /> and <img src="images/img-0054.png" alt="$\theta $" style="vertical-align:0px; 
+                                     height:8px" class="math gen" /> and <img src="images/img-0055.png" alt="$\theta $" style="vertical-align:0px; 
                                      width:9px; 
                                      height:12px" class="math gen" />. </p></td>
 
@@ -258,7 +258,7 @@ set nologscale y x x2
 </tr><tr>
 
     
-    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><center> <img src="images/img-0065.png" alt="\includegraphics{examples/eps/ex_trajectories}" style="width:529px; height:516px" />
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><center> <img src="images/img-0066.png" alt="\includegraphics{examples/eps/ex_trajectories}" style="width:529px; height:516px" />
  </center></td>
 
 </tr><tr>

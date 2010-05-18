@@ -61,7 +61,7 @@
 plot 'data.dat' using 3:5
 </pre><p>This example would plot the contents of the fifth column of the file <tt class="tt">data.dat</tt> on the vertical axis, against the contents of the third column on the horizontal axis. As mentioned above, columns in datafiles can be separated using whitespace and/or commas. Algebraic expressions may also be used in place of column numbers, as in the example: </p><pre>
 plot 'data.dat' using (3+$1+$2):(2+$3)
-</pre><p>In such expressions, column numbers are prefixed by dollar signs to distinguish them from numerical constants. The example above would plot the sum of the values in the first two columns of the datafile, plus three, on the horizontal axis, against two plus the value in the third column on the vertical axis. The column numbers in such expressions can also be replaced by algebraic expressions, and so <tt class="tt">$2</tt> can also be written as <tt class="tt">$(2)</tt> or <tt class="tt">$(1+1)</tt>. In the following example, the datapoints are all placed on the vertical line <img src="images/img-0032.png" alt="$x=3$" style="vertical-align:0px; 
+</pre><p>In such expressions, column numbers are prefixed by dollar signs to distinguish them from numerical constants. The example above would plot the sum of the values in the first two columns of the datafile, plus three, on the horizontal axis, against two plus the value in the third column on the vertical axis. The column numbers in such expressions can also be replaced by algebraic expressions, and so <tt class="tt">$2</tt> can also be written as <tt class="tt">$(2)</tt> or <tt class="tt">$(1+1)</tt>. In the following example, the datapoints are all placed on the vertical line <img src="images/img-0033.png" alt="$x=3$" style="vertical-align:0px; 
                                      width:43px; 
                                      height:12px" class="math gen" /> – the brackets around the <tt class="tt">3</tt> distinguish it as a numerical constant rather than a column number – meanwhile their vertical positions are drawn from the value of some column <img src="images/img-0014.png" alt="$n$" style="vertical-align:0px; 
                                      width:11px; 
@@ -188,9 +188,9 @@ plot 'data.dat' using (3):$($2)
     <td style="border-bottom-color:black; border-bottom-width:1px; text-align:left; border-bottom-style:solid; border-left:1px solid black">&nbsp;</td>
 
     
-    <td style="border-bottom-color:black; border-bottom-width:1px; text-align:left; border-bottom-style:solid; border-right:1px solid black"><p> <img src="images/img-0033.png" alt="$&lt;$" style="vertical-align:0px; 
+    <td style="border-bottom-color:black; border-bottom-width:1px; text-align:left; border-bottom-style:solid; border-right:1px solid black"><p> <img src="images/img-0034.png" alt="$&lt;$" style="vertical-align:0px; 
                                      width:12px; 
-                                     height:11px" class="math gen" />etc<img src="images/img-0034.png" alt="$&gt;$" style="vertical-align:0px; 
+                                     height:11px" class="math gen" />etc<img src="images/img-0035.png" alt="$&gt;$" style="vertical-align:0px; 
                                      width:12px; 
                                      height:11px" class="math gen" /> </p></td>
 
@@ -205,72 +205,72 @@ plot 'data.dat' every a:b:c:d:e:f
 <tr>
 
     
-    <td style="text-align:left"><p> <img src="images/img-0035.png" alt="$a$" style="vertical-align:0px; 
+    <td style="text-align:left"><p> <img src="images/img-0036.png" alt="$a$" style="vertical-align:0px; 
                                      width:9px; 
                                      height:8px" class="math gen" /> </p></td>
 
     
-    <td style="text-align:left"><p> Plot data only from every <img src="images/img-0036.png" alt="$a\, $" style="vertical-align:0px; 
+    <td style="text-align:left"><p> Plot data only from every <img src="images/img-0037.png" alt="$a\, $" style="vertical-align:0px; 
                                      width:9px; 
                                      height:8px" class="math gen" />th line in datafile. </p></td>
 
 </tr><tr>
 
     
-    <td style="text-align:left"><p><img src="images/img-0037.png" alt="$b$" style="vertical-align:0px; 
+    <td style="text-align:left"><p><img src="images/img-0038.png" alt="$b$" style="vertical-align:0px; 
                                      width:8px; 
                                      height:13px" class="math gen" /> </p></td>
 
     
-    <td style="text-align:left"><p> Plot only data from every <img src="images/img-0038.png" alt="$b\, $" style="vertical-align:0px; 
+    <td style="text-align:left"><p> Plot only data from every <img src="images/img-0039.png" alt="$b\, $" style="vertical-align:0px; 
                                      width:8px; 
                                      height:13px" class="math gen" />th block within each index block. </p></td>
 
 </tr><tr>
 
     
-    <td style="text-align:left"><p><img src="images/img-0039.png" alt="$c$" style="vertical-align:0px; 
+    <td style="text-align:left"><p><img src="images/img-0040.png" alt="$c$" style="vertical-align:0px; 
                                      width:8px; 
                                      height:8px" class="math gen" /> </p></td>
 
     
-    <td style="text-align:left"><p> Plot only from line <img src="images/img-0039.png" alt="$c$" style="vertical-align:0px; 
+    <td style="text-align:left"><p> Plot only from line <img src="images/img-0040.png" alt="$c$" style="vertical-align:0px; 
                                      width:8px; 
                                      height:8px" class="math gen" /> onwards within each block. </p></td>
 
 </tr><tr>
 
     
-    <td style="text-align:left"><p><img src="images/img-0040.png" alt="$d$" style="vertical-align:0px; 
+    <td style="text-align:left"><p><img src="images/img-0041.png" alt="$d$" style="vertical-align:0px; 
                                      width:10px; 
                                      height:13px" class="math gen" /> </p></td>
 
     
-    <td style="text-align:left"><p> Plot only data from block <img src="images/img-0040.png" alt="$d$" style="vertical-align:0px; 
+    <td style="text-align:left"><p> Plot only data from block <img src="images/img-0041.png" alt="$d$" style="vertical-align:0px; 
                                      width:10px; 
                                      height:13px" class="math gen" /> onwards within each index block. </p></td>
 
 </tr><tr>
 
     
-    <td style="text-align:left"><p><img src="images/img-0041.png" alt="$e$" style="vertical-align:0px; 
+    <td style="text-align:left"><p><img src="images/img-0042.png" alt="$e$" style="vertical-align:0px; 
                                      width:8px; 
                                      height:8px" class="math gen" /> </p></td>
 
     
-    <td style="text-align:left"><p> Plot only up to the <img src="images/img-0042.png" alt="$e\, $" style="vertical-align:0px; 
+    <td style="text-align:left"><p> Plot only up to the <img src="images/img-0043.png" alt="$e\, $" style="vertical-align:0px; 
                                      width:8px; 
                                      height:8px" class="math gen" />th line within each block. </p></td>
 
 </tr><tr>
 
     
-    <td style="text-align:left"><p><img src="images/img-0043.png" alt="$f$" style="vertical-align:-4px; 
+    <td style="text-align:left"><p><img src="images/img-0044.png" alt="$f$" style="vertical-align:-4px; 
                                      width:9px; 
                                      height:16px" class="math gen" /> </p></td>
 
     
-    <td style="text-align:left"><p> Plot only up to the <img src="images/img-0044.png" alt="$f\, $" style="vertical-align:-4px; 
+    <td style="text-align:left"><p> Plot only up to the <img src="images/img-0045.png" alt="$f\, $" style="vertical-align:-4px; 
                                      width:9px; 
                                      height:16px" class="math gen" />th block within each index block. </p></td>
 

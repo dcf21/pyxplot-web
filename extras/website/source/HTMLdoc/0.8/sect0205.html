@@ -64,7 +64,7 @@ text [ item &lt;id&gt; ] '&lt;text string&gt;' [ at &lt;x&gt;, &lt;y&gt; ]
      [ with colour &lt;colour&gt; ]
 </pre><p>The <tt class="tt">text</tt> command<a name="a0000001239" id="a0000001239"></a> allows strings of text to a added as labels on multiplot canvases. The example </p><pre>
 text 'Hello World!' at 0,2
-</pre><p>would render the text ‘Hello World!’ at position <img src="images/img-0527.png" alt="$(0,2)$" style="vertical-align:-4px; 
+</pre><p>would render the text ‘Hello World!’ at position <img src="images/img-0528.png" alt="$(0,2)$" style="vertical-align:-4px; 
                                      width:38px; 
                                      height:18px" class="math gen" />, measured in centimetres. The alignment of the text item with respect to this position can be set using the <tt class="tt">set texthalign</tt> and <tt class="tt">set textvalign</tt> commands, or using the <tt class="tt">halign</tt> and <tt class="tt">valign</tt> modifiers supplied to the <tt class="tt">text</tt> command itself. </p><p>A gap may be specified, which should either have dimensions of length, or be dimensionless, in which case it is interpreted as being measured in centimetres. If a gap is specified, then the text string is slightly displaced from the specified position, in the direction in which it is being aligned. </p><p>A rotation angle may optionally be specified after the keyword <tt class="tt">rotate</tt> to produce text rotated to any arbitrary angle, measured in degrees counter-clockwise. The following example would produce upward-running text: </p><pre>
 text 'Hello' at 1.5, 3.6 rotate 90

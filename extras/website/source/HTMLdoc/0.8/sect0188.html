@@ -65,13 +65,13 @@
 <p><a name="a0000001196" id="a0000001196"></a> </p><pre>
 set &lt;axis&gt;format ( auto | '&lt;format&gt;' )
       ( horizontal | vertical | rotate &lt;angle&gt; )
-</pre><p>By default, the major tick marks along axes are labelled with representations of the ordinate values at each point, each accurate to the number of significant figures specified using the <tt class="tt">set numerics sigfig</tt> command<a name="a0000001197" id="a0000001197"></a>. These labels may appear as decimals, such as <img src="images/img-0400.png" alt="$3.142$" style="vertical-align:0px; 
+</pre><p>By default, the major tick marks along axes are labelled with representations of the ordinate values at each point, each accurate to the number of significant figures specified using the <tt class="tt">set numerics sigfig</tt> command<a name="a0000001197" id="a0000001197"></a>. These labels may appear as decimals, such as <img src="images/img-0401.png" alt="$3.142$" style="vertical-align:0px; 
                                      width:41px; 
-                                     height:12px" class="math gen" />, in scientific notion, as in <img src="images/img-0401.png" alt="$3\times 10^8$" style="vertical-align:0px; 
+                                     height:12px" class="math gen" />, in scientific notion, as in <img src="images/img-0402.png" alt="$3\times 10^8$" style="vertical-align:0px; 
                                      width:56px; 
                                      height:16px" class="math gen" />, or, on logarithmic axes where a base has been specified for the logarithms, using syntax such as<a href="#a0000001198" class="footnote"><sup class="footnotemark">1</sup></a> </p><pre>
 set log x1 2
-</pre><p> in a format such as <img src="images/img-0402.png" alt="$1.5\times 2^8$" style="vertical-align:0px; 
+</pre><p> in a format such as <img src="images/img-0403.png" alt="$1.5\times 2^8$" style="vertical-align:0px; 
                                      width:60px; 
                                      height:16px" class="math gen" />. </p><p>The <tt class="tt">set xformat</tt> command<a name="a0000001199" id="a0000001199"></a> – together with its companions such as <tt class="tt">set yformat</tt> – is used to manually specify an explicit format for the axis labels to take, as demonstrated by the following pair of examples: </p><pre>
 set xformat "%.2f"%(x)
@@ -79,7 +79,7 @@ set yformat "%s$^\prime$"%(y/unit(feet))
 </pre><p> The first example specifies that ordinate values should be displayed to two decimal places along the <tt class="tt">x</tt>-axis; the second specifies that distances should be displayed in feet along the <tt class="tt">y</tt>-axis. Note that the dummy variable used to represent the ordinate value is <tt class="tt">x</tt>, <tt class="tt">y</tt> or <tt class="tt">z</tt> depending upon the direction of the axis, but that the dummy variable used in the <tt class="tt">set x2format</tt> command is still <tt class="tt">x</tt>. The following pair of examples both have the equivalent effect of returning the <tt class="tt">x2</tt>-axis to its default system of tick labels: </p><pre>
 set x2format auto
 set x2format "%s"%(x)
-</pre><p>The following example specifies that ordinate values should be displayed as multiples of <img src="images/img-0135.png" alt="$\pi $" style="vertical-align:0px; 
+</pre><p>The following example specifies that ordinate values should be displayed as multiples of <img src="images/img-0136.png" alt="$\pi $" style="vertical-align:0px; 
                                      width:11px; 
                                      height:8px" class="math gen" />: </p><pre>
 set xformat "%s$\pi$"%(x/pi)

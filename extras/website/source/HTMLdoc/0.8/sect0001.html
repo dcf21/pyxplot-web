@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Settings Associated with Multiplot Items</title>
+<title>: Introduction to PyXPlot</title>
 
-<link href="sect0002.html" title="Reordering Multiplot Items" rel="next" />
-<link href="sec-multiplot.html" title="Multiplot Mode" rel="prev" />
-<link href="sec-multiplot.html" title="Multiplot Mode" rel="up" />
+<link href="ch-introduction.html" title="Introduction" rel="next" />
+<link href="index.html" rel="prev" />
+<link href="index.html" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-multiplot.html" title="Multiplot Mode"><img alt="Previous: Multiplot Mode" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="index.html" title=""><img alt="Previous: " border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-multiplot.html" title="Multiplot Mode"><img alt="Up: Multiplot Mode" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="index.html" title=""><img alt="Up: " border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0002.html" title="Reordering Multiplot Items"><img alt="Next: Reordering Multiplot Items" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ch-introduction.html" title="Introduction"><img alt="Next: Introduction" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0010.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -38,65 +38,223 @@
 </span>
 
 </span><span>
-<span>
-<a href="ch-vector_graphics.html">Producing Vector Graphics</a> <b>:</b>
-</span>
-
-</span><span>
-<span>
-<a href="sec-multiplot.html">Multiplot Mode</a> <b>:</b>
-</span>
-
-</span><span>
 
 <span>
-<b class="current">Settings Associated with Multiplot Items</b>
+<b class="current">Introduction to PyXPlot</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000002">1.1.1 Settings Associated with Multiplot Items</h2>
-<p>Of the settings which can be set with the <tt class="tt">set</tt> command<a name="a0000000025" id="a0000000025"></a>, some refer to PyXPlot’s global environment and whole multiplot canvases. Others, such as <tt class="tt">set width</tt> and <tt class="tt">set origin</tt> refer specifically to individual graphs and vector graphics items. For this reason, whenever a new multiplot graphics item is produced, it takes a copy of the settings which are specific to it, allowing these settings to be changed by the user before producing other multiplot items, without affecting previous items. The settings associated with a particular multiplot item can be queried by passing the modifier <tt class="tt">item</tt> to the <tt class="tt">show</tt> command<a name="a0000000026" id="a0000000026"></a>, followed by the integer identification number of the item, as in the examples: </p><pre>
-show item 3 width    # Shows the width of item 3
-show item 3 settings # Shows all settings associated with item 3
-</pre><p>The settings associated with a particular multiplot item can be changed by passing the same <tt class="tt">item</tt> modifier to the <tt class="tt">set</tt> command<a name="a0000000027" id="a0000000027"></a>, as in the example, which sets the width of item 3 to be <img src="images/img-0011.png" alt="$10\, \mathrm{cm}$" style="vertical-align:0px; 
-                                     width:43px; 
-                                     height:12px" class="math gen" />: </p><pre>
-set item 3 width 10*unit(cm)
-</pre><p> After making such changes, the <tt class="tt">refresh</tt> command<a name="a0000000028" id="a0000000028"></a> is useful: it produces a new graphical image of the current multiplot to reflect any settings which have been changed. The following example would produce a pair of plots, and then change the colour of the text on the first plot: </p><pre>
-set multiplot
-plot f(x)
-set origin 10,0
-plot g(x)
-set item 1 textcolour red
-refresh
-</pre><p>Another common use of the <tt class="tt">refresh</tt> command<a name="a0000000029" id="a0000000029"></a> is to produce multiple copies of an image in different graphical formats. For example, having just developed a multiplot canvas interactively in the <tt class="tt">X11_singlewindow</tt>, copies can be produced as <tt class="tt">eps</tt> and <tt class="tt">jpeg</tt> images using the following commands: </p><pre>
-set terminal eps
-set output 'figure.eps'
-refresh
-set terminal jpeg
-set output 'figure.jpg'
-refresh
-</pre></div>
+<div><h1 id="a0000000002">1 Introduction to PyXPlot</h1>
+</div>
+
+<div class="contents part-contents"><!--<strong>Subsections</strong>-->
+<ul>
+<li><a href="ch-introduction.html">1 Introduction</a>
+   <ul>
+   <li><a href="sect0002.html">1.1 PyXPlot’s Heritage: Gnuplot</a>
+       
+   </li><li><a href="sect0003.html">1.2 The Structure of this Manual</a>
+       
+   </li><li><a href="sect0004.html">1.3 A Whirlwind Tour</a>
+       
+   </li><li><a href="sect0005.html">1.4 Acknowledgments</a>
+       
+   </li><li><a href="sect0006.html">1.5 License</a>
+       
+   </li>
+   </ul>
+</li><li><a href="ch-installation.html">2 Installation</a>
+   <ul>
+   <li><a href="sect0007.html">2.1 System Requirements</a>
+       
+   </li><li><a href="sect0008.html">2.2 Installation</a>
+       <ul>
+       <li><a href="sect0009.html">2.2.1 Installation within Linux Distributions</a>
+           
+       </li><li><a href="sect0010.html">2.2.2 Installation as User</a>
+           
+       </li><li><a href="sect0011.html">2.2.3 System-wide Installation</a>
+           
+       </li>
+       </ul>
+   </li>
+   </ul>
+</li><li><a href="ch-first_steps.html">3 First Steps With PyXPlot</a>
+   <ul>
+   <li><a href="box-CommandHistory.html">3.1 Getting Started</a>
+       
+   </li><li><a href="sec-first_plots.html">3.2 First Plots</a>
+       
+   </li><li><a href="sect0012.html">3.3 Comments</a>
+       
+   </li><li><a href="sect0013.html">3.4 Splitting Long Commands</a>
+       
+   </li><li><a href="sect0014.html">3.5 Printing Text</a>
+       
+   </li><li><a href="sec-latex_incompatibility.html">3.6 Axis Labels and Titles</a>
+       
+   </li><li><a href="sect0015.html">3.7 Querying the Values of Settings</a>
+       
+   </li><li><a href="sec-plot_datafiles.html">3.8 Plotting Datafiles</a>
+       
+   </li><li><a href="sect0016.html">3.9 Plotting Many Datafiles at Once</a>
+       <ul>
+       <li><a href="sec-horizontal_datafiles.html">3.9.1 Horizontally arranged Datafiles</a>
+           
+       </li><li><a href="sec-select_modifier.html">3.9.2 Choosing which Data to Plot</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="sec-replot.html">3.10 The <tt class="tt">replot</tt> Command</a>
+       
+   </li><li><a href="sec-directing_output.html">3.11 Directing Where Output Goes</a>
+       
+   </li><li><a href="sect0017.html">3.12 Setting the Size of Output</a>
+       
+   </li><li><a href="sec-pointtype.html">3.13 Plotting Styles</a>
+       
+   </li><li><a href="ex-axislab.html">3.14 Setting Axis Ranges</a>
+       
+   </li><li><a href="sect0018.html">3.15 Interactive Help</a>
+       
+   </li>
+   </ul>
+</li><li><a href="sect0019.html">4 Performing Calculations</a>
+   <ul>
+   <li><a href="sect0020.html">4.1 Variables</a>
+       
+   </li><li><a href="sec-constants.html">4.2 Physical Constants</a>
+       
+   </li><li><a href="sec-functions.html">4.3 Functions</a>
+       <ul>
+       <li><a href="ex-funcsplice.html">4.3.1 Spliced Functions</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="sec-num_errs.html">4.4 Handling Numerical Errors</a>
+       
+   </li><li><a href="sec-complex_numbers.html">4.5 Working with Complex Numbers</a>
+       
+   </li><li><a href="sec-units.html">4.6 Working with Physical Units</a>
+       <ul>
+       <li><a href="sec-angles.html">4.6.1 Treatment of Angles in PyXPlot</a>
+           
+       </li><li><a href="sect0021.html">4.6.2 Converting between different Temperature Scales</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="sec-unitdisp.html">4.7 Configuring how Numbers are Displayed</a>
+       <ul>
+       <li><a href="sect0022.html">4.7.1 Units</a>
+           
+       </li><li><a href="sect0023.html">4.7.2 Changing the Accuracy to which Numbers are Displayed</a>
+           
+       </li><li><a href="sec-pastable.html">4.7.3 Creating Pastable Text</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="ex-calculus.html">4.8 Numerical Integration and Differentiation</a>
+       
+   </li><li><a href="sect0024.html">4.9 Solving Systems of Equations</a>
+       
+   </li><li><a href="ex-eqnsolve.html">4.10 Searching for Minima and Maxima of Functions</a>
+       
+   </li><li><a href="sec-time_series.html">4.11 Working with Time-Series Data</a>
+       <ul>
+       <li><a href="sect0025.html">4.11.1 Time Intervals</a>
+           
+       </li>
+       </ul>
+   </li>
+   </ul>
+</li><li><a href="ch-numerics.html">5 Working with Data</a>
+   <ul>
+   <li><a href="sec-filters.html">5.1 Input Filters</a>
+       
+   </li><li><a href="sect0026.html">5.2 Reading Data from a Pipe</a>
+       
+   </li><li><a href="sect0027.html">5.3 Including Data within Command Scripts</a>
+       
+   </li><li><a href="sec-special_comments.html">5.4 Special Comment Lines in Datafiles</a>
+       
+   </li><li><a href="sec-tabulate.html">5.5 Tabulating Functions and Slicing Data Files</a>
+       
+   </li><li><a href="sec-fit_command.html">5.6 Function Fitting</a>
+       
+   </li><li><a href="ex-interpolation.html">5.7 Datafile Interpolation</a>
+       
+   </li><li><a href="sect0028.html">5.8 Fourier Transforms</a>
+       <ul>
+       <li><a href="sect0029.html">5.8.1 Window Functions</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="sec-histogram.html">5.9 Histograms</a>
+       
+   </li><li><a href="sect0030.html">5.10 Random Data Generation</a>
+       
+   </li>
+   </ul>
+</li><li><a href="sect0031.html">6 Programming and Flow Control</a>
+   <ul>
+   <li><a href="sec-stringvars.html">6.1 String Variables</a>
+       <ul>
+       <li><a href="sec-stringsubop.html">6.1.1 The String Substitution Operator</a>
+           
+       </li><li><a href="sect0032.html">6.1.2 Regular Expressions</a>
+           
+       </li><li><a href="sect0033.html">6.1.3 String Manipulation Functions</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="sect0034.html">6.2 Conditionals</a>
+       
+   </li><li><a href="sect0035.html">6.3 For Loops</a>
+       
+   </li><li><a href="sect0036.html">6.4 Foreach Loops</a>
+       
+   </li><li><a href="ex-meansd.html">6.5 Foreach Datum Loops</a>
+       
+   </li><li><a href="sect0037.html">6.6 While and Do Loops</a>
+       
+   </li><li><a href="sec-breakcontinue.html">6.7 The <tt class="tt">break</tt> and <tt class="tt">continue</tt> statements</a>
+       
+   </li><li><a href="sect0038.html">6.8 Conditional Functions</a>
+       
+   </li><li><a href="ex-pendulum.html">6.9 Subroutines</a>
+       
+   </li><li><a href="sect0039.html">6.10 The <tt class="tt">exec</tt> command<a name="a0000000574" id="a0000000574"></a></a>
+       
+   </li><li><a href="sect0040.html">6.11 Shell Commands</a>
+       
+   </li><li><a href="sect0041.html">6.12 Script Watching: pyxplot_watch</a>
+       
+   </li>
+   </ul>
+</li>
 
 
+
+</ul>
+</div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-multiplot.html" title="Multiplot Mode"><img alt="Previous: Multiplot Mode" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="index.html" title=""><img alt="Previous: " border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-multiplot.html" title="Multiplot Mode"><img alt="Up: Multiplot Mode" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="index.html" title=""><img alt="Up: " border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0002.html" title="Reordering Multiplot Items"><img alt="Next: Reordering Multiplot Items" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ch-introduction.html" title="Introduction"><img alt="Next: Introduction" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0010.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

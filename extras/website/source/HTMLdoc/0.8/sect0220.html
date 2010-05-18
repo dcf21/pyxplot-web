@@ -79,9 +79,9 @@ text '\parbox[t]{9cm}{\center \
 text 'Annual Lecture, 1st January 2010' at x*50, y*22
 
 load 'scripts/slide_finish'
-</pre><p> Note that the variables <tt class="tt">x</tt> and <tt class="tt">y</tt> are defined to be 1 per cent of the width and height of your slides respectively, such that the bottom-left of each slide is at <img src="images/img-0521.png" alt="$(0,0)$" style="vertical-align:-4px; 
+</pre><p> Note that the variables <tt class="tt">x</tt> and <tt class="tt">y</tt> are defined to be 1 per cent of the width and height of your slides respectively, such that the bottom-left of each slide is at <img src="images/img-0522.png" alt="$(0,0)$" style="vertical-align:-4px; 
                                      width:38px; 
-                                     height:18px" class="math gen" /> and the top-right of each slide is at <img src="images/img-0660.png" alt="$({\tt 100*x},{\tt 100*y})$" style="vertical-align:-4px; 
+                                     height:18px" class="math gen" /> and the top-right of each slide is at <img src="images/img-0661.png" alt="$({\tt 100*x},{\tt 100*y})$" style="vertical-align:-4px; 
                                      width:131px; 
                                      height:18px" class="math gen" />. </p></li><li><p>Next we will make a second slide with a series of bullet points. Paste the following script into the file <tt class="tt">scripts/0002</tt>: </p><pre>
 set output 'slides/0002.gif'
@@ -119,7 +119,7 @@ plot x t 'Model 1', exp(x)-1 t 'Model 2', \
      log(x+1) t 'Model 3', sin(x) t 'Model 4'
 
 load 'scripts/slide_finish'
-</pre></li><li><p>To view your slides, run the script <tt class="tt">make_slides</tt>. Afterwards, you will find your slides as a series of <img src="images/img-0659.png" alt="$1024\times 768$" style="vertical-align:0px; 
+</pre></li><li><p>To view your slides, run the script <tt class="tt">make_slides</tt>. Afterwards, you will find your slides as a series of <img src="images/img-0660.png" alt="$1024\times 768$" style="vertical-align:0px; 
                                      width:84px; 
                                      height:13px" class="math gen" /> pixel jpeg images in the directory <tt class="tt">slides_cropped</tt>. If you have the <i class="it">Quick Image Viewer</i><a name="a0000001497" id="a0000001497"></a> (<tt class="tt">qiv</tt>) installed, then you can view them as follows: </p><pre>
 qiv slides_cropped/*
