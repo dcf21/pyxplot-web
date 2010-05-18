@@ -362,7 +362,7 @@ def renderExamples(tree):
    for node in tree['nodes']:
       ftmp.write("<<SET exampleuri: %s>>\n"%node['uri'])
       ftmp.write("<<SET exampleimageuri: %s%s>>\n"%(node['uri'],node['image']))
-      ftmp.write("<<SET examplename: %s>>\n"%node['name'])
+      ftmp.write("<<SET examplename: %s>>\n"%node['name'].replace("_", " "))
       f = open(os.path.join(options['includedir'], 'examples-box.html'), 'r')  # UGLY
       for line in f: ftmp.write(line)
       f.close()
@@ -385,7 +385,7 @@ def renderExamplesNode(node, tree, opt, var):
    object['target'] = os.path.join(tree['root'], node['dir'], 'index.html')
    ftmp = os.tmpfile()
    # Set the "examplename" variable so that we get the page title correct
-   ftmp.write("<<SET examplename: %s>>\n"%node['name'])
+   ftmp.write("<<SET examplename: %s>>\n"%node['name'].replace("_", " "))
    fin = open(os.path.join(options['includedir'],tree['nodepage']), 'r')
    line = fin.readline()
    while (line.strip() != '<<EXAMPLES>>'):
@@ -396,7 +396,7 @@ def renderExamplesNode(node, tree, opt, var):
    for leaf in node['leaves']:
       ftmp.write("<<SET exampleuri: %s>>\n"%leaf['uri'])
       ftmp.write("<<SET exampleimageuri: %s%s>>\n"%(leaf['uri'],'output.png'))
-      ftmp.write("<<SET examplename: %s>>\n"%leaf['name'])
+      ftmp.write("<<SET examplename: %s>>\n"%leaf['name'].replace("_", " "))
       f = open(os.path.join(options['includedir'], 'examples-box.html'), 'r')  # UGLY
       for line in f: ftmp.write(line)
       f.close()
@@ -419,10 +419,10 @@ def renderExamplesLeaf(leaf, node, tree, opt, var):
              'type'    : 'parsed'}
    object['target'] = os.path.join(tree['root'], node['dir'], leaf['dir'], 'index.html')
    ftmp = os.tmpfile()
-   ftmp.write("<<SET nodename: %s>>\n"%node['name'])
+   ftmp.write("<<SET nodename: %s>>\n"%node['name'].replace("_", " "))
    ftmp.write("<<SET exampleuri: %s>>\n"%leaf['uri'])
    ftmp.write("<<SET exampleimageuri: %s%s>>\n"%(leaf['uri'],'output.png'))
-   ftmp.write("<<SET examplename: %s>>\n"%leaf['name'])
+   ftmp.write("<<SET examplename: %s>>\n"%leaf['name'].replace("_", " "))
    var['caption'] = leaf['caption']
    var['scriptfile'] = leaf['scriptfile']
    var['notes'] = leaf['notes']
