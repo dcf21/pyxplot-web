@@ -1,0 +1,10 @@
+#!/bin/bash
+
+mkdir -p output
+mkdir -p errors
+
+for all in *.ppl
+ do
+  valgrind --track-origins=yes ../../pyxplot8/bin/pyxplot $all 2> errors/$all
+ done
+

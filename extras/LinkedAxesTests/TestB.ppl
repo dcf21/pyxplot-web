@@ -1,0 +1,16 @@
+set output "output/TestB.eps"
+set multiplot
+set nodisplay
+
+set size 8,5
+set origin 0,0
+plot sin(x)
+
+set axis x linked item 1 x
+set xformat ""
+set origin 0,7
+plot cos(x)
+
+set display
+refresh
+
