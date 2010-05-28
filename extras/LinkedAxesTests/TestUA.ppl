@@ -1,0 +1,17 @@
+set output "output/TestUA.eps"
+set multiplot
+set nodisplay
+
+set size 8,5
+set origin 0,0
+set xrange [-10*unit(s):10*unit(s)]
+plot sin(x/unit(s))*unit(m)
+
+set axis x linked item 1 x
+set axis y linked item 1 y
+set origin 0,7
+plot
+
+set display
+refresh
+

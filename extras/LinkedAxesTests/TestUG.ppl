@@ -1,0 +1,21 @@
+set output "output/TestUG.eps"
+set multiplot
+set nodisplay
+
+set size 8,5
+set origin 0,0
+plot
+
+set axis x linked item 1 x using x**2
+set axis y linked item 1 y using y**2
+set origin 0,7
+plot sin(x)*unit(rad) + unit(4*rad)
+
+set axis x linked item 2 x using x**2
+set axis y linked item 2 y using y**2
+set origin 0,14
+plot
+
+set display
+refresh
+

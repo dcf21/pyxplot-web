@@ -1,0 +1,18 @@
+set output "output/TestUC.eps"
+set multiplot
+set nodisplay
+
+set size 8,5
+set origin 0,0
+set xrange [-10*unit(s):10*unit(s)]
+plot sin(x/unit(s))*unit(km) + unit(4*km)
+
+set axis x linked item 1 x
+set axis y linked item 1 y
+set origin 0,7
+set width 7.999
+plot cos(x/unit(s))*unit(km) + unit(4*km)
+
+set display
+refresh
+

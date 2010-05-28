@@ -1,0 +1,10 @@
+#!/bin/bash
+
+mkdir -p output
+mkdir -p errors
+
+for all in *.ppl
+ do
+  ../../pyxplot8/bin/pyxplot $all
+ done
+

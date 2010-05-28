@@ -1,0 +1,21 @@
+set output "output/TestI.eps"
+set multiplot
+set nodisplay
+
+set size 8,5
+set origin 0,0
+plot sin(x)
+
+set axis x linked item 1 x using x**2
+set origin 0,7
+plot cos(x)
+
+set axis x linked item 2 x
+set origin 0,14
+set width 7.999
+set xformat "%f$\pi$"%(x/pi)
+plot sin(x)+cos(x)
+
+set display
+refresh
+
