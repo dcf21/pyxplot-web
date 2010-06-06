@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -57,7 +57,7 @@
 </div>
 
 <div><h1 id="ex:interpolation">5.7 Datafile Interpolation</h1>
-<p>  <a name="a0000000498" id="a0000000498"></a> </p><p>The <tt class="tt">interpolate</tt> command<a name="a0000000499" id="a0000000499"></a> can be used to generate a special function within PyXPlot’s mathematical environment which interpolates a set of datapoints supplied from a datafile. Various different types of interpolation are supported: linear interpolation, power-law interpolation<a href="#a0000000500" class="footnote"><sup class="footnotemark">1</sup></a>, polynomial interpolation, cubic-spline interpolation and akima-spline interpolation. The use of polynomial interpolation with large datasets is strongly discouraged, as polynomial fits tend to show severe oscillations between datapoints. Extrapolation is not permitted; if an attempt is made to evaluate an interpolated function beyond the limits of the datapoints which it interpolates, PyXPlot returns an error or value of not-a-number. </p><p>The <tt class="tt">interpolate</tt> command<a name="a0000000501" id="a0000000501"></a> has similar syntax to the <tt class="tt">fit</tt> command<a name="a0000000502" id="a0000000502"></a>: </p><pre>
+<p>  <a name="a0000000499" id="a0000000499"></a> </p><p>The <tt class="tt">interpolate</tt> command<a name="a0000000500" id="a0000000500"></a> can be used to generate a special function within PyXPlot’s mathematical environment which interpolates a set of datapoints supplied from a datafile. Various different types of interpolation are supported: linear interpolation, power-law interpolation<a href="#a0000000501" class="footnote"><sup class="footnotemark">1</sup></a>, polynomial interpolation, cubic-spline interpolation and akima-spline interpolation. The use of polynomial interpolation with large datasets is strongly discouraged, as polynomial fits tend to show severe oscillations between datapoints. Extrapolation is not permitted; if an attempt is made to evaluate an interpolated function beyond the limits of the datapoints which it interpolates, PyXPlot returns an error or value of not-a-number. </p><p>The <tt class="tt">interpolate</tt> command<a name="a0000000502" id="a0000000502"></a> has similar syntax to the <tt class="tt">fit</tt> command<a name="a0000000503" id="a0000000503"></a>: </p><pre>
 interpolate ( akima | linear | loglinear | polynomial | spline )
             [&lt;range specification&gt;] &lt;function name&gt;"()"
             '&lt;filename&gt;'
@@ -65,11 +65,11 @@ interpolate ( akima | linear | loglinear | polynomial | spline )
             [ index &lt;value&gt; ]
             [ select &lt;expression&gt; ]
             [ using &lt;expression&gt; {:&lt;expression} ]
-</pre><p>A very common application of the <tt class="tt">interpolate</tt> command<a name="a0000000503" id="a0000000503"></a> is to perform arithmetic functions such as addition or subtraction on datasets which are not sampled at the same abscissa values. The following example would plot the difference between two such datasets: </p><pre>
+</pre><p>A very common application of the <tt class="tt">interpolate</tt> command<a name="a0000000504" id="a0000000504"></a> is to perform arithmetic functions such as addition or subtraction on datasets which are not sampled at the same abscissa values. The following example would plot the difference between two such datasets: </p><pre>
 interpolate linear f() 'data1.dat'
 interpolate linear g() 'data2.dat'
 plot [min:max] f(x)-g(x)
-</pre><p>Note that it is advisable to supply a range to the <tt class="tt">plot</tt> command in this example: because the two datasets have been turned into continuous functions, the <tt class="tt">plot</tt> command has to guess a range over which to plot them unless one is explicitly supplied. </p><p>The <tt class="tt">spline</tt> command<a name="a0000000504" id="a0000000504"></a> is an alias for <tt class="tt">interpolate spline</tt>; the following two statements are equivalent: </p><pre>
+</pre><p>Note that it is advisable to supply a range to the <tt class="tt">plot</tt> command in this example: because the two datasets have been turned into continuous functions, the <tt class="tt">plot</tt> command has to guess a range over which to plot them unless one is explicitly supplied. </p><p>The <tt class="tt">spline</tt> command<a name="a0000000505" id="a0000000505"></a> is an alias for <tt class="tt">interpolate spline</tt>; the following two statements are equivalent: </p><pre>
 spline f() 'data1.dat'
 interpolate spline f() 'data1.dat'
 </pre><p> <span class="upshape"><span class="mdseries"><span class="rm">A demonstration of the <tt class="tt">linear</tt>, <tt class="tt">spline</tt> and <tt class="tt">akima</tt> modes of interpolation.</span></span></span></p><div>
@@ -134,7 +134,7 @@ interpolate spline f() 'data1.dat'
 <div id="footnotes">
 <p><b>Footnotes</b></p>
 <ol>
-<li id="a0000000500">Power-law interpolation is equivalent to linear interpolation in log-log space.</li>
+<li id="a0000000501">Power-law interpolation is equivalent to linear interpolation in log-log space.</li>
 </ol>
 </div>
 
@@ -150,7 +150,7 @@ interpolate spline f() 'data1.dat'
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

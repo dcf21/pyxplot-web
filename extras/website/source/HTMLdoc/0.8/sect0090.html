@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -57,15 +57,15 @@
 </div>
 
 <div><h1 id="a0000000091">1.19 fit</h1>
-<p><a name="a0000000956" id="a0000000956"></a> </p><pre>
+<p><a name="a0000000958" id="a0000000958"></a> </p><pre>
 fit [{&lt;range&gt;}] &lt;function&gt;"()" [withouterrors] '&lt;datafile&gt;'
     [index &lt;value&gt;]
     [using &lt;expression&gt; {:&lt;expression&gt;} ]
     via &lt;variable&gt; {, &lt;variable&gt;}
-</pre><p>The <tt class="tt">fit</tt> command<a name="a0000000957" id="a0000000957"></a> can be used to fit arbitrary functional forms to datapoints read from files. It can be used to produce best-fit lines for datasets or to determine gradients and other mathematical properties of data by looking at the parameters associated with the best-fitting functional form. The following simple example fits a straight line to data in a file called <tt class="tt">data.dat</tt>: </p><pre>
+</pre><p>The <tt class="tt">fit</tt> command<a name="a0000000959" id="a0000000959"></a> can be used to fit arbitrary functional forms to datapoints read from files. It can be used to produce best-fit lines for datasets or to determine gradients and other mathematical properties of data by looking at the parameters associated with the best-fitting functional form. The following simple example fits a straight line to data in a file called <tt class="tt">data.dat</tt>: </p><pre>
 f(x) = a*x+b
 fit f() 'data.dat' index 1 using 2:3 via a,b
-</pre><p>The first line specifies the functional form which is to be used. The coefficients within this function which are to be varied during the fitting process are listed after the keyword <tt class="tt">via</tt><a name="a0000000958" id="a0000000958"></a> in the <tt class="tt">fit</tt> command. The modifiers <tt class="tt">index</tt><a name="a0000000959" id="a0000000959"></a>, <tt class="tt">every</tt><a name="a0000000960" id="a0000000960"></a>, <tt class="tt">select</tt><a name="a0000000961" id="a0000000961"></a> and <tt class="tt">using</tt><a name="a0000000962" id="a0000000962"></a> have the same meanings as in the <tt class="tt">plot</tt> command. </p><p>As the <tt class="tt">fit</tt> command works, it displays statistics including the best-fit values of each of the fitting parameters, the uncertainties in each of them, and the covariance matrix. These can be useful for analysing the security of the fit achieved, but calculating the uncertainties in the best-fit parameters and the covariance matrix can be time consuming, especially when many parameters are being fitted simultaneously. The optional keyword <tt class="tt">withouterrors</tt> can be included immediately before the filename of the datafile to be fitted to substantially speed up cases where this information is not required. </p><p>More details can be found in Section <a href="sec-fit_command.html">5.6</a>. </p></div>
+</pre><p>The first line specifies the functional form which is to be used. The coefficients within this function which are to be varied during the fitting process are listed after the keyword <tt class="tt">via</tt><a name="a0000000960" id="a0000000960"></a> in the <tt class="tt">fit</tt> command. The modifiers <tt class="tt">index</tt><a name="a0000000961" id="a0000000961"></a>, <tt class="tt">every</tt><a name="a0000000962" id="a0000000962"></a>, <tt class="tt">select</tt><a name="a0000000963" id="a0000000963"></a> and <tt class="tt">using</tt><a name="a0000000964" id="a0000000964"></a> have the same meanings as in the <tt class="tt">plot</tt> command. </p><p>As the <tt class="tt">fit</tt> command works, it displays statistics including the best-fit values of each of the fitting parameters, the uncertainties in each of them, and the covariance matrix. These can be useful for analysing the security of the fit achieved, but calculating the uncertainties in the best-fit parameters and the covariance matrix can be time consuming, especially when many parameters are being fitted simultaneously. The optional keyword <tt class="tt">withouterrors</tt> can be included immediately before the filename of the datafile to be fitted to substantially speed up cases where this information is not required. </p><p>More details can be found in Section <a href="sec-fit_command.html">5.6</a>. </p></div>
 
 
 
@@ -83,7 +83,7 @@ fit f() 'data.dat' index 1 using 2:3 via a,b
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

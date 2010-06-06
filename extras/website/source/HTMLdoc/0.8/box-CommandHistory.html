@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -57,13 +57,13 @@
 </div>
 
 <div><h1 id="box:CommandHistory">3.1 Getting Started</h1>
-<p>The simplest way to start PyXPlot is to type <tt class="tt">pyxplot</tt> at a shell prompt. This starts an interactive session, and a PyXPlot command-line prompt into which commands can be typed will appear. PyXPlot can be exited either by typing <tt class="tt">exit</tt><a name="a0000000276" id="a0000000276"></a> or <tt class="tt">quit</tt><a name="a0000000277" id="a0000000277"></a>, or by pressing CTRL-D. Various switches can be specified on the shell command line to modify PyXPlot’s behaviour; these are listed in Box <a href="box-CommandHistory.html">3.1</a>. Of especial interest may be the switches <tt class="tt">-c</tt> and <tt class="tt">-m</tt>, which change between the use of colour-highlighted (default) and non-coloured text. </p><p>Typing commands into interactive terminals will probably be a sufficient way to drive PyXPlot to begin with, but as the number of commands required to set up plots grows with the complexity of the task, it is likely to become rapidly more preferable to store these commands in text files called scripts. Once such a script has been written, it can be executed automatically by passing the filename of the command script to PyXPlot on the shell command line, for example:<a name="a0000000278" id="a0000000278"></a> </p><pre>
+<p>The simplest way to start PyXPlot is to type <tt class="tt">pyxplot</tt> at a shell prompt. This starts an interactive session, and a PyXPlot command-line prompt into which commands can be typed will appear. PyXPlot can be exited either by typing <tt class="tt">exit</tt><a name="a0000000277" id="a0000000277"></a> or <tt class="tt">quit</tt><a name="a0000000278" id="a0000000278"></a>, or by pressing CTRL-D. Various switches can be specified on the shell command line to modify PyXPlot’s behaviour; these are listed in Box <a href="box-CommandHistory.html">3.1</a>. Of especial interest may be the switches <tt class="tt">-c</tt> and <tt class="tt">-m</tt>, which change between the use of colour-highlighted (default) and non-coloured text. </p><p>Typing commands into interactive terminals will probably be a sufficient way to drive PyXPlot to begin with, but as the number of commands required to set up plots grows with the complexity of the task, it is likely to become rapidly more preferable to store these commands in text files called scripts. Once such a script has been written, it can be executed automatically by passing the filename of the command script to PyXPlot on the shell command line, for example:<a name="a0000000279" id="a0000000279"></a> </p><pre>
 pyxplot foo.ppl
 </pre><table cellspacing="0" class="tabular">
 <tr>
 
     
-    <td style="border-top-style:solid; border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; border-bottom-color:black; text-align:left"><p> <div style="width:469.755pt" class="minipage"><p>   From the shell command line, PyXPlot accepts the following switches which modify its behaviour:<a name="a0000000279" id="a0000000279"></a>  </p><table cellspacing="0" class="tabular">
+    <td style="border-top-style:solid; border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; border-bottom-color:black; text-align:left"><p> <div style="width:469.755pt" class="minipage"><p>   From the shell command line, PyXPlot accepts the following switches which modify its behaviour:<a name="a0000000280" id="a0000000280"></a>  </p><table cellspacing="0" class="tabular">
 <tr>
 
     
@@ -102,7 +102,7 @@ pyxplot foo.ppl
     <td style="text-align:left"><p><tt class="tt">-c –colour</tt> </p></td>
 
     
-    <td style="text-align:left"><p> Use colour highlighting<a href="#a0000000280" class="footnote"><sup class="footnotemark">1</sup></a>, as is the default behaviour, to display output in green, warning messages in amber, and error messages in red.<a href="#a0000000281" class="footnote"><sup class="footnotemark">2</sup></a> These colours can be changed in the <tt class="tt">terminal</tt> section of the configuration file; see Section <a href="sec-configfile_terminal.html">8.3.4</a> for more details. </p></td>
+    <td style="text-align:left"><p> Use colour highlighting<a href="#a0000000281" class="footnote"><sup class="footnotemark">1</sup></a>, as is the default behaviour, to display output in green, warning messages in amber, and error messages in red.<a href="#a0000000282" class="footnote"><sup class="footnotemark">2</sup></a> These colours can be changed in the <tt class="tt">terminal</tt> section of the configuration file; see Section <a href="sec-configfile_terminal.html">8.3.4</a> for more details. </p></td>
 
 </tr><tr>
 
@@ -120,11 +120,11 @@ pyxplot foo.ppl
 pyxplot foo1.ppl foo2.ppl foo3.ppl
 </pre><p>It is also possible to have a single PyXPlot session alternate between running command scripts autonomously and allowing the user to enter commands interactively between the running of the scripts. There are two ways of doing this. PyXPlot can be passed the magic filename <tt class="tt">–</tt> on the command line, as in the example </p><pre>
 pyxplot foo1.ppl -- foo2.ppl
-</pre><p>where the <tt class="tt">–</tt> represents an interactive session which commences after the execution of <tt class="tt">foo1.ppl</tt> and should be terminated by the user in the usual way, using either the <tt class="tt">exit</tt><a name="a0000000282" id="a0000000282"></a> or <tt class="tt">quit</tt><a name="a0000000283" id="a0000000283"></a> commands. After the interactive session is finished, PyXPlot will automatically execute the command script <tt class="tt">foo2.ppl</tt>. </p><p>From within an interactive session, it is possible to run a command script using the <tt class="tt">load</tt> command<a name="a0000000284" id="a0000000284"></a>, as in the example: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">load ’foo.ppl’</b></tt>  </p><p>This example would have the same effect as typing the contents of the file <tt class="tt">foo.ppl</tt> into the present interactive terminal. </p><p>The <tt class="tt">save</tt> command<a name="a0000000285" id="a0000000285"></a> may assist in producing PyXPlot command scripts: it stores a history of the commands which have been typed into the present interactive session to file. </p><table cellspacing="0" class="tabular">
+</pre><p>where the <tt class="tt">–</tt> represents an interactive session which commences after the execution of <tt class="tt">foo1.ppl</tt> and should be terminated by the user in the usual way, using either the <tt class="tt">exit</tt><a name="a0000000283" id="a0000000283"></a> or <tt class="tt">quit</tt><a name="a0000000284" id="a0000000284"></a> commands. After the interactive session is finished, PyXPlot will automatically execute the command script <tt class="tt">foo2.ppl</tt>. </p><p>From within an interactive session, it is possible to run a command script using the <tt class="tt">load</tt> command<a name="a0000000285" id="a0000000285"></a>, as in the example: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">load ’foo.ppl’</b></tt>  </p><p>This example would have the same effect as typing the contents of the file <tt class="tt">foo.ppl</tt> into the present interactive terminal. </p><p>The <tt class="tt">save</tt> command<a name="a0000000286" id="a0000000286"></a> may assist in producing PyXPlot command scripts: it stores a history of the commands which have been typed into the present interactive session to file. </p><table cellspacing="0" class="tabular">
 <tr>
 
     
-    <td style="border-top-style:solid; border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; border-bottom-color:black; text-align:left"><p> <div style="width:469.755pt" class="minipage"><p>   When PyXPlot is used interactively, its command-line environment is based upon the GNU Readline Library. This means that the up- and down-arrow keys can be used to repeat or modify previously executed commands. Each user’s command history is stored in his homespace in a history file called <tt class="tt">.pyxplot_history</tt>; this file is used by PyXPlot to remember command histories between sessions. PyXPlot’s <tt class="tt">save</tt> command<a name="a0000000286" id="a0000000286"></a> allows the user to save to a text file a list of the commands which have been typed into the present session, as in the following example: </p><p><tt class="tt">save ’output_filename.ppl’ </tt> </p><p>The related <tt class="tt">history</tt> command<a name="a0000000287" id="a0000000287"></a> displays on the terminal a history of all of the commands which have been typed into this and previous interactive sessions. The total history can stretch to several hundred lines long, in which case it can be useful to follow the <tt class="tt">history</tt> command<a name="a0000000288" id="a0000000288"></a> by an optional number, whereupon it only displays the last <img src="images/img-0014.png" alt="$n$" style="vertical-align:0px; 
+    <td style="border-top-style:solid; border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; border-bottom-color:black; text-align:left"><p> <div style="width:469.755pt" class="minipage"><p>   When PyXPlot is used interactively, its command-line environment is based upon the GNU Readline Library. This means that the up- and down-arrow keys can be used to repeat or modify previously executed commands. Each user’s command history is stored in his homespace in a history file called <tt class="tt">.pyxplot_history</tt>; this file is used by PyXPlot to remember command histories between sessions. PyXPlot’s <tt class="tt">save</tt> command<a name="a0000000287" id="a0000000287"></a> allows the user to save to a text file a list of the commands which have been typed into the present session, as in the following example: </p><p><tt class="tt">save ’output_filename.ppl’ </tt> </p><p>The related <tt class="tt">history</tt> command<a name="a0000000288" id="a0000000288"></a> displays on the terminal a history of all of the commands which have been typed into this and previous interactive sessions. The total history can stretch to several hundred lines long, in which case it can be useful to follow the <tt class="tt">history</tt> command<a name="a0000000289" id="a0000000289"></a> by an optional number, whereupon it only displays the last <img src="images/img-0014.png" alt="$n$" style="vertical-align:0px; 
                                      width:11px; 
                                      height:8px" class="math gen" /> commands, e.g.: </p><p><tt class="tt">history 20 </tt>   </p></div> </p></td>
 
@@ -136,7 +136,7 @@ pyxplot foo1.ppl -- foo2.ppl
 <div id="footnotes">
 <p><b>Footnotes</b></p>
 <ol>
-<li id="a0000000280">This will only function on terminals which support colour output.</li><li id="a0000000281">The authors apologise to those members of the population who are red/green colour blind, but draw their attention to the following sentence.</li>
+<li id="a0000000281">This will only function on terminals which support colour output.</li><li id="a0000000282">The authors apologise to those members of the population who are red/green colour blind, but draw their attention to the following sentence.</li>
 </ol>
 </div>
 
@@ -152,7 +152,7 @@ pyxplot foo1.ppl -- foo2.ppl
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

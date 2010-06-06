@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -57,37 +57,37 @@
 </div>
 
 <div><h1 id="sec:bayes_pdf">C.2 The Probability Density Function</h1>
-<p>Bayes’ Theorem states that: </p><table id="a0000001503" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<p>Bayes’ Theorem states that: </p><table id="a0000001510" class="equation" width="100%" cellspacing="0" cellpadding="7">
 <tr>
     
     <td style="width:40%">&nbsp;</td>
-    <td><img src="images/img-0678.png" alt="\begin{equation}  \mathrm{P}\left( \mathbf{u} | \left\{  \mathbf{x}_ i, f_ i, \sigma _ i \right\}  \right) = \frac{ \mathrm{P}\left( \left\{ f_ i \right\}  | \mathbf{u}, \left\{  \mathbf{x}_ i, \sigma _ i \right\}  \right) \mathrm{P}\left( \mathbf{u} | \left\{  \mathbf{x}_ i, \sigma _ i \right\}  \right) }{ \mathrm{P}\left( \left\{ f_ i \right\}  | \left\{  \mathbf{x}_ i, \sigma _ i \right\}  \right) } \end{equation}" style="width:508px; 
+    <td><img src="images/img-0686.png" alt="\begin{equation}  \mathrm{P}\left( \mathbf{u} | \left\{  \mathbf{x}_ i, f_ i, \sigma _ i \right\}  \right) = \frac{ \mathrm{P}\left( \left\{ f_ i \right\}  | \mathbf{u}, \left\{  \mathbf{x}_ i, \sigma _ i \right\}  \right) \mathrm{P}\left( \mathbf{u} | \left\{  \mathbf{x}_ i, \sigma _ i \right\}  \right) }{ \mathrm{P}\left( \left\{ f_ i \right\}  | \left\{  \mathbf{x}_ i, \sigma _ i \right\}  \right) } \end{equation}" style="width:508px; 
                             height:44px" class="math gen" /></td>
     
     <td style="width:40%">&nbsp;</td>
     <td class="eqnnum" style="width:20%"><span>(<span>C.1</span>)</span></td>
 </tr>
-</table><p>Since we are only seeking to maximise the quantity on the left, and the denominator, termed the Bayesian <i class="itshape">evidence</i>, is independent of <img src="images/img-0676.png" alt="$\mathbf{u}$" style="vertical-align:0px; 
+</table><p>Since we are only seeking to maximise the quantity on the left, and the denominator, termed the Bayesian <i class="itshape">evidence</i>, is independent of <img src="images/img-0684.png" alt="$\mathbf{u}$" style="vertical-align:0px; 
                                      width:12px; 
-                                     height:8px" class="math gen" />, we can neglect it and replace the equality sign with a proportionality sign. Furthermore, if we assume a uniform prior, that is, we assume that we have no prior knowledge to bias us towards certain more favoured values of <img src="images/img-0676.png" alt="$\mathbf{u}$" style="vertical-align:0px; 
+                                     height:8px" class="math gen" />, we can neglect it and replace the equality sign with a proportionality sign. Furthermore, if we assume a uniform prior, that is, we assume that we have no prior knowledge to bias us towards certain more favoured values of <img src="images/img-0684.png" alt="$\mathbf{u}$" style="vertical-align:0px; 
                                      width:12px; 
-                                     height:8px" class="math gen" />, then <img src="images/img-0679.png" alt="$\mathrm{P}\left( \mathbf{u} \right)$" style="vertical-align:-4px; 
+                                     height:8px" class="math gen" />, then <img src="images/img-0687.png" alt="$\mathrm{P}\left( \mathbf{u} \right)$" style="vertical-align:-4px; 
                                      width:40px; 
-                                     height:18px" class="math gen" /> is also a constant which can be neglected. We conclude that maximising <img src="images/img-0677.png" alt="$\mathrm{P}\left( \mathbf{u} | \left\{  \mathbf{x}_ i, f_ i, \sigma _ i \right\}  \right)$" style="vertical-align:-5px; 
+                                     height:18px" class="math gen" /> is also a constant which can be neglected. We conclude that maximising <img src="images/img-0685.png" alt="$\mathrm{P}\left( \mathbf{u} | \left\{  \mathbf{x}_ i, f_ i, \sigma _ i \right\}  \right)$" style="vertical-align:-5px; 
                                      width:129px; 
-                                     height:19px" class="math gen" /> is equivalent to maximising <img src="images/img-0680.png" alt="$\mathrm{P}\left( \left\{ f_ i \right\}  | \mathbf{u}, \left\{  \mathbf{x}_ i, \sigma _ i \right\}  \right)$" style="vertical-align:-5px; 
+                                     height:19px" class="math gen" /> is equivalent to maximising <img src="images/img-0688.png" alt="$\mathrm{P}\left( \left\{ f_ i \right\}  | \mathbf{u}, \left\{  \mathbf{x}_ i, \sigma _ i \right\}  \right)$" style="vertical-align:-5px; 
                                      width:148px; 
-                                     height:19px" class="math gen" />. </p><p>Since we are assuming <img src="images/img-0670.png" alt="$f_ i$" style="vertical-align:-4px; 
+                                     height:19px" class="math gen" />. </p><p>Since we are assuming <img src="images/img-0678.png" alt="$f_ i$" style="vertical-align:-4px; 
                                      width:13px; 
-                                     height:16px" class="math gen" /> to be Gaussian-distributed observations of the true function <img src="images/img-0662.png" alt="$f()$" style="vertical-align:-4px; 
+                                     height:16px" class="math gen" /> to be Gaussian-distributed observations of the true function <img src="images/img-0670.png" alt="$f()$" style="vertical-align:-4px; 
                                      width:22px; 
-                                     height:18px" class="math gen" />, this latter probability can be written as a product of <img src="images/img-0667.png" alt="$n_\mathrm {d}$" style="vertical-align:-3px; 
+                                     height:18px" class="math gen" />, this latter probability can be written as a product of <img src="images/img-0675.png" alt="$n_\mathrm {d}$" style="vertical-align:-3px; 
                                      width:19px; 
-                                     height:11px" class="math gen" /> Gaussian distributions: </p><table id="a0000001504" class="equation" width="100%" cellspacing="0" cellpadding="7">
+                                     height:11px" class="math gen" /> Gaussian distributions: </p><table id="a0000001511" class="equation" width="100%" cellspacing="0" cellpadding="7">
 <tr>
     
     <td style="width:40%">&nbsp;</td>
-    <td><img src="images/img-0681.png" alt="\begin{equation}  \mathrm{P}\left( \left\{ f_ i \right\}  | \mathbf{u}, \left\{  \mathbf{x}_ i, \sigma _ i \right\}  \right) = \prod _{i=0}^{n_\mathrm {d}-1} \frac{1}{\sigma _ i\sqrt {2\pi }} \exp \left( \frac{ -\left[f_ i - f_\mathbf {u}(\mathbf{x}_ i)\right]^2 }{ 2 \sigma _ i^2 } \right) \end{equation}" style="width:525px; 
+    <td><img src="images/img-0689.png" alt="\begin{equation}  \mathrm{P}\left( \left\{ f_ i \right\}  | \mathbf{u}, \left\{  \mathbf{x}_ i, \sigma _ i \right\}  \right) = \prod _{i=0}^{n_\mathrm {d}-1} \frac{1}{\sigma _ i\sqrt {2\pi }} \exp \left( \frac{ -\left[f_ i - f_\mathbf {u}(\mathbf{x}_ i)\right]^2 }{ 2 \sigma _ i^2 } \right) \end{equation}" style="width:525px; 
                             height:55px" class="math gen" /></td>
     
     <td style="width:40%">&nbsp;</td>
@@ -95,13 +95,13 @@
 </tr>
 </table><p>The product in this equation can be converted into a more computationally workable sum by taking the logarithm of both sides. Since logarithms are monotonically increasing functions, maximising a probability is equivalent to maximising its logarithm. We may write the logarithm <img src="images/img-0329.png" alt="$L$" style="vertical-align:0px; 
                                      width:12px; 
-                                     height:12px" class="math gen" /> of <img src="images/img-0677.png" alt="$\mathrm{P}\left( \mathbf{u} | \left\{  \mathbf{x}_ i, f_ i, \sigma _ i \right\}  \right)$" style="vertical-align:-5px; 
+                                     height:12px" class="math gen" /> of <img src="images/img-0685.png" alt="$\mathrm{P}\left( \mathbf{u} | \left\{  \mathbf{x}_ i, f_ i, \sigma _ i \right\}  \right)$" style="vertical-align:-5px; 
                                      width:129px; 
-                                     height:19px" class="math gen" /> as: </p><table id="a0000001505" class="equation" width="100%" cellspacing="0" cellpadding="7">
+                                     height:19px" class="math gen" /> as: </p><table id="a0000001512" class="equation" width="100%" cellspacing="0" cellpadding="7">
 <tr>
     
     <td style="width:40%">&nbsp;</td>
-    <td><img src="images/img-0682.png" alt="\begin{equation}  L = \sum _{i=0}^{n_\mathrm {d}-1} \left( \frac{ -\left[f_ i - f_\mathbf {u}(\mathbf{x}_ i)\right]^2 }{ 2 \sigma _ i^2 } \right) + k \end{equation}" style="width:428px; 
+    <td><img src="images/img-0690.png" alt="\begin{equation}  L = \sum _{i=0}^{n_\mathrm {d}-1} \left( \frac{ -\left[f_ i - f_\mathbf {u}(\mathbf{x}_ i)\right]^2 }{ 2 \sigma _ i^2 } \right) + k \end{equation}" style="width:428px; 
                             height:55px" class="math gen" /></td>
     
     <td style="width:40%">&nbsp;</td>
@@ -109,7 +109,7 @@
 </tr>
 </table><p>where <img src="images/img-0541.png" alt="$k$" style="vertical-align:0px; 
                                      width:9px; 
-                                     height:13px" class="math gen" /> is some constant which does not affect the maximisation process. It is this quantity, the familiar sum-of-square-residuals, that we numerically maximise to find our best-fitting set of parameters, which I shall refer to from here on as <img src="images/img-0683.png" alt="$\mathbf{u}^0$" style="vertical-align:0px; 
+                                     height:13px" class="math gen" /> is some constant which does not affect the maximisation process. It is this quantity, the familiar sum-of-square-residuals, that we numerically maximise to find our best-fitting set of parameters, which I shall refer to from here on as <img src="images/img-0691.png" alt="$\mathbf{u}^0$" style="vertical-align:0px; 
                                      width:19px; 
                                      height:16px" class="math gen" />. </p></div>
 
@@ -129,7 +129,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

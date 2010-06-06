@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -57,7 +57,7 @@
 </div>
 
 <div><h1 id="a0000000205">1.51 tabulate</h1>
-<p><a name="a0000001231" id="a0000001231"></a> </p><pre>
+<p><a name="a0000001233" id="a0000001233"></a> </p><pre>
 tabulate [ &lt;range&gt; ] ( &lt;expression&gt; | &lt;filename&gt; )
        [ every &lt;expression&gt; {:&lt;expression&gt;} ]
        [ index &lt;value&gt; ]
@@ -65,16 +65,16 @@ tabulate [ &lt;range&gt; ] ( &lt;expression&gt; | &lt;filename&gt; )
        [ sortby &lt;expression&gt; ]
        [ using &lt;expression&gt;  {:&lt;expression&gt;} ]
        [ with &lt;output format&gt; ]
-</pre><p>PyXPlot’s <tt class="tt">tabulate</tt> command<a name="a0000001232" id="a0000001232"></a> is similar to its <tt class="tt">plot</tt> command, but instead of plotting a series of datapoints onto a graph, it outputs them to datafiles. This can be used to produce text files containing samples of functions, to rearrange/filter the columns in datafiles, to change the units in which data is expressed in datafiles, and so forth. The following example would produce a datafile called <tt class="tt">gamma.dat</tt> containing a list of values of the gamma function: </p><pre>
+</pre><p>PyXPlot’s <tt class="tt">tabulate</tt> command<a name="a0000001234" id="a0000001234"></a> is similar to its <tt class="tt">plot</tt> command, but instead of plotting a series of datapoints onto a graph, it outputs them to datafiles. This can be used to produce text files containing samples of functions, to rearrange/filter the columns in datafiles, to change the units in which data is expressed in datafiles, and so forth. The following example would produce a datafile called <tt class="tt">gamma.dat</tt> containing a list of values of the gamma function: </p><pre>
 set output 'gamma.dat'
 tabulate [1:5] gamma(x)
-</pre><p>Multiple functions may be tabulated into the same file, either by using the <tt class="tt">using</tt><a name="a0000001233" id="a0000001233"></a> modifier: </p><pre>
+</pre><p>Multiple functions may be tabulated into the same file, either by using the <tt class="tt">using</tt><a name="a0000001235" id="a0000001235"></a> modifier: </p><pre>
 tabulate [0:2*pi] sin(x):cos(x):tan(x) u 1:2:3:4
 </pre><p>or by placing them in a comma-separated list, as in the <tt class="tt">plot</tt> command: </p><pre>
 tabulate [0:2*pi] sin(x), cos(x), tan(x)
-</pre><p>In the former case, the functions are tabulated horizontally alongside one another in a series of columns. In the latter case, the functions are tabulated one after another in a series of index blocks separated by double linefeeds (see Section <a href="sec-plot_datafiles.html">3.8</a>). </p><p>The setting <tt class="tt">samples</tt> can be used to control the number of points that are produced when tabulating functions, in the same way that it controls the <tt class="tt">plot</tt> command:<a name="a0000001234" id="a0000001234"></a> </p><pre>
+</pre><p>In the former case, the functions are tabulated horizontally alongside one another in a series of columns. In the latter case, the functions are tabulated one after another in a series of index blocks separated by double linefeeds (see Section <a href="sec-plot_datafiles.html">3.8</a>). </p><p>The setting <tt class="tt">samples</tt> can be used to control the number of points that are produced when tabulating functions, in the same way that it controls the <tt class="tt">plot</tt> command:<a name="a0000001236" id="a0000001236"></a> </p><pre>
 set samples 200
-</pre><p>If the ordinate axis is set to be logarithmic then the points at which functions are evaluated are spaced logarithmically, otherwise they are spaced linearly. </p><p>The <tt class="tt">select</tt><a name="a0000001235" id="a0000001235"></a>, <tt class="tt">using</tt><a name="a0000001236" id="a0000001236"></a> and <tt class="tt">every</tt><a name="a0000001237" id="a0000001237"></a> modifiers operate in the same manner in the <tt class="tt">tabulate</tt> command as in the <tt class="tt">plot</tt> command. Thus, the following example would write out the third, sixth and ninth columns of the datafile <tt class="tt">input.dat</tt>, but only when the arcsine of the value in the fourth column is positive: </p><pre>
+</pre><p>If the ordinate axis is set to be logarithmic then the points at which functions are evaluated are spaced logarithmically, otherwise they are spaced linearly. </p><p>The <tt class="tt">select</tt><a name="a0000001237" id="a0000001237"></a>, <tt class="tt">using</tt><a name="a0000001238" id="a0000001238"></a> and <tt class="tt">every</tt><a name="a0000001239" id="a0000001239"></a> modifiers operate in the same manner in the <tt class="tt">tabulate</tt> command as in the <tt class="tt">plot</tt> command. Thus, the following example would write out the third, sixth and ninth columns of the datafile <tt class="tt">input.dat</tt>, but only when the arcsine of the value in the fourth column is positive: </p><pre>
 set output 'filtered.dat'
 tabulate 'input.dat' u 3:6:9 select (asin($4)&gt;0)
 </pre><p>The numerical display format used in each column of the output file is chosen automatically to preserve accuracy whilst simultaneously being as easily human readable as possible. Thus, columns which contain only integers are displayed as such, and scientific notation is only used in columns which contain very large or very small values. If desired, however, a format statement may be specified using the <tt class="tt">with format</tt> specifier. The syntax for this is similar to that expected by the string substitution operator (<tt class="tt">%</tt>; see Section <a href="sec-stringsubop.html">6.1.1</a>). As an example, to tabulate the values of <img src="images/img-0164.png" alt="$x^2$" style="vertical-align:0px; 
@@ -103,7 +103,7 @@ x = 1.666667 ; x**2 =  2.77777777777778167589e+00
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

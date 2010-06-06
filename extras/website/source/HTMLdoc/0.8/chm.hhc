@@ -2282,36 +2282,43 @@
          <ul>
             
             <li><object type="text/sitemap">
-                <param name="Name" value="2010 May 19: PyXPlot 0.8.0">
+                <param name="Name" value="2010 June 1: PyXPlot 0.8.1">
                 <param name="Local" value="sect0231.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="2009 May 24: PyXPlot 0.7.1">
+                <param name="Name" value="2010 May 19: PyXPlot 0.8.0">
                 <param name="Local" value="sect0232.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="2008 Oct 14: PyXPlot 0.7.0">
+                <param name="Name" value="2009 Nov 17: PyXPlot 0.7.1">
                 <param name="Local" value="sect0233.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="2007 Feb 26: PyXPlot 0.6.3">
+                <param name="Name" value="2008 Oct 14: PyXPlot 0.7.0">
                 <param name="Local" value="sect0234.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="2006 Sep 09: PyXPlot 0.5.8">
+                <param name="Name" value="2007 Feb 26: PyXPlot 0.6.3">
                 <param name="Local" value="sect0235.html">
+                <param name="ImageNumber" value="11">
+            </object></li>
+            
+            
+            <li><object type="text/sitemap">
+                <param name="Name" value="2006 Sep 09: PyXPlot 0.5.8">
+                <param name="Local" value="sect0236.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
@@ -2320,7 +2327,7 @@
          
          <li><object type="text/sitemap">
              <param name="Name" value="Index">
-             <param name="Local" value="sect0236.html">
+             <param name="Local" value="sect0237.html">
              <param name="ImageNumber" value="11">
          </object></li>
          

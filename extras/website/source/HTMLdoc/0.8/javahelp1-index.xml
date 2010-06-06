@@ -2,1717 +2,1726 @@
 <index version="1.0"> 
 <indexitem text="">
 </indexitem>
-<indexitem target="a0000000913">? command
+<indexitem target="a0000000915">? command
 </indexitem>
-<indexitem target="a0000000301">% operator</indexitem>
-<indexitem target="a0000000543">% operator
+<indexitem target="a0000000302">% operator</indexitem>
+<indexitem target="a0000000544">% operator
 </indexitem>
-<indexitem target="a0000000548">= operator
+<indexitem target="a0000000549">= operator
 </indexitem>
-<indexitem target="a0000000721">above keyword
+<indexitem target="a0000000722">above keyword
 </indexitem>
-<indexitem target="a0000001246">abs(z) function
+<indexitem target="a0000001248">abs(z) function
 </indexitem>
-<indexitem target="a0000000405">abs(z) function
+<indexitem target="a0000000406">abs(z) function
 </indexitem>
-<indexitem target="a0000000306">accented characters
+<indexitem target="a0000000307">accented characters
 </indexitem>
-<indexitem target="a0000001247">acos(z) function
+<indexitem target="a0000001249">acos(z) function
 </indexitem>
-<indexitem target="a0000001248">acosh(z) function
+<indexitem target="a0000001250">acosh(z) function
 </indexitem>
-<indexitem target="a0000001249">acot(z) function
+<indexitem target="a0000001251">acot(z) function
 </indexitem>
-<indexitem target="a0000001250">acoth(z) function
+<indexitem target="a0000001252">acoth(z) function
 </indexitem>
-<indexitem target="a0000001251">acsc(z) function
+<indexitem target="a0000001253">acsc(z) function
 </indexitem>
-<indexitem target="a0000001252">acsch(z) function
+<indexitem target="a0000001254">acsch(z) function
 </indexitem>
-<indexitem target="a0000000348">Adobe Acrobat
+<indexitem target="a0000000349">Adobe Acrobat
 </indexitem>
-<indexitem target="a0000001254">airy­ai­diff(z) function
+<indexitem target="a0000001256">airy­ai­diff(z) function
 </indexitem>
-<indexitem target="a0000001253">airy­ai(z) function
+<indexitem target="a0000001255">airy­ai(z) function
 </indexitem>
-<indexitem target="a0000001256">airy­bi­diff(z) function
+<indexitem target="a0000001258">airy­bi­diff(z) function
 </indexitem>
-<indexitem target="a0000001255">airy­bi(z) function
+<indexitem target="a0000001257">airy­bi(z) function
 </indexitem>
 <indexitem text="alignment">
-<indexitem target="a0000000784">text</indexitem>
+<indexitem target="a0000000786">text</indexitem>
 </indexitem>
-<indexitem target="a0000000909">amsmath package
+<indexitem target="a0000000911">amsmath package
 </indexitem>
-<indexitem target="a0000000416">angles, handling of
+<indexitem target="a0000000417">angles, handling of
 </indexitem>
-<indexitem target="a0000000858">arc command</indexitem>
-<indexitem target="a0000000898">arc command</indexitem>
-<indexitem target="a0000000915">arc command</indexitem>
-<indexitem target="a0000000916">arc command
+<indexitem target="a0000000860">arc command</indexitem>
+<indexitem target="a0000000900">arc command</indexitem>
+<indexitem target="a0000000917">arc command</indexitem>
+<indexitem target="a0000000918">arc command
 </indexitem>
-<indexitem target="a0000001257">arg(z) function
+<indexitem target="a0000001259">arg(z) function
 </indexitem>
-<indexitem target="a0000000404">arg(z) function
+<indexitem target="a0000000405">arg(z) function
 </indexitem>
-<indexitem target="a0000000859">arrow command</indexitem>
-<indexitem target="a0000000879">arrow command</indexitem>
-<indexitem target="a0000000880">arrow command</indexitem>
+<indexitem target="a0000000861">arrow command</indexitem>
+<indexitem target="a0000000881">arrow command</indexitem>
 <indexitem target="a0000000882">arrow command</indexitem>
-<indexitem target="a0000000917">arrow command</indexitem>
-<indexitem target="a0000000918">arrow command
+<indexitem target="a0000000884">arrow command</indexitem>
+<indexitem target="a0000000919">arrow command</indexitem>
+<indexitem target="a0000000920">arrow command
 </indexitem>
-<indexitem target="a0000000760">arrows
+<indexitem target="a0000000762">arrows
 </indexitem>
-<indexitem target="a0000000687">arrows plot style
+<indexitem target="a0000000688">arrows plot style
 </indexitem>
-<indexitem target="a0000000681">arrowshead plot style</indexitem>
-<indexitem target="a0000000689">arrowshead plot style</indexitem>
-<indexitem target="a0000000691">arrowshead plot style
+<indexitem target="a0000000682">arrowshead plot style</indexitem>
+<indexitem target="a0000000690">arrowshead plot style</indexitem>
+<indexitem target="a0000000692">arrowshead plot style
 </indexitem>
-<indexitem target="a0000000683">arrowsnohead plot style</indexitem>
-<indexitem target="a0000000693">arrowsnohead plot style
+<indexitem target="a0000000684">arrowsnohead plot style</indexitem>
+<indexitem target="a0000000694">arrowsnohead plot style
 </indexitem>
-<indexitem target="a0000000685">arrowstwohead plot style</indexitem>
-<indexitem target="a0000000695">arrowstwohead plot style
+<indexitem target="a0000000686">arrowstwohead plot style</indexitem>
+<indexitem target="a0000000696">arrowstwohead plot style
 </indexitem>
-<indexitem target="a0000001258">asec(z) function
+<indexitem target="a0000001260">asec(z) function
 </indexitem>
-<indexitem target="a0000001259">asech(z) function
+<indexitem target="a0000001261">asech(z) function
 </indexitem>
-<indexitem target="a0000001260">asin(z) function
+<indexitem target="a0000001262">asin(z) function
 </indexitem>
-<indexitem target="a0000001261">asinh(z) function
+<indexitem target="a0000001263">asinh(z) function
 </indexitem>
-<indexitem target="a0000001262">ast­Lcdm­age(H0,­&#8486;M,­&#8486;) function
+<indexitem target="a0000001264">ast­Lcdm­age(H0,­&#8486;M,­&#8486;) function
 </indexitem>
-<indexitem target="a0000001263">ast­Lcdm­angscale(z,­H0,­&#8486;M,­&#8486;) function
+<indexitem target="a0000001265">ast­Lcdm­angscale(z,­H0,­&#8486;M,­&#8486;) function
 </indexitem>
-<indexitem target="a0000001264">ast­Lcdm­DA(z,­H0,­&#8486;M,­&#8486;) function
+<indexitem target="a0000001266">ast­Lcdm­DA(z,­H0,­&#8486;M,­&#8486;) function
 </indexitem>
-<indexitem target="a0000001265">ast­Lcdm­DL(z,­H0,­&#8486;M,­&#8486;) function
+<indexitem target="a0000001267">ast­Lcdm­DL(z,­H0,­&#8486;M,­&#8486;) function
 </indexitem>
-<indexitem target="a0000001266">ast­Lcdm­DM(z,­H0,­&#8486;M,­&#8486;) function
+<indexitem target="a0000001268">ast­Lcdm­DM(z,­H0,­&#8486;M,­&#8486;) function
 </indexitem>
-<indexitem target="a0000001267">ast­Lcdm­t(z,­H0,­&#8486;M,­&#8486;) function
+<indexitem target="a0000001269">ast­Lcdm­t(z,­H0,­&#8486;M,­&#8486;) function
 </indexitem>
-<indexitem target="a0000000747">ast­Lcdm­z(t,­H0,­&#8486;M,­&#8486;) function</indexitem>
-<indexitem target="a0000001268">ast­Lcdm­z(t,­H0,­&#8486;M,­&#8486;) function
+<indexitem target="a0000000749">ast­Lcdm­z(t,­H0,­&#8486;M,­&#8486;) function</indexitem>
+<indexitem target="a0000001270">ast­Lcdm­z(t,­H0,­&#8486;M,­&#8486;) function
 </indexitem>
-<indexitem target="a0000001269">ast­moonphase(JD) function
+<indexitem target="a0000001271">ast­moonphase(JD) function
 </indexitem>
-<indexitem target="a0000001270">ast­sidereal­time(JD) function
+<indexitem target="a0000001272">ast­sidereal­time(JD) function
 </indexitem>
-<indexitem target="a0000001271">atan(z) function
+<indexitem target="a0000001273">atan(z) function
 </indexitem>
-<indexitem target="a0000001273">atan2(x,y) function
+<indexitem target="a0000001275">atan2(x,y) function
 </indexitem>
-<indexitem target="a0000001272">atanh(z) function
+<indexitem target="a0000001274">atanh(z) function
 </indexitem>
-<indexitem target="a0000000737">autofreq keyword</indexitem>
-<indexitem target="a0000001211">autofreq keyword
+<indexitem target="a0000000738">autofreq keyword</indexitem>
+<indexitem target="a0000001213">autofreq keyword
 </indexitem>
 <indexitem text="axes">
-<indexitem target="a0000000754">colour</indexitem>
-<indexitem target="a0000000371">setting ranges</indexitem>
+<indexitem target="a0000000756">colour</indexitem>
+<indexitem target="a0000000372">setting ranges</indexitem>
 </indexitem>
-<indexitem target="a0000000733">axis keyword</indexitem>
-<indexitem target="a0000001207">axis keyword
+<indexitem target="a0000000734">axis keyword</indexitem>
+<indexitem target="a0000001209">axis keyword
 </indexitem>
-<indexitem target="a0000000578">backquote character
+<indexitem target="a0000000579">backquote character
 </indexitem>
-<indexitem target="a0000000305">backslash character
+<indexitem target="a0000000306">backslash character
 </indexitem>
-<indexitem target="a0000000833">backup files
+<indexitem target="a0000000835">backup files
 </indexitem>
-<indexitem target="a0000000648">bar charts
+<indexitem target="a0000000649">bar charts
 </indexitem>
-<indexitem target="a0000000720">below keyword
+<indexitem target="a0000000721">below keyword
 </indexitem>
-<indexitem target="a0000001274">besseli(l,x) function
+<indexitem target="a0000001276">besseli(l,x) function
 </indexitem>
-<indexitem target="a0000001275">besselI(l,x) function
+<indexitem target="a0000001277">besselI(l,x) function
 </indexitem>
-<indexitem target="a0000001276">besselj(l,x) function
+<indexitem target="a0000001278">besselj(l,x) function
 </indexitem>
-<indexitem target="a0000001277">besselJ(l,x) function
+<indexitem target="a0000001279">besselJ(l,x) function
 </indexitem>
-<indexitem target="a0000001278">besselk(l,x) function
+<indexitem target="a0000001280">besselk(l,x) function
 </indexitem>
-<indexitem target="a0000001279">besselK(l,x) function
+<indexitem target="a0000001281">besselK(l,x) function
 </indexitem>
-<indexitem target="a0000001280">bessely(l,x) function
+<indexitem target="a0000001282">bessely(l,x) function
 </indexitem>
-<indexitem target="a0000001281">besselY(l,x) function
+<indexitem target="a0000001283">besselY(l,x) function
 </indexitem>
-<indexitem target="a0000000490">best fit lines</indexitem>
-<indexitem target="a0000000498">best fit lines
+<indexitem target="a0000000491">best fit lines</indexitem>
+<indexitem target="a0000000499">best fit lines
 </indexitem>
-<indexitem target="a0000001282">beta(a,b) function
+<indexitem target="a0000001284">beta(a,b) function
 </indexitem>
-<indexitem target="a0000001283">binomialCDF(k,p,n) function
+<indexitem target="a0000001285">binomialCDF(k,p,n) function
 </indexitem>
-<indexitem target="a0000001284">binomialPDF(k,p,n) function
+<indexitem target="a0000001286">binomialPDF(k,p,n) function
 </indexitem>
-<indexitem target="a0000000525">binorigin modifier</indexitem>
-<indexitem target="a0000000973">binorigin modifier
+<indexitem target="a0000000526">binorigin modifier</indexitem>
+<indexitem target="a0000000975">binorigin modifier
 </indexitem>
-<indexitem target="a0000000527">bins modifier</indexitem>
-<indexitem target="a0000000975">bins modifier
+<indexitem target="a0000000528">bins modifier</indexitem>
+<indexitem target="a0000000977">bins modifier
 </indexitem>
-<indexitem target="a0000000524">binwidth modifier</indexitem>
-<indexitem target="a0000000972">binwidth modifier
+<indexitem target="a0000000525">binwidth modifier</indexitem>
+<indexitem target="a0000000974">binwidth modifier
 </indexitem>
 <indexitem text="bitmap output">
-<indexitem target="a0000000800">resolution</indexitem>
+<indexitem target="a0000000802">resolution</indexitem>
 </indexitem>
-<indexitem target="a0000000805">bmp output
+<indexitem target="a0000000807">bmp output
 </indexitem>
-<indexitem target="a0000000735">border keyword</indexitem>
-<indexitem target="a0000001209">border keyword
+<indexitem target="a0000000736">border keyword</indexitem>
+<indexitem target="a0000001211">border keyword
 </indexitem>
-<indexitem target="a0000000732">both keyword</indexitem>
-<indexitem target="a0000001206">both keyword
+<indexitem target="a0000000733">both keyword</indexitem>
+<indexitem target="a0000001208">both keyword
 </indexitem>
-<indexitem target="a0000000712">bottom keyword</indexitem>
-<indexitem target="a0000000790">bottom keyword
+<indexitem target="a0000000713">bottom keyword</indexitem>
+<indexitem target="a0000000792">bottom keyword
 </indexitem>
-<indexitem target="a0000000860">box command</indexitem>
-<indexitem target="a0000000892">box command</indexitem>
+<indexitem target="a0000000862">box command</indexitem>
 <indexitem target="a0000000894">box command</indexitem>
-<indexitem target="a0000000928">box command</indexitem>
-<indexitem target="a0000000929">box command
+<indexitem target="a0000000896">box command</indexitem>
+<indexitem target="a0000000930">box command</indexitem>
+<indexitem target="a0000000931">box command
 </indexitem>
-<indexitem target="a0000000532">boxes plot style</indexitem>
-<indexitem target="a0000000649">boxes plot style</indexitem>
-<indexitem target="a0000000655">boxes plot style</indexitem>
-<indexitem target="a0000000665">boxes plot style</indexitem>
-<indexitem target="a0000000980">boxes plot style
+<indexitem target="a0000000533">boxes plot style</indexitem>
+<indexitem target="a0000000650">boxes plot style</indexitem>
+<indexitem target="a0000000656">boxes plot style</indexitem>
+<indexitem target="a0000000666">boxes plot style</indexitem>
+<indexitem target="a0000000982">boxes plot style
 </indexitem>
-<indexitem target="a0000000568">break command</indexitem>
-<indexitem target="a0000000930">break command</indexitem>
-<indexitem target="a0000000931">break command
+<indexitem target="a0000000569">break command</indexitem>
+<indexitem target="a0000000932">break command</indexitem>
+<indexitem target="a0000000933">break command
 </indexitem>
-<indexitem target="a0000001285">Bv(,T) function
+<indexitem target="a0000001287">Bv(,T) function
 </indexitem>
-<indexitem target="a0000001286">Bvmax(T) function
+<indexitem target="a0000001288">Bvmax(T) function
 </indexitem>
-<indexitem target="a0000000573">call command
+<indexitem target="a0000000574">call command
 </indexitem>
-<indexitem target="a0000000580">cd command</indexitem>
-<indexitem target="a0000000932">cd command</indexitem>
-<indexitem target="a0000000933">cd command
+<indexitem target="a0000000581">cd command</indexitem>
+<indexitem target="a0000000934">cd command</indexitem>
+<indexitem target="a0000000935">cd command
 </indexitem>
-<indexitem target="a0000001287">ceil(x) function
+<indexitem target="a0000001289">ceil(x) function
 </indexitem>
-<indexitem target="a0000000788">centre keyword</indexitem>
-<indexitem target="a0000000791">centre keyword
+<indexitem target="a0000000790">centre keyword</indexitem>
+<indexitem target="a0000000793">centre keyword
 </indexitem>
-<indexitem target="a0000000425">CGS units</indexitem>
-<indexitem target="a0000001186">CGS units
+<indexitem target="a0000000426">CGS units</indexitem>
+<indexitem target="a0000001188">CGS units
 </indexitem>
-<indexitem target="a0000001538">ChangeLog
+<indexitem target="a0000001545">ChangeLog
 </indexitem>
-<indexitem target="a0000001288">chisqCDF(x,nu) function
+<indexitem target="a0000001290">chisqCDF(x,nu) function
 </indexitem>
-<indexitem target="a0000001289">chisqCDFi(P,nu) function
+<indexitem target="a0000001291">chisqCDFi(P,nu) function
 </indexitem>
-<indexitem target="a0000001290">chisqPDF(x,nu) function
+<indexitem target="a0000001292">chisqPDF(x,nu) function
 </indexitem>
-<indexitem target="a0000000861">circle command</indexitem>
-<indexitem target="a0000000893">circle command</indexitem>
-<indexitem target="a0000000899">circle command</indexitem>
-<indexitem target="a0000000934">circle command</indexitem>
-<indexitem target="a0000000935">circle command
+<indexitem target="a0000000863">circle command</indexitem>
+<indexitem target="a0000000895">circle command</indexitem>
+<indexitem target="a0000000901">circle command</indexitem>
+<indexitem target="a0000000936">circle command</indexitem>
+<indexitem target="a0000000937">circle command
 </indexitem>
-<indexitem target="a0000000843">clear command</indexitem>
-<indexitem target="a0000000846">clear command</indexitem>
-<indexitem target="a0000000936">clear command</indexitem>
-<indexitem target="a0000000937">clear command
+<indexitem target="a0000000845">clear command</indexitem>
+<indexitem target="a0000000848">clear command</indexitem>
+<indexitem target="a0000000938">clear command</indexitem>
+<indexitem target="a0000000939">clear command
 </indexitem>
-<indexitem target="a0000000923">colour keyword
+<indexitem target="a0000000925">colour keyword
 </indexitem>
-<indexitem target="a0000000588">colour modifier</indexitem>
-<indexitem target="a0000001014">colour modifier
+<indexitem target="a0000000589">colour modifier</indexitem>
+<indexitem target="a0000001016">colour modifier
 </indexitem>
-<indexitem target="a0000000816">colour output
+<indexitem target="a0000000818">colour output
 </indexitem>
 <indexitem text="colours">
-<indexitem target="a0000000755">axes</indexitem>
-<indexitem target="a0000001396">charts</indexitem>
-<indexitem target="a0000001484">CMYK</indexitem>
-<indexitem target="a0000001481">configuration file</indexitem>
-<indexitem target="a0000000751">grid</indexitem>
-<indexitem target="a0000001483">HSB</indexitem>
-<indexitem target="a0000000821">inverting</indexitem>
-<indexitem target="a0000001482">RGB</indexitem>
-<indexitem target="a0000000589">setting for datasets</indexitem>
-<indexitem target="a0000001015">setting for datasets</indexitem>
-<indexitem target="a0000000597">setting the palette</indexitem>
-<indexitem target="a0000001397">shades of grey</indexitem>
-<indexitem target="a0000000781">text</indexitem>
+<indexitem target="a0000000757">axes</indexitem>
+<indexitem target="a0000001402">charts</indexitem>
+<indexitem target="a0000001491">CMYK</indexitem>
+<indexitem target="a0000001488">configuration file</indexitem>
+<indexitem target="a0000000753">grid</indexitem>
+<indexitem target="a0000001490">HSB</indexitem>
+<indexitem target="a0000000823">inverting</indexitem>
+<indexitem target="a0000001489">RGB</indexitem>
+<indexitem target="a0000000590">setting for datasets</indexitem>
+<indexitem target="a0000001017">setting for datasets</indexitem>
+<indexitem target="a0000000598">setting the palette</indexitem>
+<indexitem target="a0000001403">shades of grey</indexitem>
+<indexitem target="a0000000783">text</indexitem>
 </indexitem>
-<indexitem target="a0000000336">columns keyword
+<indexitem target="a0000000337">columns keyword
 </indexitem>
-<indexitem target="a0000000279">command line syntax
+<indexitem target="a0000000280">command line syntax
 </indexitem>
 <indexitem text="command scripts">
-<indexitem target="a0000000299">comment lines</indexitem>
+<indexitem target="a0000000300">comment lines</indexitem>
 </indexitem>
-<indexitem target="a0000000278">command-line syntax
+<indexitem target="a0000000279">command-line syntax
 </indexitem>
-<indexitem target="a0000000298">comment lines
-<indexitem target="a0000000325">in datafiles</indexitem>
-<indexitem target="a0000000482">in datafiles</indexitem>
+<indexitem target="a0000000299">comment lines
+<indexitem target="a0000000326">in datafiles</indexitem>
+<indexitem target="a0000000483">in datafiles</indexitem>
 </indexitem>
-<indexitem target="a0000000399">complex numbers
+<indexitem target="a0000000400">complex numbers
 </indexitem>
-<indexitem target="a0000000570">conditionalN(a,b,c) function</indexitem>
-<indexitem target="a0000001291">conditionalN(a,b,c) function
+<indexitem target="a0000000571">conditionalN(a,b,c) function</indexitem>
+<indexitem target="a0000001293">conditionalN(a,b,c) function
 </indexitem>
-<indexitem target="a0000000571">conditionalS(a,b,c) function</indexitem>
-<indexitem target="a0000001292">conditionalS(a,b,c) function
+<indexitem target="a0000000572">conditionalS(a,b,c) function</indexitem>
+<indexitem target="a0000001294">conditionalS(a,b,c) function
 </indexitem>
 <indexitem text="configuration file">
-<indexitem target="a0000001480">colours</indexitem>
+<indexitem target="a0000001487">colours</indexitem>
 </indexitem>
-<indexitem target="a0000001412">configuration files
+<indexitem target="a0000001418">configuration files
 </indexitem>
-<indexitem target="a0000001293">conjugate(z) function
+<indexitem target="a0000001295">conjugate(z) function
 </indexitem>
-<indexitem target="a0000000406">conjugate(z) function
+<indexitem target="a0000000407">conjugate(z) function
 </indexitem>
-<indexitem target="a0000000386">constants
+<indexitem target="a0000000387">constants
 </indexitem>
-<indexitem target="a0000000569">continue command</indexitem>
-<indexitem target="a0000000938">continue command</indexitem>
-<indexitem target="a0000000939">continue command
+<indexitem target="a0000000570">continue command</indexitem>
+<indexitem target="a0000000940">continue command</indexitem>
+<indexitem target="a0000000941">continue command
 </indexitem>
 <indexitem text="coordinate systems">
-<indexitem target="a0000000773">axis<n></indexitem>
-<indexitem target="a0000000769">first</indexitem>
-<indexitem target="a0000000772">graph</indexitem>
-<indexitem target="a0000000771">screen</indexitem>
-<indexitem target="a0000000770">second</indexitem>
+<indexitem target="a0000000775">axis<n></indexitem>
+<indexitem target="a0000000771">first</indexitem>
+<indexitem target="a0000000774">graph</indexitem>
+<indexitem target="a0000000773">screen</indexitem>
+<indexitem target="a0000000772">second</indexitem>
 </indexitem>
-<indexitem target="a0000001526">correlation matrix
+<indexitem target="a0000001533">correlation matrix
 </indexitem>
-<indexitem target="a0000001294">cos(z) function
+<indexitem target="a0000001296">cos(z) function
 </indexitem>
-<indexitem target="a0000001295">cosh(z) function
+<indexitem target="a0000001297">cosh(z) function
 </indexitem>
-<indexitem target="a0000001296">cot(z) function
+<indexitem target="a0000001298">cot(z) function
 </indexitem>
-<indexitem target="a0000001297">coth(z) function
+<indexitem target="a0000001299">coth(z) function
 </indexitem>
-<indexitem target="a0000001512">covariance matrix
+<indexitem target="a0000001519">covariance matrix
 </indexitem>
-<indexitem target="a0000001298">csc(z) function
+<indexitem target="a0000001300">csc(z) function
 </indexitem>
-<indexitem target="a0000001299">csch(z) function
+<indexitem target="a0000001301">csch(z) function
 </indexitem>
-<indexitem target="a0000000292">csv files
+<indexitem target="a0000000293">csv files
 </indexitem>
-<indexitem target="a0000000322">datafile format
+<indexitem target="a0000000323">datafile format
 </indexitem>
 <indexitem text="datafiles">
-<indexitem target="a0000000328">globbing</indexitem>
-<indexitem target="a0000000332">horizontal</indexitem>
+<indexitem target="a0000000329">globbing</indexitem>
+<indexitem target="a0000000333">horizontal</indexitem>
 </indexitem>
-<indexitem target="a0000000262">Debian Linux
+<indexitem target="a0000000263">Debian Linux
 </indexitem>
-<indexitem target="a0000001300">degrees(x) function
+<indexitem target="a0000001302">degrees(x) function
 </indexitem>
-<indexitem target="a0000000844">delete command</indexitem>
-<indexitem target="a0000000940">delete command</indexitem>
-<indexitem target="a0000000941">delete command
+<indexitem target="a0000000846">delete command</indexitem>
+<indexitem target="a0000000942">delete command</indexitem>
+<indexitem target="a0000000943">delete command
 </indexitem>
-<indexitem target="a0000000443">diffdx() function</indexitem>
-<indexitem target="a0000000446">diffdx() function
+<indexitem target="a0000000444">diffdx() function</indexitem>
+<indexitem target="a0000000447">diffdx() function
 </indexitem>
-<indexitem target="a0000001301">diffdx(e,x,step) function
+<indexitem target="a0000001303">diffdx(e,x,step) function
 </indexitem>
-<indexitem target="a0000000440">differentiation
+<indexitem target="a0000000441">differentiation
 </indexitem>
-<indexitem target="a0000000341">discontinuous modifier
+<indexitem target="a0000000342">discontinuous modifier
 </indexitem>
-<indexitem target="a0000000826">DISPLAY environment variable
+<indexitem target="a0000000828">DISPLAY environment variable
 </indexitem>
-<indexitem target="a0000000566">do command</indexitem>
-<indexitem target="a0000000942">do command</indexitem>
-<indexitem target="a0000000943">do command</indexitem>
-<indexitem target="a0000000944">do command
+<indexitem target="a0000000567">do command</indexitem>
+<indexitem target="a0000000944">do command</indexitem>
+<indexitem target="a0000000945">do command</indexitem>
+<indexitem target="a0000000946">do command
 </indexitem>
-<indexitem target="a0000000600">dots plot style
+<indexitem target="a0000000601">dots plot style
 </indexitem>
-<indexitem target="a0000000862">ellipse command</indexitem>
-<indexitem target="a0000000902">ellipse command</indexitem>
-<indexitem target="a0000000945">ellipse command</indexitem>
-<indexitem target="a0000000946">ellipse command
+<indexitem target="a0000000864">ellipse command</indexitem>
+<indexitem target="a0000000904">ellipse command</indexitem>
+<indexitem target="a0000000947">ellipse command</indexitem>
+<indexitem target="a0000000948">ellipse command
 </indexitem>
-<indexitem target="a0000001302">ellipticintE(k) function
+<indexitem target="a0000001304">ellipticintE(k) function
 </indexitem>
-<indexitem target="a0000001304">ellipticintK(k) function
+<indexitem target="a0000001306">ellipticintK(k) function
 </indexitem>
-<indexitem target="a0000001306">ellipticintP(k,n) function
+<indexitem target="a0000001308">ellipticintP(k,n) function
 </indexitem>
-<indexitem target="a0000000947">else command</indexitem>
-<indexitem target="a0000000986">else command
+<indexitem target="a0000000949">else command</indexitem>
+<indexitem target="a0000000988">else command
 </indexitem>
-<indexitem target="a0000000985">else if command
+<indexitem target="a0000000987">else if command
 </indexitem>
-<indexitem target="a0000000806">Encapsulated PostScript
+<indexitem target="a0000000808">Encapsulated PostScript
 </indexitem>
-<indexitem target="a0000000825">enlarging output
+<indexitem target="a0000000827">enlarging output
 </indexitem>
-<indexitem target="a0000000863">eps command</indexitem>
-<indexitem target="a0000000891">eps command</indexitem>
-<indexitem target="a0000000948">eps command</indexitem>
-<indexitem target="a0000000949">eps command</indexitem>
-<indexitem target="a0000001494">eps command
+<indexitem target="a0000000865">eps command</indexitem>
+<indexitem target="a0000000893">eps command</indexitem>
+<indexitem target="a0000000950">eps command</indexitem>
+<indexitem target="a0000000951">eps command</indexitem>
+<indexitem target="a0000001501">eps command
 </indexitem>
-<indexitem target="a0000001308">erf(x) function
+<indexitem target="a0000001310">erf(x) function
 </indexitem>
-<indexitem target="a0000001309">erfc(x) function
+<indexitem target="a0000001311">erfc(x) function
 </indexitem>
-<indexitem target="a0000000616">errorbars
+<indexitem target="a0000000617">errorbars
 </indexitem>
-<indexitem target="a0000000621">errorbars plot style
+<indexitem target="a0000000622">errorbars plot style
 </indexitem>
-<indexitem target="a0000000633">errorrange plot style
+<indexitem target="a0000000634">errorrange plot style
 </indexitem>
-<indexitem target="a0000000304">escape characters</indexitem>
-<indexitem target="a0000000307">escape characters
+<indexitem target="a0000000305">escape characters</indexitem>
+<indexitem target="a0000000308">escape characters
 </indexitem>
-<indexitem target="a0000000324">every modifier</indexitem>
-<indexitem target="a0000000337">every modifier</indexitem>
-<indexitem target="a0000000488">every modifier</indexitem>
-<indexitem target="a0000000494">every modifier</indexitem>
-<indexitem target="a0000000529">every modifier</indexitem>
-<indexitem target="a0000000960">every modifier</indexitem>
-<indexitem target="a0000000977">every modifier</indexitem>
-<indexitem target="a0000001237">every modifier
+<indexitem target="a0000000325">every modifier</indexitem>
+<indexitem target="a0000000338">every modifier</indexitem>
+<indexitem target="a0000000489">every modifier</indexitem>
+<indexitem target="a0000000495">every modifier</indexitem>
+<indexitem target="a0000000530">every modifier</indexitem>
+<indexitem target="a0000000962">every modifier</indexitem>
+<indexitem target="a0000000979">every modifier</indexitem>
+<indexitem target="a0000001239">every modifier
 </indexitem>
-<indexitem target="a0000000574">exec command</indexitem>
 <indexitem target="a0000000575">exec command</indexitem>
-<indexitem target="a0000000950">exec command</indexitem>
-<indexitem target="a0000000951">exec command
+<indexitem target="a0000000576">exec command</indexitem>
+<indexitem target="a0000000952">exec command</indexitem>
+<indexitem target="a0000000953">exec command
 </indexitem>
-<indexitem target="a0000000276">exit command</indexitem>
-<indexitem target="a0000000282">exit command</indexitem>
-<indexitem target="a0000000952">exit command</indexitem>
-<indexitem target="a0000000953">exit command
+<indexitem target="a0000000277">exit command</indexitem>
+<indexitem target="a0000000283">exit command</indexitem>
+<indexitem target="a0000000954">exit command</indexitem>
+<indexitem target="a0000000955">exit command
 </indexitem>
-<indexitem target="a0000001310">exp(z) function
+<indexitem target="a0000001312">exp(z) function
 </indexitem>
-<indexitem target="a0000001311">expint(n,x) function
+<indexitem target="a0000001313">expint(n,x) function
 </indexitem>
-<indexitem target="a0000001313">expm1(x) function
+<indexitem target="a0000001315">expm1(x) function
 </indexitem>
-<indexitem target="a0000000505">fft command</indexitem>
-<indexitem target="a0000000511">fft command</indexitem>
-<indexitem target="a0000000954">fft command</indexitem>
-<indexitem target="a0000000955">fft command
+<indexitem target="a0000000506">fft command</indexitem>
+<indexitem target="a0000000512">fft command</indexitem>
+<indexitem target="a0000000956">fft command</indexitem>
+<indexitem target="a0000000957">fft command
 </indexitem>
-<indexitem target="a0000000248">fftw
+<indexitem target="a0000000249">fftw
 </indexitem>
-<indexitem target="a0000000590">fillcolour modifier</indexitem>
-<indexitem target="a0000000663">fillcolour modifier</indexitem>
-<indexitem target="a0000001016">fillcolour modifier
+<indexitem target="a0000000591">fillcolour modifier</indexitem>
+<indexitem target="a0000000664">fillcolour modifier</indexitem>
+<indexitem target="a0000001018">fillcolour modifier
 </indexitem>
-<indexitem target="a0000000489">fit command</indexitem>
-<indexitem target="a0000000497">fit command</indexitem>
-<indexitem target="a0000000502">fit command</indexitem>
-<indexitem target="a0000000956">fit command</indexitem>
-<indexitem target="a0000000957">fit command</indexitem>
-<indexitem target="a0000001502">fit command
+<indexitem target="a0000000490">fit command</indexitem>
+<indexitem target="a0000000498">fit command</indexitem>
+<indexitem target="a0000000503">fit command</indexitem>
+<indexitem target="a0000000958">fit command</indexitem>
+<indexitem target="a0000000959">fit command</indexitem>
+<indexitem target="a0000001509">fit command
 </indexitem>
-<indexitem target="a0000000479">FITS format
+<indexitem target="a0000000480">FITS format
 </indexitem>
-<indexitem target="a0000001314">floor(x) function
+<indexitem target="a0000001316">floor(x) function
 </indexitem>
-<indexitem target="a0000000777">fontsize
+<indexitem target="a0000000779">fontsize
 </indexitem>
-<indexitem target="a0000000558">for command</indexitem>
 <indexitem target="a0000000559">for command</indexitem>
-<indexitem target="a0000000963">for command</indexitem>
-<indexitem target="a0000000964">for command
+<indexitem target="a0000000560">for command</indexitem>
+<indexitem target="a0000000965">for command</indexitem>
+<indexitem target="a0000000966">for command
 </indexitem>
-<indexitem target="a0000000560">foreach command</indexitem>
-<indexitem target="a0000000965">foreach command</indexitem>
-<indexitem target="a0000000966">foreach command
+<indexitem target="a0000000561">foreach command</indexitem>
+<indexitem target="a0000000967">foreach command</indexitem>
+<indexitem target="a0000000968">foreach command
 </indexitem>
-<indexitem target="a0000000562">foreach datum command</indexitem>
 <indexitem target="a0000000563">foreach datum command</indexitem>
-<indexitem target="a0000000564">foreach datum command
+<indexitem target="a0000000564">foreach datum command</indexitem>
+<indexitem target="a0000000565">foreach datum command
 </indexitem>
-<indexitem target="a0000000671">fsteps plot style</indexitem>
-<indexitem target="a0000000677">fsteps plot style
+<indexitem target="a0000000672">fsteps plot style</indexitem>
+<indexitem target="a0000000678">fsteps plot style
 </indexitem>
-<indexitem target="a0000000481">FTP
+<indexitem target="a0000000482">FTP
 </indexitem>
-<indexitem target="a0000000390">function splicing
+<indexitem target="a0000000391">function splicing
 </indexitem>
 <indexitem text="functions">
-<indexitem target="a0000000296">pre-defined</indexitem>
+<indexitem target="a0000000297">pre-defined</indexitem>
 </indexitem>
-<indexitem target="a0000001315">gamma(x) function
+<indexitem target="a0000001317">gamma(x) function
 </indexitem>
-<indexitem target="a0000001316">gaussianCDF(x,&#963;) function
+<indexitem target="a0000001318">gaussianCDF(x,&#963;) function
 </indexitem>
-<indexitem target="a0000001317">gaussianCDFi(x,&#963;) function
+<indexitem target="a0000001319">gaussianCDFi(x,&#963;) function
 </indexitem>
-<indexitem target="a0000001318">gaussianPDF(x,&#963;) function
+<indexitem target="a0000001320">gaussianPDF(x,&#963;) function
 </indexitem>
-<indexitem target="a0000000243">General Public License
+<indexitem target="a0000000244">General Public License
 </indexitem>
-<indexitem target="a0000000269">Gentoo Linux
+<indexitem target="a0000000270">Gentoo Linux
 </indexitem>
-<indexitem target="a0000000249">Ghostscript
+<indexitem target="a0000000250">Ghostscript
 </indexitem>
-<indexitem target="a0000000257">Ghostview</indexitem>
-<indexitem target="a0000000585">Ghostview
+<indexitem target="a0000000258">Ghostview</indexitem>
+<indexitem target="a0000000586">Ghostview
 </indexitem>
-<indexitem target="a0000000808">gif output
-<indexitem target="a0000000823">transparency</indexitem>
+<indexitem target="a0000000810">gif output
+<indexitem target="a0000000825">transparency</indexitem>
 </indexitem>
-<indexitem target="a0000000326">globbing
+<indexitem target="a0000000327">globbing
 </indexitem>
-<indexitem target="a0000000749">grid
-<indexitem target="a0000000750">colour</indexitem>
+<indexitem target="a0000000751">grid
+<indexitem target="a0000000752">colour</indexitem>
 </indexitem>
-<indexitem target="a0000000250">gsl
+<indexitem target="a0000000251">gsl
 </indexitem>
-<indexitem target="a0000000445">GSL
+<indexitem target="a0000000446">GSL
 </indexitem>
-<indexitem target="a0000000259">gunzip
+<indexitem target="a0000000260">gunzip
 </indexitem>
-<indexitem target="a0000000295">gzip
+<indexitem target="a0000000296">gzip
 </indexitem>
-<indexitem target="a0000000765">head keyword</indexitem>
-<indexitem target="a0000000921">head keyword
+<indexitem target="a0000000767">head keyword</indexitem>
+<indexitem target="a0000000923">head keyword
 </indexitem>
-<indexitem target="a0000001319">heaviside(x) function
+<indexitem target="a0000001321">heaviside(x) function
 </indexitem>
-<indexitem target="a0000000887">height keyword
+<indexitem target="a0000000889">height keyword
 </indexitem>
-<indexitem target="a0000000382">help command</indexitem>
-<indexitem target="a0000000967">help command</indexitem>
-<indexitem target="a0000000968">help command
+<indexitem target="a0000000383">help command</indexitem>
+<indexitem target="a0000000969">help command</indexitem>
+<indexitem target="a0000000970">help command
 </indexitem>
-<indexitem target="a0000001510">Hessian matrix
+<indexitem target="a0000001517">Hessian matrix
 </indexitem>
-<indexitem target="a0000000673">histeps plot style</indexitem>
-<indexitem target="a0000000679">histeps plot style
+<indexitem target="a0000000674">histeps plot style</indexitem>
+<indexitem target="a0000000680">histeps plot style
 </indexitem>
-<indexitem target="a0000000477">histogram command</indexitem>
-<indexitem target="a0000000522">histogram command</indexitem>
+<indexitem target="a0000000478">histogram command</indexitem>
 <indexitem target="a0000000523">histogram command</indexitem>
-<indexitem target="a0000000526">histogram command</indexitem>
-<indexitem target="a0000000969">histogram command</indexitem>
-<indexitem target="a0000000970">histogram command</indexitem>
+<indexitem target="a0000000524">histogram command</indexitem>
+<indexitem target="a0000000527">histogram command</indexitem>
 <indexitem target="a0000000971">histogram command</indexitem>
-<indexitem target="a0000000974">histogram command</indexitem>
-<indexitem target="a0000001055">histogram command</indexitem>
-<indexitem target="a0000001056">histogram command</indexitem>
-<indexitem target="a0000001059">histogram command</indexitem>
-<indexitem target="a0000001419">histogram command</indexitem>
-<indexitem target="a0000001421">histogram command
+<indexitem target="a0000000972">histogram command</indexitem>
+<indexitem target="a0000000973">histogram command</indexitem>
+<indexitem target="a0000000976">histogram command</indexitem>
+<indexitem target="a0000001057">histogram command</indexitem>
+<indexitem target="a0000001058">histogram command</indexitem>
+<indexitem target="a0000001061">histogram command</indexitem>
+<indexitem target="a0000001425">histogram command</indexitem>
+<indexitem target="a0000001427">histogram command
 </indexitem>
-<indexitem target="a0000000287">history command</indexitem>
 <indexitem target="a0000000288">history command</indexitem>
-<indexitem target="a0000000982">history command</indexitem>
-<indexitem target="a0000000983">history command
+<indexitem target="a0000000289">history command</indexitem>
+<indexitem target="a0000000984">history command</indexitem>
+<indexitem target="a0000000985">history command
 </indexitem>
-<indexitem target="a0000000331">horizontal datafiles
+<indexitem target="a0000000332">horizontal datafiles
 </indexitem>
-<indexitem target="a0000000480">HTTP
+<indexitem target="a0000000481">HTTP
 </indexitem>
-<indexitem target="a0000001320">hyperg0F1(c,x) function
+<indexitem target="a0000001322">hyperg0F1(c,x) function
 </indexitem>
-<indexitem target="a0000001321">hyperg1F1(a,b,x) function
+<indexitem target="a0000001323">hyperg1F1(a,b,x) function
 </indexitem>
-<indexitem target="a0000001322">hyperg2F0(a,b,x) function
+<indexitem target="a0000001324">hyperg2F0(a,b,x) function
 </indexitem>
-<indexitem target="a0000001323">hyperg2F1(a,b,x) function
+<indexitem target="a0000001325">hyperg2F1(a,b,x) function
 </indexitem>
-<indexitem target="a0000001324">hypergU(a,b,x) function
+<indexitem target="a0000001326">hypergU(a,b,x) function
 </indexitem>
-<indexitem target="a0000001325">hypot(x,y) function
+<indexitem target="a0000001327">hypot(x,y) function
 </indexitem>
-<indexitem target="a0000000557">if command</indexitem>
-<indexitem target="a0000000984">if command</indexitem>
-<indexitem target="a0000000987">if command
+<indexitem target="a0000000558">if command</indexitem>
+<indexitem target="a0000000986">if command</indexitem>
+<indexitem target="a0000000989">if command
 </indexitem>
-<indexitem target="a0000000506">ifft command</indexitem>
-<indexitem target="a0000000510">ifft command</indexitem>
-<indexitem target="a0000000512">ifft command</indexitem>
-<indexitem target="a0000000988">ifft command
+<indexitem target="a0000000507">ifft command</indexitem>
+<indexitem target="a0000000511">ifft command</indexitem>
+<indexitem target="a0000000513">ifft command</indexitem>
+<indexitem target="a0000000990">ifft command
 </indexitem>
-<indexitem target="a0000001326">Im(z) function
+<indexitem target="a0000001328">Im(z) function
 </indexitem>
-<indexitem target="a0000000403">Im(z) function
+<indexitem target="a0000000404">Im(z) function
 </indexitem>
-<indexitem target="a0000000864">image command</indexitem>
-<indexitem target="a0000000884">image command</indexitem>
-<indexitem target="a0000000890">image command</indexitem>
-<indexitem target="a0000000989">image command</indexitem>
-<indexitem target="a0000000990">image command</indexitem>
-<indexitem target="a0000001487">image command
+<indexitem target="a0000000866">image command</indexitem>
+<indexitem target="a0000000886">image command</indexitem>
+<indexitem target="a0000000892">image command</indexitem>
+<indexitem target="a0000000991">image command</indexitem>
+<indexitem target="a0000000992">image command</indexitem>
+<indexitem target="a0000001494">image command
 </indexitem>
-<indexitem target="a0000000801">image resolution
+<indexitem target="a0000000803">image resolution
 </indexitem>
-<indexitem target="a0000000251">ImageMagick</indexitem>
-<indexitem target="a0000001486">ImageMagick
+<indexitem target="a0000000252">ImageMagick</indexitem>
+<indexitem target="a0000001493">ImageMagick
 </indexitem>
-<indexitem target="a0000000427">imperial units</indexitem>
-<indexitem target="a0000001188">imperial units
+<indexitem target="a0000000428">imperial units</indexitem>
+<indexitem target="a0000001190">imperial units
 </indexitem>
-<indexitem target="a0000000651">impulses plot style</indexitem>
-<indexitem target="a0000000660">impulses plot style
+<indexitem target="a0000000652">impulses plot style</indexitem>
+<indexitem target="a0000000661">impulses plot style
 </indexitem>
-<indexitem target="a0000000323">index modifier</indexitem>
-<indexitem target="a0000000493">index modifier</indexitem>
-<indexitem target="a0000000528">index modifier</indexitem>
-<indexitem target="a0000000959">index modifier</indexitem>
-<indexitem target="a0000000976">index modifier
+<indexitem target="a0000000324">index modifier</indexitem>
+<indexitem target="a0000000494">index modifier</indexitem>
+<indexitem target="a0000000529">index modifier</indexitem>
+<indexitem target="a0000000961">index modifier</indexitem>
+<indexitem target="a0000000978">index modifier
 </indexitem>
-<indexitem target="a0000000268">installation
-<indexitem target="a0000000275">system-wide</indexitem>
-<indexitem target="a0000000264">under Debian</indexitem>
-<indexitem target="a0000000270">under Gentoo</indexitem>
-<indexitem target="a0000000265">under Ubuntu</indexitem>
-<indexitem target="a0000000273">under Ubuntu</indexitem>
-<indexitem target="a0000000274">user-level</indexitem>
+<indexitem target="a0000000269">installation
+<indexitem target="a0000000276">system-wide</indexitem>
+<indexitem target="a0000000265">under Debian</indexitem>
+<indexitem target="a0000000271">under Gentoo</indexitem>
+<indexitem target="a0000000266">under Ubuntu</indexitem>
+<indexitem target="a0000000274">under Ubuntu</indexitem>
+<indexitem target="a0000000275">user-level</indexitem>
 </indexitem>
-<indexitem target="a0000000442">intdx() function</indexitem>
-<indexitem target="a0000000444">intdx() function
+<indexitem target="a0000000443">intdx() function</indexitem>
+<indexitem target="a0000000445">intdx() function
 </indexitem>
-<indexitem target="a0000001327">intdx(e,min,max) function
+<indexitem target="a0000001329">intdx(e,min,max) function
 </indexitem>
-<indexitem target="a0000000441">integration
+<indexitem target="a0000000442">integration
 </indexitem>
-<indexitem target="a0000000499">interpolate command</indexitem>
-<indexitem target="a0000000501">interpolate command</indexitem>
-<indexitem target="a0000000503">interpolate command</indexitem>
-<indexitem target="a0000000992">interpolate command</indexitem>
-<indexitem target="a0000000993">interpolate command</indexitem>
-<indexitem target="a0000000994">interpolate command
+<indexitem target="a0000000500">interpolate command</indexitem>
+<indexitem target="a0000000502">interpolate command</indexitem>
+<indexitem target="a0000000504">interpolate command</indexitem>
+<indexitem target="a0000000994">interpolate command</indexitem>
+<indexitem target="a0000000995">interpolate command</indexitem>
+<indexitem target="a0000000996">interpolate command
 </indexitem>
-<indexitem target="a0000000730">inward keyword</indexitem>
-<indexitem target="a0000000734">inward keyword</indexitem>
-<indexitem target="a0000001204">inward keyword</indexitem>
-<indexitem target="a0000001208">inward keyword
+<indexitem target="a0000000731">inward keyword</indexitem>
+<indexitem target="a0000000735">inward keyword</indexitem>
+<indexitem target="a0000001206">inward keyword</indexitem>
+<indexitem target="a0000001210">inward keyword
 </indexitem>
-<indexitem target="a0000001328">jacobicn(u,m) function
+<indexitem target="a0000001330">jacobicn(u,m) function
 </indexitem>
-<indexitem target="a0000001330">jacobidn(u,m) function
+<indexitem target="a0000001332">jacobidn(u,m) function
 </indexitem>
-<indexitem target="a0000001332">jacobisn(u,m) function
+<indexitem target="a0000001334">jacobisn(u,m) function
 </indexitem>
-<indexitem target="a0000000996">jpeg command</indexitem>
-<indexitem target="a0000001493">jpeg command
+<indexitem target="a0000000998">jpeg command</indexitem>
+<indexitem target="a0000001500">jpeg command
 </indexitem>
-<indexitem target="a0000001485">jpeg images
+<indexitem target="a0000001492">jpeg images
 </indexitem>
-<indexitem target="a0000000809">jpeg output
+<indexitem target="a0000000811">jpeg output
 </indexitem>
-<indexitem target="a0000000459">Julian Day numbers
+<indexitem target="a0000000460">Julian Day numbers
 </indexitem>
-<indexitem target="a0000000705">keys
+<indexitem target="a0000000706">keys
 </indexitem>
-<indexitem target="a0000000830">Kuhn, Marcus
+<indexitem target="a0000000832">Kuhn, Marcus
 </indexitem>
-<indexitem target="a0000001334">lambertW0(x) function
+<indexitem target="a0000001336">lambertW0(x) function
 </indexitem>
-<indexitem target="a0000001335">lambertW1(x) function
+<indexitem target="a0000001337">lambertW1(x) function
 </indexitem>
-<indexitem target="a0000000819">landscape orientation
+<indexitem target="a0000000821">landscape orientation
 </indexitem>
-<indexitem target="a0000000252">latex</indexitem>
-<indexitem target="a0000000907">latex</indexitem>
-<indexitem target="a0000001499">latex
+<indexitem target="a0000000253">latex</indexitem>
+<indexitem target="a0000000909">latex</indexitem>
+<indexitem target="a0000001506">latex
 </indexitem>
-<indexitem target="a0000001336">ldexp(x,y) function
+<indexitem target="a0000001338">ldexp(x,y) function
 </indexitem>
-<indexitem target="a0000000713">left keyword</indexitem>
-<indexitem target="a0000000718">left keyword</indexitem>
-<indexitem target="a0000000787">left keyword
+<indexitem target="a0000000714">left keyword</indexitem>
+<indexitem target="a0000000719">left keyword</indexitem>
+<indexitem target="a0000000789">left keyword
 </indexitem>
-<indexitem target="a0000001337">legendreP(l,x) function
+<indexitem target="a0000001339">legendreP(l,x) function
 </indexitem>
-<indexitem target="a0000001338">legendreQ(l,x) function
+<indexitem target="a0000001340">legendreQ(l,x) function
 </indexitem>
-<indexitem target="a0000000706">legends
+<indexitem target="a0000000707">legends
 </indexitem>
-<indexitem target="a0000000383">let command</indexitem>
-<indexitem target="a0000000997">let command</indexitem>
-<indexitem target="a0000000998">let command
+<indexitem target="a0000000384">let command</indexitem>
+<indexitem target="a0000000999">let command</indexitem>
+<indexitem target="a0000001000">let command
 </indexitem>
-<indexitem target="a0000000253">libkpathsea
+<indexitem target="a0000000254">libkpathsea
 </indexitem>
-<indexitem target="a0000000254">libpng
+<indexitem target="a0000000255">libpng
 </indexitem>
-<indexitem target="a0000000255">libxml
+<indexitem target="a0000000256">libxml
 </indexitem>
-<indexitem target="a0000000244">license
+<indexitem target="a0000000245">license
 </indexitem>
-<indexitem target="a0000000865">line command</indexitem>
-<indexitem target="a0000000883">line command
+<indexitem target="a0000000867">line command</indexitem>
+<indexitem target="a0000000885">line command
 </indexitem>
-<indexitem target="a0000000339">lines plot style</indexitem>
-<indexitem target="a0000000361">lines plot style</indexitem>
-<indexitem target="a0000000602">lines plot style
+<indexitem target="a0000000340">lines plot style</indexitem>
+<indexitem target="a0000000362">lines plot style</indexitem>
+<indexitem target="a0000000603">lines plot style
 </indexitem>
-<indexitem target="a0000000357">linespoints plot style</indexitem>
-<indexitem target="a0000000604">linespoints plot style
+<indexitem target="a0000000358">linespoints plot style</indexitem>
+<indexitem target="a0000000605">linespoints plot style
 </indexitem>
-<indexitem target="a0000000925">linetype keyword
+<indexitem target="a0000000927">linetype keyword
 </indexitem>
-<indexitem target="a0000000591">linetype modifier</indexitem>
-<indexitem target="a0000001017">linetype modifier
+<indexitem target="a0000000592">linetype modifier</indexitem>
+<indexitem target="a0000001019">linetype modifier
 </indexitem>
-<indexitem target="a0000000367">linetype plot style
+<indexitem target="a0000000368">linetype plot style
 </indexitem>
-<indexitem target="a0000000924">linewidth keyword
+<indexitem target="a0000000926">linewidth keyword
 </indexitem>
-<indexitem target="a0000000592">linewidth modifier</indexitem>
-<indexitem target="a0000001018">linewidth modifier
+<indexitem target="a0000000593">linewidth modifier</indexitem>
+<indexitem target="a0000001020">linewidth modifier
 </indexitem>
-<indexitem target="a0000000842">list command</indexitem>
-<indexitem target="a0000000999">list command</indexitem>
-<indexitem target="a0000001000">list command
+<indexitem target="a0000000844">list command</indexitem>
+<indexitem target="a0000001001">list command</indexitem>
+<indexitem target="a0000001002">list command
 </indexitem>
-<indexitem target="a0000000284">load command</indexitem>
-<indexitem target="a0000001001">load command</indexitem>
-<indexitem target="a0000001002">load command
+<indexitem target="a0000000285">load command</indexitem>
+<indexitem target="a0000001003">load command</indexitem>
+<indexitem target="a0000001004">load command
 </indexitem>
-<indexitem target="a0000001339">log(z) function
+<indexitem target="a0000001341">log(z) function
 </indexitem>
-<indexitem target="a0000001340">log10(z) function
+<indexitem target="a0000001342">log10(z) function
 </indexitem>
-<indexitem target="a0000001341">lognormalCDF(x,,&#963;) function
+<indexitem target="a0000001343">lognormalCDF(x,,&#963;) function
 </indexitem>
-<indexitem target="a0000001342">lognormalCDFi(x,,&#963;) function
+<indexitem target="a0000001344">lognormalCDFi(x,,&#963;) function
 </indexitem>
-<indexitem target="a0000001343">lognormalPDF(x,,&#963;) function
+<indexitem target="a0000001345">lognormalPDF(x,,&#963;) function
 </indexitem>
-<indexitem target="a0000000608">lower-limit datapoints
+<indexitem target="a0000000609">lower-limit datapoints
 </indexitem>
-<indexitem target="a0000000606">lowerlimits plot style
+<indexitem target="a0000000607">lowerlimits plot style
 </indexitem>
-<indexitem target="a0000000246">MacOS X</indexitem>
-<indexitem target="a0000000266">MacOS X
+<indexitem target="a0000000247">MacOS X</indexitem>
+<indexitem target="a0000000267">MacOS X
 </indexitem>
-<indexitem target="a0000000267">MacPorts
+<indexitem target="a0000000268">MacPorts
 </indexitem>
-<indexitem target="a0000001344">max(x,y) function
+<indexitem target="a0000001346">max(x,y) function
 </indexitem>
-<indexitem target="a0000000455">maximise command</indexitem>
-<indexitem target="a0000000457">maximise command</indexitem>
-<indexitem target="a0000001003">maximise command</indexitem>
-<indexitem target="a0000001004">maximise command
+<indexitem target="a0000000456">maximise command</indexitem>
+<indexitem target="a0000000458">maximise command</indexitem>
+<indexitem target="a0000001005">maximise command</indexitem>
+<indexitem target="a0000001006">maximise command
 </indexitem>
-<indexitem target="a0000000294">Microsoft Excel
+<indexitem target="a0000000295">Microsoft Excel
 </indexitem>
-<indexitem target="a0000001488">Microsoft Powerpoint</indexitem>
-<indexitem target="a0000001491">Microsoft Powerpoint</indexitem>
-<indexitem target="a0000001495">Microsoft Powerpoint
+<indexitem target="a0000001495">Microsoft Powerpoint</indexitem>
+<indexitem target="a0000001498">Microsoft Powerpoint</indexitem>
+<indexitem target="a0000001502">Microsoft Powerpoint
 </indexitem>
-<indexitem target="a0000001345">min(x,y) function
+<indexitem target="a0000001347">min(x,y) function
 </indexitem>
-<indexitem target="a0000000454">minimise command</indexitem>
-<indexitem target="a0000001005">minimise command</indexitem>
-<indexitem target="a0000001006">minimise command
+<indexitem target="a0000000455">minimise command</indexitem>
+<indexitem target="a0000001007">minimise command</indexitem>
+<indexitem target="a0000001008">minimise command
 </indexitem>
-<indexitem target="a0000001346">mod(x,y) function
+<indexitem target="a0000001348">mod(x,y) function
 </indexitem>
-<indexitem target="a0000000817">monochrome output
+<indexitem target="a0000000819">monochrome output
 </indexitem>
-<indexitem target="a0000000847">move command</indexitem>
-<indexitem target="a0000001007">move command</indexitem>
-<indexitem target="a0000001008">move command
+<indexitem target="a0000000849">move command</indexitem>
+<indexitem target="a0000001009">move command</indexitem>
+<indexitem target="a0000001010">move command
 </indexitem>
-<indexitem target="a0000000796">multiple windows
+<indexitem target="a0000000798">multiple windows
 </indexitem>
-<indexitem target="a0000000838">multiplot
+<indexitem target="a0000000840">multiplot
 </indexitem>
-<indexitem target="a0000000396">NaN
+<indexitem target="a0000000397">NaN
 </indexitem>
-<indexitem target="a0000000430">natural units
+<indexitem target="a0000000431">natural units
 </indexitem>
-<indexitem target="a0000000764">nohead keyword</indexitem>
-<indexitem target="a0000000920">nohead keyword</indexitem>
-<indexitem target="a0000000927">nohead keyword
+<indexitem target="a0000000766">nohead keyword</indexitem>
+<indexitem target="a0000000922">nohead keyword</indexitem>
+<indexitem target="a0000000929">nohead keyword
 </indexitem>
-<indexitem target="a0000000397">not a number
+<indexitem target="a0000000398">not a number
 </indexitem>
-<indexitem target="a0000001501">Not So Short Guide to 2&#949;, The
+<indexitem target="a0000001508">Not So Short Guide to 2&#949;, The
 </indexitem>
-<indexitem target="a0000000394">numerical errors
+<indexitem target="a0000000395">numerical errors
 </indexitem>
-<indexitem target="a0000001492">OpenOffice</indexitem>
-<indexitem target="a0000001496">OpenOffice
+<indexitem target="a0000001499">OpenOffice</indexitem>
+<indexitem target="a0000001503">OpenOffice
 </indexitem>
-<indexitem target="a0000000297">operators
+<indexitem target="a0000000298">operators
 </indexitem>
-<indexitem target="a0000001347">ordinal(x) function
+<indexitem target="a0000001349">ordinal(x) function
 </indexitem>
-<indexitem target="a0000000719">outside keyword
+<indexitem target="a0000000720">outside keyword
 </indexitem>
-<indexitem target="a0000000731">outward keyword</indexitem>
-<indexitem target="a0000000736">outward keyword</indexitem>
-<indexitem target="a0000001205">outward keyword</indexitem>
-<indexitem target="a0000001210">outward keyword
+<indexitem target="a0000000732">outward keyword</indexitem>
+<indexitem target="a0000000737">outward keyword</indexitem>
+<indexitem target="a0000001207">outward keyword</indexitem>
+<indexitem target="a0000001212">outward keyword
 </indexitem>
-<indexitem target="a0000000832">overwriting files
+<indexitem target="a0000000834">overwriting files
 </indexitem>
-<indexitem target="a0000000596">palette
+<indexitem target="a0000000597">palette
 </indexitem>
-<indexitem target="a0000000831">paper sizes
+<indexitem target="a0000000833">paper sizes
 </indexitem>
-<indexitem target="a0000000347">pdf format
+<indexitem target="a0000000348">pdf format
 </indexitem>
-<indexitem target="a0000000810">pdf output
+<indexitem target="a0000000812">pdf output
 </indexitem>
-<indexitem target="a0000000385">physical constants
+<indexitem target="a0000000386">physical constants
 </indexitem>
-<indexitem target="a0000000407">physical units
+<indexitem target="a0000000408">physical units
 </indexitem>
-<indexitem target="a0000000866">piechart command</indexitem>
-<indexitem target="a0000000903">piechart command</indexitem>
-<indexitem target="a0000000904">piechart command</indexitem>
-<indexitem target="a0000000905">piechart command
+<indexitem target="a0000000868">piechart command</indexitem>
+<indexitem target="a0000000905">piechart command</indexitem>
+<indexitem target="a0000000906">piechart command</indexitem>
+<indexitem target="a0000000907">piechart command
 </indexitem>
-<indexitem target="a0000001011">plot axes command
+<indexitem target="a0000001013">plot axes command
 </indexitem>
-<indexitem target="a0000000238">plot command</indexitem>
-<indexitem target="a0000000240">plot command</indexitem>
-<indexitem target="a0000000289">plot command</indexitem>
-<indexitem target="a0000000329">plot command</indexitem>
+<indexitem target="a0000000239">plot command</indexitem>
+<indexitem target="a0000000241">plot command</indexitem>
+<indexitem target="a0000000290">plot command</indexitem>
 <indexitem target="a0000000330">plot command</indexitem>
-<indexitem target="a0000000586">plot command</indexitem>
+<indexitem target="a0000000331">plot command</indexitem>
 <indexitem target="a0000000587">plot command</indexitem>
-<indexitem target="a0000000835">plot command</indexitem>
-<indexitem target="a0000001009">plot command</indexitem>
-<indexitem target="a0000001010">plot command</indexitem>
-<indexitem target="a0000001047">plot command
+<indexitem target="a0000000588">plot command</indexitem>
+<indexitem target="a0000000837">plot command</indexitem>
+<indexitem target="a0000001011">plot command</indexitem>
+<indexitem target="a0000001012">plot command</indexitem>
+<indexitem target="a0000001049">plot command
 </indexitem>
 <indexitem text="plot styles">
-<indexitem target="a0000000688">arrows</indexitem>
-<indexitem target="a0000000682">arrowshead</indexitem>
-<indexitem target="a0000000690">arrowshead</indexitem>
-<indexitem target="a0000000692">arrowshead</indexitem>
-<indexitem target="a0000000684">arrowsnohead</indexitem>
-<indexitem target="a0000000694">arrowsnohead</indexitem>
-<indexitem target="a0000000686">arrowstwohead</indexitem>
-<indexitem target="a0000000696">arrowstwohead</indexitem>
-<indexitem target="a0000000533">boxes</indexitem>
-<indexitem target="a0000000650">boxes</indexitem>
-<indexitem target="a0000000656">boxes</indexitem>
-<indexitem target="a0000000666">boxes</indexitem>
-<indexitem target="a0000000981">boxes</indexitem>
-<indexitem target="a0000000601">dots</indexitem>
-<indexitem target="a0000000622">errorbars</indexitem>
-<indexitem target="a0000000634">errorrange</indexitem>
-<indexitem target="a0000000672">fsteps</indexitem>
-<indexitem target="a0000000678">fsteps</indexitem>
-<indexitem target="a0000000674">histeps</indexitem>
-<indexitem target="a0000000680">histeps</indexitem>
-<indexitem target="a0000000652">impulses</indexitem>
-<indexitem target="a0000000661">impulses</indexitem>
-<indexitem target="a0000000340">lines</indexitem>
-<indexitem target="a0000000362">lines</indexitem>
-<indexitem target="a0000000603">lines</indexitem>
-<indexitem target="a0000000358">linespoints</indexitem>
-<indexitem target="a0000000605">linespoints</indexitem>
-<indexitem target="a0000000368">linetype</indexitem>
-<indexitem target="a0000000607">lowerlimits</indexitem>
-<indexitem target="a0000000360">points</indexitem>
-<indexitem target="a0000000610">points</indexitem>
-<indexitem target="a0000000366">pointtype</indexitem>
-<indexitem target="a0000000641">shadedregion</indexitem>
-<indexitem target="a0000000647">shadedregion</indexitem>
-<indexitem target="a0000000612">stars</indexitem>
-<indexitem target="a0000000670">steps</indexitem>
-<indexitem target="a0000000676">steps</indexitem>
-<indexitem target="a0000000614">upperlimits</indexitem>
-<indexitem target="a0000000654">wboxes</indexitem>
-<indexitem target="a0000000659">wboxes</indexitem>
-<indexitem target="a0000000668">wboxes</indexitem>
-<indexitem target="a0000000620">xerrorbars</indexitem>
-<indexitem target="a0000000628">xerrorrange</indexitem>
-<indexitem target="a0000000626">xyerrorbars</indexitem>
-<indexitem target="a0000000632">xyerrorrange</indexitem>
-<indexitem target="a0000000364">yerrorbars</indexitem>
-<indexitem target="a0000000618">yerrorbars</indexitem>
-<indexitem target="a0000000624">yerrorbars</indexitem>
-<indexitem target="a0000000630">yerrorrange</indexitem>
-<indexitem target="a0000000636">yerrorrange</indexitem>
-<indexitem target="a0000000645">yerrorrange</indexitem>
-<indexitem target="a0000000639">yerrorshaded</indexitem>
-<indexitem target="a0000000643">yerrorshaded</indexitem>
+<indexitem target="a0000000689">arrows</indexitem>
+<indexitem target="a0000000683">arrowshead</indexitem>
+<indexitem target="a0000000691">arrowshead</indexitem>
+<indexitem target="a0000000693">arrowshead</indexitem>
+<indexitem target="a0000000685">arrowsnohead</indexitem>
+<indexitem target="a0000000695">arrowsnohead</indexitem>
+<indexitem target="a0000000687">arrowstwohead</indexitem>
+<indexitem target="a0000000697">arrowstwohead</indexitem>
+<indexitem target="a0000000534">boxes</indexitem>
+<indexitem target="a0000000651">boxes</indexitem>
+<indexitem target="a0000000657">boxes</indexitem>
+<indexitem target="a0000000667">boxes</indexitem>
+<indexitem target="a0000000983">boxes</indexitem>
+<indexitem target="a0000000602">dots</indexitem>
+<indexitem target="a0000000623">errorbars</indexitem>
+<indexitem target="a0000000635">errorrange</indexitem>
+<indexitem target="a0000000673">fsteps</indexitem>
+<indexitem target="a0000000679">fsteps</indexitem>
+<indexitem target="a0000000675">histeps</indexitem>
+<indexitem target="a0000000681">histeps</indexitem>
+<indexitem target="a0000000653">impulses</indexitem>
+<indexitem target="a0000000662">impulses</indexitem>
+<indexitem target="a0000000341">lines</indexitem>
+<indexitem target="a0000000363">lines</indexitem>
+<indexitem target="a0000000604">lines</indexitem>
+<indexitem target="a0000000359">linespoints</indexitem>
+<indexitem target="a0000000606">linespoints</indexitem>
+<indexitem target="a0000000369">linetype</indexitem>
+<indexitem target="a0000000608">lowerlimits</indexitem>
+<indexitem target="a0000000361">points</indexitem>
+<indexitem target="a0000000611">points</indexitem>
+<indexitem target="a0000000367">pointtype</indexitem>
+<indexitem target="a0000000642">shadedregion</indexitem>
+<indexitem target="a0000000648">shadedregion</indexitem>
+<indexitem target="a0000000613">stars</indexitem>
+<indexitem target="a0000000671">steps</indexitem>
+<indexitem target="a0000000677">steps</indexitem>
+<indexitem target="a0000000615">upperlimits</indexitem>
+<indexitem target="a0000000655">wboxes</indexitem>
+<indexitem target="a0000000660">wboxes</indexitem>
+<indexitem target="a0000000669">wboxes</indexitem>
+<indexitem target="a0000000621">xerrorbars</indexitem>
+<indexitem target="a0000000629">xerrorrange</indexitem>
+<indexitem target="a0000000627">xyerrorbars</indexitem>
+<indexitem target="a0000000633">xyerrorrange</indexitem>
+<indexitem target="a0000000365">yerrorbars</indexitem>
+<indexitem target="a0000000619">yerrorbars</indexitem>
+<indexitem target="a0000000625">yerrorbars</indexitem>
+<indexitem target="a0000000631">yerrorrange</indexitem>
+<indexitem target="a0000000637">yerrorrange</indexitem>
+<indexitem target="a0000000646">yerrorrange</indexitem>
+<indexitem target="a0000000640">yerrorshaded</indexitem>
+<indexitem target="a0000000644">yerrorshaded</indexitem>
 </indexitem>
-<indexitem target="a0000001012">plot title command
+<indexitem target="a0000001014">plot title command
 </indexitem>
-<indexitem target="a0000001013">plot with command
+<indexitem target="a0000001015">plot with command
 </indexitem>
-<indexitem target="a0000000811">png output
-<indexitem target="a0000000824">transparency</indexitem>
+<indexitem target="a0000000813">png output
+<indexitem target="a0000000826">transparency</indexitem>
 </indexitem>
-<indexitem target="a0000000867">point command</indexitem>
-<indexitem target="a0000000900">point command</indexitem>
-<indexitem target="a0000000901">point command</indexitem>
-<indexitem target="a0000001031">point command</indexitem>
-<indexitem target="a0000001032">point command
+<indexitem target="a0000000869">point command</indexitem>
+<indexitem target="a0000000902">point command</indexitem>
+<indexitem target="a0000000903">point command</indexitem>
+<indexitem target="a0000001033">point command</indexitem>
+<indexitem target="a0000001034">point command
 </indexitem>
-<indexitem target="a0000000593">pointlinewidth modifier</indexitem>
-<indexitem target="a0000001019">pointlinewidth modifier
+<indexitem target="a0000000594">pointlinewidth modifier</indexitem>
+<indexitem target="a0000001021">pointlinewidth modifier
 </indexitem>
-<indexitem target="a0000000359">points plot style</indexitem>
-<indexitem target="a0000000609">points plot style
+<indexitem target="a0000000360">points plot style</indexitem>
+<indexitem target="a0000000610">points plot style
 </indexitem>
-<indexitem target="a0000000594">pointsize modifier</indexitem>
-<indexitem target="a0000001020">pointsize modifier
+<indexitem target="a0000000595">pointsize modifier</indexitem>
+<indexitem target="a0000001022">pointsize modifier
 </indexitem>
-<indexitem target="a0000000595">pointtype modifier</indexitem>
-<indexitem target="a0000001021">pointtype modifier
+<indexitem target="a0000000596">pointtype modifier</indexitem>
+<indexitem target="a0000001023">pointtype modifier
 </indexitem>
-<indexitem target="a0000000365">pointtype plot style
+<indexitem target="a0000000366">pointtype plot style
 </indexitem>
-<indexitem target="a0000001348">poissonCDF(x,&#956;) function
+<indexitem target="a0000001350">poissonCDF(x,&#956;) function
 </indexitem>
-<indexitem target="a0000001349">poissonPDF(x,&#956;) function
+<indexitem target="a0000001351">poissonPDF(x,&#956;) function
 </indexitem>
-<indexitem target="a0000000818">portrait orientation
+<indexitem target="a0000000820">portrait orientation
 </indexitem>
 <indexitem text="PostScript">
-<indexitem target="a0000000807">Encapsulated</indexitem>
+<indexitem target="a0000000809">Encapsulated</indexitem>
 </indexitem>
-<indexitem target="a0000000812">PostScript output
+<indexitem target="a0000000814">PostScript output
 </indexitem>
-<indexitem target="a0000001350">pow(x,y) function
+<indexitem target="a0000001352">pow(x,y) function
 </indexitem>
-<indexitem target="a0000000878">presentations</indexitem>
-<indexitem target="a0000001489">presentations</indexitem>
-<indexitem target="a0000001490">presentations
+<indexitem target="a0000000880">presentations</indexitem>
+<indexitem target="a0000001496">presentations</indexitem>
+<indexitem target="a0000001497">presentations
 </indexitem>
-<indexitem target="a0000000300">print command</indexitem>
-<indexitem target="a0000001022">print command</indexitem>
-<indexitem target="a0000001023">print command
+<indexitem target="a0000000301">print command</indexitem>
+<indexitem target="a0000001024">print command</indexitem>
+<indexitem target="a0000001025">print command
 </indexitem>
-<indexitem target="a0000000581">pwd command</indexitem>
-<indexitem target="a0000001024">pwd command</indexitem>
-<indexitem target="a0000001025">pwd command
+<indexitem target="a0000000582">pwd command</indexitem>
+<indexitem target="a0000001026">pwd command</indexitem>
+<indexitem target="a0000001027">pwd command
 </indexitem>
-<indexitem target="a0000000242">PyX
+<indexitem target="a0000000243">PyX
 </indexitem>
-<indexitem target="a0000000582">pyxplotwatch
+<indexitem target="a0000000583">pyxplotwatch
 </indexitem>
-<indexitem target="a0000001497">Quick Image Viewer</indexitem>
-<indexitem target="a0000001498">Quick Image Viewer
+<indexitem target="a0000001504">Quick Image Viewer</indexitem>
+<indexitem target="a0000001505">Quick Image Viewer
 </indexitem>
-<indexitem target="a0000000277">quit command</indexitem>
-<indexitem target="a0000000283">quit command</indexitem>
-<indexitem target="a0000001026">quit command</indexitem>
-<indexitem target="a0000001027">quit command
+<indexitem target="a0000000278">quit command</indexitem>
+<indexitem target="a0000000284">quit command</indexitem>
+<indexitem target="a0000001028">quit command</indexitem>
+<indexitem target="a0000001029">quit command
 </indexitem>
-<indexitem target="a0000000308">quote characters
+<indexitem target="a0000000309">quote characters
 </indexitem>
-<indexitem target="a0000001351">radians(x) function
+<indexitem target="a0000001353">radians(x) function
 </indexitem>
-<indexitem target="a0000000535">random­binomial(p,n) function</indexitem>
-<indexitem target="a0000001353">random­binomial(p,n) function
+<indexitem target="a0000000536">random­binomial(p,n) function</indexitem>
+<indexitem target="a0000001355">random­binomial(p,n) function
 </indexitem>
-<indexitem target="a0000000536">random­chisq() function</indexitem>
-<indexitem target="a0000001354">random­chisq() function
+<indexitem target="a0000000537">random­chisq() function</indexitem>
+<indexitem target="a0000001356">random­chisq() function
 </indexitem>
-<indexitem target="a0000000537">random­gaussian(&#963;) function</indexitem>
-<indexitem target="a0000001355">random­gaussian(&#963;) function
+<indexitem target="a0000000538">random­gaussian(&#963;) function</indexitem>
+<indexitem target="a0000001357">random­gaussian(&#963;) function
 </indexitem>
-<indexitem target="a0000000538">random­lognormal(,&#963;) function</indexitem>
-<indexitem target="a0000001356">random­lognormal(,&#963;) function
+<indexitem target="a0000000539">random­lognormal(,&#963;) function</indexitem>
+<indexitem target="a0000001358">random­lognormal(,&#963;) function
 </indexitem>
-<indexitem target="a0000000539">random­poisson(n) function</indexitem>
-<indexitem target="a0000001357">random­poisson(n) function
+<indexitem target="a0000000540">random­poisson(n) function</indexitem>
+<indexitem target="a0000001359">random­poisson(n) function
 </indexitem>
-<indexitem target="a0000000540">random­tdist() function</indexitem>
-<indexitem target="a0000001358">random­tdist() function
+<indexitem target="a0000000541">random­tdist() function</indexitem>
+<indexitem target="a0000001360">random­tdist() function
 </indexitem>
-<indexitem target="a0000000534">random() function</indexitem>
-<indexitem target="a0000001352">random() function
+<indexitem target="a0000000535">random() function</indexitem>
+<indexitem target="a0000001354">random() function
 </indexitem>
-<indexitem target="a0000001359">Re(z) function
+<indexitem target="a0000001361">Re(z) function
 </indexitem>
-<indexitem target="a0000000402">Re(z) function
+<indexitem target="a0000000403">Re(z) function
 </indexitem>
-<indexitem target="a0000000260">readline
+<indexitem target="a0000000261">readline
 </indexitem>
-<indexitem target="a0000000895">rectangle command</indexitem>
 <indexitem target="a0000000897">rectangle command</indexitem>
-<indexitem target="a0000001028">rectangle command
+<indexitem target="a0000000899">rectangle command</indexitem>
+<indexitem target="a0000001030">rectangle command
 </indexitem>
-<indexitem target="a0000000349">refresh command</indexitem>
-<indexitem target="a0000000851">refresh command</indexitem>
-<indexitem target="a0000000852">refresh command</indexitem>
-<indexitem target="a0000001029">refresh command</indexitem>
-<indexitem target="a0000001030">refresh command
+<indexitem target="a0000000350">refresh command</indexitem>
+<indexitem target="a0000000853">refresh command</indexitem>
+<indexitem target="a0000000854">refresh command</indexitem>
+<indexitem target="a0000001031">refresh command</indexitem>
+<indexitem target="a0000001032">refresh command
 </indexitem>
-<indexitem target="a0000000551">regular expressions
+<indexitem target="a0000000552">regular expressions
 </indexitem>
-<indexitem target="a0000000342">replot command</indexitem>
-<indexitem target="a0000000856">replot command</indexitem>
-<indexitem target="a0000000857">replot command</indexitem>
-<indexitem target="a0000001033">replot command</indexitem>
-<indexitem target="a0000001034">replot command</indexitem>
+<indexitem target="a0000000343">replot command</indexitem>
+<indexitem target="a0000000858">replot command</indexitem>
+<indexitem target="a0000000859">replot command</indexitem>
 <indexitem target="a0000001035">replot command</indexitem>
-<indexitem target="a0000001036">replot command
+<indexitem target="a0000001036">replot command</indexitem>
+<indexitem target="a0000001037">replot command</indexitem>
+<indexitem target="a0000001038">replot command
 </indexitem>
-<indexitem target="a0000000312">reset command</indexitem>
-<indexitem target="a0000001037">reset command</indexitem>
-<indexitem target="a0000001038">reset command
+<indexitem target="a0000000313">reset command</indexitem>
+<indexitem target="a0000001039">reset command</indexitem>
+<indexitem target="a0000001040">reset command
 </indexitem>
-<indexitem target="a0000000714">right keyword</indexitem>
-<indexitem target="a0000000789">right keyword
+<indexitem target="a0000000715">right keyword</indexitem>
+<indexitem target="a0000000791">right keyword
 </indexitem>
-<indexitem target="a0000001360">root(z,n) function
+<indexitem target="a0000001362">root(z,n) function
 </indexitem>
-<indexitem target="a0000000776">rotate keyword</indexitem>
-<indexitem target="a0000000871">rotate keyword</indexitem>
-<indexitem target="a0000000888">rotate keyword
+<indexitem target="a0000000778">rotate keyword</indexitem>
+<indexitem target="a0000000873">rotate keyword</indexitem>
+<indexitem target="a0000000890">rotate keyword
 </indexitem>
-<indexitem target="a0000000335">rows keyword
+<indexitem target="a0000000336">rows keyword
 </indexitem>
-<indexitem target="a0000000285">save command</indexitem>
 <indexitem target="a0000000286">save command</indexitem>
-<indexitem target="a0000001039">save command</indexitem>
-<indexitem target="a0000001040">save command
+<indexitem target="a0000000287">save command</indexitem>
+<indexitem target="a0000001041">save command</indexitem>
+<indexitem target="a0000001042">save command
 </indexitem>
-<indexitem target="a0000001361">sec(z) function
+<indexitem target="a0000001363">sec(z) function
 </indexitem>
-<indexitem target="a0000001362">sech(z) function
+<indexitem target="a0000001364">sech(z) function
 </indexitem>
-<indexitem target="a0000000549">sed shell command
+<indexitem target="a0000000550">sed shell command
 </indexitem>
-<indexitem target="a0000000338">select modifier</indexitem>
-<indexitem target="a0000000486">select modifier</indexitem>
-<indexitem target="a0000000495">select modifier</indexitem>
-<indexitem target="a0000000531">select modifier</indexitem>
-<indexitem target="a0000000961">select modifier</indexitem>
-<indexitem target="a0000000979">select modifier</indexitem>
-<indexitem target="a0000001235">select modifier
+<indexitem target="a0000000339">select modifier</indexitem>
+<indexitem target="a0000000487">select modifier</indexitem>
+<indexitem target="a0000000496">select modifier</indexitem>
+<indexitem target="a0000000532">select modifier</indexitem>
+<indexitem target="a0000000963">select modifier</indexitem>
+<indexitem target="a0000000981">select modifier</indexitem>
+<indexitem target="a0000001237">select modifier
 </indexitem>
-<indexitem target="a0000000758">set arrow command</indexitem>
-<indexitem target="a0000000761">set arrow command</indexitem>
-<indexitem target="a0000000762">set arrow command</indexitem>
-<indexitem target="a0000000774">set arrow command</indexitem>
-<indexitem target="a0000001043">set arrow command</indexitem>
-<indexitem target="a0000001044">set arrow command
+<indexitem target="a0000000760">set arrow command</indexitem>
+<indexitem target="a0000000763">set arrow command</indexitem>
+<indexitem target="a0000000764">set arrow command</indexitem>
+<indexitem target="a0000000776">set arrow command</indexitem>
+<indexitem target="a0000001045">set arrow command</indexitem>
+<indexitem target="a0000001046">set arrow command
 </indexitem>
-<indexitem target="a0000000375">set autoscale command</indexitem>
-<indexitem target="a0000001045">set autoscale command</indexitem>
-<indexitem target="a0000001046">set autoscale command
+<indexitem target="a0000000376">set autoscale command</indexitem>
+<indexitem target="a0000001047">set autoscale command</indexitem>
+<indexitem target="a0000001048">set autoscale command
 </indexitem>
-<indexitem target="a0000000756">set axescolour command</indexitem>
-<indexitem target="a0000001048">set axescolour command</indexitem>
-<indexitem target="a0000001414">set axescolour command
+<indexitem target="a0000000758">set axescolour command</indexitem>
+<indexitem target="a0000001050">set axescolour command</indexitem>
+<indexitem target="a0000001420">set axescolour command
 </indexitem>
-<indexitem target="a0000000723">set axis command</indexitem>
-<indexitem target="a0000000728">set axis command</indexitem>
-<indexitem target="a0000001049">set axis command</indexitem>
-<indexitem target="a0000001050">set axis command
+<indexitem target="a0000000724">set axis command</indexitem>
+<indexitem target="a0000000729">set axis command</indexitem>
+<indexitem target="a0000001051">set axis command</indexitem>
+<indexitem target="a0000001052">set axis command
 </indexitem>
-<indexitem target="a0000000725">set axisunitstyle command</indexitem>
-<indexitem target="a0000001051">set axisunitstyle command</indexitem>
-<indexitem target="a0000001415">set axisunitstyle command
+<indexitem target="a0000000726">set axisunitstyle command</indexitem>
+<indexitem target="a0000001053">set axisunitstyle command</indexitem>
+<indexitem target="a0000001421">set axisunitstyle command
 </indexitem>
-<indexitem target="a0000000834">set backup command</indexitem>
-<indexitem target="a0000001052">set backup command</indexitem>
-<indexitem target="a0000001416">set backup command
+<indexitem target="a0000000836">set backup command</indexitem>
+<indexitem target="a0000001054">set backup command</indexitem>
+<indexitem target="a0000001422">set backup command
 </indexitem>
-<indexitem target="a0000001053">set bar command</indexitem>
-<indexitem target="a0000001417">set bar command
+<indexitem target="a0000001055">set bar command</indexitem>
+<indexitem target="a0000001423">set bar command
 </indexitem>
-<indexitem target="a0000001054">set binorigin command</indexitem>
-<indexitem target="a0000001057">set binorigin command</indexitem>
-<indexitem target="a0000001058">set binorigin command</indexitem>
-<indexitem target="a0000001418">set binorigin command
+<indexitem target="a0000001056">set binorigin command</indexitem>
+<indexitem target="a0000001059">set binorigin command</indexitem>
+<indexitem target="a0000001060">set binorigin command</indexitem>
+<indexitem target="a0000001424">set binorigin command
 </indexitem>
-<indexitem target="a0000001060">set binwidth command</indexitem>
-<indexitem target="a0000001420">set binwidth command
+<indexitem target="a0000001062">set binwidth command</indexitem>
+<indexitem target="a0000001426">set binwidth command
 </indexitem>
-<indexitem target="a0000000662">set boxfrom command</indexitem>
-<indexitem target="a0000001061">set boxfrom command</indexitem>
-<indexitem target="a0000001422">set boxfrom command
+<indexitem target="a0000000663">set boxfrom command</indexitem>
+<indexitem target="a0000001063">set boxfrom command</indexitem>
+<indexitem target="a0000001428">set boxfrom command
 </indexitem>
-<indexitem target="a0000000657">set boxwidth command</indexitem>
-<indexitem target="a0000001062">set boxwidth command</indexitem>
-<indexitem target="a0000001423">set boxwidth command
+<indexitem target="a0000000658">set boxwidth command</indexitem>
+<indexitem target="a0000001064">set boxwidth command</indexitem>
+<indexitem target="a0000001429">set boxwidth command
 </indexitem>
-<indexitem target="a0000000461">set calendar command</indexitem>
 <indexitem target="a0000000462">set calendar command</indexitem>
-<indexitem target="a0000000473">set calendar command</indexitem>
-<indexitem target="a0000001063">set calendar command</indexitem>
-<indexitem target="a0000001064">set calendar command</indexitem>
-<indexitem target="a0000001424">set calendar command</indexitem>
-<indexitem target="a0000001425">set calendar command
+<indexitem target="a0000000463">set calendar command</indexitem>
+<indexitem target="a0000000474">set calendar command</indexitem>
+<indexitem target="a0000001065">set calendar command</indexitem>
+<indexitem target="a0000001066">set calendar command</indexitem>
+<indexitem target="a0000001430">set calendar command</indexitem>
+<indexitem target="a0000001431">set calendar command
 </indexitem>
-<indexitem target="a0000000757">set clip command</indexitem>
-<indexitem target="a0000001065">set clip command</indexitem>
-<indexitem target="a0000001066">set clip command</indexitem>
-<indexitem target="a0000001426">set clip command
+<indexitem target="a0000000759">set clip command</indexitem>
+<indexitem target="a0000001067">set clip command</indexitem>
+<indexitem target="a0000001068">set clip command</indexitem>
+<indexitem target="a0000001432">set clip command
 </indexitem>
-<indexitem target="a0000000313">set command</indexitem>
-<indexitem target="a0000000319">set command</indexitem>
-<indexitem target="a0000000848">set command</indexitem>
+<indexitem target="a0000000314">set command</indexitem>
+<indexitem target="a0000000320">set command</indexitem>
 <indexitem target="a0000000850">set command</indexitem>
-<indexitem target="a0000001041">set command</indexitem>
-<indexitem target="a0000001042">set command</indexitem>
-<indexitem target="a0000001401">set command</indexitem>
+<indexitem target="a0000000852">set command</indexitem>
+<indexitem target="a0000001043">set command</indexitem>
+<indexitem target="a0000001044">set command</indexitem>
 <indexitem target="a0000001407">set command</indexitem>
-<indexitem target="a0000001408">set command</indexitem>
-<indexitem target="a0000001409">set command</indexitem>
-<indexitem target="a0000001410">set command</indexitem>
-<indexitem target="a0000001411">set command
+<indexitem target="a0000001413">set command</indexitem>
+<indexitem target="a0000001414">set command</indexitem>
+<indexitem target="a0000001415">set command</indexitem>
+<indexitem target="a0000001416">set command</indexitem>
+<indexitem target="a0000001417">set command
 </indexitem>
-<indexitem target="a0000001067">set data style command</indexitem>
-<indexitem target="a0000001428">set data style command
+<indexitem target="a0000001069">set data style command</indexitem>
+<indexitem target="a0000001434">set data style command
 </indexitem>
-<indexitem target="a0000000855">set display command</indexitem>
-<indexitem target="a0000001068">set display command</indexitem>
-<indexitem target="a0000001429">set display command</indexitem>
-<indexitem target="a0000001430">set display command
+<indexitem target="a0000000857">set display command</indexitem>
+<indexitem target="a0000001070">set display command</indexitem>
+<indexitem target="a0000001435">set display command</indexitem>
+<indexitem target="a0000001436">set display command
 </indexitem>
-<indexitem target="a0000001069">set filter command</indexitem>
-<indexitem target="a0000001070">set filter command
+<indexitem target="a0000001071">set filter command</indexitem>
+<indexitem target="a0000001072">set filter command
 </indexitem>
-<indexitem target="a0000000779">set fontsize command</indexitem>
-<indexitem target="a0000001071">set fontsize command</indexitem>
-<indexitem target="a0000001432">set fontsize command
+<indexitem target="a0000000781">set fontsize command</indexitem>
+<indexitem target="a0000001073">set fontsize command</indexitem>
+<indexitem target="a0000001438">set fontsize command
 </indexitem>
-<indexitem target="a0000001072">set function style command</indexitem>
-<indexitem target="a0000001433">set function style command
+<indexitem target="a0000001074">set function style command</indexitem>
+<indexitem target="a0000001439">set function style command
 </indexitem>
-<indexitem target="a0000000748">set grid command</indexitem>
-<indexitem target="a0000001073">set grid command</indexitem>
-<indexitem target="a0000001434">set grid command
+<indexitem target="a0000000750">set grid command</indexitem>
+<indexitem target="a0000001075">set grid command</indexitem>
+<indexitem target="a0000001440">set grid command
 </indexitem>
-<indexitem target="a0000000752">set gridmajcolour command</indexitem>
-<indexitem target="a0000001074">set gridmajcolour command</indexitem>
-<indexitem target="a0000001435">set gridmajcolour command
+<indexitem target="a0000000754">set gridmajcolour command</indexitem>
+<indexitem target="a0000001076">set gridmajcolour command</indexitem>
+<indexitem target="a0000001441">set gridmajcolour command
 </indexitem>
-<indexitem target="a0000000753">set gridmincolour command</indexitem>
-<indexitem target="a0000001075">set gridmincolour command</indexitem>
-<indexitem target="a0000001436">set gridmincolour command
+<indexitem target="a0000000755">set gridmincolour command</indexitem>
+<indexitem target="a0000001077">set gridmincolour command</indexitem>
+<indexitem target="a0000001442">set gridmincolour command
 </indexitem>
-<indexitem target="a0000000709">set key command</indexitem>
 <indexitem target="a0000000710">set key command</indexitem>
-<indexitem target="a0000000717">set key command</indexitem>
-<indexitem target="a0000001076">set key command</indexitem>
-<indexitem target="a0000001437">set key command</indexitem>
-<indexitem target="a0000001439">set key command</indexitem>
-<indexitem target="a0000001440">set key command</indexitem>
-<indexitem target="a0000001441">set key command
+<indexitem target="a0000000711">set key command</indexitem>
+<indexitem target="a0000000718">set key command</indexitem>
+<indexitem target="a0000001078">set key command</indexitem>
+<indexitem target="a0000001443">set key command</indexitem>
+<indexitem target="a0000001445">set key command</indexitem>
+<indexitem target="a0000001446">set key command</indexitem>
+<indexitem target="a0000001447">set key command
 </indexitem>
-<indexitem target="a0000000722">set keycolumns command</indexitem>
-<indexitem target="a0000001077">set keycolumns command</indexitem>
-<indexitem target="a0000001438">set keycolumns command
+<indexitem target="a0000000723">set keycolumns command</indexitem>
+<indexitem target="a0000001079">set keycolumns command</indexitem>
+<indexitem target="a0000001444">set keycolumns command
 </indexitem>
-<indexitem target="a0000000759">set label command</indexitem>
-<indexitem target="a0000000775">set label command</indexitem>
-<indexitem target="a0000000870">set label command</indexitem>
-<indexitem target="a0000000912">set label command</indexitem>
-<indexitem target="a0000001078">set label command</indexitem>
-<indexitem target="a0000001079">set label command
+<indexitem target="a0000000761">set label command</indexitem>
+<indexitem target="a0000000777">set label command</indexitem>
+<indexitem target="a0000000872">set label command</indexitem>
+<indexitem target="a0000000914">set label command</indexitem>
+<indexitem target="a0000001080">set label command</indexitem>
+<indexitem target="a0000001081">set label command
 </indexitem>
-<indexitem target="a0000001080">set linewidth command</indexitem>
-<indexitem target="a0000001081">set linewidth command</indexitem>
-<indexitem target="a0000001443">set linewidth command
+<indexitem target="a0000001082">set linewidth command</indexitem>
+<indexitem target="a0000001083">set linewidth command</indexitem>
+<indexitem target="a0000001449">set linewidth command
 </indexitem>
-<indexitem target="a0000000376">set logscale command</indexitem>
-<indexitem target="a0000001082">set logscale command
+<indexitem target="a0000000377">set logscale command</indexitem>
+<indexitem target="a0000001084">set logscale command
 </indexitem>
-<indexitem target="a0000001469">set logscale t command
+<indexitem target="a0000001475">set logscale t command
 </indexitem>
-<indexitem target="a0000000839">set multiplot command</indexitem>
-<indexitem target="a0000001083">set multiplot command</indexitem>
-<indexitem target="a0000001444">set multiplot command
+<indexitem target="a0000000841">set multiplot command</indexitem>
+<indexitem target="a0000001085">set multiplot command</indexitem>
+<indexitem target="a0000001450">set multiplot command
 </indexitem>
-<indexitem target="a0000001084">set mxtics command
+<indexitem target="a0000001086">set mxtics command
 </indexitem>
-<indexitem target="a0000001085">set mytics command
+<indexitem target="a0000001087">set mytics command
 </indexitem>
-<indexitem target="a0000001086">set mztics command
+<indexitem target="a0000001088">set mztics command
 </indexitem>
-<indexitem target="a0000000763">set noarrow command</indexitem>
-<indexitem target="a0000001087">set noarrow command
+<indexitem target="a0000000765">set noarrow command</indexitem>
+<indexitem target="a0000001089">set noarrow command
 </indexitem>
-<indexitem target="a0000001088">set noaxis command
+<indexitem target="a0000001090">set noaxis command
 </indexitem>
-<indexitem target="a0000001089">set nobackup command
+<indexitem target="a0000001091">set nobackup command
 </indexitem>
-<indexitem target="a0000001090">set noclip command
+<indexitem target="a0000001092">set noclip command
 </indexitem>
-<indexitem target="a0000000854">set nodisplay command</indexitem>
-<indexitem target="a0000001091">set nodisplay command
+<indexitem target="a0000000856">set nodisplay command</indexitem>
+<indexitem target="a0000001093">set nodisplay command
 </indexitem>
-<indexitem target="a0000001092">set nogrid command
+<indexitem target="a0000001094">set nogrid command
 </indexitem>
-<indexitem target="a0000000708">set nokey command</indexitem>
-<indexitem target="a0000001093">set nokey command
+<indexitem target="a0000000709">set nokey command</indexitem>
+<indexitem target="a0000001095">set nokey command
 </indexitem>
-<indexitem target="a0000001094">set nolabel command
+<indexitem target="a0000001096">set nolabel command
 </indexitem>
-<indexitem target="a0000000377">set nologscale command</indexitem>
-<indexitem target="a0000001095">set nologscale command
+<indexitem target="a0000000378">set nologscale command</indexitem>
+<indexitem target="a0000001097">set nologscale command
 </indexitem>
-<indexitem target="a0000000840">set nomultiplot command</indexitem>
-<indexitem target="a0000001096">set nomultiplot command</indexitem>
-<indexitem target="a0000001097">set nomultiplot command
+<indexitem target="a0000000842">set nomultiplot command</indexitem>
+<indexitem target="a0000001098">set nomultiplot command</indexitem>
+<indexitem target="a0000001099">set nomultiplot command
 </indexitem>
-<indexitem target="a0000001098">set nostyle command
+<indexitem target="a0000001100">set nostyle command
 </indexitem>
-<indexitem target="a0000001099">set notitle command
+<indexitem target="a0000001101">set notitle command
 </indexitem>
-<indexitem target="a0000000739">set noxtics command</indexitem>
-<indexitem target="a0000001100">set noxtics command</indexitem>
-<indexitem target="a0000001213">set noxtics command
+<indexitem target="a0000000740">set noxtics command</indexitem>
+<indexitem target="a0000001102">set noxtics command</indexitem>
+<indexitem target="a0000001215">set noxtics command
 </indexitem>
-<indexitem target="a0000001101">set noytics command
+<indexitem target="a0000001103">set noytics command
 </indexitem>
-<indexitem target="a0000001102">set noztics command
+<indexitem target="a0000001104">set noztics command
 </indexitem>
-<indexitem target="a0000000400">set numeric complex command
+<indexitem target="a0000000401">set numeric complex command
 </indexitem>
-<indexitem target="a0000000398">set numeric errors explicit command
+<indexitem target="a0000000399">set numeric errors explicit command
 </indexitem>
-<indexitem target="a0000000395">set numeric errors quiet command</indexitem>
-<indexitem target="a0000000414">set numeric errors quiet command
+<indexitem target="a0000000396">set numeric errors quiet command</indexitem>
+<indexitem target="a0000000415">set numeric errors quiet command
 </indexitem>
-<indexitem target="a0000000401">set numeric real command
+<indexitem target="a0000000402">set numeric real command
 </indexitem>
-<indexitem target="a0000001103">set numerics command</indexitem>
-<indexitem target="a0000001104">set numerics command</indexitem>
-<indexitem target="a0000001445">set numerics command</indexitem>
-<indexitem target="a0000001446">set numerics command</indexitem>
-<indexitem target="a0000001447">set numerics command</indexitem>
-<indexitem target="a0000001448">set numerics command
+<indexitem target="a0000001105">set numerics command</indexitem>
+<indexitem target="a0000001106">set numerics command</indexitem>
+<indexitem target="a0000001451">set numerics command</indexitem>
+<indexitem target="a0000001452">set numerics command</indexitem>
+<indexitem target="a0000001453">set numerics command</indexitem>
+<indexitem target="a0000001454">set numerics command
 </indexitem>
-<indexitem target="a0000000241">set numerics complex command
+<indexitem target="a0000000242">set numerics complex command
 </indexitem>
-<indexitem target="a0000000439">set numerics display command
+<indexitem target="a0000000440">set numerics display command
 </indexitem>
-<indexitem target="a0000000438">set numerics sigfig command</indexitem>
-<indexitem target="a0000000740">set numerics sigfig command</indexitem>
-<indexitem target="a0000001197">set numerics sigfig command
+<indexitem target="a0000000439">set numerics sigfig command</indexitem>
+<indexitem target="a0000000741">set numerics sigfig command</indexitem>
+<indexitem target="a0000001199">set numerics sigfig command
 </indexitem>
-<indexitem target="a0000000320">set numerics typeable command
+<indexitem target="a0000000321">set numerics typeable command
 </indexitem>
-<indexitem target="a0000000841">set origin command</indexitem>
-<indexitem target="a0000001105">set origin command</indexitem>
-<indexitem target="a0000001106">set origin command</indexitem>
-<indexitem target="a0000001449">set origin command</indexitem>
-<indexitem target="a0000001450">set origin command
+<indexitem target="a0000000843">set origin command</indexitem>
+<indexitem target="a0000001107">set origin command</indexitem>
+<indexitem target="a0000001108">set origin command</indexitem>
+<indexitem target="a0000001455">set origin command</indexitem>
+<indexitem target="a0000001456">set origin command
 </indexitem>
-<indexitem target="a0000000345">set output command</indexitem>
-<indexitem target="a0000000797">set output command</indexitem>
-<indexitem target="a0000001107">set output command</indexitem>
-<indexitem target="a0000001451">set output command
+<indexitem target="a0000000346">set output command</indexitem>
+<indexitem target="a0000000799">set output command</indexitem>
+<indexitem target="a0000001109">set output command</indexitem>
+<indexitem target="a0000001457">set output command
 </indexitem>
-<indexitem target="a0000000599">set palette command</indexitem>
-<indexitem target="a0000001108">set palette command
+<indexitem target="a0000000600">set palette command</indexitem>
+<indexitem target="a0000001110">set palette command
 </indexitem>
-<indexitem target="a0000000828">set papersize command</indexitem>
-<indexitem target="a0000000837">set papersize command</indexitem>
-<indexitem target="a0000001109">set papersize command</indexitem>
-<indexitem target="a0000001452">set papersize command</indexitem>
-<indexitem target="a0000001453">set papersize command</indexitem>
-<indexitem target="a0000001454">set papersize command
+<indexitem target="a0000000830">set papersize command</indexitem>
+<indexitem target="a0000000839">set papersize command</indexitem>
+<indexitem target="a0000001111">set papersize command</indexitem>
+<indexitem target="a0000001458">set papersize command</indexitem>
+<indexitem target="a0000001459">set papersize command</indexitem>
+<indexitem target="a0000001460">set papersize command
 </indexitem>
-<indexitem target="a0000001110">set pointlinewidth command</indexitem>
-<indexitem target="a0000001455">set pointlinewidth command
+<indexitem target="a0000001112">set pointlinewidth command</indexitem>
+<indexitem target="a0000001461">set pointlinewidth command
 </indexitem>
-<indexitem target="a0000001111">set pointsize command</indexitem>
-<indexitem target="a0000001456">set pointsize command
+<indexitem target="a0000001113">set pointsize command</indexitem>
+<indexitem target="a0000001462">set pointsize command
 </indexitem>
-<indexitem target="a0000000910">set preamble command</indexitem>
-<indexitem target="a0000001112">set preamble command</indexitem>
-<indexitem target="a0000001406">set preamble command
+<indexitem target="a0000000912">set preamble command</indexitem>
+<indexitem target="a0000001114">set preamble command</indexitem>
+<indexitem target="a0000001412">set preamble command
 </indexitem>
-<indexitem target="a0000000356">set samples command</indexitem>
-<indexitem target="a0000000485">set samples command</indexitem>
-<indexitem target="a0000001113">set samples command</indexitem>
-<indexitem target="a0000001234">set samples command</indexitem>
-<indexitem target="a0000001457">set samples command
+<indexitem target="a0000000357">set samples command</indexitem>
+<indexitem target="a0000000486">set samples command</indexitem>
+<indexitem target="a0000001115">set samples command</indexitem>
+<indexitem target="a0000001236">set samples command</indexitem>
+<indexitem target="a0000001463">set samples command
 </indexitem>
-<indexitem target="a0000000541">set seed command</indexitem>
-<indexitem target="a0000001114">set seed command</indexitem>
-<indexitem target="a0000001115">set seed command
+<indexitem target="a0000000542">set seed command</indexitem>
+<indexitem target="a0000001116">set seed command</indexitem>
+<indexitem target="a0000001117">set seed command
 </indexitem>
-<indexitem target="a0000000352">set size command</indexitem>
-<indexitem target="a0000001116">set size command
+<indexitem target="a0000000353">set size command</indexitem>
+<indexitem target="a0000001118">set size command
 </indexitem>
 <indexitem text="set size command">
-<indexitem target="a0000001118">noratio modifier</indexitem>
-<indexitem target="a0000001120">ratio modifier</indexitem>
-<indexitem target="a0000001122">square modifier</indexitem>
+<indexitem target="a0000001120">noratio modifier</indexitem>
+<indexitem target="a0000001122">ratio modifier</indexitem>
+<indexitem target="a0000001124">square modifier</indexitem>
 </indexitem>
-<indexitem target="a0000001477">set size command
+<indexitem target="a0000001483">set size command
 </indexitem>
-<indexitem target="a0000000354">set size ratio command</indexitem>
-<indexitem target="a0000001413">set size ratio command
+<indexitem target="a0000000355">set size ratio command</indexitem>
+<indexitem target="a0000001419">set size ratio command</indexitem>
+<indexitem target="a0000001486">set size ratio command
 </indexitem>
-<indexitem target="a0000000355">set size square command
+<indexitem target="a0000000356">set size square command
 </indexitem>
-<indexitem target="a0000001123">set style command
+<indexitem target="a0000001125">set style command
 </indexitem>
-<indexitem target="a0000000369">set style data command</indexitem>
-<indexitem target="a0000001124">set style data command
+<indexitem target="a0000000370">set style data command</indexitem>
+<indexitem target="a0000001126">set style data command
 </indexitem>
-<indexitem target="a0000000370">set style function command</indexitem>
-<indexitem target="a0000001125">set style function command
+<indexitem target="a0000000371">set style function command</indexitem>
+<indexitem target="a0000001127">set style function command
 </indexitem>
-<indexitem target="a0000000343">set terminal command</indexitem>
-<indexitem target="a0000000346">set terminal command</indexitem>
-<indexitem target="a0000000351">set terminal command</indexitem>
-<indexitem target="a0000000794">set terminal command
-</indexitem>
-<indexitem text="set terminal command">
-<indexitem target="a0000000799">dpi modifier</indexitem>
-</indexitem>
-<indexitem target="a0000000802">set terminal command</indexitem>
-<indexitem target="a0000000827">set terminal command</indexitem>
-<indexitem target="a0000000836">set terminal command</indexitem>
-<indexitem target="a0000001126">set terminal command</indexitem>
-<indexitem target="a0000001127">set terminal command
+<indexitem target="a0000000344">set terminal command</indexitem>
+<indexitem target="a0000000347">set terminal command</indexitem>
+<indexitem target="a0000000352">set terminal command</indexitem>
+<indexitem target="a0000000796">set terminal command
 </indexitem>
 <indexitem text="set terminal command">
-<indexitem target="a0000001130">antialias modifier</indexitem>
-<indexitem target="a0000001132">gif modifier</indexitem>
-<indexitem target="a0000001136">color modifier</indexitem>
-<indexitem target="a0000001134">colour modifier</indexitem>
-<indexitem target="a0000001138">dpi modifier</indexitem>
-<indexitem target="a0000001140">enlarge modifier</indexitem>
-<indexitem target="a0000001142">eps modifier</indexitem>
-<indexitem target="a0000001144">gif modifier</indexitem>
-<indexitem target="a0000001146">invert modifier</indexitem>
-<indexitem target="a0000001148">jpeg modifier</indexitem>
-<indexitem target="a0000001150">landscape modifier</indexitem>
-<indexitem target="a0000001152">monochrome modifier</indexitem>
-<indexitem target="a0000001154">noantialias modifier</indexitem>
-<indexitem target="a0000001156">noenlarge modifier</indexitem>
-<indexitem target="a0000001158">noinvert modifier</indexitem>
-<indexitem target="a0000001160">pdf modifier</indexitem>
-<indexitem target="a0000001162">png modifier</indexitem>
-<indexitem target="a0000001164">portrait modifier</indexitem>
-<indexitem target="a0000001166">postscript modifier</indexitem>
-<indexitem target="a0000001168">solid modifier</indexitem>
-<indexitem target="a0000001170">transparent modifier</indexitem>
-<indexitem target="a0000001172">X11multiwindow modifier</indexitem>
-<indexitem target="a0000001174">X11persist modifier</indexitem>
-<indexitem target="a0000001176">X11singlewindow modifier</indexitem>
+<indexitem target="a0000000801">dpi modifier</indexitem>
 </indexitem>
-<indexitem target="a0000001427">set terminal command</indexitem>
-<indexitem target="a0000001442">set terminal command</indexitem>
-<indexitem target="a0000001458">set terminal command</indexitem>
-<indexitem target="a0000001459">set terminal command</indexitem>
-<indexitem target="a0000001460">set terminal command</indexitem>
-<indexitem target="a0000001461">set terminal command</indexitem>
-<indexitem target="a0000001462">set terminal command
+<indexitem target="a0000000804">set terminal command</indexitem>
+<indexitem target="a0000000829">set terminal command</indexitem>
+<indexitem target="a0000000838">set terminal command</indexitem>
+<indexitem target="a0000001128">set terminal command</indexitem>
+<indexitem target="a0000001129">set terminal command
 </indexitem>
-<indexitem target="a0000000798">set terminal dpi command</indexitem>
-<indexitem target="a0000001431">set terminal dpi command
+<indexitem text="set terminal command">
+<indexitem target="a0000001132">antialias modifier</indexitem>
+<indexitem target="a0000001134">gif modifier</indexitem>
+<indexitem target="a0000001138">color modifier</indexitem>
+<indexitem target="a0000001136">colour modifier</indexitem>
+<indexitem target="a0000001140">dpi modifier</indexitem>
+<indexitem target="a0000001142">enlarge modifier</indexitem>
+<indexitem target="a0000001144">eps modifier</indexitem>
+<indexitem target="a0000001146">gif modifier</indexitem>
+<indexitem target="a0000001148">invert modifier</indexitem>
+<indexitem target="a0000001150">jpeg modifier</indexitem>
+<indexitem target="a0000001152">landscape modifier</indexitem>
+<indexitem target="a0000001154">monochrome modifier</indexitem>
+<indexitem target="a0000001156">noantialias modifier</indexitem>
+<indexitem target="a0000001158">noenlarge modifier</indexitem>
+<indexitem target="a0000001160">noinvert modifier</indexitem>
+<indexitem target="a0000001162">pdf modifier</indexitem>
+<indexitem target="a0000001164">png modifier</indexitem>
+<indexitem target="a0000001166">portrait modifier</indexitem>
+<indexitem target="a0000001168">postscript modifier</indexitem>
+<indexitem target="a0000001170">solid modifier</indexitem>
+<indexitem target="a0000001172">transparent modifier</indexitem>
+<indexitem target="a0000001174">X11multiwindow modifier</indexitem>
+<indexitem target="a0000001176">X11persist modifier</indexitem>
+<indexitem target="a0000001178">X11singlewindow modifier</indexitem>
 </indexitem>
-<indexitem target="a0000000782">set textcolour command</indexitem>
-<indexitem target="a0000000872">set textcolour command</indexitem>
-<indexitem target="a0000001177">set textcolour command</indexitem>
-<indexitem target="a0000001463">set textcolour command
+<indexitem target="a0000001433">set terminal command</indexitem>
+<indexitem target="a0000001448">set terminal command</indexitem>
+<indexitem target="a0000001464">set terminal command</indexitem>
+<indexitem target="a0000001465">set terminal command</indexitem>
+<indexitem target="a0000001466">set terminal command</indexitem>
+<indexitem target="a0000001467">set terminal command</indexitem>
+<indexitem target="a0000001468">set terminal command
 </indexitem>
-<indexitem target="a0000000785">set texthalign command</indexitem>
-<indexitem target="a0000000873">set texthalign command</indexitem>
-<indexitem target="a0000001178">set texthalign command</indexitem>
-<indexitem target="a0000001464">set texthalign command
+<indexitem target="a0000000800">set terminal dpi command</indexitem>
+<indexitem target="a0000001437">set terminal dpi command
 </indexitem>
-<indexitem target="a0000000786">set textvalign command</indexitem>
-<indexitem target="a0000000874">set textvalign command</indexitem>
-<indexitem target="a0000001179">set textvalign command</indexitem>
-<indexitem target="a0000001465">set textvalign command
+<indexitem target="a0000000784">set textcolour command</indexitem>
+<indexitem target="a0000000874">set textcolour command</indexitem>
+<indexitem target="a0000001179">set textcolour command</indexitem>
+<indexitem target="a0000001469">set textcolour command
 </indexitem>
-<indexitem target="a0000001180">set title command</indexitem>
-<indexitem target="a0000001466">set title command</indexitem>
-<indexitem target="a0000001467">set title command</indexitem>
-<indexitem target="a0000001468">set title command
+<indexitem target="a0000000787">set texthalign command</indexitem>
+<indexitem target="a0000000875">set texthalign command</indexitem>
+<indexitem target="a0000001180">set texthalign command</indexitem>
+<indexitem target="a0000001470">set texthalign command
 </indexitem>
-<indexitem target="a0000000700">set trange command</indexitem>
+<indexitem target="a0000000788">set textvalign command</indexitem>
+<indexitem target="a0000000876">set textvalign command</indexitem>
+<indexitem target="a0000001181">set textvalign command</indexitem>
+<indexitem target="a0000001471">set textvalign command
+</indexitem>
+<indexitem target="a0000001182">set title command</indexitem>
+<indexitem target="a0000001472">set title command</indexitem>
+<indexitem target="a0000001473">set title command</indexitem>
+<indexitem target="a0000001474">set title command
+</indexitem>
 <indexitem target="a0000000701">set trange command</indexitem>
-<indexitem target="a0000001181">set trange command</indexitem>
-<indexitem target="a0000001470">set trange command</indexitem>
-<indexitem target="a0000001471">set trange command
+<indexitem target="a0000000702">set trange command</indexitem>
+<indexitem target="a0000001183">set trange command</indexitem>
+<indexitem target="a0000001476">set trange command</indexitem>
+<indexitem target="a0000001477">set trange command
 </indexitem>
-<indexitem target="a0000001182">set unit command</indexitem>
-<indexitem target="a0000001183">set unit command</indexitem>
-<indexitem target="a0000001472">set unit command</indexitem>
-<indexitem target="a0000001473">set unit command</indexitem>
-<indexitem target="a0000001474">set unit command</indexitem>
-<indexitem target="a0000001475">set unit command
+<indexitem target="a0000001184">set unit command</indexitem>
+<indexitem target="a0000001185">set unit command</indexitem>
+<indexitem target="a0000001478">set unit command</indexitem>
+<indexitem target="a0000001479">set unit command</indexitem>
+<indexitem target="a0000001480">set unit command</indexitem>
+<indexitem target="a0000001481">set unit command
 </indexitem>
-<indexitem target="a0000000432">set unit of command</indexitem>
-<indexitem target="a0000000434">set unit of command</indexitem>
-<indexitem target="a0000001191">set unit of command
+<indexitem target="a0000000433">set unit of command</indexitem>
+<indexitem target="a0000000435">set unit of command</indexitem>
+<indexitem target="a0000001193">set unit of command
 </indexitem>
-<indexitem target="a0000000433">set unit preferred command</indexitem>
-<indexitem target="a0000000435">set unit preferred command</indexitem>
-<indexitem target="a0000001190">set unit preferred command</indexitem>
-<indexitem target="a0000001192">set unit preferred command
+<indexitem target="a0000000434">set unit preferred command</indexitem>
+<indexitem target="a0000000436">set unit preferred command</indexitem>
+<indexitem target="a0000001192">set unit preferred command</indexitem>
+<indexitem target="a0000001194">set unit preferred command
 </indexitem>
-<indexitem target="a0000000429">set unit scheme command</indexitem>
-<indexitem target="a0000001184">set unit scheme command
+<indexitem target="a0000000430">set unit scheme command</indexitem>
+<indexitem target="a0000001186">set unit scheme command
 </indexitem>
-<indexitem target="a0000001478">set view command</indexitem>
-<indexitem target="a0000001479">set view command
+<indexitem target="a0000001484">set view command</indexitem>
+<indexitem target="a0000001485">set view command
 </indexitem>
-<indexitem target="a0000000258">set viewer command</indexitem>
-<indexitem target="a0000000803">set viewer command</indexitem>
-<indexitem target="a0000001193">set viewer command</indexitem>
-<indexitem target="a0000001194">set viewer command
+<indexitem target="a0000000259">set viewer command</indexitem>
+<indexitem target="a0000000805">set viewer command</indexitem>
+<indexitem target="a0000001195">set viewer command</indexitem>
+<indexitem target="a0000001196">set viewer command
 </indexitem>
-<indexitem target="a0000000353">set width command</indexitem>
-<indexitem target="a0000001195">set width command</indexitem>
-<indexitem target="a0000001476">set width command
+<indexitem target="a0000000354">set width command</indexitem>
+<indexitem target="a0000001197">set width command</indexitem>
+<indexitem target="a0000001482">set width command
 </indexitem>
-<indexitem target="a0000000449">set xformat command</indexitem>
-<indexitem target="a0000000726">set xformat command</indexitem>
+<indexitem target="a0000000450">set xformat command</indexitem>
 <indexitem target="a0000000727">set xformat command</indexitem>
-<indexitem target="a0000000742">set xformat command</indexitem>
-<indexitem target="a0000000745">set xformat command</indexitem>
-<indexitem target="a0000001196">set xformat command</indexitem>
-<indexitem target="a0000001199">set xformat command
+<indexitem target="a0000000728">set xformat command</indexitem>
+<indexitem target="a0000000743">set xformat command</indexitem>
+<indexitem target="a0000000746">set xformat command</indexitem>
+<indexitem target="a0000001198">set xformat command</indexitem>
+<indexitem target="a0000001201">set xformat command
 </indexitem>
-<indexitem target="a0000001200">set xlabel command
+<indexitem target="a0000001202">set xlabel command
 </indexitem>
-<indexitem target="a0000000374">set xrange command</indexitem>
-<indexitem target="a0000001201">set xrange command
+<indexitem target="a0000000375">set xrange command</indexitem>
+<indexitem target="a0000001203">set xrange command
 </indexitem>
-<indexitem target="a0000000729">set xtics command</indexitem>
-<indexitem target="a0000001202">set xtics command</indexitem>
-<indexitem target="a0000001203">set xtics command
+<indexitem target="a0000000730">set xtics command</indexitem>
+<indexitem target="a0000001204">set xtics command</indexitem>
+<indexitem target="a0000001205">set xtics command
 </indexitem>
-<indexitem target="a0000001214">set yformat command
+<indexitem target="a0000001216">set yformat command
 </indexitem>
-<indexitem target="a0000001215">set ylabel command
+<indexitem target="a0000001217">set ylabel command
 </indexitem>
-<indexitem target="a0000001216">set yrange command
+<indexitem target="a0000001218">set yrange command
 </indexitem>
-<indexitem target="a0000001217">set ytics command
+<indexitem target="a0000001219">set ytics command
 </indexitem>
-<indexitem target="a0000001218">set zformat command
+<indexitem target="a0000001220">set zformat command
 </indexitem>
-<indexitem target="a0000001219">set zlabel command
+<indexitem target="a0000001221">set zlabel command
 </indexitem>
-<indexitem target="a0000001220">set zrange command
+<indexitem target="a0000001222">set zrange command
 </indexitem>
-<indexitem target="a0000001221">set ztics command
+<indexitem target="a0000001223">set ztics command
 </indexitem>
-<indexitem target="a0000000640">shadedregion plot style</indexitem>
-<indexitem target="a0000000646">shadedregion plot style
+<indexitem target="a0000000641">shadedregion plot style</indexitem>
+<indexitem target="a0000000647">shadedregion plot style
 </indexitem>
 <indexitem text="shell commands">
-<indexitem target="a0000000576">executing</indexitem>
-<indexitem target="a0000000579">substituting</indexitem>
+<indexitem target="a0000000577">executing</indexitem>
+<indexitem target="a0000000580">substituting</indexitem>
 </indexitem>
-<indexitem target="a0000000314">show command</indexitem>
 <indexitem target="a0000000315">show command</indexitem>
 <indexitem target="a0000000316">show command</indexitem>
 <indexitem target="a0000000317">show command</indexitem>
 <indexitem target="a0000000318">show command</indexitem>
-<indexitem target="a0000000849">show command</indexitem>
-<indexitem target="a0000001222">show command</indexitem>
-<indexitem target="a0000001223">show command</indexitem>
-<indexitem target="a0000001403">show command
+<indexitem target="a0000000319">show command</indexitem>
+<indexitem target="a0000000851">show command</indexitem>
+<indexitem target="a0000001224">show command</indexitem>
+<indexitem target="a0000001225">show command</indexitem>
+<indexitem target="a0000001409">show command
 </indexitem>
-<indexitem target="a0000000387">show functions command</indexitem>
-<indexitem target="a0000000388">show functions command
+<indexitem target="a0000000388">show functions command</indexitem>
+<indexitem target="a0000000389">show functions command
 </indexitem>
-<indexitem target="a0000000598">show palette command
+<indexitem target="a0000000599">show palette command
 </indexitem>
-<indexitem target="a0000000389">show userfunctions command
+<indexitem target="a0000000390">show userfunctions command
 </indexitem>
-<indexitem target="a0000000384">show variables command
+<indexitem target="a0000000385">show variables command
 </indexitem>
-<indexitem target="a0000000738">show xtics command</indexitem>
-<indexitem target="a0000001212">show xtics command
+<indexitem target="a0000000739">show xtics command</indexitem>
+<indexitem target="a0000001214">show xtics command
 </indexitem>
-<indexitem target="a0000000436">SI prefixes
+<indexitem target="a0000000437">SI prefixes
 </indexitem>
-<indexitem target="a0000001363">sin(z) function
+<indexitem target="a0000001365">sin(z) function
 </indexitem>
-<indexitem target="a0000001364">sinc(z) function
+<indexitem target="a0000001366">sinc(z) function
 </indexitem>
-<indexitem target="a0000001365">sinh(z) function
+<indexitem target="a0000001367">sinh(z) function
 </indexitem>
-<indexitem target="a0000000245">Solaris
+<indexitem target="a0000000246">Solaris
 </indexitem>
-<indexitem target="a0000000450">solve command</indexitem>
 <indexitem target="a0000000451">solve command</indexitem>
 <indexitem target="a0000000452">solve command</indexitem>
 <indexitem target="a0000000453">solve command</indexitem>
-<indexitem target="a0000001224">solve command</indexitem>
-<indexitem target="a0000001225">solve command</indexitem>
-<indexitem target="a0000001226">solve command
+<indexitem target="a0000000454">solve command</indexitem>
+<indexitem target="a0000001226">solve command</indexitem>
+<indexitem target="a0000001227">solve command</indexitem>
+<indexitem target="a0000001228">solve command
 </indexitem>
-<indexitem target="a0000000309">special characters
+<indexitem target="a0000000310">special characters
 </indexitem>
-<indexitem target="a0000000391">splicing functions
+<indexitem target="a0000000392">splicing functions
 </indexitem>
-<indexitem target="a0000000504">spline command</indexitem>
-<indexitem target="a0000000995">spline command</indexitem>
-<indexitem target="a0000001227">spline command</indexitem>
-<indexitem target="a0000001228">spline command
+<indexitem target="a0000000505">spline command</indexitem>
+<indexitem target="a0000000997">spline command</indexitem>
+<indexitem target="a0000001229">spline command</indexitem>
+<indexitem target="a0000001230">spline command
 </indexitem>
-<indexitem target="a0000000293">spreadsheets, importing data from
+<indexitem target="a0000000294">spreadsheets, importing data from
 </indexitem>
-<indexitem target="a0000001366">sqrt(z) function
+<indexitem target="a0000001368">sqrt(z) function
 </indexitem>
-<indexitem target="a0000000611">stars plot style
+<indexitem target="a0000000612">stars plot style
 </indexitem>
-<indexitem target="a0000000669">steps plot style</indexitem>
-<indexitem target="a0000000675">steps plot style
+<indexitem target="a0000000670">steps plot style</indexitem>
+<indexitem target="a0000000676">steps plot style
 </indexitem>
-<indexitem target="a0000000552">strcmp(s1,s2) function</indexitem>
-<indexitem target="a0000001367">strcmp(s1,s2) function
+<indexitem target="a0000000553">strcmp(s1,s2) function</indexitem>
+<indexitem target="a0000001369">strcmp(s1,s2) function
 </indexitem>
 <indexitem text="string operators">
-<indexitem target="a0000000545">concatenation</indexitem>
-<indexitem target="a0000000546">search and replace</indexitem>
-<indexitem target="a0000000302">substitution</indexitem>
+<indexitem target="a0000000546">concatenation</indexitem>
+<indexitem target="a0000000547">search and replace</indexitem>
+<indexitem target="a0000000303">substitution</indexitem>
 </indexitem>
-<indexitem target="a0000000553">strlen(s) function</indexitem>
-<indexitem target="a0000001368">strlen(s) function
+<indexitem target="a0000000554">strlen(s) function</indexitem>
+<indexitem target="a0000001370">strlen(s) function
 </indexitem>
-<indexitem target="a0000000554">strlower(s) function</indexitem>
-<indexitem target="a0000001369">strlower(s) function
+<indexitem target="a0000000555">strlower(s) function</indexitem>
+<indexitem target="a0000001371">strlower(s) function
 </indexitem>
-<indexitem target="a0000000555">strrange(s,i,j) function</indexitem>
-<indexitem target="a0000001370">strrange(s,i,j) function
+<indexitem target="a0000000556">strrange(s,i,j) function</indexitem>
+<indexitem target="a0000001372">strrange(s,i,j) function
 </indexitem>
-<indexitem target="a0000000556">strupper(s) function</indexitem>
-<indexitem target="a0000001371">strupper(s) function
+<indexitem target="a0000000557">strupper(s) function</indexitem>
+<indexitem target="a0000001373">strupper(s) function
 </indexitem>
-<indexitem target="a0000000572">subroutine command
+<indexitem target="a0000000573">subroutine command
 </indexitem>
-<indexitem target="a0000000814">svg output
+<indexitem target="a0000000816">svg output
 </indexitem>
-<indexitem target="a0000000853">swap command</indexitem>
-<indexitem target="a0000001229">swap command</indexitem>
-<indexitem target="a0000001230">swap command
+<indexitem target="a0000000855">swap command</indexitem>
+<indexitem target="a0000001231">swap command</indexitem>
+<indexitem target="a0000001232">swap command
 </indexitem>
-<indexitem target="a0000000247">system requirements
+<indexitem target="a0000000248">system requirements
 </indexitem>
-<indexitem target="a0000000478">tabulate command</indexitem>
-<indexitem target="a0000000483">tabulate command</indexitem>
-<indexitem target="a0000001231">tabulate command</indexitem>
-<indexitem target="a0000001232">tabulate command
+<indexitem target="a0000000479">tabulate command</indexitem>
+<indexitem target="a0000000484">tabulate command</indexitem>
+<indexitem target="a0000001233">tabulate command</indexitem>
+<indexitem target="a0000001234">tabulate command
 </indexitem>
-<indexitem target="a0000001372">tan(z) function
+<indexitem target="a0000001374">tan(z) function
 </indexitem>
-<indexitem target="a0000001373">tanh(z) function
+<indexitem target="a0000001375">tanh(z) function
 </indexitem>
-<indexitem target="a0000001374">tdistCDF(x,nu) function
+<indexitem target="a0000001376">tdistCDF(x,nu) function
 </indexitem>
-<indexitem target="a0000001375">tdistCDFi(P,nu) function
+<indexitem target="a0000001377">tdistCDFi(P,nu) function
 </indexitem>
-<indexitem target="a0000001376">tdistPDF(x,nu) function
+<indexitem target="a0000001378">tdistPDF(x,nu) function
 </indexitem>
-<indexitem target="a0000000421">temperature conversions
+<indexitem target="a0000000422">temperature conversions
 </indexitem>
-<indexitem target="a0000001377">texify(&#8230;) function
+<indexitem target="a0000001379">texify(&#8230;) function
 </indexitem>
-<indexitem target="a0000000310">texify() function
+<indexitem target="a0000000311">texify() function
 </indexitem>
 <indexitem text="text">
-<indexitem target="a0000000783">alignment</indexitem>
-<indexitem target="a0000000780">colour</indexitem>
-<indexitem target="a0000000778">size</indexitem>
+<indexitem target="a0000000785">alignment</indexitem>
+<indexitem target="a0000000782">colour</indexitem>
+<indexitem target="a0000000780">size</indexitem>
 </indexitem>
-<indexitem target="a0000000868">text command</indexitem>
-<indexitem target="a0000000869">text command</indexitem>
-<indexitem target="a0000000875">text command</indexitem>
-<indexitem target="a0000000876">text command</indexitem>
+<indexitem target="a0000000870">text command</indexitem>
+<indexitem target="a0000000871">text command</indexitem>
 <indexitem target="a0000000877">text command</indexitem>
-<indexitem target="a0000000906">text command</indexitem>
-<indexitem target="a0000000911">text command</indexitem>
-<indexitem target="a0000001238">text command</indexitem>
-<indexitem target="a0000001239">text command
+<indexitem target="a0000000878">text command</indexitem>
+<indexitem target="a0000000879">text command</indexitem>
+<indexitem target="a0000000908">text command</indexitem>
+<indexitem target="a0000000913">text command</indexitem>
+<indexitem target="a0000001240">text command</indexitem>
+<indexitem target="a0000001241">text command
 </indexitem>
-<indexitem target="a0000000815">tiff output
+<indexitem target="a0000000817">tiff output
 </indexitem>
-<indexitem target="a0000000464">time­daymonth(JD) function</indexitem>
-<indexitem target="a0000001378">time­daymonth(JD) function
+<indexitem target="a0000000465">time­daymonth(JD) function</indexitem>
+<indexitem target="a0000001380">time­daymonth(JD) function
 </indexitem>
-<indexitem target="a0000000465">time­dayweekname(JD) function</indexitem>
-<indexitem target="a0000001379">time­dayweekname(JD) function
+<indexitem target="a0000000466">time­dayweekname(JD) function</indexitem>
+<indexitem target="a0000001381">time­dayweekname(JD) function
 </indexitem>
-<indexitem target="a0000000466">time­dayweeknum(JD) function</indexitem>
-<indexitem target="a0000001380">time­dayweeknum(JD) function
+<indexitem target="a0000000467">time­dayweeknum(JD) function</indexitem>
+<indexitem target="a0000001382">time­dayweeknum(JD) function
 </indexitem>
-<indexitem target="a0000000476">time­diff­string(JD1,­JD2,­format) function</indexitem>
-<indexitem target="a0000001382">time­diff­string(JD1,­JD2,­format) function
+<indexitem target="a0000000477">time­diff­string(JD1,­JD2,­format) function</indexitem>
+<indexitem target="a0000001384">time­diff­string(JD1,­JD2,­format) function
 </indexitem>
-<indexitem target="a0000000475">time­diff(JD1,­JD2) function</indexitem>
-<indexitem target="a0000001381">time­diff(JD1,­JD2) function
+<indexitem target="a0000000476">time­diff(JD1,­JD2) function</indexitem>
+<indexitem target="a0000001383">time­diff(JD1,­JD2) function
 </indexitem>
-<indexitem target="a0000000467">time­hour(JD) function</indexitem>
-<indexitem target="a0000001383">time­hour(JD) function
+<indexitem target="a0000001385">time­fromunix(u) function
 </indexitem>
-<indexitem target="a0000000460">time­julianday(year,­month,­day,­hour,­min,­sec) function</indexitem>
-<indexitem target="a0000001384">time­julianday(year,­month,­day,­hour,­min,­sec) function
+<indexitem target="a0000000468">time­hour(JD) function</indexitem>
+<indexitem target="a0000001386">time­hour(JD) function
 </indexitem>
-<indexitem target="a0000000468">time­min(JD) function</indexitem>
-<indexitem target="a0000001385">time­min(JD) function
+<indexitem target="a0000000461">time­julianday(year,­month,­day,­hour,­min,­sec) function</indexitem>
+<indexitem target="a0000001387">time­julianday(year,­month,­day,­hour,­min,­sec) function
 </indexitem>
-<indexitem target="a0000000469">time­monthname(JD) function</indexitem>
-<indexitem target="a0000001386">time­monthname(JD) function
+<indexitem target="a0000000469">time­min(JD) function</indexitem>
+<indexitem target="a0000001388">time­min(JD) function
 </indexitem>
-<indexitem target="a0000000470">time­monthnum(JD) function</indexitem>
-<indexitem target="a0000001387">time­monthnum(JD) function
+<indexitem target="a0000000470">time­monthname(JD) function</indexitem>
+<indexitem target="a0000001389">time­monthname(JD) function
 </indexitem>
-<indexitem target="a0000000474">time­now() function</indexitem>
-<indexitem target="a0000001388">time­now() function
+<indexitem target="a0000000471">time­monthnum(JD) function</indexitem>
+<indexitem target="a0000001390">time­monthnum(JD) function
 </indexitem>
-<indexitem target="a0000000471">time­sec(JD) function</indexitem>
-<indexitem target="a0000001389">time­sec(JD) function
+<indexitem target="a0000000475">time­now() function</indexitem>
+<indexitem target="a0000001391">time­now() function
 </indexitem>
-<indexitem target="a0000000463">time­string(JD,­format) function</indexitem>
-<indexitem target="a0000001390">time­string(JD,­format) function
+<indexitem target="a0000000472">time­sec(JD) function</indexitem>
+<indexitem target="a0000001392">time­sec(JD) function
 </indexitem>
-<indexitem target="a0000000472">time­year(JD) function</indexitem>
-<indexitem target="a0000001391">time­year(JD) function
+<indexitem target="a0000000464">time­string(JD,­format) function</indexitem>
+<indexitem target="a0000001393">time­string(JD,­format) function
 </indexitem>
-<indexitem target="a0000000707">title modifier
+<indexitem target="a0000001394">time­unix(JD) function
 </indexitem>
-<indexitem target="a0000001500">Tobias Oetiker
+<indexitem target="a0000000473">time­year(JD) function</indexitem>
+<indexitem target="a0000001395">time­year(JD) function
 </indexitem>
-<indexitem target="a0000000711">top keyword</indexitem>
-<indexitem target="a0000000792">top keyword
+<indexitem target="a0000000708">title modifier
 </indexitem>
-<indexitem target="a0000001392">tophat(x,&#963;) function
+<indexitem target="a0000001507">Tobias Oetiker
 </indexitem>
-<indexitem target="a0000000822">transparent terminal
+<indexitem target="a0000000712">top keyword</indexitem>
+<indexitem target="a0000000794">top keyword
 </indexitem>
-<indexitem target="a0000000766">twohead keyword</indexitem>
+<indexitem target="a0000001396">tophat(x,&#963;) function
+</indexitem>
+<indexitem target="a0000000824">transparent terminal
+</indexitem>
 <indexitem target="a0000000768">twohead keyword</indexitem>
-<indexitem target="a0000000922">twohead keyword
+<indexitem target="a0000000770">twohead keyword</indexitem>
+<indexitem target="a0000000924">twohead keyword
 </indexitem>
-<indexitem target="a0000000767">twoway keyword
+<indexitem target="a0000000769">twoway keyword
 </indexitem>
-<indexitem target="a0000000263">Ubuntu Linux</indexitem>
-<indexitem target="a0000000272">Ubuntu Linux
+<indexitem target="a0000000264">Ubuntu Linux</indexitem>
+<indexitem target="a0000000273">Ubuntu Linux
 </indexitem>
-<indexitem target="a0000000845">undelete command</indexitem>
-<indexitem target="a0000001240">undelete command</indexitem>
-<indexitem target="a0000001241">undelete command
+<indexitem target="a0000000847">undelete command</indexitem>
+<indexitem target="a0000001242">undelete command</indexitem>
+<indexitem target="a0000001243">undelete command
 </indexitem>
-<indexitem target="a0000001393">unit(&#8230;) function
+<indexitem target="a0000001397">unit(&#8230;) function
 </indexitem>
-<indexitem target="a0000000409">unit() function
+<indexitem target="a0000000410">unit() function
 </indexitem>
-<indexitem target="a0000000408">units
-<indexitem target="a0000000415">angle</indexitem>
-<indexitem target="a0000000426">CGS</indexitem>
-<indexitem target="a0000001187">CGS</indexitem>
-<indexitem target="a0000000413">dimensional analysis</indexitem>
-<indexitem target="a0000000428">imperial</indexitem>
-<indexitem target="a0000001189">imperial</indexitem>
-<indexitem target="a0000001395">list</indexitem>
-<indexitem target="a0000000431">natural</indexitem>
-<indexitem target="a0000000411">SI prefixes</indexitem>
-<indexitem target="a0000000437">SI prefixes</indexitem>
-<indexitem target="a0000000422">temperature</indexitem>
-<indexitem target="a0000000424">unit schemes</indexitem>
-<indexitem target="a0000001185">unit schemes</indexitem>
+<indexitem target="a0000000409">units
+<indexitem target="a0000000416">angle</indexitem>
+<indexitem target="a0000000427">CGS</indexitem>
+<indexitem target="a0000001189">CGS</indexitem>
+<indexitem target="a0000000414">dimensional analysis</indexitem>
+<indexitem target="a0000000429">imperial</indexitem>
+<indexitem target="a0000001191">imperial</indexitem>
+<indexitem target="a0000001401">list</indexitem>
+<indexitem target="a0000000432">natural</indexitem>
+<indexitem target="a0000000412">SI prefixes</indexitem>
+<indexitem target="a0000000438">SI prefixes</indexitem>
+<indexitem target="a0000000423">temperature</indexitem>
+<indexitem target="a0000000425">unit schemes</indexitem>
+<indexitem target="a0000001187">unit schemes</indexitem>
 </indexitem>
-<indexitem target="a0000000724">unset axis command
+<indexitem target="a0000000725">unset axis command
 </indexitem>
-<indexitem target="a0000000311">unset command</indexitem>
-<indexitem target="a0000001242">unset command</indexitem>
-<indexitem target="a0000001243">unset command</indexitem>
-<indexitem target="a0000001402">unset command
+<indexitem target="a0000000312">unset command</indexitem>
+<indexitem target="a0000001244">unset command</indexitem>
+<indexitem target="a0000001245">unset command</indexitem>
+<indexitem target="a0000001408">unset command
 </indexitem>
-<indexitem target="a0000000615">upper-limit datapoints
+<indexitem target="a0000000616">upper-limit datapoints
 </indexitem>
-<indexitem target="a0000000613">upperlimits plot style
+<indexitem target="a0000000614">upperlimits plot style
 </indexitem>
-<indexitem target="a0000000334">using columns modifier
+<indexitem target="a0000000335">using columns modifier
 </indexitem>
-<indexitem target="a0000000321">using modifier</indexitem>
-<indexitem target="a0000000484">using modifier</indexitem>
-<indexitem target="a0000000487">using modifier</indexitem>
-<indexitem target="a0000000496">using modifier</indexitem>
-<indexitem target="a0000000530">using modifier</indexitem>
-<indexitem target="a0000000962">using modifier</indexitem>
-<indexitem target="a0000000978">using modifier</indexitem>
-<indexitem target="a0000001233">using modifier</indexitem>
-<indexitem target="a0000001236">using modifier
+<indexitem target="a0000000322">using modifier</indexitem>
+<indexitem target="a0000000485">using modifier</indexitem>
+<indexitem target="a0000000488">using modifier</indexitem>
+<indexitem target="a0000000497">using modifier</indexitem>
+<indexitem target="a0000000531">using modifier</indexitem>
+<indexitem target="a0000000964">using modifier</indexitem>
+<indexitem target="a0000000980">using modifier</indexitem>
+<indexitem target="a0000001235">using modifier</indexitem>
+<indexitem target="a0000001238">using modifier
 </indexitem>
-<indexitem target="a0000000333">using rows modifier
+<indexitem target="a0000000334">using rows modifier
 </indexitem>
 <indexitem text="variables">
-<indexitem target="a0000000542">string</indexitem>
+<indexitem target="a0000000543">string</indexitem>
 </indexitem>
-<indexitem target="a0000000492">via keyword</indexitem>
-<indexitem target="a0000000958">via keyword
+<indexitem target="a0000000493">via keyword</indexitem>
+<indexitem target="a0000000960">via keyword
 </indexitem>
-<indexitem target="a0000000583">watching scripts
+<indexitem target="a0000000584">watching scripts
 </indexitem>
-<indexitem target="a0000000653">wboxes plot style</indexitem>
-<indexitem target="a0000000658">wboxes plot style</indexitem>
-<indexitem target="a0000000667">wboxes plot style
+<indexitem target="a0000000654">wboxes plot style</indexitem>
+<indexitem target="a0000000659">wboxes plot style</indexitem>
+<indexitem target="a0000000668">wboxes plot style
 </indexitem>
-<indexitem target="a0000000261">wget
+<indexitem target="a0000000262">wget
 </indexitem>
-<indexitem target="a0000000565">while command</indexitem>
-<indexitem target="a0000000567">while command</indexitem>
-<indexitem target="a0000001244">while command</indexitem>
-<indexitem target="a0000001245">while command
+<indexitem target="a0000000566">while command</indexitem>
+<indexitem target="a0000000568">while command</indexitem>
+<indexitem target="a0000001246">while command</indexitem>
+<indexitem target="a0000001247">while command
 </indexitem>
-<indexitem target="a0000000886">width keyword
+<indexitem target="a0000000888">width keyword
 </indexitem>
-<indexitem target="a0000000327">wildcards</indexitem>
-<indexitem target="a0000000561">wildcards
+<indexitem target="a0000000328">wildcards</indexitem>
+<indexitem target="a0000000562">wildcards
 </indexitem>
-<indexitem target="a0000000521">window functions
+<indexitem target="a0000000522">window functions
 </indexitem>
-<indexitem target="a0000000881">with modifier</indexitem>
-<indexitem target="a0000000919">with modifier</indexitem>
-<indexitem target="a0000000926">with modifier
+<indexitem target="a0000000883">with modifier</indexitem>
+<indexitem target="a0000000921">with modifier</indexitem>
+<indexitem target="a0000000928">with modifier
 </indexitem>
-<indexitem target="a0000000795">X11 terminal
+<indexitem target="a0000000797">X11 terminal
 </indexitem>
-<indexitem target="a0000000715">xcentre keyword
+<indexitem target="a0000000716">xcentre keyword
 </indexitem>
-<indexitem target="a0000000619">xerrorbars plot style
+<indexitem target="a0000000620">xerrorbars plot style
 </indexitem>
-<indexitem target="a0000000627">xerrorrange plot style
+<indexitem target="a0000000628">xerrorrange plot style
 </indexitem>
-<indexitem target="a0000000625">xyerrorbars plot style
+<indexitem target="a0000000626">xyerrorbars plot style
 </indexitem>
-<indexitem target="a0000000631">xyerrorrange plot style
+<indexitem target="a0000000632">xyerrorrange plot style
 </indexitem>
-<indexitem target="a0000000716">ycentre keyword
+<indexitem target="a0000000717">ycentre keyword
 </indexitem>
-<indexitem target="a0000000363">yerrorbars plot style</indexitem>
-<indexitem target="a0000000617">yerrorbars plot style</indexitem>
-<indexitem target="a0000000623">yerrorbars plot style
+<indexitem target="a0000000364">yerrorbars plot style</indexitem>
+<indexitem target="a0000000618">yerrorbars plot style</indexitem>
+<indexitem target="a0000000624">yerrorbars plot style
 </indexitem>
-<indexitem target="a0000000629">yerrorrange plot style</indexitem>
-<indexitem target="a0000000635">yerrorrange plot style</indexitem>
-<indexitem target="a0000000644">yerrorrange plot style
+<indexitem target="a0000000630">yerrorrange plot style</indexitem>
+<indexitem target="a0000000636">yerrorrange plot style</indexitem>
+<indexitem target="a0000000645">yerrorrange plot style
 </indexitem>
-<indexitem target="a0000000638">yerrorshaded plot style</indexitem>
-<indexitem target="a0000000642">yerrorshaded plot style
+<indexitem target="a0000000639">yerrorshaded plot style</indexitem>
+<indexitem target="a0000000643">yerrorshaded plot style
 </indexitem>
-<indexitem target="a0000001394">zeta(x) function
+<indexitem target="a0000001398">zernike(n,m,r,) function
 </indexitem>
-<indexitem target="a0000000256">zlib
+<indexitem target="a0000001399">zernikeR(n,m,r) function
+</indexitem>
+<indexitem target="a0000001400">zeta(x) function
+</indexitem>
+<indexitem target="a0000000257">zlib
 </indexitem>
 </index>

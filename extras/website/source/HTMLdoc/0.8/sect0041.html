@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -57,9 +57,9 @@
 </div>
 
 <div><h1 id="a0000000042">6.12 Script Watching: pyxplot_watch</h1>
-<p>PyXPlot includes a simple tool for watching command script files and executing them whenever they are modified. This may be useful when developing a command script, if one wants to make small modifications to it and see the results in a semi-live fashion. This tool is invoked by calling the <tt class="tt">pyxplot_watch</tt><a name="a0000000582" id="a0000000582"></a><a name="a0000000583" id="a0000000583"></a> command from a shell prompt. The command-line syntax of <tt class="tt">pyxplot_watch</tt> is similar to that of PyXPlot itself, for example: </p><pre>
+<p>PyXPlot includes a simple tool for watching command script files and executing them whenever they are modified. This may be useful when developing a command script, if one wants to make small modifications to it and see the results in a semi-live fashion. This tool is invoked by calling the <tt class="tt">pyxplot_watch</tt><a name="a0000000583" id="a0000000583"></a><a name="a0000000584" id="a0000000584"></a> command from a shell prompt. The command-line syntax of <tt class="tt">pyxplot_watch</tt> is similar to that of PyXPlot itself, for example: </p><pre>
 pyxplot_watch script.ppl
-</pre><p>would set <tt class="tt">pyxplot_watch</tt> to watch the command script file <tt class="tt">script.ppl</tt>. One difference, however, is that if multiple script files are specified on the command line, they are watched and executed independently, <i class="itshape">not</i> sequentially, as PyXPlot itself would do. Wildcard characters can also be used to set <tt class="tt">pyxplot_watch</tt> to watch multiple files.<a href="#a0000000584" class="footnote"><sup class="footnotemark">1</sup></a> </p><p>This is especially useful when combined with Ghostview’s<a name="a0000000585" id="a0000000585"></a> watch facility. For example, suppose that a script <tt class="tt">foo.ppl</tt> produces PostScript output <tt class="tt">foo.ps</tt>. The following two commands could be used to give a live view of the result of executing this script: </p><pre>
+</pre><p>would set <tt class="tt">pyxplot_watch</tt> to watch the command script file <tt class="tt">script.ppl</tt>. One difference, however, is that if multiple script files are specified on the command line, they are watched and executed independently, <i class="itshape">not</i> sequentially, as PyXPlot itself would do. Wildcard characters can also be used to set <tt class="tt">pyxplot_watch</tt> to watch multiple files.<a href="#a0000000585" class="footnote"><sup class="footnotemark">1</sup></a> </p><p>This is especially useful when combined with Ghostview’s<a name="a0000000586" id="a0000000586"></a> watch facility. For example, suppose that a script <tt class="tt">foo.ppl</tt> produces PostScript output <tt class="tt">foo.ps</tt>. The following two commands could be used to give a live view of the result of executing this script: </p><pre>
 gv --watch foo.ps &amp;
 pyxplot_watch foo.ppl
 </pre></div>
@@ -69,7 +69,7 @@ pyxplot_watch foo.ppl
 <div id="footnotes">
 <p><b>Footnotes</b></p>
 <ol>
-<li id="a0000000584">Note that <tt class="tt">pyxplot_watch *.script</tt> and <tt class="tt">pyxplot_watch <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+<li id="a0000000585">Note that <tt class="tt">pyxplot_watch *.script</tt> and <tt class="tt">pyxplot_watch <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
                                      width:7px; 
                                      height:18px" class="math gen" />*.script</tt> will behave differently in most UNIX shells. In the first case, the wildcard is expanded by your shell, and a list of files passed to <tt class="tt">pyxplot_watch</tt>. Any files matching the wildcard, created after running <tt class="tt">pyxplot_watch</tt>, will not be picked up. In the latter case, the wildcard is expanded by <tt class="tt">pyxplot_watch</tt> itself, which <i class="it">will</i> pick up any newly created files.</li>
 </ol>
@@ -87,7 +87,7 @@ pyxplot_watch foo.ppl
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

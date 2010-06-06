@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -62,18 +62,18 @@
 </div>
 
 <div><h2 id="sec:set_arrow">1.10.1 Arrows</h2>
-<p><a name="a0000000760" id="a0000000760"></a> The <tt class="tt">set arrow</tt> command<a name="a0000000761" id="a0000000761"></a> may be used to draw arrows on top of graphs; its syntax is illustrated by the following simple example: </p><pre>
+<p><a name="a0000000762" id="a0000000762"></a> The <tt class="tt">set arrow</tt> command<a name="a0000000763" id="a0000000763"></a> may be used to draw arrows on top of graphs; its syntax is illustrated by the following simple example: </p><pre>
 set arrow 1 from 0,0 to 1,1
-</pre><p>The number <tt class="tt">1</tt> immediately following <tt class="tt">set arrow</tt><a name="a0000000762" id="a0000000762"></a> specifies an identification number for the arrow, allowing it to be subsequently removed via the command </p><pre>
+</pre><p>The number <tt class="tt">1</tt> immediately following <tt class="tt">set arrow</tt><a name="a0000000764" id="a0000000764"></a> specifies an identification number for the arrow, allowing it to be subsequently removed via the command </p><pre>
 unset arrow 1
-</pre><p>or equivalently, via<a name="a0000000763" id="a0000000763"></a> </p><pre>
+</pre><p>or equivalently, via<a name="a0000000765" id="a0000000765"></a> </p><pre>
 set noarrow 1
-</pre><p>or to be replaced with a different arrow by issuing a new command of the form <tt class="tt">set arrow 1 ...</tt>. The <tt class="tt">set arrow</tt> command may be followed by the keyword <tt class="tt">with</tt> to specify the style of the arrow. The keywords <tt class="tt">nohead</tt><a name="a0000000764" id="a0000000764"></a>, <tt class="tt">head</tt><a name="a0000000765" id="a0000000765"></a> and <tt class="tt">twohead</tt><a name="a0000000766" id="a0000000766"></a>, placed after the keyword <tt class="tt">with</tt>, can be used to generate arrows with no arrow heads, normal arrow heads, or with two arrow heads. <tt class="tt">twoway</tt><a name="a0000000767" id="a0000000767"></a> is an alias for <tt class="tt">twohead</tt><a name="a0000000768" id="a0000000768"></a>, as in the following example: </p><pre>
+</pre><p>or to be replaced with a different arrow by issuing a new command of the form <tt class="tt">set arrow 1 ...</tt>. The <tt class="tt">set arrow</tt> command may be followed by the keyword <tt class="tt">with</tt> to specify the style of the arrow. The keywords <tt class="tt">nohead</tt><a name="a0000000766" id="a0000000766"></a>, <tt class="tt">head</tt><a name="a0000000767" id="a0000000767"></a> and <tt class="tt">twohead</tt><a name="a0000000768" id="a0000000768"></a>, placed after the keyword <tt class="tt">with</tt>, can be used to generate arrows with no arrow heads, normal arrow heads, or with two arrow heads. <tt class="tt">twoway</tt><a name="a0000000769" id="a0000000769"></a> is an alias for <tt class="tt">twohead</tt><a name="a0000000770" id="a0000000770"></a>, as in the following example: </p><pre>
 set arrow 1 from 0,0 to 1,1 with twoway
 </pre><p>Line types and colours can also be specified after the keyword <tt class="tt">with</tt>, as in the example: </p><pre>
 set arrow 1 from 0,0 to 1,1 with nohead \
 linetype 1 c blue
-</pre><p>The coordinates for the start and end points of the arrow can be specified in a range of coordinate systems. The coordinate system to be used should be specified immediately before the coordinate value. The default system, <tt class="tt">first</tt><a name="a0000000769" id="a0000000769"></a> measures the graph using the <tt class="tt">x</tt>- and <tt class="tt">y</tt>-axes. The <tt class="tt">second</tt><a name="a0000000770" id="a0000000770"></a> system uses the <tt class="tt">x2</tt>- and <tt class="tt">y2</tt>-axes. The <tt class="tt">screen</tt><a name="a0000000771" id="a0000000771"></a> and <tt class="tt">graph</tt><a name="a0000000772" id="a0000000772"></a> systems both measure in centimetres from the origin of the graph. In the following example, we use these specifiers, and specify coordinates using variables rather than doing so explicitly: </p><pre>
+</pre><p>The coordinates for the start and end points of the arrow can be specified in a range of coordinate systems. The coordinate system to be used should be specified immediately before the coordinate value. The default system, <tt class="tt">first</tt><a name="a0000000771" id="a0000000771"></a> measures the graph using the <tt class="tt">x</tt>- and <tt class="tt">y</tt>-axes. The <tt class="tt">second</tt><a name="a0000000772" id="a0000000772"></a> system uses the <tt class="tt">x2</tt>- and <tt class="tt">y2</tt>-axes. The <tt class="tt">screen</tt><a name="a0000000773" id="a0000000773"></a> and <tt class="tt">graph</tt><a name="a0000000774" id="a0000000774"></a> systems both measure in centimetres from the origin of the graph. In the following example, we use these specifiers, and specify coordinates using variables rather than doing so explicitly: </p><pre>
 x0 = 0.0
 y0 = 0.0
 x1 = 1.0
@@ -81,9 +81,9 @@ y1 = 1.0
 set arrow 1 from first  x0, first  y0 \
             to   screen x1, screen y1 \
             with nohead
-</pre><p>In addition to these four options, <tt class="tt">axis&lt;n&gt;</tt><a name="a0000000773" id="a0000000773"></a> specifies that the position is to be measured along the <img src="images/img-0420.png" alt="$n\, $" style="vertical-align:0px; 
+</pre><p>In addition to these four options, <tt class="tt">axis&lt;n&gt;</tt><a name="a0000000775" id="a0000000775"></a> specifies that the position is to be measured along the <img src="images/img-0420.png" alt="$n\, $" style="vertical-align:0px; 
                                      width:11px; 
-                                     height:8px" class="math gen" />th horizontal or vertical axis – for example, <tt class="tt">axis3</tt>.<a name="a0000000774" id="a0000000774"></a> This allows the graph to be measured with reference to any arbitrary axis on plots which make use of large numbers of parallel axes (see Section <a href="sec-multiple_axes.html">1.7</a>). </p></div>
+                                     height:8px" class="math gen" />th horizontal or vertical axis – for example, <tt class="tt">axis3</tt>.<a name="a0000000776" id="a0000000776"></a> This allows the graph to be measured with reference to any arbitrary axis on plots which make use of large numbers of parallel axes (see Section <a href="sec-multiple_axes.html">1.7</a>). </p></div>
 
 
 
@@ -101,7 +101,7 @@ set arrow 1 from first  x0, first  y0 \
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

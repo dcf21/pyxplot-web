@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -57,7 +57,7 @@
 </div>
 
 <div><h1 id="a0000000223">B.1 The Typesetting of Text</h1>
-<p>PyXPlot renders all text labels automatically in the L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X typesetting environment. This brings many advantages: it produces neater labels than the default typesetting engine used by Gnuplot, makes it straightforward to label graphs with mathematical expressions, and moreover makes it straightforward when importing graphs into L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X documents to match the fonts used in figures with those used in the main text of the document. It does, however, also necessarily introduce some incompatibility with Gnuplot. Some strings which are valid in Gnuplot are not valid in PyXPlot (see Section <a href="sec-latex_incompatibility.html">3.6</a> for more details). For example,<a name="a0000001499" id="a0000001499"></a> </p><p><table cellspacing="0" class="tabular">
+<p>PyXPlot renders all text labels automatically in the L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X typesetting environment. This brings many advantages: it produces neater labels than the default typesetting engine used by Gnuplot, makes it straightforward to label graphs with mathematical expressions, and moreover makes it straightforward when importing graphs into L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X documents to match the fonts used in figures with those used in the main text of the document. It does, however, also necessarily introduce some incompatibility with Gnuplot. Some strings which are valid in Gnuplot are not valid in PyXPlot (see Section <a href="sec-latex_incompatibility.html">3.6</a> for more details). For example,<a name="a0000001506" id="a0000001506"></a> </p><p><table cellspacing="0" class="tabular">
 <tr>
 
     
@@ -79,9 +79,9 @@
     <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> set xlabel ’$x<img src="images/img-0024.png" alt="\^{}" style="vertical-align:9px; width:5px; height:4px" class="accent gen" />2$’ </tt></div></p></td>
 
 </tr>
-</table> </p><p>Users with no prior knowledge of L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X may find a useful introduction to its syntax in Tobias Oetiker’s<a name="a0000001500" id="a0000001500"></a> excellent free tutorial, <i class="it">The Not So Short Guide to L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X <img src="images/img-0013.png" alt="$2\epsilon $" style="vertical-align:0px; 
+</table> </p><p>Users with no prior knowledge of L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X may find a useful introduction to its syntax in Tobias Oetiker’s<a name="a0000001507" id="a0000001507"></a> excellent free tutorial, <i class="it">The Not So Short Guide to L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X <img src="images/img-0013.png" alt="$2\epsilon $" style="vertical-align:0px; 
                                      width:15px; 
-                                     height:12px" class="math gen" /></i><a name="a0000001501" id="a0000001501"></a>, which is available for free download from: </p><p>http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf </p><p>PyXPlot’s built-in <tt class="tt">texify()</tt> function can also assist by automatically converting mathematical expressions and strings of text into L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X, as in the following examples: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">a=50</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print texify("A %d% increase"%(a))</b></tt><br /><tt class="tt">A 50<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     height:12px" class="math gen" /></i><a name="a0000001508" id="a0000001508"></a>, which is available for free download from: </p><p>http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf </p><p>PyXPlot’s built-in <tt class="tt">texify()</tt> function can also assist by automatically converting mathematical expressions and strings of text into L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X, as in the following examples: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">a=50</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print texify("A %d% increase"%(a))</b></tt><br /><tt class="tt">A 50<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
                                      width:7px; 
                                      height:18px" class="math gen" />% increase</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print texify(sqrt(x**2+1))</b></tt><br /><tt class="tt">$<br />displaystyle <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
                                      width:7px; 
@@ -103,7 +103,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

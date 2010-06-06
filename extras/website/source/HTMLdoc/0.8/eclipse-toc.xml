@@ -76,7 +76,7 @@
        </topic><topic label="The fit Command: Mathematical Details" href="ch-fit_maths.html">
           <topic label="Notation" href="sec-bayes_notation.html" /><topic label="The Probability Density Function" href="sec-bayes_pdf.html" /><topic label="Estimating the Error in u0" href="sect0228.html" /><topic label="The Covariance Matrix" href="sect0229.html" /><topic label="The Correlation Matrix" href="sec-correlation_matrix.html" /><topic label="Finding &#963;i" href="sec-finding_sigmai.html" />
        </topic><topic label="ChangeLog" href="sect0230.html">
-          <topic label="2010 May 19: PyXPlot 0.8.0" href="sect0231.html" /><topic label="2009 May 24: PyXPlot 0.7.1" href="sect0232.html" /><topic label="2008 Oct 14: PyXPlot 0.7.0" href="sect0233.html" /><topic label="2007 Feb 26: PyXPlot 0.6.3" href="sect0234.html" /><topic label="2006 Sep 09: PyXPlot 0.5.8" href="sect0235.html" />
-       </topic><topic label="Index" href="sect0236.html" />
+          <topic label="2010 June 1: PyXPlot 0.8.1" href="sect0231.html" /><topic label="2010 May 19: PyXPlot 0.8.0" href="sect0232.html" /><topic label="2009 Nov 17: PyXPlot 0.7.1" href="sect0233.html" /><topic label="2008 Oct 14: PyXPlot 0.7.0" href="sect0234.html" /><topic label="2007 Feb 26: PyXPlot 0.6.3" href="sect0235.html" /><topic label="2006 Sep 09: PyXPlot 0.5.8" href="sect0236.html" />
+       </topic><topic label="Index" href="sect0237.html" />
     </topic>
 </toc>

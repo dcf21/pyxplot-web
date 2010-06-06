@@ -77,8 +77,8 @@
         </tocitem><tocitem target="ch:fit_maths" text="The fit Command: Mathematical Details">
             <tocitem target="sec:bayes_notation" text="Notation" /><tocitem target="sec:bayes_pdf" text="The Probability Density Function" /><tocitem target="a0000000229" text="Estimating the Error in u0" /><tocitem target="a0000000230" text="The Covariance Matrix" /><tocitem target="sec:correlation_matrix" text="The Correlation Matrix" /><tocitem target="sec:finding_sigmai" text="Finding &#963;i" />
         </tocitem><tocitem target="a0000000231" text="ChangeLog">
-            <tocitem target="a0000000232" text="2010 May 19: PyXPlot 0.8.0" /><tocitem target="a0000000233" text="2009 May 24: PyXPlot 0.7.1" /><tocitem target="a0000000234" text="2008 Oct 14: PyXPlot 0.7.0" /><tocitem target="a0000000235" text="2007 Feb 26: PyXPlot 0.6.3" /><tocitem target="a0000000236" text="2006 Sep 09: PyXPlot 0.5.8" />
-        </tocitem><tocitem target="a0000000237" text="Index" />
+            <tocitem target="a0000000232" text="2010 June 1: PyXPlot 0.8.1" /><tocitem target="a0000000233" text="2010 May 19: PyXPlot 0.8.0" /><tocitem target="a0000000234" text="2009 Nov 17: PyXPlot 0.7.1" /><tocitem target="a0000000235" text="2008 Oct 14: PyXPlot 0.7.0" /><tocitem target="a0000000236" text="2007 Feb 26: PyXPlot 0.6.3" /><tocitem target="a0000000237" text="2006 Sep 09: PyXPlot 0.5.8" />
+        </tocitem><tocitem target="a0000000238" text="Index" />
     </tocitem>
 </tocitem>
 </toc>

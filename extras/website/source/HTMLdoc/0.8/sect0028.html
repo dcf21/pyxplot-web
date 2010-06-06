@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -57,7 +57,7 @@
 </div>
 
 <div><h1 id="a0000000029">5.8 Fourier Transforms</h1>
-<p>The <tt class="tt">fft</tt> and <tt class="tt">ifft</tt> commands<a name="a0000000505" id="a0000000505"></a><a name="a0000000506" id="a0000000506"></a> take Fourier transforms and inverse Fourier transforms respectively of data supplied either from a file or from a function. In each case, a regular grid of abscissa values must be specified on which to take the discrete Fourier transform, which can extend over an arbitrary number of dimensions. The following example demonstrates the syntax of these commands as applied to a two-dimensional top-hat function: </p><pre>
+<p>The <tt class="tt">fft</tt> and <tt class="tt">ifft</tt> commands<a name="a0000000506" id="a0000000506"></a><a name="a0000000507" id="a0000000507"></a> take Fourier transforms and inverse Fourier transforms respectively of data supplied either from a file or from a function. In each case, a regular grid of abscissa values must be specified on which to take the discrete Fourier transform, which can extend over an arbitrary number of dimensions. The following example demonstrates the syntax of these commands as applied to a two-dimensional top-hat function: </p><pre>
 step(x,y) = tophat(x,0.2) * tophat(y,0.4)
 fft  [  0: 1:0.01][  0: 1:0.01] f() of step()
 ifft [-50:49:1   ][-50:49:1   ] g() of f()
@@ -79,8 +79,8 @@ ifft [-50:49:1   ][-50:49:1   ] g() of f()
                                      width:24px; 
                                      height:16px" class="math gen" /> samples of the Fourier transform <tt class="tt">f</tt><img src="images/img-0182.png" alt="$(\omega _ x,\omega _ y)$" style="vertical-align:-5px; 
                                      width:59px; 
-                                     height:19px" class="math gen" /> at </p><table id="a0000000507" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
-<tr id="a0000000508">
+                                     height:19px" class="math gen" /> at </p><table id="a0000000508" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
+<tr id="a0000000509">
     
     <td style="width:40%">&nbsp;</td>
     
@@ -99,7 +99,7 @@ ifft [-50:49:1   ][-50:49:1   ] g() of f()
     
     <td style="width:40%">&nbsp;</td>
     <td style="width:20%" class="eqnnum">&nbsp;</td>
-</tr><tr id="a0000000509">
+</tr><tr id="a0000000510">
     
     <td style="width:40%">&nbsp;</td>
     
@@ -125,7 +125,7 @@ ifft [-50:49:1   ][-50:49:1   ] g() of f()
                                      width:23px; 
                                      height:17px" class="math gen" /> is analogously defined. These samples are interpolated stepwise, such that an evaluation of the function <tt class="tt">f</tt><img src="images/img-0182.png" alt="$(\omega _ x,\omega _ y)$" style="vertical-align:-5px; 
                                      width:59px; 
-                                     height:19px" class="math gen" /> for general inputs yields the nearest sample, or zero outside the rectangular grid where samples are available. In general, even the Fourier transforms of real functions are complex, and their evaluation when complex arithmetic is not enabled (see Section <a href="sec-complex_numbers.html">4.5</a>) is likely to fail. For this reason, a warning is issued if complex arithmetic is disabled when a Fourier transform function is evaluated. </p><p>In the example above, we go on to convert this set of samples back into the function with which we started by instructing the <tt class="tt">ifft</tt> command<a name="a0000000510" id="a0000000510"></a> to take <img src="images/img-0176.png" alt="$N_ x=100$" style="vertical-align:-2px; 
+                                     height:19px" class="math gen" /> for general inputs yields the nearest sample, or zero outside the rectangular grid where samples are available. In general, even the Fourier transforms of real functions are complex, and their evaluation when complex arithmetic is not enabled (see Section <a href="sec-complex_numbers.html">4.5</a>) is likely to fail. For this reason, a warning is issued if complex arithmetic is disabled when a Fourier transform function is evaluated. </p><p>In the example above, we go on to convert this set of samples back into the function with which we started by instructing the <tt class="tt">ifft</tt> command<a name="a0000000511" id="a0000000511"></a> to take <img src="images/img-0176.png" alt="$N_ x=100$" style="vertical-align:-2px; 
                                      width:74px; 
                                      height:14px" class="math gen" /> equally-spaced samples along the <img src="images/img-0190.png" alt="$\omega _ x$" style="vertical-align:-2px; 
                                      width:19px; 
@@ -138,7 +138,7 @@ ifft [-50:49:1   ][-50:49:1   ] g() of f()
                                      height:13px" class="math gen" />-axis. </p><p>Taking the simpler example of a one-dimensional Fourier transform for clarity, as might be calculated by the instructions </p><pre>
 step(x) = tophat(x,0.2)
 fft  [  0: 1:0.01] f() of step()
-</pre><p> the <tt class="tt">fft</tt> and <tt class="tt">ifft</tt> commands<a name="a0000000511" id="a0000000511"></a><a name="a0000000512" id="a0000000512"></a> compute, respectively, discrete sets of samples <img src="images/img-0194.png" alt="$F_ m$" style="vertical-align:-2px; 
+</pre><p> the <tt class="tt">fft</tt> and <tt class="tt">ifft</tt> commands<a name="a0000000512" id="a0000000512"></a><a name="a0000000513" id="a0000000513"></a> compute, respectively, discrete sets of samples <img src="images/img-0194.png" alt="$F_ m$" style="vertical-align:-2px; 
                                      width:24px; 
                                      height:14px" class="math gen" /> and <img src="images/img-0195.png" alt="$I_ n$" style="vertical-align:-2px; 
                                      width:16px; 
@@ -146,7 +146,7 @@ fft  [  0: 1:0.01] f() of step()
                                      width:47px; 
                                      height:18px" class="math gen" /> and <img src="images/img-0197.png" alt="$I(x)$" style="vertical-align:-4px; 
                                      width:32px; 
-                                     height:18px" class="math gen" />, which are given by </p><table id="a0000000513" class="equation" width="100%" cellspacing="0" cellpadding="7">
+                                     height:18px" class="math gen" />, which are given by </p><table id="a0000000514" class="equation" width="100%" cellspacing="0" cellpadding="7">
 <tr>
     
     <td style="width:40%">&nbsp;</td>
@@ -156,7 +156,7 @@ fft  [  0: 1:0.01] f() of step()
     <td style="width:40%">&nbsp;</td>
     <td class="eqnnum" style="width:20%">&nbsp;</td>
 </tr>
-</table><p> and </p><table id="a0000000514" class="equation" width="100%" cellspacing="0" cellpadding="7">
+</table><p> and </p><table id="a0000000515" class="equation" width="100%" cellspacing="0" cellpadding="7">
 <tr>
     
     <td style="width:40%">&nbsp;</td>
@@ -254,7 +254,7 @@ fft  [  0: 1:0.01] f() of step()
 </tr>
 </table><p>It may be shown in the limit that <img src="images/img-0201.png" alt="$\delta x$" style="vertical-align:0px; 
                                      width:18px; 
-                                     height:12px" class="math gen" /> becomes small – i.e. when the number of samples taken becomes very large – that these sums approximate the integrals </p><table id="a0000000515" class="equation" width="100%" cellspacing="0" cellpadding="7">
+                                     height:12px" class="math gen" /> becomes small – i.e. when the number of samples taken becomes very large – that these sums approximate the integrals </p><table id="a0000000516" class="equation" width="100%" cellspacing="0" cellpadding="7">
 <tr>
     
     <td style="width:40%">&nbsp;</td>
@@ -280,7 +280,7 @@ fft [-10:10:0.1] f() of 'datafile.dat'
                                      width:16px; 
                                      height:12px" class="math gen" />-dimensional FFT must be arranged in <img src="images/img-0206.png" alt="$N+1$" style="vertical-align:-1px; 
                                      width:46px; 
-                                     height:13px" class="math gen" /> columns<a href="#a0000000516" class="footnote"><sup class="footnotemark">1</sup></a>, with the first <img src="images/img-0151.png" alt="$N$" style="vertical-align:0px; 
+                                     height:13px" class="math gen" /> columns<a href="#a0000000517" class="footnote"><sup class="footnotemark">1</sup></a>, with the first <img src="images/img-0151.png" alt="$N$" style="vertical-align:0px; 
                                      width:16px; 
                                      height:12px" class="math gen" /> containing the abscissa values for each of the <img src="images/img-0151.png" alt="$N$" style="vertical-align:0px; 
                                      width:16px; 
@@ -292,7 +292,7 @@ fft [-10:10:0.1] f() of 'datafile.dat'
     
     <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> It is straightforward to show that the Fourier transform of a top-hat function of unit width is the function <img src="images/img-0207.png" alt="${\rm sinc}(x^\prime =\pi x)=\sin (x^\prime )/x^\prime $" style="vertical-align:-5px; 
                                      width:204px; 
-                                     height:20px" class="math gen" />. If </p><table id="a0000000517" class="equation" width="100%" cellspacing="0" cellpadding="7">
+                                     height:20px" class="math gen" />. If </p><table id="a0000000518" class="equation" width="100%" cellspacing="0" cellpadding="7">
 <tr>
     
     <td style="width:40%">&nbsp;</td>
@@ -306,8 +306,8 @@ fft [-10:10:0.1] f() of 'datafile.dat'
                                      width:39px; 
                                      height:18px" class="math gen" /> of <img src="images/img-0078.png" alt="$f(x)$" style="vertical-align:-4px; 
                                      width:32px; 
-                                     height:18px" class="math gen" /> is </p><table id="a0000000518" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
-<tr id="a0000000519">
+                                     height:18px" class="math gen" /> is </p><table id="a0000000519" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
+<tr id="a0000000520">
     
     <td style="width:40%">&nbsp;</td>
     
@@ -326,7 +326,7 @@ fft [-10:10:0.1] f() of 'datafile.dat'
     
     <td style="width:40%">&nbsp;</td>
     <td style="width:20%" class="eqnnum">&nbsp;</td>
-</tr><tr id="a0000000520">
+</tr><tr id="a0000000521">
     
     <td style="width:40%">&nbsp;</td>
     
@@ -414,7 +414,7 @@ fft [-10:10:0.1] f() of 'datafile.dat'
 <div id="footnotes">
 <p><b>Footnotes</b></p>
 <ol>
-<li id="a0000000516">The <tt class="tt">using</tt>, <tt class="tt">every</tt>, <tt class="tt">index</tt> and <tt class="tt">select</tt> modifiers can be used to arrange it into this form.</li>
+<li id="a0000000517">The <tt class="tt">using</tt>, <tt class="tt">every</tt>, <tt class="tt">index</tt> and <tt class="tt">select</tt> modifiers can be used to arrange it into this form.</li>
 </ol>
 </div>
 
@@ -430,7 +430,7 @@ fft [-10:10:0.1] f() of 'datafile.dat'
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

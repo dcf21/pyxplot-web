@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -57,7 +57,7 @@
 </div>
 
 <div><h1 id="ex:calculus">4.8 Numerical Integration and Differentiation</h1>
-<p><a name="a0000000440" id="a0000000440"></a><a name="a0000000441" id="a0000000441"></a> Two special functions, <tt class="tt">int_dx()</tt><a name="a0000000442" id="a0000000442"></a> and <tt class="tt">diff_dx()</tt><a name="a0000000443" id="a0000000443"></a>, may be used to integrate or differentiate algebraic expressions numerically. In each case, the letter <tt class="tt">x</tt> is the dummy variable which is to be used in the integration or differentiation and may be replaced by any valid variable name of up to 16 characters in length. </p><p>The function <tt class="tt">int_dx()</tt> takes three parameters – firstly the expression to be integrated, which may optionally be placed in quotes, followed by the minimum and maximum integration limits. These may have any physical dimensions, so long as they match, but must both be real numbers. For example, the following would plot the integral of the function <img src="images/img-0015.png" alt="$\sin (x)$" style="vertical-align:-4px; 
+<p><a name="a0000000441" id="a0000000441"></a><a name="a0000000442" id="a0000000442"></a> Two special functions, <tt class="tt">int_dx()</tt><a name="a0000000443" id="a0000000443"></a> and <tt class="tt">diff_dx()</tt><a name="a0000000444" id="a0000000444"></a>, may be used to integrate or differentiate algebraic expressions numerically. In each case, the letter <tt class="tt">x</tt> is the dummy variable which is to be used in the integration or differentiation and may be replaced by any valid variable name of up to 16 characters in length. </p><p>The function <tt class="tt">int_dx()</tt> takes three parameters – firstly the expression to be integrated, which may optionally be placed in quotes, followed by the minimum and maximum integration limits. These may have any physical dimensions, so long as they match, but must both be real numbers. For example, the following would plot the integral of the function <img src="images/img-0015.png" alt="$\sin (x)$" style="vertical-align:-4px; 
                                      width:45px; 
                                      height:18px" class="math gen" />: </p><pre>
 plot int_dt('sin(t)',0,x)
@@ -97,7 +97,7 @@ plot int_dt('sin(t)',0,x)
     <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> set num comp<br />print diff_dx(Re(sin(x)),1) </tt></div></p></td>
 
 </tr>
-</table> </p><p>Advanced users may be interested to know that <tt class="tt">int_dx()</tt><a name="a0000000444" id="a0000000444"></a> function is implemented using the <tt class="tt">gsl_­integration_­qags()</tt> function of the Gnu Scientific Library<a name="a0000000445" id="a0000000445"></a> (GSL), and the <tt class="tt">diff_dx()</tt><a name="a0000000446" id="a0000000446"></a> function is implemented using the <tt class="tt">gsl_­deriv_­central()</tt> function of the same library. Any caveats which apply to the use of these routines also apply to PyXPlot’s numerical calculus. </p><p> <span class="upshape"><span class="mdseries"><span class="rm">Integrating the function <img src="images/img-0133.png" alt="$\mathrm{sinc}(x)$" style="vertical-align:-4px; 
+</table> </p><p>Advanced users may be interested to know that <tt class="tt">int_dx()</tt><a name="a0000000445" id="a0000000445"></a> function is implemented using the <tt class="tt">gsl_­integration_­qags()</tt> function of the Gnu Scientific Library<a name="a0000000446" id="a0000000446"></a> (GSL), and the <tt class="tt">diff_dx()</tt><a name="a0000000447" id="a0000000447"></a> function is implemented using the <tt class="tt">gsl_­deriv_­central()</tt> function of the same library. Any caveats which apply to the use of these routines also apply to PyXPlot’s numerical calculus. </p><p> <span class="upshape"><span class="mdseries"><span class="rm">Integrating the function <img src="images/img-0133.png" alt="$\mathrm{sinc}(x)$" style="vertical-align:-4px; 
                                      width:53px; 
                                      height:18px" class="math gen" />.</span></span></span></p><div>
 
@@ -107,7 +107,7 @@ plot int_dt('sin(t)',0,x)
     
     <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> The function <img src="images/img-0133.png" alt="$\mathrm{sinc}(x)$" style="vertical-align:-4px; 
                                      width:53px; 
-                                     height:18px" class="math gen" /> cannot be integrated analytically, but it can be shown that </p><table id="a0000000447" class="equation" width="100%" cellspacing="0" cellpadding="7">
+                                     height:18px" class="math gen" /> cannot be integrated analytically, but it can be shown that </p><table id="a0000000448" class="equation" width="100%" cellspacing="0" cellpadding="7">
 <tr>
     
     <td style="width:40%">&nbsp;</td>
@@ -117,7 +117,7 @@ plot int_dt('sin(t)',0,x)
     <td style="width:40%">&nbsp;</td>
     <td class="eqnnum" style="width:20%">&nbsp;</td>
 </tr>
-</table><p> In the following script, we use PyXPlot’s facilities for numerical integration to produce a plot of </p><table id="a0000000448" class="equation" width="100%" cellspacing="0" cellpadding="7">
+</table><p> In the following script, we use PyXPlot’s facilities for numerical integration to produce a plot of </p><table id="a0000000449" class="equation" width="100%" cellspacing="0" cellpadding="7">
 <tr>
     
     <td style="width:40%">&nbsp;</td>
@@ -127,7 +127,7 @@ plot int_dt('sin(t)',0,x)
     <td style="width:40%">&nbsp;</td>
     <td class="eqnnum" style="width:20%">&nbsp;</td>
 </tr>
-</table><p> We reduce the number of samples taken along the abscissa axis to 80, as evaluation of the numerical integral may be time consuming on older computers. We use the <tt class="tt">set xformat</tt> command<a name="a0000000449" id="a0000000449"></a> (see Section <a href="sec-set_xformat.html">1.7.6</a>) to demark both the <tt class="tt">x</tt>- and <tt class="tt">y</tt>-axes in fractions of <img src="images/img-0136.png" alt="$\pi $" style="vertical-align:0px; 
+</table><p> We reduce the number of samples taken along the abscissa axis to 80, as evaluation of the numerical integral may be time consuming on older computers. We use the <tt class="tt">set xformat</tt> command<a name="a0000000450" id="a0000000450"></a> (see Section <a href="sec-set_xformat.html">1.7.6</a>) to demark both the <tt class="tt">x</tt>- and <tt class="tt">y</tt>-axes in fractions of <img src="images/img-0136.png" alt="$\pi $" style="vertical-align:0px; 
                                      width:11px; 
                                      height:8px" class="math gen" />: </p></td>
 
@@ -166,7 +166,7 @@ plot int_dt('sin(t)',0,x)
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

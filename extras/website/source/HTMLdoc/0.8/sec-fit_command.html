@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -57,10 +57,10 @@
 </div>
 
 <div><h1 id="sec:fit_command">5.6 Function Fitting</h1>
-<p>The <tt class="tt">fit</tt> command<a name="a0000000489" id="a0000000489"></a> can be used to fit arbitrary functional forms to datapoints read from files. It can be used to produce best-fit lines<a name="a0000000490" id="a0000000490"></a><a href="#a0000000491" class="footnote"><sup class="footnotemark">1</sup></a> for datasets, or to determine gradients and other mathematical properties of data by looking at the parameters associated with the best-fitting functional form. </p><p>The following simple example fits a straight line to data in a file called <tt class="tt">data.dat</tt>: </p><pre>
+<p>The <tt class="tt">fit</tt> command<a name="a0000000490" id="a0000000490"></a> can be used to fit arbitrary functional forms to datapoints read from files. It can be used to produce best-fit lines<a name="a0000000491" id="a0000000491"></a><a href="#a0000000492" class="footnote"><sup class="footnotemark">1</sup></a> for datasets, or to determine gradients and other mathematical properties of data by looking at the parameters associated with the best-fitting functional form. </p><p>The following simple example fits a straight line to data in a file called <tt class="tt">data.dat</tt>: </p><pre>
 f(x) = a*x+b
 fit f() 'data.dat' index 1 using 2:3 via a,b
-</pre><p>The first line specifies the functional form which is to be used. The coefficients within this function, <tt class="tt">a</tt> and <tt class="tt">b</tt>, which are to be varied during the fitting process, are listed after the keyword <tt class="tt">via</tt><a name="a0000000492" id="a0000000492"></a> in the <tt class="tt">fit</tt> command. The modifiers <tt class="tt">index</tt><a name="a0000000493" id="a0000000493"></a>, <tt class="tt">every</tt><a name="a0000000494" id="a0000000494"></a>, <tt class="tt">select</tt><a name="a0000000495" id="a0000000495"></a> and <tt class="tt">using</tt><a name="a0000000496" id="a0000000496"></a> have the same meanings in the <tt class="tt">fit</tt> command as in the <tt class="tt">plot</tt> command. For example, given the following datafile, entitled <tt class="tt">square.dat</tt>, which contains a sampled square wave, the script below fits the first three terms of a truncated Fourier series to it: </p><pre>
+</pre><p>The first line specifies the functional form which is to be used. The coefficients within this function, <tt class="tt">a</tt> and <tt class="tt">b</tt>, which are to be varied during the fitting process, are listed after the keyword <tt class="tt">via</tt><a name="a0000000493" id="a0000000493"></a> in the <tt class="tt">fit</tt> command. The modifiers <tt class="tt">index</tt><a name="a0000000494" id="a0000000494"></a>, <tt class="tt">every</tt><a name="a0000000495" id="a0000000495"></a>, <tt class="tt">select</tt><a name="a0000000496" id="a0000000496"></a> and <tt class="tt">using</tt><a name="a0000000497" id="a0000000497"></a> have the same meanings in the <tt class="tt">fit</tt> command as in the <tt class="tt">plot</tt> command. For example, given the following datafile, entitled <tt class="tt">square.dat</tt>, which contains a sampled square wave, the script below fits the first three terms of a truncated Fourier series to it: </p><pre>
     0.314159          1
     0.942478          1
     1.570796          1
@@ -78,7 +78,7 @@ set xlabel '$x$' ; set ylabel '$y$'
 plot 'square.dat' title 'data' with points pointsize 2, \
      f(x) title 'Fitted function' with lines
 </pre><center> 
-<img src="images/img-0166.png" alt="\includegraphics[width=8cm]{examples/eps/ex_fitting}" style="width:8cm" /> </center><p>As the <tt class="tt">fit</tt> command<a name="a0000000497" id="a0000000497"></a> works, it displays statistics including the best-fit values of each of the fitting parameters, the uncertainties in each of them, and the covariance matrix. These can be useful for analysing the security of the fit achieved, but calculating the uncertainties in the best-fit parameters and the covariance matrix can be time consuming, especially when many parameters are being fitted simultaneously. The optional word <tt class="tt">withouterrors</tt> can be included immediately before the filename of the input datafile to substantially speed up cases where this information is not required. </p><p>A few points are worth noting: </p><ul class="itemize">
+<img src="images/img-0166.png" alt="\includegraphics[width=8cm]{examples/eps/ex_fitting}" style="width:8cm" /> </center><p>As the <tt class="tt">fit</tt> command<a name="a0000000498" id="a0000000498"></a> works, it displays statistics including the best-fit values of each of the fitting parameters, the uncertainties in each of them, and the covariance matrix. These can be useful for analysing the security of the fit achieved, but calculating the uncertainties in the best-fit parameters and the covariance matrix can be time consuming, especially when many parameters are being fitted simultaneously. The optional word <tt class="tt">withouterrors</tt> can be included immediately before the filename of the input datafile to substantially speed up cases where this information is not required. </p><p>A few points are worth noting: </p><ul class="itemize">
 <li><p>When fitting a function of <img src="images/img-0014.png" alt="$n$" style="vertical-align:0px; 
                                      width:11px; 
                                      height:8px" class="math gen" /> variables, at least <img src="images/img-0168.png" alt="$n+1$" style="vertical-align:-1px; 
@@ -120,7 +120,7 @@ fit [0:10] f() 'data.dat' via a
 <div id="footnotes">
 <p><b>Footnotes</b></p>
 <ol>
-<li id="a0000000491">Another way of producing best-fit lines is to use a cubic spline; more details are given in Section <a href="ex-interpolation.html">5.7</a></li>
+<li id="a0000000492">Another way of producing best-fit lines is to use a cubic spline; more details are given in Section <a href="ex-interpolation.html">5.7</a></li>
 </ol>
 </div>
 
@@ -136,7 +136,7 @@ fit [0:10] f() 'data.dat' via a
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0236.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
