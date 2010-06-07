@@ -1,0 +1,35 @@
+!mkdir -p demo3dout
+!rm -f demo3dout/*
+
+set ax x2 ; set ax x3 top ; set ax x4 top ; set ax y2 left ; set ax y3 left ; set ax y4 righ ; set ax y5 right
+set ax z2 ; set ax z3 back
+
+set xlabel "x-axis"
+set ylabel "y-axis"
+set zlabel "z-axis"
+
+set nokey
+set term jpg
+set term dpi 60
+set width 12
+set texthalign centre
+set textvalign centre
+set grid
+
+i=-1
+for ang=0 to 720 step 2.5
+ {
+  i=i+1
+  set output "demo3dout/fr_%04d.jpg"%(i)
+  set multiplot ; set nodisp ; clear
+  box from -15,-15 to 15,14 w lw 4
+  set fontsize 2.5 ; set textcol grey20
+  text "{\bf PyXPlot 0.8.2}" at -9, 13
+  text "{\bf Coming Soon...}" at 9,-14
+  set fontsize 1.5 ; set textcol black
+  if (ang<360) { ; set view ang+60,    30 ; } \
+  else         { ; set view     60,ang+30 ; }
+  plot 3d [-10:10][-10:10][-10:10] 7*sin(x):7*cos(x) with col hsb(x/20+0.5):0.8:0.8 lw 4
+  set disp ; refresh
+ }
+
