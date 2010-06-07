@@ -25,7 +25,7 @@ arc at 0,0 radius Rnamebox from 180*unit(deg)-NameBoxSize to 180*unit(deg)+NameB
 line from  Rnamebox*sin(NameBoxSize),-Rnamebox*cos(NameBoxSize) to  R2*sin(NameBoxSize),-R2*cos(NameBoxSize)
 line from -Rnamebox*sin(NameBoxSize),-Rnamebox*cos(NameBoxSize) to -R2*sin(NameBoxSize),-R2*cos(NameBoxSize)
 RT = (Rnamebox+R2)/2 + 0.2*unit(cm)
-load "plate_text_simple.dat"
+load "output/plate_text_simple.dat"
 
 # Make tab
 arc at 0,0 radius Rtab from -TabSize to TabSize

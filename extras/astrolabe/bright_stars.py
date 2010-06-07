@@ -63,7 +63,7 @@ for line in open("bright_stars.dat"):
 keys = stars.keys()
 keys.sort()
 
-output = open("bright_stars.out","w")
+output = open("output/bright_stars.out","w")
 for k in keys:
  item = stars[k]
  if item[3] == None: continue

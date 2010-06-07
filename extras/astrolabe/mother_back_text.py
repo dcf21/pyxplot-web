@@ -1,10 +1,13 @@
 # Horrible fudge way to write text in circles around the mother
 # $Id$
 
-out1 = open("mother_back_text.dat","w")
-out2 = open("mother_back_text_simple.dat","w")
-out3 = open("mother_front_text_simple.dat","w")
-out4 = open("plate_text_simple.dat","w")
+import os
+os.system("mkdir -p output")
+
+out1 = open("output/mother_back_text.dat","w")
+out2 = open("output/mother_back_text_simple.dat","w")
+out3 = open("output/mother_front_text_simple.dat","w")
+out4 = open("output/plate_text_simple.dat","w")
 
 # Signs of the zodiac
 strings = [["ARIES",r"\aries"],["TAURUS",r"\taurus"],["GEMINI",r"\gemini"],["CANCER",r"\cancer"],["LEO",r"\leo"],["VIRGO",r"\virgo"],["LIBRA",r"\libra"],["SCORPIO",r"\scorpio"],["SAGITTARIUS",r"\sagittarius"],["CAPRICORNUS",r"\capricornus"],["AQUARIUS",r"\aquarius"],["PISCES",r"\pisces"]]

@@ -23,7 +23,7 @@ circle at 0,0 radius R5
 #line from -Rtab*sin(TabSize),Rtab*cos(TabSize) to -R2*sin(TabSize),R2*cos(TabSize)
 
 # Draw stars
-foreach datum ra,dec,mag in "bright_stars.out" using 2:3:4
+foreach datum ra,dec,mag in "output/bright_stars.out" using 2:3:4
  {
   if (mag > 4.0) { continue; }
   theta = (90-dec)*unit(deg) / 2
@@ -73,12 +73,12 @@ for theta=0*unit(deg) to 359*unit(deg) step 2*unit(deg)
 
 set fontsize 0.75*FS
 RT = (1*R_ecl_outer+3*R_ecl_inner)/4
-load "rete_text.dat"
+load "output/rete_text.dat"
 
 # White out R3
 circle at 0,0 radius R3 w fillc white
 
-!mkdir output
+!mkdir -p output
 set term eps
 set output 'output/rete.eps'
 set disp ; refresh

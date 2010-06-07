@@ -14,7 +14,7 @@ y_ecl = (R2-R5)/2
 R_ecl_outer = (R2+R5)/2
 R_ecl_inner = R_ecl_outer*0.9
 
-out = open("rete_text.dat","w")
+out = open("output/rete_text.dat","w")
 
 # Signs of the zodiac
 strings = [["ARIES",r"\aries"],["TAURUS",r"\taurus"],["GEMINI",r"\gemini"],["CANCER",r"\cancer"],["LEO",r"\leo"],["VIRGO",r"\virgo"],["LIBRA",r"\libra"],["SCORPIO",r"\scorpio"],["SAGITTARIUS",r"\sagittarius"],["CAPRICORNUS",r"\capricornus"],["AQUARIUS",r"\aquarius"],["PISCES",r"\pisces"]]

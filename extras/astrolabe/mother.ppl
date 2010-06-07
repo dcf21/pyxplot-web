@@ -126,7 +126,7 @@ foreach datum m,d,last,z1394,a1394,z1974,a1974 in "tuckerman.dat"
 RT1 = (R4+R5 )/2
 RT2 = (R5+R6 )/2
 RT3 = (R9+R10)/2
-load "mother_back_text.dat"
+load "output/mother_back_text.dat"
 
 # Shadow Scale
 
@@ -189,7 +189,7 @@ for theta = 15*unit(deg) to 75*unit(deg) step 15*unit(deg)
 # White out R13
 circle at 0,0 radius R13 w fillc white
 
-!mkdir output
+!mkdir -p output
 set term eps
 set output 'output/mother_back.eps'
 set disp ; refresh
@@ -272,7 +272,7 @@ foreach t in ("\LARGE\kreuz","A","B","C","D","E","F","G","H","I","K","L","M","N"
   i=i+1
  }
 
-!mkdir output
+!mkdir -p output
 set term eps
 set output 'output/mother_front.eps'
 set disp ; refresh

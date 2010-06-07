@@ -64,7 +64,7 @@ for dec=-25 to 70 step 5
 # }
 
 
-!mkdir output
+!mkdir -p output
 set term eps
 set output 'output/rule.eps'
 set disp ; refresh

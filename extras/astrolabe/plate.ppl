@@ -162,7 +162,7 @@ line from -R2,0 to R2,0
 line from 0,-R2 to 0,R2
 circle at 0,0 radius R3 w fillc white
 
-!mkdir output
+!mkdir -p output
 set term eps
 set output 'output/plate.eps'
 set disp ; refresh
