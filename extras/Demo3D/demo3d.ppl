@@ -14,7 +14,7 @@ set term dpi 60
 set width 10 # 12
 set texthalign centre
 set textvalign centre
-set grid
+set nogrid
 set size square
 
 i=-1
@@ -31,7 +31,10 @@ for ang=0 to 720 step 2.5
   if (ang<360) { ; set view ang+60,    30 ; } \
   else         { ; set view     60,ang+30 ; }
   #plot 3d [-10:10][-10:10][-10:10] 7*sin( x):7*cos( x) with col hsb( x/20+0.5):0.8:0.8 lw 8
-  plot 3d [-20:20][-20:20][-0.3:1] sinc(hypot(x,y)) with surface col black fillcol hsb(atan2($1,$2)/(2*pi)+0.5):hypot($1,$2)/30+0.2:($3*0.5+0.5)
+  plot 3d [-20:20][-20:20][-0.3:1] sinc(hypot(x,y)) with surface col black fillcol hsb(atan2($1,$2)/(2*pi)+0.5):hypot($1,$2)/30+0.2:($3*0.5+0.5), \
+                                   sinc(hypot(x,y)) axes xyz with colourmap, \
+                                   sinc(hypot(x,y*20)) axes yzx with colourmap, \
+                                   sinc(hypot(x,y*20)) axes xzy with colourmap
   set disp ; refresh
  }
 
