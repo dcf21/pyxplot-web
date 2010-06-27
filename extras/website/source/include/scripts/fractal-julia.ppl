@@ -1,0 +1,10 @@
+set numerics complex
+set sample grid 400x400
+set log c1
+set nogrid
+set xtics 1
+set ytics 1
+set size square
+set key below
+plot [-2:2][-2:2] fractal_julia(x+i*y,0.15+0.65*i,80)+1 with colourmap
+

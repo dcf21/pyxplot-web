@@ -1,0 +1,17 @@
+set xlabel "$x$"
+set ylabel "$y$"
+set zlabel "$t$"
+set xrange [-pi*0.4:pi*0.4]
+set yrange [-pi*0.4:pi*0.4]
+set zrange [-6:6]
+set trange [-6:6]
+set xformat "%s$\pi$"%(x/pi)
+set yformat "%s$\pi$"%(y/pi)
+set xtics 0.2*pi ; set mxtics 0.05*pi
+set ytics 0.2*pi ; set mytics 0.05*pi
+set samples 1000
+set key above
+set size square
+set grid
+plot 3d parametric (int_dq(sin(q**2),0,t)):(int_dq(cos(q**2),0,t)):t
+
