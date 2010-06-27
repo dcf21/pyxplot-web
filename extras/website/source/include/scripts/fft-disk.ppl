@@ -1,4 +1,4 @@
-# Definition function representing a disk
+# Definition of function representing a disk
 disk(x,y) = tophat(hypot(x,y) , 1)
 
 # Take FFT of disk

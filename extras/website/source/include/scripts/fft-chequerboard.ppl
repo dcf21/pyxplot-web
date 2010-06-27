@@ -1,8 +1,8 @@
-# Definition of function representing a rectangular box
-box(x,y) = tophat(x,1) * tophat(y,0.5)
+# Definition of function representing a chequer board pattern
+chequer(x,y) = (floor(x)+floor(y))%2 * tophat(hypot(x,y),3)
 
 # Take FFT of disk
-fft [-40:40:0.1][-40:40:0.1] fft() of box()
+fft [-40:40:0.1][-40:40:0.1] fft() of chequer()
 
 w = unit(5*cm)
 set numerics complex
@@ -15,12 +15,12 @@ set multiplot
 set nodisplay
 
 # Plot real-space image
-plot [-2:2][-2:2] box(x,y) with colourmap
+plot [-4:4][-4:4] chequer(x,y) with colourmap
 
 # Plot Fourier-domain image
 set origin w+unit(5*mm),0
 set axis y right
-plot [-2:2][-2:2] abs(fft(x,y)) with colourmap
+plot [-2.5:2.5][-2.5:2.5] abs(fft(x,y)) with colourmap
 
 set display
 refresh
