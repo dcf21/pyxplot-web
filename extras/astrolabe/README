@@ -1,0 +1,88 @@
+# README
+# $Id$
+
+The files in this directory are used to produce various parts of a cut-out
+astrolabe. Two versions of the astrolabe can be produced: a version which is
+faithful to the description given in Eisner (1975, 1976a, 1976b), and a
+modernised version which might be more appropriate for outreach work.
+
+The following software is required:
+
+- PyXPlot (version 0.8.0 or higher)
+- python (2.3+)
+- latex
+- gnu make
+
+The files in this directory are as follows:
+
+
+
+1. Scripts for automatically making the astrolabe
+
+
+1.1. RunAll.py
+
+A top level python script, which makes lots of pdf kits for building astrolabes
+for a variety of northern latitudes, at five degree intervals.
+
+
+1.2. Makefile
+
+Makes two pdf files, containing the two versions of the astrolabe. The output
+is sent to the files astrolabe.pdf and astrolabe2.pdf. The latitude for which
+the astrolabes should be computed should be set in the environment variable
+LATITUDE, for example:
+
+export LATITUDE=52
+make
+
+
+
+2. LaTeX documents for producing an astrolabe kit for a single latitude
+
+2.1 astrolabe.tex , astrolabe2.tex
+
+These are two LaTeX source files for making booklets containing diagrams of the
+various parts of the astrolabe. They assume that the PyXPlot scripts below have
+been run.
+
+
+3. data files
+
+The following data files are taken verbatim from elsewhere:
+
+bright_stars.dat -- The Yale Bright Star Catalogue
+bright_star_names.dat -- The names of some of the stars
+tuckerman.dat -- Tuckerman tables, taken from Eisner
+
+
+
+4. python scripts for munging data into a form that PyXPlot can plot
+
+The following python scripts must be run before any of the PyXPlot scripts
+below; the generate data files in a form that PyXPlot can accept:
+
+mother_back_text.py
+rete_text.py
+
+
+
+5. PyXPlot scripts for producing EPS images of parts of the astrolabe
+
+5.1. mother_simple.ppl , plate_simple.ppl
+
+These are PyXPlot scripts which make the plate and the mother of the simplified
+version of the astrolabe.
+
+
+5.2. mother.ppl , plate.ppl
+
+These are PyXPlot scripts which make the plate and the mother of the Eisner
+astrolabe.
+
+
+5.3. rule.ppl , rete.ppl
+
+These are PyXPlot scripts which make the rule and the rete, which are shared
+between the two versions of the astrolabe.
+
