@@ -1,0 +1,11 @@
+set numerics complex
+set sample grid 400x400
+set nogrid
+set size square
+set key below
+
+set c1range[-pi:pi]
+set c1format "$%s\pi$"%(x/pi)
+
+plot [-20:6][-13:13] arg(zeta(x+i*y)) with colourmap
+

@@ -1,0 +1,11 @@
+set numerics complex
+set sample grid 400x400
+set nogrid
+set size square
+set key below
+
+set c1range[-pi:pi]
+set c1format "$%s\pi$"%(x/pi)
+
+plot [-2:2][-2:2] arg((x+i*y)**3) with colourmap
+
