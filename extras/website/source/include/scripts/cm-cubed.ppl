@@ -5,7 +5,7 @@ set size square
 set key below
 
 set c1range[-pi:pi]
-set c1format "$%s\pi$"%(x/pi)
+set c1format "$%s\pi$"%(c/pi)
 
 plot [-2:2][-2:2] arg((x+i*y)**3) with colourmap
 
