@@ -1,4 +1,4 @@
-# FIG_INIT.PPL
+# EX_BRANCHCUT.PPL
 #
 # The code in this file is part of PyXPlot
 # <http://www.pyxplot.org.uk>
@@ -19,16 +19,25 @@
 
 # ----------------------------------------------------------------------------
 
-# This script initialises the figures on the PyXPlot homepage
+# This script produces a figure for the PyXPlot homepage
 
-set term png colour portrait notrans
-set term dpi 70
-set linewidth 2
-set output "output/%s.png"%(title)
-gold_ratio = 1/((1+sqrt(5))/2)
-set width 10.0
-set fontsize 1.5
+# Call common initialisation script
+reset
 
-set multiplot
-box from -3,-9 to 24,11 with colour null fillc rgb0.8637:0.8637:1
+# Main body of figure script
+title = "ex_branchcut"
+load "fig_init.ppl"
+
+set numerics complex
+set sample grid 400x400
+set nogrid
+set size square
+set nokey
+set c1range[0:2]
+set colmap hsb(c1):(c2*0.7+0.3):1
+f(x) = 3*x**2 / (x**3+1)
+plot [-3:3][-3:3] abs(f(x+i*y)):arg(f(x+i*y)) with colourmap
+
+set display
+refresh
 

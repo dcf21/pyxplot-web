@@ -1,5 +1,5 @@
 set numerics complex
-set sample grid 400x400
+set sample grid 800x800
 set nogrid
 set size square
 set key below

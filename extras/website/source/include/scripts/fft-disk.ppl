@@ -8,6 +8,7 @@ w = unit(5*cm)
 set numerics complex
 set nogrid
 set key below
+set nocolourkey
 set sample grid 300x300
 set size w square
 

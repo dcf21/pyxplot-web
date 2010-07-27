@@ -19,7 +19,7 @@
 
 # ----------------------------------------------------------------------------
 
-# This script produces a figure for the PyXPlot Users' Guide
+# This script produces a figure for the PyXPlot homepage
 
 # Call common initialisation script
 reset

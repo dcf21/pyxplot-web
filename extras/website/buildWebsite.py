@@ -465,6 +465,7 @@ def renderExamplesLeaf(leaf, node, tree, opt, var):
    tempdir = tempfile.mkdtemp()
    shutil.copy2(os.path.join(options['includedir'],leaf['scriptfile']), "%s/script.ppl"%tempdir)
    for datafile in leaf['datafiles']: shutil.copy2(os.path.join(options['includedir'],datafile), tempdir)
+   os.system("cp .pyxplotrc %s"%tempdir) # Make sure that ppl uses default configuration options
    pplobj = subprocess.Popen(opt['pyxplot'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, cwd=tempdir)
    [output, errors] = pplobj.communicate('set term eps\nset out "output.eps"\nload "script.ppl"\nset term png dpi 100\nset output "output.png"\nrefresh\n')
    # In an ideal world we'd do something useful with the output here

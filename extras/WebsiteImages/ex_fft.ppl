@@ -19,7 +19,7 @@
 
 # ----------------------------------------------------------------------------
 
-# This script produces a figure for the PyXPlot Users' Guide
+# This script produces a figure for the PyXPlot homepage
 
 # Call common initialisation script
 reset
@@ -27,10 +27,31 @@ reset
 # Main body of figure script
 title = "ex_fft"
 load "fig_init.ppl"
+
+# Definition of function representing a chequer board pattern
+chequer(x,y) = (floor(x)+floor(y))%2 * tophat(hypot(x,y),3)
+
+# Take FFT of disk
+fft [-40:40:0.1][-40:40:0.1] fft() of chequer()
+
+w = unit(10*cm)
 set numerics complex
-step(x) = tophat(x,0.5)
-fft [-1:1:0.01] f() of step()
-plot [-10:10] Re(f(x*1)) title texify(Re(f(x))), sinc(pi*x)
+set nogrid
+set key below
+set nocolourkey
+set sample grid 400x400
+set size w square
+
+set multiplot
+set nodisplay
+
+# Plot real-space image
+plot [-4:4][-4:4] chequer(x,y) with colourmap
+
+# Plot Fourier-domain image
+set origin w+unit(8*mm),0
+set axis y right
+plot [-2.5:2.5][-2.5:2.5] abs(fft(x,y)) with colourmap
 
 set display
 refresh

@@ -1,7 +1,7 @@
 set numeric display latex
 set log x y
 set key below
-set ylabel "Flux density / W/Hz/m$^2$/sterad"
+set ylabel "Flux density / W\,Hz$^{-1}$\,m$^{-2}$\,sterad$^{-1}$"
 set x1label "Wavelength"
 set x2label "Frequency"     ; set unit of frequency Hz
 set x3label "Photon Energy" ; set unit of energy eV

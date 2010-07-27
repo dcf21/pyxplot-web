@@ -1,4 +1,4 @@
-# FIG_INIT.PPL
+# EX_SURFACE_CONTOURS.PPL
 #
 # The code in this file is part of PyXPlot
 # <http://www.pyxplot.org.uk>
@@ -19,16 +19,25 @@
 
 # ----------------------------------------------------------------------------
 
-# This script initialises the figures on the PyXPlot homepage
+# This script produces a figure for the PyXPlot homepage
 
-set term png colour portrait notrans
-set term dpi 70
-set linewidth 2
-set output "output/%s.png"%(title)
-gold_ratio = 1/((1+sqrt(5))/2)
-set width 10.0
-set fontsize 1.5
+# Call common initialisation script
+reset
 
-set multiplot
-box from -3,-9 to 24,11 with colour null fillc rgb0.8637:0.8637:1
+# Main body of figure script
+title = "ex_surface_contours"
+load "fig_init.ppl"
+
+set xlabel "$x$"
+set ylabel "$y$"
+set zlabel "$x^3/20+y^2$"
+set nokey
+set size 8 square
+set origin 5,0
+set nogrid
+plot 3d x**3/20+y**2 with surface col black fillc blue, \
+        x**3/20+y**2 with contours col black
+
+set display
+refresh
 
