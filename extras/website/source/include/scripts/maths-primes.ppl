@@ -1,6 +1,6 @@
 
 # Make temporary datafile listing prime numbers
-set samp 10000
+set samp 10200
 set output 'temp.dat'
 tabulate [1:10200] x*prime(x)
 

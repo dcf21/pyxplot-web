@@ -11,6 +11,7 @@ os.system("mkdir -p output")
 os.system("cp ../../pyxplot8/doc/examples/* examples")
 
 examples = glob.glob("../../pyxplot8/doc/examples/ex_*.ppl")
+examples.sort()
 
 for example in examples:
  time.sleep(1)
