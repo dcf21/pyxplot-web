@@ -1,0 +1,13 @@
+1.  Install plastex
+
+2.  Copy the "reference.tex" and "definitions.tex" files into this directory.
+
+3.  Run "./plastex.manual pyxplot.gp_help.tex"
+
+4.  Fix any patches that have not applied by applying them manually.
+ 
+5.  Copy the gp_help.xml file to .../pyxplot8/src/ppl_help.xml
+
+6.  Check that ppl help still works
+
+7.  Check it in!

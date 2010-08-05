@@ -240,10 +240,11 @@ def tableCell(node):
    u = unicode(node)
    # Strip off leading and trailing spaces
    # (Why use u.strip() when you can diy? :)
-   while u[0] == u' ':
-      u = u[1:]
-   while u[-1] == u' ':
-      u = u[:-1]
+   if (u != u''):
+      while u[0] == u' ':
+         u = u[1:]
+      while u[-1] == u' ':
+         u = u[:-1]
    # Add stuff to the last row in the table
    s = table[-1]
    s.append(u)
@@ -344,6 +345,8 @@ renderer['sqrt'] = printSelf
 renderer['to'] = printSelf
 renderer['datafile'] = printSelf
 renderer['gnuplot'] = printSelf
+# Equation arrays
+renderer['eqnarray*'] = noTag
 # Footnotes use a queue
 renderer['footnote'] = footnote
 # Some things don't need to produce any output at all
