@@ -94,7 +94,7 @@
  
     </contours>
 -   <c\labn\rabrange>
-+   <cnrange>
++   <c1range>
  
  set#c\labn\rabrange#[#\labrange\rab#]\\##############[#reversed#|#noreversed#]\\##############[#renormalise#|#norenormalise#]\\
  
@@ -103,7 +103,7 @@
      </Colour_Maps>
  
 -   </c\labn\rabrange>
-+   </cnrange>
++   </c1range>
     <data_style>
  
  See set style data. 
