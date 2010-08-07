@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: grid</title>
+<title>: clip</title>
 
-<link href="sect0140.html" title="gridmajcolour" rel="next" />
-<link href="sect0138.html" title="function style" rel="prev" />
-<link href="sect0120.html" title="set" rel="up" />
+<link href="sect0140.html" title="colourkey" rel="next" />
+<link href="sect0138.html" title="calendar" rel="prev" />
+<link href="sect0124.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0138.html" title="function style"><img alt="Previous: function style" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0138.html" title="calendar"><img alt="Previous: calendar" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0140.html" title="gridmajcolour"><img alt="Next: gridmajcolour" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0140.html" title="colourkey"><img alt="Next: colourkey" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0071.html">Reference Manual</a> <b>:</b>
+<a href="sect0074.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,30 +49,22 @@
 
 </span><span>
 <span>
-<a href="sect0120.html">set</a> <b>:</b>
+<a href="sect0124.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">grid</b>
+<b class="current">clip</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000140">1.46.19 grid</h2>
-<p><a name="a0000001075" id="a0000001075"></a> </p><pre>
-set [no]grid {&lt;axis&gt;}
-</pre><p>The setting <tt class="tt">grid</tt> controls whether a grid is placed behind graphs or not. Issuing the command </p><pre>
-set grid
-</pre><p>would cause a grid to be drawn with its lines connecting to the ticks of the default axes (usually the first horizontal and vertical axes). Conversely, issuing the command </p><pre>
-set nogrid
-</pre><p>would remove from the plot all gridlines associated with the ticks of any axes. One or more axes can be specified for the <tt class="tt">set grid</tt> command to draw gridlines from; in such cases, gridlines are then drawn only to connect with the ticks of the specified axes, as in the example </p><pre>
-set grid x1 y3
-</pre><p>It is possible, though not always aesthetically pleasing, to draw gridlines from multiple parallel axes, as in example: </p><pre>
-set grid x1x2x3
-</pre></div>
+<div><h2 id="a0000000140">1.46.15 clip</h2>
+<p><a name="a0000001116" id="a0000001116"></a> </p><pre>
+set clip
+</pre><p>The <tt class="tt">set clip</tt> command<a name="a0000001117" id="a0000001117"></a> causes PyXPlot to clip points which extend over the edge of plots. The opposite effect is achieved using the <tt class="tt">set noclip</tt> command. </p></div>
 
 
 
@@ -81,16 +73,16 @@ set grid x1x2x3
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0138.html" title="function style"><img alt="Previous: function style" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0138.html" title="calendar"><img alt="Previous: calendar" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0140.html" title="gridmajcolour"><img alt="Next: gridmajcolour" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0140.html" title="colourkey"><img alt="Next: colourkey" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

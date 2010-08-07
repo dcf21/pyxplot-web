@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -57,14 +57,14 @@
 </div>
 
 <div><h1 id="sec:directing_output">3.11 Directing Where Output Goes</h1>
-<p>By default, when PyXPlot is used interactively, all plots are displayed on the screen. It is also possible to produce PostScript output, to be read into other programs or embedded into L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X documents, as well as a variety of other graphical formats. The <tt class="tt">set terminal</tt> command<a name="a0000000344" id="a0000000344"></a><a href="#a0000000345" class="footnote"><sup class="footnotemark">1</sup></a> is used to specify the output format that is required, and the <tt class="tt">set output</tt> command<a name="a0000000346" id="a0000000346"></a> is used to specify the file to which output should be directed. For example, </p><pre>
+<p>By default, when PyXPlot is used interactively, all plots are displayed on the screen. It is also possible to produce PostScript output, to be read into other programs or embedded into L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X documents, as well as a variety of other graphical formats. The <tt class="tt">set terminal</tt> command<a name="a0000000358" id="a0000000358"></a><a href="#a0000000359" class="footnote"><sup class="footnotemark">1</sup></a> is used to specify the output format that is required, and the <tt class="tt">set output</tt> command<a name="a0000000360" id="a0000000360"></a> is used to specify the file to which output should be directed. For example, </p><pre>
 set terminal postscript
 set output 'myplot.eps'
 plot 'datafile.dat'
-</pre><p>would output a PostScript plot of data from the file <tt class="tt">datafile.dat</tt> to the file <tt class="tt">myplot.eps</tt>. </p><p>The <tt class="tt">set terminal</tt> command<a name="a0000000347" id="a0000000347"></a> can also be used to configure various output options within each supported file format. For example, the following commands would produce black-and-white or colour output respectively: </p><pre>
+</pre><p>would output a PostScript plot of data from the file <tt class="tt">datafile.dat</tt> to the file <tt class="tt">myplot.eps</tt>. </p><p>The <tt class="tt">set terminal</tt> command<a name="a0000000361" id="a0000000361"></a> can also be used to configure various output options within each supported file format. For example, the following commands would produce black-and-white or colour output respectively: </p><pre>
 set terminal monochrome
 set terminal colour
-</pre><p>The former is useful for preparing plots for black-and-white publications, the latter for preparing plots for colourful presentations. </p><p>Both PostScript and Encapsulated PostScript can be produced. The former is recommended for producing figures to embed into documents, the latter for plots which are to be printed without further processing. The <tt class="tt">postscript</tt> terminal produces the latter; the <tt class="tt">eps</tt> terminal should be used to produce the former. Similarly the <tt class="tt">pdf</tt> terminal produces files in the Portable Document Format (PDF)<a name="a0000000348" id="a0000000348"></a> read by Adobe Acrobat<a name="a0000000349" id="a0000000349"></a>: </p><pre>
+</pre><p>The former is useful for preparing plots for black-and-white publications, the latter for preparing plots for colourful presentations. </p><p>Both PostScript and Encapsulated PostScript can be produced. The former is recommended for producing figures to embed into documents, the latter for plots which are to be printed without further processing. The <tt class="tt">postscript</tt> terminal produces the latter; the <tt class="tt">eps</tt> terminal should be used to produce the former. Similarly the <tt class="tt">pdf</tt> terminal produces files in the Portable Document Format (PDF)<a name="a0000000362" id="a0000000362"></a> read by Adobe Acrobat<a name="a0000000363" id="a0000000363"></a>: </p><pre>
 set terminal postscript
 set terminal eps
 set terminal pdf
@@ -77,14 +77,14 @@ set terminal postscript colour
 set terminal gif monochrome
 </pre><p>To return to the default state of displaying plots on screen, the <tt class="tt">x11</tt> terminal should be selected: </p><pre>
 set terminal x11
-</pre><p>After changing terminals, the <tt class="tt">refresh</tt> command<a name="a0000000350" id="a0000000350"></a><a href="#a0000000351" class="footnote"><sup class="footnotemark">2</sup></a> is especially useful; it reproduces the last plot to have been generated in the newly-selected graphical format. For more details of the <tt class="tt">set terminal</tt> command<a name="a0000000352" id="a0000000352"></a>, including how to produce gif and png images with transparent backgrounds, see Chapter <a href="ch-image_formats.html">2</a>. </p></div>
+</pre><p>After changing terminals, the <tt class="tt">refresh</tt> command<a name="a0000000364" id="a0000000364"></a><a href="#a0000000365" class="footnote"><sup class="footnotemark">2</sup></a> is especially useful; it reproduces the last plot to have been generated in the newly-selected graphical format. For more details of the <tt class="tt">set terminal</tt> command<a name="a0000000366" id="a0000000366"></a>, including how to produce gif and png images with transparent backgrounds, see Chapter <a href="ch-image_formats.html">2</a>. </p></div>
 
 
 
 <div id="footnotes">
 <p><b>Footnotes</b></p>
 <ol>
-<li id="a0000000345">Gnuplot users should note that the syntax of the <tt class="tt">set terminal</tt> command in PyXPlot is somewhat different from that used by Gnuplot; see Section <a href="sec-set_terminal.html">2.1</a>.</li><li id="a0000000351">The effect of the <tt class="tt">refresh</tt> command is very similar to that of the <tt class="tt">replot</tt> command with no arguments. The latter simply repeats the last <tt class="tt">plot</tt> command. We will see in Chapter <a href="ch-vector_graphics.html">3</a> that the <tt class="tt">refresh</tt> command is to be preferred in the current context because it is applicable to vector graphics as well as to graphs.</li>
+<li id="a0000000359">Gnuplot users should note that the syntax of the <tt class="tt">set terminal</tt> command in PyXPlot is somewhat different from that used by Gnuplot; see Section <a href="sec-set_terminal.html">2.1</a>.</li><li id="a0000000365">The effect of the <tt class="tt">refresh</tt> command is very similar to that of the <tt class="tt">replot</tt> command with no arguments. The latter simply repeats the last <tt class="tt">plot</tt> command. We will see in Chapter <a href="ch-vector_graphics.html">3</a> that the <tt class="tt">refresh</tt> command is to be preferred in the current context because it is applicable to vector graphics as well as to graphs.</li>
 </ol>
 </div>
 
@@ -100,7 +100,7 @@ set terminal x11
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

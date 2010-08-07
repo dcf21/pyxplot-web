@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: arc</title>
+<title>: Reference Manual</title>
 
-<link href="sect0075.html" title="arrow" rel="next" />
-<link href="sect0073.html" title="!" rel="prev" />
-<link href="ch-reference.html" title="Command Reference" rel="up" />
+<link href="ch-reference.html" title="Command Reference" rel="next" />
+<link href="sect0073.html" title="LaTeX and PyXPlot" rel="prev" />
+<link href="index.html" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0073.html" title="!"><img alt="Previous: !" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0073.html" title="LaTeX and PyXPlot"><img alt="Previous: LaTeX and PyXPlot" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="index.html" title=""><img alt="Up: " border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0075.html" title="arrow"><img alt="Next: arrow" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ch-reference.html" title="Command Reference"><img alt="Next: Command Reference" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -38,53 +38,381 @@
 </span>
 
 </span><span>
-<span>
-<a href="sect0071.html">Reference Manual</a> <b>:</b>
-</span>
-
-</span><span>
-<span>
-<a href="ch-reference.html">Command Reference</a> <b>:</b>
-</span>
-
-</span><span>
 
 <span>
-<b class="current">arc</b>
+<b class="current">Reference Manual</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000075">1.3 arc</h1>
-<p><a name="a0000000917" id="a0000000917"></a> </p><pre>
-arc [ item &lt;id&gt; ] [at] &lt;x&gt;, &lt;y&gt; radius &lt;r&gt;
-    from &lt;start&gt; to &lt;finish&gt; [ with {&lt;option&gt;} ]
-</pre><p>Arcs (curves with constant radius of curvature, that is, segments of circles) may be drawn on multiplot canvases using the <tt class="tt">arc</tt> command<a name="a0000000918" id="a0000000918"></a>. The <tt class="tt">at</tt> modifier specifies the coordinates of the centre of curvature, from which all points on the arc are at the distance given following the <tt class="tt">radius</tt> modifier. The angles <tt class="tt">start</tt> and <tt class="tt">finish</tt>, measured clockwise from the vertical, control where the arc begins and ends. For example, the command </p><pre>
-arc at 0,0 radius 2 from 90 to 270
-</pre><p>would draw a semi-circle beneath the line <img src="images/img-0131.png" alt="$x=0$" style="vertical-align:0px; 
-                                     width:43px; 
-                                     height:12px" class="math gen" />, centred on the origin with radius <img src="images/img-0517.png" alt="$2\, \mathrm{cm}$" style="vertical-align:0px; 
-                                     width:34px; 
-                                     height:12px" class="math gen" />. The usual style modifiers for lines may be passed after the keyword <tt class="tt">with</tt>; if the <tt class="tt">fillcolour</tt> modifier is specified then the arc will be filled to form a pie-chart slice. </p><p>All vector graphics objects placed on multiplot canvases receive unique identification numbers which count sequentially from one, and which may be listed using the <tt class="tt">list</tt> command. By reference to these numbers, they can be deleted and subsequently restored with the <tt class="tt">delete</tt> and <tt class="tt">undelete</tt> commands respectively. </p></div>
+<div><h1 id="a0000000075">3 Reference Manual</h1>
+</div>
+
+<div class="contents part-contents"><!--<strong>Subsections</strong>-->
+<ul>
+<li><a href="ch-reference.html">1 Command Reference</a>
+   <ul>
+   <li><a href="sect0075.html">1.1 ?</a>
+       
+   </li><li><a href="sect0076.html">1.2 !</a>
+       
+   </li><li><a href="sect0077.html">1.3 arc</a>
+       
+   </li><li><a href="sect0078.html">1.4 arrow</a>
+       
+   </li><li><a href="sect0079.html">1.5 box</a>
+       
+   </li><li><a href="sect0080.html">1.6 break</a>
+       
+   </li><li><a href="sect0081.html">1.7 cd</a>
+       
+   </li><li><a href="sect0082.html">1.8 circle</a>
+       
+   </li><li><a href="sect0083.html">1.9 clear</a>
+       
+   </li><li><a href="sect0084.html">1.10 continue</a>
+       
+   </li><li><a href="sect0085.html">1.11 delete</a>
+       
+   </li><li><a href="sect0086.html">1.12 do</a>
+       
+   </li><li><a href="sect0087.html">1.13 ellipse</a>
+       
+   </li><li><a href="sect0088.html">1.14 else</a>
+       
+   </li><li><a href="sect0089.html">1.15 eps</a>
+       
+   </li><li><a href="sect0090.html">1.16 exec</a>
+       
+   </li><li><a href="sect0091.html">1.17 exit</a>
+       
+   </li><li><a href="sect0092.html">1.18 fft</a>
+       
+   </li><li><a href="sect0093.html">1.19 fit</a>
+       
+   </li><li><a href="sect0094.html">1.20 for</a>
+       
+   </li><li><a href="sect0095.html">1.21 foreach</a>
+       
+   </li><li><a href="sect0096.html">1.22 help</a>
+       
+   </li><li><a href="sect0097.html">1.23 histogram</a>
+       
+   </li><li><a href="sect0098.html">1.24 history</a>
+       
+   </li><li><a href="sect0099.html">1.25 if</a>
+       
+   </li><li><a href="sect0100.html">1.26 ifft</a>
+       
+   </li><li><a href="sect0101.html">1.27 image</a>
+       
+   </li><li><a href="sect0102.html">1.28 interpolate</a>
+       
+   </li><li><a href="sect0103.html">1.29 jpeg</a>
+       
+   </li><li><a href="sect0104.html">1.30 let</a>
+       
+   </li><li><a href="sect0105.html">1.31 list</a>
+       
+   </li><li><a href="sect0106.html">1.32 load</a>
+       
+   </li><li><a href="sect0107.html">1.33 maximise</a>
+       
+   </li><li><a href="sect0108.html">1.34 minimise</a>
+       
+   </li><li><a href="sect0109.html">1.35 move</a>
+       
+   </li><li><a href="sect0110.html">1.36 plot</a>
+       <ul>
+       <li><a href="sect0111.html">1.36.1 axes</a>
+           
+       </li><li><a href="sect0112.html">1.36.2 label</a>
+           
+       </li><li><a href="sect0113.html">1.36.3 title</a>
+           
+       </li><li><a href="sect0114.html">1.36.4 with</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="sect0115.html">1.37 print</a>
+       
+   </li><li><a href="sect0116.html">1.38 pwd</a>
+       
+   </li><li><a href="sect0117.html">1.39 quit</a>
+       
+   </li><li><a href="sect0118.html">1.40 rectangle</a>
+       
+   </li><li><a href="sect0119.html">1.41 refresh</a>
+       
+   </li><li><a href="sect0120.html">1.42 point</a>
+       
+   </li><li><a href="sect0121.html">1.43 replot</a>
+       
+   </li><li><a href="sect0122.html">1.44 reset</a>
+       
+   </li><li><a href="sect0123.html">1.45 save</a>
+       
+   </li><li><a href="sect0124.html">1.46 set</a>
+       <ul>
+       <li><a href="sect0125.html">1.46.1 arrow</a>
+           
+       </li><li><a href="sect0126.html">1.46.2 autoscale</a>
+           
+       </li><li><a href="sect0127.html">1.46.3 axescolour</a>
+           
+       </li><li><a href="sect0128.html">1.46.4 axis</a>
+           
+       </li><li><a href="sect0129.html">1.46.5 axisunitstyle</a>
+           
+       </li><li><a href="sect0130.html">1.46.6 backup</a>
+           
+       </li><li><a href="sect0131.html">1.46.7 bar</a>
+           
+       </li><li><a href="sect0132.html">1.46.8 binorigin</a>
+           
+       </li><li><a href="sect0133.html">1.46.9 binwidth</a>
+           
+       </li><li><a href="sect0134.html">1.46.10 boxfrom</a>
+           
+       </li><li><a href="sect0135.html">1.46.11 boxwidth</a>
+           
+       </li><li><a href="sect0136.html">1.46.12 c1format</a>
+           
+       </li><li><a href="sect0137.html">1.46.13 c1label</a>
+           
+       </li><li><a href="sect0138.html">1.46.14 calendar</a>
+           
+       </li><li><a href="sect0139.html">1.46.15 clip</a>
+           
+       </li><li><a href="sect0140.html">1.46.16 colourkey</a>
+           
+       </li><li><a href="sect0141.html">1.46.17 colourmap</a>
+           
+       </li><li><a href="sect0142.html">1.46.18 contours</a>
+           
+       </li><li><a href="sect0143.html">1.46.19 c<img src="images/img-0034.png" alt="$&lt;$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" />n<img src="images/img-0035.png" alt="$&gt;$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" />range</a>
+           
+       </li><li><a href="sect0144.html">1.46.20 data style</a>
+           
+       </li><li><a href="sect0145.html">1.46.21 display</a>
+           
+       </li><li><a href="sect0146.html">1.46.22 filter</a>
+           
+       </li><li><a href="sect0147.html">1.46.23 fontsize</a>
+           
+       </li><li><a href="sect0148.html">1.46.24 function style</a>
+           
+       </li><li><a href="sect0149.html">1.46.25 grid</a>
+           
+       </li><li><a href="sect0150.html">1.46.26 gridmajcolour</a>
+           
+       </li><li><a href="sect0151.html">1.46.27 gridmincolour</a>
+           
+       </li><li><a href="sect0152.html">1.46.28 key</a>
+           
+       </li><li><a href="sect0153.html">1.46.29 keycolumns</a>
+           
+       </li><li><a href="sect0154.html">1.46.30 label</a>
+           
+       </li><li><a href="sect0155.html">1.46.31 linewidth</a>
+           
+       </li><li><a href="sect0156.html">1.46.32 logscale</a>
+           
+       </li><li><a href="sect0157.html">1.46.33 multiplot</a>
+           
+       </li><li><a href="sect0158.html">1.46.34 mxtics</a>
+           
+       </li><li><a href="sect0159.html">1.46.35 mytics</a>
+           
+       </li><li><a href="sect0160.html">1.46.36 mztics</a>
+           
+       </li><li><a href="sect0161.html">1.46.37 noarrow</a>
+           
+       </li><li><a href="sect0162.html">1.46.38 noaxis</a>
+           
+       </li><li><a href="sect0163.html">1.46.39 nobackup</a>
+           
+       </li><li><a href="sect0164.html">1.46.40 noclip</a>
+           
+       </li><li><a href="sect0165.html">1.46.41 nocolourkey</a>
+           
+       </li><li><a href="sect0166.html">1.46.42 nodisplay</a>
+           
+       </li><li><a href="sect0167.html">1.46.43 nogrid</a>
+           
+       </li><li><a href="sect0168.html">1.46.44 nokey</a>
+           
+       </li><li><a href="sect0169.html">1.46.45 nolabel</a>
+           
+       </li><li><a href="sect0170.html">1.46.46 nologscale</a>
+           
+       </li><li><a href="sect0171.html">1.46.47 nomultiplot</a>
+           
+       </li><li><a href="sect0172.html">1.46.48 nostyle</a>
+           
+       </li><li><a href="sect0173.html">1.46.49 notitle</a>
+           
+       </li><li><a href="sect0174.html">1.46.50 noxtics</a>
+           
+       </li><li><a href="sect0175.html">1.46.51 noytics</a>
+           
+       </li><li><a href="sect0176.html">1.46.52 noztics</a>
+           
+       </li><li><a href="sect0177.html">1.46.53 numerics</a>
+           
+       </li><li><a href="sect0178.html">1.46.54 origin</a>
+           
+       </li><li><a href="sect0179.html">1.46.55 output</a>
+           
+       </li><li><a href="sect0180.html">1.46.56 palette</a>
+           
+       </li><li><a href="sect0181.html">1.46.57 papersize</a>
+           
+       </li><li><a href="sect0182.html">1.46.58 pointlinewidth</a>
+           
+       </li><li><a href="sect0183.html">1.46.59 pointsize</a>
+           
+       </li><li><a href="sect0184.html">1.46.60 preamble</a>
+           
+       </li><li><a href="sect0185.html">1.46.61 samples</a>
+           
+       </li><li><a href="sect0186.html">1.46.62 seed</a>
+           
+       </li><li><a href="sect0187.html">1.46.63 size</a>
+           
+       </li><li><a href="sect0188.html">1.46.64 style</a>
+           
+       </li><li><a href="sect0189.html">1.46.65 style data | style function</a>
+           
+       </li><li><a href="sect0190.html">1.46.66 terminal</a>
+           
+       </li><li><a href="sect0191.html">1.46.67 textcolour</a>
+           
+       </li><li><a href="sect0192.html">1.46.68 texthalign</a>
+           
+       </li><li><a href="sect0193.html">1.46.69 textvalign</a>
+           
+       </li><li><a href="sect0194.html">1.46.70 title</a>
+           
+       </li><li><a href="sect0195.html">1.46.71 trange</a>
+           
+       </li><li><a href="sect0196.html">1.46.72 unit</a>
+           
+       </li><li><a href="sect0197.html">1.46.73 view</a>
+           
+       </li><li><a href="sect0198.html">1.46.74 viewer</a>
+           
+       </li><li><a href="sect0199.html">1.46.75 width</a>
+           
+       </li><li><a href="sect0200.html">1.46.76 xformat</a>
+           
+       </li><li><a href="sect0201.html">1.46.77 xlabel</a>
+           
+       </li><li><a href="sect0202.html">1.46.78 xrange</a>
+           
+       </li><li><a href="sect0203.html">1.46.79 xtics</a>
+           
+       </li><li><a href="sect0204.html">1.46.80 yformat</a>
+           
+       </li><li><a href="sect0205.html">1.46.81 ylabel</a>
+           
+       </li><li><a href="sect0206.html">1.46.82 yrange</a>
+           
+       </li><li><a href="sect0207.html">1.46.83 ytics</a>
+           
+       </li><li><a href="sect0208.html">1.46.84 zformat</a>
+           
+       </li><li><a href="sect0209.html">1.46.85 zlabel</a>
+           
+       </li><li><a href="sect0210.html">1.46.86 zrange</a>
+           
+       </li><li><a href="sect0211.html">1.46.87 ztics</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="sect0212.html">1.47 show</a>
+       
+   </li><li><a href="sect0213.html">1.48 solve</a>
+       
+   </li><li><a href="sect0214.html">1.49 spline</a>
+       
+   </li><li><a href="sect0215.html">1.50 swap</a>
+       
+   </li><li><a href="sect0216.html">1.51 tabulate</a>
+       
+   </li><li><a href="sect0217.html">1.52 text</a>
+       
+   </li><li><a href="sect0218.html">1.53 undelete</a>
+       
+   </li><li><a href="sect0219.html">1.54 unset</a>
+       
+   </li><li><a href="sect0220.html">1.55 while</a>
+       
+   </li>
+   </ul>
+</li><li><a href="ch-function_list.html">2 List of Mathematical Functions</a>
+   
+</li><li><a href="ch-constants.html">3 List of Physical Constants</a>
+   
+</li><li><a href="ch-unit_list.html">4 List of Physical Units</a>
+   
+</li><li><a href="ch-paper_sizes.html">5 List of Paper Sizes</a>
+   
+</li><li><a href="ch-colour_charts.html">6 Colour Tables</a>
+   
+</li><li><a href="ch-linetypes_table.html">7 Line and Point Types</a>
+   
+</li><li><a href="ch-configuration.html">8 Configuring PyXPlot</a>
+   <ul>
+   <li><a href="sect0221.html">8.1 Configuration Files</a>
+       
+   </li><li><a href="sect0222.html">8.2 An Example Configuration File</a>
+       
+   </li><li><a href="sect0223.html">8.3 Setting definitions</a>
+       <ul>
+       <li><a href="sect0224.html">8.3.1 The <tt class="tt">filters</tt> section</a>
+           
+       </li><li><a href="sec-configfile_settings.html">8.3.2 The <tt class="tt">settings</tt> section</a>
+           
+       </li><li><a href="sect0225.html">8.3.3 The <tt class="tt">styling</tt> section</a>
+           
+       </li><li><a href="sec-configfile_terminal.html">8.3.4 The <tt class="tt">terminal</tt> section</a>
+           
+       </li><li><a href="sec-configfile_units.html">8.3.5 The <tt class="tt">units</tt> section</a>
+           
+       </li>
+       </ul>
+   </li><li><a href="sec-colour_names.html">8.4 Recognised Colour Names</a>
+       
+   </li>
+   </ul>
+</li>
 
 
+
+</ul>
+</div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0073.html" title="!"><img alt="Previous: !" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0073.html" title="LaTeX and PyXPlot"><img alt="Previous: LaTeX and PyXPlot" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="index.html" title=""><img alt="Up: " border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0075.html" title="arrow"><img alt="Next: arrow" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ch-reference.html" title="Command Reference"><img alt="Next: Command Reference" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

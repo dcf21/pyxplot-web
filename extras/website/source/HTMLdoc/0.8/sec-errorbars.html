@@ -5,8 +5,8 @@
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
 <title>: Error Bars</title>
 
-<link href="sect0046.html" title="Shaded Regions" rel="next" />
-<link href="sect0045.html" title="Lines and Points" rel="prev" />
+<link href="sect0045.html" title="Shaded Regions" rel="next" />
+<link href="sect0044.html" title="Lines and Points" rel="prev" />
 <link href="sec-list_of_plotstyles.html" title="PyXPlot’s Plot Styles" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0045.html" title="Lines and Points"><img alt="Previous: Lines and Points" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0044.html" title="Lines and Points"><img alt="Previous: Lines and Points" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="sec-list_of_plotstyles.html" title="PyXPlot’s Plot Styles"><img alt="Up: PyXPlot’s Plot Styles" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0046.html" title="Shaded Regions"><img alt="Next: Shaded Regions" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0045.html" title="Shaded Regions"><img alt="Next: Shaded Regions" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -62,62 +62,55 @@
 </div>
 
 <div><h2 id="sec:errorbars">1.2.2 Error Bars</h2>
-<p> <a name="a0000000617" id="a0000000617"></a> </p><p>The following pair of plot styles allow datapoints to be plotted with errorbars indicating the uncertainties in either their vertical or horizontal positions: </p><ul class="itemize">
-<li><p><tt class="tt">yerrorbars</tt><a name="a0000000618" id="a0000000618"></a><a name="a0000000619" id="a0000000619"></a> </p></li><li><p><tt class="tt">xerrorbars</tt><a name="a0000000620" id="a0000000620"></a><a name="a0000000621" id="a0000000621"></a> </p></li>
-</ul><p> Both of these plot styles take three columns of input data, the first two of which represent the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+<p> <a name="a0000000635" id="a0000000635"></a> </p><p>The following pair of plot styles allow datapoints to be plotted with errorbars indicating the uncertainties in either their vertical or horizontal positions: </p><ul class="itemize">
+<li><p><tt class="tt">yerrorbars</tt><a name="a0000000636" id="a0000000636"></a><a name="a0000000637" id="a0000000637"></a> </p></li><li><p><tt class="tt">xerrorbars</tt><a name="a0000000638" id="a0000000638"></a><a name="a0000000639" id="a0000000639"></a> </p></li>
+</ul><p> Both of these plot styles take three (or four) columns of input data on 2D (or 3D) plots, the first two (or three) of which represent the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" />-, <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
+                                     width:9px; 
+                                     height:12px" class="math gen" />- (and <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:8px" class="math gen" />-)coordinates of the central position of each errorbar, and the last of which represents the uncertainty in either the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
                                      width:10px; 
                                      height:8px" class="math gen" />- and <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
                                      width:9px; 
-                                     height:12px" class="math gen" />-coordinates of the positions of each point, and the last of which represents the uncertainty in either the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+                                     height:12px" class="math gen" />-coordinate. The plot style <tt class="tt">errorbars</tt><a name="a0000000640" id="a0000000640"></a><a name="a0000000641" id="a0000000641"></a> is an alias for <tt class="tt">yerrorbars</tt><a name="a0000000642" id="a0000000642"></a><a name="a0000000643" id="a0000000643"></a>. Additionally, the following plot style allows datapoints to be plotted with both horizontal and vertical errorbars: </p><ul class="itemize">
+<li><p><tt class="tt">xyerrorbars</tt><a name="a0000000644" id="a0000000644"></a><a name="a0000000645" id="a0000000645"></a> </p></li>
+</ul><p> This plot style takes four (or five) columns of data as input, the first two (or three) of which represent the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
                                      width:10px; 
-                                     height:8px" class="math gen" />- and <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
+                                     height:8px" class="math gen" />-, <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
                                      width:9px; 
-                                     height:12px" class="math gen" />-coordinate. The plot style <tt class="tt">errorbars</tt><a name="a0000000622" id="a0000000622"></a><a name="a0000000623" id="a0000000623"></a> is an alias for <tt class="tt">yerrorbars</tt><a name="a0000000624" id="a0000000624"></a><a name="a0000000625" id="a0000000625"></a>. Additionally, the following plot style allows datapoints to be plotted with both horizontal and vertical errorbars: </p><ul class="itemize">
-<li><p><tt class="tt">xyerrorbars</tt><a name="a0000000626" id="a0000000626"></a><a name="a0000000627" id="a0000000627"></a> </p></li>
-</ul><p> This plot style takes four columns of data as input, the first two of which represent the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
-                                     width:10px; 
-                                     height:8px" class="math gen" />- and <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
+                                     height:12px" class="math gen" />- (and <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
                                      width:9px; 
-                                     height:12px" class="math gen" />-coordinates of the positions of each point, the third of which gives the uncertainty in the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+                                     height:8px" class="math gen" />-)coordinates of the central position of each errorbar, the last but one of which gives the uncertainty in the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
                                      width:10px; 
                                      height:8px" class="math gen" />-coordinate, and the last of which gives the uncertainty in the <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
                                      width:9px; 
-                                     height:12px" class="math gen" />-coordinate. </p><p>Each of the plot styles listed above has a corresponding partner which takes minimum and maximum limit in place of each uncertainty, equivalent to writing <img src="images/img-0338.png" alt="$5^{+2}_{-3}$" style="vertical-align:-5px; 
+                                     height:12px" class="math gen" />-coordinate. </p><p>Each of the plot styles listed above has a corresponding partner which takes minimum and maximum limits for each errorbar, equivalent to writing <img src="images/img-0386.png" alt="$5^{+2}_{-3}$" style="vertical-align:-5px; 
                                      width:26px; 
-                                     height:22px" class="math gen" /> instead of <img src="images/img-0339.png" alt="$5\pm 2$" style="vertical-align:0px; 
-                                     width:39px; 
-                                     height:13px" class="math gen" />, except that the limits of 2 and 7 should be given in place of <img src="images/img-0340.png" alt="$5-3$" style="vertical-align:0px; 
-                                     width:39px; 
-                                     height:13px" class="math gen" /> and <img src="images/img-0341.png" alt="$5+2$" style="vertical-align:-1px; 
-                                     width:39px; 
-                                     height:14px" class="math gen" />: </p><ul class="itemize">
-<li><p><tt class="tt">xerrorrange</tt><a name="a0000000628" id="a0000000628"></a><a name="a0000000629" id="a0000000629"></a> – takes four columns of data. </p></li><li><p><tt class="tt">yerrorrange</tt><a name="a0000000630" id="a0000000630"></a><a name="a0000000631" id="a0000000631"></a> – takes four columns of data. </p></li><li><p><tt class="tt">xyerrorrange</tt><a name="a0000000632" id="a0000000632"></a><a name="a0000000633" id="a0000000633"></a> – takes six columns of data. </p></li>
-</ul><p> The plot style <tt class="tt">errorrange</tt><a name="a0000000634" id="a0000000634"></a><a name="a0000000635" id="a0000000635"></a> is an alias of <tt class="tt">yerrorrange</tt><a name="a0000000636" id="a0000000636"></a><a name="a0000000637" id="a0000000637"></a>. </p><p>Corresponding plot styles also exist to plot data with errorbars along the <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
+                                     height:22px" class="math gen" />, in place of a single symmetric uncertainty: </p><ul class="itemize">
+<li><p><tt class="tt">xerrorrange</tt><a name="a0000000646" id="a0000000646"></a><a name="a0000000647" id="a0000000647"></a> – takes four (or five) columns of data. </p></li><li><p><tt class="tt">yerrorrange</tt><a name="a0000000648" id="a0000000648"></a><a name="a0000000649" id="a0000000649"></a> – takes four (or five) columns of data. </p></li><li><p><tt class="tt">xyerrorrange</tt><a name="a0000000650" id="a0000000650"></a><a name="a0000000651" id="a0000000651"></a> – takes six (or seven) columns of data. </p></li>
+</ul><p> The plot style <tt class="tt">errorrange</tt><a name="a0000000652" id="a0000000652"></a><a name="a0000000653" id="a0000000653"></a> is an alias of <tt class="tt">yerrorrange</tt><a name="a0000000654" id="a0000000654"></a><a name="a0000000655" id="a0000000655"></a>. </p><p>Corresponding plot styles also exist to plot data with errorbars along the <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
                                      width:9px; 
-                                     height:8px" class="math gen" />-axes of three-dimensional plots<a href="#a0000000638" class="footnote"><sup class="footnotemark">1</sup></a>: <tt class="tt">zerrorbars</tt>, <tt class="tt">zerrorrange</tt>, <tt class="tt">xzerrorbars</tt>, <tt class="tt">xzerrorrange</tt>, <tt class="tt">yzerrorbars</tt>, <tt class="tt">yzerrorrange</tt>, <tt class="tt">xyzerrorbars</tt>, <tt class="tt">xyzerrorrange</tt>. </p></div>
+                                     height:8px" class="math gen" />-axes of three-dimensional plots: <tt class="tt">zerrorbars</tt>, <tt class="tt">zerrorrange</tt>, <tt class="tt">xzerrorbars</tt>, <tt class="tt">xzerrorrange</tt>, <tt class="tt">yzerrorbars</tt>, <tt class="tt">yzerrorrange</tt>, <tt class="tt">xyzerrorbars</tt>, <tt class="tt">xyzerrorrange</tt>. Though it does not make sense to use these on two-dimensional plots, it is not an error to do so; they expect the same number of columns of input data on both two- and three-dimensional plots. </p></div>
 
 
 
-<div id="footnotes">
-<p><b>Footnotes</b></p>
-<ol>
-<li id="a0000000638">These plot styles are currently present for future expansion purposes only, as PyXPlot 0.8.0 cannot produce three-dimensional plots.</li>
-</ol>
-</div>
+
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0045.html" title="Lines and Points"><img alt="Previous: Lines and Points" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0044.html" title="Lines and Points"><img alt="Previous: Lines and Points" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="sec-list_of_plotstyles.html" title="PyXPlot’s Plot Styles"><img alt="Up: PyXPlot’s Plot Styles" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0046.html" title="Shaded Regions"><img alt="Next: Shaded Regions" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0045.html" title="Shaded Regions"><img alt="Next: Shaded Regions" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

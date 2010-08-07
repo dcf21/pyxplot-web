@@ -3,10 +3,10 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: interpolate</title>
+<title>: if</title>
 
-<link href="sect0100.html" title="jpeg" rel="next" />
-<link href="sect0098.html" title="image" rel="prev" />
+<link href="sect0100.html" title="ifft" rel="next" />
+<link href="sect0098.html" title="history" rel="prev" />
 <link href="ch-reference.html" title="Command Reference" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0098.html" title="image"><img alt="Previous: image" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0098.html" title="history"><img alt="Previous: history" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0100.html" title="jpeg"><img alt="Next: jpeg" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0100.html" title="ifft"><img alt="Next: ifft" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0071.html">Reference Manual</a> <b>:</b>
+<a href="sect0074.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -50,28 +50,36 @@
 </span><span>
 
 <span>
-<b class="current">interpolate</b>
+<b class="current">if</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000100">1.28 interpolate</h1>
-<p><a name="a0000000994" id="a0000000994"></a> </p><pre>
-interpolate ( akima | linear | loglinear | polynomial | spline )
-            [&lt;range specification&gt;] &lt;function name&gt;"()"
-            '&lt;filename&gt;'
-            [ every &lt;expression&gt; {:&lt;expression} ]
-            [ index &lt;value&gt; ]
-            [ select &lt;expression&gt; ]
-            [ using &lt;expression&gt; {:&lt;expression} ]
-</pre><p>The <tt class="tt">interpolate</tt> command<a name="a0000000995" id="a0000000995"></a> can be used to generate a special function within PyXPlot’s mathematical environment which interpolates a set of datapoints supplied from a datafile. Various different types of interpolation are supported: linear interpolation, power-law interpolation, polynomial interpolation, cubic-spline interpolation and akima-spline interpolation. The use of polynomial interpolation with large datasets is strongly discouraged, as polynomial fits tend to show severe oscillations between datapoints. Extrapolation is not permitted; if an attempt is made to evaluate an interpolated function beyond the limits of the datapoints which it interpolates, PyXPlot returns an error or value of not-a-number. </p><p>A very common application of the <tt class="tt">interpolate</tt> command<a name="a0000000996" id="a0000000996"></a> is to perform arithmetic functions such as addition or subtraction on datasets which are not sampled at the same abscissa values. The following example would plot the difference between two such datasets: </p><pre>
-interpolate linear f() 'data1.dat'
-interpolate linear g() 'data2.dat'
-plot [min:max] f(x)-g(x)
-</pre><p>Note that it is advisable to supply a range to the <tt class="tt">plot</tt> command in this example: because the two datasets have been turned into continuous functions, the <tt class="tt">plot</tt> command has to guess a range over which to plot them unless one is explicitly supplied. </p><p>The <tt class="tt">spline</tt> command<a name="a0000000997" id="a0000000997"></a> is an alias for <tt class="tt">interpolate spline</tt>; the following two statements are equivalent: </p><pre>
-spline f() 'data1.dat'
-interpolate spline f() 'data1.dat'
+<div><h1 id="a0000000100">1.25 if</h1>
+<p><a name="a0000001024" id="a0000001024"></a><a name="a0000001025" id="a0000001025"></a><a name="a0000001026" id="a0000001026"></a> </p><pre>
+if &lt;criterion&gt;
+ "{"
+    ...
+ "}" { else if &lt;criterion&gt;
+ "{"
+    ...
+ "}" } [ else
+ "{"
+    ...
+ "}" ]
+</pre><p>The <tt class="tt">if</tt> command<a name="a0000001027" id="a0000001027"></a> allows conditional execution of blocks of commands. The code enclosed in braces following the <tt class="tt">if</tt> statement is executed if, and only if, the <tt class="tt">criterion</tt> is satisfied. An arbitrary number of subsequent <tt class="tt">else if</tt> statements can optionally follow the initial <tt class="tt">if</tt> statement; these have their own criteria for execution which are only considered if all of the previous criteria have tested false – i.e. if none of the previous command blocks have been executed. A final optional <tt class="tt">else</tt> statement can be provided; the block of commands which follows it are executed only if none of the preceding criteria have tested true. The following example illustrates a chain of <tt class="tt">else if</tt> clauses: </p><pre>
+if (x==2)
+ {
+  print "x is two!"
+ } else if (x==3) {
+  print "x is three!"
+ } else if (x&gt;3) {
+  print "x is greater than three!"
+ } else {
+  x=2
+  print "x didn't used to be two, but it is now!"
+ }
 </pre></div>
 
 
@@ -81,16 +89,16 @@ interpolate spline f() 'data1.dat'
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0098.html" title="image"><img alt="Previous: image" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0098.html" title="history"><img alt="Previous: history" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0100.html" title="jpeg"><img alt="Next: jpeg" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0100.html" title="ifft"><img alt="Next: ifft" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

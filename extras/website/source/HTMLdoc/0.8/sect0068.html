@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: The image Command</title>
+<title>: The replot Command Revisited</title>
 
-<link href="sect0069.html" title="The eps Command" rel="next" />
-<link href="ex-nanotubes.html" title="The arrow and line Commands" rel="prev" />
-<link href="sect0066.html" title="Adding Other Vector Graphics Objects" rel="up" />
+<link href="sect0069.html" title="Adding Other Vector Graphics Objects" rel="next" />
+<link href="sect0067.html" title="Linked Axes and Galleries of Plots" rel="prev" />
+<link href="ch-vector_graphics.html" title="Producing Vector Graphics" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="ex-nanotubes.html" title="The arrow and line Commands"><img alt="Previous: The arrow and line Commands" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0067.html" title="Linked Axes and Galleries of Plots"><img alt="Previous: Linked Axes and Galleries of Plots" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0066.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-vector_graphics.html" title="Producing Vector Graphics"><img alt="Up: Producing Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0069.html" title="The eps Command"><img alt="Next: The eps Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0069.html" title="Adding Other Vector Graphics Objects"><img alt="Next: Adding Other Vector Graphics Objects" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -48,46 +48,45 @@
 </span>
 
 </span><span>
-<span>
-<a href="sect0066.html">Adding Other Vector Graphics Objects</a> <b>:</b>
-</span>
-
-</span><span>
 
 <span>
-<b class="current">The <tt class="tt">image</tt> Command</b>
+<b class="current">The <tt class="tt">replot</tt> Command Revisited</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000069">3.4.3 The <tt class="tt">image</tt> Command</h2>
-<p>Graphical images in <tt class="tt">bmp</tt>, <tt class="tt">gif</tt>, <tt class="tt">jpeg</tt> or <tt class="tt">png</tt> format may be placed on multiplot canvases using the <tt class="tt">image</tt> command<a name="a0000000886" id="a0000000886"></a><a href="#a0000000887" class="footnote"><sup class="footnotemark">1</sup></a>. In its simplest form, this has the syntax: </p><pre>
-image 'filename' at x,y width w
-</pre><p>As an alternative to the <tt class="tt">width</tt><a name="a0000000888" id="a0000000888"></a> keyword the height of the image can be specified, using the analogous <tt class="tt">height</tt><a name="a0000000889" id="a0000000889"></a> keyword. An optional angle can also be specified using the <tt class="tt">rotate</tt><a name="a0000000890" id="a0000000890"></a> keyword; this causes the included image to be rotated counter-clockwise by a specified angle, measured in degrees. The keyword <tt class="tt">smooth</tt> may optionally be supplied to cause the pixels of the image to be interpolated<a href="#a0000000891" class="footnote"><sup class="footnotemark">2</sup></a>. </p><p>Images which include transparency are supported. The optional keyword <tt class="tt">notransparent</tt> may be supplied to the <tt class="tt">image</tt> command<a name="a0000000892" id="a0000000892"></a> to cause transparent regions to be filled with the image’s default background colour. Alternatively, an RGB colour may be specified in the form <tt class="tt">rgb&lt;r&gt;:&lt;g&gt;:&lt;b&gt;</tt> after the keyword <tt class="tt">transparent</tt> to cause that particular colour to become transparent; the three components of the RGB colour should be in the range 0 to 255. </p></div>
+<div><h1 id="a0000000069">3.3 The <tt class="tt">replot</tt> Command Revisited</h1>
+<p>In multiplot mode, the <tt class="tt">replot</tt> command<a name="a0000000898" id="a0000000898"></a> can be used to modify the last plot added to the page. For example, the following would change the title of the latest plot to ‘foo’, and add a plot of the function <img src="images/img-0410.png" alt="$g(x)$" style="vertical-align:-4px; 
+                                     width:32px; 
+                                     height:18px" class="math gen" /> to it: </p><pre>
+set title 'foo'
+replot cos(x)
+</pre><p>Additionally, it is possible to modify any plot on the page by adding an <tt class="tt">item</tt> modifier to the <tt class="tt">replot</tt> statement to specify which plot should be replotted. The following example would produce two plots, and then add an additional function to the first plot: </p><pre>
+set multiplot
+plot f(x)
+set origin 10,0
+plot g(x)
+replot item 1 h(x)
+</pre><p>If no <tt class="tt">item</tt> number is specified, then the <tt class="tt">replot</tt> command<a name="a0000000899" id="a0000000899"></a> acts by default upon the most recent plot to have been added to the multiplot canvas. </p></div>
 
 
 
-<div id="footnotes">
-<p><b>Footnotes</b></p>
-<ol>
-<li id="a0000000887">To maintain compatibility with historic versions of PyXPlot, the <tt class="tt">image</tt> command may also be spelt <tt class="tt">jpeg</tt>, with the identical syntax thereafter.</li><li id="a0000000891">Many commonly-used PostScript display engines, including Ghostscript, do not support this functionality.</li>
-</ol>
-</div>
+
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="ex-nanotubes.html" title="The arrow and line Commands"><img alt="Previous: The arrow and line Commands" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0067.html" title="Linked Axes and Galleries of Plots"><img alt="Previous: Linked Axes and Galleries of Plots" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0066.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-vector_graphics.html" title="Producing Vector Graphics"><img alt="Up: Producing Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0069.html" title="The eps Command"><img alt="Next: The eps Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0069.html" title="Adding Other Vector Graphics Objects"><img alt="Next: Adding Other Vector Graphics Objects" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

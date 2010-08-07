@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -91,11 +91,11 @@ plot
 </tr>
 </table> </p><p>To make it possible to render L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X strings containing both single and double quote characters – for example, the string <tt class="tt">J<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
                                      width:7px; 
-                                     height:18px" class="math gen" />"org’s Data</tt>, which puts a German umlaut on the letter o as well as having a possesive apostrophe – PyXPlot recognises the backslash character to be an escape character when followed by either ’ or ". A double backslash (<img src="images/img-0031.png" alt="$\backslash \backslash $" style="vertical-align:-5px; 
+                                     height:18px" class="math gen" />"org’s Data</tt>, which puts a German umlaut on the letter o as well as having a possessive apostrophe – PyXPlot recognises the backslash character to be an escape character when followed by either ’ or ". A double backslash (<img src="images/img-0031.png" alt="$\backslash \backslash $" style="vertical-align:-5px; 
                                      width:16px; 
                                      height:18px" class="math gen" />) represents a literal backslash. These are the <i class="itshape">only</i> cases in which PyXPlot considers <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
                                      width:7px; 
-                                     height:18px" class="math gen" /> an escape character. To render the example string above, one would type:<a name="a0000000305" id="a0000000305"></a><a name="a0000000306" id="a0000000306"></a><a name="a0000000307" id="a0000000307"></a> </p><p><table cellspacing="0" class="tabular">
+                                     height:18px" class="math gen" /> an escape character. To render the example string above, one would type:<a name="a0000000319" id="a0000000319"></a><a name="a0000000320" id="a0000000320"></a><a name="a0000000321" id="a0000000321"></a> </p><p><table cellspacing="0" class="tabular">
 <tr>
 
     
@@ -108,7 +108,7 @@ plot
                                      height:18px" class="math gen" />"org’s Data" </tt></div></p></td>
 
 </tr>
-</table> </p><p>In this example, three backslashes are required. The first pair produce the L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X escape character used to produce the umlaut; the second is a PyXPlot escape character, used so that the " character is not interpreted as delimiting the string. <a name="a0000000308" id="a0000000308"></a><a name="a0000000309" id="a0000000309"></a><a name="a0000000310" id="a0000000310"></a> </p><p>The pre-defined <tt class="tt">texify()</tt><a name="a0000000311" id="a0000000311"></a> function may provide some assistance in generating L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X labels: it takes either an algebraic expression, or a string in quotes, and produces a L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X representation of it, as in the following examples: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">a=50</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print texify("A %d% increase"%(a))</b></tt><br /><tt class="tt">A 50<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+</table> </p><p>In this example, three backslashes are required. The first pair produce the L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X escape character used to produce the umlaut; the second is a PyXPlot escape character, used so that the " character is not interpreted as delimiting the string. <a name="a0000000322" id="a0000000322"></a><a name="a0000000323" id="a0000000323"></a><a name="a0000000324" id="a0000000324"></a> </p><p>The pre-defined <tt class="tt">texify()</tt><a name="a0000000325" id="a0000000325"></a> function may provide some assistance in generating L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X labels: it takes either an algebraic expression, or a string in quotes, and produces a L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X representation of it, as in the following examples: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">a=50</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print texify("A %d% increase"%(a))</b></tt><br /><tt class="tt">A 50<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
                                      width:7px; 
                                      height:18px" class="math gen" />% increase</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print texify(sqrt(x**2+1))</b></tt><br /><tt class="tt">$<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
                                      width:7px; 
@@ -121,7 +121,7 @@ set title ''
 </pre><p>These are two other ways of removing the title from a plot: </p><pre>
 set notitle
 unset title
-</pre><p>The <tt class="tt">unset</tt> command<a name="a0000000312" id="a0000000312"></a> may be followed by almost any word that can follow the <tt class="tt">set</tt> command, such as <tt class="tt">xlabel</tt> or <tt class="tt">title</tt>, to return that setting to its default configuration. The <tt class="tt">reset</tt> command<a name="a0000000313" id="a0000000313"></a> restores all configurable parameters to their default states. </p></div>
+</pre><p>The <tt class="tt">unset</tt> command<a name="a0000000326" id="a0000000326"></a> may be followed by almost any word that can follow the <tt class="tt">set</tt> command, such as <tt class="tt">xlabel</tt> or <tt class="tt">title</tt>, to return that setting to its default configuration. The <tt class="tt">reset</tt> command<a name="a0000000327" id="a0000000327"></a> restores all configurable parameters to their default states. </p></div>
 
 
 
@@ -139,7 +139,7 @@ unset title
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

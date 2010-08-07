@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Producing Images on Disk</title>
+<title>: Labelling Graphs</title>
 
-<link href="sect0059.html" title="The Complete Syntax of the set terminal Command" rel="next" />
-<link href="sect0057.html" title="Previewing Graphs On Screen" rel="prev" />
-<link href="sec-set_terminal.html" title="The set terminal Command" rel="up" />
+<link href="sec-set_arrow.html" title="Arrows" rel="next" />
+<link href="sect0057.html" title="Clipping Behaviour" rel="prev" />
+<link href="ch-plotting.html" title="Plotting: A Detailed Survey" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0057.html" title="Previewing Graphs On Screen"><img alt="Previous: Previewing Graphs On Screen" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0057.html" title="Clipping Behaviour"><img alt="Previous: Clipping Behaviour" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-set_terminal.html" title="The set terminal Command"><img alt="Up: The set terminal Command" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-plotting.html" title="Plotting: A Detailed Survey"><img alt="Up: Plotting: A Detailed Survey" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0059.html" title="The Complete Syntax of the set terminal Command"><img alt="Next: The Complete Syntax of the set terminal Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sec-set_arrow.html" title="Arrows"><img alt="Next: Arrows" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -44,47 +44,49 @@
 
 </span><span>
 <span>
-<a href="ch-image_formats.html">Producing Image Files</a> <b>:</b>
-</span>
-
-</span><span>
-<span>
-<a href="sec-set_terminal.html">The <tt class="tt">set terminal</tt> Command</a> <b>:</b>
+<a href="ch-plotting.html">Plotting: A Detailed Survey</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">Producing Images on Disk</b>
+<b class="current">Labelling Graphs</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000059">2.1.2 Producing Images on Disk</h2>
-<p>The remaining terminals listed in Table <a href="sec-set_terminal.html#tab:output_terminals">2.1</a> direct graphical output to disk in a selection of rasterised and vector graphics formats. The filename of the resulting image file may be set using the <tt class="tt">set output</tt> command<a name="a0000000799" id="a0000000799"></a>, as in the example: </p><pre>
-set output 'my_plot.eps'
-</pre><p>Use of rasterised image formats inevitably results in some loss of image quality since the plot has to be rasterised into a bitmapped graphic image. By default, this rasterisation is performed at a resolution of <img src="images/img-0441.png" alt="$300\, \mathrm{dpi}$" style="vertical-align:-3px; 
-                                     width:55px; 
-                                     height:16px" class="math gen" />, though this may be changed using the <tt class="tt">set terminal dpi</tt> command<a name="a0000000800" id="a0000000800"></a>, which should be followed by a numerical value. Alternatively, the resolution may be changed using the <tt class="tt">DPI</tt> option in the <tt class="tt">settings</tt> section of a configuration file (see Chapter <a href="ch-configuration.html">8</a>).<a name="a0000000801" id="a0000000801"></a><a name="a0000000802" id="a0000000802"></a><a name="a0000000803" id="a0000000803"></a> </p></div>
+<div><h1 id="a0000000059">1.11 Labelling Graphs</h1>
+<p>The <tt class="tt">set arrow</tt><a name="a0000000777" id="a0000000777"></a> and <tt class="tt">set label</tt> command<a name="a0000000778" id="a0000000778"></a>s allow arrows and text labels to be added to graphs to label significant points or to add simple vector graphics to them. </p></div>
+
+<div class="contents section-contents"><!--<strong>Subsections</strong>-->
+<ul>
+<li><a href="sec-set_arrow.html">1.11.1 Arrows</a>
+   
+</li><li><a href="ex-australia.html">1.11.2 Text Labels</a>
+   
+</li>
 
 
+
+</ul>
+</div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0057.html" title="Previewing Graphs On Screen"><img alt="Previous: Previewing Graphs On Screen" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0057.html" title="Clipping Behaviour"><img alt="Previous: Clipping Behaviour" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-set_terminal.html" title="The set terminal Command"><img alt="Up: The set terminal Command" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-plotting.html" title="Plotting: A Detailed Survey"><img alt="Up: Plotting: A Detailed Survey" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0059.html" title="The Complete Syntax of the set terminal Command"><img alt="Next: The Complete Syntax of the set terminal Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sec-set_arrow.html" title="Arrows"><img alt="Next: Arrows" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

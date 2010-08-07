@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: The text Command</title>
+<title>: Linked Axes and Galleries of Plots</title>
 
-<link href="ex-nanotubes.html" title="The arrow and line Commands" rel="next" />
-<link href="sect0066.html" title="Adding Other Vector Graphics Objects" rel="prev" />
-<link href="sect0066.html" title="Adding Other Vector Graphics Objects" rel="up" />
+<link href="sect0068.html" title="The replot Command Revisited" rel="next" />
+<link href="sec-set_display.html" title="The Construction of Large Multiplots" rel="prev" />
+<link href="ch-vector_graphics.html" title="Producing Vector Graphics" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0066.html" title="Adding Other Vector Graphics Objects"><img alt="Previous: Adding Other Vector Graphics Objects" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-set_display.html" title="The Construction of Large Multiplots"><img alt="Previous: The Construction of Large Multiplots" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0066.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-vector_graphics.html" title="Producing Vector Graphics"><img alt="Up: Producing Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="ex-nanotubes.html" title="The arrow and line Commands"><img alt="Next: The arrow and line Commands" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0068.html" title="The replot Command Revisited"><img alt="Next: The replot Command Revisited" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -48,32 +48,23 @@
 </span>
 
 </span><span>
-<span>
-<a href="sect0066.html">Adding Other Vector Graphics Objects</a> <b>:</b>
-</span>
-
-</span><span>
 
 <span>
-<b class="current">The <tt class="tt">text</tt> Command</b>
+<b class="current">Linked Axes and Galleries of Plots</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000068">3.4.1 The <tt class="tt">text</tt> Command</h2>
-<p>Text labels may be added to multiplot canvases using the <tt class="tt">text</tt> command<a name="a0000000871" id="a0000000871"></a>. This has the following syntax: </p><pre>
-text 'This is some text' at x,y
-</pre><p>In this case, the string ‘This is some text’ would be rendered at position <img src="images/img-0177.png" alt="$(x,y)$" style="vertical-align:-4px; 
-                                     width:40px; 
-                                     height:18px" class="math gen" /> on the multiplot. As with the <tt class="tt">set label</tt> command<a name="a0000000872" id="a0000000872"></a>, a colour may optionally be specified with the <tt class="tt">with colour</tt> modifier, as well as a rotation angle to rotate text labels through any given angle, measured in degrees counter-clockwise. For example:<a name="a0000000873" id="a0000000873"></a> </p><pre>
-text 'This is some text' at x,y rotate r with colour red
-</pre><p>The commands <tt class="tt">set textcolour</tt><a name="a0000000874" id="a0000000874"></a>, <tt class="tt">set texthalign</tt><a name="a0000000875" id="a0000000875"></a> and <tt class="tt">set textvalign</tt><a name="a0000000876" id="a0000000876"></a> can be used to set the colour and alignment of the text produced with the <tt class="tt">text</tt> command<a name="a0000000877" id="a0000000877"></a>. Alternatively, the <tt class="tt">text</tt> command<a name="a0000000878" id="a0000000878"></a> takes three modifiers to control the alignment of the text which override these <tt class="tt">set</tt> commands. The <tt class="tt">halign</tt> and <tt class="tt">valign</tt> modifiers may be followed by any of the settings which may follow the <tt class="tt">set texthalign</tt> and <tt class="tt">set textvalign</tt> commands respectively, as in the following examples: </p><pre>
-text 'This is some text' at 0,0 halign left valign top
-text 'This is some text' at 0,0 halign right valign centre
-</pre><p>The <tt class="tt">gap</tt> modifier allows a gap to be inserted in the alignment of the text. For example, the string <tt class="tt">halign left gap 3*unit(mm)</tt> would cause text to be rendered with its left side <img src="images/img-0450.png" alt="$3\, \mathrm{mm}$" style="vertical-align:0px; 
-                                     width:42px; 
-                                     height:12px" class="math gen" /> to the right of the position specified for the text. This is useful for labelling points on diagrams, where the labels should be slightly offset from the points that they are associated with. If the <tt class="tt">gap</tt> modifier is followed by a dimensionless number, rather than one with dimensions of lengths, then it is assumed to be measured in centimetres. </p><p>It should be noted that the <tt class="tt">text</tt> command<a name="a0000000879" id="a0000000879"></a> can also be used outside of the multiplot environment, to render a single piece of short text instead of a graph. One obvious application is to produce equations rendered as graphical files which can subsequently be imported into documents, slideshows or webpages.<a name="a0000000880" id="a0000000880"></a> </p></div>
+<div><h1 id="a0000000068">3.2 Linked Axes and Galleries of Plots</h1>
+<p>In the previous chapter (Section <a href="ex-cmbrtemp.html">1.8.9</a>), linked axes were introduced as a mechanism by which several axes on a single plot could be set to have the same range, or to be algebraically related to one another. Another common use for them is to make several plots on a multiplot canvas share common axes. Just as the following statement links two axes on a single plot to one another </p><pre>
+set axis x2 linked x
+</pre><p> axes on the current plot can be linked to those of previous plots which are already on the multiplot canvas using syntax of the form: </p><pre>
+set axis x2 linked item 2 x
+</pre><p>A common reason for doing this is to produce galleries of side-by-side plots. The following series of commands would produce a <img src="images/img-0539.png" alt="$2\times 2$" style="vertical-align:0px; 
+                                     width:39px; 
+                                     height:12px" class="math gen" /> grid of plots, with axes only labelled along the bottom and left sides of the grid: </p><p> <small class="footnotesize"><tt class="tt">set multiplot</tt><br /><tt class="tt">set nodisplay</tt><br /><tt class="tt">width=5.4</tt><br /></small><br /><small class="footnotesize"><tt class="tt">set width width</tt><br /><tt class="tt">set xrange [0:23.999]</tt><br /><tt class="tt">set yrange [0:0.11]</tt><br /><tt class="tt">set nokey</tt><br /><tt class="tt">set texthalign left</tt><br /><tt class="tt">set textvalign centre</tt><br /></small><br /><small class="footnotesize"><tt class="tt"># Plot 1 (bottom left)</tt><br /><tt class="tt">set xlabel "$x$"</tt><br /><tt class="tt">set ylabel ""</tt><br /><tt class="tt">set label 1 "(c) fsteps" at graph width*0.03 , graph width*gold_ratio*0.9</tt><br /><tt class="tt">plot "examples/ex_barchart1.dat" with fsteps, "" with points</tt><br /></small><br /><small class="footnotesize"><tt class="tt">set axis x linked item 1 x</tt><br /><tt class="tt">set axis y linked item 1 y</tt><br /></small><br /><small class="footnotesize"><tt class="tt"># Plot 2 (bottom right)</tt><br /><tt class="tt">set origin 1*width, 0*width*gold_ratio</tt><br /><tt class="tt">set yformat ""</tt><br /><tt class="tt">set label 1 "(d) histeps" at graph width*0.03 , graph width*gold_ratio*0.9</tt><br /><tt class="tt">plot "examples/ex_barchart1.dat" with histeps, "" with points</tt><br /></small><br /><small class="footnotesize"><tt class="tt"># Plot 3 (top left)</tt><br /><tt class="tt">set origin 0*width, 1*width*gold_ratio</tt><br /><tt class="tt">set xformat "" ; set xlabel ""</tt><br /><tt class="tt">unset yformat ; set ylabel texify(poissonPDF(x,18))</tt><br /><tt class="tt">set label 1 "(a) impulses" at graph width*0.03 , graph width*gold_ratio*0.9</tt><br /><tt class="tt">plot "examples/ex_barchart1.dat" with impulses, "" with points</tt><br /></small><br /><small class="footnotesize"><tt class="tt"># Plot 4 (top right)</tt><br /><tt class="tt">set origin 1*width, 1*width*gold_ratio</tt><br /><tt class="tt">set yformat "" ; set ylabel ""</tt><br /><tt class="tt">set label 1 "(b) steps" at graph width*0.03 , graph width*gold_ratio*0.9</tt><br /><tt class="tt">plot "examples/ex_barchart1.dat" with steps, "" with points</tt><br /></small><br /><small class="footnotesize"><tt class="tt"># Now that we are finished preparing multiplot, turn display on</tt><br /><tt class="tt">set display</tt><br /><tt class="tt">refresh</tt> </small> </p><p><center>
+<img src="images/img-0541.png" alt="\includegraphics[width=\textwidth ]{examples/eps/ex_gallery}" style="width:" /></center> </p></div>
 
 
 
@@ -82,16 +73,16 @@ text 'This is some text' at 0,0 halign right valign centre
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0066.html" title="Adding Other Vector Graphics Objects"><img alt="Previous: Adding Other Vector Graphics Objects" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-set_display.html" title="The Construction of Large Multiplots"><img alt="Previous: The Construction of Large Multiplots" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0066.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-vector_graphics.html" title="Producing Vector Graphics"><img alt="Up: Producing Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="ex-nanotubes.html" title="The arrow and line Commands"><img alt="Next: The arrow and line Commands" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0068.html" title="The replot Command Revisited"><img alt="Next: The replot Command Revisited" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

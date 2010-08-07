@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Plotting Parametric Functions</title>
+<title>: Appendices</title>
 
-<link href="sect0227.html" title="Displaying Times and Dates on Axes" rel="next" />
-<link href="sect0225.html" title="Plots with Multiple Axes" rel="prev" />
-<link href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot" rel="up" />
+<link href="sect0227.html" title="Other Applications of PyXPlot" rel="next" />
+<link href="sec-colour_names.html" title="Recognised Colour Names" rel="prev" />
+<link href="index.html" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0225.html" title="Plots with Multiple Axes"><img alt="Previous: Plots with Multiple Axes" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-colour_names.html" title="Recognised Colour Names"><img alt="Previous: Recognised Colour Names" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot"><img alt="Up: Summary of Differences Between PyXPlot and Gnuplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="index.html" title=""><img alt="Up: " border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0227.html" title="Displaying Times and Dates on Axes"><img alt="Next: Displaying Times and Dates on Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0227.html" title="Other Applications of PyXPlot"><img alt="Next: Other Applications of PyXPlot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -38,44 +38,113 @@
 </span>
 
 </span><span>
-<span>
-<a href="sect0214.html">Appendices</a> <b>:</b>
-</span>
-
-</span><span>
-<span>
-<a href="ch-gnuplot_diffs.html">Summary of Differences Between PyXPlot and Gnuplot</a> <b>:</b>
-</span>
-
-</span><span>
 
 <span>
-<b class="current">Plotting Parametric Functions</b>
+<b class="current">Appendices</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000227">B.5 Plotting Parametric Functions</h1>
-<p>The syntax used for plotting parametric functions differs between Gnuplot and PyXPlot. Whereas parametric plotting is enabled in Gnuplot using the <tt class="tt">set parametric</tt> command, in PyXPlot it is enabled on a per-dataset basis by placing the keyword <tt class="tt">parametric</tt> before the algebraic expression to be plotted: </p><p> <tt class="tt">gnuplot&gt; <b class="bf">set parametric</b></tt><br /><tt class="tt">gnuplot&gt; <b class="bf">set trange [0:2*pi]</b></tt><br /><tt class="tt">gnuplot&gt; <b class="bf">plot sin(t),cos(t)</b></tt> <br /><tt class="tt">pyxplot&gt; <b class="bf">set trange [0:2*pi]</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">plot parametric sin(t):cos(t)</b></tt>  </p><p>This makes it straightforward to plot parametric functions alongside non-parametric functions. For more information, see Section <a href="ex-spirograph.html">1.5</a>. </p></div>
+<div><h1 id="a0000000227">4 Appendices</h1>
+</div>
+
+<div class="contents part-contents"><!--<strong>Subsections</strong>-->
+<ul>
+<li><a href="sect0227.html">A Other Applications of PyXPlot</a>
+   <ul>
+   <li><a href="sect0228.html">A.1 Conversion of JPEG Images to PostScript</a>
+       
+   </li><li><a href="sect0229.html">A.2 Inserting Equations in Powerpoint Presentations</a>
+       
+   </li><li><a href="sect0230.html">A.3 Delivering Talks in PyXPlot</a>
+       <ul>
+       <li><a href="sect0231.html">A.3.1 Setting up Infrastructure</a>
+           
+       </li><li><a href="sect0232.html">A.3.2 Writing A Short Example Talk</a>
+           
+       </li><li><a href="sect0233.html">A.3.3 Delivering your Talk</a>
+           
+       </li>
+       </ul>
+   </li>
+   </ul>
+</li><li><a href="ch-gnuplot_diffs.html">B Summary of Differences Between PyXPlot and Gnuplot</a>
+   <ul>
+   <li><a href="sect0234.html">B.1 The Typesetting of Text</a>
+       
+   </li><li><a href="sect0235.html">B.2 Complex Numbers</a>
+       
+   </li><li><a href="sect0236.html">B.3 The Multiplot Environment</a>
+       
+   </li><li><a href="sect0237.html">B.4 Plots with Multiple Axes</a>
+       
+   </li><li><a href="sect0238.html">B.5 Plotting Parametric Functions</a>
+       
+   </li>
+   </ul>
+</li><li><a href="ch-fit_maths.html">C The <tt class="tt">fit</tt> Command: Mathematical Details</a>
+   <ul>
+   <li><a href="sec-bayes_notation.html">C.1 Notation</a>
+       
+   </li><li><a href="sec-bayes_pdf.html">C.2 The Probability Density Function</a>
+       
+   </li><li><a href="sect0239.html">C.3 Estimating the Error in <img src="images/img-0780.png" alt="$\mathbf{u}^0$" style="vertical-align:0px; 
+                                     width:19px; 
+                                     height:16px" class="math gen" /></a>
+       
+   </li><li><a href="sect0240.html">C.4 The Covariance Matrix</a>
+       
+   </li><li><a href="sec-correlation_matrix.html">C.5 The Correlation Matrix</a>
+       
+   </li><li><a href="sec-finding_sigmai.html">C.6 Finding <img src="images/img-0768.png" alt="$\sigma _ i$" style="vertical-align:-2px; 
+                                     width:15px; 
+                                     height:10px" class="math gen" /></a>
+       
+   </li>
+   </ul>
+</li><li><a href="sect0241.html">D ChangeLog</a>
+   <ul>
+   <li><a href="sect0242.html">2010 Aug 4: PyXPlot 0.8.2</a>
+       
+   </li><li><a href="sect0243.html">2010 Jun 1: PyXPlot 0.8.1</a>
+       
+   </li><li><a href="sect0244.html">2010 May 19: PyXPlot 0.8.0</a>
+       
+   </li><li><a href="sect0245.html">2009 Nov 17: PyXPlot 0.7.1</a>
+       
+   </li><li><a href="sect0246.html">2008 Oct 14: PyXPlot 0.7.0</a>
+       
+   </li><li><a href="sect0247.html">2007 Feb 26: PyXPlot 0.6.3</a>
+       
+   </li><li><a href="sect0248.html">2006 Sep 09: PyXPlot 0.5.8</a>
+       
+   </li>
+   </ul>
+</li><li><a href="sect0249.html">E Index</a>
+   
+</li>
 
 
+
+</ul>
+</div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0225.html" title="Plots with Multiple Axes"><img alt="Previous: Plots with Multiple Axes" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-colour_names.html" title="Recognised Colour Names"><img alt="Previous: Recognised Colour Names" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot"><img alt="Up: Summary of Differences Between PyXPlot and Gnuplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="index.html" title=""><img alt="Up: " border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0227.html" title="Displaying Times and Dates on Axes"><img alt="Next: Displaying Times and Dates on Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0227.html" title="Other Applications of PyXPlot"><img alt="Next: Other Applications of PyXPlot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

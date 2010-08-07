@@ -3,10 +3,10 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: let</title>
+<title>: image</title>
 
-<link href="sect0102.html" title="list" rel="next" />
-<link href="sect0100.html" title="jpeg" rel="prev" />
+<link href="sect0102.html" title="interpolate" rel="next" />
+<link href="sect0100.html" title="ifft" rel="prev" />
 <link href="ch-reference.html" title="Command Reference" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0100.html" title="jpeg"><img alt="Previous: jpeg" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0100.html" title="ifft"><img alt="Previous: ifft" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0102.html" title="list"><img alt="Next: list" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0102.html" title="interpolate"><img alt="Next: interpolate" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0071.html">Reference Manual</a> <b>:</b>
+<a href="sect0074.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -50,34 +50,41 @@
 </span><span>
 
 <span>
-<b class="current">let</b>
+<b class="current">image</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000102">1.30 let</h1>
-<p><a name="a0000000999" id="a0000000999"></a> </p><pre>
-let &lt;varname&gt; = &lt;value&gt;
-</pre><p>The <tt class="tt">let</tt> command<a name="a0000001000" id="a0000001000"></a> sets the variable <tt class="tt">varname</tt> to equal <tt class="tt">value</tt>. </p></div>
+<div><h1 id="a0000000102">1.27 image</h1>
+<p><a name="a0000001029" id="a0000001029"></a> </p><pre>
+image [ item &lt;id&gt; ] '&lt;filename&gt;' [at &lt;x&gt;, &lt;y&gt;] [rotate &lt;angle&gt;]
+                     [width &lt;width&gt;] [height &lt;height&gt;] [smooth]
+                   [notransparent] [transparent rgb&lt;r&gt;:&lt;g&gt;:&lt;b&gt;]
+</pre><p>The <tt class="tt">image</tt> command<a name="a0000001030" id="a0000001030"></a> allows graphical images to be inserted onto the current multiplot canvas from files on disk. Input graphical images may be in bitmap, gif, jpeg or png formats; the file type of each image is automatically detected. The <tt class="tt">at</tt> modifier can be used to specify where the bottom-left corner of each image should be placed; if no position is specified then this corner of the image is placed at the origin. The <tt class="tt">rotate</tt> modifier can be used to rotate images by any angle, measured in degrees counter-clockwise. The <tt class="tt">width</tt> or <tt class="tt">height</tt> modifiers can be used to specify the width or height with which images should be rendered; both should be specified in centimetres. If neither is specified then images are rendered with the native dimensions specified within the metadata present in the image file (if any). If both are specified, then the aspect ratio of the image is changed. </p><p>The keyword <tt class="tt">smooth</tt> may optionally be supplied to cause the pixels of images to be interpolated<a href="#a0000001031" class="footnote"><sup class="footnotemark">1</sup></a>. Images which include transparency are supported. The optional keyword <tt class="tt">notransparent</tt> may be supplied to cause transparent regions to be filled with the image’s default background colour. Alternatively, an RGB colour may be specified in the form <tt class="tt">rgb&lt;r&gt;:&lt;g&gt;:&lt;b&gt;</tt> after the keyword <tt class="tt">transparent</tt> to cause that particular colour to become transparent; the three components of the RGB colour should be in the range 0 to 255. </p><p>All vector graphics objects placed on multiplot canvases receive unique identification numbers which count sequentially from one, and which may be listed using the <tt class="tt">list</tt> command. By reference to these numbers, they can be deleted and subsequently restored with the <tt class="tt">delete</tt> and <tt class="tt">undelete</tt> commands respectively. </p></div>
 
 
 
-
+<div id="footnotes">
+<p><b>Footnotes</b></p>
+<ol>
+<li id="a0000001031">Many commonly-used PostScript display engines, including Ghostscript, do not support this functionality.</li>
+</ol>
+</div>
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0100.html" title="jpeg"><img alt="Previous: jpeg" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0100.html" title="ifft"><img alt="Previous: ifft" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0102.html" title="list"><img alt="Next: list" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0102.html" title="interpolate"><img alt="Next: interpolate" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

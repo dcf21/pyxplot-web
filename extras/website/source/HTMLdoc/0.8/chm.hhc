@@ -608,7 +608,7 @@
             
             <li><object type="text/sitemap">
                 <param name="Name" value="The with modifier">
-                <param name="Local" value="sect0043.html">
+                <param name="Local" value="sec-with_modifier.html">
                 
             </object></li>
             <ul>
@@ -622,7 +622,7 @@
                
                <li><object type="text/sitemap">
                    <param name="Name" value="Default Settings">
-                   <param name="Local" value="sect0044.html">
+                   <param name="Local" value="sect0043.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
@@ -638,7 +638,7 @@
                
                <li><object type="text/sitemap">
                    <param name="Name" value="Lines and Points">
-                   <param name="Local" value="sect0045.html">
+                   <param name="Local" value="sect0044.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
@@ -652,7 +652,7 @@
                
                <li><object type="text/sitemap">
                    <param name="Name" value="Shaded Regions">
-                   <param name="Local" value="sect0046.html">
+                   <param name="Local" value="sect0045.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
@@ -666,13 +666,20 @@
                
                <li><object type="text/sitemap">
                    <param name="Name" value="Steps">
-                   <param name="Local" value="sect0047.html">
+                   <param name="Local" value="sect0046.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
                    <param name="Name" value="Arrows">
+                   <param name="Local" value="sect0047.html">
+                   <param name="ImageNumber" value="11">
+               </object></li>
+               
+               
+               <li><object type="text/sitemap">
+                   <param name="Name" value="Colour Maps, Contour Maps and Surface Plots">
                    <param name="Local" value="sect0048.html">
                    <param name="ImageNumber" value="11">
                </object></li>
@@ -681,15 +688,22 @@
             </ul>
             
             <li><object type="text/sitemap">
-                <param name="Name" value="The style Keyword">
+                <param name="Name" value="Labelling Datapoints">
                 <param name="Local" value="sect0049.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="Plotting Functions in Exotic Styles">
+                <param name="Name" value="The style Keyword">
                 <param name="Local" value="sect0050.html">
+                <param name="ImageNumber" value="11">
+            </object></li>
+            
+            
+            <li><object type="text/sitemap">
+                <param name="Name" value="Plotting Functions in Exotic Styles">
+                <param name="Local" value="sect0051.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
@@ -710,14 +724,21 @@
             
             <li><object type="text/sitemap">
                 <param name="Name" value="Configuring Axes">
-                <param name="Local" value="sec-multiple_axes.html">
+                <param name="Local" value="sect0052.html">
                 
             </object></li>
             <ul>
                
                <li><object type="text/sitemap">
+                   <param name="Name" value="Adding Additional Axes">
+                   <param name="Local" value="sec-multiple_axes.html">
+                   <param name="ImageNumber" value="11">
+               </object></li>
+               
+               
+               <li><object type="text/sitemap">
                    <param name="Name" value="Selecting which Axes to Plot Against">
-                   <param name="Local" value="sect0051.html">
+                   <param name="Local" value="sect0053.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
@@ -731,14 +752,21 @@
                
                <li><object type="text/sitemap">
                    <param name="Name" value="Specifying the Positioning of Axes">
-                   <param name="Local" value="sect0052.html">
+                   <param name="Local" value="sect0054.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
                    <param name="Name" value="Configuring the Appearance of Axes">
-                   <param name="Local" value="sect0053.html">
+                   <param name="Local" value="sect0055.html">
+                   <param name="ImageNumber" value="11">
+               </object></li>
+               
+               
+               <li><object type="text/sitemap">
+                   <param name="Name" value="Setting the Colour of Axes">
+                   <param name="Local" value="sect0056.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
@@ -775,14 +803,14 @@
             
             <li><object type="text/sitemap">
                 <param name="Name" value="Clipping Behaviour">
-                <param name="Local" value="sect0054.html">
+                <param name="Local" value="sect0057.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="Labelling Graphs">
-                <param name="Local" value="sect0055.html">
+                <param name="Local" value="sect0058.html">
                 
             </object></li>
             <ul>
@@ -804,11 +832,50 @@
             </ul>
             
             <li><object type="text/sitemap">
-                <param name="Name" value="Three-Dimensional Plotting">
-                <param name="Local" value="sect0056.html">
+                <param name="Name" value="Colour Maps">
+                <param name="Local" value="sec-colourmaps.html">
+                
+            </object></li>
+            <ul>
+               
+               <li><object type="text/sitemap">
+                   <param name="Name" value="Custom Colour Mappings">
+                   <param name="Local" value="sect0059.html">
+                   <param name="ImageNumber" value="11">
+               </object></li>
+               
+               
+               <li><object type="text/sitemap">
+                   <param name="Name" value="Colour Scale Bars">
+                   <param name="Local" value="ex-mandelbrot.html">
+                   <param name="ImageNumber" value="11">
+               </object></li>
+               
+               
+            </ul>
+            
+            <li><object type="text/sitemap">
+                <param name="Name" value="Contour Maps">
+                <param name="Local" value="sec-contourmaps.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
+            
+            <li><object type="text/sitemap">
+                <param name="Name" value="Three-Dimensional Plotting">
+                <param name="Local" value="sec-threedim.html">
+                
+            </object></li>
+            <ul>
+               
+               <li><object type="text/sitemap">
+                   <param name="Name" value="Surface Plotting">
+                   <param name="Local" value="ex-surface-sinc.html">
+                   <param name="ImageNumber" value="11">
+               </object></li>
+               
+               
+            </ul>
             
          </ul>
          
@@ -828,21 +895,21 @@
                
                <li><object type="text/sitemap">
                    <param name="Name" value="Previewing Graphs On Screen">
-                   <param name="Local" value="sect0057.html">
+                   <param name="Local" value="sect0060.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
                    <param name="Name" value="Producing Images on Disk">
-                   <param name="Local" value="sect0058.html">
+                   <param name="Local" value="sect0061.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
                    <param name="Name" value="The Complete Syntax of the set terminal Command">
-                   <param name="Local" value="sect0059.html">
+                   <param name="Local" value="sect0062.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
@@ -851,14 +918,14 @@
             
             <li><object type="text/sitemap">
                 <param name="Name" value="The Default Terminal">
-                <param name="Local" value="sect0060.html">
+                <param name="Local" value="sect0063.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="PostScript Output">
-                <param name="Local" value="sect0061.html">
+                <param name="Local" value="sect0064.html">
                 
             </object></li>
             <ul>
@@ -897,14 +964,14 @@
                
                <li><object type="text/sitemap">
                    <param name="Name" value="Settings Associated with Multiplot Items">
-                   <param name="Local" value="sect0062.html">
+                   <param name="Local" value="sect0065.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
                    <param name="Name" value="Reordering Multiplot Items">
-                   <param name="Local" value="sect0063.html">
+                   <param name="Local" value="sect0066.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
@@ -920,28 +987,28 @@
             
             <li><object type="text/sitemap">
                 <param name="Name" value="Linked Axes and Galleries of Plots">
-                <param name="Local" value="sect0064.html">
+                <param name="Local" value="sect0067.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="The replot Command Revisited">
-                <param name="Local" value="sect0065.html">
+                <param name="Local" value="sect0068.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="Adding Other Vector Graphics Objects">
-                <param name="Local" value="sect0066.html">
+                <param name="Local" value="sect0069.html">
                 
             </object></li>
             <ul>
                
                <li><object type="text/sitemap">
                    <param name="Name" value="The text Command">
-                   <param name="Local" value="sect0067.html">
+                   <param name="Local" value="sect0070.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
@@ -955,21 +1022,21 @@
                
                <li><object type="text/sitemap">
                    <param name="Name" value="The image Command">
-                   <param name="Local" value="sect0068.html">
+                   <param name="Local" value="sect0071.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
                    <param name="Name" value="The eps Command">
-                   <param name="Local" value="sect0069.html">
+                   <param name="Local" value="sect0072.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
                    <param name="Name" value="The box and circle Commands">
-                   <param name="Local" value="ex-mandelbrot.html">
+                   <param name="Local" value="ex-noentry.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
@@ -1006,7 +1073,7 @@
             
             <li><object type="text/sitemap">
                 <param name="Name" value="LaTeX and PyXPlot">
-                <param name="Local" value="sect0070.html">
+                <param name="Local" value="sect0073.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
@@ -1017,7 +1084,7 @@
       
       <li><object type="text/sitemap">
           <param name="Name" value="Reference Manual">
-          <param name="Local" value="sect0071.html">
+          <param name="Local" value="sect0074.html">
           
       </object></li>
       <ul>
@@ -1031,273 +1098,280 @@
             
             <li><object type="text/sitemap">
                 <param name="Name" value="?">
-                <param name="Local" value="sect0072.html">
-                <param name="ImageNumber" value="11">
-            </object></li>
-            
-            
-            <li><object type="text/sitemap">
-                <param name="Name" value="!">
-                <param name="Local" value="sect0073.html">
-                <param name="ImageNumber" value="11">
-            </object></li>
-            
-            
-            <li><object type="text/sitemap">
-                <param name="Name" value="arc">
-                <param name="Local" value="sect0074.html">
-                <param name="ImageNumber" value="11">
-            </object></li>
-            
-            
-            <li><object type="text/sitemap">
-                <param name="Name" value="arrow">
                 <param name="Local" value="sect0075.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="box">
+                <param name="Name" value="!">
                 <param name="Local" value="sect0076.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="break">
+                <param name="Name" value="arc">
                 <param name="Local" value="sect0077.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="cd">
+                <param name="Name" value="arrow">
                 <param name="Local" value="sect0078.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="circle">
+                <param name="Name" value="box">
                 <param name="Local" value="sect0079.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="clear">
+                <param name="Name" value="break">
                 <param name="Local" value="sect0080.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="continue">
+                <param name="Name" value="cd">
                 <param name="Local" value="sect0081.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="delete">
+                <param name="Name" value="circle">
                 <param name="Local" value="sect0082.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="do">
+                <param name="Name" value="clear">
                 <param name="Local" value="sect0083.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="ellipse">
+                <param name="Name" value="continue">
                 <param name="Local" value="sect0084.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="else">
+                <param name="Name" value="delete">
                 <param name="Local" value="sect0085.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="eps">
+                <param name="Name" value="do">
                 <param name="Local" value="sect0086.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="exec">
+                <param name="Name" value="ellipse">
                 <param name="Local" value="sect0087.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="exit">
+                <param name="Name" value="else">
                 <param name="Local" value="sect0088.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="fft">
+                <param name="Name" value="eps">
                 <param name="Local" value="sect0089.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="fit">
+                <param name="Name" value="exec">
                 <param name="Local" value="sect0090.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="for">
+                <param name="Name" value="exit">
                 <param name="Local" value="sect0091.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="foreach">
+                <param name="Name" value="fft">
                 <param name="Local" value="sect0092.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="help">
+                <param name="Name" value="fit">
                 <param name="Local" value="sect0093.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="histogram">
+                <param name="Name" value="for">
                 <param name="Local" value="sect0094.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="history">
+                <param name="Name" value="foreach">
                 <param name="Local" value="sect0095.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="if">
+                <param name="Name" value="help">
                 <param name="Local" value="sect0096.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="ifft">
+                <param name="Name" value="histogram">
                 <param name="Local" value="sect0097.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="image">
+                <param name="Name" value="history">
                 <param name="Local" value="sect0098.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="interpolate">
+                <param name="Name" value="if">
                 <param name="Local" value="sect0099.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="jpeg">
+                <param name="Name" value="ifft">
                 <param name="Local" value="sect0100.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="let">
+                <param name="Name" value="image">
                 <param name="Local" value="sect0101.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="list">
+                <param name="Name" value="interpolate">
                 <param name="Local" value="sect0102.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="load">
+                <param name="Name" value="jpeg">
                 <param name="Local" value="sect0103.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="maximise">
+                <param name="Name" value="let">
                 <param name="Local" value="sect0104.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="minimise">
+                <param name="Name" value="list">
                 <param name="Local" value="sect0105.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="move">
+                <param name="Name" value="load">
                 <param name="Local" value="sect0106.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="plot">
+                <param name="Name" value="maximise">
                 <param name="Local" value="sect0107.html">
+                <param name="ImageNumber" value="11">
+            </object></li>
+            
+            
+            <li><object type="text/sitemap">
+                <param name="Name" value="minimise">
+                <param name="Local" value="sect0108.html">
+                <param name="ImageNumber" value="11">
+            </object></li>
+            
+            
+            <li><object type="text/sitemap">
+                <param name="Name" value="move">
+                <param name="Local" value="sect0109.html">
+                <param name="ImageNumber" value="11">
+            </object></li>
+            
+            
+            <li><object type="text/sitemap">
+                <param name="Name" value="plot">
+                <param name="Local" value="sect0110.html">
                 
             </object></li>
             <ul>
                
                <li><object type="text/sitemap">
                    <param name="Name" value="axes">
-                   <param name="Local" value="sect0108.html">
+                   <param name="Local" value="sect0111.html">
+                   <param name="ImageNumber" value="11">
+               </object></li>
+               
+               
+               <li><object type="text/sitemap">
+                   <param name="Name" value="label">
+                   <param name="Local" value="sect0112.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
                    <param name="Name" value="title">
-                   <param name="Local" value="sect0109.html">
+                   <param name="Local" value="sect0113.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
                    <param name="Name" value="with">
-                   <param name="Local" value="sect0110.html">
+                   <param name="Local" value="sect0114.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
@@ -1306,623 +1380,679 @@
             
             <li><object type="text/sitemap">
                 <param name="Name" value="print">
-                <param name="Local" value="sect0111.html">
-                <param name="ImageNumber" value="11">
-            </object></li>
-            
-            
-            <li><object type="text/sitemap">
-                <param name="Name" value="pwd">
-                <param name="Local" value="sect0112.html">
-                <param name="ImageNumber" value="11">
-            </object></li>
-            
-            
-            <li><object type="text/sitemap">
-                <param name="Name" value="quit">
-                <param name="Local" value="sect0113.html">
-                <param name="ImageNumber" value="11">
-            </object></li>
-            
-            
-            <li><object type="text/sitemap">
-                <param name="Name" value="rectangle">
-                <param name="Local" value="sect0114.html">
-                <param name="ImageNumber" value="11">
-            </object></li>
-            
-            
-            <li><object type="text/sitemap">
-                <param name="Name" value="refresh">
                 <param name="Local" value="sect0115.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="point">
+                <param name="Name" value="pwd">
                 <param name="Local" value="sect0116.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="replot">
+                <param name="Name" value="quit">
                 <param name="Local" value="sect0117.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="reset">
+                <param name="Name" value="rectangle">
                 <param name="Local" value="sect0118.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="save">
+                <param name="Name" value="refresh">
                 <param name="Local" value="sect0119.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
-                <param name="Name" value="set">
+                <param name="Name" value="point">
                 <param name="Local" value="sect0120.html">
+                <param name="ImageNumber" value="11">
+            </object></li>
+            
+            
+            <li><object type="text/sitemap">
+                <param name="Name" value="replot">
+                <param name="Local" value="sect0121.html">
+                <param name="ImageNumber" value="11">
+            </object></li>
+            
+            
+            <li><object type="text/sitemap">
+                <param name="Name" value="reset">
+                <param name="Local" value="sect0122.html">
+                <param name="ImageNumber" value="11">
+            </object></li>
+            
+            
+            <li><object type="text/sitemap">
+                <param name="Name" value="save">
+                <param name="Local" value="sect0123.html">
+                <param name="ImageNumber" value="11">
+            </object></li>
+            
+            
+            <li><object type="text/sitemap">
+                <param name="Name" value="set">
+                <param name="Local" value="sect0124.html">
                 
             </object></li>
             <ul>
                
                <li><object type="text/sitemap">
                    <param name="Name" value="arrow">
-                   <param name="Local" value="sect0121.html">
-                   <param name="ImageNumber" value="11">
-               </object></li>
-               
-               
-               <li><object type="text/sitemap">
-                   <param name="Name" value="autoscale">
-                   <param name="Local" value="sect0122.html">
-                   <param name="ImageNumber" value="11">
-               </object></li>
-               
-               
-               <li><object type="text/sitemap">
-                   <param name="Name" value="axescolour">
-                   <param name="Local" value="sect0123.html">
-                   <param name="ImageNumber" value="11">
-               </object></li>
-               
-               
-               <li><object type="text/sitemap">
-                   <param name="Name" value="axis">
-                   <param name="Local" value="sect0124.html">
-                   <param name="ImageNumber" value="11">
-               </object></li>
-               
-               
-               <li><object type="text/sitemap">
-                   <param name="Name" value="axisunitstyle">
                    <param name="Local" value="sect0125.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="backup">
+                   <param name="Name" value="autoscale">
                    <param name="Local" value="sect0126.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="bar">
+                   <param name="Name" value="axescolour">
                    <param name="Local" value="sect0127.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="binorigin">
+                   <param name="Name" value="axis">
                    <param name="Local" value="sect0128.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="binwidth">
+                   <param name="Name" value="axisunitstyle">
                    <param name="Local" value="sect0129.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="boxfrom">
+                   <param name="Name" value="backup">
                    <param name="Local" value="sect0130.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="boxwidth">
+                   <param name="Name" value="bar">
                    <param name="Local" value="sect0131.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="calendar">
+                   <param name="Name" value="binorigin">
                    <param name="Local" value="sect0132.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="clip">
+                   <param name="Name" value="binwidth">
                    <param name="Local" value="sect0133.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="data style">
+                   <param name="Name" value="boxfrom">
                    <param name="Local" value="sect0134.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="display">
+                   <param name="Name" value="boxwidth">
                    <param name="Local" value="sect0135.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="filter">
+                   <param name="Name" value="c1format">
                    <param name="Local" value="sect0136.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="fontsize">
+                   <param name="Name" value="c1label">
                    <param name="Local" value="sect0137.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="function style">
+                   <param name="Name" value="calendar">
                    <param name="Local" value="sect0138.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="grid">
+                   <param name="Name" value="clip">
                    <param name="Local" value="sect0139.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="gridmajcolour">
+                   <param name="Name" value="colourkey">
                    <param name="Local" value="sect0140.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="gridmincolour">
+                   <param name="Name" value="colourmap">
                    <param name="Local" value="sect0141.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="key">
+                   <param name="Name" value="contours">
                    <param name="Local" value="sect0142.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="keycolumns">
+                   <param name="Name" value="c&lt;n&gt;range">
                    <param name="Local" value="sect0143.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="label">
+                   <param name="Name" value="data style">
                    <param name="Local" value="sect0144.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="linewidth">
+                   <param name="Name" value="display">
                    <param name="Local" value="sect0145.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="logscale">
+                   <param name="Name" value="filter">
                    <param name="Local" value="sect0146.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="multiplot">
+                   <param name="Name" value="fontsize">
                    <param name="Local" value="sect0147.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="mxtics">
+                   <param name="Name" value="function style">
                    <param name="Local" value="sect0148.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="mytics">
+                   <param name="Name" value="grid">
                    <param name="Local" value="sect0149.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="mztics">
+                   <param name="Name" value="gridmajcolour">
                    <param name="Local" value="sect0150.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="noarrow">
+                   <param name="Name" value="gridmincolour">
                    <param name="Local" value="sect0151.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="noaxis">
+                   <param name="Name" value="key">
                    <param name="Local" value="sect0152.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="nobackup">
+                   <param name="Name" value="keycolumns">
                    <param name="Local" value="sect0153.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="noclip">
+                   <param name="Name" value="label">
                    <param name="Local" value="sect0154.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="nodisplay">
+                   <param name="Name" value="linewidth">
                    <param name="Local" value="sect0155.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="nogrid">
+                   <param name="Name" value="logscale">
                    <param name="Local" value="sect0156.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="nokey">
+                   <param name="Name" value="multiplot">
                    <param name="Local" value="sect0157.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="nolabel">
+                   <param name="Name" value="mxtics">
                    <param name="Local" value="sect0158.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="nologscale">
+                   <param name="Name" value="mytics">
                    <param name="Local" value="sect0159.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="nomultiplot">
+                   <param name="Name" value="mztics">
                    <param name="Local" value="sect0160.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="nostyle">
+                   <param name="Name" value="noarrow">
                    <param name="Local" value="sect0161.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="notitle">
+                   <param name="Name" value="noaxis">
                    <param name="Local" value="sect0162.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="noxtics">
+                   <param name="Name" value="nobackup">
                    <param name="Local" value="sect0163.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="noytics">
+                   <param name="Name" value="noclip">
                    <param name="Local" value="sect0164.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="noztics">
+                   <param name="Name" value="nocolourkey">
                    <param name="Local" value="sect0165.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="numerics">
+                   <param name="Name" value="nodisplay">
                    <param name="Local" value="sect0166.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="origin">
+                   <param name="Name" value="nogrid">
                    <param name="Local" value="sect0167.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="output">
+                   <param name="Name" value="nokey">
                    <param name="Local" value="sect0168.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="palette">
+                   <param name="Name" value="nolabel">
                    <param name="Local" value="sect0169.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="papersize">
+                   <param name="Name" value="nologscale">
                    <param name="Local" value="sect0170.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="pointlinewidth">
+                   <param name="Name" value="nomultiplot">
                    <param name="Local" value="sect0171.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="pointsize">
+                   <param name="Name" value="nostyle">
                    <param name="Local" value="sect0172.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="preamble">
+                   <param name="Name" value="notitle">
                    <param name="Local" value="sect0173.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="samples">
+                   <param name="Name" value="noxtics">
                    <param name="Local" value="sect0174.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="seed">
+                   <param name="Name" value="noytics">
                    <param name="Local" value="sect0175.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="size">
+                   <param name="Name" value="noztics">
                    <param name="Local" value="sect0176.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="style">
+                   <param name="Name" value="numerics">
                    <param name="Local" value="sect0177.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="style data | style function">
+                   <param name="Name" value="origin">
                    <param name="Local" value="sect0178.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="terminal">
+                   <param name="Name" value="output">
                    <param name="Local" value="sect0179.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="textcolour">
+                   <param name="Name" value="palette">
                    <param name="Local" value="sect0180.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="texthalign">
+                   <param name="Name" value="papersize">
                    <param name="Local" value="sect0181.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="textvalign">
+                   <param name="Name" value="pointlinewidth">
                    <param name="Local" value="sect0182.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="title">
+                   <param name="Name" value="pointsize">
                    <param name="Local" value="sect0183.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="trange">
+                   <param name="Name" value="preamble">
                    <param name="Local" value="sect0184.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="unit">
+                   <param name="Name" value="samples">
                    <param name="Local" value="sect0185.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="viewer">
+                   <param name="Name" value="seed">
                    <param name="Local" value="sect0186.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="width">
+                   <param name="Name" value="size">
                    <param name="Local" value="sect0187.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="xformat">
+                   <param name="Name" value="style">
                    <param name="Local" value="sect0188.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="xlabel">
+                   <param name="Name" value="style data | style function">
                    <param name="Local" value="sect0189.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="xrange">
+                   <param name="Name" value="terminal">
                    <param name="Local" value="sect0190.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="xtics">
+                   <param name="Name" value="textcolour">
                    <param name="Local" value="sect0191.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="yformat">
+                   <param name="Name" value="texthalign">
                    <param name="Local" value="sect0192.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="ylabel">
+                   <param name="Name" value="textvalign">
                    <param name="Local" value="sect0193.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="yrange">
+                   <param name="Name" value="title">
                    <param name="Local" value="sect0194.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="ytics">
+                   <param name="Name" value="trange">
                    <param name="Local" value="sect0195.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="zformat">
+                   <param name="Name" value="unit">
                    <param name="Local" value="sect0196.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="zlabel">
+                   <param name="Name" value="view">
                    <param name="Local" value="sect0197.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="zrange">
+                   <param name="Name" value="viewer">
                    <param name="Local" value="sect0198.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
-                   <param name="Name" value="ztics">
+                   <param name="Name" value="width">
                    <param name="Local" value="sect0199.html">
+                   <param name="ImageNumber" value="11">
+               </object></li>
+               
+               
+               <li><object type="text/sitemap">
+                   <param name="Name" value="xformat">
+                   <param name="Local" value="sect0200.html">
+                   <param name="ImageNumber" value="11">
+               </object></li>
+               
+               
+               <li><object type="text/sitemap">
+                   <param name="Name" value="xlabel">
+                   <param name="Local" value="sect0201.html">
+                   <param name="ImageNumber" value="11">
+               </object></li>
+               
+               
+               <li><object type="text/sitemap">
+                   <param name="Name" value="xrange">
+                   <param name="Local" value="sect0202.html">
+                   <param name="ImageNumber" value="11">
+               </object></li>
+               
+               
+               <li><object type="text/sitemap">
+                   <param name="Name" value="xtics">
+                   <param name="Local" value="sect0203.html">
+                   <param name="ImageNumber" value="11">
+               </object></li>
+               
+               
+               <li><object type="text/sitemap">
+                   <param name="Name" value="yformat">
+                   <param name="Local" value="sect0204.html">
+                   <param name="ImageNumber" value="11">
+               </object></li>
+               
+               
+               <li><object type="text/sitemap">
+                   <param name="Name" value="ylabel">
+                   <param name="Local" value="sect0205.html">
+                   <param name="ImageNumber" value="11">
+               </object></li>
+               
+               
+               <li><object type="text/sitemap">
+                   <param name="Name" value="yrange">
+                   <param name="Local" value="sect0206.html">
+                   <param name="ImageNumber" value="11">
+               </object></li>
+               
+               
+               <li><object type="text/sitemap">
+                   <param name="Name" value="ytics">
+                   <param name="Local" value="sect0207.html">
+                   <param name="ImageNumber" value="11">
+               </object></li>
+               
+               
+               <li><object type="text/sitemap">
+                   <param name="Name" value="zformat">
+                   <param name="Local" value="sect0208.html">
+                   <param name="ImageNumber" value="11">
+               </object></li>
+               
+               
+               <li><object type="text/sitemap">
+                   <param name="Name" value="zlabel">
+                   <param name="Local" value="sect0209.html">
+                   <param name="ImageNumber" value="11">
+               </object></li>
+               
+               
+               <li><object type="text/sitemap">
+                   <param name="Name" value="zrange">
+                   <param name="Local" value="sect0210.html">
+                   <param name="ImageNumber" value="11">
+               </object></li>
+               
+               
+               <li><object type="text/sitemap">
+                   <param name="Name" value="ztics">
+                   <param name="Local" value="sect0211.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
@@ -1931,63 +2061,63 @@
             
             <li><object type="text/sitemap">
                 <param name="Name" value="show">
-                <param name="Local" value="sect0200.html">
+                <param name="Local" value="sect0212.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="solve">
-                <param name="Local" value="sect0201.html">
+                <param name="Local" value="sect0213.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="spline">
-                <param name="Local" value="sect0202.html">
+                <param name="Local" value="sect0214.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="swap">
-                <param name="Local" value="sect0203.html">
+                <param name="Local" value="sect0215.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="tabulate">
-                <param name="Local" value="sect0204.html">
+                <param name="Local" value="sect0216.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="text">
-                <param name="Local" value="sect0205.html">
+                <param name="Local" value="sect0217.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="undelete">
-                <param name="Local" value="sect0206.html">
+                <param name="Local" value="sect0218.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="unset">
-                <param name="Local" value="sect0207.html">
+                <param name="Local" value="sect0219.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="while">
-                <param name="Local" value="sect0208.html">
+                <param name="Local" value="sect0220.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
@@ -2045,28 +2175,28 @@
             
             <li><object type="text/sitemap">
                 <param name="Name" value="Configuration Files">
-                <param name="Local" value="sect0209.html">
+                <param name="Local" value="sect0221.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="An Example Configuration File">
-                <param name="Local" value="sect0210.html">
+                <param name="Local" value="sect0222.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="Setting definitions">
-                <param name="Local" value="sect0211.html">
+                <param name="Local" value="sect0223.html">
                 
             </object></li>
             <ul>
                
                <li><object type="text/sitemap">
                    <param name="Name" value="The filters section">
-                   <param name="Local" value="sect0212.html">
+                   <param name="Local" value="sect0224.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
@@ -2080,7 +2210,7 @@
                
                <li><object type="text/sitemap">
                    <param name="Name" value="The styling section">
-                   <param name="Local" value="sect0213.html">
+                   <param name="Local" value="sect0225.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
@@ -2114,56 +2244,56 @@
       
       <li><object type="text/sitemap">
           <param name="Name" value="Appendices">
-          <param name="Local" value="sect0214.html">
+          <param name="Local" value="sect0226.html">
           
       </object></li>
       <ul>
          
          <li><object type="text/sitemap">
              <param name="Name" value="Other Applications of PyXPlot">
-             <param name="Local" value="sect0215.html">
+             <param name="Local" value="sect0227.html">
              
          </object></li>
          <ul>
             
             <li><object type="text/sitemap">
                 <param name="Name" value="Conversion of JPEG Images to PostScript">
-                <param name="Local" value="sect0216.html">
+                <param name="Local" value="sect0228.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="Inserting Equations in Powerpoint Presentations">
-                <param name="Local" value="sect0217.html">
+                <param name="Local" value="sect0229.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="Delivering Talks in PyXPlot">
-                <param name="Local" value="sect0218.html">
+                <param name="Local" value="sect0230.html">
                 
             </object></li>
             <ul>
                
                <li><object type="text/sitemap">
                    <param name="Name" value="Setting up Infrastructure">
-                   <param name="Local" value="sect0219.html">
+                   <param name="Local" value="sect0231.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
                    <param name="Name" value="Writing A Short Example Talk">
-                   <param name="Local" value="sect0220.html">
+                   <param name="Local" value="sect0232.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
                
                <li><object type="text/sitemap">
                    <param name="Name" value="Delivering your Talk">
-                   <param name="Local" value="sect0221.html">
+                   <param name="Local" value="sect0233.html">
                    <param name="ImageNumber" value="11">
                </object></li>
                
@@ -2181,42 +2311,35 @@
             
             <li><object type="text/sitemap">
                 <param name="Name" value="The Typesetting of Text">
-                <param name="Local" value="sect0222.html">
+                <param name="Local" value="sect0234.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="Complex Numbers">
-                <param name="Local" value="sect0223.html">
+                <param name="Local" value="sect0235.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="The Multiplot Environment">
-                <param name="Local" value="sect0224.html">
+                <param name="Local" value="sect0236.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="Plots with Multiple Axes">
-                <param name="Local" value="sect0225.html">
+                <param name="Local" value="sect0237.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="Plotting Parametric Functions">
-                <param name="Local" value="sect0226.html">
-                <param name="ImageNumber" value="11">
-            </object></li>
-            
-            
-            <li><object type="text/sitemap">
-                <param name="Name" value="Displaying Times and Dates on Axes">
-                <param name="Local" value="sect0227.html">
+                <param name="Local" value="sect0238.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
@@ -2246,14 +2369,14 @@
             
             <li><object type="text/sitemap">
                 <param name="Name" value="Estimating the Error in u0">
-                <param name="Local" value="sect0228.html">
+                <param name="Local" value="sect0239.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="The Covariance Matrix">
-                <param name="Local" value="sect0229.html">
+                <param name="Local" value="sect0240.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
@@ -2276,49 +2399,56 @@
          
          <li><object type="text/sitemap">
              <param name="Name" value="ChangeLog">
-             <param name="Local" value="sect0230.html">
+             <param name="Local" value="sect0241.html">
              
          </object></li>
          <ul>
             
             <li><object type="text/sitemap">
-                <param name="Name" value="2010 June 1: PyXPlot 0.8.1">
-                <param name="Local" value="sect0231.html">
+                <param name="Name" value="2010 Aug 4: PyXPlot 0.8.2">
+                <param name="Local" value="sect0242.html">
+                <param name="ImageNumber" value="11">
+            </object></li>
+            
+            
+            <li><object type="text/sitemap">
+                <param name="Name" value="2010 Jun 1: PyXPlot 0.8.1">
+                <param name="Local" value="sect0243.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="2010 May 19: PyXPlot 0.8.0">
-                <param name="Local" value="sect0232.html">
+                <param name="Local" value="sect0244.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="2009 Nov 17: PyXPlot 0.7.1">
-                <param name="Local" value="sect0233.html">
+                <param name="Local" value="sect0245.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="2008 Oct 14: PyXPlot 0.7.0">
-                <param name="Local" value="sect0234.html">
+                <param name="Local" value="sect0246.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="2007 Feb 26: PyXPlot 0.6.3">
-                <param name="Local" value="sect0235.html">
+                <param name="Local" value="sect0247.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
             
             <li><object type="text/sitemap">
                 <param name="Name" value="2006 Sep 09: PyXPlot 0.5.8">
-                <param name="Local" value="sect0236.html">
+                <param name="Local" value="sect0248.html">
                 <param name="ImageNumber" value="11">
             </object></li>
             
@@ -2327,7 +2457,7 @@
          
          <li><object type="text/sitemap">
              <param name="Name" value="Index">
-             <param name="Local" value="sect0237.html">
+             <param name="Local" value="sect0249.html">
              <param name="ImageNumber" value="11">
          </object></li>
          

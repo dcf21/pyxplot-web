@@ -6,8 +6,8 @@
 <title>: The fit Command: Mathematical Details</title>
 
 <link href="sec-bayes_notation.html" title="Notation" rel="next" />
-<link href="sect0227.html" title="Displaying Times and Dates on Axes" rel="prev" />
-<link href="sect0214.html" title="Appendices" rel="up" />
+<link href="sect0238.html" title="Plotting Parametric Functions" rel="prev" />
+<link href="sect0226.html" title="Appendices" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0227.html" title="Displaying Times and Dates on Axes"><img alt="Previous: Displaying Times and Dates on Axes" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0238.html" title="Plotting Parametric Functions"><img alt="Previous: Plotting Parametric Functions" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0214.html" title="Appendices"><img alt="Up: Appendices" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0226.html" title="Appendices"><img alt="Up: Appendices" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="sec-bayes_notation.html" title="Notation"><img alt="Next: Notation" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0214.html">Appendices</a> <b>:</b>
+<a href="sect0226.html">Appendices</a> <b>:</b>
 </span>
 
 </span><span>
@@ -52,7 +52,7 @@
 </div>
 
 <div><h1 id="ch:fit_maths">C The <tt class="tt">fit</tt> Command: Mathematical Details</h1>
-<p> Details of the <tt class="tt">fit</tt> command  </p><p>In this section, the mathematical details of the workings of the <tt class="tt">fit</tt> command<a name="a0000001509" id="a0000001509"></a> are described. This may be of interest in diagnosing its limitations, and also in understanding the various quantities that it outputs after a fit is found. This discussion must necessarily be a rather brief treatment of a large subject; for a fuller account, the reader is referred to D.S. Sivia’s <i class="it">Data Analysis: A Bayesian Tutorial</i>. </p></div>
+<p> Details of the <tt class="tt">fit</tt> command  </p><p>In this section, the mathematical details of the workings of the <tt class="tt">fit</tt> command<a name="a0000001628" id="a0000001628"></a> are described. This may be of interest in diagnosing its limitations, and also in understanding the various quantities that it outputs after a fit is found. This discussion must necessarily be a rather brief treatment of a large subject; for a fuller account, the reader is referred to D.S. Sivia’s <i class="it">Data Analysis: A Bayesian Tutorial</i>. </p></div>
 
 <div class="contents chapter-contents"><!--<strong>Subsections</strong>-->
 <ul>
@@ -60,15 +60,15 @@
    
 </li><li><a href="sec-bayes_pdf.html">C.2 The Probability Density Function</a>
    
-</li><li><a href="sect0228.html">C.3 Estimating the Error in <img src="images/img-0691.png" alt="$\mathbf{u}^0$" style="vertical-align:0px; 
+</li><li><a href="sect0239.html">C.3 Estimating the Error in <img src="images/img-0780.png" alt="$\mathbf{u}^0$" style="vertical-align:0px; 
                                      width:19px; 
                                      height:16px" class="math gen" /></a>
    
-</li><li><a href="sect0229.html">C.4 The Covariance Matrix</a>
+</li><li><a href="sect0240.html">C.4 The Covariance Matrix</a>
    
 </li><li><a href="sec-correlation_matrix.html">C.5 The Correlation Matrix</a>
    
-</li><li><a href="sec-finding_sigmai.html">C.6 Finding <img src="images/img-0679.png" alt="$\sigma _ i$" style="vertical-align:-2px; 
+</li><li><a href="sec-finding_sigmai.html">C.6 Finding <img src="images/img-0768.png" alt="$\sigma _ i$" style="vertical-align:-2px; 
                                      width:15px; 
                                      height:10px" class="math gen" /></a>
    
@@ -84,16 +84,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0227.html" title="Displaying Times and Dates on Axes"><img alt="Previous: Displaying Times and Dates on Axes" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0238.html" title="Plotting Parametric Functions"><img alt="Previous: Plotting Parametric Functions" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0214.html" title="Appendices"><img alt="Up: Appendices" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0226.html" title="Appendices"><img alt="Up: Appendices" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="sec-bayes_notation.html" title="Notation"><img alt="Next: Notation" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

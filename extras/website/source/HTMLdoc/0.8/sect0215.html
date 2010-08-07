@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Other Applications of PyXPlot</title>
+<title>: swap</title>
 
-<link href="sect0216.html" title="Conversion of JPEG Images to PostScript" rel="next" />
-<link href="sect0214.html" title="Appendices" rel="prev" />
-<link href="sect0214.html" title="Appendices" rel="up" />
+<link href="sect0216.html" title="tabulate" rel="next" />
+<link href="sect0214.html" title="spline" rel="prev" />
+<link href="ch-reference.html" title="Command Reference" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0214.html" title="Appendices"><img alt="Previous: Appendices" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0214.html" title="spline"><img alt="Previous: spline" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0214.html" title="Appendices"><img alt="Up: Appendices" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0216.html" title="Conversion of JPEG Images to PostScript"><img alt="Next: Conversion of JPEG Images to PostScript" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0216.html" title="tabulate"><img alt="Next: tabulate" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,59 +39,47 @@
 
 </span><span>
 <span>
-<a href="sect0214.html">Appendices</a> <b>:</b>
+<a href="sect0074.html">Reference Manual</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-reference.html">Command Reference</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">Other Applications of PyXPlot</b>
+<b class="current">swap</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000216">A Other Applications of PyXPlot</h1>
-<p>In this chapter we present a short cookbook describing a few common yet miscellaneous tasks for which PyXPlot may prove useful. </p></div>
-
-<div class="contents chapter-contents"><!--<strong>Subsections</strong>-->
-<ul>
-<li><a href="sect0216.html">A.1 Conversion of JPEG Images to PostScript</a>
-   
-</li><li><a href="sect0217.html">A.2 Inserting Equations in Powerpoint Presentations</a>
-   
-</li><li><a href="sect0218.html">A.3 Delivering Talks in PyXPlot</a>
-   <ul>
-   <li><a href="sect0219.html">A.3.1 Setting up Infrastructure</a>
-       
-   </li><li><a href="sect0220.html">A.3.2 Writing A Short Example Talk</a>
-       
-   </li><li><a href="sect0221.html">A.3.3 Delivering your Talk</a>
-       
-   </li>
-   </ul>
-</li>
+<div><h1 id="a0000000216">1.50 swap</h1>
+<p><a name="a0000001313" id="a0000001313"></a> </p><pre>
+swap &lt;item1&gt; &lt;item2&gt;
+</pre><p>Items on multiplot canvases are drawn in order of increasing identification number, and thus items with low identification numbers are drawn first, at the back of the multiplot, and items with higher identification numbers are later, towards the front of the multiplot. When new items are added, they are given higher identification numbers than previous items and appear at the front of the multiplot. </p><p>If this is not the desired ordering, then the <tt class="tt">swap</tt> command<a name="a0000001314" id="a0000001314"></a> may be used to rearrange items. It takes the identification numbers of two multiplot items and swaps their identification numbers and hence their positions in the ordered sequence. Thus, if, for example, the corner of item 3 disappears behind the corner of item 5, when the converse effect is actually desired, the following command should be issued: </p><pre>
+swap 3 5
+</pre></div>
 
 
-
-</ul>
-</div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0214.html" title="Appendices"><img alt="Previous: Appendices" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0214.html" title="spline"><img alt="Previous: spline" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0214.html" title="Appendices"><img alt="Up: Appendices" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0216.html" title="Conversion of JPEG Images to PostScript"><img alt="Next: Conversion of JPEG Images to PostScript" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0216.html" title="tabulate"><img alt="Next: tabulate" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

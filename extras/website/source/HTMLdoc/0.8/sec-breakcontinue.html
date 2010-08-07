@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -57,7 +57,7 @@
 </div>
 
 <div><h1 id="sec:breakcontinue">6.7 The <tt class="tt">break</tt> and <tt class="tt">continue</tt> statements</h1>
-<p>  <a name="a0000000569" id="a0000000569"></a> <a name="a0000000570" id="a0000000570"></a> </p><p>The <tt class="tt">break</tt> and <tt class="tt">continue</tt> statements may be placed within loop structures to interrupt their iteration. The <tt class="tt">break</tt> statement terminates execution of the smallest loop currently being executed, and PyXPlot resumes execution at the next statement after the closing brace which marks the end of that loop structure. The <tt class="tt">continue</tt> statement terminates execution of the <i class="it">current iteration</i> of the smallest loop currently being executed, and execution proceeds with the next iteration of that loop, as demonstrated by the following pair of examples: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">for i=0 to 4 {</b></tt><br /><tt class="tt">for... &gt;  <b class="bf">if (i==2) { ; break; }</b></tt><br /><tt class="tt">for... &gt;  <b class="bf">print i</b></tt><br /><tt class="tt">for... &gt; <b class="bf">}</b></tt><br /><tt class="tt">0</tt><br /><tt class="tt">1</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">for i=0 to 4 {</b></tt><br /><tt class="tt">for... &gt;  <b class="bf">if (i==2) { ; continue ; }</b></tt><br /><tt class="tt">for... &gt;  <b class="bf">print i</b></tt><br /><tt class="tt">for... &gt; <b class="bf">}</b></tt><br /><tt class="tt">0</tt><br /><tt class="tt">1</tt><br /><tt class="tt">3</tt>  </p><p>Note that if several loops are nested, the <tt class="tt">break</tt> and <tt class="tt">continue</tt> statements only act upon the innermost loop. If either statement is encountered outside of a loop structure, an error results. Optionally, the <tt class="tt">for</tt>, <tt class="tt">foreach</tt>, <tt class="tt">do</tt> and <tt class="tt">while</tt> commands may be supplied with a name for the loop, prefixed by the word <tt class="tt">loopname</tt>, as in the examples: </p><pre>
+<p>  <a name="a0000000586" id="a0000000586"></a> <a name="a0000000587" id="a0000000587"></a> </p><p>The <tt class="tt">break</tt> and <tt class="tt">continue</tt> statements may be placed within loop structures to interrupt their iteration. The <tt class="tt">break</tt> statement terminates execution of the smallest loop currently being executed, and PyXPlot resumes execution at the next statement after the closing brace which marks the end of that loop structure. The <tt class="tt">continue</tt> statement terminates execution of the <i class="it">current iteration</i> of the smallest loop currently being executed, and execution proceeds with the next iteration of that loop, as demonstrated by the following pair of examples: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">for i=0 to 4 {</b></tt><br /><tt class="tt">for... &gt;  <b class="bf">if (i==2) { ; break; }</b></tt><br /><tt class="tt">for... &gt;  <b class="bf">print i</b></tt><br /><tt class="tt">for... &gt; <b class="bf">}</b></tt><br /><tt class="tt">0</tt><br /><tt class="tt">1</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">for i=0 to 4 {</b></tt><br /><tt class="tt">for... &gt;  <b class="bf">if (i==2) { ; continue ; }</b></tt><br /><tt class="tt">for... &gt;  <b class="bf">print i</b></tt><br /><tt class="tt">for... &gt; <b class="bf">}</b></tt><br /><tt class="tt">0</tt><br /><tt class="tt">1</tt><br /><tt class="tt">3</tt>  </p><p>Note that if several loops are nested, the <tt class="tt">break</tt> and <tt class="tt">continue</tt> statements only act upon the innermost loop. If either statement is encountered outside of a loop structure, an error results. Optionally, the <tt class="tt">for</tt>, <tt class="tt">foreach</tt>, <tt class="tt">do</tt> and <tt class="tt">while</tt> commands may be supplied with a name for the loop, prefixed by the word <tt class="tt">loopname</tt>, as in the examples: </p><pre>
 for i=0 to 4 loopname iloop
 ...
 foreach i in "*.dat" loopname DatafileLoop
@@ -80,7 +80,7 @@ foreach i in "*.dat" loopname DatafileLoop
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

@@ -3,10 +3,10 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: history</title>
+<title>: foreach</title>
 
-<link href="sect0096.html" title="if" rel="next" />
-<link href="sect0094.html" title="histogram" rel="prev" />
+<link href="sect0096.html" title="help" rel="next" />
+<link href="sect0094.html" title="for" rel="prev" />
 <link href="ch-reference.html" title="Command Reference" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0094.html" title="histogram"><img alt="Previous: histogram" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0094.html" title="for"><img alt="Previous: for" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0096.html" title="if"><img alt="Next: if" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0096.html" title="help"><img alt="Next: help" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0071.html">Reference Manual</a> <b>:</b>
+<a href="sect0074.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -50,18 +50,33 @@
 </span><span>
 
 <span>
-<b class="current">history</b>
+<b class="current">foreach</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000096">1.24 history</h1>
-<p><a name="a0000000984" id="a0000000984"></a> </p><pre>
-history [&lt;number of items&gt;]
-</pre><p>The <tt class="tt">history</tt> command<a name="a0000000985" id="a0000000985"></a> prints a list of the most recently executed commands on the terminal. The optional parameter, <tt class="tt">N</tt>, if supplied, causes only the latest <img src="images/img-0151.png" alt="$N$" style="vertical-align:0px; 
-                                     width:16px; 
-                                     height:12px" class="math gen" /> commands to be displayed. </p></div>
+<div><h1 id="a0000000096">1.21 foreach</h1>
+<p><a name="a0000001005" id="a0000001005"></a> </p><pre>
+foreach &lt;variable&gt; in ( &lt;filename expression&gt; |
+                         "("&lt;value&gt; {, &lt;value&gt;}")" )
+                      [loopname &lt;loopname&gt;]
+ "{"
+  ...
+ "}"
+</pre><p>The <tt class="tt">foreach</tt> command<a name="a0000001006" id="a0000001006"></a> can be used to run a block of commands repeatedly, once for each item in a list. The list of items can be specified in one of two ways. In the first case, a set of filenames or filename wildcards is supplied, and the <tt class="tt">foreach</tt> loop iterates once for each supplied filename, with a string variable set to each filename in succession. For example, the following loop would plot the data in the set of files whose names end with <tt class="tt">.dat</tt>: </p><pre>
+plot     # Create blank plot
+foreach file in *.dat
+ {
+  replot file with lines
+ }
+</pre><p>The second form of the command takes a list of string or numerical values provided explicitly by the user, and the <tt class="tt">foreach</tt> loop iterates once for each value, with a variable set to each value in succession. For example, the following script would plot normal distributions of three different widths: </p><pre>
+plot     # Create blank plot
+foreach sigma in (1, 2, 3)
+ {
+  replot 1/sigma*exp(-x**2/(2*sigma**2))
+ }
+</pre></div>
 
 
 
@@ -70,16 +85,16 @@ history [&lt;number of items&gt;]
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0094.html" title="histogram"><img alt="Previous: histogram" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0094.html" title="for"><img alt="Previous: for" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0096.html" title="if"><img alt="Next: if" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0096.html" title="help"><img alt="Next: help" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

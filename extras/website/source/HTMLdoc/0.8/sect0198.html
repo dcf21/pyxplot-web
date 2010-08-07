@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: zrange</title>
+<title>: viewer</title>
 
-<link href="sect0199.html" title="ztics" rel="next" />
-<link href="sect0197.html" title="zlabel" rel="prev" />
-<link href="sect0120.html" title="set" rel="up" />
+<link href="sect0199.html" title="width" rel="next" />
+<link href="sect0197.html" title="view" rel="prev" />
+<link href="sect0124.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0197.html" title="zlabel"><img alt="Previous: zlabel" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0197.html" title="view"><img alt="Previous: view" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0199.html" title="ztics"><img alt="Next: ztics" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0199.html" title="width"><img alt="Next: width" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0071.html">Reference Manual</a> <b>:</b>
+<a href="sect0074.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,20 +49,27 @@
 
 </span><span>
 <span>
-<a href="sect0120.html">set</a> <b>:</b>
+<a href="sect0124.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">zrange</b>
+<b class="current">viewer</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000199">1.46.78 zrange</h2>
-<p><a name="a0000001222" id="a0000001222"></a> </p><p>See <tt class="tt">xrange</tt>. </p></div>
+<div><h2 id="a0000000199">1.46.74 viewer</h2>
+<p><a name="a0000001277" id="a0000001277"></a> </p><pre>
+set viewer ( auto | &lt;command&gt; )
+</pre><p>The <tt class="tt">set viewer</tt> command<a name="a0000001278" id="a0000001278"></a> is used to select which external PostScript viewing application is used to display PyXPlot output on screen in the <tt class="tt">X11</tt> terminals. If the option <tt class="tt">auto</tt> is selected, then either Ghostview or <tt class="tt">ggv</tt> is used, if installed. Alternatively, any other application such as <tt class="tt">evince</tt> or <tt class="tt">okular</tt> can be selected by name, providing it is installed in within your shell’s search path or an absolute path is provided, as in the examples: </p><pre>
+set viewer evince
+set viewer /usr/bin/okular
+</pre><p>Additional commandline switches may also be provided after the name of the application to be used, as in the example </p><pre>
+set viewer gv --grayscale
+</pre></div>
 
 
 
@@ -71,16 +78,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0197.html" title="zlabel"><img alt="Previous: zlabel" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0197.html" title="view"><img alt="Previous: view" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0199.html" title="ztics"><img alt="Next: ztics" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0199.html" title="width"><img alt="Next: width" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

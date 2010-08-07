@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: origin</title>
+<title>: nogrid</title>
 
-<link href="sect0168.html" title="output" rel="next" />
-<link href="sect0166.html" title="numerics" rel="prev" />
-<link href="sect0120.html" title="set" rel="up" />
+<link href="sect0168.html" title="nokey" rel="next" />
+<link href="sect0166.html" title="nodisplay" rel="prev" />
+<link href="sect0124.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0166.html" title="numerics"><img alt="Previous: numerics" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0166.html" title="nodisplay"><img alt="Previous: nodisplay" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0168.html" title="output"><img alt="Next: output" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0168.html" title="nokey"><img alt="Next: nokey" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0071.html">Reference Manual</a> <b>:</b>
+<a href="sect0074.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,26 +49,24 @@
 
 </span><span>
 <span>
-<a href="sect0120.html">set</a> <b>:</b>
+<a href="sect0124.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">origin</b>
+<b class="current">nogrid</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000168">1.46.47 origin</h2>
-<p><a name="a0000001107" id="a0000001107"></a> </p><pre>
-set origin &lt;x&gt;, &lt;y&gt;
-</pre><p>The <tt class="tt">set origin</tt> command<a name="a0000001108" id="a0000001108"></a> is used to set the location of the bottom-left corner of the next graph to be placed on a multiplot canvas. For example, the command </p><pre>
-set origin 3,5
-</pre><p>would cause the next graph to be plotted with its bottom-left corner at position <img src="images/img-0525.png" alt="$(3,5)$" style="vertical-align:-4px; 
-                                     width:38px; 
-                                     height:18px" class="math gen" /> centimetres on the multiplot canvas. Alternatively, either of the coordinates may be specified as quantities with physical units of length, such as <tt class="tt">unit(35*mm)</tt>. The <tt class="tt">set origin</tt> command is of little use outside of multiplot mode. </p></div>
+<div><h2 id="a0000000168">1.46.43 nogrid</h2>
+<p><a name="a0000001168" id="a0000001168"></a> </p><pre>
+set nogrid {&lt;axis&gt;}
+</pre><p>Issuing the command <tt class="tt">set nogrid</tt> removes gridlines from the current plot. On its own, the command removes all gridlines from the plot, but alternatively, those gridlines connected to the ticks of certain axes can be selectively removed. The following example would remove gridlines associated with the first horizontal axis and the second vertical axis: </p><pre>
+set nogrid x1 y2
+</pre></div>
 
 
 
@@ -77,16 +75,16 @@ set origin 3,5
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0166.html" title="numerics"><img alt="Previous: numerics" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0166.html" title="nodisplay"><img alt="Previous: nodisplay" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0168.html" title="output"><img alt="Next: output" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0168.html" title="nokey"><img alt="Next: nokey" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

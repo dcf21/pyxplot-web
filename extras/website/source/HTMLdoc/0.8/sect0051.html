@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Selecting which Axes to Plot Against</title>
+<title>: Plotting Functions in Exotic Styles</title>
 
-<link href="sec-set_axisunitstyle.html" title="Plotting Quantities with Physical Units" rel="next" />
-<link href="sec-multiple_axes.html" title="Configuring Axes" rel="prev" />
-<link href="sec-multiple_axes.html" title="Configuring Axes" rel="up" />
+<link href="ex-spirograph.html" title="Plotting Parametric Functions" rel="next" />
+<link href="sect0050.html" title="The style Keyword" rel="prev" />
+<link href="ch-plotting.html" title="Plotting: A Detailed Survey" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-multiple_axes.html" title="Configuring Axes"><img alt="Previous: Configuring Axes" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0050.html" title="The style Keyword"><img alt="Previous: The style Keyword" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-multiple_axes.html" title="Configuring Axes"><img alt="Up: Configuring Axes" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-plotting.html" title="Plotting: A Detailed Survey"><img alt="Up: Plotting: A Detailed Survey" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-set_axisunitstyle.html" title="Plotting Quantities with Physical Units"><img alt="Next: Plotting Quantities with Physical Units" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ex-spirograph.html" title="Plotting Parametric Functions"><img alt="Next: Plotting Parametric Functions" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -48,25 +48,44 @@
 </span>
 
 </span><span>
-<span>
-<a href="sec-multiple_axes.html">Configuring Axes</a> <b>:</b>
-</span>
-
-</span><span>
 
 <span>
-<b class="current">Selecting which Axes to Plot Against</b>
+<b class="current">Plotting Functions in Exotic Styles</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000052">1.7.1 Selecting which Axes to Plot Against</h2>
-<p>The axes against which data are plotted can be selected by passing the <tt class="tt">axes</tt> modifier to the <tt class="tt">plot</tt> command. By default, data is plotted against the first horizontal axis and the first vertical axis. In the following <tt class="tt">plot</tt> command the second horizontal axis and the third vertical axis would be used: </p><pre>
-plot f(x) axes x2y3
-</pre><p> It is also possible to plot data using a vertical axis as the abscissa axis using syntax such as: </p><pre>
-plot f(x) axes y3x2
-</pre><p> Similar syntax is used when plotting three-dimensional graphs, except that three axes should be specified. </p></div>
+<div><h1 id="a0000000052">1.5 Plotting Functions in Exotic Styles</h1>
+<p>The use of plot styles which take more than two columns of input data to plot functions requires more than one function to be supplied. When functions are plotted with syntax such as </p><pre>
+plot sin(x) with lines
+</pre><p>two columns of data are generated: the first contains values of <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" /> – plotted against the horizontal axis – and the second contains values of <img src="images/img-0015.png" alt="$\sin (x)$" style="vertical-align:-4px; 
+                                     width:45px; 
+                                     height:18px" class="math gen" /> – plotted against the vertical axis. Syntax such as </p><pre>
+plot f(x):g(x) with yerrorbars
+</pre><p>generates three columns of data. As before, the first contains values of <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" />. The second and third contain samples from the colon-separated functions <img src="images/img-0078.png" alt="$f(x)$" style="vertical-align:-4px; 
+                                     width:32px; 
+                                     height:18px" class="math gen" /> and <img src="images/img-0410.png" alt="$g(x)$" style="vertical-align:-4px; 
+                                     width:32px; 
+                                     height:18px" class="math gen" />. Specifically, in this example, <img src="images/img-0410.png" alt="$g(x)$" style="vertical-align:-4px; 
+                                     width:32px; 
+                                     height:18px" class="math gen" /> provides the uncertainty in the value of <img src="images/img-0078.png" alt="$f(x)$" style="vertical-align:-4px; 
+                                     width:32px; 
+                                     height:18px" class="math gen" />. The <tt class="tt">using</tt> modifier may also be used in combination with such syntax, as in </p><pre>
+plot f(x):g(x) using 2:3
+</pre><p>though this example is not sensible. <img src="images/img-0410.png" alt="$g(x)$" style="vertical-align:-4px; 
+                                     width:32px; 
+                                     height:18px" class="math gen" /> would be plotted on the <tt class="tt">y</tt>-axis, against <img src="images/img-0078.png" alt="$f(x)$" style="vertical-align:-4px; 
+                                     width:32px; 
+                                     height:18px" class="math gen" /> on the <tt class="tt">x</tt>-axis. However, this is unlikely to be sensible because the range of values of <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" /> substituting into these expressions would correspond to the range of the plot’s horizontal axis. The result might be particularly unexpected if the above were attempted with an autoscaling horizontal axis – PyXPlot would find itself autoscaling the <tt class="tt">x</tt>-axis range to the spread of values of <img src="images/img-0078.png" alt="$f(x)$" style="vertical-align:-4px; 
+                                     width:32px; 
+                                     height:18px" class="math gen" />, but find that this itself changed depending upon the range of the <tt class="tt">x</tt>-axis. In this case, the user should have used the <tt class="tt">parametric</tt> plot option described in the next section. </p></div>
 
 
 
@@ -75,16 +94,16 @@ plot f(x) axes y3x2
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-multiple_axes.html" title="Configuring Axes"><img alt="Previous: Configuring Axes" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0050.html" title="The style Keyword"><img alt="Previous: The style Keyword" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-multiple_axes.html" title="Configuring Axes"><img alt="Up: Configuring Axes" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-plotting.html" title="Plotting: A Detailed Survey"><img alt="Up: Plotting: A Detailed Survey" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-set_axisunitstyle.html" title="Plotting Quantities with Physical Units"><img alt="Next: Plotting Quantities with Physical Units" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ex-spirograph.html" title="Plotting Parametric Functions"><img alt="Next: Plotting Parametric Functions" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

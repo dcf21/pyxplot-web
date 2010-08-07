@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: palette</title>
+<title>: nolabel</title>
 
-<link href="sect0170.html" title="papersize" rel="next" />
-<link href="sect0168.html" title="output" rel="prev" />
-<link href="sect0120.html" title="set" rel="up" />
+<link href="sect0170.html" title="nologscale" rel="next" />
+<link href="sect0168.html" title="nokey" rel="prev" />
+<link href="sect0124.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0168.html" title="output"><img alt="Previous: output" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0168.html" title="nokey"><img alt="Previous: nokey" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0170.html" title="papersize"><img alt="Next: papersize" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0170.html" title="nologscale"><img alt="Next: nologscale" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0071.html">Reference Manual</a> <b>:</b>
+<a href="sect0074.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,28 +49,26 @@
 
 </span><span>
 <span>
-<a href="sect0120.html">set</a> <b>:</b>
+<a href="sect0124.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">palette</b>
+<b class="current">nolabel</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000170">1.46.49 palette</h2>
-<p><a name="a0000001110" id="a0000001110"></a> </p><pre>
-set palette &lt;colour&gt; {, &lt;colour&gt;}
-</pre><p>PyXPlot has a palette of colours which it assigns sequentially to datasets when colours are not manually assigned. This is also the palette to which reference is made if the user issues a command such as </p><pre>
-plot sin(x) with colour 5
-</pre><p>requesting the fifth colour from the palette. By default, this palette contains a range of distinctive colours. However, the user can choose to substitute his own list of colours using the <tt class="tt">set palette</tt> command. It should be followed by a comma-separated list of colour names, for example: </p><pre>
-set palette red,green,blue
-</pre><p>If, after issuing this command, the following plot statement were to be executed: </p><pre>
-plot sin(x), cos(x), tan(x), exp(x)
-</pre><p>the first function would be plotted in red, the second in green, and the third in blue. Upon reaching the fourth, the palette would cycle back to red. </p><p>Any of the recognised colour names listed in Section <a href="sec-colour_names.html">8.4</a> can be used. </p></div>
+<div><h2 id="a0000000170">1.46.45 nolabel</h2>
+<p><a name="a0000001170" id="a0000001170"></a> </p><pre>
+set nolabel {&lt;label number&gt;}
+</pre><p>Issuing the command </p><pre>
+set nolabel
+</pre><p>removes all text labels configured using the <tt class="tt">set label</tt> command. Alternatively, individual labels can be removed using the syntax: </p><pre>
+set nolabel 2
+</pre><p>where the tag <tt class="tt">2</tt> is the identification number given to the label to be removed when it was initially set using the <tt class="tt">set label</tt> command. </p></div>
 
 
 
@@ -79,16 +77,16 @@ plot sin(x), cos(x), tan(x), exp(x)
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0168.html" title="output"><img alt="Previous: output" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0168.html" title="nokey"><img alt="Previous: nokey" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0170.html" title="papersize"><img alt="Next: papersize" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0170.html" title="nologscale"><img alt="Next: nologscale" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

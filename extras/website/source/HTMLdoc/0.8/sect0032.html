@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -62,9 +62,9 @@
 </div>
 
 <div><h2 id="a0000000033">6.1.2 Regular Expressions</h2>
-<p>String variables can be modified using the search-and-replace string operator<a name="a0000000547" id="a0000000547"></a><a href="#a0000000548" class="footnote"><sup class="footnotemark">1</sup></a>, =<img src="images/img-0028.png" alt="$\sim $" style="vertical-align:2px; 
+<p>String variables can be modified using the search-and-replace string operator<a name="a0000000564" id="a0000000564"></a><a href="#a0000000565" class="footnote"><sup class="footnotemark">1</sup></a>, =<img src="images/img-0028.png" alt="$\sim $" style="vertical-align:2px; 
                                      width:12px; 
-                                     height:5px" class="math gen" /><a name="a0000000549" id="a0000000549"></a>, which takes a regular expression with a syntax similar to that expected by the shell command <tt class="tt">sed</tt><a name="a0000000550" id="a0000000550"></a> and applies it to the relevant string variable.<a href="#a0000000551" class="footnote"><sup class="footnotemark">2</sup></a><a name="a0000000552" id="a0000000552"></a> In the following example, the first instance of the letter <tt class="tt">s</tt> in the string variable <tt class="tt">twister</tt> is replaced with the letters <tt class="tt">th</tt>: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">twister="seven silver soda syphons"</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">twister =<img src="images/img-0028.png" alt="$\sim $" style="vertical-align:2px; 
+                                     height:5px" class="math gen" /><a name="a0000000566" id="a0000000566"></a>, which takes a regular expression with a syntax similar to that expected by the shell command <tt class="tt">sed</tt><a name="a0000000567" id="a0000000567"></a> and applies it to the relevant string variable.<a href="#a0000000568" class="footnote"><sup class="footnotemark">2</sup></a><a name="a0000000569" id="a0000000569"></a> In the following example, the first instance of the letter <tt class="tt">s</tt> in the string variable <tt class="tt">twister</tt> is replaced with the letters <tt class="tt">th</tt>: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">twister="seven silver soda syphons"</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">twister =<img src="images/img-0028.png" alt="$\sim $" style="vertical-align:2px; 
                                      width:12px; 
                                      height:5px" class="math gen" /> s/s/th/</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print twister</b></tt><br /><tt class="tt">theven silver soda syphons</tt>  </p><p>Note that only the <tt class="tt">s</tt> (substitute) command of <tt class="tt">sed</tt> is implemented in PyXPlot. Any character can be used in place of the <tt class="tt">/</tt> characters in the above example, for example: </p><pre>
 twister =~ s@s@th@
@@ -151,7 +151,7 @@ twister =~ s@s@th@
     <td style="border-bottom-color:black; border-bottom-width:1px; text-align:left; border-bottom-style:solid; border-left:1px solid black"><p><tt class="tt">x</tt> </p></td>
 
     
-    <td style="border-bottom-color:black; border-bottom-width:1px; text-align:left; border-bottom-style:solid; border-right:1px solid black"><p> This flag allows the user to write regular expressions that look nicer. Whitespace within the pattern is ignored, except when in a character class or preceded by an unescaped backslash. When a line contains a <tt class="tt">#</tt>, neither in a character class nor preceded by an unescaped backslash, all characters from the left-most such <tt class="tt">#</tt> through to the end of the line are ignored. </p></td>
+    <td style="border-bottom-color:black; border-bottom-width:1px; text-align:left; border-bottom-style:solid; border-right:1px solid black"><p> This flag allows the user to write regular expressions that look nicer. Whitespace within the pattern is ignored, except when in a character class or preceded by an un-escaped backslash. When a line contains a <tt class="tt">#</tt>, neither in a character class nor preceded by an un-escaped backslash, all characters from the left-most such <tt class="tt">#</tt> through to the end of the line are ignored. </p></td>
 
 </tr>
 </table></small> </p><div class="caption"><b>Table 6.2</b>: <span>A list of the flags accepted by the =<img src="images/img-0028.png" alt="$\sim $" style="vertical-align:2px; 
@@ -163,7 +163,7 @@ twister =~ s@s@th@
 <div id="footnotes">
 <p><b>Footnotes</b></p>
 <ol>
-<li id="a0000000548">Programmers with experience of <tt class="tt">perl</tt> will recognise this syntax.</li><li id="a0000000551">Regular expression syntax is a massive subject, and is beyond the scope of this manual. The official GNU documentation for the <tt class="tt">sed</tt> command is heavy reading, but there are many more accessible tutorials on the web.</li>
+<li id="a0000000565">Programmers with experience of <tt class="tt">perl</tt> will recognise this syntax.</li><li id="a0000000568">Regular expression syntax is a massive subject, and is beyond the scope of this manual. The official GNU documentation for the <tt class="tt">sed</tt> command is heavy reading, but there are many more accessible tutorials on the web.</li>
 </ol>
 </div>
 
@@ -179,7 +179,7 @@ twister =~ s@s@th@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

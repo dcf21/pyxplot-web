@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: LaTeX and PyXPlot</title>
+<title>: The text Command</title>
 
-<link href="sect0071.html" title="Reference Manual" rel="next" />
-<link href="sec-piechart.html" title="The piechart Command" rel="prev" />
-<link href="ch-vector_graphics.html" title="Producing Vector Graphics" rel="up" />
+<link href="ex-nanotubes.html" title="The arrow and line Commands" rel="next" />
+<link href="sect0069.html" title="Adding Other Vector Graphics Objects" rel="prev" />
+<link href="sect0069.html" title="Adding Other Vector Graphics Objects" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-piechart.html" title="The piechart Command"><img alt="Previous: The piechart Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0069.html" title="Adding Other Vector Graphics Objects"><img alt="Previous: Adding Other Vector Graphics Objects" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-vector_graphics.html" title="Producing Vector Graphics"><img alt="Up: Producing Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0069.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0071.html" title="Reference Manual"><img alt="Next: Reference Manual" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ex-nanotubes.html" title="The arrow and line Commands"><img alt="Next: The arrow and line Commands" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -48,52 +48,50 @@
 </span>
 
 </span><span>
+<span>
+<a href="sect0069.html">Adding Other Vector Graphics Objects</a> <b>:</b>
+</span>
+
+</span><span>
 
 <span>
-<b class="current">LaTeX and PyXPlot</b>
+<b class="current">The <tt class="tt">text</tt> Command</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000071">3.5 LaTeX and PyXPlot</h1>
-<p>The <tt class="tt">text</tt> command<a name="a0000000908" id="a0000000908"></a> can straightforwardly be used to render simple one-line L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X<a name="a0000000909" id="a0000000909"></a> strings, but sometimes the need arises to place more substantial blocks of text onto a plot. For this purpose, it can be useful to use the L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X <tt class="tt">parbox</tt> or <tt class="tt">minipage</tt> environments<a href="#a0000000910" class="footnote"><sup class="footnotemark">1</sup></a>. For example: </p><pre>
-text '\parbox[t]{6cm}{\setlength{\parindent}{1cm} \
-\noindent There once was a lady from Hyde, \newline \
-Who ate a green apple and died, \newline \
-\indent While her lover lamented, \newline \
-\indent The apple fermented, \newline \
-and made cider inside her inside.}'
-</pre><center> <span style="border: 1px solid black"><img src="images/img-0504.png" alt="\includegraphics{examples/eps/ex_text1}" style="width:249px; height:91px" />
-</span> </center><p>If unusual mathematical symbols are required, for example those in the <tt class="tt">amsmath</tt> package<a name="a0000000911" id="a0000000911"></a>, such a package can be loaded using the <tt class="tt">set preamble</tt> command<a name="a0000000912" id="a0000000912"></a>. For example: </p><pre>
-set preamble \usepackage{marvosym}
-text "{\Huge\Dontwash\ \NoIroning\ \NoTumbler}$\;$ Do not \
-wash, iron or tumble-dry this plot."
-</pre><center> <span style="border: 1px solid black"><img src="images/img-0511.png" alt="\includegraphics{examples/eps/ex_text2}" style="width:474px; height:36px" />
-</span> </center></div>
+<div><h2 id="a0000000071">3.4.1 The <tt class="tt">text</tt> Command</h2>
+<p>Text labels may be added to multiplot canvases using the <tt class="tt">text</tt> command<a name="a0000000911" id="a0000000911"></a>. This has the following syntax: </p><pre>
+text 'This is some text' at x,y
+</pre><p>In this case, the string ‘This is some text’ would be rendered at position <img src="images/img-0188.png" alt="$(x,y)$" style="vertical-align:-4px; 
+                                     width:40px; 
+                                     height:18px" class="math gen" /> on the multiplot. As with the <tt class="tt">set label</tt> command<a name="a0000000912" id="a0000000912"></a>, a colour may optionally be specified with the <tt class="tt">with colour</tt> modifier, as well as a rotation angle to rotate text labels through any given angle, measured in degrees counter-clockwise. For example:<a name="a0000000913" id="a0000000913"></a> </p><pre>
+text 'This is some text' at x,y rotate r with colour red
+</pre><p>The commands <tt class="tt">set textcolour</tt><a name="a0000000914" id="a0000000914"></a>, <tt class="tt">set texthalign</tt><a name="a0000000915" id="a0000000915"></a> and <tt class="tt">set textvalign</tt><a name="a0000000916" id="a0000000916"></a> can be used to set the colour and alignment of the text produced with the <tt class="tt">text</tt> command<a name="a0000000917" id="a0000000917"></a>. Alternatively, the <tt class="tt">text</tt> command<a name="a0000000918" id="a0000000918"></a> takes three modifiers to control the alignment of the text which override these <tt class="tt">set</tt> commands. The <tt class="tt">halign</tt> and <tt class="tt">valign</tt> modifiers may be followed by any of the settings which may follow the <tt class="tt">set texthalign</tt> and <tt class="tt">set textvalign</tt> commands respectively, as in the following examples: </p><pre>
+text 'This is some text' at 0,0 halign left valign top
+text 'This is some text' at 0,0 halign right valign centre
+</pre><p>The <tt class="tt">gap</tt> modifier allows a gap to be inserted in the alignment of the text. For example, the string <tt class="tt">halign left gap 3*unit(mm)</tt> would cause text to be rendered with its left side <img src="images/img-0543.png" alt="$3\, \mathrm{mm}$" style="vertical-align:0px; 
+                                     width:42px; 
+                                     height:12px" class="math gen" /> to the right of the position specified for the text. This is useful for labelling points on diagrams, where the labels should be slightly offset from the points that they are associated with. If the <tt class="tt">gap</tt> modifier is followed by a dimensionless number, rather than one with dimensions of lengths, then it is assumed to be measured in centimetres. </p><p>It should be noted that the <tt class="tt">text</tt> command<a name="a0000000919" id="a0000000919"></a> can also be used outside of the multiplot environment, to render a single piece of short text instead of a graph. One obvious application is to produce equations rendered as graphical files which can subsequently be imported into documents, slideshows or webpages.<a name="a0000000920" id="a0000000920"></a> </p></div>
 
 
 
-<div id="footnotes">
-<p><b>Footnotes</b></p>
-<ol>
-<li id="a0000000910">Remember, any valid L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X string can be passed to the <tt class="tt">text</tt> command<a name="a0000000913" id="a0000000913"></a> and <tt class="tt">set label</tt> command<a name="a0000000914" id="a0000000914"></a>.</li>
-</ol>
-</div>
+
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-piechart.html" title="The piechart Command"><img alt="Previous: The piechart Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0069.html" title="Adding Other Vector Graphics Objects"><img alt="Previous: Adding Other Vector Graphics Objects" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-vector_graphics.html" title="Producing Vector Graphics"><img alt="Up: Producing Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0069.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0071.html" title="Reference Manual"><img alt="Next: Reference Manual" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ex-nanotubes.html" title="The arrow and line Commands"><img alt="Next: The arrow and line Commands" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

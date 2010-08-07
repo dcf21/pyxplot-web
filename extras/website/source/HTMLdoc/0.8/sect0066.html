@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Adding Other Vector Graphics Objects</title>
+<title>: Reordering Multiplot Items</title>
 
-<link href="sect0067.html" title="The text Command" rel="next" />
-<link href="sect0065.html" title="The replot Command Revisited" rel="prev" />
-<link href="ch-vector_graphics.html" title="Producing Vector Graphics" rel="up" />
+<link href="sec-set_display.html" title="The Construction of Large Multiplots" rel="next" />
+<link href="sect0065.html" title="Settings Associated with Multiplot Items" rel="prev" />
+<link href="sec-multiplot.html" title="Multiplot Mode" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0065.html" title="The replot Command Revisited"><img alt="Previous: The replot Command Revisited" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0065.html" title="Settings Associated with Multiplot Items"><img alt="Previous: Settings Associated with Multiplot Items" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-vector_graphics.html" title="Producing Vector Graphics"><img alt="Up: Producing Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sec-multiplot.html" title="Multiplot Mode"><img alt="Up: Multiplot Mode" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0067.html" title="The text Command"><img alt="Next: The text Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sec-set_display.html" title="The Construction of Large Multiplots"><img alt="Next: The Construction of Large Multiplots" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -48,61 +48,41 @@
 </span>
 
 </span><span>
+<span>
+<a href="sec-multiplot.html">Multiplot Mode</a> <b>:</b>
+</span>
+
+</span><span>
 
 <span>
-<b class="current">Adding Other Vector Graphics Objects</b>
+<b class="current">Reordering Multiplot Items</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000067">3.4 Adding Other Vector Graphics Objects</h1>
-<p>In addition to graphs, a range of other objects can be placed on multiplot canvases: </p><ul class="itemize">
-<li><p>Arcs of circles (the <tt class="tt">arc</tt> command<a name="a0000000860" id="a0000000860"></a>). </p></li><li><p>Arrows (the <tt class="tt">arrow</tt> command<a name="a0000000861" id="a0000000861"></a>). </p></li><li><p>Rectangular boxes (the <tt class="tt">box</tt> command<a name="a0000000862" id="a0000000862"></a>). </p></li><li><p>Circles (the <tt class="tt">circle</tt> command<a name="a0000000863" id="a0000000863"></a>). </p></li><li><p>Ellipses (the <tt class="tt">ellipse</tt> command<a name="a0000000864" id="a0000000864"></a>). </p></li><li><p>Encapsulated PostScript images (the <tt class="tt">eps</tt> command<a name="a0000000865" id="a0000000865"></a>). </p></li><li><p>Graphical images in <tt class="tt">bmp</tt>, <tt class="tt">gif</tt>, <tt class="tt">jpeg</tt> or <tt class="tt">png</tt> formats (the <tt class="tt">image</tt> command<a name="a0000000866" id="a0000000866"></a>). </p></li><li><p>Lines (the <tt class="tt">line</tt> command<a name="a0000000867" id="a0000000867"></a>). </p></li><li><p>Piecharts (the <tt class="tt">piechart</tt> command<a name="a0000000868" id="a0000000868"></a>). </p></li><li><p>Points labelled by crosses and other symbols (the <tt class="tt">point</tt> command<a name="a0000000869" id="a0000000869"></a>). </p></li><li><p>Text labels (the <tt class="tt">text</tt> command<a name="a0000000870" id="a0000000870"></a>). </p></li>
-</ul><p> Put together, these commands can be used to produce a wide range of vector graphics. In the remainder of this chapter, we describe these commands in turn, providing a variety of examples of their use. </p></div>
-
-<div class="contents section-contents"><!--<strong>Subsections</strong>-->
-<ul>
-<li><a href="sect0067.html">3.4.1 The <tt class="tt">text</tt> Command</a>
-   
-</li><li><a href="ex-nanotubes.html">3.4.2 The <tt class="tt">arrow</tt> and <tt class="tt">line</tt> Commands</a>
-   
-</li><li><a href="sect0068.html">3.4.3 The <tt class="tt">image</tt> Command</a>
-   
-</li><li><a href="sect0069.html">3.4.4 The <tt class="tt">eps</tt> Command</a>
-   
-</li><li><a href="ex-mandelbrot.html">3.4.5 The <tt class="tt">box</tt> and <tt class="tt">circle</tt> Commands</a>
-   
-</li><li><a href="ex-lens.html">3.4.6 The <tt class="tt">arc</tt> Command</a>
-   
-</li><li><a href="sec-point.html">3.4.7 The <tt class="tt">point</tt> Command</a>
-   
-</li><li><a href="sec-ellipse.html">3.4.8 The <tt class="tt">ellipse</tt> Command</a>
-   
-</li><li><a href="sec-piechart.html">3.4.9 The <tt class="tt">piechart</tt> Command</a>
-   
-</li>
+<div><h2 id="a0000000067">3.1.2 Reordering Multiplot Items</h2>
+<p>Items on multiplot canvases are drawn in order of increasing identification number, and thus items with low identification numbers are drawn first, at the back of the multiplot, and items with higher identification numbers are later, towards the front of the multiplot. When new items are added, they are given higher identification numbers than previous items and appear at the front of the multiplot. </p><p>If this is not the desired ordering, then the <tt class="tt">swap</tt> command<a name="a0000000895" id="a0000000895"></a> may be used to rearrange items. It takes the identification numbers of two multiplot items and swaps their identification numbers and hence their positions in the ordered sequence. Thus, if, for example, the corner of item 3 disappears behind the corner of item 5, when the converse effect is actually desired, the following command should be issued: </p><pre>
+swap 3 5
+</pre></div>
 
 
-
-</ul>
-</div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0065.html" title="The replot Command Revisited"><img alt="Previous: The replot Command Revisited" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0065.html" title="Settings Associated with Multiplot Items"><img alt="Previous: Settings Associated with Multiplot Items" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-vector_graphics.html" title="Producing Vector Graphics"><img alt="Up: Producing Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sec-multiplot.html" title="Multiplot Mode"><img alt="Up: Multiplot Mode" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0067.html" title="The text Command"><img alt="Next: The text Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sec-set_display.html" title="The Construction of Large Multiplots"><img alt="Next: The Construction of Large Multiplots" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Complex Numbers</title>
+<title>: Setting definitions</title>
 
-<link href="sect0224.html" title="The Multiplot Environment" rel="next" />
-<link href="sect0222.html" title="The Typesetting of Text" rel="prev" />
-<link href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot" rel="up" />
+<link href="sect0224.html" title="The filters section" rel="next" />
+<link href="sect0222.html" title="An Example Configuration File" rel="prev" />
+<link href="ch-configuration.html" title="Configuring PyXPlot" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0222.html" title="The Typesetting of Text"><img alt="Previous: The Typesetting of Text" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0222.html" title="An Example Configuration File"><img alt="Previous: An Example Configuration File" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot"><img alt="Up: Summary of Differences Between PyXPlot and Gnuplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-configuration.html" title="Configuring PyXPlot"><img alt="Up: Configuring PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0224.html" title="The Multiplot Environment"><img alt="Next: The Multiplot Environment" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0224.html" title="The filters section"><img alt="Next: The filters section" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,43 +39,60 @@
 
 </span><span>
 <span>
-<a href="sect0214.html">Appendices</a> <b>:</b>
+<a href="sect0074.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="ch-gnuplot_diffs.html">Summary of Differences Between PyXPlot and Gnuplot</a> <b>:</b>
+<a href="ch-configuration.html">Configuring PyXPlot</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">Complex Numbers</b>
+<b class="current">Setting definitions</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000224">B.2 Complex Numbers</h1>
-<p>The syntax used for representing complex numbers in PyXPlot differs from that used in Gnuplot. Whereas Gnuplot expects the real and imaginary components of complex numbers to be represented <tt class="tt">{a,b}</tt>, PyXPlot uses the syntax <tt class="tt">a+b*i</tt>, assuming that the variable <tt class="tt">i</tt> has been defined to equal <tt class="tt">sqrt(-1)</tt>. In addition, in PyXPlot complex arithmetic must first be enabled using the <tt class="tt">set numerics complex</tt> command before complex numbers may be entered. This is illustrated by the following example: </p><p> <tt class="tt">gnuplot&gt; <b class="bf">print {1,2} + {3,4}</b></tt><br /><tt class="tt">{4.0, 6.0}</tt> <br /><tt class="tt">pyxplot&gt; <b class="bf">set numerics complex</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print (1+2*i) + (3+4*i)</b></tt><br /><tt class="tt">(4+6i)</tt>  </p></div>
+<div><h1 id="a0000000224">8.3 Setting definitions</h1>
+<p>We now provide a more detailed description of the effect of each of the settings which can be found in configuration files, including where appropriate a list of possible values for each. Settings are arranged by section. </p></div>
+
+<div class="contents section-contents"><!--<strong>Subsections</strong>-->
+<ul>
+<li><a href="sect0224.html">8.3.1 The <tt class="tt">filters</tt> section</a>
+   
+</li><li><a href="sec-configfile_settings.html">8.3.2 The <tt class="tt">settings</tt> section</a>
+   
+</li><li><a href="sect0225.html">8.3.3 The <tt class="tt">styling</tt> section</a>
+   
+</li><li><a href="sec-configfile_terminal.html">8.3.4 The <tt class="tt">terminal</tt> section</a>
+   
+</li><li><a href="sec-configfile_units.html">8.3.5 The <tt class="tt">units</tt> section</a>
+   
+</li>
 
 
+
+</ul>
+</div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0222.html" title="The Typesetting of Text"><img alt="Previous: The Typesetting of Text" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0222.html" title="An Example Configuration File"><img alt="Previous: An Example Configuration File" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot"><img alt="Up: Summary of Differences Between PyXPlot and Gnuplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-configuration.html" title="Configuring PyXPlot"><img alt="Up: Configuring PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0224.html" title="The Multiplot Environment"><img alt="Next: The Multiplot Environment" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0224.html" title="The filters section"><img alt="Next: The filters section" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

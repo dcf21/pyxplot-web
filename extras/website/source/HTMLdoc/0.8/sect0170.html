@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: papersize</title>
+<title>: nologscale</title>
 
-<link href="sect0171.html" title="pointlinewidth" rel="next" />
-<link href="sect0169.html" title="palette" rel="prev" />
-<link href="sect0120.html" title="set" rel="up" />
+<link href="sect0171.html" title="nomultiplot" rel="next" />
+<link href="sect0169.html" title="nolabel" rel="prev" />
+<link href="sect0124.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0169.html" title="palette"><img alt="Previous: palette" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0169.html" title="nolabel"><img alt="Previous: nolabel" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0171.html" title="pointlinewidth"><img alt="Next: pointlinewidth" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0171.html" title="nomultiplot"><img alt="Next: nomultiplot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0071.html">Reference Manual</a> <b>:</b>
+<a href="sect0074.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,26 +49,26 @@
 
 </span><span>
 <span>
-<a href="sect0120.html">set</a> <b>:</b>
+<a href="sect0124.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">papersize</b>
+<b class="current">nologscale</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000171">1.46.50 papersize</h2>
-<p><a name="a0000001111" id="a0000001111"></a> </p><pre>
-set papersize ( &lt;named size&gt; | &lt;height&gt;,&lt;width&gt; )
-</pre><p>The setting <tt class="tt">papersize</tt> changes the size of output produced by the <tt class="tt">postscript</tt> terminal, and whenever the <tt class="tt">enlarge</tt> terminal option is set (see the <tt class="tt">set terminal</tt> command). This can take the form of either a recognised paper size name – a list of these is given in Appendix <a href="ch-paper_sizes.html">5</a> – or as a (height, width) pair of values, both measured in millimetres. The following examples demonstrate these possibilities: </p><pre>
-set papersize a4
-set papersize letter
-set papersize 200,100
-</pre></div>
+<div><h2 id="a0000000171">1.46.46 nologscale</h2>
+<p><a name="a0000001171" id="a0000001171"></a> </p><pre>
+set nologscale {&lt;axis&gt;}
+</pre><p>The setting <tt class="tt">nologscale</tt> causes an axis to be laid out with linearly, rather than logarithmically, spaced intervals; it is equivalent to the setting <tt class="tt">linearscale</tt>. It is the converse of the setting <tt class="tt">logscale</tt>. For example, issuing the command </p><pre>
+set nolog
+</pre><p>would cause all of the axes of a plot to be scaled linearly. Alternatively only one, or a selection of axes, can be set to scale linearly as follows: </p><pre>
+set nologscale x1 y2
+</pre><p>This would cause the first horizontal and second vertical axes to be scaled linearly. </p></div>
 
 
 
@@ -77,16 +77,16 @@ set papersize 200,100
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0169.html" title="palette"><img alt="Previous: palette" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0169.html" title="nolabel"><img alt="Previous: nolabel" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0171.html" title="pointlinewidth"><img alt="Next: pointlinewidth" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0171.html" title="nomultiplot"><img alt="Next: nomultiplot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

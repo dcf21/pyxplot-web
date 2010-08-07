@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: boxwidth</title>
+<title>: bar</title>
 
-<link href="sect0132.html" title="calendar" rel="next" />
-<link href="sect0130.html" title="boxfrom" rel="prev" />
-<link href="sect0120.html" title="set" rel="up" />
+<link href="sect0132.html" title="binorigin" rel="next" />
+<link href="sect0130.html" title="backup" rel="prev" />
+<link href="sect0124.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0130.html" title="boxfrom"><img alt="Previous: boxfrom" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0130.html" title="backup"><img alt="Previous: backup" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0132.html" title="calendar"><img alt="Next: calendar" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0132.html" title="binorigin"><img alt="Next: binorigin" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0071.html">Reference Manual</a> <b>:</b>
+<a href="sect0074.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,26 +49,24 @@
 
 </span><span>
 <span>
-<a href="sect0120.html">set</a> <b>:</b>
+<a href="sect0124.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">boxwidth</b>
+<b class="current">bar</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000132">1.46.11 boxwidth</h2>
-<p><a name="a0000001064" id="a0000001064"></a> </p><pre>
-set boxwidth &lt;width&gt;
-</pre><p>The setting <tt class="tt">boxwidth</tt> alters PyXPlot’s behaviour when plotting bar charts. It sets the default width of the boxes used, in ordinate axis units. If the specified width is negative then, as happens by default, the boxes have automatically selected widths, such that the interfaces between them occur at the horizontal midpoints between their specified positions. For example: </p><pre>
-set boxwidth 2
-</pre><p>would set all boxes to be two units wide, and </p><pre>
-set boxwidth -2
-</pre><p>would set all of the bars to have differing widths, centred upon their specified horizontal positions, such that their interfaces occur at the horizontal midpoints between them. The specified width may have any physical units, but must be real and finite. </p></div>
+<div><h2 id="a0000000132">1.46.7 bar</h2>
+<p><a name="a0000001098" id="a0000001098"></a> </p><pre>
+set bar ( large | small | &lt;value&gt; )
+</pre><p>The setting <tt class="tt">bar</tt> changes the size of the bar drawn on the end of the error bars, relative to the current point size. For example: </p><pre>
+set bar 2
+</pre><p>sets the bars to be twice the size of the points. The options <tt class="tt">large</tt> and <tt class="tt">small</tt> are equivalent to 1 (the default) and 0 (no bar) respectively. </p></div>
 
 
 
@@ -77,16 +75,16 @@ set boxwidth -2
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0130.html" title="boxfrom"><img alt="Previous: boxfrom" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0130.html" title="backup"><img alt="Previous: backup" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0132.html" title="calendar"><img alt="Next: calendar" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0132.html" title="binorigin"><img alt="Next: binorigin" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

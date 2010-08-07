@@ -159,42 +159,50 @@
         </tocitem>
     </tocitem><tocitem target="a0000000043">Plotting and Vector Graphics
         <tocitem target="ch:plotting">Plotting: A Detailed Survey
-            <tocitem target="a0000000044">The with modifier
+            <tocitem target="sec:with_modifier">The with modifier
                <tocitem href="sec:palette">The Palette
                    
-               </tocitem><tocitem href="a0000000045">Default Settings
+               </tocitem><tocitem href="a0000000044">Default Settings
                    
                </tocitem>
             </tocitem><tocitem target="sec:list_of_plotstyles">PyXPlot&#8217;s Plot Styles
-               <tocitem href="a0000000046">Lines and Points
+               <tocitem href="a0000000045">Lines and Points
                    
                </tocitem><tocitem href="sec:errorbars">Error Bars
                    
-               </tocitem><tocitem href="a0000000047">Shaded Regions
+               </tocitem><tocitem href="a0000000046">Shaded Regions
                    
                </tocitem><tocitem href="sec:barcharts">Barcharts and Histograms
                    
-               </tocitem><tocitem href="a0000000048">Steps
+               </tocitem><tocitem href="a0000000047">Steps
                    
-               </tocitem><tocitem href="a0000000049">Arrows
+               </tocitem><tocitem href="a0000000048">Arrows
+                   
+               </tocitem><tocitem href="a0000000049">Colour Maps, Contour Maps and Surface Plots
                    
                </tocitem>
-            </tocitem><tocitem target="a0000000050">The style Keyword
+            </tocitem><tocitem target="a0000000050">Labelling Datapoints
                
-            </tocitem><tocitem target="a0000000051">Plotting Functions in Exotic Styles
+            </tocitem><tocitem target="a0000000051">The style Keyword
+               
+            </tocitem><tocitem target="a0000000052">Plotting Functions in Exotic Styles
                
             </tocitem><tocitem target="ex:spirograph">Plotting Parametric Functions
                
             </tocitem><tocitem target="sec:legends">Graph Legends
                
-            </tocitem><tocitem target="sec:multiple_axes">Configuring Axes
-               <tocitem href="a0000000052">Selecting which Axes to Plot Against
+            </tocitem><tocitem target="a0000000053">Configuring Axes
+               <tocitem href="sec:multiple_axes">Adding Additional Axes
+                   
+               </tocitem><tocitem href="a0000000054">Selecting which Axes to Plot Against
                    
                </tocitem><tocitem href="sec:set_axisunitstyle">Plotting Quantities with Physical Units
                    
-               </tocitem><tocitem href="a0000000053">Specifying the Positioning of Axes
+               </tocitem><tocitem href="a0000000055">Specifying the Positioning of Axes
                    
-               </tocitem><tocitem href="a0000000054">Configuring the Appearance of Axes
+               </tocitem><tocitem href="a0000000056">Configuring the Appearance of Axes
+                   
+               </tocitem><tocitem href="a0000000057">Setting the Colour of Axes
                    
                </tocitem><tocitem href="ex:axistics">Specifying where Ticks should Appear along Axes
                    
@@ -205,29 +213,39 @@
                </tocitem>
             </tocitem><tocitem target="sec:set_colours">Gridlines
                
-            </tocitem><tocitem target="a0000000055">Clipping Behaviour
+            </tocitem><tocitem target="a0000000058">Clipping Behaviour
                
-            </tocitem><tocitem target="a0000000056">Labelling Graphs
+            </tocitem><tocitem target="a0000000059">Labelling Graphs
                <tocitem href="sec:set_arrow">Arrows
                    
                </tocitem><tocitem href="ex:australia">Text Labels
                    
                </tocitem>
-            </tocitem><tocitem target="a0000000057">Three-Dimensional Plotting
+            </tocitem><tocitem target="sec:colourmaps">Colour Maps
+               <tocitem href="a0000000060">Custom Colour Mappings
+                   
+               </tocitem><tocitem href="ex:mandelbrot">Colour Scale Bars
+                   
+               </tocitem>
+            </tocitem><tocitem target="sec:contourmaps">Contour Maps
                
+            </tocitem><tocitem target="sec:threedim">Three-Dimensional Plotting
+               <tocitem href="ex:surface-sinc">Surface Plotting
+                   
+               </tocitem>
             </tocitem>
         </tocitem><tocitem target="ch:image_formats">Producing Image Files
             <tocitem target="sec:set_terminal">The set terminal Command
-               <tocitem href="a0000000058">Previewing Graphs On Screen
+               <tocitem href="a0000000061">Previewing Graphs On Screen
                    
-               </tocitem><tocitem href="a0000000059">Producing Images on Disk
+               </tocitem><tocitem href="a0000000062">Producing Images on Disk
                    
-               </tocitem><tocitem href="a0000000060">The Complete Syntax of the set terminal Command
+               </tocitem><tocitem href="a0000000063">The Complete Syntax of the set terminal Command
                    
                </tocitem>
-            </tocitem><tocitem target="a0000000061">The Default Terminal
+            </tocitem><tocitem target="a0000000064">The Default Terminal
                
-            </tocitem><tocitem target="a0000000062">PostScript Output
+            </tocitem><tocitem target="a0000000065">PostScript Output
                <tocitem href="sec:set_papersize">Paper Sizes
                    
                </tocitem>
@@ -236,27 +254,27 @@
             </tocitem>
         </tocitem><tocitem target="ch:vector_graphics">Producing Vector Graphics
             <tocitem target="sec:multiplot">Multiplot Mode
-               <tocitem href="a0000000063">Settings Associated with Multiplot Items
+               <tocitem href="a0000000066">Settings Associated with Multiplot Items
                    
-               </tocitem><tocitem href="a0000000064">Reordering Multiplot Items
+               </tocitem><tocitem href="a0000000067">Reordering Multiplot Items
                    
                </tocitem><tocitem href="sec:set_display">The Construction of Large Multiplots
                    
                </tocitem>
-            </tocitem><tocitem target="a0000000065">Linked Axes and Galleries of Plots
+            </tocitem><tocitem target="a0000000068">Linked Axes and Galleries of Plots
                
-            </tocitem><tocitem target="a0000000066">The replot Command Revisited
+            </tocitem><tocitem target="a0000000069">The replot Command Revisited
                
-            </tocitem><tocitem target="a0000000067">Adding Other Vector Graphics Objects
-               <tocitem href="a0000000068">The text Command
+            </tocitem><tocitem target="a0000000070">Adding Other Vector Graphics Objects
+               <tocitem href="a0000000071">The text Command
                    
                </tocitem><tocitem href="ex:nanotubes">The arrow and line Commands
                    
-               </tocitem><tocitem href="a0000000069">The image Command
+               </tocitem><tocitem href="a0000000072">The image Command
                    
-               </tocitem><tocitem href="a0000000070">The eps Command
+               </tocitem><tocitem href="a0000000073">The eps Command
                    
-               </tocitem><tocitem href="ex:mandelbrot">The box and circle Commands
+               </tocitem><tocitem href="ex:noentry">The box and circle Commands
                    
                </tocitem><tocitem href="ex:lens">The arc Command
                    
@@ -267,285 +285,303 @@
                </tocitem><tocitem href="sec:piechart">The piechart Command
                    
                </tocitem>
-            </tocitem><tocitem target="a0000000071">LaTeX and PyXPlot
+            </tocitem><tocitem target="a0000000074">LaTeX and PyXPlot
                
             </tocitem>
         </tocitem>
-    </tocitem><tocitem target="a0000000072">Reference Manual
+    </tocitem><tocitem target="a0000000075">Reference Manual
         <tocitem target="ch:reference">Command Reference
-            <tocitem target="a0000000073">?
+            <tocitem target="a0000000076">?
                
-            </tocitem><tocitem target="a0000000074">!
+            </tocitem><tocitem target="a0000000077">!
                
-            </tocitem><tocitem target="a0000000075">arc
+            </tocitem><tocitem target="a0000000078">arc
                
-            </tocitem><tocitem target="a0000000076">arrow
+            </tocitem><tocitem target="a0000000079">arrow
                
-            </tocitem><tocitem target="a0000000077">box
+            </tocitem><tocitem target="a0000000080">box
                
-            </tocitem><tocitem target="a0000000078">break
+            </tocitem><tocitem target="a0000000081">break
                
-            </tocitem><tocitem target="a0000000079">cd
+            </tocitem><tocitem target="a0000000082">cd
                
-            </tocitem><tocitem target="a0000000080">circle
+            </tocitem><tocitem target="a0000000083">circle
                
-            </tocitem><tocitem target="a0000000081">clear
+            </tocitem><tocitem target="a0000000084">clear
                
-            </tocitem><tocitem target="a0000000082">continue
+            </tocitem><tocitem target="a0000000085">continue
                
-            </tocitem><tocitem target="a0000000083">delete
+            </tocitem><tocitem target="a0000000086">delete
                
-            </tocitem><tocitem target="a0000000084">do
+            </tocitem><tocitem target="a0000000087">do
                
-            </tocitem><tocitem target="a0000000085">ellipse
+            </tocitem><tocitem target="a0000000088">ellipse
                
-            </tocitem><tocitem target="a0000000086">else
+            </tocitem><tocitem target="a0000000089">else
                
-            </tocitem><tocitem target="a0000000087">eps
+            </tocitem><tocitem target="a0000000090">eps
                
-            </tocitem><tocitem target="a0000000088">exec
+            </tocitem><tocitem target="a0000000091">exec
                
-            </tocitem><tocitem target="a0000000089">exit
+            </tocitem><tocitem target="a0000000092">exit
                
-            </tocitem><tocitem target="a0000000090">fft
+            </tocitem><tocitem target="a0000000093">fft
                
-            </tocitem><tocitem target="a0000000091">fit
+            </tocitem><tocitem target="a0000000094">fit
                
-            </tocitem><tocitem target="a0000000092">for
+            </tocitem><tocitem target="a0000000095">for
                
-            </tocitem><tocitem target="a0000000093">foreach
+            </tocitem><tocitem target="a0000000096">foreach
                
-            </tocitem><tocitem target="a0000000094">help
+            </tocitem><tocitem target="a0000000097">help
                
-            </tocitem><tocitem target="a0000000095">histogram
+            </tocitem><tocitem target="a0000000098">histogram
                
-            </tocitem><tocitem target="a0000000096">history
+            </tocitem><tocitem target="a0000000099">history
                
-            </tocitem><tocitem target="a0000000097">if
+            </tocitem><tocitem target="a0000000100">if
                
-            </tocitem><tocitem target="a0000000098">ifft
+            </tocitem><tocitem target="a0000000101">ifft
                
-            </tocitem><tocitem target="a0000000099">image
+            </tocitem><tocitem target="a0000000102">image
                
-            </tocitem><tocitem target="a0000000100">interpolate
+            </tocitem><tocitem target="a0000000103">interpolate
                
-            </tocitem><tocitem target="a0000000101">jpeg
+            </tocitem><tocitem target="a0000000104">jpeg
                
-            </tocitem><tocitem target="a0000000102">let
+            </tocitem><tocitem target="a0000000105">let
                
-            </tocitem><tocitem target="a0000000103">list
+            </tocitem><tocitem target="a0000000106">list
                
-            </tocitem><tocitem target="a0000000104">load
+            </tocitem><tocitem target="a0000000107">load
                
-            </tocitem><tocitem target="a0000000105">maximise
+            </tocitem><tocitem target="a0000000108">maximise
                
-            </tocitem><tocitem target="a0000000106">minimise
+            </tocitem><tocitem target="a0000000109">minimise
                
-            </tocitem><tocitem target="a0000000107">move
+            </tocitem><tocitem target="a0000000110">move
                
-            </tocitem><tocitem target="a0000000108">plot
-               <tocitem href="a0000000109">axes
+            </tocitem><tocitem target="a0000000111">plot
+               <tocitem href="a0000000112">axes
                    
-               </tocitem><tocitem href="a0000000110">title
+               </tocitem><tocitem href="a0000000113">label
                    
-               </tocitem><tocitem href="a0000000111">with
+               </tocitem><tocitem href="a0000000114">title
+                   
+               </tocitem><tocitem href="a0000000115">with
                    
                </tocitem>
-            </tocitem><tocitem target="a0000000112">print
+            </tocitem><tocitem target="a0000000116">print
                
-            </tocitem><tocitem target="a0000000113">pwd
+            </tocitem><tocitem target="a0000000117">pwd
                
-            </tocitem><tocitem target="a0000000114">quit
+            </tocitem><tocitem target="a0000000118">quit
                
-            </tocitem><tocitem target="a0000000115">rectangle
+            </tocitem><tocitem target="a0000000119">rectangle
                
-            </tocitem><tocitem target="a0000000116">refresh
+            </tocitem><tocitem target="a0000000120">refresh
                
-            </tocitem><tocitem target="a0000000117">point
+            </tocitem><tocitem target="a0000000121">point
                
-            </tocitem><tocitem target="a0000000118">replot
+            </tocitem><tocitem target="a0000000122">replot
                
-            </tocitem><tocitem target="a0000000119">reset
+            </tocitem><tocitem target="a0000000123">reset
                
-            </tocitem><tocitem target="a0000000120">save
+            </tocitem><tocitem target="a0000000124">save
                
-            </tocitem><tocitem target="a0000000121">set
-               <tocitem href="a0000000122">arrow
+            </tocitem><tocitem target="a0000000125">set
+               <tocitem href="a0000000126">arrow
                    
-               </tocitem><tocitem href="a0000000123">autoscale
+               </tocitem><tocitem href="a0000000127">autoscale
                    
-               </tocitem><tocitem href="a0000000124">axescolour
+               </tocitem><tocitem href="a0000000128">axescolour
                    
-               </tocitem><tocitem href="a0000000125">axis
+               </tocitem><tocitem href="a0000000129">axis
                    
-               </tocitem><tocitem href="a0000000126">axisunitstyle
+               </tocitem><tocitem href="a0000000130">axisunitstyle
                    
-               </tocitem><tocitem href="a0000000127">backup
+               </tocitem><tocitem href="a0000000131">backup
                    
-               </tocitem><tocitem href="a0000000128">bar
+               </tocitem><tocitem href="a0000000132">bar
                    
-               </tocitem><tocitem href="a0000000129">binorigin
+               </tocitem><tocitem href="a0000000133">binorigin
                    
-               </tocitem><tocitem href="a0000000130">binwidth
+               </tocitem><tocitem href="a0000000134">binwidth
                    
-               </tocitem><tocitem href="a0000000131">boxfrom
+               </tocitem><tocitem href="a0000000135">boxfrom
                    
-               </tocitem><tocitem href="a0000000132">boxwidth
+               </tocitem><tocitem href="a0000000136">boxwidth
                    
-               </tocitem><tocitem href="a0000000133">calendar
+               </tocitem><tocitem href="a0000000137">c1format
                    
-               </tocitem><tocitem href="a0000000134">clip
+               </tocitem><tocitem href="a0000000138">c1label
                    
-               </tocitem><tocitem href="a0000000135">data style
+               </tocitem><tocitem href="a0000000139">calendar
                    
-               </tocitem><tocitem href="a0000000136">display
+               </tocitem><tocitem href="a0000000140">clip
                    
-               </tocitem><tocitem href="a0000000137">filter
+               </tocitem><tocitem href="a0000000141">colourkey
                    
-               </tocitem><tocitem href="a0000000138">fontsize
+               </tocitem><tocitem href="a0000000142">colourmap
                    
-               </tocitem><tocitem href="a0000000139">function style
+               </tocitem><tocitem href="a0000000143">contours
                    
-               </tocitem><tocitem href="a0000000140">grid
+               </tocitem><tocitem href="a0000000144">c<n>range
                    
-               </tocitem><tocitem href="a0000000141">gridmajcolour
+               </tocitem><tocitem href="a0000000145">data style
                    
-               </tocitem><tocitem href="a0000000142">gridmincolour
+               </tocitem><tocitem href="a0000000146">display
                    
-               </tocitem><tocitem href="a0000000143">key
+               </tocitem><tocitem href="a0000000147">filter
                    
-               </tocitem><tocitem href="a0000000144">keycolumns
+               </tocitem><tocitem href="a0000000148">fontsize
                    
-               </tocitem><tocitem href="a0000000145">label
+               </tocitem><tocitem href="a0000000149">function style
                    
-               </tocitem><tocitem href="a0000000146">linewidth
+               </tocitem><tocitem href="a0000000150">grid
                    
-               </tocitem><tocitem href="a0000000147">logscale
+               </tocitem><tocitem href="a0000000151">gridmajcolour
                    
-               </tocitem><tocitem href="a0000000148">multiplot
+               </tocitem><tocitem href="a0000000152">gridmincolour
                    
-               </tocitem><tocitem href="a0000000149">mxtics
+               </tocitem><tocitem href="a0000000153">key
                    
-               </tocitem><tocitem href="a0000000150">mytics
+               </tocitem><tocitem href="a0000000154">keycolumns
                    
-               </tocitem><tocitem href="a0000000151">mztics
+               </tocitem><tocitem href="a0000000155">label
                    
-               </tocitem><tocitem href="a0000000152">noarrow
+               </tocitem><tocitem href="a0000000156">linewidth
                    
-               </tocitem><tocitem href="a0000000153">noaxis
+               </tocitem><tocitem href="a0000000157">logscale
                    
-               </tocitem><tocitem href="a0000000154">nobackup
+               </tocitem><tocitem href="a0000000158">multiplot
                    
-               </tocitem><tocitem href="a0000000155">noclip
+               </tocitem><tocitem href="a0000000159">mxtics
                    
-               </tocitem><tocitem href="a0000000156">nodisplay
+               </tocitem><tocitem href="a0000000160">mytics
                    
-               </tocitem><tocitem href="a0000000157">nogrid
+               </tocitem><tocitem href="a0000000161">mztics
                    
-               </tocitem><tocitem href="a0000000158">nokey
+               </tocitem><tocitem href="a0000000162">noarrow
                    
-               </tocitem><tocitem href="a0000000159">nolabel
+               </tocitem><tocitem href="a0000000163">noaxis
                    
-               </tocitem><tocitem href="a0000000160">nologscale
+               </tocitem><tocitem href="a0000000164">nobackup
                    
-               </tocitem><tocitem href="a0000000161">nomultiplot
+               </tocitem><tocitem href="a0000000165">noclip
                    
-               </tocitem><tocitem href="a0000000162">nostyle
+               </tocitem><tocitem href="a0000000166">nocolourkey
                    
-               </tocitem><tocitem href="a0000000163">notitle
+               </tocitem><tocitem href="a0000000167">nodisplay
                    
-               </tocitem><tocitem href="a0000000164">noxtics
+               </tocitem><tocitem href="a0000000168">nogrid
                    
-               </tocitem><tocitem href="a0000000165">noytics
+               </tocitem><tocitem href="a0000000169">nokey
                    
-               </tocitem><tocitem href="a0000000166">noztics
+               </tocitem><tocitem href="a0000000170">nolabel
                    
-               </tocitem><tocitem href="a0000000167">numerics
+               </tocitem><tocitem href="a0000000171">nologscale
                    
-               </tocitem><tocitem href="a0000000168">origin
+               </tocitem><tocitem href="a0000000172">nomultiplot
                    
-               </tocitem><tocitem href="a0000000169">output
+               </tocitem><tocitem href="a0000000173">nostyle
                    
-               </tocitem><tocitem href="a0000000170">palette
+               </tocitem><tocitem href="a0000000174">notitle
                    
-               </tocitem><tocitem href="a0000000171">papersize
+               </tocitem><tocitem href="a0000000175">noxtics
                    
-               </tocitem><tocitem href="a0000000172">pointlinewidth
+               </tocitem><tocitem href="a0000000176">noytics
                    
-               </tocitem><tocitem href="a0000000173">pointsize
+               </tocitem><tocitem href="a0000000177">noztics
                    
-               </tocitem><tocitem href="a0000000174">preamble
+               </tocitem><tocitem href="a0000000178">numerics
                    
-               </tocitem><tocitem href="a0000000175">samples
+               </tocitem><tocitem href="a0000000179">origin
                    
-               </tocitem><tocitem href="a0000000176">seed
+               </tocitem><tocitem href="a0000000180">output
                    
-               </tocitem><tocitem href="a0000000177">size
+               </tocitem><tocitem href="a0000000181">palette
                    
-               </tocitem><tocitem href="a0000000178">style
+               </tocitem><tocitem href="a0000000182">papersize
                    
-               </tocitem><tocitem href="a0000000179">style data | style function
+               </tocitem><tocitem href="a0000000183">pointlinewidth
                    
-               </tocitem><tocitem href="a0000000180">terminal
+               </tocitem><tocitem href="a0000000184">pointsize
                    
-               </tocitem><tocitem href="a0000000181">textcolour
+               </tocitem><tocitem href="a0000000185">preamble
                    
-               </tocitem><tocitem href="a0000000182">texthalign
+               </tocitem><tocitem href="a0000000186">samples
                    
-               </tocitem><tocitem href="a0000000183">textvalign
+               </tocitem><tocitem href="a0000000187">seed
                    
-               </tocitem><tocitem href="a0000000184">title
+               </tocitem><tocitem href="a0000000188">size
                    
-               </tocitem><tocitem href="a0000000185">trange
+               </tocitem><tocitem href="a0000000189">style
                    
-               </tocitem><tocitem href="a0000000186">unit
+               </tocitem><tocitem href="a0000000190">style data | style function
                    
-               </tocitem><tocitem href="a0000000187">viewer
+               </tocitem><tocitem href="a0000000191">terminal
                    
-               </tocitem><tocitem href="a0000000188">width
+               </tocitem><tocitem href="a0000000192">textcolour
                    
-               </tocitem><tocitem href="a0000000189">xformat
+               </tocitem><tocitem href="a0000000193">texthalign
                    
-               </tocitem><tocitem href="a0000000190">xlabel
+               </tocitem><tocitem href="a0000000194">textvalign
                    
-               </tocitem><tocitem href="a0000000191">xrange
+               </tocitem><tocitem href="a0000000195">title
                    
-               </tocitem><tocitem href="a0000000192">xtics
+               </tocitem><tocitem href="a0000000196">trange
                    
-               </tocitem><tocitem href="a0000000193">yformat
+               </tocitem><tocitem href="a0000000197">unit
                    
-               </tocitem><tocitem href="a0000000194">ylabel
+               </tocitem><tocitem href="a0000000198">view
                    
-               </tocitem><tocitem href="a0000000195">yrange
+               </tocitem><tocitem href="a0000000199">viewer
                    
-               </tocitem><tocitem href="a0000000196">ytics
+               </tocitem><tocitem href="a0000000200">width
                    
-               </tocitem><tocitem href="a0000000197">zformat
+               </tocitem><tocitem href="a0000000201">xformat
                    
-               </tocitem><tocitem href="a0000000198">zlabel
+               </tocitem><tocitem href="a0000000202">xlabel
                    
-               </tocitem><tocitem href="a0000000199">zrange
+               </tocitem><tocitem href="a0000000203">xrange
                    
-               </tocitem><tocitem href="a0000000200">ztics
+               </tocitem><tocitem href="a0000000204">xtics
+                   
+               </tocitem><tocitem href="a0000000205">yformat
+                   
+               </tocitem><tocitem href="a0000000206">ylabel
+                   
+               </tocitem><tocitem href="a0000000207">yrange
+                   
+               </tocitem><tocitem href="a0000000208">ytics
+                   
+               </tocitem><tocitem href="a0000000209">zformat
+                   
+               </tocitem><tocitem href="a0000000210">zlabel
+                   
+               </tocitem><tocitem href="a0000000211">zrange
+                   
+               </tocitem><tocitem href="a0000000212">ztics
                    
                </tocitem>
-            </tocitem><tocitem target="a0000000201">show
+            </tocitem><tocitem target="a0000000213">show
                
-            </tocitem><tocitem target="a0000000202">solve
+            </tocitem><tocitem target="a0000000214">solve
                
-            </tocitem><tocitem target="a0000000203">spline
+            </tocitem><tocitem target="a0000000215">spline
                
-            </tocitem><tocitem target="a0000000204">swap
+            </tocitem><tocitem target="a0000000216">swap
                
-            </tocitem><tocitem target="a0000000205">tabulate
+            </tocitem><tocitem target="a0000000217">tabulate
                
-            </tocitem><tocitem target="a0000000206">text
+            </tocitem><tocitem target="a0000000218">text
                
-            </tocitem><tocitem target="a0000000207">undelete
+            </tocitem><tocitem target="a0000000219">undelete
                
-            </tocitem><tocitem target="a0000000208">unset
+            </tocitem><tocitem target="a0000000220">unset
                
-            </tocitem><tocitem target="a0000000209">while
+            </tocitem><tocitem target="a0000000221">while
                
             </tocitem>
         </tocitem><tocitem target="ch:function_list">List of Mathematical Functions
@@ -561,16 +597,16 @@
         </tocitem><tocitem target="ch:linetypes_table">Line and Point Types
             
         </tocitem><tocitem target="ch:configuration">Configuring PyXPlot
-            <tocitem target="a0000000210">Configuration Files
+            <tocitem target="a0000000222">Configuration Files
                
-            </tocitem><tocitem target="a0000000211">An Example Configuration File
+            </tocitem><tocitem target="a0000000223">An Example Configuration File
                
-            </tocitem><tocitem target="a0000000212">Setting definitions
-               <tocitem href="a0000000213">The filters section
+            </tocitem><tocitem target="a0000000224">Setting definitions
+               <tocitem href="a0000000225">The filters section
                    
                </tocitem><tocitem href="sec:configfile_settings">The settings section
                    
-               </tocitem><tocitem href="a0000000214">The styling section
+               </tocitem><tocitem href="a0000000226">The styling section
                    
                </tocitem><tocitem href="sec:configfile_terminal">The terminal section
                    
@@ -581,33 +617,31 @@
                
             </tocitem>
         </tocitem>
-    </tocitem><tocitem target="a0000000215">Appendices
-        <tocitem target="a0000000216">Other Applications of PyXPlot
-            <tocitem target="a0000000217">Conversion of JPEG Images to PostScript
+    </tocitem><tocitem target="a0000000227">Appendices
+        <tocitem target="a0000000228">Other Applications of PyXPlot
+            <tocitem target="a0000000229">Conversion of JPEG Images to PostScript
                
-            </tocitem><tocitem target="a0000000218">Inserting Equations in Powerpoint Presentations
+            </tocitem><tocitem target="a0000000230">Inserting Equations in Powerpoint Presentations
                
-            </tocitem><tocitem target="a0000000219">Delivering Talks in PyXPlot
-               <tocitem href="a0000000220">Setting up Infrastructure
+            </tocitem><tocitem target="a0000000231">Delivering Talks in PyXPlot
+               <tocitem href="a0000000232">Setting up Infrastructure
                    
-               </tocitem><tocitem href="a0000000221">Writing A Short Example Talk
+               </tocitem><tocitem href="a0000000233">Writing A Short Example Talk
                    
-               </tocitem><tocitem href="a0000000222">Delivering your Talk
+               </tocitem><tocitem href="a0000000234">Delivering your Talk
                    
                </tocitem>
             </tocitem>
         </tocitem><tocitem target="ch:gnuplot_diffs">Summary of Differences Between PyXPlot and Gnuplot
-            <tocitem target="a0000000223">The Typesetting of Text
+            <tocitem target="a0000000235">The Typesetting of Text
                
-            </tocitem><tocitem target="a0000000224">Complex Numbers
+            </tocitem><tocitem target="a0000000236">Complex Numbers
                
-            </tocitem><tocitem target="a0000000225">The Multiplot Environment
+            </tocitem><tocitem target="a0000000237">The Multiplot Environment
                
-            </tocitem><tocitem target="a0000000226">Plots with Multiple Axes
+            </tocitem><tocitem target="a0000000238">Plots with Multiple Axes
                
-            </tocitem><tocitem target="a0000000227">Plotting Parametric Functions
-               
-            </tocitem><tocitem target="a0000000228">Displaying Times and Dates on Axes
+            </tocitem><tocitem target="a0000000239">Plotting Parametric Functions
                
             </tocitem>
         </tocitem><tocitem target="ch:fit_maths">The fit Command: Mathematical Details
@@ -615,30 +649,32 @@
                
             </tocitem><tocitem target="sec:bayes_pdf">The Probability Density Function
                
-            </tocitem><tocitem target="a0000000229">Estimating the Error in u0
+            </tocitem><tocitem target="a0000000240">Estimating the Error in u0
                
-            </tocitem><tocitem target="a0000000230">The Covariance Matrix
+            </tocitem><tocitem target="a0000000241">The Covariance Matrix
                
             </tocitem><tocitem target="sec:correlation_matrix">The Correlation Matrix
                
             </tocitem><tocitem target="sec:finding_sigmai">Finding &#963;i
                
             </tocitem>
-        </tocitem><tocitem target="a0000000231">ChangeLog
-            <tocitem target="a0000000232">2010 June 1: PyXPlot 0.8.1
+        </tocitem><tocitem target="a0000000242">ChangeLog
+            <tocitem target="a0000000243">2010 Aug 4: PyXPlot 0.8.2
                
-            </tocitem><tocitem target="a0000000233">2010 May 19: PyXPlot 0.8.0
+            </tocitem><tocitem target="a0000000244">2010 Jun 1: PyXPlot 0.8.1
                
-            </tocitem><tocitem target="a0000000234">2009 Nov 17: PyXPlot 0.7.1
+            </tocitem><tocitem target="a0000000245">2010 May 19: PyXPlot 0.8.0
                
-            </tocitem><tocitem target="a0000000235">2008 Oct 14: PyXPlot 0.7.0
+            </tocitem><tocitem target="a0000000246">2009 Nov 17: PyXPlot 0.7.1
                
-            </tocitem><tocitem target="a0000000236">2007 Feb 26: PyXPlot 0.6.3
+            </tocitem><tocitem target="a0000000247">2008 Oct 14: PyXPlot 0.7.0
                
-            </tocitem><tocitem target="a0000000237">2006 Sep 09: PyXPlot 0.5.8
+            </tocitem><tocitem target="a0000000248">2007 Feb 26: PyXPlot 0.6.3
+               
+            </tocitem><tocitem target="a0000000249">2006 Sep 09: PyXPlot 0.5.8
                
             </tocitem>
-        </tocitem><tocitem target="a0000000238">Index
+        </tocitem><tocitem target="a0000000250">Index
             
         </tocitem>
     </tocitem>

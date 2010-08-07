@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: The Complete Syntax of the set terminal Command</title>
+<title>: Custom Colour Mappings</title>
 
-<link href="sect0060.html" title="The Default Terminal" rel="next" />
-<link href="sect0058.html" title="Producing Images on Disk" rel="prev" />
-<link href="sec-set_terminal.html" title="The set terminal Command" rel="up" />
+<link href="ex-mandelbrot.html" title="Colour Scale Bars" rel="next" />
+<link href="sec-colourmaps.html" title="Colour Maps" rel="prev" />
+<link href="sec-colourmaps.html" title="Colour Maps" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0058.html" title="Producing Images on Disk"><img alt="Previous: Producing Images on Disk" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-colourmaps.html" title="Colour Maps"><img alt="Previous: Colour Maps" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-set_terminal.html" title="The set terminal Command"><img alt="Up: The set terminal Command" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sec-colourmaps.html" title="Colour Maps"><img alt="Up: Colour Maps" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0060.html" title="The Default Terminal"><img alt="Next: The Default Terminal" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ex-mandelbrot.html" title="Colour Scale Bars"><img alt="Next: Colour Scale Bars" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -44,274 +44,71 @@
 
 </span><span>
 <span>
-<a href="ch-image_formats.html">Producing Image Files</a> <b>:</b>
+<a href="ch-plotting.html">Plotting: A Detailed Survey</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="sec-set_terminal.html">The <tt class="tt">set terminal</tt> Command</a> <b>:</b>
+<a href="sec-colourmaps.html">Colour Maps</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">The Complete Syntax of the <tt class="tt">set terminal</tt> Command</b>
+<b class="current">Custom Colour Mappings</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000060">2.1.3 The Complete Syntax of the <tt class="tt">set terminal</tt> Command</h2>
-<p>In addition to being used to select the graphical format in which output should be produced, the <tt class="tt">set terminal</tt> command<a name="a0000000804" id="a0000000804"></a> takes many options for fine-tuning the behaviours of particular terminals. Its complete syntax is: </p><pre>
-set terminal ( X11_SingleWindow | X11_MultiWindow | X11_Persist |
-               bmp | eps | gif | jpeg | pdf | png | postscript |
-               svg | tiff )
-             ( colour | color | monochrome )
-             ( dpi &lt;value&gt; )
-             ( portrait | landscape )
-             ( invert | noinvert )
-             ( transparent | solid )
-             ( antialias | noantialias )
-             ( enlarge | noenlarge )
-</pre><p>The following table lists the effects which each of these settings has: </p><div>
-
-<table cellspacing="0" class="tabular">
-<tr>
-
-    
-    <td style="text-align:left"><p> <tt class="tt">X11_SingleWindow</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> Displays plots on the screen (in X11 windows, using Ghostviewor other viewing application selected using the <tt class="tt">set viewer</tt> command<a name="a0000000805" id="a0000000805"></a>). Each time a new plot is generated, it replaces the old one, to prevent the desktop from becoming flooded with old plots.<a href="#a0000000806" class="footnote"><sup class="footnotemark">1</sup></a> <b class="bf">[default when running interactively; see below]</b></p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">X11_MultiWindow</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> As above, but each new plot appears in a new window, and the old plots remain visible. As many plots as may be desired can be left on the desktop simultaneously.</p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">X11_Persist</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> As above, but plot windows remain open after PyXPlot closes.</p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">bmp</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> Sends output to a Windows bitmap (<tt class="tt">.bmp</tt>) file. The filename for this file should be set using <tt class="tt">set output</tt>. This is a bitmap graphics terminal. <a name="a0000000807" id="a0000000807"></a></p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">eps</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> As above, but produces Encapsulated PostScript.<a name="a0000000808" id="a0000000808"></a><a name="a0000000809" id="a0000000809"></a></p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">gif</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> As above, but produces a gif image. This is a bitmap graphics terminal.<a name="a0000000810" id="a0000000810"></a></p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">jpeg</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> As above, but produces a jpeg image. This is a bitmap graphics terminal.<a name="a0000000811" id="a0000000811"></a></p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">pdf</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> As above, but produces pdf output.<a name="a0000000812" id="a0000000812"></a></p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">png</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> As above, but produces a png image. This is a bitmap graphics terminal.<a name="a0000000813" id="a0000000813"></a></p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">postscript</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> As above, but sends output to a PostScript file. <b class="bf">[default when running non-interactively; see below]</b><a name="a0000000814" id="a0000000814"></a></p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">svg</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> As above, but produces an svg image.<a href="#a0000000815" class="footnote"><sup class="footnotemark">2</sup></a><a name="a0000000816" id="a0000000816"></a></p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">tiff</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> As above, but produces a tiff image. This is a bitmap graphics terminal.<a name="a0000000817" id="a0000000817"></a></p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">colour</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> Allows datasets to be plotted in colour. Automatically they will be displayed in a series of different colours, or alternatively colours may be specified using the <tt class="tt">with colour</tt> plot modifier (see below). <b class="bf">[default]</b><a name="a0000000818" id="a0000000818"></a></p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">color</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> Equivalent US spelling of the above. </p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">monochrome</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> Opposite to the above; all datasets will be plotted in black by default.<a name="a0000000819" id="a0000000819"></a></p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">dpi</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> Sets the number of dots per inch at which rasterised graphic output should be sampled (i.e. the output image resolution)</p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">portrait</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> Sets plots to be displayed in upright (normal) orientation. <b class="bf">[default]</b><a name="a0000000820" id="a0000000820"></a></p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">landscape</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> Opposite of the above; produces side-ways plots. Not very useful when displayed on the screen, but you fit more on a sheet of paper that way around.<a name="a0000000821" id="a0000000821"></a></p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">invert</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> Modifier for the bitmap output terminals identified above – i.e. the <tt class="tt">bmp</tt>, <tt class="tt">gif</tt>, <tt class="tt">jpeg</tt>, <tt class="tt">png</tt> and <tt class="tt">tiff</tt> terminals – which produces output with inverted colours.<a href="#a0000000822" class="footnote"><sup class="footnotemark">3</sup></a><a name="a0000000823" id="a0000000823"></a></p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">noinvert</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> Modifier for the bitmap output terminals identified above; opposite to the above. <b class="bf">[default]</b></p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">transparent</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> Modifier for the <tt class="tt">gif</tt> and <tt class="tt">png</tt> terminals; produces output with a transparent background.<a name="a0000000824" id="a0000000824"></a><a name="a0000000825" id="a0000000825"></a><a name="a0000000826" id="a0000000826"></a></p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">solid</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> Modifier for the <tt class="tt">gif</tt> and <tt class="tt">png</tt> terminals; opposite to the above. <b class="bf">[default]</b></p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">antialias</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> Modifier for the bitmap output terminals identified above; produces antialiased output, with colour boundaries smoothed to disguise the effects of pixelisation <b class="bf">[default]</b></p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">noantialias</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> Modifier for the bitmap output terminals identified above; opposite to the above</p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">enlarge</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> Enlarge or shrink contents to fit the current paper size.<a name="a0000000827" id="a0000000827"></a></p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left"><p><tt class="tt">noenlarge</tt> </p></td>
-
-    
-    <td style="text-align:left"><p> Do not enlarge output; opposite to the above. <b class="bf">[default]</b></p></td>
-
-</tr>
-</table>
-</div></div>
-
-
-
-<div id="footnotes">
-<p><b>Footnotes</b></p>
-<ol>
-<li id="a0000000806">The authors are aware of a bug, that this terminal can occasionally go blank when a new plot is generated. This is a known bug in Ghostview, and can be worked around by selecting File <img src="images/img-0442.png" alt="$\to $" style="vertical-align:1px; 
+<div><h2 id="a0000000060">1.12.1 Custom Colour Mappings</h2>
+<p>The colour mapping used by the <tt class="tt">colourmap</tt> plot style is set using the <tt class="tt">set colourmap</tt> command<a name="a0000000818" id="a0000000818"></a>, which takes algebraic expressions for the RGB, HSB or CMYK components of the colour to use as a function of the variables <tt class="tt">c1</tt>, <tt class="tt">c2</tt>, <tt class="tt">c3</tt> and <tt class="tt">c4</tt>. As elsewhere in PyXPlot, these colour components should take values in the range zero to one; values outside of this range are clipped. The syntax of the <tt class="tt">set colourmap</tt> command<a name="a0000000819" id="a0000000819"></a> is as follows: </p><pre>
+set colourmap ( rgb&lt;r&gt;:&lt;g&gt;:&lt;b&gt; |
+                hsb&lt;h&gt;:&lt;s&gt;:&lt;b&gt; |
+                cmyk&lt;c&gt;:&lt;m&gt;:&lt;y&gt;:&lt;k&gt; )
+              [ mask &lt;expr&gt; ]
+</pre><p>If the optional mask expression is supplied, then any areas in a colour map where this expression evaluates to zero (i.e. false) are made transparent. The following colour mapping, which is the default, produces a greyscale colour mapping of the third column of data supplied to the <tt class="tt">colourmap</tt><a name="a0000000820" id="a0000000820"></a><a name="a0000000821" id="a0000000821"></a> plot style; further columns of data, if supplied, are not used: </p><pre>
+set c1range [*:*] renormalise noreverse
+set colourmap rgb(c1):(c1):(c1)
+</pre><p>The <tt class="tt">set c&lt;n&gt;range</tt> command<a name="a0000000822" id="a0000000822"></a> command specifies how the values of <img src="images/img-0496.png" alt="$c_ n$" style="vertical-align:-2px; 
                                      width:16px; 
-                                     height:7px" class="math gen" /> Reload within the Ghostview window.</li><li id="a0000000815">The <tt class="tt">svg</tt> output terminal is experimental and may be unstable. It relies upon the use of the <tt class="tt">svg</tt> output device in Ghostscript, which may not be present on all systems.</li><li id="a0000000822">This terminal setting is useful for producing plots to embed in talk slideshows, which often contain bright text on a dark background. It only works when producing bitmapped output, though a similar effect can be achieved in PostScript using the <tt class="tt">set textcolour</tt> and <tt class="tt">set axescolour</tt> commands (see Section <a href="sec-set_colours.html">1.8</a>).</li>
-</ol>
-</div>
+                                     height:10px" class="math gen" /> are processed before being used in the expressions supplied to the <tt class="tt">set colourmap</tt> command<a name="a0000000823" id="a0000000823"></a>. It has the following syntax: </p><pre>
+set c&lt;n&gt;range [ &lt;range&gt; ]
+              [ reversed | noreversed ]
+              [ renormalise | norenormalise ]
+</pre><p>If the <tt class="tt">renor­malise</tt> option is specified, then the values of <img src="images/img-0496.png" alt="$c_ n$" style="vertical-align:-2px; 
+                                     width:16px; 
+                                     height:10px" class="math gen" /> at each point in the data grid are first scaled into the range zero to one. This is generally useful, since the colour components themselves must be in this range; in the example given above, the lowest value of <img src="images/img-0485.png" alt="$c_1$" style="vertical-align:-2px; 
+                                     width:14px; 
+                                     height:10px" class="math gen" /> corresponds to black (i.e. brightness 0), and the highest value corresponds to white (i.e. brightness 1). If an explicit range is specified to the <tt class="tt">set c&lt;n&gt;range</tt> command, then the upper limit of this range maps to the value one, and the lower limit maps to the value zero. An asterisk (<tt class="tt">*</tt>) means that the lowest or highest value is substituted. The mapping is inverted if the <tt class="tt">reverse</tt> option is specified, such that the upper limit maps to zero, and the lower limit maps to one. Intermediate values are scaled either linearly or logarithmically, and these behaviours can be selected with the following commands: </p><pre>
+set logscale c1
+set linearscale c1
+</pre><p>In the example below, a colour map of the function <img src="images/img-0497.png" alt="$f(z)=3x^2/(x^3+1)$" style="vertical-align:-5px; 
+                                     width:156px; 
+                                     height:21px" class="math gen" /> is made, using hue to represent the magnitude of <img src="images/img-0300.png" alt="$f(z)$" style="vertical-align:-4px; 
+                                     width:32px; 
+                                     height:18px" class="math gen" /> and saturation to represent the complex argument of <img src="images/img-0300.png" alt="$f(z)$" style="vertical-align:-4px; 
+                                     width:32px; 
+                                     height:18px" class="math gen" />: </p><p><tt class="tt">set numerics complex</tt><br /><tt class="tt">set sample grid 400x400</tt><br /><tt class="tt">set nogrid</tt><br /><tt class="tt">set size square</tt><br /><tt class="tt">set key below</tt><br /><tt class="tt">set c1range[0:2]</tt><br /><tt class="tt">set colmap hsb(c1):(c2*0.7+0.3):1</tt><br /><tt class="tt">f(x) = 3*x**2 / (x**3+1)</tt><br /><tt class="tt">plot [-3:3][-3:3] abs(f(x+i*y)):arg(f(x+i*y)) with colourmap</tt> </p><p><center>
+<img src="images/img-0499.png" alt="\includegraphics[width=8cm]{examples/eps/ex_branch_cuts}" style="width:8cm" /></center> </p></div>
+
+
+
+
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0058.html" title="Producing Images on Disk"><img alt="Previous: Producing Images on Disk" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-colourmaps.html" title="Colour Maps"><img alt="Previous: Colour Maps" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-set_terminal.html" title="The set terminal Command"><img alt="Up: The set terminal Command" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sec-colourmaps.html" title="Colour Maps"><img alt="Up: Colour Maps" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0060.html" title="The Default Terminal"><img alt="Next: The Default Terminal" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ex-mandelbrot.html" title="Colour Scale Bars"><img alt="Next: Colour Scale Bars" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

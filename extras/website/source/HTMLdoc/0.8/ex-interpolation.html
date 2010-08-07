@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -57,19 +57,77 @@
 </div>
 
 <div><h1 id="ex:interpolation">5.7 Datafile Interpolation</h1>
-<p>  <a name="a0000000499" id="a0000000499"></a> </p><p>The <tt class="tt">interpolate</tt> command<a name="a0000000500" id="a0000000500"></a> can be used to generate a special function within PyXPlot’s mathematical environment which interpolates a set of datapoints supplied from a datafile. Various different types of interpolation are supported: linear interpolation, power-law interpolation<a href="#a0000000501" class="footnote"><sup class="footnotemark">1</sup></a>, polynomial interpolation, cubic-spline interpolation and akima-spline interpolation. The use of polynomial interpolation with large datasets is strongly discouraged, as polynomial fits tend to show severe oscillations between datapoints. Extrapolation is not permitted; if an attempt is made to evaluate an interpolated function beyond the limits of the datapoints which it interpolates, PyXPlot returns an error or value of not-a-number. </p><p>The <tt class="tt">interpolate</tt> command<a name="a0000000502" id="a0000000502"></a> has similar syntax to the <tt class="tt">fit</tt> command<a name="a0000000503" id="a0000000503"></a>: </p><pre>
-interpolate ( akima | linear | loglinear | polynomial | spline )
+<p>  <a name="a0000000513" id="a0000000513"></a> </p><p>The <tt class="tt">interpolate</tt> command<a name="a0000000514" id="a0000000514"></a> can be used to generate a special function within PyXPlot’s mathematical environment which interpolates a set of datapoints supplied from a datafile. Either one- or two-dimensional interpolation is possible. </p><p>In the case of one-dimensional interpolation, various different types of interpolation are supported: linear interpolation, power law interpolation, polynomial interpolation, cubic spline interpolation and akima spline interpolation. Stepwise interpolation returns the value of the datapoint nearest to the requested point in argument space. The use of polynomial interpolation with large datasets is strongly discouraged, as polynomial fits tend to show severe oscillations between datapoints. Except in the case of stepwise interpolation, extrapolation is not permitted; if an attempt is made to evaluate an interpolated function beyond the limits of the datapoints which it interpolates, PyXPlot returns an error or value of not-a-number. </p><p>In the case of two-dimensional interpolation, the type of interpolation to be used is set using the <tt class="tt">interpolate</tt> modifier to the <tt class="tt">set samples</tt> command<a name="a0000000515" id="a0000000515"></a>, and may be changed at any time after the interpolation function has been created. The options available are nearest neighbour interpolation – which is the two-dimensional equivalent of stepwise interpolation, inverse square interpolation – which returns a weighted average of the supplied datapoints, using the inverse squares of their distances from the requested point in argument space as weights, and Monaghan Lattanzio interpolation, which uses the weighting function (Monaghan &amp; Lattanzio 1985) </p><table id="a0000000516" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
+<tr id="a0000000517">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0172.png" alt="$\displaystyle  w(x)  $" style="vertical-align:-4px; width:36px;                     height:18px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0173.png" alt="$\displaystyle  = 1 - \nicefrac {3}{2}v^2 + \nicefrac {3}{4}v^3  $" style="vertical-align:-5px; width:146px;                     height:22px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0174.png" alt="$\displaystyle  \, \mathrm{for~ }0\leq v\leq 1  $" style="vertical-align:-3px; width:103px;                     height:15px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr><tr id="a0000000518">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0175.png" alt="$\displaystyle  $" style="vertical-align:0px; width:1px;                     height:1px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0176.png" alt="$\displaystyle  = \nicefrac {1}{4}(2-v)^3  $" style="vertical-align:-5px; width:100px;                     height:22px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0177.png" alt="$\displaystyle  \, \mathrm{for~ }1\leq v\leq 2  $" style="vertical-align:-3px; width:104px;                     height:15px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr>
+</table><p> where <img src="images/img-0178.png" alt="$v=r/h$" style="vertical-align:-5px; 
+                                     width:61px; 
+                                     height:18px" class="math gen" /> for <img src="images/img-0179.png" alt="$h=\sqrt {A/n}$" style="vertical-align:-5px; 
+                                     width:86px; 
+                                     height:22px" class="math gen" />, <img src="images/img-0180.png" alt="$A$" style="vertical-align:0px; 
+                                     width:13px; 
+                                     height:12px" class="math gen" /> is the product <img src="images/img-0181.png" alt="$(x_\mathrm {max}-x_\mathrm {min})(y_\mathrm {max}-y_\mathrm {min})$" style="vertical-align:-4px; 
+                                     width:212px; 
+                                     height:18px" class="math gen" /> and <img src="images/img-0014.png" alt="$n$" style="vertical-align:0px; 
+                                     width:11px; 
+                                     height:8px" class="math gen" /> is the number of input datapoints. These are selected as follows: </p><pre>
+set samples interpolate NearestNeighbour
+set samples interpolate InverseSquare
+set samples interpolate MonaghanLattanzio
+</pre><p>Finally, data can be imported from graphical images in bitmap (<tt class="tt">.bmp</tt>) format to produce a function of two arguments returning a value in the range <img src="images/img-0182.png" alt="$0\to 1$" style="vertical-align:0px; 
+                                     width:45px; 
+                                     height:12px" class="math gen" /> which represents the data in one of the image’s three colour channels. The two arguments are the horizontal and vertical position within the bitmap image, as measured in pixels. </p><p>The <tt class="tt">interpolate</tt> command<a name="a0000000519" id="a0000000519"></a> has similar syntax to the <tt class="tt">fit</tt> command<a name="a0000000520" id="a0000000520"></a>: </p><pre>
+interpolate ( akima | linear | loglinear | polynomial |
+              spline | stepwise |
+              2d [( bmp_r | bmp_g | bmp_b )] )
             [&lt;range specification&gt;] &lt;function name&gt;"()"
             '&lt;filename&gt;'
             [ every &lt;expression&gt; {:&lt;expression} ]
             [ index &lt;value&gt; ]
             [ select &lt;expression&gt; ]
             [ using &lt;expression&gt; {:&lt;expression} ]
-</pre><p>A very common application of the <tt class="tt">interpolate</tt> command<a name="a0000000504" id="a0000000504"></a> is to perform arithmetic functions such as addition or subtraction on datasets which are not sampled at the same abscissa values. The following example would plot the difference between two such datasets: </p><pre>
+</pre><p>A very common application of the <tt class="tt">interpolate</tt> command<a name="a0000000521" id="a0000000521"></a> is to perform arithmetic functions such as addition or subtraction on datasets which are not sampled at the same abscissa values. The following example would plot the difference between two such datasets: </p><pre>
 interpolate linear f() 'data1.dat'
 interpolate linear g() 'data2.dat'
 plot [min:max] f(x)-g(x)
-</pre><p>Note that it is advisable to supply a range to the <tt class="tt">plot</tt> command in this example: because the two datasets have been turned into continuous functions, the <tt class="tt">plot</tt> command has to guess a range over which to plot them unless one is explicitly supplied. </p><p>The <tt class="tt">spline</tt> command<a name="a0000000505" id="a0000000505"></a> is an alias for <tt class="tt">interpolate spline</tt>; the following two statements are equivalent: </p><pre>
+</pre><p>Note that it is advisable to supply a range to the <tt class="tt">plot</tt> command in this example: because the two datasets have been turned into continuous functions, the <tt class="tt">plot</tt> command has to guess a range over which to plot them unless one is explicitly supplied. </p><p>The <tt class="tt">spline</tt> command<a name="a0000000522" id="a0000000522"></a> is an alias for <tt class="tt">interpolate spline</tt>; the following two statements are equivalent: </p><pre>
 spline f() 'data1.dat'
 interpolate spline f() 'data1.dat'
 </pre><p> <span class="upshape"><span class="mdseries"><span class="rm">A demonstration of the <tt class="tt">linear</tt>, <tt class="tt">spline</tt> and <tt class="tt">akima</tt> modes of interpolation.</span></span></span></p><div>
@@ -88,7 +146,7 @@ interpolate spline f() 'data1.dat'
 </tr><tr>
 
     
-    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>Having set three functions to interpolate these non-smooth data in different ways, we plot them with a vertical offset of <img src="images/img-0172.png" alt="$0.1$" style="vertical-align:0px; 
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>Having set three functions to interpolate these non-smooth data in different ways, we plot them with a vertical offset of <img src="images/img-0183.png" alt="$0.1$" style="vertical-align:0px; 
                                      width:22px; 
                                      height:12px" class="math gen" /> between them for clarity. The interpolated datafileis plotted with points three times to show where each of the interpolation functions is pinned. </p></td>
 
@@ -123,7 +181,7 @@ interpolate spline f() 'data1.dat'
 
     
     <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><p><center>
-<img src="images/img-0174.png" alt="\includegraphics[width=\textwidth ]{examples/eps/ex_interpolation}" style="width:" /></center>  </p></td>
+<img src="images/img-0185.png" alt="\includegraphics[width=\textwidth ]{examples/eps/ex_interpolation}" style="width:" /></center>  </p></td>
 
 </tr>
 </table>
@@ -131,12 +189,7 @@ interpolate spline f() 'data1.dat'
 
 
 
-<div id="footnotes">
-<p><b>Footnotes</b></p>
-<ol>
-<li id="a0000000501">Power-law interpolation is equivalent to linear interpolation in log-log space.</li>
-</ol>
-</div>
+
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
@@ -150,7 +203,7 @@ interpolate spline f() 'data1.dat'
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Specifying the Positioning of Axes</title>
+<title>: Configuring Axes</title>
 
-<link href="sect0053.html" title="Configuring the Appearance of Axes" rel="next" />
-<link href="sec-set_axisunitstyle.html" title="Plotting Quantities with Physical Units" rel="prev" />
-<link href="sec-multiple_axes.html" title="Configuring Axes" rel="up" />
+<link href="sec-multiple_axes.html" title="Adding Additional Axes" rel="next" />
+<link href="sec-legends.html" title="Graph Legends" rel="prev" />
+<link href="ch-plotting.html" title="Plotting: A Detailed Survey" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-set_axisunitstyle.html" title="Plotting Quantities with Physical Units"><img alt="Previous: Plotting Quantities with Physical Units" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-legends.html" title="Graph Legends"><img alt="Previous: Graph Legends" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-multiple_axes.html" title="Configuring Axes"><img alt="Up: Configuring Axes" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-plotting.html" title="Plotting: A Detailed Survey"><img alt="Up: Plotting: A Detailed Survey" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0053.html" title="Configuring the Appearance of Axes"><img alt="Next: Configuring the Appearance of Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sec-multiple_axes.html" title="Adding Additional Axes"><img alt="Next: Adding Additional Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -48,45 +48,59 @@
 </span>
 
 </span><span>
-<span>
-<a href="sec-multiple_axes.html">Configuring Axes</a> <b>:</b>
-</span>
-
-</span><span>
 
 <span>
-<b class="current">Specifying the Positioning of Axes</b>
+<b class="current">Configuring Axes</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000053">1.7.3 Specifying the Positioning of Axes</h2>
-<p>By default, the <tt class="tt">x1</tt>-axis is placed along the bottom of graphs and the <tt class="tt">y1</tt>-axis is placed up the left-hand side of graphs. On three-dimensional plots, the <tt class="tt">z1</tt>-axis is placed at the front of the graph. The second set of axes are placed opposite to the first: the <tt class="tt">x2</tt>-, <tt class="tt">y2</tt>- and <tt class="tt">z2</tt>-axes are placed respectively along the top, right and back sides of graphs. Higher-numbered axes are placed alongside the <tt class="tt">x1</tt>-, <tt class="tt">y1</tt>- and <tt class="tt">z1</tt>-axes. </p><p>However, the position of any axis can be explicitly set using syntax of the form: </p><pre>
-set axis x top
-set axis y right
-set axis z back
-</pre><p> Horizontal axes can be set to appear either at the <tt class="tt">top</tt> or <tt class="tt">bottom</tt>; vertical axes can be set to appear either at the <tt class="tt">left</tt> or <tt class="tt">right</tt>; and <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
-                                     width:9px; 
-                                     height:8px" class="math gen" />-axes can be set to appear either at the <tt class="tt">front</tt> or <tt class="tt">back</tt>. </p></div>
+<div><h1 id="a0000000053">1.8 Configuring Axes</h1>
+</div>
+
+<div class="contents section-contents"><!--<strong>Subsections</strong>-->
+<ul>
+<li><a href="sec-multiple_axes.html">1.8.1 Adding Additional Axes</a>
+   
+</li><li><a href="sect0053.html">1.8.2 Selecting which Axes to Plot Against</a>
+   
+</li><li><a href="sec-set_axisunitstyle.html">1.8.3 Plotting Quantities with Physical Units</a>
+   
+</li><li><a href="sect0054.html">1.8.4 Specifying the Positioning of Axes</a>
+   
+</li><li><a href="sect0055.html">1.8.5 Configuring the Appearance of Axes</a>
+   
+</li><li><a href="sect0056.html">1.8.6 Setting the Colour of Axes</a>
+   
+</li><li><a href="ex-axistics.html">1.8.7 Specifying where Ticks should Appear along Axes</a>
+   
+</li><li><a href="sec-set_xformat.html">1.8.8 Configuring how Tick Marks are Labelled</a>
+   
+</li><li><a href="ex-cmbrtemp.html">1.8.9 Linked Axes</a>
+   
+</li>
 
 
+
+</ul>
+</div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-set_axisunitstyle.html" title="Plotting Quantities with Physical Units"><img alt="Previous: Plotting Quantities with Physical Units" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-legends.html" title="Graph Legends"><img alt="Previous: Graph Legends" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-multiple_axes.html" title="Configuring Axes"><img alt="Up: Configuring Axes" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-plotting.html" title="Plotting: A Detailed Survey"><img alt="Up: Plotting: A Detailed Survey" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0053.html" title="Configuring the Appearance of Axes"><img alt="Next: Configuring the Appearance of Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sec-multiple_axes.html" title="Adding Additional Axes"><img alt="Next: Adding Additional Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

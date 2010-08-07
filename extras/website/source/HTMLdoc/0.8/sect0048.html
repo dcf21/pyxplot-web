@@ -3,10 +3,10 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Arrows</title>
+<title>: Colour Maps, Contour Maps and Surface Plots</title>
 
-<link href="sect0049.html" title="The style Keyword" rel="next" />
-<link href="sect0047.html" title="Steps" rel="prev" />
+<link href="sect0049.html" title="Labelling Datapoints" rel="next" />
+<link href="sect0047.html" title="Arrows" rel="prev" />
 <link href="sec-list_of_plotstyles.html" title="PyXPlot’s Plot Styles" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0047.html" title="Steps"><img alt="Previous: Steps" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0047.html" title="Arrows"><img alt="Previous: Arrows" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="sec-list_of_plotstyles.html" title="PyXPlot’s Plot Styles"><img alt="Up: PyXPlot’s Plot Styles" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0049.html" title="The style Keyword"><img alt="Next: The style Keyword" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0049.html" title="Labelling Datapoints"><img alt="Next: Labelling Datapoints" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -55,73 +55,26 @@
 </span><span>
 
 <span>
-<b class="current">Arrows</b>
+<b class="current">Colour Maps, Contour Maps and Surface Plots</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000049">1.2.6 Arrows</h2>
-<p>The following plot styles allow arrows or lines to be drawn on graphs with positions dictated by a series of datapoints: </p><ul class="itemize">
-<li><p><tt class="tt">arrows_head</tt><a name="a0000000682" id="a0000000682"></a><a name="a0000000683" id="a0000000683"></a> </p></li><li><p><tt class="tt">arrows_nohead</tt><a name="a0000000684" id="a0000000684"></a><a name="a0000000685" id="a0000000685"></a> </p></li><li><p><tt class="tt">arrows_twohead</tt><a name="a0000000686" id="a0000000686"></a><a name="a0000000687" id="a0000000687"></a> </p></li>
-</ul><p> The plot style of <tt class="tt">arrows</tt><a name="a0000000688" id="a0000000688"></a><a name="a0000000689" id="a0000000689"></a> is an alias for <tt class="tt">arrows_head</tt><a name="a0000000690" id="a0000000690"></a><a name="a0000000691" id="a0000000691"></a>. Each of these plot styles take four columns of data – <img src="images/img-0352.png" alt="$x_1$" style="vertical-align:-2px; 
-                                     width:16px; 
-                                     height:10px" class="math gen" />, <img src="images/img-0353.png" alt="$y_1$" style="vertical-align:-4px; 
-                                     width:15px; 
-                                     height:12px" class="math gen" />, <img src="images/img-0354.png" alt="$x_2$" style="vertical-align:-2px; 
-                                     width:17px; 
-                                     height:10px" class="math gen" /> and <img src="images/img-0355.png" alt="$y_2$" style="vertical-align:-4px; 
-                                     width:16px; 
-                                     height:12px" class="math gen" /> – and each datapoint results in an arrow being drawn from the point <img src="images/img-0356.png" alt="$(x_1,y_1)$" style="vertical-align:-4px; 
-                                     width:55px; 
-                                     height:18px" class="math gen" /> to the point <img src="images/img-0357.png" alt="$(x_2,y_2)$" style="vertical-align:-4px; 
-                                     width:55px; 
-                                     height:18px" class="math gen" />. The three plot styles differ in the kinds of arrows that they draw. <tt class="tt">arrows_head</tt><a name="a0000000692" id="a0000000692"></a><a name="a0000000693" id="a0000000693"></a> draws an arrow head at the point <img src="images/img-0357.png" alt="$(x_2,y_2)$" style="vertical-align:-4px; 
-                                     width:55px; 
-                                     height:18px" class="math gen" />; <tt class="tt">arrows_nohead</tt><a name="a0000000694" id="a0000000694"></a><a name="a0000000695" id="a0000000695"></a> draws a simple line without arrow heads on either end; <tt class="tt">arrows_twohead</tt><a name="a0000000696" id="a0000000696"></a><a name="a0000000697" id="a0000000697"></a> draws arrow heads on both ends of the arrow. </p><p> <span class="upshape"><span class="mdseries"><span class="rm">A diagram of fluid flow around a vortex.</span></span></span></p><div>
-
-<table cellspacing="0" class="tabular">
-<tr>
-
-    
-    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this example we produce a velocity map of fluid circulating in a vortex. For simplicity, we assume that the fluid in the core of the vortex, at radii <img src="images/img-0358.png" alt="$r&lt;1$" style="vertical-align:0px; 
-                                     width:41px; 
-                                     height:12px" class="math gen" />, is undergoing solid body rotation with velocity <img src="images/img-0359.png" alt="$v\propto r$" style="vertical-align:0px; 
-                                     width:41px; 
-                                     height:8px" class="math gen" />, and that the fluid outside this core is behaving as a free vortex with velocity <img src="images/img-0360.png" alt="$v\propto 1/r$" style="vertical-align:-5px; 
-                                     width:59px; 
-                                     height:18px" class="math gen" />. First of all, we use a simple python script to generate a datafile with the four columns: </p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">from math import *</tt><br /><tt class="tt">for i in range(-19,20,2):</tt><br /><tt class="tt">for j in range(-19,20,2):</tt><br /><tt class="tt">x = float(i)/2</tt><br /><tt class="tt">y = float(j)/2</tt><br /><tt class="tt">r = sqrt(x**2 + y**2) / 4</tt><br /><tt class="tt">theta = atan2(y,x)</tt><br /><tt class="tt">if (r <img src="images/img-0034.png" alt="$&lt;$" style="vertical-align:0px; 
-                                     width:12px; 
-                                     height:11px" class="math gen" /> 1.0): v = 1.3*r</tt><br /><tt class="tt">else : v = 1.3/r</tt><br /><tt class="tt">vy = v * cos(theta)</tt><br /><tt class="tt">vx = v * -sin(theta)</tt><br /><tt class="tt">print "%7.3f %7.3f %7.3f %7.3f"%(x,y,vx,vy)</tt> </p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>This data can then be plotted using the following PyXPlot script: </p></td>
-
-</tr><tr>
-
-    
-    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">set size square</tt><br /><tt class="tt">set nokey</tt><br /><tt class="tt">set xlabel ’x’</tt><br /><tt class="tt">set ylabel ’y’</tt><br /><tt class="tt">set trange [0:2*pi]</tt><br /><tt class="tt">plot <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
-                                     width:7px; 
-                                     height:18px" class="math gen" /></tt><br /><tt class="tt">’data’ u 1:2:($1+$3):($2+$4) w arrows, <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
-                                     width:7px; 
-                                     height:18px" class="math gen" /></tt><br /><tt class="tt">parametric 4*sin(t):4*cos(t) w lt 2 col black</tt> </p></td>
-
-</tr><tr>
-
-    
-    <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><p><center>
-<img src="images/img-0362.png" alt="\includegraphics[width=10cm]{examples/eps/ex_vortex}" style="width:10cm" /></center>  </p></td>
-
-</tr>
-</table>
-</div></div>
+<div><h2 id="a0000000049">1.2.7 Colour Maps, Contour Maps and Surface Plots</h2>
+<p>The following plot styles differ from those above in that, regardless of whether a three-dimensional plot is being produced, they read in datapoints with <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" />, <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
+                                     width:9px; 
+                                     height:12px" class="math gen" /> and <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:8px" class="math gen" /> coordinates in three columns. The first two are useful for producing two-dimensional representations of <img src="images/img-0339.png" alt="$(x,y,z)$" style="vertical-align:-4px; 
+                                     width:57px; 
+                                     height:18px" class="math gen" /> surfaces using colours or contours to show the magnitude of <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:8px" class="math gen" />, while the third is useful for producing three-dimensional graphs of such surfaces: </p><ul class="itemize">
+<li><p>colourmap </p></li><li><p>contourmap </p></li><li><p>surface </p></li>
+</ul><p> They are discussed in detail in Sections <a href="sec-colourmaps.html">1.12</a>, <a href="sec-contourmaps.html">1.13</a> and <a href="ex-surface-sinc.html">1.14.1</a> respectively. </p></div>
 
 
 
@@ -130,16 +83,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0047.html" title="Steps"><img alt="Previous: Steps" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0047.html" title="Arrows"><img alt="Previous: Arrows" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="sec-list_of_plotstyles.html" title="PyXPlot’s Plot Styles"><img alt="Up: PyXPlot’s Plot Styles" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0049.html" title="The style Keyword"><img alt="Next: The style Keyword" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0049.html" title="Labelling Datapoints"><img alt="Next: Labelling Datapoints" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

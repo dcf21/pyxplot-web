@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -57,9 +57,9 @@
 </div>
 
 <div><h1 id="sec:complex_numbers">4.5 Working with Complex Numbers</h1>
-<p>  <a name="a0000000400" id="a0000000400"></a> </p><p>In all of the examples given thus far, algebraic expressions have only been allowed to return real numbers: PyXPlot has not been handling any complex numbers. Since there are many circumstances in which the data being analysed may be known for certain to be real, complex arithmetic is disabled by default. Expressions such as <tt class="tt">sqrt(-1)</tt> will return either an error or <tt class="tt">NaN</tt>. The most obvious example of this is the built-in variable <tt class="tt">i</tt>, which is set to equal <tt class="tt">sqrt(-1)</tt>: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">print i</b></tt><br /><tt class="tt">nan</tt>  </p><p>Complex arithmetic may be enabled by typing <a name="a0000000401" id="a0000000401"></a> </p><pre>
+<p>  <a name="a0000000414" id="a0000000414"></a> </p><p>In all of the examples given thus far, algebraic expressions have only been allowed to return real numbers: PyXPlot has not been handling any complex numbers. Since there are many circumstances in which the data being analysed may be known for certain to be real, complex arithmetic is disabled by default. Expressions such as <tt class="tt">sqrt(-1)</tt> will return either an error or <tt class="tt">NaN</tt>. The most obvious example of this is the built-in variable <tt class="tt">i</tt>, which is set to equal <tt class="tt">sqrt(-1)</tt>: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">print i</b></tt><br /><tt class="tt">nan</tt>  </p><p>Complex arithmetic may be enabled by typing <a name="a0000000415" id="a0000000415"></a> </p><pre>
 set numeric complex
-</pre><p>and then disabled again by typing <a name="a0000000402" id="a0000000402"></a> </p><pre>
+</pre><p>and then disabled again by typing <a name="a0000000416" id="a0000000416"></a> </p><pre>
 set numeric real
 </pre><p>Once complex arithmetic is enabled, many of PyXPlot’s built-in mathematical functions accept complex input arguments, including the logarithm function, all of the trigonometric functions, and the exponential function. A complete list of functions which accept complex inputs can be found in Appendix <a href="ch-function_list.html">2</a>. </p><p>Complex number literals can be entered into algebraic expressions in either of the following two forms: </p><pre>
 print (2 + 3*i       )
@@ -70,13 +70,13 @@ print (2 + 3*sqrt(-1))
 i=sqrt(-1)
 </pre><p>The user can, of course, define any other variable to equal <img src="images/img-0007.png" alt="$\sqrt {-1}$" style="vertical-align:-3px; 
                                      width:38px; 
-                                     height:19px" class="math gen" />, thus allowing him to use any other letter, e.g. <tt class="tt">j</tt>, to represent the imaginary component of a number. </p><p>Several built-in functions are provided for performing manipulations on complex numbers. The <tt class="tt">Re(z)</tt><a name="a0000000403" id="a0000000403"></a> and <tt class="tt">Im(z)</tt><a name="a0000000404" id="a0000000404"></a> functions return respectively the real and imaginary parts of a complex number <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
+                                     height:19px" class="math gen" />, thus allowing him to use any other letter, e.g. <tt class="tt">j</tt>, to represent the imaginary component of a number. </p><p>Several built-in functions are provided for performing manipulations on complex numbers. The <tt class="tt">Re(z)</tt><a name="a0000000417" id="a0000000417"></a> and <tt class="tt">Im(z)</tt><a name="a0000000418" id="a0000000418"></a> functions return respectively the real and imaginary parts of a complex number <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
                                      width:9px; 
-                                     height:8px" class="math gen" />, the <tt class="tt">arg(z)</tt><a name="a0000000405" id="a0000000405"></a> function returns the complex argument of <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
+                                     height:8px" class="math gen" />, the <tt class="tt">arg(z)</tt><a name="a0000000419" id="a0000000419"></a> function returns the complex argument of <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
                                      width:9px; 
-                                     height:8px" class="math gen" />, and the <tt class="tt">abs(z)</tt><a name="a0000000406" id="a0000000406"></a> function returns the modulus of <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
+                                     height:8px" class="math gen" />, and the <tt class="tt">abs(z)</tt><a name="a0000000420" id="a0000000420"></a> function returns the modulus of <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
                                      width:9px; 
-                                     height:8px" class="math gen" />. The <tt class="tt">conjugate(z)</tt><a name="a0000000407" id="a0000000407"></a> command returns the complex conjugate of <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
+                                     height:8px" class="math gen" />. The <tt class="tt">conjugate(z)</tt><a name="a0000000421" id="a0000000421"></a> command returns the complex conjugate of <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
                                      width:9px; 
                                      height:8px" class="math gen" />. The following lines of code demonstrate the use of these functions: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">set numeric complex</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">x=0.5</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print Re(exp(i*x))</b></tt><br /><tt class="tt">0.87758256</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print cos(x)</b>        <i class="it"># This equals the above</i></tt><br /><tt class="tt">0.87758256</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print arg(exp(i*x))</b> <i class="it"># This equals x</i></tt><br /><tt class="tt">0.5</tt>  </p></div>
 
@@ -96,7 +96,7 @@ i=sqrt(-1)
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

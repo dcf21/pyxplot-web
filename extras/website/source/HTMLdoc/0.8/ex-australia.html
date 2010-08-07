@@ -5,9 +5,9 @@
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
 <title>: Text Labels</title>
 
-<link href="sect0056.html" title="Three-Dimensional Plotting" rel="next" />
+<link href="sec-colourmaps.html" title="Colour Maps" rel="next" />
 <link href="sec-set_arrow.html" title="Arrows" rel="prev" />
-<link href="sect0055.html" title="Labelling Graphs" rel="up" />
+<link href="sect0058.html" title="Labelling Graphs" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -17,14 +17,14 @@
 <tr>
 <td><a href="sec-set_arrow.html" title="Arrows"><img alt="Previous: Arrows" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0055.html" title="Labelling Graphs"><img alt="Up: Labelling Graphs" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0058.html" title="Labelling Graphs"><img alt="Up: Labelling Graphs" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0056.html" title="Three-Dimensional Plotting"><img alt="Next: Three-Dimensional Plotting" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sec-colourmaps.html" title="Colour Maps"><img alt="Next: Colour Maps" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -49,7 +49,7 @@
 
 </span><span>
 <span>
-<a href="sect0055.html">Labelling Graphs</a> <b>:</b>
+<a href="sect0058.html">Labelling Graphs</a> <b>:</b>
 </span>
 
 </span><span>
@@ -61,20 +61,20 @@
 <hr />
 </div>
 
-<div><h2 id="ex:australia">1.10.2 Text Labels</h2>
-<p>Text labels may be placed on plots using the <tt class="tt">set label</tt> command<a name="a0000000777" id="a0000000777"></a>. As with all textual labels in PyXPlot, these are rendered in L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X: </p><pre>
+<div><h2 id="ex:australia">1.11.2 Text Labels</h2>
+<p>Text labels may be placed on plots using the <tt class="tt">set label</tt> command<a name="a0000000794" id="a0000000794"></a>. As with all textual labels in PyXPlot, these are rendered in L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X: </p><pre>
 set label 1 'Hello World' at 0,0
 </pre><p>As in the previous section, the number <tt class="tt">1</tt> is a reference number, which allows the label to be removed by either of the following two commands: </p><pre>
 set nolabel 1
 unset label 1
-</pre><p>The positional coordinates for the text label, placed after the <tt class="tt">at</tt> keyword, can be specified in any of the coordinate systems described for arrows above. A rotation angle may optionally be specified after the keyword <tt class="tt">rotate</tt><a name="a0000000778" id="a0000000778"></a>, to rotate text counter-clockwise by a given angle, measured in degrees. For example, the following would produce upward-running text: </p><pre>
+</pre><p>The positional coordinates for the text label, placed after the <tt class="tt">at</tt> keyword, can be specified in any of the coordinate systems described for arrows above. As above, either two or three coordinates may be supplied. A rotation angle may optionally be specified after the keyword <tt class="tt">rotate</tt><a name="a0000000795" id="a0000000795"></a>, to rotate text counter-clockwise by a given angle, measured in degrees. For example, the following would produce upward-running text: </p><pre>
 set label 1 'Hello World' at axis3 3.0, axis4 2.7 rotate 90
 </pre><p>A colour can also be specified, if desired, using the <tt class="tt">with colour</tt> modifier. For example, the following would produce a green label at the origin: </p><pre>
 set label 2 'This label is green' at 0, 0 with colour green
-</pre><p><a name="a0000000779" id="a0000000779"></a><a name="a0000000780" id="a0000000780"></a> The size of the text in such labels can be set globally using the <tt class="tt">set fontsize</tt> command<a name="a0000000781" id="a0000000781"></a>. This applies not only to the <tt class="tt">set label</tt> command, but also to plot titles, axis labels, keys, etc. The value supplied should be a multiplicative factor greater than zero; a value of <tt class="tt">2</tt> would cause text to be rendered at twice its normal size, and a value of <tt class="tt">0.5</tt> would cause text to be rendered at half its normal size. </p><p><a name="a0000000782" id="a0000000782"></a><a name="a0000000783" id="a0000000783"></a> The <tt class="tt">set textcolour</tt> command<a name="a0000000784" id="a0000000784"></a> can be used to globally set the colour of all text output, and applies to all of the text that the <tt class="tt">set fontsize</tt> command does. It is especially useful when producing plots to be embedded in presentation slideshows, where bright text on a dark background may be desired. It should be followed either by an integer, to set a colour from the present palette, or by a colour name. A list of the recognised colour names can be found in Section <a href="sec-colour_names.html">8.4</a>. For example: </p><pre>
+</pre><p><a name="a0000000796" id="a0000000796"></a><a name="a0000000797" id="a0000000797"></a> The size of the text in such labels can be set globally using the <tt class="tt">set fontsize</tt> command<a name="a0000000798" id="a0000000798"></a>. This applies not only to the <tt class="tt">set label</tt> command, but also to plot titles, axis labels, keys, etc. The value supplied should be a multiplicative factor greater than zero; a value of <tt class="tt">2</tt> would cause text to be rendered at twice its normal size, and a value of <tt class="tt">0.5</tt> would cause text to be rendered at half its normal size. </p><p><a name="a0000000799" id="a0000000799"></a><a name="a0000000800" id="a0000000800"></a> The <tt class="tt">set textcolour</tt> command<a name="a0000000801" id="a0000000801"></a> can be used to globally set the colour of all text output, and applies to all of the text that the <tt class="tt">set fontsize</tt> command does. It is especially useful when producing plots to be embedded in presentation slideshows, where bright text on a dark background may be desired. It should be followed either by an integer, to set a colour from the present palette, or by a colour name. A list of the recognised colour names can be found in Section <a href="sec-colour_names.html">8.4</a>. For example: </p><pre>
 set textcolour 2
 set textcolour blue
-</pre><p><a name="a0000000785" id="a0000000785"></a><a name="a0000000786" id="a0000000786"></a>By default, each label’s specified position corresponds to its bottom left corner. This alignment may be changed with the <tt class="tt">set texthalign</tt><a name="a0000000787" id="a0000000787"></a> and <tt class="tt">set textvalign</tt><a name="a0000000788" id="a0000000788"></a> commands. The former takes the options <tt class="tt">left</tt><a name="a0000000789" id="a0000000789"></a>, <tt class="tt">centre</tt><a name="a0000000790" id="a0000000790"></a> or <tt class="tt">right</tt><a name="a0000000791" id="a0000000791"></a>, and the latter takes the options <tt class="tt">bottom</tt><a name="a0000000792" id="a0000000792"></a>, <tt class="tt">centre</tt><a name="a0000000793" id="a0000000793"></a> or <tt class="tt">top</tt><a name="a0000000794" id="a0000000794"></a>, for example: </p><pre>
+</pre><p><a name="a0000000802" id="a0000000802"></a><a name="a0000000803" id="a0000000803"></a>By default, each label’s specified position corresponds to its bottom left corner. This alignment may be changed with the <tt class="tt">set texthalign</tt><a name="a0000000804" id="a0000000804"></a> and <tt class="tt">set textvalign</tt><a name="a0000000805" id="a0000000805"></a> commands. The former takes the options <tt class="tt">left</tt><a name="a0000000806" id="a0000000806"></a>, <tt class="tt">centre</tt><a name="a0000000807" id="a0000000807"></a> or <tt class="tt">right</tt><a name="a0000000808" id="a0000000808"></a>, and the latter takes the options <tt class="tt">bottom</tt><a name="a0000000809" id="a0000000809"></a>, <tt class="tt">centre</tt><a name="a0000000810" id="a0000000810"></a> or <tt class="tt">top</tt><a name="a0000000811" id="a0000000811"></a>, for example: </p><pre>
 set texthalign right
 set textvalign top
 </pre><p> <span class="upshape"><span class="mdseries"><span class="rm">A diagram of the atomic lines of hydrogen.</span></span></span></p><div>
@@ -83,39 +83,39 @@ set textvalign top
 <tr>
 
     
-    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> The wavelengths of the spectral lines of atomic hydrogen are given by the Rydberg formula, </p><table id="a0000000795" class="equation" width="100%" cellspacing="0" cellpadding="7">
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> The wavelengths of the spectral lines of atomic hydrogen are given by the Rydberg formula, </p><table id="a0000000812" class="equation" width="100%" cellspacing="0" cellpadding="7">
 <tr>
     
     <td style="width:40%">&nbsp;</td>
-    <td><img src="images/img-0421.png" alt="\[  \frac{1}{\lambda } = R_\mathrm {H}\left(\frac{1}{n^2}-\frac{1}{m^2}\right),  \]" style="width:172px; 
+    <td><img src="images/img-0467.png" alt="\[  \frac{1}{\lambda } = R_\mathrm {H}\left(\frac{1}{n^2}-\frac{1}{m^2}\right),  \]" style="width:172px; 
                             height:44px" class="math gen" /></td>
     
     <td style="width:40%">&nbsp;</td>
     <td class="eqnnum" style="width:20%">&nbsp;</td>
 </tr>
-</table><p> where <img src="images/img-0407.png" alt="$\lambda $" style="vertical-align:0px; 
+</table><p> where <img src="images/img-0453.png" alt="$\lambda $" style="vertical-align:0px; 
                                      width:9px; 
-                                     height:13px" class="math gen" /> is wavelength, <img src="images/img-0422.png" alt="$R_\mathrm {H}$" style="vertical-align:-3px; 
+                                     height:13px" class="math gen" /> is wavelength, <img src="images/img-0468.png" alt="$R_\mathrm {H}$" style="vertical-align:-3px; 
                                      width:24px; 
-                                     height:15px" class="math gen" /> is the Rydberg constant, predefined in PyXPlot as the variable <tt class="tt">phy_Ry</tt>, and <tt class="tt">n</tt> and <tt class="tt">m</tt> are positive non-zero integers such that <tt class="tt">m&gt;n</tt>. The first few series are called the Lyman series (<tt class="tt">n</tt><img src="images/img-0423.png" alt="$=1$" style="vertical-align:0px; 
+                                     height:15px" class="math gen" /> is the Rydberg constant, predefined in PyXPlot as the variable <tt class="tt">phy_Ry</tt>, and <tt class="tt">n</tt> and <tt class="tt">m</tt> are positive non-zero integers such that <tt class="tt">m&gt;n</tt>. The first few series are called the Lyman series (<tt class="tt">n</tt><img src="images/img-0469.png" alt="$=1$" style="vertical-align:0px; 
                                      width:26px; 
-                                     height:12px" class="math gen" />), the Balmer series (<tt class="tt">n</tt><img src="images/img-0424.png" alt="$=2$" style="vertical-align:0px; 
+                                     height:12px" class="math gen" />), the Balmer series (<tt class="tt">n</tt><img src="images/img-0470.png" alt="$=2$" style="vertical-align:0px; 
                                      width:27px; 
-                                     height:12px" class="math gen" />), the Paschen series (<tt class="tt">n</tt><img src="images/img-0425.png" alt="$=3$" style="vertical-align:0px; 
+                                     height:12px" class="math gen" />), the Paschen series (<tt class="tt">n</tt><img src="images/img-0471.png" alt="$=3$" style="vertical-align:0px; 
                                      width:27px; 
-                                     height:12px" class="math gen" />) and the Brackett series (<tt class="tt">n</tt><img src="images/img-0426.png" alt="$=4$" style="vertical-align:0px; 
+                                     height:12px" class="math gen" />) and the Brackett series (<tt class="tt">n</tt><img src="images/img-0472.png" alt="$=4$" style="vertical-align:0px; 
                                      width:27px; 
-                                     height:12px" class="math gen" />). Within each series, the lines are given Greek letter designations – <img src="images/img-0427.png" alt="$\alpha $" style="vertical-align:0px; 
+                                     height:12px" class="math gen" />). Within each series, the lines are given Greek letter designations – <img src="images/img-0473.png" alt="$\alpha $" style="vertical-align:0px; 
                                      width:11px; 
-                                     height:8px" class="math gen" /> for <tt class="tt">m</tt><img src="images/img-0428.png" alt="$=$" style="vertical-align:2px; 
+                                     height:8px" class="math gen" /> for <tt class="tt">m</tt><img src="images/img-0474.png" alt="$=$" style="vertical-align:2px; 
                                      width:12px; 
-                                     height:4px" class="math gen" /><tt class="tt">n</tt><img src="images/img-0429.png" alt="$+1$" style="vertical-align:-1px; 
+                                     height:4px" class="math gen" /><tt class="tt">n</tt><img src="images/img-0475.png" alt="$+1$" style="vertical-align:-1px; 
                                      width:21px; 
-                                     height:13px" class="math gen" />, <img src="images/img-0430.png" alt="$\beta $" style="vertical-align:-4px; 
+                                     height:13px" class="math gen" />, <img src="images/img-0476.png" alt="$\beta $" style="vertical-align:-4px; 
                                      width:11px; 
-                                     height:16px" class="math gen" /> for <tt class="tt">m</tt><img src="images/img-0428.png" alt="$=$" style="vertical-align:2px; 
+                                     height:16px" class="math gen" /> for <tt class="tt">m</tt><img src="images/img-0474.png" alt="$=$" style="vertical-align:2px; 
                                      width:12px; 
-                                     height:4px" class="math gen" /><tt class="tt">n</tt><img src="images/img-0431.png" alt="$+2$" style="vertical-align:-1px; 
+                                     height:4px" class="math gen" /><tt class="tt">n</tt><img src="images/img-0477.png" alt="$+2$" style="vertical-align:-1px; 
                                      width:22px; 
                                      height:13px" class="math gen" />, and so forth. </p></td>
 
@@ -197,7 +197,7 @@ set textvalign top
 
     
     <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><center> 
-<img src="images/img-0433.png" alt="\includegraphics[width=11cm]{examples/eps/ex_hlines}" style="width:11cm" /> </center></td>
+<img src="images/img-0479.png" alt="\includegraphics[width=11cm]{examples/eps/ex_hlines}" style="width:11cm" /> </center></td>
 
 </tr>
 </table>
@@ -315,7 +315,7 @@ set textvalign top
 
     
     <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><center> 
-<img src="images/img-0436.png" alt="\includegraphics[width=\textwidth ]{examples/eps/ex_map}" style="width:" /> </center></td>
+<img src="images/img-0482.png" alt="\includegraphics[width=\textwidth ]{examples/eps/ex_map}" style="width:" /> </center></td>
 
 </tr>
 </table>
@@ -330,14 +330,14 @@ set textvalign top
 <tr>
 <td><a href="sec-set_arrow.html" title="Arrows"><img alt="Previous: Arrows" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0055.html" title="Labelling Graphs"><img alt="Up: Labelling Graphs" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0058.html" title="Labelling Graphs"><img alt="Up: Labelling Graphs" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0056.html" title="Three-Dimensional Plotting"><img alt="Next: Three-Dimensional Plotting" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sec-colourmaps.html" title="Colour Maps"><img alt="Next: Colour Maps" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

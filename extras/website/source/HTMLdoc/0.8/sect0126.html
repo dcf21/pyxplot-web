@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: backup</title>
+<title>: autoscale</title>
 
-<link href="sect0127.html" title="bar" rel="next" />
-<link href="sect0125.html" title="axisunitstyle" rel="prev" />
-<link href="sect0120.html" title="set" rel="up" />
+<link href="sect0127.html" title="axescolour" rel="next" />
+<link href="sect0125.html" title="arrow" rel="prev" />
+<link href="sect0124.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0125.html" title="axisunitstyle"><img alt="Previous: axisunitstyle" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0125.html" title="arrow"><img alt="Previous: arrow" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0127.html" title="bar"><img alt="Next: bar" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0127.html" title="axescolour"><img alt="Next: axescolour" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0071.html">Reference Manual</a> <b>:</b>
+<a href="sect0074.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,24 +49,26 @@
 
 </span><span>
 <span>
-<a href="sect0120.html">set</a> <b>:</b>
+<a href="sect0124.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">backup</b>
+<b class="current">autoscale</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000127">1.46.6 backup</h2>
-<p><a name="a0000001054" id="a0000001054"></a> </p><pre>
-set backup
-</pre><p>The setting <tt class="tt">backup</tt> changes PyXPlot’s behaviour when it detects that a file which it is about to write is going to overwrite an existing file. Whereas by default the existing file would be overwritten by the new one, when the setting <tt class="tt">backup</tt> is turned on, it is renamed, placing a tilde at the end of its filename. For example, suppose that a plot were to be written with filename <tt class="tt">out.ps</tt>, but such a file already existed. With the backup setting turned on the existing file would be renamed <tt class="tt">out.ps<img src="images/img-0028.png" alt="$\sim $" style="vertical-align:2px; 
-                                     width:12px; 
-                                     height:5px" class="math gen" /></tt> to save it from being overwritten. </p><p>The setting is turned off using the <tt class="tt">set nobackup</tt> command. </p></div>
+<div><h2 id="a0000000127">1.46.2 autoscale</h2>
+<p><a name="a0000001090" id="a0000001090"></a> </p><pre>
+set autoscale {&lt;axis&gt;}
+</pre><p>The <tt class="tt">set autoscale</tt> command<a name="a0000001091" id="a0000001091"></a> causes PyXPlot to choose the scaling for an axis automatically based on the data and/or functions to be plotted against it. The example </p><pre>
+set autoscale x1
+</pre><p>would cause the range of the first horizontal axis to be scaled to fit the data. Multiple axes can be specified, as in the example </p><pre>
+set autoscale x1y3
+</pre><p>Note that ranges explicitly specified in a <tt class="tt">plot</tt> command<a name="a0000001092" id="a0000001092"></a> will override the <tt class="tt">set autoscale</tt> command. </p></div>
 
 
 
@@ -75,16 +77,16 @@ set backup
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0125.html" title="axisunitstyle"><img alt="Previous: axisunitstyle" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0125.html" title="arrow"><img alt="Previous: arrow" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0127.html" title="bar"><img alt="Next: bar" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0127.html" title="axescolour"><img alt="Next: axescolour" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

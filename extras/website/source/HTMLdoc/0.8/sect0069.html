@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: The eps Command</title>
+<title>: Adding Other Vector Graphics Objects</title>
 
-<link href="ex-mandelbrot.html" title="The box and circle Commands" rel="next" />
-<link href="sect0068.html" title="The image Command" rel="prev" />
-<link href="sect0066.html" title="Adding Other Vector Graphics Objects" rel="up" />
+<link href="sect0070.html" title="The text Command" rel="next" />
+<link href="sect0068.html" title="The replot Command Revisited" rel="prev" />
+<link href="ch-vector_graphics.html" title="Producing Vector Graphics" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0068.html" title="The image Command"><img alt="Previous: The image Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0068.html" title="The replot Command Revisited"><img alt="Previous: The replot Command Revisited" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0066.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-vector_graphics.html" title="Producing Vector Graphics"><img alt="Up: Producing Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="ex-mandelbrot.html" title="The box and circle Commands"><img alt="Next: The box and circle Commands" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0070.html" title="The text Command"><img alt="Next: The text Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -48,43 +48,61 @@
 </span>
 
 </span><span>
-<span>
-<a href="sect0066.html">Adding Other Vector Graphics Objects</a> <b>:</b>
-</span>
-
-</span><span>
 
 <span>
-<b class="current">The <tt class="tt">eps</tt> Command</b>
+<b class="current">Adding Other Vector Graphics Objects</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000070">3.4.4 The <tt class="tt">eps</tt> Command</h2>
-<p>Vector graphic images in eps format may be placed on multiplot canvases using the <tt class="tt">eps</tt> command<a name="a0000000893" id="a0000000893"></a>, which has a syntax analogous to the <tt class="tt">image</tt> command. However neither height nor width need be specified; in this case the image will be included at its native size. For example: </p><pre>
-eps 'filename' at 3,2 rotate 5
-</pre><p>will place the eps file with its bottom-left corner at position <img src="images/img-0460.png" alt="$(3,2)$" style="vertical-align:-4px; 
-                                     width:38px; 
-                                     height:18px" class="math gen" /> cm from the origin, rotated counter-clockwise through 5 degrees. </p></div>
+<div><h1 id="a0000000070">3.4 Adding Other Vector Graphics Objects</h1>
+<p>In addition to graphs, a range of other objects can be placed on multiplot canvases: </p><ul class="itemize">
+<li><p>Arcs of circles (the <tt class="tt">arc</tt> command<a name="a0000000900" id="a0000000900"></a>). </p></li><li><p>Arrows (the <tt class="tt">arrow</tt> command<a name="a0000000901" id="a0000000901"></a>). </p></li><li><p>Rectangular boxes (the <tt class="tt">box</tt> command<a name="a0000000902" id="a0000000902"></a>). </p></li><li><p>Circles (the <tt class="tt">circle</tt> command<a name="a0000000903" id="a0000000903"></a>). </p></li><li><p>Ellipses (the <tt class="tt">ellipse</tt> command<a name="a0000000904" id="a0000000904"></a>). </p></li><li><p>Encapsulated PostScript images (the <tt class="tt">eps</tt> command<a name="a0000000905" id="a0000000905"></a>). </p></li><li><p>Graphical images in <tt class="tt">bmp</tt>, <tt class="tt">gif</tt>, <tt class="tt">jpeg</tt> or <tt class="tt">png</tt> formats (the <tt class="tt">image</tt> command<a name="a0000000906" id="a0000000906"></a>). </p></li><li><p>Lines (the <tt class="tt">line</tt> command<a name="a0000000907" id="a0000000907"></a>). </p></li><li><p>Piecharts (the <tt class="tt">piechart</tt> command<a name="a0000000908" id="a0000000908"></a>). </p></li><li><p>Points labelled by crosses and other symbols (the <tt class="tt">point</tt> command<a name="a0000000909" id="a0000000909"></a>). </p></li><li><p>Text labels (the <tt class="tt">text</tt> command<a name="a0000000910" id="a0000000910"></a>). </p></li>
+</ul><p> Put together, these commands can be used to produce a wide range of vector graphics. In the remainder of this chapter, we describe these commands in turn, providing a variety of examples of their use. </p></div>
+
+<div class="contents section-contents"><!--<strong>Subsections</strong>-->
+<ul>
+<li><a href="sect0070.html">3.4.1 The <tt class="tt">text</tt> Command</a>
+   
+</li><li><a href="ex-nanotubes.html">3.4.2 The <tt class="tt">arrow</tt> and <tt class="tt">line</tt> Commands</a>
+   
+</li><li><a href="sect0071.html">3.4.3 The <tt class="tt">image</tt> Command</a>
+   
+</li><li><a href="sect0072.html">3.4.4 The <tt class="tt">eps</tt> Command</a>
+   
+</li><li><a href="ex-noentry.html">3.4.5 The <tt class="tt">box</tt> and <tt class="tt">circle</tt> Commands</a>
+   
+</li><li><a href="ex-lens.html">3.4.6 The <tt class="tt">arc</tt> Command</a>
+   
+</li><li><a href="sec-point.html">3.4.7 The <tt class="tt">point</tt> Command</a>
+   
+</li><li><a href="sec-ellipse.html">3.4.8 The <tt class="tt">ellipse</tt> Command</a>
+   
+</li><li><a href="sec-piechart.html">3.4.9 The <tt class="tt">piechart</tt> Command</a>
+   
+</li>
 
 
+
+</ul>
+</div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0068.html" title="The image Command"><img alt="Previous: The image Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0068.html" title="The replot Command Revisited"><img alt="Previous: The replot Command Revisited" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0066.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-vector_graphics.html" title="Producing Vector Graphics"><img alt="Up: Producing Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="ex-mandelbrot.html" title="The box and circle Commands"><img alt="Next: The box and circle Commands" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0070.html" title="The text Command"><img alt="Next: The text Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

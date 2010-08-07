@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Previewing Graphs On Screen</title>
+<title>: Clipping Behaviour</title>
 
-<link href="sect0058.html" title="Producing Images on Disk" rel="next" />
-<link href="sec-set_terminal.html" title="The set terminal Command" rel="prev" />
-<link href="sec-set_terminal.html" title="The set terminal Command" rel="up" />
+<link href="sect0058.html" title="Labelling Graphs" rel="next" />
+<link href="sec-set_colours.html" title="Gridlines" rel="prev" />
+<link href="ch-plotting.html" title="Plotting: A Detailed Survey" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-set_terminal.html" title="The set terminal Command"><img alt="Previous: The set terminal Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-set_colours.html" title="Gridlines"><img alt="Previous: Gridlines" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-set_terminal.html" title="The set terminal Command"><img alt="Up: The set terminal Command" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-plotting.html" title="Plotting: A Detailed Survey"><img alt="Up: Plotting: A Detailed Survey" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0058.html" title="Producing Images on Disk"><img alt="Next: Producing Images on Disk" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0058.html" title="Labelling Graphs"><img alt="Next: Labelling Graphs" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -44,33 +44,20 @@
 
 </span><span>
 <span>
-<a href="ch-image_formats.html">Producing Image Files</a> <b>:</b>
-</span>
-
-</span><span>
-<span>
-<a href="sec-set_terminal.html">The <tt class="tt">set terminal</tt> Command</a> <b>:</b>
+<a href="ch-plotting.html">Plotting: A Detailed Survey</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">Previewing Graphs On Screen</b>
+<b class="current">Clipping Behaviour</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000058">2.1.1 Previewing Graphs On Screen</h2>
-<p> <a name="a0000000797" id="a0000000797"></a> </p><p>Three output terminal produce immediate previews to the screen: <tt class="tt">X11_­Single­Window</tt>, <tt class="tt">X11_­Persist</tt>, <tt class="tt">X11_­Multi­Window</tt>. The default of these options – i.e. the default terminal when PyXPlot is started up in interactive mode – is <tt class="tt">X11_­Single­Window</tt>. In this terminal, each time a new plot is generated, if the previous plot is still open on the display, the old plot is replaced with the new one. This way, only one plot window is open at any one time. This behaviour is intended to prevent the desktop from becoming flooded with plot windows. </p><p>The alternative <tt class="tt">X11_­Multi­Window</tt> terminal is similar in all respects except that each new plot is generated in a new window, regardless of whether any previous plots are still open on the display. This is especially useful when multiple plots are to be compared side-by-side:<a name="a0000000798" id="a0000000798"></a> </p><pre>
-set terminal X11_SingleWindow
-plot 'data1.dat'
-plot 'data2.dat'  &lt;-- first plot window disappears
-</pre><p>c.f.: </p><pre>
-set terminal X11_MultiWindow
-plot 'data1.dat'
-plot 'data2.dat'  &lt;-- first plot window remains
-</pre><p>The third of these terminals, <tt class="tt">X11_­Persist</tt>, is similar to <tt class="tt">X11_­Multi­Window</tt> but keeps plot windows open after PyXPlot terminates in distinction from the above two terminals, which close all plot windows upon exit. </p></div>
+<div><h1 id="a0000000058">1.10 Clipping Behaviour</h1>
+<p>The treatment of datapoints close to the edges of plots may be specified using the <tt class="tt">set clip</tt> command<a name="a0000000776" id="a0000000776"></a>, which provides two options. Either datapoints close to the axes can be clipped and not allowed to overrun the axes – specified by <tt class="tt">set clip</tt> – or such datapoints may be allowed to extend over the lines of the axes – specified by <tt class="tt">set noclip</tt> and the default behaviour. </p></div>
 
 
 
@@ -79,16 +66,16 @@ plot 'data2.dat'  &lt;-- first plot window remains
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-set_terminal.html" title="The set terminal Command"><img alt="Previous: The set terminal Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-set_colours.html" title="Gridlines"><img alt="Previous: Gridlines" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-set_terminal.html" title="The set terminal Command"><img alt="Up: The set terminal Command" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-plotting.html" title="Plotting: A Detailed Survey"><img alt="Up: Plotting: A Detailed Survey" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0058.html" title="Producing Images on Disk"><img alt="Next: Producing Images on Disk" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0058.html" title="Labelling Graphs"><img alt="Next: Labelling Graphs" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

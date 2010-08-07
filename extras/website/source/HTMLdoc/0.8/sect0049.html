@@ -3,10 +3,10 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: The style Keyword</title>
+<title>: Labelling Datapoints</title>
 
-<link href="sect0050.html" title="Plotting Functions in Exotic Styles" rel="next" />
-<link href="sect0048.html" title="Arrows" rel="prev" />
+<link href="sect0050.html" title="The style Keyword" rel="next" />
+<link href="sect0048.html" title="Colour Maps, Contour Maps and Surface Plots" rel="prev" />
 <link href="ch-plotting.html" title="Plotting: A Detailed Survey" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0048.html" title="Arrows"><img alt="Previous: Arrows" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0048.html" title="Colour Maps, Contour Maps and Surface Plots"><img alt="Previous: Colour Maps, Contour Maps and Surface Plots" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-plotting.html" title="Plotting: A Detailed Survey"><img alt="Up: Plotting: A Detailed Survey" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0050.html" title="Plotting Functions in Exotic Styles"><img alt="Next: Plotting Functions in Exotic Styles" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0050.html" title="The style Keyword"><img alt="Next: The style Keyword" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -50,18 +50,21 @@
 </span><span>
 
 <span>
-<b class="current">The <tt class="tt">style</tt> Keyword</b>
+<b class="current">Labelling Datapoints</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000050">1.3 The <tt class="tt">style</tt> Keyword</h1>
-<p>At times, the string of style keywords placed after the <tt class="tt">with</tt> modifier in <tt class="tt">plot</tt> commands can grow rather unwieldy in its length. For clarity, frequently used plot styles can be stored as numbered plot <i class="it">styles</i>. The syntax for setting a numbered plot style is: </p><pre>
-set style 2 points pointtype 3
-</pre><p>where the <tt class="tt">2</tt> is the identification number of the style. In a subsequent <tt class="tt">plot</tt> statement, this style can be recalled as follows: </p><pre>
-plot sin(x) with style 2
-</pre></div>
+<div><h1 id="a0000000050">1.3 Labelling Datapoints</h1>
+<p>The <tt class="tt">label</tt> modifier to the <tt class="tt">plot</tt> command may be used to render text labels next to datapoints, as in the following examples: </p><pre>
+set samples 8
+plot [2:5] x**2 label "$x=%.2f$"%($1) with points
+
+plot 'datafile' using 1:2 label "%s"%($3)
+</pre><p>Note that if a particular column of a datafile contains strings which are to be used as labels, as in the second example above, syntax such as <tt class="tt">"%s"%($3)</tt> must be used to explicitly read the data as strings rather than as numerical quantities. As PyXPlot treats any whitespace as separating columns of data, such labels cannot contain spaces, though L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X’s <tt class="tt"><img src="images/img-0028.png" alt="$\sim $" style="vertical-align:2px; 
+                                     width:12px; 
+                                     height:5px" class="math gen" /></tt> character can be used to achieve a space. </p><p>Datapoints can be labelled when plotted in any of the following plot styles: <tt class="tt">arrows</tt> (and similar styles), <tt class="tt">dots</tt>, <tt class="tt">errorbars</tt> (and similar styles), <tt class="tt">errorrange</tt> (and similar styles), <tt class="tt">impulses</tt>, <tt class="tt">linespoints</tt>, <tt class="tt">lowerlimits</tt>, <tt class="tt">points</tt>, <tt class="tt">stars</tt> and <tt class="tt">upperlimits</tt>. It is not possible to label datapoints plotted in other styles. Labels are rendered in the same colour as the datapoints with which they are associated. </p></div>
 
 
 
@@ -70,16 +73,16 @@ plot sin(x) with style 2
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0048.html" title="Arrows"><img alt="Previous: Arrows" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0048.html" title="Colour Maps, Contour Maps and Surface Plots"><img alt="Previous: Colour Maps, Contour Maps and Surface Plots" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-plotting.html" title="Plotting: A Detailed Survey"><img alt="Up: Plotting: A Detailed Survey" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0050.html" title="Plotting Functions in Exotic Styles"><img alt="Next: Plotting Functions in Exotic Styles" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0050.html" title="The style Keyword"><img alt="Next: The style Keyword" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

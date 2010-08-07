@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -57,33 +57,33 @@
 </div>
 
 <div><h1 id="sec:histogram">5.9 Histograms</h1>
-<p>The <tt class="tt">histogram</tt> command<a name="a0000000523" id="a0000000523"></a> takes a single column of data from a file and produces a function that represents the frequency distribution of the supplied data values. The output function consists of a series of discrete intervals which we term <i class="it">bins</i>. Within each interval the output function has a constant value, determined such that the area under each interval – i.e. the integral of the function over each interval – is equal to the number of datapoints found within that interval. The following simple example </p><pre>
+<p>The <tt class="tt">histogram</tt> command<a name="a0000000540" id="a0000000540"></a> takes a single column of data from a file and produces a function that represents the frequency distribution of the supplied data values. The output function consists of a series of discrete intervals which we term <i class="it">bins</i>. Within each interval the output function has a constant value, determined such that the area under each interval – i.e. the integral of the function over each interval – is equal to the number of datapoints found within that interval. The following simple example </p><pre>
 histogram f() 'input.dat'
 </pre><p>produces a frequency distribution of the data values found in the first column of the file <tt class="tt">input.dat</tt>, which it stores in the function <img src="images/img-0078.png" alt="$f(x)$" style="vertical-align:-4px; 
                                      width:32px; 
-                                     height:18px" class="math gen" />. The value of this function at any given point is equal to the number of items in the bin at that point, divided by the width of the bins used. If the input datapoints are not dimensionless then the output frequency distribution adopts appropriate units, thus a histogram of data with units of length has units of one over length. </p><p>The number and arrangement of bins used by the <tt class="tt">histogram</tt> command<a name="a0000000524" id="a0000000524"></a> can be controlled by means of various modifiers. The <tt class="tt">binwidth</tt><a name="a0000000525" id="a0000000525"></a> modifier sets the width of the bins used. The <tt class="tt">binorigin</tt><a name="a0000000526" id="a0000000526"></a> modifier controls where their boundaries lie; the <tt class="tt">histogram</tt> command<a name="a0000000527" id="a0000000527"></a> selects a system of bins which, if extended to infinity in both directions, would put a bin boundary at the value specified in the <tt class="tt">binorigin</tt> modifier. Thus, if <tt class="tt">binorigin 0.1</tt> were specified, together with a bin width of 20, bin boundaries might lie at <img src="images/img-0251.png" alt="$20.1$" style="vertical-align:0px; 
+                                     height:18px" class="math gen" />. The value of this function at any given point is equal to the number of items in the bin at that point, divided by the width of the bins used. If the input datapoints are not dimensionless then the output frequency distribution adopts appropriate units, thus a histogram of data with units of length has units of one over length. </p><p>The number and arrangement of bins used by the <tt class="tt">histogram</tt> command<a name="a0000000541" id="a0000000541"></a> can be controlled by means of various modifiers. The <tt class="tt">binwidth</tt><a name="a0000000542" id="a0000000542"></a> modifier sets the width of the bins used. The <tt class="tt">binorigin</tt><a name="a0000000543" id="a0000000543"></a> modifier controls where their boundaries lie; the <tt class="tt">histogram</tt> command<a name="a0000000544" id="a0000000544"></a> selects a system of bins which, if extended to infinity in both directions, would put a bin boundary at the value specified in the <tt class="tt">binorigin</tt> modifier. Thus, if <tt class="tt">binorigin 0.1</tt> were specified, together with a bin width of 20, bin boundaries might lie at <img src="images/img-0261.png" alt="$20.1$" style="vertical-align:0px; 
                                      width:30px; 
-                                     height:12px" class="math gen" />, <img src="images/img-0252.png" alt="$40.1$" style="vertical-align:0px; 
+                                     height:12px" class="math gen" />, <img src="images/img-0262.png" alt="$40.1$" style="vertical-align:0px; 
                                      width:31px; 
-                                     height:12px" class="math gen" />, <img src="images/img-0253.png" alt="$60.1$" style="vertical-align:0px; 
+                                     height:12px" class="math gen" />, <img src="images/img-0263.png" alt="$60.1$" style="vertical-align:0px; 
                                      width:31px; 
                                      height:12px" class="math gen" />, and so on. Alternatively global defaults for the bin width and the bin origin can be specified using the <tt class="tt">set binwidth</tt> and <tt class="tt">set binorigin</tt> commands respectively. The example </p><pre>
 histogram h() 'input.dat' binorigin 0.5 binwidth 2
-</pre><p>would bin data into bins between <img src="images/img-0254.png" alt="$0.5$" style="vertical-align:0px; 
+</pre><p>would bin data into bins between <img src="images/img-0264.png" alt="$0.5$" style="vertical-align:0px; 
                                      width:23px; 
-                                     height:13px" class="math gen" /> and <img src="images/img-0255.png" alt="$2.5$" style="vertical-align:0px; 
+                                     height:13px" class="math gen" /> and <img src="images/img-0265.png" alt="$2.5$" style="vertical-align:0px; 
                                      width:22px; 
-                                     height:13px" class="math gen" />, between <img src="images/img-0255.png" alt="$2.5$" style="vertical-align:0px; 
+                                     height:13px" class="math gen" />, between <img src="images/img-0265.png" alt="$2.5$" style="vertical-align:0px; 
                                      width:22px; 
-                                     height:13px" class="math gen" /> and <img src="images/img-0256.png" alt="$4.5$" style="vertical-align:0px; 
+                                     height:13px" class="math gen" /> and <img src="images/img-0266.png" alt="$4.5$" style="vertical-align:0px; 
                                      width:23px; 
-                                     height:13px" class="math gen" />, and so forth. </p><p>Alternatively the set of bins to be used can be controlled more precisely using the <tt class="tt">bins</tt><a name="a0000000528" id="a0000000528"></a> modifier, which allows an arbitrary set of bins to be specified. The example </p><pre>
+                                     height:13px" class="math gen" />, and so forth. </p><p>Alternatively the set of bins to be used can be controlled more precisely using the <tt class="tt">bins</tt><a name="a0000000545" id="a0000000545"></a> modifier, which allows an arbitrary set of bin boundaries to be specified. The example </p><pre>
 histogram g() 'input.dat' bins (1, 2, 4)
-</pre><p>would bin the data into two bins, <img src="images/img-0257.png" alt="$x=1\to 2$" style="vertical-align:0px; 
+</pre><p>would bin the data into two bins, <img src="images/img-0267.png" alt="$x=1\to 2$" style="vertical-align:0px; 
                                      width:81px; 
-                                     height:12px" class="math gen" /> and <img src="images/img-0258.png" alt="$x=2\to 4$" style="vertical-align:0px; 
+                                     height:12px" class="math gen" /> and <img src="images/img-0268.png" alt="$x=2\to 4$" style="vertical-align:0px; 
                                      width:81px; 
-                                     height:12px" class="math gen" />. </p><p>A range can be supplied immediately following the <tt class="tt">histogram</tt> command, using the same syntax as in the <tt class="tt">plot</tt> and <tt class="tt">fit</tt> commands; if such a range is supplied, only points that fall within that range will be binned. In the same way as in the <tt class="tt">plot</tt> command, the <tt class="tt">index</tt><a name="a0000000529" id="a0000000529"></a>, <tt class="tt">every</tt><a name="a0000000530" id="a0000000530"></a>, <tt class="tt">using</tt><a name="a0000000531" id="a0000000531"></a> and <tt class="tt">select</tt><a name="a0000000532" id="a0000000532"></a> modifiers can be used to specify which subsets of a datafile should be used. </p><p>Two points about the <tt class="tt">histogram</tt> command are worthy of note. First, although histograms are similar to bar charts, they are not the same. A bar chart conventionally has the height of each bar equal to the number of points that it represents, whereas a histogram is a continuous function in which the area underneath each interval is equal to the number of points within it. Thus, to produce a bar chart using the <tt class="tt">histogram</tt> command, the end result should be multiplied by the bin width used. </p><p>Second, if the function produced by the <tt class="tt">histogram</tt> command is plotted using the <tt class="tt">plot</tt> command, samples are automatically taken not at evenly spaced intervals along the abscissa axis, but at the centres of each bin. If the <tt class="tt">boxes</tt><a name="a0000000533" id="a0000000533"></a><a name="a0000000534" id="a0000000534"></a> plot style is used, the box boundaries are conveniently drawn to coincide with the bins into which the data were sorted. </p></div>
+                                     height:12px" class="math gen" />. </p><p>A range can be supplied immediately following the <tt class="tt">histogram</tt> command, using the same syntax as in the <tt class="tt">plot</tt> and <tt class="tt">fit</tt> commands; if such a range is supplied, only points that fall within that range will be binned. In the same way as in the <tt class="tt">plot</tt> command, the <tt class="tt">index</tt><a name="a0000000546" id="a0000000546"></a>, <tt class="tt">every</tt><a name="a0000000547" id="a0000000547"></a>, <tt class="tt">using</tt><a name="a0000000548" id="a0000000548"></a> and <tt class="tt">select</tt><a name="a0000000549" id="a0000000549"></a> modifiers can be used to specify which subsets of a datafile should be used. </p><p>Two points about the <tt class="tt">histogram</tt> command are worthy of note. First, although histograms are similar to bar charts, they are not the same. A bar chart conventionally has the height of each bar equal to the number of points that it represents, whereas a histogram is a continuous function in which the area underneath each interval is equal to the number of points within it. Thus, to produce a bar chart using the <tt class="tt">histogram</tt> command, the end result should be multiplied by the bin width used. </p><p>Second, if the function produced by the <tt class="tt">histogram</tt> command is plotted using the <tt class="tt">plot</tt> command, samples are automatically taken not at evenly spaced intervals along the abscissa axis, but at the centres of each bin. If the <tt class="tt">boxes</tt><a name="a0000000550" id="a0000000550"></a><a name="a0000000551" id="a0000000551"></a> plot style is used, the box boundaries are conveniently drawn to coincide with the bins into which the data were sorted. </p></div>
 
 
 
@@ -101,7 +101,7 @@ histogram g() 'input.dat' bins (1, 2, 4)
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

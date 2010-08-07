@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: The Multiplot Environment</title>
+<title>: The filters section</title>
 
-<link href="sect0225.html" title="Plots with Multiple Axes" rel="next" />
-<link href="sect0223.html" title="Complex Numbers" rel="prev" />
-<link href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot" rel="up" />
+<link href="sec-configfile_settings.html" title="The settings section" rel="next" />
+<link href="sect0223.html" title="Setting definitions" rel="prev" />
+<link href="sect0223.html" title="Setting definitions" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0223.html" title="Complex Numbers"><img alt="Previous: Complex Numbers" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0223.html" title="Setting definitions"><img alt="Previous: Setting definitions" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot"><img alt="Up: Summary of Differences Between PyXPlot and Gnuplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0223.html" title="Setting definitions"><img alt="Up: Setting definitions" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0225.html" title="Plots with Multiple Axes"><img alt="Next: Plots with Multiple Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sec-configfile_settings.html" title="The settings section"><img alt="Next: The settings section" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,25 +39,34 @@
 
 </span><span>
 <span>
-<a href="sect0214.html">Appendices</a> <b>:</b>
+<a href="sect0074.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="ch-gnuplot_diffs.html">Summary of Differences Between PyXPlot and Gnuplot</a> <b>:</b>
+<a href="ch-configuration.html">Configuring PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0223.html">Setting definitions</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">The Multiplot Environment</b>
+<b class="current">The <tt class="tt">filters</tt> section</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000225">B.3 The Multiplot Environment</h1>
-<p>Gnuplot’s multiplot environment, used for placing many graphs alongside one another, is massively extended in PyXPlot. As well as making it much easier to produce galleries of plots and inset graphs, a wide range of vector graphs objects can also be added to the multiplot canvas. This is described in detail in Chapter <a href="ch-vector_graphics.html">3</a>. </p></div>
+<div><h2 id="a0000000225">8.3.1 The <tt class="tt">filters</tt> section</h2>
+<p>The <tt class="tt">filters</tt> section allows input filters to be specified for datafiles whose filenames match particular wildcards. Each line should be in the format </p><pre>
+wildcard = filter_binary
+</pre><p> For example, the line </p><pre>
+*.gz = /usr/bin/gzip
+</pre><p> would set the application <tt class="tt">/usr/bin/gzip</tt> to be used as an input filter for all datafiles with a <tt class="tt">.gz</tt> suffix. For more information about input filters, see Section <a href="sec-filters.html">5.1</a>. </p></div>
 
 
 
@@ -66,16 +75,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0223.html" title="Complex Numbers"><img alt="Previous: Complex Numbers" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0223.html" title="Setting definitions"><img alt="Previous: Setting definitions" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot"><img alt="Up: Summary of Differences Between PyXPlot and Gnuplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0223.html" title="Setting definitions"><img alt="Up: Setting definitions" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0225.html" title="Plots with Multiple Axes"><img alt="Next: Plots with Multiple Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sec-configfile_settings.html" title="The settings section"><img alt="Next: The settings section" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

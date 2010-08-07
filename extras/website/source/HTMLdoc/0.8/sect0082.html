@@ -3,10 +3,10 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: delete</title>
+<title>: circle</title>
 
-<link href="sect0083.html" title="do" rel="next" />
-<link href="sect0081.html" title="continue" rel="prev" />
+<link href="sect0083.html" title="clear" rel="next" />
+<link href="sect0081.html" title="cd" rel="prev" />
 <link href="ch-reference.html" title="Command Reference" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0081.html" title="continue"><img alt="Previous: continue" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0081.html" title="cd"><img alt="Previous: cd" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0083.html" title="do"><img alt="Next: do" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0083.html" title="clear"><img alt="Next: clear" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0071.html">Reference Manual</a> <b>:</b>
+<a href="sect0074.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -50,18 +50,21 @@
 </span><span>
 
 <span>
-<b class="current">delete</b>
+<b class="current">circle</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000083">1.11 delete</h1>
-<p><a name="a0000000942" id="a0000000942"></a> </p><pre>
-delete &lt;item number&gt; {, &lt;item number&gt;}
-</pre><p>The <tt class="tt">delete</tt> command<a name="a0000000943" id="a0000000943"></a> removes vector graphics objects such as plots, arrows or text items from the current multiplot canvas. All vector graphics objects placed on multiplot canvases receive unique identification numbers which count sequentially from one, and which may be listed using the <tt class="tt">list</tt> command. The items to be deleted should be identified using a comma-separated list of their identification numbers. The example </p><pre>
-delete 1,2,3
-</pre><p>would remove item numbers 1, 2 and 3. </p><p>Having been deleted, multiplot items can be restored using the <tt class="tt">undelete</tt> command. </p></div>
+<div><h1 id="a0000000083">1.8 circle</h1>
+<p><a name="a0000000974" id="a0000000974"></a> </p><pre>
+circle [ item &lt;id&gt; ] [at] &lt;x&gt;, &lt;y&gt; radius &lt;r&gt;
+       [ with {&lt;option&gt;} ]
+</pre><p>The <tt class="tt">circle</tt> command<a name="a0000000975" id="a0000000975"></a> is used to draw circles on multiplot canvases. The coordinates of the circle’s centre and its radius are specified. The <tt class="tt">with</tt> modifier allows the style of the circle to be specified using similar options to those accepted by the <tt class="tt">plot</tt> command. The example </p><pre>
+circle at 2,2 radius 1 with colour red fillcolour blue
+</pre><p>would draw a red circle of unit radius filled in blue, centred <img src="images/img-0603.png" alt="$2\, \mathrm{cm}$" style="vertical-align:0px; 
+                                     width:34px; 
+                                     height:12px" class="math gen" /> above and to the right of the origin. </p><p>All vector graphics objects placed on multiplot canvases receive unique identification numbers which count sequentially from one, and which may be listed using the <tt class="tt">list</tt> command. By reference to these numbers, they can be deleted and subsequently restored with the <tt class="tt">delete</tt> and <tt class="tt">undelete</tt> commands respectively. </p></div>
 
 
 
@@ -70,16 +73,16 @@ delete 1,2,3
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0081.html" title="continue"><img alt="Previous: continue" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0081.html" title="cd"><img alt="Previous: cd" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0083.html" title="do"><img alt="Next: do" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0083.html" title="clear"><img alt="Next: clear" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

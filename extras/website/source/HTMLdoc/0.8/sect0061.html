@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: PostScript Output</title>
+<title>: Producing Images on Disk</title>
 
-<link href="sec-set_papersize.html" title="Paper Sizes" rel="next" />
-<link href="sect0060.html" title="The Default Terminal" rel="prev" />
-<link href="ch-image_formats.html" title="Producing Image Files" rel="up" />
+<link href="sect0062.html" title="The Complete Syntax of the set terminal Command" rel="next" />
+<link href="sect0060.html" title="Previewing Graphs On Screen" rel="prev" />
+<link href="sec-set_terminal.html" title="The set terminal Command" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0060.html" title="The Default Terminal"><img alt="Previous: The Default Terminal" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0060.html" title="Previewing Graphs On Screen"><img alt="Previous: Previewing Graphs On Screen" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-image_formats.html" title="Producing Image Files"><img alt="Up: Producing Image Files" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sec-set_terminal.html" title="The set terminal Command"><img alt="Up: The set terminal Command" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-set_papersize.html" title="Paper Sizes"><img alt="Next: Paper Sizes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0062.html" title="The Complete Syntax of the set terminal Command"><img alt="Next: The Complete Syntax of the set terminal Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -48,43 +48,43 @@
 </span>
 
 </span><span>
+<span>
+<a href="sec-set_terminal.html">The <tt class="tt">set terminal</tt> Command</a> <b>:</b>
+</span>
+
+</span><span>
 
 <span>
-<b class="current">PostScript Output</b>
+<b class="current">Producing Images on Disk</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000062">2.3 PostScript Output</h1>
-<p>If the <tt class="tt">enlarge</tt> modifier is used with the <tt class="tt">set terminal</tt> command<a name="a0000000829" id="a0000000829"></a> then the whole plot is enlarged, or, in the case of large plots, shrunk, to the current paper size, minus a small margin. The aspect ratio of the plot is preserved. </p></div>
-
-<div class="contents section-contents"><!--<strong>Subsections</strong>-->
-<ul>
-<li><a href="sec-set_papersize.html">2.3.1 Paper Sizes</a>
-   
-</li>
+<div><h2 id="a0000000062">2.1.2 Producing Images on Disk</h2>
+<p>The remaining terminals listed in Table <a href="sec-set_terminal.html#tab:output_terminals">2.1</a> direct graphical output to disk in a selection of rasterised and vector graphics formats. The filename of the resulting image file may be set using the <tt class="tt">set output</tt> command<a name="a0000000839" id="a0000000839"></a>, as in the example: </p><pre>
+set output 'my_plot.eps'
+</pre><p>Use of rasterised image formats inevitably results in some loss of image quality since the plot has to be rasterised into a bitmapped graphic image. By default, this rasterisation is performed at a resolution of <img src="images/img-0534.png" alt="$300\, \mathrm{dpi}$" style="vertical-align:-3px; 
+                                     width:55px; 
+                                     height:16px" class="math gen" />, though this may be changed using the <tt class="tt">set terminal dpi</tt> command<a name="a0000000840" id="a0000000840"></a>, which should be followed by a numerical value. Alternatively, the resolution may be changed using the <tt class="tt">DPI</tt> option in the <tt class="tt">settings</tt> section of a configuration file (see Chapter <a href="ch-configuration.html">8</a>).<a name="a0000000841" id="a0000000841"></a><a name="a0000000842" id="a0000000842"></a><a name="a0000000843" id="a0000000843"></a> </p></div>
 
 
-
-</ul>
-</div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0060.html" title="The Default Terminal"><img alt="Previous: The Default Terminal" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0060.html" title="Previewing Graphs On Screen"><img alt="Previous: Previewing Graphs On Screen" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-image_formats.html" title="Producing Image Files"><img alt="Up: Producing Image Files" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sec-set_terminal.html" title="The set terminal Command"><img alt="Up: The set terminal Command" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-set_papersize.html" title="Paper Sizes"><img alt="Next: Paper Sizes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0062.html" title="The Complete Syntax of the set terminal Command"><img alt="Next: The Complete Syntax of the set terminal Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

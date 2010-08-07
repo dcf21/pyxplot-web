@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: gridmajcolour</title>
+<title>: colourkey</title>
 
-<link href="sect0141.html" title="gridmincolour" rel="next" />
-<link href="sect0139.html" title="grid" rel="prev" />
-<link href="sect0120.html" title="set" rel="up" />
+<link href="sect0141.html" title="colourmap" rel="next" />
+<link href="sect0139.html" title="clip" rel="prev" />
+<link href="sect0124.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0139.html" title="grid"><img alt="Previous: grid" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0139.html" title="clip"><img alt="Previous: clip" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0141.html" title="gridmincolour"><img alt="Next: gridmincolour" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0141.html" title="colourmap"><img alt="Next: colourmap" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0071.html">Reference Manual</a> <b>:</b>
+<a href="sect0074.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,24 +49,30 @@
 
 </span><span>
 <span>
-<a href="sect0120.html">set</a> <b>:</b>
+<a href="sect0124.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">gridmajcolour</b>
+<b class="current">colourkey</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000141">1.46.20 gridmajcolour</h2>
-<p><a name="a0000001076" id="a0000001076"></a> </p><pre>
-set gridmajcolour &lt;colour&gt;
-</pre><p>The setting <tt class="tt">gridmajcolour</tt> changes the colour that is used to draw the gridlines (see the <tt class="tt">set grid</tt> command) which are associated with the major ticks of axes (i.e. major gridlines). For example: </p><pre>
-set gridmajcolour purple
-</pre><p>would cause the major gridlines to be drawn in purple. Any of the recognised colour names listed in Section <a href="sec-colour_names.html">8.4</a> can be used. </p><p>See also the <tt class="tt">set gridmincolour</tt> command. </p></div>
+<div><h2 id="a0000000141">1.46.16 colourkey</h2>
+<p><a name="a0000001118" id="a0000001118"></a> </p><pre>
+set colourkey [&lt;position&gt;]
+</pre><p>The setting <tt class="tt">colourkey</tt> determines whether colour scales are drawn along the edges of plots drawn using the <tt class="tt">colourmap</tt><a name="a0000001119" id="a0000001119"></a><a name="a0000001120" id="a0000001120"></a> plot style, indicating the mapping between represented values and colours. Note that such scales are only ever drawn when the <tt class="tt">colourmap</tt><a name="a0000001121" id="a0000001121"></a><a name="a0000001122" id="a0000001122"></a> plot style is supplied with only three columns of data, since the colour mappings are themselves multi-dimensional when more columns are supplied. Issuing the command </p><pre>
+set colourkey
+</pre><p>by itself causes such a scale to be drawn on graphs in the default position, usually along the right-hand edge of the graphs. The converse action is achieved by: </p><pre>
+set nocolourkey
+</pre><p>The command </p><pre>
+unset colourkey
+</pre><p>causes PyXPlot to revert to its default behaviour, as specified in a configuration file, if present. A position for the key may optionally be specified after the <tt class="tt">set colourkey</tt> command, as in the example: </p><pre>
+set colourkey bottom
+</pre><p>Recognised positions are <tt class="tt">top</tt>, <tt class="tt">bottom</tt>, <tt class="tt">left</tt> and <tt class="tt">right</tt>. <tt class="tt">above</tt> is an alias for <tt class="tt">top</tt>; <tt class="tt">below</tt> is an alias for <tt class="tt">bottom</tt> and <tt class="tt">outside</tt> is an alias for <tt class="tt">right</tt>. </p></div>
 
 
 
@@ -75,16 +81,16 @@ set gridmajcolour purple
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0139.html" title="grid"><img alt="Previous: grid" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0139.html" title="clip"><img alt="Previous: clip" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0141.html" title="gridmincolour"><img alt="Next: gridmincolour" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0141.html" title="colourmap"><img alt="Next: colourmap" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

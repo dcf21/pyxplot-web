@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: axes</title>
+<title>: minimise</title>
 
-<link href="sect0109.html" title="title" rel="next" />
-<link href="sect0107.html" title="plot" rel="prev" />
-<link href="sect0107.html" title="plot" rel="up" />
+<link href="sect0109.html" title="move" rel="next" />
+<link href="sect0107.html" title="maximise" rel="prev" />
+<link href="ch-reference.html" title="Command Reference" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0107.html" title="plot"><img alt="Previous: plot" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0107.html" title="maximise"><img alt="Previous: maximise" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0107.html" title="plot"><img alt="Up: plot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0109.html" title="title"><img alt="Next: title" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0109.html" title="move"><img alt="Next: move" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0071.html">Reference Manual</a> <b>:</b>
+<a href="sect0074.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -48,25 +48,26 @@
 </span>
 
 </span><span>
-<span>
-<a href="sect0107.html">plot</a> <b>:</b>
-</span>
-
-</span><span>
 
 <span>
-<b class="current">axes</b>
+<b class="current">minimise</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000109">1.36.1 axes</h2>
-<p><a name="a0000001013" id="a0000001013"></a> </p><p>The <tt class="tt">axes</tt> modifier may be used to specify which axes data should be plotted against when plots have multiple parallel axes – for example, if a plot has an <tt class="tt">x</tt>-axis along its lower edge and an <tt class="tt">x2</tt>-axis along its upper edge. The following example would plot data using the <tt class="tt">x2</tt>-axis as the ordinate axis and the <tt class="tt">y</tt>-axis as the abscissa axis: </p><pre>
-plot sin(x) axes x2y1
-</pre><p>It is also possible to use the <tt class="tt">axes</tt> modifier to specify that a vertical ordinate axis and a horizontal abscissa axis should be used; the following example would plot data using the <tt class="tt">y</tt>-axis as the ordinate axis and the <tt class="tt">x</tt>-axis as the abscissa axis: </p><pre>
-plot sin(x) axes yx
-</pre></div>
+<div><h1 id="a0000000109">1.34 minimise</h1>
+<p><a name="a0000001049" id="a0000001049"></a> </p><pre>
+minimise &lt;expression&gt; via &lt;variable&gt; {, variable}
+</pre><p>The <tt class="tt">minimise</tt> command<a name="a0000001050" id="a0000001050"></a> can be used to find the minima of algebraic expressions. A single algebraic expression should be supplied for optimisation, together with a comma-separated list of the variables with respect to which it should be optimised. In the following example, a minimum of the sinusoidal function <img src="images/img-0010.png" alt="$\cos (x)$" style="vertical-align:-4px; 
+                                     width:47px; 
+                                     height:18px" class="math gen" /> is sought: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">set numerics real</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">x=0.1</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">minimise cos(x) via x</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print x/pi</b></tt><br /><tt class="tt">1</tt>  </p><p>Note that this particular example doesn’t work when complex arithmetic is enabled, since <img src="images/img-0010.png" alt="$\cos (x)$" style="vertical-align:-4px; 
+                                     width:47px; 
+                                     height:18px" class="math gen" /> diverges to <img src="images/img-0140.png" alt="$-\infty $" style="vertical-align:-1px; 
+                                     width:30px; 
+                                     height:9px" class="math gen" /> at <img src="images/img-0141.png" alt="$x=\pi +\infty i$" style="vertical-align:-1px; 
+                                     width:92px; 
+                                     height:13px" class="math gen" />. </p><p>Various caveats apply the <tt class="tt">minimise</tt> command, as well as to the <tt class="tt">maximise</tt> and <tt class="tt">solve</tt> commands. All of these commands operate by searching numerically for optimal sets of input parameters to meet the criteria set by the user. As with all numerical algorithms, there is no guarantee that the <i class="it">locally</i> optimum solutions returned are the <i class="it">globally</i> optimum solutions. It is always advisable to double-check that the answers returned agree with common sense. </p><p>These commands can often find solutions to equations when these solutions are either very large or very small, but they usually work best when the solution they are looking for is roughly of order unity. PyXPlot does have mechanisms which attempt to correct cases where the supplied initial guess turns out to be many orders of magnitude different from the true solution, but it cannot be guaranteed not to wildly overshoot and produce unexpected results in such cases. To reiterate, it is always advisable to double-check that the answers returned agree with common sense. </p></div>
 
 
 
@@ -75,16 +76,16 @@ plot sin(x) axes yx
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0107.html" title="plot"><img alt="Previous: plot" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0107.html" title="maximise"><img alt="Previous: maximise" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0107.html" title="plot"><img alt="Up: plot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0109.html" title="title"><img alt="Next: title" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0109.html" title="move"><img alt="Next: move" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

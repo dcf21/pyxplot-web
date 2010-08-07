@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: keycolumns</title>
+<title>: cnrange</title>
 
-<link href="sect0144.html" title="label" rel="next" />
-<link href="sect0142.html" title="key" rel="prev" />
-<link href="sect0120.html" title="set" rel="up" />
+<link href="sect0144.html" title="data style" rel="next" />
+<link href="sect0142.html" title="contours" rel="prev" />
+<link href="sect0124.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0142.html" title="key"><img alt="Previous: key" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0142.html" title="contours"><img alt="Previous: contours" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0144.html" title="label"><img alt="Next: label" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0144.html" title="data style"><img alt="Next: data style" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0071.html">Reference Manual</a> <b>:</b>
+<a href="sect0074.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,24 +49,38 @@
 
 </span><span>
 <span>
-<a href="sect0120.html">set</a> <b>:</b>
+<a href="sect0124.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">keycolumns</b>
+<b class="current">c<img src="images/img-0034.png" alt="$&lt;$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" />n<img src="images/img-0035.png" alt="$&gt;$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" />range</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000144">1.46.23 keycolumns</h2>
-<p><a name="a0000001079" id="a0000001079"></a> </p><pre>
-set keycolumns ( &lt;value&gt; | auto )
-</pre><p>The setting <tt class="tt">keycolumns</tt> sets how many columns the legend of a plot should be arranged into. By default, the legends of plots are arranged into an automatically-selected number of columns, equivalent to the behaviour achieved by issuing the command <tt class="tt">set key­columns auto</tt>. However, if a different arrangement is desired, the <tt class="tt">set keycolumns</tt> command can be followed by any positive integer to specify that the legend should be split into that number of columns, as in the example: </p><pre>
-set keycolumns 3
-</pre></div>
+<div><h2 id="a0000000144">1.46.19 c<img src="images/img-0034.png" alt="$&lt;$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" />n<img src="images/img-0035.png" alt="$&gt;$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" />range</h2>
+<p><a name="a0000001133" id="a0000001133"></a> </p><pre>
+set c&lt;n&gt;range [ &lt;range&gt; ]
+              [ reversed | noreversed ]
+              [ renormalise | norenormalise ]
+</pre><p>The <tt class="tt">set c&lt;n&gt;range</tt> command changes the range of ordinate values represented by different colours in the <tt class="tt">colourmap</tt><a name="a0000001134" id="a0000001134"></a><a name="a0000001135" id="a0000001135"></a> plot style, and in the case of the <tt class="tt">set c1range</tt> command, also by contours in the <tt class="tt">contourmap</tt><a name="a0000001136" id="a0000001136"></a><a name="a0000001137" id="a0000001137"></a> plot style. The value <tt class="tt">&lt;n&gt;</tt> should be an integer in the range 1–4. </p><h3 id="a0000001138">Contour Maps</h3>
+<p>The effect of the <tt class="tt">set c1range</tt> command upon the set of ordinate values for which contours are drawn in the <tt class="tt">contourmap</tt> plot style is dependent upon whether the <tt class="tt">set contours</tt> command has been supplied with a number of contours to draw, or a list of explicit ordinate values for which they should be drawn. In the latter case, the <tt class="tt">set c1range</tt> command has no effect. In the former case, the contours are evenly spaced, either linearly or logarithmically depending upon the state of the <tt class="tt">logscale c1</tt> setting, between the minimum and maximum ordinate values supplied to the <tt class="tt">set c1range</tt> command. If an asterisk (<tt class="tt">*</tt>) is supplied in place of either the minimum and/or the maximum, then the range of values used is automatically scaled to fit the range of the data supplied. </p><h3 id="a0000001139">Colour Maps</h3>
+<p>The colour of each pixel in a colour map is determined by the <tt class="tt">colourmap</tt> setting, which should contain an expression of the form <tt class="tt">rgb(c1):(c2):(c3)</tt>, specifying the components of a colour in either RGB, HSB or CMYK space, as a function of the variables <tt class="tt">c1</tt>, <tt class="tt">c2</tt>, <tt class="tt">c3</tt> and <tt class="tt">c4</tt>. The <tt class="tt">colourmap</tt> plot style should be supplied with between three and six columns of data, the first two of which contain the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" />- and <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
+                                     width:9px; 
+                                     height:12px" class="math gen" />-positions of points, and the remainder of which are used to set the values of the variables <tt class="tt">c1</tt>, <tt class="tt">c2</tt>, <tt class="tt">c3</tt> and <tt class="tt">c4</tt> when calculating the colour with which that point should be represented. If fewer than six columns of data are supplied, then not all of these variables will be set. </p><p>The <tt class="tt">set c&lt;n&gt;range</tt> command is used to determine how the raw data values are mapped to the values of the variables <tt class="tt">c1</tt>–<tt class="tt">c4</tt>. If the <tt class="tt">no­renor­malise</tt> option is specified, then the raw values are passed directly to the expression. Otherwise, they are first scaled into the range zero to one. If an explicit range is specified to the <tt class="tt">set c&lt;n&gt;range</tt> command, then the upper limit of this range maps to the value one, and the lower limit maps to the value zero. This mapping is inverted if the <tt class="tt">reverse</tt> option is specified, such that the upper limit maps to zero, and the lower limit maps to one. If an asterisk (<tt class="tt">*</tt>) is supplied in place of either the upper and/or lower limit, then the range automatically scales to fit the data supplied. Intermediate values are scaled, either linearly or logarithmically, depending upon the state of the <tt class="tt">logscale c&lt;n&gt;</tt> setting. For more details of the syntax of the range specifier, see the <tt class="tt">set xrange</tt> command. </p></div>
 
 
 
@@ -75,16 +89,16 @@ set keycolumns 3
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0142.html" title="key"><img alt="Previous: key" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0142.html" title="contours"><img alt="Previous: contours" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0144.html" title="label"><img alt="Next: label" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0144.html" title="data style"><img alt="Next: data style" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

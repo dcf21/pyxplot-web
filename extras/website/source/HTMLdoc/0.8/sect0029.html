@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -62,11 +62,11 @@
 </div>
 
 <div><h2 id="a0000000030">5.8.1 Window Functions</h2>
-<p> <a name="a0000000522" id="a0000000522"></a> </p><p>A range of commonly-used window functions may automatically be applied to data as it is read into the <tt class="tt">fft</tt> and <tt class="tt">ifft</tt> commands; these are listed together with their algebraic forms in Table <a href="sect0029.html#tab:windowfuncs">5.1</a> and shown in Figure <a href="sect0029.html#fig:windowfuncs">5.1</a>. In each case, the window functions are given for sample number <img src="images/img-0014.png" alt="$n$" style="vertical-align:0px; 
+<p> <a name="a0000000539" id="a0000000539"></a> </p><p>A range of commonly-used window functions may automatically be applied to data as it is read into the <tt class="tt">fft</tt> and <tt class="tt">ifft</tt> commands; these are listed together with their algebraic forms in Table <a href="sect0029.html#tab:windowfuncs">5.1</a> and shown in Figure <a href="sect0029.html#fig:windowfuncs">5.1</a>. In each case, the window functions are given for sample number <img src="images/img-0014.png" alt="$n$" style="vertical-align:0px; 
                                      width:11px; 
                                      height:8px" class="math gen" />, which ranges between <img src="images/img-0154.png" alt="$0$" style="vertical-align:0px; 
                                      width:9px; 
-                                     height:12px" class="math gen" /> and <img src="images/img-0231.png" alt="$N_ x$" style="vertical-align:-2px; 
+                                     height:12px" class="math gen" /> and <img src="images/img-0241.png" alt="$N_ x$" style="vertical-align:-2px; 
                                      width:23px; 
                                      height:14px" class="math gen" />. The window functions may be invoked using the following syntax: </p><pre>
 fft [...] &lt;out&gt;() of &lt;in&gt;() window &lt;window_name&gt;
@@ -85,9 +85,9 @@ fft [...] &lt;out&gt;() of &lt;in&gt;() window &lt;window_name&gt;
     <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-left:1px solid black"><p>Bartlett </p></td>
 
     
-    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-right:1px solid black"><p> <img src="images/img-0232.png" alt="$\displaystyle w(n) = \left( \frac{2}{N_ x-1} \right) \left( \frac{N_ x-1}{2} - \left| n - \frac{N_ x-1}{2} \right| \right)$" style="vertical-align:-17px; 
+    <td style="border-top-style:solid; text-align:left; border-top-color:black; border-top-width:1px; border-right:1px solid black"><p> <img src="images/img-0242.png" alt="$\displaystyle w(n) = \left( \frac{2}{N_ x-1} \right) \left( \frac{N_ x-1}{2} - \left| n - \frac{N_ x-1}{2} \right| \right)$" style="vertical-align:-17px; 
                                      width:359px; 
-                                     height:45px" class="math gen" /> <img src="images/img-0233.png" alt="\rule{0pt}{20pt}" style="vertical-align:0px; width:1px; height:1px" class="box gen" /></p></td>
+                                     height:45px" class="math gen" /> <img src="images/img-0243.png" alt="\rule{0pt}{20pt}" style="vertical-align:0px; width:1px; height:1px" class="box gen" /></p></td>
 
 </tr><tr>
 
@@ -95,9 +95,9 @@ fft [...] &lt;out&gt;() of &lt;in&gt;() window &lt;window_name&gt;
     <td style="text-align:left; border-left:1px solid black"><p>BartlettHann </p></td>
 
     
-    <td style="text-align:left; border-right:1px solid black"><p> <img src="images/img-0234.png" alt="$\displaystyle w(n) = a_0 - a_1\left|\frac{n}{N_ x-1}-\frac{1}{2}\right| - a_2\cos \left(\frac{2\pi n}{N_ x-1}\right),\; \textrm{for}$" style="vertical-align:-17px; 
+    <td style="text-align:left; border-right:1px solid black"><p> <img src="images/img-0244.png" alt="$\displaystyle w(n) = a_0 - a_1\left|\frac{n}{N_ x-1}-\frac{1}{2}\right| - a_2\cos \left(\frac{2\pi n}{N_ x-1}\right),\; \textrm{for}$" style="vertical-align:-17px; 
                                      width:423px; 
-                                     height:45px" class="math gen" /> <img src="images/img-0235.png" alt="\rule{0pt}{\wfgap }" style="vertical-align:0px; width:1px; height:1px" class="box gen" /></p></td>
+                                     height:45px" class="math gen" /> <img src="images/img-0245.png" alt="\rule{0pt}{\wfgap }" style="vertical-align:0px; width:1px; height:1px" class="box gen" /></p></td>
 
 </tr><tr>
 
@@ -105,9 +105,9 @@ fft [...] &lt;out&gt;() of &lt;in&gt;() window &lt;window_name&gt;
     <td style="text-align:left; border-left:1px solid black">&nbsp;</td>
 
     
-    <td style="text-align:left; border-right:1px solid black"><p> <img src="images/img-0236.png" alt="$a_0=0.62,\;  a_1=0.48,\;  a_2=0.38.$" style="vertical-align:-4px; 
+    <td style="text-align:left; border-right:1px solid black"><p> <img src="images/img-0246.png" alt="$a_0=0.62,\;  a_1=0.48,\;  a_2=0.38.$" style="vertical-align:-4px; 
                                      width:252px; 
-                                     height:16px" class="math gen" /> <img src="images/img-0233.png" alt="\rule{0pt}{20pt}" style="vertical-align:0px; width:1px; height:1px" class="box gen" /></p></td>
+                                     height:16px" class="math gen" /> <img src="images/img-0243.png" alt="\rule{0pt}{20pt}" style="vertical-align:0px; width:1px; height:1px" class="box gen" /></p></td>
 
 </tr><tr>
 
@@ -115,9 +115,9 @@ fft [...] &lt;out&gt;() of &lt;in&gt;() window &lt;window_name&gt;
     <td style="text-align:left; border-left:1px solid black"><p>Cosine </p></td>
 
     
-    <td style="text-align:left; border-right:1px solid black"><p> <img src="images/img-0237.png" alt="$\displaystyle w(n) = \cos \left(\frac{\pi n}{N_ x-1} - \frac{\pi }{2} \right)$" style="vertical-align:-17px; 
+    <td style="text-align:left; border-right:1px solid black"><p> <img src="images/img-0247.png" alt="$\displaystyle w(n) = \cos \left(\frac{\pi n}{N_ x-1} - \frac{\pi }{2} \right)$" style="vertical-align:-17px; 
                                      width:209px; 
-                                     height:44px" class="math gen" /> <img src="images/img-0235.png" alt="\rule{0pt}{\wfgap }" style="vertical-align:0px; width:1px; height:1px" class="box gen" /></p></td>
+                                     height:44px" class="math gen" /> <img src="images/img-0245.png" alt="\rule{0pt}{\wfgap }" style="vertical-align:0px; width:1px; height:1px" class="box gen" /></p></td>
 
 </tr><tr>
 
@@ -125,9 +125,9 @@ fft [...] &lt;out&gt;() of &lt;in&gt;() window &lt;window_name&gt;
     <td style="text-align:left; border-left:1px solid black"><p>Gauss </p></td>
 
     
-    <td style="text-align:left; border-right:1px solid black"><p> <img src="images/img-0238.png" alt="$\displaystyle w(n) = \exp \left\{  -\frac{1}{2}\left[ \frac{n-(N_ x-1)/2}{\sigma (N_ x-1)/2} \right]^2 \right\} ,\; \textrm{for}\; \sigma =0.5$" style="vertical-align:-23px; 
+    <td style="text-align:left; border-right:1px solid black"><p> <img src="images/img-0248.png" alt="$\displaystyle w(n) = \exp \left\{  -\frac{1}{2}\left[ \frac{n-(N_ x-1)/2}{\sigma (N_ x-1)/2} \right]^2 \right\} ,\; \textrm{for}\; \sigma =0.5$" style="vertical-align:-23px; 
                                      width:405px; 
-                                     height:55px" class="math gen" /> <img src="images/img-0235.png" alt="\rule{0pt}{\wfgap }" style="vertical-align:0px; width:1px; height:1px" class="box gen" /></p></td>
+                                     height:55px" class="math gen" /> <img src="images/img-0245.png" alt="\rule{0pt}{\wfgap }" style="vertical-align:0px; width:1px; height:1px" class="box gen" /></p></td>
 
 </tr><tr>
 
@@ -135,9 +135,9 @@ fft [...] &lt;out&gt;() of &lt;in&gt;() window &lt;window_name&gt;
     <td style="text-align:left; border-left:1px solid black"><p>Hamming </p></td>
 
     
-    <td style="text-align:left; border-right:1px solid black"><p> <img src="images/img-0239.png" alt="$\displaystyle w(n) = 0.54 - 0.46\cos \left(\frac{2\pi n}{N_ x-1}\right)$" style="vertical-align:-17px; 
+    <td style="text-align:left; border-right:1px solid black"><p> <img src="images/img-0249.png" alt="$\displaystyle w(n) = 0.54 - 0.46\cos \left(\frac{2\pi n}{N_ x-1}\right)$" style="vertical-align:-17px; 
                                      width:262px; 
-                                     height:44px" class="math gen" /> <img src="images/img-0235.png" alt="\rule{0pt}{\wfgap }" style="vertical-align:0px; width:1px; height:1px" class="box gen" /></p></td>
+                                     height:44px" class="math gen" /> <img src="images/img-0245.png" alt="\rule{0pt}{\wfgap }" style="vertical-align:0px; width:1px; height:1px" class="box gen" /></p></td>
 
 </tr><tr>
 
@@ -145,9 +145,9 @@ fft [...] &lt;out&gt;() of &lt;in&gt;() window &lt;window_name&gt;
     <td style="text-align:left; border-left:1px solid black"><p>Hann </p></td>
 
     
-    <td style="text-align:left; border-right:1px solid black"><p> <img src="images/img-0240.png" alt="$\displaystyle w(n) = 0.5 \left[ 1 - \cos \left(\frac{2\pi n}{N_ x-1}\right) \right]$" style="vertical-align:-17px; 
+    <td style="text-align:left; border-right:1px solid black"><p> <img src="images/img-0250.png" alt="$\displaystyle w(n) = 0.5 \left[ 1 - \cos \left(\frac{2\pi n}{N_ x-1}\right) \right]$" style="vertical-align:-17px; 
                                      width:246px; 
-                                     height:44px" class="math gen" /> <img src="images/img-0235.png" alt="\rule{0pt}{\wfgap }" style="vertical-align:0px; width:1px; height:1px" class="box gen" /></p></td>
+                                     height:44px" class="math gen" /> <img src="images/img-0245.png" alt="\rule{0pt}{\wfgap }" style="vertical-align:0px; width:1px; height:1px" class="box gen" /></p></td>
 
 </tr><tr>
 
@@ -155,9 +155,9 @@ fft [...] &lt;out&gt;() of &lt;in&gt;() window &lt;window_name&gt;
     <td style="text-align:left; border-left:1px solid black"><p>Lanczos </p></td>
 
     
-    <td style="text-align:left; border-right:1px solid black"><p> <img src="images/img-0241.png" alt="$\displaystyle w(n) = \mathrm{sinc}\left( \frac{2n}{N_ x-1} - 1 \right)$" style="vertical-align:-17px; 
+    <td style="text-align:left; border-right:1px solid black"><p> <img src="images/img-0251.png" alt="$\displaystyle w(n) = \mathrm{sinc}\left( \frac{2n}{N_ x-1} - 1 \right)$" style="vertical-align:-17px; 
                                      width:209px; 
-                                     height:44px" class="math gen" /> <img src="images/img-0235.png" alt="\rule{0pt}{\wfgap }" style="vertical-align:0px; width:1px; height:1px" class="box gen" /></p></td>
+                                     height:44px" class="math gen" /> <img src="images/img-0245.png" alt="\rule{0pt}{\wfgap }" style="vertical-align:0px; width:1px; height:1px" class="box gen" /></p></td>
 
 </tr><tr>
 
@@ -165,9 +165,9 @@ fft [...] &lt;out&gt;() of &lt;in&gt;() window &lt;window_name&gt;
     <td style="text-align:left; border-left:1px solid black"><p>Rectangular </p></td>
 
     
-    <td style="text-align:left; border-right:1px solid black"><p> <img src="images/img-0242.png" alt="$\displaystyle w(n) = 1$" style="vertical-align:-4px; 
+    <td style="text-align:left; border-right:1px solid black"><p> <img src="images/img-0252.png" alt="$\displaystyle w(n) = 1$" style="vertical-align:-4px; 
                                      width:70px; 
-                                     height:18px" class="math gen" /> <img src="images/img-0235.png" alt="\rule{0pt}{\wfgap }" style="vertical-align:0px; width:1px; height:1px" class="box gen" /></p></td>
+                                     height:18px" class="math gen" /> <img src="images/img-0245.png" alt="\rule{0pt}{\wfgap }" style="vertical-align:0px; width:1px; height:1px" class="box gen" /></p></td>
 
 </tr><tr>
 
@@ -175,12 +175,12 @@ fft [...] &lt;out&gt;() of &lt;in&gt;() window &lt;window_name&gt;
     <td style="border-bottom-color:black; border-bottom-width:1px; text-align:left; border-bottom-style:solid; border-left:1px solid black"><p>Triangular </p></td>
 
     
-    <td style="border-bottom-color:black; border-bottom-width:1px; text-align:left; border-bottom-style:solid; border-right:1px solid black"><p> <img src="images/img-0243.png" alt="$\displaystyle w(n) = \left( \frac{2}{N_ x} \right) \left( \frac{N_ x}{2} - \left| n - \frac{N_ x-1}{2} \right| \right)$" style="vertical-align:-17px; 
+    <td style="border-bottom-color:black; border-bottom-width:1px; text-align:left; border-bottom-style:solid; border-right:1px solid black"><p> <img src="images/img-0253.png" alt="$\displaystyle w(n) = \left( \frac{2}{N_ x} \right) \left( \frac{N_ x}{2} - \left| n - \frac{N_ x-1}{2} \right| \right)$" style="vertical-align:-17px; 
                                      width:297px; 
-                                     height:45px" class="math gen" /> <img src="images/img-0235.png" alt="\rule{0pt}{\wfgap }" style="vertical-align:0px; width:1px; height:1px" class="box gen" /></p></td>
+                                     height:45px" class="math gen" /> <img src="images/img-0245.png" alt="\rule{0pt}{\wfgap }" style="vertical-align:0px; width:1px; height:1px" class="box gen" /></p></td>
 
 </tr>
-</table> </center><div class="caption"><b>Table 5.1</b>: <span>Window functions available in the <tt class="tt">fft</tt> and <tt class="tt">ifft</tt> commands.</span></div></div><div id="fig:windowfuncs" class="figure"><center> <img src="images/img-0245.png" alt="\includegraphics{examples/eps/ex_windowfuncs}" style="width:497px; height:771px" />
+</table> </center><div class="caption"><b>Table 5.1</b>: <span>Window functions available in the <tt class="tt">fft</tt> and <tt class="tt">ifft</tt> commands.</span></div></div><div id="fig:windowfuncs" class="figure"><center> <img src="images/img-0255.png" alt="\includegraphics{examples/eps/ex_windowfuncs}" style="width:497px; height:771px" />
  </center><div class="caption"><b>Figure 5.1</b>: <span>Window functions available in the <tt class="tt">fft</tt> and <tt class="tt">ifft</tt> commands.</span></div></div></div>
 
 
@@ -199,7 +199,7 @@ fft [...] &lt;out&gt;() of &lt;in&gt;() window &lt;window_name&gt;
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

@@ -5,7 +5,7 @@
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
 <title>: Graph Legends</title>
 
-<link href="sec-multiple_axes.html" title="Configuring Axes" rel="next" />
+<link href="sect0052.html" title="Configuring Axes" rel="next" />
 <link href="ex-spirograph.html" title="Plotting Parametric Functions" rel="prev" />
 <link href="ch-plotting.html" title="Plotting: A Detailed Survey" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
@@ -19,12 +19,12 @@
 
 <td><a href="ch-plotting.html" title="Plotting: A Detailed Survey"><img alt="Up: Plotting: A Detailed Survey" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-multiple_axes.html" title="Configuring Axes"><img alt="Next: Configuring Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0052.html" title="Configuring Axes"><img alt="Next: Configuring Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -56,16 +56,16 @@
 <hr />
 </div>
 
-<div><h1 id="sec:legends">1.6 Graph Legends</h1>
-<p> <a name="a0000000706" id="a0000000706"></a><a name="a0000000707" id="a0000000707"></a>  </p><p>By default, plots are displayed with legends in their top-right corners. The textual description of each dataset is auto-generated from the command used to plot it. Alternatively, the user may specify his own description for each dataset by following the <tt class="tt">plot</tt> command with the <tt class="tt">title</tt><a name="a0000000708" id="a0000000708"></a> modifier, as in the following examples: </p><pre>
+<div><h1 id="sec:legends">1.7 Graph Legends</h1>
+<p> <a name="a0000000723" id="a0000000723"></a><a name="a0000000724" id="a0000000724"></a>  </p><p>By default, plots are displayed with legends in their top-right corners. The textual description of each dataset is auto-generated from the command used to plot it. Alternatively, the user may specify his own description for each dataset by following the <tt class="tt">plot</tt> command with the <tt class="tt">title</tt><a name="a0000000725" id="a0000000725"></a> modifier, as in the following examples: </p><pre>
 plot sin(x) title 'A sine wave'
 plot cos(x) title ''
-</pre><p>In the latter case a blank title is specified, which indicates to PyXPlot that no entry should be made for the dataset in the legend. This allows for legends which contain only a subset of the datasets on a plot. Alternatively, the production of the legend can be completely turned off for all datasets using the command <tt class="tt">set nokey</tt><a name="a0000000709" id="a0000000709"></a>. Having issued this command, the production of keys can be resumed using the <tt class="tt">set key</tt> command<a name="a0000000710" id="a0000000710"></a>. </p><p>The <tt class="tt">set key</tt> command<a name="a0000000711" id="a0000000711"></a> can also be used to dictate how legends should be positioned on graphs, using a syntax along the lines of: </p><pre>
+</pre><p>In the latter case a blank title is specified, which indicates to PyXPlot that no entry should be made for the dataset in the legend. This allows for legends which contain only a subset of the datasets on a plot. Alternatively, the production of the legend can be completely turned off for all datasets using the command <tt class="tt">set nokey</tt><a name="a0000000726" id="a0000000726"></a>. Having issued this command, the production of keys can be resumed using the <tt class="tt">set key</tt> command<a name="a0000000727" id="a0000000727"></a>. </p><p>The <tt class="tt">set key</tt> command<a name="a0000000728" id="a0000000728"></a> can also be used to dictate how legends should be positioned on graphs, using a syntax along the lines of: </p><pre>
 set key top right
-</pre><p>The following recognised positional keywords are self-explanatory: <tt class="tt">top</tt><a name="a0000000712" id="a0000000712"></a>, <tt class="tt">bottom</tt><a name="a0000000713" id="a0000000713"></a>, <tt class="tt">left</tt><a name="a0000000714" id="a0000000714"></a>, <tt class="tt">right</tt><a name="a0000000715" id="a0000000715"></a>, <tt class="tt">xcentre</tt><a name="a0000000716" id="a0000000716"></a> and <tt class="tt">ycentre</tt><a name="a0000000717" id="a0000000717"></a>. Any single instance of the <tt class="tt">set key</tt> command<a name="a0000000718" id="a0000000718"></a> can be followed by one horizontal alignment keyword and one vertical alignment keyword; these keywords also affect the justification of the legend – for example, the keyword <tt class="tt">left</tt><a name="a0000000719" id="a0000000719"></a> aligns the legend with its left edge against the left edge of the plot. </p><p>Alternatively, the position of the legend can be indicated using one of the keywords <tt class="tt">outside</tt><a name="a0000000720" id="a0000000720"></a>, <tt class="tt">below</tt><a name="a0000000721" id="a0000000721"></a> or <tt class="tt">above</tt><a name="a0000000722" id="a0000000722"></a>. These cannot be combined with the horizontal and vertical alignment keywords above, and are used to indicate that the legend should be placed, respectively, outside the plot on its right side, centred beneath the plot, and centred above the plot. </p><p>Two comma-separated positional offset coordinates may be specified following any of the named positions listed above to fine-tune the position of the legend – the first value is assumed to be a horizontal offset and the second a vertical offset. Either may have units of length, or, if they are dimensionless, are assumed to be measured in centimetres, as the following examples demonstrate: </p><pre>
+</pre><p>The following recognised positional keywords are self-explanatory: <tt class="tt">top</tt><a name="a0000000729" id="a0000000729"></a>, <tt class="tt">bottom</tt><a name="a0000000730" id="a0000000730"></a>, <tt class="tt">left</tt><a name="a0000000731" id="a0000000731"></a>, <tt class="tt">right</tt><a name="a0000000732" id="a0000000732"></a>, <tt class="tt">xcentre</tt><a name="a0000000733" id="a0000000733"></a> and <tt class="tt">ycentre</tt><a name="a0000000734" id="a0000000734"></a>. Any single instance of the <tt class="tt">set key</tt> command<a name="a0000000735" id="a0000000735"></a> can be followed by one horizontal alignment keyword and one vertical alignment keyword; these keywords also affect the justification of the legend – for example, the keyword <tt class="tt">left</tt><a name="a0000000736" id="a0000000736"></a> aligns the legend with its left edge against the left edge of the plot. </p><p>Alternatively, the position of the legend can be indicated using one of the keywords <tt class="tt">outside</tt><a name="a0000000737" id="a0000000737"></a>, <tt class="tt">below</tt><a name="a0000000738" id="a0000000738"></a> or <tt class="tt">above</tt><a name="a0000000739" id="a0000000739"></a>. These cannot be combined with the horizontal and vertical alignment keywords above, and are used to indicate that the legend should be placed, respectively, outside the plot on its right side, centred beneath the plot, and centred above the plot. </p><p>Two comma-separated positional offset coordinates may be specified following any of the named positions listed above to fine-tune the position of the legend – the first value is assumed to be a horizontal offset and the second a vertical offset. Either may have units of length, or, if they are dimensionless, are assumed to be measured in centimetres, as the following examples demonstrate: </p><pre>
 set key bottom left 0.0 -2
 set key top xcentre 2*unit(mm),2*unit(mm)
-</pre><p>By default, entries in the legend are automatically sorted into an appropriate number of columns. The number of columns to be used, can, instead, be stipulated using the <tt class="tt">set keycolumns</tt> command<a name="a0000000723" id="a0000000723"></a>. This should be followed by either the integer number of desired columns, or by the keyword <tt class="tt">auto</tt> to indicate that the default behaviour of automatic formatting should be resumed: </p><pre>
+</pre><p>By default, entries in the legend are automatically sorted into an appropriate number of columns. The number of columns to be used, can, instead, be stipulated using the <tt class="tt">set keycolumns</tt> command<a name="a0000000740" id="a0000000740"></a>. This should be followed by either the integer number of desired columns, or by the keyword <tt class="tt">auto</tt> to indicate that the default behaviour of automatic formatting should be resumed: </p><pre>
 set keycolumns 2
 set keycolumns auto
 </pre></div>
@@ -81,12 +81,12 @@ set keycolumns auto
 
 <td><a href="ch-plotting.html" title="Plotting: A Detailed Survey"><img alt="Up: Plotting: A Detailed Survey" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-multiple_axes.html" title="Configuring Axes"><img alt="Next: Configuring Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0052.html" title="Configuring Axes"><img alt="Next: Configuring Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: binorigin</title>
+<title>: axis</title>
 
-<link href="sect0129.html" title="binwidth" rel="next" />
-<link href="sect0127.html" title="bar" rel="prev" />
-<link href="sect0120.html" title="set" rel="up" />
+<link href="sect0129.html" title="axisunitstyle" rel="next" />
+<link href="sect0127.html" title="axescolour" rel="prev" />
+<link href="sect0124.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0127.html" title="bar"><img alt="Previous: bar" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0127.html" title="axescolour"><img alt="Previous: axescolour" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0129.html" title="binwidth"><img alt="Next: binwidth" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0129.html" title="axisunitstyle"><img alt="Next: axisunitstyle" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0071.html">Reference Manual</a> <b>:</b>
+<a href="sect0074.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,30 +49,40 @@
 
 </span><span>
 <span>
-<a href="sect0120.html">set</a> <b>:</b>
+<a href="sect0124.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">binorigin</b>
+<b class="current">axis</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000129">1.46.8 binorigin</h2>
-<p><a name="a0000001056" id="a0000001056"></a> </p><pre>
-set binorigin &lt;value&gt;
-</pre><p>The setting <tt class="tt">binorigin</tt> affects the behaviour of the <tt class="tt">histogram</tt> command<a name="a0000001057" id="a0000001057"></a> by adjusting where it places the boundaries between the bins into which it places data. The <tt class="tt">histogram</tt> command<a name="a0000001058" id="a0000001058"></a> selects a system of bins which, if extended to infinity in both directions, would put a bin boundary at the value specified in the <tt class="tt">set binorigin</tt> command<a name="a0000001059" id="a0000001059"></a>. Thus, if a value of <img src="images/img-0172.png" alt="$0.1$" style="vertical-align:0px; 
-                                     width:22px; 
-                                     height:12px" class="math gen" /> were specified to the <tt class="tt">set binorigin</tt> command<a name="a0000001060" id="a0000001060"></a>, and a bin width of 20 were chosen by the <tt class="tt">histogram</tt> command<a name="a0000001061" id="a0000001061"></a>, bin boundaries might lie at <img src="images/img-0251.png" alt="$20.1$" style="vertical-align:0px; 
-                                     width:30px; 
-                                     height:12px" class="math gen" />, <img src="images/img-0252.png" alt="$40.1$" style="vertical-align:0px; 
-                                     width:31px; 
-                                     height:12px" class="math gen" />, <img src="images/img-0253.png" alt="$60.1$" style="vertical-align:0px; 
-                                     width:31px; 
-                                     height:12px" class="math gen" />, and so on. The specified value may have any physical units, but must be real and finite. </p></div>
+<div><h2 id="a0000000129">1.46.4 axis</h2>
+<p><a name="a0000001094" id="a0000001094"></a> </p><pre>
+set axis &lt;axis&gt; [ ( visible | invisible ) ]
+  [ ( top | bottom | left | right | front | back ) ]
+  [ ( atzero | notatzero ) ]
+  [ ( automirrored | mirrored | fullmirrored ) ]
+  [ ( noarrow | arrow | reversearrow | twowayarrow ) ]
+  [ linked [item &lt;number&gt;] &lt;axis&gt; [using &lt;expression&gt;] ]
+</pre><p>The <tt class="tt">set axis</tt> command<a name="a0000001095" id="a0000001095"></a> is used to add additional axes to plots and to configure their appearance. Where an axis is stated on its own, as in the example </p><pre>
+set axis x2
+</pre><p> additional horizontal or vertical axes are added with default settings. The converse statements </p><pre>
+set noaxis x2
+unset axis x2
+</pre><p> are used, respectively, to remove axes from plots and to return them to their default configurations, which often has the same effect of removing them from the graph, unless they are configured otherwise in a configuration file. </p><p>The position of any axis can be explicitly set using syntax of the form: </p><pre>
+set axis x top
+set axis y right
+set axis z back
+</pre><p> Horizontal axes can be set to appear either at the <tt class="tt">top</tt> or <tt class="tt">bottom</tt>; vertical axes can be set to appear either at the <tt class="tt">left</tt> or <tt class="tt">right</tt>; and <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:8px" class="math gen" />-axes can be set to appear either at the <tt class="tt">front</tt> or <tt class="tt">back</tt>. By default, the <tt class="tt">x1</tt>-axis is placed along the bottom of graphs and the <tt class="tt">y1</tt>-axis is placed up the left-hand side of graphs. On three-dimensional plots, the <tt class="tt">z1</tt>-axis is placed at the front of the graph. The second set of axes are placed opposite to the first: the <tt class="tt">x2</tt>-, <tt class="tt">y2</tt>- and <tt class="tt">z2</tt>-axes are placed respectively along the top, right and back sides of graphs. Higher-numbered axes are placed alongside the <tt class="tt">x1</tt>-, <tt class="tt">y1</tt>- and <tt class="tt">z1</tt>-axes. </p><p>The following keywords may also be placed alongside the positional keywords listed above to specify how the axis should appear: </p><ul class="itemize">
+<li><p><tt class="tt">arrow</tt> – Specifies that an arrowhead should be drawn on the right/top end of the axis. [<b class="bf">Not default</b>]. </p></li><li><p><tt class="tt">atzero</tt> – Specifies that rather than being placed along an edge of the plot, the axis should mark the lines where the perpendicular axes <tt class="tt">x1</tt>, <tt class="tt">y1</tt> and/or <tt class="tt">z1</tt> are zero. [<b class="bf">Not default</b>]. </p></li><li><p><tt class="tt">automirrored</tt> – Specifies that an automatic decision should be made between the behaviour of <tt class="tt">mirrored</tt> and <tt class="tt">nomirrored</tt>. If there are no axes on the opposite side of the graph, a mirror axis is produced. If there are already axes on the opposite side of the graph, no mirror axis is produced. [<b class="bf">Default</b>]. </p></li><li><p><tt class="tt">fullmirrored</tt> – Similar to <tt class="tt">mirrored</tt>. Specifies that this axis should have a corresponding twin placed on the opposite side of the graph with mirroring ticks and labelling. [<b class="bf">Not default</b>; see <tt class="tt">automirrored</tt>]. </p></li><li><p><tt class="tt">invisible</tt> – Specifies that the axis should not be drawn; data can still be plotted against it, but the axis is unseen. See Example <a href="ex-australia.html">1.11.2</a> for a plot where all of the axes are invisible. </p></li><li><p><tt class="tt">linked</tt> – Specifies that the axis should be linked to another axis; see Section <a href="ex-cmbrtemp.html">1.8.9</a>. </p></li><li><p><tt class="tt">mirrored</tt> – Specifies that this axis should have a corresponding twin placed on the opposite side of the graph with mirroring ticks but with no labels on the ticks. [<b class="bf">Not default</b>; see <tt class="tt">automirrored</tt>]. </p></li><li><p><tt class="tt">noarrow</tt> – Specifies that no arrowheads should be drawn on the ends of the axis. [<b class="bf">Default</b>]. </p></li><li><p><tt class="tt">nomirrored</tt> – Specifies that this axis should not have any corresponding twins. [<b class="bf">Not default</b>; see <tt class="tt">automirrored</tt>]. </p></li><li><p><tt class="tt">notatzero</tt> – Opposite of <tt class="tt">atzero</tt>; the axis should be placed along an edge of the plot. [<b class="bf">Default</b>]. </p></li><li><p><tt class="tt">notlinked</tt> – Specifies that the axis should no longer be linked to any other; see Section <a href="ex-cmbrtemp.html">1.8.9</a>. [<b class="bf">Default</b>]. </p></li><li><p><tt class="tt">reversearrow</tt> – Specifies that an arrowhead should be drawn on the left/bottom end of the axis. [<b class="bf">Not default</b>]. </p></li><li><p><tt class="tt">twowayarrow</tt> – Specifies that arrowheads should be drawn on both ends of the axis. [<b class="bf">Not default</b>]. </p></li><li><p><tt class="tt">visible</tt> – Specifies that the axis should be displayed; opposite of <tt class="tt">invisible</tt>. [<b class="bf">Default</b>]. </p></li>
+</ul></div>
 
 
 
@@ -81,16 +91,16 @@ set binorigin &lt;value&gt;
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0127.html" title="bar"><img alt="Previous: bar" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0127.html" title="axescolour"><img alt="Previous: axescolour" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0120.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0129.html" title="binwidth"><img alt="Next: binwidth" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0129.html" title="axisunitstyle"><img alt="Next: axisunitstyle" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

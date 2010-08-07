@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: The Default Terminal</title>
+<title>: Previewing Graphs On Screen</title>
 
-<link href="sect0061.html" title="PostScript Output" rel="next" />
-<link href="sect0059.html" title="The Complete Syntax of the set terminal Command" rel="prev" />
-<link href="ch-image_formats.html" title="Producing Image Files" rel="up" />
+<link href="sect0061.html" title="Producing Images on Disk" rel="next" />
+<link href="sec-set_terminal.html" title="The set terminal Command" rel="prev" />
+<link href="sec-set_terminal.html" title="The set terminal Command" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0059.html" title="The Complete Syntax of the set terminal Command"><img alt="Previous: The Complete Syntax of the set terminal Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-set_terminal.html" title="The set terminal Command"><img alt="Previous: The set terminal Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-image_formats.html" title="Producing Image Files"><img alt="Up: Producing Image Files" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sec-set_terminal.html" title="The set terminal Command"><img alt="Up: The set terminal Command" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0061.html" title="PostScript Output"><img alt="Next: PostScript Output" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0061.html" title="Producing Images on Disk"><img alt="Next: Producing Images on Disk" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -48,16 +48,29 @@
 </span>
 
 </span><span>
+<span>
+<a href="sec-set_terminal.html">The <tt class="tt">set terminal</tt> Command</a> <b>:</b>
+</span>
+
+</span><span>
 
 <span>
-<b class="current">The Default Terminal</b>
+<b class="current">Previewing Graphs On Screen</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000061">2.2 The Default Terminal</h1>
-<p>The default terminal is normally <tt class="tt">X11_SingleWindow</tt>, except when PyXPlot is used non-interactively – i.e. one or more command scripts are specified on the command line, and PyXPlot exits as soon as it finishes executing them. In this case, the <tt class="tt">X11_SingleWindow</tt> would not be a very sensible terminal to use as any plot window would close as soon as PyXPlot exited. The default terminal in this case changes to <tt class="tt">eps</tt>. </p><p>This rule does not apply when the special ‘–’ filename is specified in a list of command scripts on the command line, where an interactive terminal will operate between running a series of scripts. In this case, PyXPlot detects that the session will be interactive, and defaults to the usual <tt class="tt">X11_SingleWindow</tt> terminal. Conversely, on machines where the <tt class="tt">DISPLAY</tt> environment variable<a name="a0000000828" id="a0000000828"></a> is not set, PyXPlot detects that it has access to no X-terminal on which to display plots, and defaults to the <tt class="tt">eps</tt> terminal. </p></div>
+<div><h2 id="a0000000061">2.1.1 Previewing Graphs On Screen</h2>
+<p> <a name="a0000000837" id="a0000000837"></a> </p><p>Three output terminal produce immediate previews to the screen: <tt class="tt">X11_­Single­Window</tt>, <tt class="tt">X11_­Persist</tt>, <tt class="tt">X11_­Multi­Window</tt>. The default of these options – i.e. the default terminal when PyXPlot is started up in interactive mode – is <tt class="tt">X11_­Single­Window</tt>. In this terminal, each time a new plot is generated, if the previous plot is still open on the display, the old plot is replaced with the new one. This way, only one plot window is open at any one time. This behaviour is intended to prevent the desktop from becoming flooded with plot windows. </p><p>The alternative <tt class="tt">X11_­Multi­Window</tt> terminal is similar in all respects except that each new plot is generated in a new window, regardless of whether any previous plots are still open on the display. This is especially useful when multiple plots are to be compared side-by-side:<a name="a0000000838" id="a0000000838"></a> </p><pre>
+set terminal X11_SingleWindow
+plot 'data1.dat'
+plot 'data2.dat'  &lt;-- first plot window disappears
+</pre><p>c.f.: </p><pre>
+set terminal X11_MultiWindow
+plot 'data1.dat'
+plot 'data2.dat'  &lt;-- first plot window remains
+</pre><p>The third of these terminals, <tt class="tt">X11_­Persist</tt>, is similar to <tt class="tt">X11_­Multi­Window</tt> but keeps plot windows open after PyXPlot terminates in distinction from the above two terminals, which close all plot windows upon exit. </p></div>
 
 
 
@@ -66,16 +79,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0059.html" title="The Complete Syntax of the set terminal Command"><img alt="Previous: The Complete Syntax of the set terminal Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-set_terminal.html" title="The set terminal Command"><img alt="Previous: The set terminal Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-image_formats.html" title="Producing Image Files"><img alt="Up: Producing Image Files" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sec-set_terminal.html" title="The set terminal Command"><img alt="Up: The set terminal Command" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0061.html" title="PostScript Output"><img alt="Next: PostScript Output" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0061.html" title="Producing Images on Disk"><img alt="Next: Producing Images on Disk" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

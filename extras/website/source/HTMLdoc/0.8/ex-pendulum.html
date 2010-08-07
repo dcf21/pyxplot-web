@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -57,7 +57,7 @@
 </div>
 
 <div><h1 id="ex:pendulum">6.9 Subroutines</h1>
-<p> <a name="a0000000573" id="a0000000573"></a>  </p><p>Subroutines are similar to mathematical functions (see Section <a href="sec-functions.html">4.3</a>), and once defined, can be used anywhere in algebraic expressions, just as functions can be. However, instead of being defined by a single algebraic expression, whenever a subroutine is evaluated, a block of PyXPlot commands of arbitrary length is executed. This gives much greater flexibility for implementing complex algorithms. Subroutines are defined using the following syntax: </p><pre>
+<p> <a name="a0000000590" id="a0000000590"></a>  </p><p>Subroutines are similar to mathematical functions (see Section <a href="sec-functions.html">4.3</a>), and once defined, can be used anywhere in algebraic expressions, just as functions can be. However, instead of being defined by a single algebraic expression, whenever a subroutine is evaluated, a block of PyXPlot commands of arbitrary length is executed. This gives much greater flexibility for implementing complex algorithms. Subroutines are defined using the following syntax: </p><pre>
 subroutine &lt;name&gt;(&lt;variable1&gt;,...)
  {
   ...
@@ -72,38 +72,124 @@ subroutine f(x,y)
  }
 </pre><p> In either case, the function/subroutine could be evaluated by typing: </p><pre>
 print f(1,pi/2)
-</pre><p> If a subroutine ends without any value being returned using the <tt class="tt">return</tt> statement, then a value of zero is returned. </p><p>Subroutines may serve one of two purposes. In many cases they are used to implement complicated mathematical functions for which no simple algebraic expression may be given. Secondly, they may be used to repetitively execute a set of commands whenever they are required. In the latter case, the subroutine may not have a return value, but may merely be used as a mechanism for encapsulating a block of commands. In this case, the <tt class="tt">call</tt> command<a name="a0000000574" id="a0000000574"></a> may be used to execute a subroutine, discarding any return value which it may produce, as in the example: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">subroutine f(x,y)</b></tt><br /><tt class="tt">subrtne&gt;  <b class="bf">{</b></tt><br /><tt class="tt">subrtne&gt;   <b class="bf">print "%s - %s = %s"%(x,y,x-y)</b></tt><br /><tt class="tt">subrtne&gt;  <b class="bf">}</b></tt> <br /><tt class="tt">pyxplot&gt; <b class="bf">call f(2,1)</b></tt><br /><tt class="tt">2 - 1 = 1</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">call f(5*unit(inch), 10*unit(mm))</b></tt><br />127 mm - 10 mm = 117 mm  </p><p> <span class="upshape"><span class="mdseries"><span class="rm">The dynamics of the simple pendulum.</span></span></span></p><div>
+</pre><p> If a subroutine ends without any value being returned using the <tt class="tt">return</tt> statement, then a value of zero is returned. </p><p>Subroutines may serve one of two purposes. In many cases they are used to implement complicated mathematical functions for which no simple algebraic expression may be given. Secondly, they may be used to repetitively execute a set of commands whenever they are required. In the latter case, the subroutine may not have a return value, but may merely be used as a mechanism for encapsulating a block of commands. In this case, the <tt class="tt">call</tt> command<a name="a0000000591" id="a0000000591"></a> may be used to execute a subroutine, discarding any return value which it may produce, as in the example: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">subroutine f(x,y)</b></tt><br /><tt class="tt">subrtne&gt;  <b class="bf">{</b></tt><br /><tt class="tt">subrtne&gt;   <b class="bf">print "%s - %s = %s"%(x,y,x-y)</b></tt><br /><tt class="tt">subrtne&gt;  <b class="bf">}</b></tt> <br /><tt class="tt">pyxplot&gt; <b class="bf">call f(2,1)</b></tt><br /><tt class="tt">2 - 1 = 1</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">call f(5*unit(inch), 10*unit(mm))</b></tt><br />127 mm - 10 mm = 117 mm  </p><p> <span class="upshape"><span class="mdseries"><span class="rm">An image of a Newton fractal.</span></span></span></p><div>
 
 <table cellspacing="0" class="tabular">
 <tr>
 
     
-    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> The equation of motion for a pendulum bob may be derived from the rotational analogue to Newton’s Second Law, <img src="images/img-0288.png" alt="$G=I\ddot\theta $" style="vertical-align:0px; 
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> Newton fractals are formed by iterating the equation </p><table id="a0000000592" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td><img src="images/img-0298.png" alt="\[  z_{n+1} = z_ n - \frac{f(z_ n)}{f^\prime (z_ n)},  \]" style="width:155px; 
+                            height:43px" class="math gen" /></td>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td class="eqnnum" style="width:20%">&nbsp;</td>
+</tr>
+</table><p> subject to the starting condition that <img src="images/img-0299.png" alt="$z_0=c$" style="vertical-align:-2px; 
+                                     width:48px; 
+                                     height:10px" class="math gen" />, where <img src="images/img-0040.png" alt="$c$" style="vertical-align:0px; 
+                                     width:8px; 
+                                     height:8px" class="math gen" /> is any complex number <img src="images/img-0040.png" alt="$c$" style="vertical-align:0px; 
+                                     width:8px; 
+                                     height:8px" class="math gen" /> and <img src="images/img-0300.png" alt="$f(z)$" style="vertical-align:-4px; 
+                                     width:32px; 
+                                     height:18px" class="math gen" /> is any mathematical function. This series is the Newton-Raphson method for numerically finding solutions to the equation <img src="images/img-0301.png" alt="$f(z)=0$" style="vertical-align:-4px; 
+                                     width:66px; 
+                                     height:18px" class="math gen" />, and with time usually converges towards one such solution for well-behaved functions. The complex number <img src="images/img-0040.png" alt="$c$" style="vertical-align:0px; 
+                                     width:8px; 
+                                     height:8px" class="math gen" /> represents the initial guess at the position of the solution being sought. The Newton fractal is formed by asking which solution the iteration converges upon, as a function of the position of the initial guess <img src="images/img-0040.png" alt="$c$" style="vertical-align:0px; 
+                                     width:8px; 
+                                     height:8px" class="math gen" /> in the complex plane. In the case of the cubic polynomial <img src="images/img-0302.png" alt="$f(z)=z^3-1$" style="vertical-align:-4px; 
+                                     width:105px; 
+                                     height:20px" class="math gen" />, which has three solutions, a map might be generated with points coloured red, green or blue to represent convergence towards the three roots. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>If <img src="images/img-0040.png" alt="$c$" style="vertical-align:0px; 
+                                     width:8px; 
+                                     height:8px" class="math gen" /> is close to one of the roots, then convergence towards that particular root is guaranteed, but further afield the map develops a fractal structure. In this example, we define a PyXPlot subroutine to produce such a map as a function of <img src="images/img-0303.png" alt="$c=x+iy$" style="vertical-align:-4px; 
+                                     width:79px; 
+                                     height:16px" class="math gen" />, and then plot the resulting map using the <tt class="tt">colourmap</tt> plot style (see Section <a href="sec-colourmaps.html">1.12</a>). To make the fractal prettier – it contains, after all, only three colours as strictly defined – we vary the brightness of each point depending upon how many iterations are required before the series ventures within a distance of <img src="images/img-0304.png" alt="$|z_ n-r_ i|&lt;10^{-2}$" style="vertical-align:-5px; 
+                                     width:122px; 
+                                     height:21px" class="math gen" /> of any of the roots <img src="images/img-0305.png" alt="$r_ i$" style="vertical-align:-2px; 
+                                     width:13px; 
+                                     height:10px" class="math gen" />. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">set numerics complex</tt><br /><tt class="tt">set unit angle nodimensionless</tt><br /></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">Root1 = exp(i*unit( 0*deg))</tt><br /><tt class="tt">Root2 = exp(i*unit(120*deg))</tt><br /><tt class="tt">Root3 = exp(i*unit(240*deg))</tt><br /></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">Tolerance = 1e-2</tt><br /></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">subroutine NewtonFractal(x,y)</tt><br /><tt class="tt">{</tt><br /><tt class="tt">z = x+i*y;</tt><br /><tt class="tt">iter = 0</tt><br /><tt class="tt">while (1)</tt><br /><tt class="tt">{</tt><br /><tt class="tt">z = z - (z**3-1)/(3*z**2)</tt><br /><tt class="tt">if abs(z-Root1)<img src="images/img-0034.png" alt="$&lt;$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" />Tolerance { ; return 1 ; }</tt><br /><tt class="tt">if abs(z-Root2)<img src="images/img-0034.png" alt="$&lt;$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" />Tolerance { ; return 2 ; }</tt><br /><tt class="tt">if abs(z-Root3)<img src="images/img-0034.png" alt="$&lt;$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" />Tolerance { ; return 3 ; }</tt><br /><tt class="tt">iter = iter + 1</tt><br /><tt class="tt">}</tt><br /><tt class="tt">}</tt><br /></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt"># Plot Newton fractal</tt><br /><tt class="tt">set size square</tt><br /><tt class="tt">set key below</tt><br /><tt class="tt">set xrange [-1.5:1.5]</tt><br /><tt class="tt">set yrange [-1.5:1.5]</tt><br /><tt class="tt">set sample grid 250x250</tt><br /><tt class="tt">set colmap hsb(c1*0.667):(0.8+0.2*c2):(1.0-0.8*c2)</tt><br /><tt class="tt">set log c2</tt><br /><tt class="tt">plot NewtonFractal(x,y):iter+2 with colourmap</tt> </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><center> 
+<img src="images/img-0307.png" alt="\includegraphics[width=8cm]{examples/eps/ex_newton}" style="width:8cm" /> </center></td>
+
+</tr>
+</table>
+</div><p> <span class="upshape"><span class="mdseries"><span class="rm">The dynamics of the simple pendulum.</span></span></span></p><div>
+
+<table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> The equation of motion for a pendulum bob may be derived from the rotational analogue to Newton’s Second Law, <img src="images/img-0309.png" alt="$G=I\ddot\theta $" style="vertical-align:0px; 
                                      width:57px; 
-                                     height:17px" class="math gen" /> where <img src="images/img-0289.png" alt="$G$" style="vertical-align:0px; 
+                                     height:17px" class="math gen" /> where <img src="images/img-0310.png" alt="$G$" style="vertical-align:0px; 
                                      width:14px; 
-                                     height:12px" class="math gen" /> is torque, <img src="images/img-0290.png" alt="$I$" style="vertical-align:0px; 
+                                     height:12px" class="math gen" /> is torque, <img src="images/img-0311.png" alt="$I$" style="vertical-align:0px; 
                                      width:9px; 
                                      height:12px" class="math gen" /> is moment of inertia and <img src="images/img-0055.png" alt="$\theta $" style="vertical-align:0px; 
                                      width:9px; 
                                      height:12px" class="math gen" /> is the displacement of the pendulum bob from the vertical. For a pendulum of length <img src="images/img-0081.png" alt="$l$" style="vertical-align:0px; 
                                      width:5px; 
-                                     height:13px" class="math gen" />, with a bob of mass <img src="images/img-0291.png" alt="$m$" style="vertical-align:0px; 
+                                     height:13px" class="math gen" />, with a bob of mass <img src="images/img-0312.png" alt="$m$" style="vertical-align:0px; 
                                      width:16px; 
-                                     height:8px" class="math gen" />, this equation becomes <img src="images/img-0292.png" alt="$-mgl\sin \theta =ml^2\ddot\theta $" style="vertical-align:-4px; 
+                                     height:8px" class="math gen" />, this equation becomes <img src="images/img-0313.png" alt="$-mgl\sin \theta =ml^2\ddot\theta $" style="vertical-align:-4px; 
                                      width:145px; 
-                                     height:21px" class="math gen" />. In the small-angle approximation, such that <img src="images/img-0293.png" alt="$\sin \theta \approx \theta $" style="vertical-align:0px; 
+                                     height:21px" class="math gen" />. In the small-angle approximation, such that <img src="images/img-0314.png" alt="$\sin \theta \approx \theta $" style="vertical-align:0px; 
                                      width:67px; 
                                      height:12px" class="math gen" />, it reduces to the equation for simple harmonic motion, with the solution </p></td>
 
 </tr><tr>
 
     
-    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><table id="&lt;plasTeX.TeXFragment object at 0x98c76bc&gt;" class="equation" width="100%" cellspacing="0" cellpadding="7">
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><table id="&lt;plasTeX.TeXFragment object at 0x104606460&gt;" class="equation" width="100%" cellspacing="0" cellpadding="7">
 <tr>
     
     <td style="width:40%">&nbsp;</td>
-    <td><img src="images/img-0294.png" alt="\begin{equation}  \theta _\mathrm {approx}=\omega \sin \left(\sqrt {\frac{g}{l}}t\right). \label{eq:pendulum_ approx} \end{equation}" style="width:393px; 
+    <td><img src="images/img-0315.png" alt="\begin{equation}  \theta _\mathrm {approx}=\omega \sin \left(\sqrt {\frac{g}{l}}t\right). \label{eq:pendulum_ approx} \end{equation}" style="width:393px; 
                             height:45px" class="math gen" /></td>
     
     <td style="width:40%">&nbsp;</td>
@@ -114,18 +200,18 @@ print f(1,pi/2)
 </tr><tr>
 
     
-    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>A more exact solution requires integration of the second-order differential equation of motion including the <img src="images/img-0295.png" alt="$\sin \theta $" style="vertical-align:0px; 
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>A more exact solution requires integration of the second-order differential equation of motion including the <img src="images/img-0316.png" alt="$\sin \theta $" style="vertical-align:0px; 
                                      width:34px; 
                                      height:12px" class="math gen" /> term. This integral cannot be done analytically, but the solution can be written in the form </p></td>
 
 </tr><tr>
 
     
-    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><table id="&lt;plasTeX.TeXFragment object at 0x98c78fc&gt;" class="equation" width="100%" cellspacing="0" cellpadding="7">
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><table id="&lt;plasTeX.TeXFragment object at 0x104606940&gt;" class="equation" width="100%" cellspacing="0" cellpadding="7">
 <tr>
     
     <td style="width:40%">&nbsp;</td>
-    <td><img src="images/img-0296.png" alt="\begin{equation}  \theta _\mathrm {exact}(t) = 2\sin ^{-1}\left[ k\, \mathrm{sn}\left(\sqrt {\frac{g}{l}}t,k\right)\right]. \label{eq:pendulum_ exact} \end{equation}" style="width:442px; 
+    <td><img src="images/img-0317.png" alt="\begin{equation}  \theta _\mathrm {exact}(t) = 2\sin ^{-1}\left[ k\, \mathrm{sn}\left(\sqrt {\frac{g}{l}}t,k\right)\right]. \label{eq:pendulum_ exact} \end{equation}" style="width:442px; 
                             height:45px" class="math gen" /></td>
     
     <td style="width:40%">&nbsp;</td>
@@ -136,20 +222,20 @@ print f(1,pi/2)
 </tr><tr>
 
     
-    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>where <img src="images/img-0297.png" alt="$\mathrm{sn}(u,m)$" style="vertical-align:-4px; 
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>where <img src="images/img-0318.png" alt="$\mathrm{sn}(u,m)$" style="vertical-align:-4px; 
                                      width:64px; 
-                                     height:18px" class="math gen" /> is a Jacobi elliptic function and <img src="images/img-0298.png" alt="$k=\sin \left(\omega /2\right)$" style="vertical-align:-5px; 
+                                     height:18px" class="math gen" /> is a Jacobi elliptic function and <img src="images/img-0319.png" alt="$k=\sin \left(\omega /2\right)$" style="vertical-align:-5px; 
                                      width:101px; 
                                      height:19px" class="math gen" />. The Jacobi elliptic function cannot be analytically computed, but can be numerically approximated using the <tt class="tt">jacobi_­sn(u,m)</tt> function in PyXPlot. </p></td>
 
 </tr><tr>
 
     
-    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>Below, we produce a plot of Equations (<a></a>) and (<a></a>). The horizontal axis is demarked in units of the dimensionless period of the pendulum to eliminate <img src="images/img-0299.png" alt="$g$" style="vertical-align:-4px; 
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>Below, we produce a plot of Equations (<a></a>) and (<a></a>). The horizontal axis is demarked in units of the dimensionless period of the pendulum to eliminate <img src="images/img-0320.png" alt="$g$" style="vertical-align:-4px; 
                                      width:9px; 
                                      height:12px" class="math gen" /> and <img src="images/img-0081.png" alt="$l$" style="vertical-align:0px; 
                                      width:5px; 
-                                     height:13px" class="math gen" />, and a swing amplitude of <img src="images/img-0300.png" alt="$\pm 30^\circ $" style="vertical-align:0px; 
+                                     height:13px" class="math gen" />, and a swing amplitude of <img src="images/img-0321.png" alt="$\pm 30^\circ $" style="vertical-align:0px; 
                                      width:38px; 
                                      height:13px" class="math gen" /> is assumed: </p></td>
 
@@ -173,18 +259,18 @@ print f(1,pi/2)
 
     
     <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><center>
-<img src="images/img-0302.png" alt="\includegraphics[width=9cm]{examples/eps/ex_pendulum}" style="width:9cm" /></center> </p></td>
+<img src="images/img-0323.png" alt="\includegraphics[width=9cm]{examples/eps/ex_pendulum}" style="width:9cm" /></center> </p></td>
 
 </tr><tr>
 
     
     <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>As is apparent, at this amplitude, the exact solution begins to deviate noticeably from the small-angle solution within 2–3 swings of the pendulum. We now seek to quantify more precisely how long the two solutions take to diverge by defining a subroutine to compute how long <img src="images/img-0142.png" alt="$T$" style="vertical-align:0px; 
                                      width:13px; 
-                                     height:12px" class="math gen" /> it takes before the two solutions to deviate by some amount <img src="images/img-0304.png" alt="$\psi $" style="vertical-align:-4px; 
+                                     height:12px" class="math gen" /> it takes before the two solutions to deviate by some amount <img src="images/img-0325.png" alt="$\psi $" style="vertical-align:-4px; 
                                      width:12px; 
-                                     height:17px" class="math gen" />. We then plot these times as a function of amplitude <img src="images/img-0305.png" alt="$\omega $" style="vertical-align:0px; 
+                                     height:17px" class="math gen" />. We then plot these times as a function of amplitude <img src="images/img-0326.png" alt="$\omega $" style="vertical-align:0px; 
                                      width:11px; 
-                                     height:8px" class="math gen" /> for three deviation thresholds. Because this subroutine takes a significant amount of time to run, we only compute 40 samples for each value of <img src="images/img-0304.png" alt="$\psi $" style="vertical-align:-4px; 
+                                     height:8px" class="math gen" /> for three deviation thresholds. Because this subroutine takes a significant amount of time to run, we only compute 40 samples for each value of <img src="images/img-0325.png" alt="$\psi $" style="vertical-align:-4px; 
                                      width:12px; 
                                      height:17px" class="math gen" />: </p></td>
 
@@ -218,7 +304,7 @@ print f(1,pi/2)
 
     
     <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><p><center>
-<img src="images/img-0307.png" alt="\includegraphics[width=9cm]{examples/eps/ex_pendulum2}" style="width:9cm" /></center>  </p></td>
+<img src="images/img-0328.png" alt="\includegraphics[width=9cm]{examples/eps/ex_pendulum2}" style="width:9cm" /></center>  </p></td>
 
 </tr>
 </table>
@@ -240,7 +326,7 @@ print f(1,pi/2)
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

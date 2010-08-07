@@ -3,10 +3,10 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Shaded Regions</title>
+<title>: Steps</title>
 
-<link href="sec-barcharts.html" title="Barcharts and Histograms" rel="next" />
-<link href="sec-errorbars.html" title="Error Bars" rel="prev" />
+<link href="sect0047.html" title="Arrows" rel="next" />
+<link href="sec-barcharts.html" title="Barcharts and Histograms" rel="prev" />
 <link href="sec-list_of_plotstyles.html" title="PyXPlot’s Plot Styles" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-errorbars.html" title="Error Bars"><img alt="Previous: Error Bars" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-barcharts.html" title="Barcharts and Histograms"><img alt="Previous: Barcharts and Histograms" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="sec-list_of_plotstyles.html" title="PyXPlot’s Plot Styles"><img alt="Up: PyXPlot’s Plot Styles" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-barcharts.html" title="Barcharts and Histograms"><img alt="Next: Barcharts and Histograms" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0047.html" title="Arrows"><img alt="Next: Arrows" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -55,28 +55,22 @@
 </span><span>
 
 <span>
-<b class="current">Shaded Regions</b>
+<b class="current">Steps</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000047">1.2.3 Shaded Regions</h2>
-<p>The following plot styles allow regions of graphs to be shaded with colour: </p><ul class="itemize">
-<li><p><tt class="tt">yerrorshaded</tt><a name="a0000000639" id="a0000000639"></a><a name="a0000000640" id="a0000000640"></a> </p></li><li><p><tt class="tt">shadedregion</tt><a name="a0000000641" id="a0000000641"></a><a name="a0000000642" id="a0000000642"></a> </p></li>
-</ul><p>Both of these plot styles fill specified regions of graphs with the selected <tt class="tt">fillcolour</tt> and draw a line around the boundary of the region with the selected <tt class="tt">colour</tt>, <tt class="tt">linetype</tt> and <tt class="tt">linewidth</tt>. They differ in the format in which they expect the input data to be arranged. The <tt class="tt">yerrorshaded</tt><a name="a0000000643" id="a0000000643"></a><a name="a0000000644" id="a0000000644"></a> plot style expects data to be arranged in the same format as the <tt class="tt">yerrorrange</tt><a name="a0000000645" id="a0000000645"></a><a name="a0000000646" id="a0000000646"></a> plot style, specifying the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+<div><h2 id="a0000000047">1.2.5 Steps</h2>
+<p>The following plot styles allow data to be plotted with a series of horizontal steps associated with each supplied datapoint: </p><ul class="itemize">
+<li><p><tt class="tt">steps</tt><a name="a0000000687" id="a0000000687"></a><a name="a0000000688" id="a0000000688"></a> </p></li><li><p><tt class="tt">fsteps</tt><a name="a0000000689" id="a0000000689"></a><a name="a0000000690" id="a0000000690"></a> </p></li><li><p><tt class="tt">histeps</tt><a name="a0000000691" id="a0000000691"></a><a name="a0000000692" id="a0000000692"></a> </p></li>
+</ul><p> Each of these styles takes two columns of data as input containing the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
                                      width:10px; 
                                      height:8px" class="math gen" />- and <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
                                      width:9px; 
-                                     height:12px" class="math gen" />-coordinates of a series of datapoints in the first two columns, together with the minimum and maximum extremes of the vertical errorbar on each datapointin the third and fourth columns. The region contained between the upper and lower limits of the error bars is filled with colour; the <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
-                                     width:9px; 
-                                     height:12px" class="math gen" />-coordinate specified in the second column is unused. This plot style provides easy conversion between plots drawn with errorbars and with shaded error regions. Note that the datapoints must be sorted in order of either increasing or decreasing <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
-                                     width:10px; 
-                                     height:8px" class="math gen" />-coordinate for sensible behaviour. </p><p>The <tt class="tt">shadedregion</tt><a name="a0000000647" id="a0000000647"></a><a name="a0000000648" id="a0000000648"></a> plot style takes only two columns of input data, specifying the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
-                                     width:10px; 
-                                     height:8px" class="math gen" />- and <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
-                                     width:9px; 
-                                     height:12px" class="math gen" />-coordinates of a series of datapoints which are to be joined in a join-the-dots fashion. At the end of each dataset, the drawn path is closed and filled. </p></div>
+                                     height:12px" class="math gen" />-coordinates of each datapoint. They expect identically-formatted data regardless of whether they are used on two- and three-dimensional plots; in the latter case, the steps are drawn in the plane <img src="images/img-0395.png" alt="$z=0$" style="vertical-align:0px; 
+                                     width:42px; 
+                                     height:12px" class="math gen" />. An example of their appearance is shown in Figures <a href="sec-barcharts.html#fig:ex_barchart1">1.2</a>(d), (e) and (f); for clarity, the positions of each of the supplied datapoints are marked by red crosses. These plot styles differ in their placement of the edges of each of the horizontal steps. The <tt class="tt">steps</tt><a name="a0000000693" id="a0000000693"></a><a name="a0000000694" id="a0000000694"></a> plot style places the right-most edge of each step on the datapoint it represents. The <tt class="tt">fsteps</tt><a name="a0000000695" id="a0000000695"></a><a name="a0000000696" id="a0000000696"></a> plot style places the left-most edge of each step on the datapoint it represents. The <tt class="tt">histeps</tt><a name="a0000000697" id="a0000000697"></a><a name="a0000000698" id="a0000000698"></a> plot style centres each step upon the datapoint it represents. </p></div>
 
 
 
@@ -85,16 +79,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-errorbars.html" title="Error Bars"><img alt="Previous: Error Bars" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-barcharts.html" title="Barcharts and Histograms"><img alt="Previous: Barcharts and Histograms" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="sec-list_of_plotstyles.html" title="PyXPlot’s Plot Styles"><img alt="Up: PyXPlot’s Plot Styles" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-barcharts.html" title="Barcharts and Histograms"><img alt="Next: Barcharts and Histograms" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0047.html" title="Arrows"><img alt="Next: Arrows" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

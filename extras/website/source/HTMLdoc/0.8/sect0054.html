@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Clipping Behaviour</title>
+<title>: Specifying the Positioning of Axes</title>
 
-<link href="sect0055.html" title="Labelling Graphs" rel="next" />
-<link href="sec-set_colours.html" title="Gridlines" rel="prev" />
-<link href="ch-plotting.html" title="Plotting: A Detailed Survey" rel="up" />
+<link href="sect0055.html" title="Configuring the Appearance of Axes" rel="next" />
+<link href="sec-set_axisunitstyle.html" title="Plotting Quantities with Physical Units" rel="prev" />
+<link href="sect0052.html" title="Configuring Axes" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-set_colours.html" title="Gridlines"><img alt="Previous: Gridlines" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-set_axisunitstyle.html" title="Plotting Quantities with Physical Units"><img alt="Previous: Plotting Quantities with Physical Units" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-plotting.html" title="Plotting: A Detailed Survey"><img alt="Up: Plotting: A Detailed Survey" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0052.html" title="Configuring Axes"><img alt="Up: Configuring Axes" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0055.html" title="Labelling Graphs"><img alt="Next: Labelling Graphs" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0055.html" title="Configuring the Appearance of Axes"><img alt="Next: Configuring the Appearance of Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -48,16 +48,27 @@
 </span>
 
 </span><span>
+<span>
+<a href="sect0052.html">Configuring Axes</a> <b>:</b>
+</span>
+
+</span><span>
 
 <span>
-<b class="current">Clipping Behaviour</b>
+<b class="current">Specifying the Positioning of Axes</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000055">1.9 Clipping Behaviour</h1>
-<p>The treatment of datapoints close to the edges of plots may be specified using the <tt class="tt">set clip</tt> command<a name="a0000000759" id="a0000000759"></a>, which provides two options. Either datapoints close to the axes can be clipped and not allowed to overrun the axes – specified by <tt class="tt">set clip</tt> – or such datapoints may be allowed to extend over the lines of the axes – specified by <tt class="tt">set noclip</tt> and the default behaviour. </p></div>
+<div><h2 id="a0000000055">1.8.4 Specifying the Positioning of Axes</h2>
+<p>By default, the <tt class="tt">x1</tt>-axis is placed along the bottom of graphs and the <tt class="tt">y1</tt>-axis is placed up the left-hand side of graphs. On three-dimensional plots, the <tt class="tt">z1</tt>-axis is placed at the front of the graph. The second set of axes are placed opposite the first: the <tt class="tt">x2</tt>-, <tt class="tt">y2</tt>- and <tt class="tt">z2</tt>-axes are placed respectively along the top, right and back sides of graphs. Higher-numbered axes are placed alongside the <tt class="tt">x1</tt>-, <tt class="tt">y1</tt>- and <tt class="tt">z1</tt>-axes. </p><p>However, the position of any axis can be explicitly set using syntax of the form: </p><pre>
+set axis x top
+set axis y right
+set axis z back
+</pre><p> Horizontal axes can be set to appear either at the <tt class="tt">top</tt> or <tt class="tt">bottom</tt>; vertical axes can be set to appear either at the <tt class="tt">left</tt> or <tt class="tt">right</tt>; and <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:8px" class="math gen" />-axes can be set to appear either at the <tt class="tt">front</tt> or <tt class="tt">back</tt>. </p></div>
 
 
 
@@ -66,16 +77,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-set_colours.html" title="Gridlines"><img alt="Previous: Gridlines" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-set_axisunitstyle.html" title="Plotting Quantities with Physical Units"><img alt="Previous: Plotting Quantities with Physical Units" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-plotting.html" title="Plotting: A Detailed Survey"><img alt="Up: Plotting: A Detailed Survey" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0052.html" title="Configuring Axes"><img alt="Up: Configuring Axes" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0055.html" title="Labelling Graphs"><img alt="Next: Labelling Graphs" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0055.html" title="Configuring the Appearance of Axes"><img alt="Next: Configuring the Appearance of Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

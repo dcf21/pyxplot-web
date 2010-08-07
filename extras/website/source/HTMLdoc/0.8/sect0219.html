@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Setting up Infrastructure</title>
+<title>: unset</title>
 
-<link href="sect0220.html" title="Writing A Short Example Talk" rel="next" />
-<link href="sect0218.html" title="Delivering Talks in PyXPlot" rel="prev" />
-<link href="sect0218.html" title="Delivering Talks in PyXPlot" rel="up" />
+<link href="sect0220.html" title="while" rel="next" />
+<link href="sect0218.html" title="undelete" rel="prev" />
+<link href="ch-reference.html" title="Command Reference" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0218.html" title="Delivering Talks in PyXPlot"><img alt="Previous: Delivering Talks in PyXPlot" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0218.html" title="undelete"><img alt="Previous: undelete" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0218.html" title="Delivering Talks in PyXPlot"><img alt="Up: Delivering Talks in PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0220.html" title="Writing A Short Example Talk"><img alt="Next: Writing A Short Example Talk" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0220.html" title="while"><img alt="Next: while" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,72 +39,29 @@
 
 </span><span>
 <span>
-<a href="sect0214.html">Appendices</a> <b>:</b>
+<a href="sect0074.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="sect0215.html">Other Applications of PyXPlot</a> <b>:</b>
-</span>
-
-</span><span>
-<span>
-<a href="sect0218.html">Delivering Talks in PyXPlot</a> <b>:</b>
+<a href="ch-reference.html">Command Reference</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">Setting up Infrastructure</b>
+<b class="current">unset</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000220">A.3.1 Setting up Infrastructure</h2>
-<p>First, a bit of infrastructure needs to be set up. Note that once this has been done for one talk, the infrastructure can be copied directly from a previous talk. </p><ol class="enumerate">
-<li><p>Make a new directory in which to put your talk: </p><pre>
-mkdir my_talk
-cd my_talk
-</pre></li><li><p>Make a directory into which you will put the PyXPlot scripts for your individual slides: </p><pre>
-mkdir scripts
-</pre></li><li><p>Make a directory into which you will put any graphic images which you want to put into your talk to make it look pretty: </p><pre>
-mkdir images
-</pre></li><li><p>Make a directory into which PyXPlot will put graphic images of your slides: </p><pre>
-mkdir slides
-</pre></li><li><p>Design a background for your slides. Open a paint program such as the <tt class="tt">gimp</tt>, create a new image which measures <img src="images/img-0668.png" alt="$1024\times 768$" style="vertical-align:0px; 
-                                     width:84px; 
-                                     height:13px" class="math gen" /> pixels, and fill it with colour. My preference tends to be for a blue colour gradient, running from bright blue at the top to dark blue at the bottom, but you may be more inventive than me. You may wish to add institutional and/or project logos in the corners. Alternatively, you can download a ready-made background image from the PyXPlot website: http://foo. You should store this image as <tt class="tt">images/background.jpg</tt>. </p></li><li><p>We need a simple PyXPlot script to set up a slide template. Paste the following text into the file <tt class="tt">scripts/slide_init</tt>; there’s a bit of black magic in the <tt class="tt">arrow</tt> commands in this script which it isn’t necessary to understand at this stage: </p><pre>
-scale  = 1.25        ; inch = 2.54 # cm
-width  = 10.24*scale ; height =  7.68*scale
-x = width/100.0      ; y = height/100.0
-set term gif ; set dpi (1024.0/width) * inch
-set multiplot ; set nodisplay
-set texthalign centre ; set textvalign centre
-set textcolour yellow
-jpeg "images/background.jpg" width width
-arrow -x* 25,-y* 25 to -x* 25, y*125 with nohead
-arrow -x* 25, y*125 to  x*125, y*125 with nohead
-arrow  x*125, y*125 to  x*125,-y* 25 with nohead
-arrow  x*125,-y* 25 to -x* 25,-y* 25 with nohead
-</pre></li><li><p>We also need a simple PyXPlot script to round off each slide. Paste the following text into the file <tt class="tt">scripts/slide_finish</tt>: </p><pre>
-set display ; refresh
-</pre></li><li><p>Paste the following text into the file <tt class="tt">compile</tt>. This is a simple shell script which instructs <tt class="tt">pyxplot_watch</tt> to compile your slides using PyXPlot every time you edit any of the them: </p><pre>
-#!/bin/bash
-pyxplot_watch --verbose scripts/0\*
-</pre></li><li><p>Paste the following text into the file <tt class="tt">make_slides</tt>. This is a simple shell script which crops your slides to measure exactly <img src="images/img-0668.png" alt="$1024\times 768$" style="vertical-align:0px; 
-                                     width:84px; 
-                                     height:13px" class="math gen" /> pixels, cropping any text boxes which may go off the side of them. It links up with the black magic of Step <a href="sect0219.html#stp:presentation_magic">162</a>: </p><pre>
-#!/bin/bash
-mkdir -p slides_cropped
-for all in slides/*.gif ; do
-convert $all -crop 1024x768+261+198 `echo $all | \
-sed 's@slides@slides_cropped@' | sed 's@gif@jpg@'`
-done
-</pre></li><li><p>Make the scripts <tt class="tt">compile</tt> and <tt class="tt">make_slides</tt> executable: </p><pre>
-chmod 755 compile make_slides
-</pre></li>
-</ol></div>
+<div><h1 id="a0000000220">1.54 unset</h1>
+<p><a name="a0000001326" id="a0000001326"></a> </p><pre>
+unset &lt;setting&gt;
+</pre><p>The <tt class="tt">unset</tt> command<a name="a0000001327" id="a0000001327"></a> causes a configuration option which has been changed using the <tt class="tt">set</tt> command to be returned to its default value. For example: </p><pre>
+unset linewidth
+</pre><p>returns the linewidth to its default value. </p><p>Any keyword which can follow the <tt class="tt">set</tt> command to identify a configuration parameter can also follow the <tt class="tt">unset</tt> command; a complete list of these can be found under the <tt class="tt">set</tt> command. </p></div>
 
 
 
@@ -113,16 +70,16 @@ chmod 755 compile make_slides
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0218.html" title="Delivering Talks in PyXPlot"><img alt="Previous: Delivering Talks in PyXPlot" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0218.html" title="undelete"><img alt="Previous: undelete" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0218.html" title="Delivering Talks in PyXPlot"><img alt="Up: Delivering Talks in PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0220.html" title="Writing A Short Example Talk"><img alt="Next: Writing A Short Example Talk" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0220.html" title="while"><img alt="Next: while" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

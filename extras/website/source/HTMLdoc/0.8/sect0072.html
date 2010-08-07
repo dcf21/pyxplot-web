@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: ?</title>
+<title>: The eps Command</title>
 
-<link href="sect0073.html" title="!" rel="next" />
-<link href="ch-reference.html" title="Command Reference" rel="prev" />
-<link href="ch-reference.html" title="Command Reference" rel="up" />
+<link href="ex-noentry.html" title="The box and circle Commands" rel="next" />
+<link href="sect0071.html" title="The image Command" rel="prev" />
+<link href="sect0069.html" title="Adding Other Vector Graphics Objects" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="ch-reference.html" title="Command Reference"><img alt="Previous: Command Reference" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0071.html" title="The image Command"><img alt="Previous: The image Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0069.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0073.html" title="!"><img alt="Next: !" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ex-noentry.html" title="The box and circle Commands"><img alt="Next: The box and circle Commands" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,27 +39,34 @@
 
 </span><span>
 <span>
-<a href="sect0071.html">Reference Manual</a> <b>:</b>
+<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="ch-reference.html">Command Reference</a> <b>:</b>
+<a href="ch-vector_graphics.html">Producing Vector Graphics</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0069.html">Adding Other Vector Graphics Objects</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">?</b>
+<b class="current">The <tt class="tt">eps</tt> Command</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000073">1.1 ?</h1>
-<p><a name="a0000000915" id="a0000000915"></a> </p><pre>
-? [&lt;topic&gt; {&lt;sub-topic&gt;} ]
-</pre><p>The <tt class="tt">?</tt> symbol is a shortcut to the <tt class="tt">help</tt> command. </p></div>
+<div><h2 id="a0000000073">3.4.4 The <tt class="tt">eps</tt> Command</h2>
+<p>Vector graphic images in eps format may be placed on multiplot canvases using the <tt class="tt">eps</tt> command<a name="a0000000933" id="a0000000933"></a>, which has a syntax analogous to the <tt class="tt">image</tt> command. However neither height nor width need be specified; in this case the image will be included at its native size. For example: </p><pre>
+eps 'filename' at 3,2 rotate 5
+</pre><p>will place the eps file with its bottom-left corner at position <img src="images/img-0553.png" alt="$(3,2)$" style="vertical-align:-4px; 
+                                     width:38px; 
+                                     height:18px" class="math gen" /> cm from the origin, rotated counter-clockwise through 5 degrees. </p></div>
 
 
 
@@ -68,16 +75,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="ch-reference.html" title="Command Reference"><img alt="Previous: Command Reference" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0071.html" title="The image Command"><img alt="Previous: The image Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0069.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0073.html" title="!"><img alt="Next: !" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ex-noentry.html" title="The box and circle Commands"><img alt="Next: The box and circle Commands" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

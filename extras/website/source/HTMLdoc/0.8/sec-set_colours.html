@@ -5,7 +5,7 @@
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
 <title>: Gridlines</title>
 
-<link href="sect0054.html" title="Clipping Behaviour" rel="next" />
+<link href="sect0057.html" title="Clipping Behaviour" rel="next" />
 <link href="ex-cmbrtemp.html" title="Linked Axes" rel="prev" />
 <link href="ch-plotting.html" title="Plotting: A Detailed Survey" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
@@ -19,12 +19,12 @@
 
 <td><a href="ch-plotting.html" title="Plotting: A Detailed Survey"><img alt="Up: Plotting: A Detailed Survey" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0054.html" title="Clipping Behaviour"><img alt="Next: Clipping Behaviour" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0057.html" title="Clipping Behaviour"><img alt="Next: Clipping Behaviour" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -56,21 +56,21 @@
 <hr />
 </div>
 
-<div><h1 id="sec:set_colours">1.8 Gridlines</h1>
+<div><h1 id="sec:set_colours">1.9 Gridlines</h1>
 <p>Gridlines may be placed on a plot and subsequently removed via the statements: </p><pre>
 set grid
 set nogrid
 </pre><p>respectively. The following commands are also valid: </p><pre>
 unset grid
 unset nogrid
-</pre><p>By default, gridlines are drawn from the major and minor ticks of the default horizontal and vertical axes (which are the first axes in each direction unless set otherwise in the configuration file; see Chapter <a href="ch-configuration.html">8</a>). However, the axes which should be used may be specified after the <tt class="tt">set grid</tt> command<a name="a0000000750" id="a0000000750"></a><a name="a0000000751" id="a0000000751"></a>: </p><pre>
+</pre><p>By default, gridlines are drawn from the major and minor ticks of the default horizontal and vertical axes (which are the first axes in each direction unless set otherwise in the configuration file; see Chapter <a href="ch-configuration.html">8</a>). However, the axes which should be used may be specified after the <tt class="tt">set grid</tt> command<a name="a0000000770" id="a0000000770"></a><a name="a0000000771" id="a0000000771"></a>: </p><pre>
 set grid x2y2
 set grid x x2y2
 </pre><p>The top example would connect the gridlines to the ticks of the <tt class="tt">x2</tt>- and <tt class="tt">y2</tt>-axes, whilst the lower would draw gridlines from both the <tt class="tt">x</tt>- and the <tt class="tt">x2</tt>-axes. </p><p>If one of the specified axes does not exist, then no gridlines will be drawn in that direction. Gridlines can subsequently be removed selectively from some axes via: </p><pre>
 set nogrid x2x3
-</pre><p>The colours of gridlines<a name="a0000000752" id="a0000000752"></a><a name="a0000000753" id="a0000000753"></a> can be controlled via the <tt class="tt">set gridmajcolour</tt><a name="a0000000754" id="a0000000754"></a> and <tt class="tt">set gridmincolour</tt><a name="a0000000755" id="a0000000755"></a> commands, which control the gridlines emanating from major and minor axis ticks respectively. An example would be: </p><pre>
+</pre><p> The colours of gridlines<a name="a0000000772" id="a0000000772"></a><a name="a0000000773" id="a0000000773"></a> can be controlled via the <tt class="tt">set gridmajcolour</tt><a name="a0000000774" id="a0000000774"></a> and <tt class="tt">set gridmincolour</tt><a name="a0000000775" id="a0000000775"></a> commands, which control the gridlines emanating from major and minor axis ticks respectively. The following example would set the minor grid lines on a graph to be drawn in blue: </p><pre>
 set gridmincolour blue
-</pre><p>Any of the colour names listed in Section <a href="sec-colour_names.html">8.4</a> can be used. </p><p>A related command<a name="a0000000756" id="a0000000756"></a><a name="a0000000757" id="a0000000757"></a> is <tt class="tt">set axescolour</tt><a name="a0000000758" id="a0000000758"></a>, which has a syntax similar to that above, and sets the colour of the graph’s axes. </p></div>
+</pre><p>Any of the colour names listed in Section <a href="sec-colour_names.html">8.4</a> can be used. </p></div>
 
 
 
@@ -83,12 +83,12 @@ set gridmincolour blue
 
 <td><a href="ch-plotting.html" title="Plotting: A Detailed Survey"><img alt="Up: Plotting: A Detailed Survey" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0054.html" title="Clipping Behaviour"><img alt="Next: Clipping Behaviour" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0057.html" title="Clipping Behaviour"><img alt="Next: Clipping Behaviour" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Plots with Multiple Axes</title>
+<title>: The styling section</title>
 
-<link href="sect0226.html" title="Plotting Parametric Functions" rel="next" />
-<link href="sect0224.html" title="The Multiplot Environment" rel="prev" />
-<link href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot" rel="up" />
+<link href="sec-configfile_terminal.html" title="The terminal section" rel="next" />
+<link href="sec-configfile_settings.html" title="The settings section" rel="prev" />
+<link href="sect0223.html" title="Setting definitions" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0224.html" title="The Multiplot Environment"><img alt="Previous: The Multiplot Environment" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-configfile_settings.html" title="The settings section"><img alt="Previous: The settings section" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot"><img alt="Up: Summary of Differences Between PyXPlot and Gnuplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0223.html" title="Setting definitions"><img alt="Up: Setting definitions" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0226.html" title="Plotting Parametric Functions"><img alt="Next: Plotting Parametric Functions" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sec-configfile_terminal.html" title="The terminal section"><img alt="Next: The terminal section" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,32 +39,161 @@
 
 </span><span>
 <span>
-<a href="sect0214.html">Appendices</a> <b>:</b>
+<a href="sect0074.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="ch-gnuplot_diffs.html">Summary of Differences Between PyXPlot and Gnuplot</a> <b>:</b>
+<a href="ch-configuration.html">Configuring PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0223.html">Setting definitions</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">Plots with Multiple Axes</b>
+<b class="current">The <tt class="tt">styling</tt> section</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000226">B.4 Plots with Multiple Axes</h1>
-<p>In Gnuplot, a maximum of two horizontal and two vertical axes may be associated with each graph, placed in each case with one on either side of the plot. These are referred to as the <tt class="tt">x</tt> (bottom) and <tt class="tt">x2</tt> (top), or <tt class="tt">y</tt> (left) and <tt class="tt">y2</tt> (right) axes. This behaviour is reproduced in PyXPlot, and so the syntax </p><pre>
-set x2label 'Axis label'
-</pre><p>works similarly in both programs. However, in PyXPlot the position of each axis may be set individually using syntax such as </p><pre>
-set axis x2 top
-</pre><p>and furthermore up to 128 axes may be placed parallel to one another: </p><pre>
-set axis x127 top
-set x127label "This is axis number 127"
-</pre><p>More details of how to configure axes can be found in Section <a href="sec-multiple_axes.html">1.7</a>. </p></div>
+<div><h2 id="a0000000226">8.3.3 The <tt class="tt">styling</tt> section</h2>
+<p>The <tt class="tt">styling</tt> section can contain any of the following settings in any order: </p><div>
+
+<table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="text-align:left"><p> <tt class="tt">Arrow_HeadAngle</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p>Sets the angle, in degrees, at which the two sides of arrow heads meet at its point. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Arrow_HeadSize</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p>Sets the size of all arrow heads. A value of 1.0 corresponds to PyXPlot’s default size. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Arrow_HeadBackIndent</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p>Sets the size of the indentation in the back of arrow heads. The default size is 0.2. Sensible values lie in the range 0 (no indentation) to 1 (the indentation extends the whole length of the arrow head). Less sensible values may be used by the aesthetically adventurous. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Axes_LineWidth</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p>Sets the line width used to draw graph axes. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Axes_MajTickLen</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p>Sets the length of major axis ticks. A value of 1.0 corresponds to PyXPlot’s default length of <img src="images/img-0753.png" alt="$1.2\, \mathrm{mm}$" style="vertical-align:0px; 
+                                     width:55px; 
+                                     height:12px" class="math gen" />; other values differ from this multiplicatively. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Axes_MinTickLen</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p>Sets the length of minor axis ticks. A value of 1.0 corresponds to PyXPlot’s default length of <img src="images/img-0754.png" alt="$0.85\, \mathrm{mm}$" style="vertical-align:0px; 
+                                     width:65px; 
+                                     height:13px" class="math gen" />; other values differ from this multiplicatively. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Axes_Separation</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p>Sets the separation between parallel axes on graphs, less the width of any text labels associated with the axes. A value of 1.0 corresponds to PyXPlot’s default spacing of <img src="images/img-0755.png" alt="$8\, \mathrm{mm}$" style="vertical-align:0px; 
+                                     width:42px; 
+                                     height:12px" class="math gen" />; other values differ from this multiplicatively. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Axes_TextGap</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p>Sets the separation between axes and the text labels which are associated with them. A value of 1.0 corresponds to PyXPlot’s default spacing of <img src="images/img-0543.png" alt="$3\, \mathrm{mm}$" style="vertical-align:0px; 
+                                     width:42px; 
+                                     height:12px" class="math gen" />; other values differ from this multiplicatively. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">ColourScale_Margin</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p>Sets the separation left between the axes of plots drawn using the <tt class="tt">colourmap</tt> plot style, and of the colour scales drawn alongside them. A value of 1.0 corresponds to PyXPlot’s default spacing; other values differ from this multiplicatively. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">ColourScale_Width</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p>Sets the width of the colour scale bars drawn alonside plots drawn using the <tt class="tt">colourmap</tt> plot style. A value of 1.0 corresponds to PyXPlot’s width; other values differ from this multiplicatively. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Grid_MajLineWidth</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p>Sets the line width used to draw major gridlines (default <img src="images/img-0169.png" alt="$1.0$" style="vertical-align:0px; 
+                                     width:22px; 
+                                     height:12px" class="math gen" />). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Grid_MinLineWidth</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p>Sets the line width used to draw minor gridlines (default <img src="images/img-0264.png" alt="$0.5$" style="vertical-align:0px; 
+                                     width:23px; 
+                                     height:13px" class="math gen" />). </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Baseline_LineWidth</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p>Sets the PostScript line width which corresponds to a <tt class="tt">linewidth</tt> of 1.0. A value of 1.0 corresponds to PyXPlot’s default line width of <img src="images/img-0756.png" alt="$0.2\, \mathrm{mm}$" style="vertical-align:0px; 
+                                     width:56px; 
+                                     height:12px" class="math gen" />; other values differ from this multiplicatively. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">Baseline_PointSize</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <b class="bf">Possible values:</b> Any floating-point number. </p><p>Sets the baseline point size which corresponds to a <tt class="tt">pointsize</tt> of 1.0. A value of 1.0 corresponds to PyXPlot’s default; other values differ from this multiplicatively. </p></td>
+
+</tr>
+</table>
+</div></div>
 
 
 
@@ -73,16 +202,16 @@ set x127label "This is axis number 127"
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0224.html" title="The Multiplot Environment"><img alt="Previous: The Multiplot Environment" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-configfile_settings.html" title="The settings section"><img alt="Previous: The settings section" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot"><img alt="Up: Summary of Differences Between PyXPlot and Gnuplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0223.html" title="Setting definitions"><img alt="Up: Setting definitions" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0226.html" title="Plotting Parametric Functions"><img alt="Next: Plotting Parametric Functions" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sec-configfile_terminal.html" title="The terminal section"><img alt="Next: The terminal section" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

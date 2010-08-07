@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: 2010 May 19: PyXPlot 0.8.0</title>
+<title>: Writing A Short Example Talk</title>
 
-<link href="sect0233.html" title="2009 Nov 17: PyXPlot 0.7.1" rel="next" />
-<link href="sect0231.html" title="2010 June 1: PyXPlot 0.8.1" rel="prev" />
-<link href="sect0230.html" title="ChangeLog" rel="up" />
+<link href="sect0233.html" title="Delivering your Talk" rel="next" />
+<link href="sect0231.html" title="Setting up Infrastructure" rel="prev" />
+<link href="sect0230.html" title="Delivering Talks in PyXPlot" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0231.html" title="2010 June 1: PyXPlot 0.8.1"><img alt="Previous: 2010 June 1: PyXPlot 0.8.1" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0231.html" title="Setting up Infrastructure"><img alt="Previous: Setting up Infrastructure" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0230.html" title="ChangeLog"><img alt="Up: ChangeLog" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0230.html" title="Delivering Talks in PyXPlot"><img alt="Up: Delivering Talks in PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0233.html" title="2009 Nov 17: PyXPlot 0.7.1"><img alt="Next: 2009 Nov 17: PyXPlot 0.7.1" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0233.html" title="Delivering your Talk"><img alt="Next: Delivering your Talk" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,29 +39,92 @@
 
 </span><span>
 <span>
-<a href="sect0214.html">Appendices</a> <b>:</b>
+<a href="sect0226.html">Appendices</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="sect0230.html">ChangeLog</a> <b>:</b>
+<a href="sect0227.html">Other Applications of PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0230.html">Delivering Talks in PyXPlot</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">2010 May 19: PyXPlot 0.8.0</b>
+<b class="current">Writing A Short Example Talk</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000233">2010 May 19: PyXPlot 0.8.0</h2>
-<h3 id="a0000001548">Summary:</h3>
-<p>This release is a major update, for which PyXPlot’s original python code has been completely rewritten in C with the addition of many new features. Because of the scale of this update, there is some minor syntax incompatibility with previous versions where features have undergone particularly heavy change. The most apparent change is the increase in speed and efficiency resultant from the use of a compiled language: especially when handling large datafiles, PyXPlot 0.8.0 can run more than an order-of-magnitude faster than previous versions. </p><h3 id="a0000001549">Details:</h3>
-<ul class="itemize">
-<li><p>The handling of large datafiles has been streamlined to require around an order-of-magnitude less time and memory. </p></li><li><p>PyXPlot’s mathematical environment has been extended to handle complex numbers and quantities with physical units. </p></li><li><p>The range of mathematical functions built into PyXPlot has been massively extended. </p></li><li><p>The <tt class="tt">solve</tt> command has been added to allow the solution of systems of equations. </p></li><li><p>The <tt class="tt">maximise</tt> and <tt class="tt">minimise</tt> commands have been added to allow searches for local extrema of functions. </p></li><li><p>An <tt class="tt">fft</tt> command has been added for performing Fourier transforms on data. </p></li><li><p>New plot styles – <tt class="tt">filledregion</tt> and <tt class="tt">yerrorshaded</tt> – have been added for plotting filled error regions. </p></li><li><p>The configuration of linked axes has been entirely redesigned. </p></li><li><p>Parametric function plotting has been implemented. </p></li><li><p>Colours can now be specified by RGB, HSB or CMYK components, as well as by name. </p></li><li><p>Several commands, e.g. <tt class="tt">box</tt>, <tt class="tt">circle</tt>, <tt class="tt">ellipse</tt>, etc., have been added to allow vector graphics to be produced in PyXPlot’s multiplot environment. </p></li><li><p>The <tt class="tt">jpeg</tt> command has been generalised to allow the incorporation of not only <tt class="tt">jpeg</tt> images, but also <tt class="tt">bmp</tt>, <tt class="tt">gif</tt> and <tt class="tt">png</tt> images, onto multiplot canvases. The command has been renamed <tt class="tt">image</tt> in recognition of its wider applicability. Image transparency is now supported in <tt class="tt">gif</tt> and <tt class="tt">png</tt> images. </p></li><li><p>The <tt class="tt">spline</tt> command, now renamed the <tt class="tt">interpolate</tt> command, has been extended up provide many types of interpolation between datapoints. </p></li><li><p>A wide range of conditional and flow control structures have been added to PyXPlot’s command language – these are the <tt class="tt">do</tt>, <tt class="tt">for</tt>, <tt class="tt">foreach</tt>, <tt class="tt">if</tt> and <tt class="tt">while</tt> commands and the <tt class="tt">cond­ition­alS</tt> and <tt class="tt">con­dition­alN</tt> mathematical functions. </p></li><li><p>Input filters have been introduced as a mechanism by which datafiles in arbitrary formats can be read. </p></li><li><p>PyXPlot’s commandline interface now supports tab completion. </p></li><li><p>The <tt class="tt">show</tt> command has been reworked to produce pastable output. </p></li><li><p>Many minor bugs have been fixed. </p></li>
-</ul></div>
+<div><h2 id="a0000000233">A.3.2 Writing A Short Example Talk</h2>
+<p>The infrastructure is now completely set up, and you are ready to start designing slides. We will now design an example talk with three slides. </p><ol class="enumerate">
+<li><p>Run the script <tt class="tt">compile</tt> and leave it running in the background. PyXPlot will then re-run the scripts describing your slides whenever you edit them. </p></li><li><p>As an example, we will now make a title slide. Paste the following script into the file <tt class="tt">scripts/0001</tt>: </p><pre>
+set output 'slides/0001.gif'
+load 'scripts/slide_init'
+
+text '\parbox[t]{10cm}{\center \LARGE \bf \
+  A Tutorial in the use of PyXPlot \\ \
+  to present Talks \
+} ' at x*50, y*75
+text '\Large \bf Prof A.N.\ Other' at x*50, y*45
+text '\parbox[t]{9cm}{\center \
+  Director, \\ \
+  Atlantis Island University \
+} ' at x*50, y*38
+text 'Annual Lecture, 1st January 2010' at x*50, y*22
+
+load 'scripts/slide_finish'
+</pre><p> Note that the variables <tt class="tt">x</tt> and <tt class="tt">y</tt> are defined to be 1 per cent of the width and height of your slides respectively, such that the bottom-left of each slide is at <img src="images/img-0518.png" alt="$(0,0)$" style="vertical-align:-4px; 
+                                     width:38px; 
+                                     height:18px" class="math gen" /> and the top-right of each slide is at <img src="images/img-0758.png" alt="$({\tt 100*x},{\tt 100*y})$" style="vertical-align:-4px; 
+                                     width:131px; 
+                                     height:18px" class="math gen" />. </p></li><li><p>Next we will make a second slide with a series of bullet points. Paste the following script into the file <tt class="tt">scripts/0002</tt>: </p><pre>
+set output 'slides/0002.gif'
+load 'scripts/slide_init'
+
+text '\Large \textbf{Talk Overview}' at x*50, y*92
+text "\parbox[t]{9cm}{\begin{itemize} \
+ \item Setting up the Infrastructure. \
+ \item Writing a Short Example Talk. \
+ \item Delivering your Talk. \
+ \item Conclusion. \
+ \end{itemize} \
+} " at x*50 , y*60
+
+set textcol cyan
+text '{\bf With thanks to my collaborator, \
+           Prof Y.E.\ Tanother.}' at x*50,y*15
+
+load 'scripts/slide_finish'
+</pre></li><li><p>Finally, we will make a third slide with a graph on it. Paste the following script into the file <tt class="tt">scripts/0003</tt>: </p><pre>
+set output 'slides/0003.gif'
+load 'scripts/slide_init'
+
+text '\Large \bf The Results of Our Model' at x*50, y*92
+set axescolour yellow ; set nogrid
+set origin x*17.5, y*20 ; set width x*70
+set xrange [0.01:0.7]
+set xlabel '$x$'
+set yrange [0.01:0.7]
+set ylabel '$f(x)$'
+set palette Red, Green, Orange, Purple
+
+set key top left
+plot x t 'Model 1', exp(x)-1 t 'Model 2', \
+     log(x+1) t 'Model 3', sin(x) t 'Model 4'
+
+load 'scripts/slide_finish'
+</pre></li><li><p>To view your slides, run the script <tt class="tt">make_slides</tt>. Afterwards, you will find your slides as a series of <img src="images/img-0757.png" alt="$1024\times 768$" style="vertical-align:0px; 
+                                     width:84px; 
+                                     height:13px" class="math gen" /> pixel jpeg images in the directory <tt class="tt">slides_cropped</tt>. If you have the <i class="it">Quick Image Viewer</i><a name="a0000001623" id="a0000001623"></a> (<tt class="tt">qiv</tt>) installed, then you can view them as follows: </p><pre>
+qiv slides_cropped/*
+</pre><p> If you’re in a hurry, you can skip the step of running the script <tt class="tt">make_slides</tt> and view your slides as images in the <tt class="tt">slides</tt> directory, but note that the slides in here may not be properly cropped. This approach is generally preferable when viewing your slides in a semi-live fashion as you are editing them. </p></li><li><p>If you’d like to make the text on your slides larger or smaller, you can do so by varying the <tt class="tt">scale</tt> parameter in the file <tt class="tt">scripts/slide_init</tt>. </p></li>
+</ol></div>
 
 
 
@@ -70,16 +133,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0231.html" title="2010 June 1: PyXPlot 0.8.1"><img alt="Previous: 2010 June 1: PyXPlot 0.8.1" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0231.html" title="Setting up Infrastructure"><img alt="Previous: Setting up Infrastructure" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0230.html" title="ChangeLog"><img alt="Up: ChangeLog" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0230.html" title="Delivering Talks in PyXPlot"><img alt="Up: Delivering Talks in PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0233.html" title="2009 Nov 17: PyXPlot 0.7.1"><img alt="Next: 2009 Nov 17: PyXPlot 0.7.1" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0233.html" title="Delivering your Talk"><img alt="Next: Delivering your Talk" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

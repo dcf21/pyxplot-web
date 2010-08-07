@@ -3,10 +3,10 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: fft</title>
+<title>: eps</title>
 
-<link href="sect0090.html" title="fit" rel="next" />
-<link href="sect0088.html" title="exit" rel="prev" />
+<link href="sect0090.html" title="exec" rel="next" />
+<link href="sect0088.html" title="else" rel="prev" />
 <link href="ch-reference.html" title="Command Reference" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0088.html" title="exit"><img alt="Previous: exit" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0088.html" title="else"><img alt="Previous: else" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0090.html" title="fit"><img alt="Next: fit" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0090.html" title="exec"><img alt="Next: exec" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0071.html">Reference Manual</a> <b>:</b>
+<a href="sect0074.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -50,38 +50,17 @@
 </span><span>
 
 <span>
-<b class="current">fft</b>
+<b class="current">eps</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000090">1.18 fft</h1>
-<p><a name="a0000000956" id="a0000000956"></a> </p><pre>
-fft {&lt;range&gt;} &lt;function&gt;"()"
-    of ( '&lt;filename&gt;' | &lt;function&gt;"()" )
-    [using &lt;expression&gt; {:&lt;expression&gt;} ]
-
-ifft {&lt;range&gt;} &lt;function&gt;"()"
-    of ( '&lt;filename&gt;' | &lt;function&gt;"()" )
-    [using &lt;expression&gt; {:&lt;expression&gt;} ]
-</pre><p>The <tt class="tt">fft</tt> command<a name="a0000000957" id="a0000000957"></a> calculates Fourier transforms of datafiles or functions. Transforms can be performed on datasets with arbitrary numbers of dimensions. To transform an algebraic expression with <img src="images/img-0014.png" alt="$n$" style="vertical-align:0px; 
-                                     width:11px; 
-                                     height:8px" class="math gen" /> degrees of freedom, it must be wrapped in a function of the form <img src="images/img-0518.png" alt="$f(i_2,i_2,\ldots ,i_ n)$" style="vertical-align:-4px; 
-                                     width:115px; 
-                                     height:18px" class="math gen" />. To transform an <img src="images/img-0014.png" alt="$n$" style="vertical-align:0px; 
-                                     width:11px; 
-                                     height:8px" class="math gen" />-dimensional dataset stored in a datafile, the samples must be arranged on a regular linearly-spaced grid and stored in row-major order. For each dimension of the transform, a range specification must be provided to the <tt class="tt">fft</tt> command in the form </p><pre>
-[ &lt;minimum&gt; : &lt;maximum&gt; : &lt;step&gt; ]
-</pre><p>When data from a datafile is being transformed, the specified range(s) must precisely match those of the samples read from the file; the first <img src="images/img-0014.png" alt="$n$" style="vertical-align:0px; 
-                                     width:11px; 
-                                     height:8px" class="math gen" /> columns of data should contain the values of the <img src="images/img-0014.png" alt="$n$" style="vertical-align:0px; 
-                                     width:11px; 
-                                     height:8px" class="math gen" /> real-space coordinates, and the <img src="images/img-0168.png" alt="$n+1$" style="vertical-align:-1px; 
-                                     width:41px; 
-                                     height:13px" class="math gen" />th column should contain the data to be transformed. After the range(s), a function name should be provided for the output transform: a function of <img src="images/img-0014.png" alt="$n$" style="vertical-align:0px; 
-                                     width:11px; 
-                                     height:8px" class="math gen" /> arguments with this name will be generated to represent the transformed data. Note that this function is in general complex – i.e. it has a non-zero imaginary component. Complex numerics can be enabled using the <tt class="tt">set numerics complex</tt> command and the <tt class="tt">fft</tt> command is of little use without doing so. The <tt class="tt">using</tt>, <tt class="tt">index</tt>, <tt class="tt">every</tt> and <tt class="tt">select</tt> modifiers can be used to specify how data will be sampled from the input function or datafile in an analogous manner to how they are used in the <tt class="tt">plot</tt> command. </p><p>The <tt class="tt">ifft</tt> command calculates inverse Fourier transforms; it has the same syntax as the <tt class="tt">fft</tt> command. </p></div>
+<div><h1 id="a0000000090">1.15 eps</h1>
+<p><a name="a0000000988" id="a0000000988"></a> </p><pre>
+eps [ item &lt;id&gt; ] '&lt;filename&gt;' [at &lt;x&gt;, &lt;y&gt;] [rotate &lt;angle&gt;]
+                            [width &lt;width&gt;] [height &lt;height&gt;]
+</pre><p>The <tt class="tt">eps</tt> command<a name="a0000000989" id="a0000000989"></a> allows Encapsulated PostScript (EPS) images to be inserted onto multiplot canvases. The <tt class="tt">at</tt> modifier can be used to specify where the bottom-left corner of the image should be placed; if it is not, then the image is placed at the origin. The <tt class="tt">rotate</tt> modifier can be used to rotate the image by any angle, measured in degrees counter-clockwise. The <tt class="tt">width</tt> or <tt class="tt">height</tt> modifiers can be used to specify the width or height with which the image should be rendered; both should be specified in centimetres. If neither is specified then the image will be rendered with the native dimensions specified within the PostScript. The <tt class="tt">eps</tt> command is often useful in multiplot mode, allowing PostScript images to be combined with plots, text labels, etc. </p><p>All vector graphics objects placed on multiplot canvases receive unique identification numbers which count sequentially from one, and which may be listed using the <tt class="tt">list</tt> command. By reference to these numbers, they can be deleted and subsequently restored with the <tt class="tt">delete</tt> and <tt class="tt">undelete</tt> commands respectively. </p></div>
 
 
 
@@ -90,16 +69,16 @@ ifft {&lt;range&gt;} &lt;function&gt;"()"
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0088.html" title="exit"><img alt="Previous: exit" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0088.html" title="else"><img alt="Previous: else" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0090.html" title="fit"><img alt="Next: fit" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0090.html" title="exec"><img alt="Next: exec" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0237.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
