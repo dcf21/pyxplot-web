@@ -1,0 +1,91 @@
+# character_widths.ppl
+#
+# The PyXPlot code in this file is part of an astrolabe
+#
+# Copyright (C) 2010 Dominic Ford <dcf21@mrao.cam.ac.uk>
+#
+# $Id$
+#
+# PyXPlot is free software; you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation; either version 2 of the License, or (at your option) any later
+# version.
+#
+# You should have received a copy of the GNU General Public License along with
+# PyXPlot; if not, write to the Free Software Foundation, Inc., 51 Franklin
+# Street, Fifth Floor, Boston, MA  02110-1301, USA
+
+# ----------------------------------------------------------------------------
+
+subroutine CharWidth(c)
+ {
+  PS_TO_M = unit(inch)/72
+
+  if (strcmp(c,"A")==0) { ; return PS_TO_M * 7.471999 ; }
+  if (strcmp(c,"B")==0) { ; return PS_TO_M * 7.056895 ; }
+  if (strcmp(c,"C")==0) { ; return PS_TO_M * 7.195260 ; }
+  if (strcmp(c,"D")==0) { ; return PS_TO_M * 7.610373 ; }
+  if (strcmp(c,"E")==0) { ; return PS_TO_M * 6.780147 ; }
+  if (strcmp(c,"F")==0) { ; return PS_TO_M * 6.503418 ; }
+  if (strcmp(c,"G")==0) { ; return PS_TO_M * 7.817925 ; }
+  if (strcmp(c,"H")==0) { ; return PS_TO_M * 7.471999 ; }
+  if (strcmp(c,"I")==0) { ; return PS_TO_M * 3.597625 ; }
+  if (strcmp(c,"J")==0) { ; return PS_TO_M * 5.119704 ; }
+  if (strcmp(c,"K")==0) { ; return PS_TO_M * 7.748748 ; }
+  if (strcmp(c,"L")==0) { ; return PS_TO_M * 6.226669 ; }
+  if (strcmp(c,"M")==0) { ; return PS_TO_M * 9.132442 ; }
+  if (strcmp(c,"N")==0) { ; return PS_TO_M * 7.471999 ; }
+  if (strcmp(c,"O")==0) { ; return PS_TO_M * 7.748748 ; }
+  if (strcmp(c,"P")==0) { ; return PS_TO_M * 6.780147 ; }
+  if (strcmp(c,"Q")==0) { ; return PS_TO_M * 7.748748 ; }
+  if (strcmp(c,"R")==0) { ; return PS_TO_M * 7.333625 ; }
+  if (strcmp(c,"S")==0) { ; return PS_TO_M * 5.534817 ; }
+  if (strcmp(c,"T")==0) { ; return PS_TO_M * 7.195260 ; }
+  if (strcmp(c,"U")==0) { ; return PS_TO_M * 7.471999 ; }
+  if (strcmp(c,"V")==0) { ; return PS_TO_M * 7.610364 ; }
+  if (strcmp(c,"W")==0) { ; return PS_TO_M * 10.377772 ; }
+  if (strcmp(c,"X")==0) { ; return PS_TO_M * 7.471999 ; }
+  if (strcmp(c,"Y")==0) { ; return PS_TO_M * 7.721061 ; }
+  if (strcmp(c,"Z")==0) { ; return PS_TO_M * 6.088295 ; }
+
+  if (strcmp(c,"a")==0) { ; return PS_TO_M * 4.981339 ; }
+  if (strcmp(c,"b")==0) { ; return PS_TO_M * 5.534817 ; }
+  if (strcmp(c,"c")==0) { ; return PS_TO_M * 4.427852 ; }
+  if (strcmp(c,"d")==0) { ; return PS_TO_M * 5.534817 ; }
+  if (strcmp(c,"e")==0) { ; return PS_TO_M * 4.427852 ; }
+  if (strcmp(c,"f")==0) { ; return PS_TO_M * 3.819039 ; }
+  if (strcmp(c,"g")==0) { ; return PS_TO_M * 5.119704 ; }
+  if (strcmp(c,"h")==0) { ; return PS_TO_M * 5.534817 ; }
+  if (strcmp(c,"i")==0) { ; return PS_TO_M * 2.767408 ; }
+  if (strcmp(c,"j")==0) { ; return PS_TO_M * 3.044157 ; }
+  if (strcmp(c,"k")==0) { ; return PS_TO_M * 5.258088 ; }
+  if (strcmp(c,"l")==0) { ; return PS_TO_M * 2.767408 ; }
+  if (strcmp(c,"m")==0) { ; return PS_TO_M * 8.302225 ; }
+  if (strcmp(c,"n")==0) { ; return PS_TO_M * 5.534817 ; }
+  if (strcmp(c,"o")==0) { ; return PS_TO_M * 4.981339 ; }
+  if (strcmp(c,"p")==0) { ; return PS_TO_M * 5.534817 ; }
+  if (strcmp(c,"q")==0) { ; return PS_TO_M * 5.258068 ; }
+  if (strcmp(c,"r")==0) { ; return PS_TO_M * 3.902051 ; }
+  if (strcmp(c,"s")==0) { ; return PS_TO_M * 3.929718 ; }
+  if (strcmp(c,"t")==0) { ; return PS_TO_M * 3.874374 ; }
+  if (strcmp(c,"u")==0) { ; return PS_TO_M * 5.534817 ; }
+  if (strcmp(c,"v")==0) { ; return PS_TO_M * 5.396452 ; }
+  if (strcmp(c,"w")==0) { ; return PS_TO_M * 7.333625 ; }
+  if (strcmp(c,"x")==0) { ; return PS_TO_M * 5.258088 ; }
+  if (strcmp(c,"y")==0) { ; return PS_TO_M * 5.396452 ; }
+  if (strcmp(c,"z")==0) { ; return PS_TO_M * 4.427852 ; }
+
+  if (strcmp(c,"0")==0) { ; return PS_TO_M * 4.981339 ; }
+  if (strcmp(c,"1")==0) { ; return PS_TO_M * 4.981339 ; }
+  if (strcmp(c,"2")==0) { ; return PS_TO_M * 4.981339 ; }
+  if (strcmp(c,"3")==0) { ; return PS_TO_M * 4.981339 ; }
+  if (strcmp(c,"4")==0) { ; return PS_TO_M * 4.981339 ; }
+  if (strcmp(c,"5")==0) { ; return PS_TO_M * 4.981339 ; }
+  if (strcmp(c,"6")==0) { ; return PS_TO_M * 4.981339 ; }
+  if (strcmp(c,"7")==0) { ; return PS_TO_M * 4.981339 ; }
+  if (strcmp(c,"8")==0) { ; return PS_TO_M * 4.981339 ; }
+  if (strcmp(c,"9")==0) { ; return PS_TO_M * 4.981339 ; }
+
+  return PS_TO_M * 10
+ }
+

@@ -1,0 +1,26 @@
+# astrolabe.ppl
+#
+# The PyXPlot code in this file is part of an astrolabe
+#
+# Copyright (C) 2010 Dominic Ford <dcf21@mrao.cam.ac.uk>
+#
+# $Id$
+#
+# PyXPlot is free software; you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation; either version 2 of the License, or (at your option) any later
+# version.
+#
+# You should have received a copy of the GNU General Public License along with
+# PyXPlot; if not, write to the Free Software Foundation, Inc., 51 Franklin
+# Street, Fifth Floor, Boston, MA  02110-1301, USA
+
+# ----------------------------------------------------------------------------
+
+# Top level script for drawing the parts of the astrolabe
+
+!mkdir -p output
+
+load "mother_front.ppl"
+load "mother_back.ppl"
+

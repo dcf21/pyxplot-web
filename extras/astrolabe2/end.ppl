@@ -1,0 +1,32 @@
+# end.ppl
+#
+# The PyXPlot code in this file is part of an astrolabe
+#
+# Copyright (C) 2010 Dominic Ford <dcf21@mrao.cam.ac.uk>
+#
+# $Id$
+#
+# PyXPlot is free software; you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation; either version 2 of the License, or (at your option) any later
+# version.
+#
+# You should have received a copy of the GNU General Public License along with
+# PyXPlot; if not, write to the Free Software Foundation, Inc., 51 Franklin
+# Street, Fifth Floor, Boston, MA  02110-1301, USA
+
+# ----------------------------------------------------------------------------
+
+# Finish rendering a part of the astrolabe
+
+set term eps
+set output 'output/%s_%02d.eps'%(title,latitude)
+set display
+refresh
+set term pdf
+set output 'output/%s_%02d.pdf'%(title,latitude)
+refresh
+set term gif
+set output 'output/%s_%02d.gif'%(title,latitude)
+refresh
+

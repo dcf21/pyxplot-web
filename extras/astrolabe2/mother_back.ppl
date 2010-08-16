@@ -1,0 +1,213 @@
+# mother_back.ppl
+#
+# The PyXPlot code in this file is part of an astrolabe
+#
+# Copyright (C) 2010 Dominic Ford <dcf21@mrao.cam.ac.uk>
+#
+# $Id$
+#
+# PyXPlot is free software; you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation; either version 2 of the License, or (at your option) any later
+# version.
+#
+# You should have received a copy of the GNU General Public License along with
+# PyXPlot; if not, write to the Free Software Foundation, Inc., 51 Franklin
+# Street, Fifth Floor, Boston, MA  02110-1301, USA
+
+# ----------------------------------------------------------------------------
+
+# The back of the mother of the astrolabe
+
+set multiplot
+set nodisplay
+load "settings.ppl"
+set fontsize 1.2*FS
+
+# Widths of circles of be drawn on mother
+
+R2 = R1 - D12
+R3 = R2 - D12/2
+R4 = R3 - D12
+R5 = R4 - D12
+R6 = R5 - D12
+R7 = R6 - D12
+R8 = R7 - D12/2
+R9 = R8 - D12
+R10= R9 - D12
+R11= R10- D12
+R12= R11- D12
+R13=      D12*CENTRE_SCALING
+
+# Handle
+circle at 0,R1 radius 2*unit(cm)
+line from 0,R1-2*unit(cm) to 0,R1+2*unit(cm)
+
+circle at 0,0 radius R1 w fillc white
+circle at 0,0 radius R2
+circle at 0,0 radius R3 with lw 2
+circle at 0,0 radius R4
+circle at 0,0 radius R5 with lw 2
+circle at 0,0 radius R6
+circle at 0,0 radius R7
+circle at 0,0 radius R8
+circle at 0,0 radius R9
+circle at 0,0 radius R10 with lw 2
+circle at 0,0 radius R11
+circle at 0,0 radius R12
+circle at 0,0 radius R13
+
+for theta=0*unit(deg) to 359*unit(deg) step 30*unit(deg)
+ {
+  line from R1*cos(theta),R1*sin(theta) to R5*cos(theta),R5*sin(theta)
+ }
+
+for theta=0*unit(deg) to 359*unit(deg) step 5*unit(deg)
+ {
+  line from R1*cos(theta),R1*sin(theta) to R4*cos(theta),R4*sin(theta)
+ }
+
+for theta=0*unit(deg) to 359.9*unit(deg) step 1*unit(deg)
+ {
+  line from R2*cos(theta),R2*sin(theta) to R3*cos(theta),R3*sin(theta)
+ }
+
+for theta=0*unit(rev) to 1*unit(rev) step 1/365*unit(rev)
+ {
+  line from R7*cos(theta),R7*sin(theta) to R8*cos(theta),R8*sin(theta)
+ }
+
+RT1 = (R1+R2)/2
+RT2 = (R3+R4)/2
+set textvalign centre
+for theta=-180*unit(deg) to 170*unit(deg) step 10*unit(deg)
+ {
+  if      (theta<-179*unit(deg)) { theta_disp = theta               ; } \
+  else if (theta<- 90*unit(deg)) { theta_disp = theta+180*unit(deg) ; } \
+  else if (theta<   0*unit(deg)) { theta_disp =-theta               ; } \
+  else if (theta<  90*unit(deg)) { theta_disp = theta               ; } \
+  else                          { theta_disp =-theta+180*unit(deg)  ; }
+  theta_disp = floor(theta_disp/unit(deg) + 0.01)
+
+  if (theta_disp == 0)
+   {
+    set texthalign centre ; theta2 = theta
+    text "0" at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
+   } \
+  else if (theta_disp == -180)
+   {
+    set texthalign centre ; theta2 = theta
+    text "\LARGE\kreuz" at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
+   } \
+  else
+   {
+    set texthalign right ; theta2 = theta-0.2*unit(deg)
+    text "%d"%(theta_disp/10) at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
+    set texthalign left ; theta2 = theta+0.2*unit(deg)
+    text "%d"%(theta_disp%10) at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
+   }
+
+  theta_disp = floor(theta/unit(deg) + 380.01) % 30 + 10
+  set texthalign right ; theta2 = theta-0.2*unit(deg)
+  text "%d"%(theta_disp/10) at RT2*cos(theta2),RT2*sin(theta2) rot theta+90*unit(deg)
+  set texthalign left ; theta2 = theta+0.2*unit(deg)
+  text "%d"%(theta_disp%10) at RT2*cos(theta2),RT2*sin(theta2) rot theta+90*unit(deg)
+ }
+
+RT1 = (R6+R7)/2
+RT2 = (R8+R9)/2
+foreach datum m,d,last,z1394,a1394,z1974,a1974 in "tuckerman.dat"
+ {
+  theta = 30*unit(deg)*(z1974-1) + a1974*unit(deg)
+  if (last) { line from R5*cos(theta),R5*sin(theta) to R7*cos(theta),R7*sin(theta) ; } \
+  else      { line from R6*cos(theta),R6*sin(theta) to R7*cos(theta),R7*sin(theta) ; }
+
+  if (((d%10)==0) | (d>26))
+   {
+    set texthalign right ; theta2 = theta-0.2*unit(deg)
+    text "%d"%(d/10) at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
+    set texthalign left ; theta2 = theta+0.2*unit(deg)
+    text "%d"%(d%10) at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
+   }
+
+  theta = 30*unit(deg)*(z1394-1) + a1394*unit(deg)
+  if (last) { line from R8*cos(theta),R8*sin(theta) to R10*cos(theta),R10*sin(theta) ; } \
+  else      { line from R8*cos(theta),R8*sin(theta) to R9 *cos(theta),R9 *sin(theta) ; }
+
+  if (((d%10)==0) | (d>26))
+   {
+    set texthalign right ; theta2 = theta-0.2*unit(deg)
+    text "%d"%(d/10) at RT2*cos(theta2),RT2*sin(theta2) rot theta+90*unit(deg)
+    set texthalign left ; theta2 = theta+0.2*unit(deg)
+    text "%d"%(d%10) at RT2*cos(theta2),RT2*sin(theta2) rot theta+90*unit(deg)
+   }
+ }
+
+# Write text around astrolabe
+
+
+# Shadow Scale
+
+thetaA =   0*unit(deg) ; line from R12*cos(thetaA),R12*sin(thetaA) to R13*cos(thetaA),R13*sin(thetaA)
+thetaB =- 45*unit(deg) ; line from R12*cos(thetaB),R12*sin(thetaB) to R13*cos(thetaB),R13*sin(thetaB)
+thetaC =-135*unit(deg) ; line from R12*cos(thetaC),R12*sin(thetaC) to R13*cos(thetaC),R13*sin(thetaC)
+thetaD = 180*unit(deg) ; line from R12*cos(thetaD),R12*sin(thetaD) to R13*cos(thetaD),R13*sin(thetaD)
+line from R12*cos(thetaB),R12*sin(thetaB) to R12*cos(thetaB),0
+line from R12*cos(thetaB),R12*sin(thetaB) to R12*cos(thetaC),R12*sin(thetaC)
+line from R12*cos(thetaC),R12*sin(thetaC) to R12*cos(thetaC),0
+line from 0,R12*sin(thetaC) to 0,-R13
+line from 0,R12 to 0,R13
+
+RS1 = R12 - 0.75*D12/2
+RS2 = RS1 - 0.75*D12
+line from RS1*cos(thetaB),RS1*sin(thetaB) to RS1*cos(thetaB),0
+line from RS1*cos(thetaB),RS1*sin(thetaB) to RS1*cos(thetaC),RS1*sin(thetaC)
+line from RS1*cos(thetaC),RS1*sin(thetaC) to RS1*cos(thetaC),0
+line from RS2*cos(thetaB),RS2*sin(thetaB) to RS2*cos(thetaB),0
+line from RS2*cos(thetaB),RS2*sin(thetaB) to RS2*cos(thetaC),RS2*sin(thetaC)
+line from RS2*cos(thetaC),RS2*sin(thetaC) to RS2*cos(thetaC),0
+
+set fontsize 0.6*FS
+text "UMBRA" at 0,RS2*sin(thetaC) hal r val b gap 0.7*unit(mm)
+text "UMBRA" at RS2*cos(thetaC),0 hal l val b gap 0.7*unit(mm) rot -90
+text "RECTA" at 0,RS2*sin(thetaC) hal l val b gap 0.7*unit(mm)
+text "VERSA" at RS2*cos(thetaB),0 hal r val b gap 0.7*unit(mm) rot 90
+text "ORIENS" at -R12,0 hal l val b gap 0.7*unit(mm)
+text "OCCIDENS" at R12,0 hal r val b gap 0.7*unit(mm)
+
+theta = - 15*unit(deg) ; line from RS2*cos(thetaB),RS2*cos(thetaB)*tan(theta) to R12*cos(thetaB),R12*cos(thetaB)*tan(theta)
+theta = - 30*unit(deg) ; line from RS2*cos(thetaB),RS2*cos(thetaB)*tan(theta) to R12*cos(thetaB),R12*cos(thetaB)*tan(theta)
+theta = - 60*unit(deg) ; line from RS2*sin(thetaB)/tan(theta),RS2*sin(thetaB) to R12*sin(thetaB)/tan(theta),R12*sin(thetaB)
+theta = - 75*unit(deg) ; line from RS2*sin(thetaB)/tan(theta),RS2*sin(thetaB) to R12*sin(thetaB)/tan(theta),R12*sin(thetaB)
+theta = -105*unit(deg) ; line from RS2*sin(thetaB)/tan(theta),RS2*sin(thetaB) to R12*sin(thetaB)/tan(theta),R12*sin(thetaB)
+theta = -120*unit(deg) ; line from RS2*sin(thetaB)/tan(theta),RS2*sin(thetaB) to R12*sin(thetaB)/tan(theta),R12*sin(thetaB)
+theta = -150*unit(deg) ; line from RS2*cos(thetaC),RS2*cos(thetaC)*tan(theta) to R12*cos(thetaC),R12*cos(thetaC)*tan(theta)
+theta = -165*unit(deg) ; line from RS2*cos(thetaC),RS2*cos(thetaC)*tan(theta) to R12*cos(thetaC),R12*cos(thetaC)*tan(theta)
+
+# Fine shadow scale
+for theta =   0*unit(deg) to - 44*unit(deg) step -3.75*unit(deg)
+  { line from RS1*cos(thetaB),RS1*cos(thetaB)*tan(theta) to R12*cos(thetaB),R12*cos(thetaB)*tan(theta) ; }
+for theta =- 45*unit(deg) to - 89*unit(deg) step -3.75*unit(deg)
+  { line from RS1*sin(thetaB)/tan(theta),RS1*sin(thetaB) to R12*sin(thetaB)/tan(theta),R12*sin(thetaB) ; }
+for theta =- 90*unit(deg) to -134*unit(deg) step -5.00*unit(deg)
+  { line from RS1*sin(thetaB)/tan(theta),RS1*sin(thetaB) to R12*sin(thetaB)/tan(theta),R12*sin(thetaB) ; }
+for theta =-135*unit(deg) to -179*unit(deg) step -5.00*unit(deg)
+  { line from RS1*cos(thetaC),RS1*cos(thetaC)*tan(theta) to R12*cos(thetaC),R12*cos(thetaC)*tan(theta) ; }
+
+# Unequal hours scale
+circle at 0,R12/2 radius R12/2
+
+for theta = 15*unit(deg) to 75*unit(deg) step 15*unit(deg)
+ {
+  y_centre = R12*cos(theta)/2 + R12*sin(theta)/2*tan(theta)
+  arcend   = atan2(R12*sin(theta) , R12*cos(theta)/2 - R12*sin(theta)/2*tan(theta))
+  arc at 0,y_centre radius y_centre from arcend to -arcend
+ }
+
+# White out R13
+circle at 0,0 radius R13 w fillc white
+
+# Finish up
+title = "mother_back"
+load "end.ppl"
+

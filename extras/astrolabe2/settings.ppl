@@ -1,0 +1,36 @@
+# settings.ppl
+#
+# The PyXPlot code in this file is part of an astrolabe
+#
+# Copyright (C) 2010 Dominic Ford <dcf21@mrao.cam.ac.uk>
+#
+# $Id$
+#
+# PyXPlot is free software; you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation; either version 2 of the License, or (at your option) any later
+# version.
+#
+# You should have received a copy of the GNU General Public License along with
+# PyXPlot; if not, write to the Free Software Foundation, Inc., 51 Franklin
+# Street, Fifth Floor, Boston, MA  02110-1301, USA
+
+# ----------------------------------------------------------------------------
+
+# Global settings for astrolabe
+
+set preamble "\usepackage{wasysym}"
+
+set term dpi 400
+set unit angle nodimensionless
+
+R1 = 9*unit(cm)  # Outer radius of astrolabe
+D12 = 0.07*R1    # Inner pin of astrolabe
+FS = 0.9         # Font size
+TabSize = 4*unit(deg)  # Size of tab into with climate slots
+CENTRE_SCALING = 1/2.5 * 0.6
+
+iEarth   = 23.5  # Inclination of the ecliptic
+#latitude = `echo $LATITUDE`
+latitude = 52
+
