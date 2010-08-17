@@ -22,6 +22,7 @@
 set multiplot
 set nodisplay
 load "settings.ppl"
+clear
 set fontsize 1.2*FS
 
 # Widths of circles of be drawn on mother
@@ -116,7 +117,7 @@ for theta=-180*unit(deg) to 170*unit(deg) step 10*unit(deg)
 
 RT1 = (R6+R7)/2
 RT2 = (R8+R9)/2
-foreach datum m,d,last,z1394,a1394,z1974,a1974 in "tuckerman.dat"
+foreach datum m,d,last,z1394,a1394,z1974,a1974 in "RawData/tuckerman.dat"
  {
   theta = 30*unit(deg)*(z1974-1) + a1974*unit(deg)
   if (last) { line from R5*cos(theta),R5*sin(theta) to R7*cos(theta),R7*sin(theta) ; } \

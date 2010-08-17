@@ -20,13 +20,13 @@
 # Finish rendering a part of the astrolabe
 
 set term eps
-set output 'output/%s_%02d.eps'%(title,latitude)
+set output 'output/%s.eps'%(title)
 set display
 refresh
 set term pdf
-set output 'output/%s_%02d.pdf'%(title,latitude)
+set output 'output/%s.pdf'%(title)
 refresh
 set term gif
-set output 'output/%s_%02d.gif'%(title,latitude)
+set output 'output/%s.gif'%(title)
 refresh
 

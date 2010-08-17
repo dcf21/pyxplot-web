@@ -1,0 +1,102 @@
+# rete.ppl
+#
+# The PyXPlot code in this file is part of an astrolabe
+#
+# Copyright (C) 2010 Dominic Ford <dcf21@mrao.cam.ac.uk>
+#
+# $Id$
+#
+# PyXPlot is free software; you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation; either version 2 of the License, or (at your option) any later
+# version.
+#
+# You should have received a copy of the GNU General Public License along with
+# PyXPlot; if not, write to the Free Software Foundation, Inc., 51 Franklin
+# Street, Fifth Floor, Boston, MA  02110-1301, USA
+
+# ----------------------------------------------------------------------------
+
+set multiplot
+set nodisplay
+load "settings.ppl"
+clear
+set fontsize 1.2*FS
+
+# Process the Yale Bright Star Catalogue into a form we can read
+!python YBSC_process.py
+
+Rtab = R1 - D12*2.5 - unit(mm)
+R2   = R1 - D12*3 - unit(mm)
+R3   =      D12*CENTRE_SCALING
+
+R4 = R2 * tan((90-iEarth)/2*unit(deg))
+R5 = R4 * tan((90-iEarth)/2*unit(deg))
+
+circle at 0,0 radius R2
+circle at 0,0 radius R4
+circle at 0,0 radius R5
+
+# Make tab
+#arc at 0,0 radius Rtab from -TabSize to TabSize
+#line from  Rtab*sin(TabSize),Rtab*cos(TabSize) to  R2*sin(TabSize),R2*cos(TabSize)
+#line from -Rtab*sin(TabSize),Rtab*cos(TabSize) to -R2*sin(TabSize),R2*cos(TabSize)
+
+# Draw stars
+foreach datum ra,dec,mag in "ProcessedData/bright_stars.out" using 2:3:4
+ {
+  if (mag > 4.0) { continue; }
+  theta = (90-dec)*unit(deg) / 2
+  r = R4 * tan(theta)
+  if (r>R2) { continue; }
+  point -r*cos(ra*unit(deg)),-r*sin(ra*unit(deg)) with pt 10 ps 0.18*(5-mag)
+ }
+
+# Draw RA scale
+#Rtick = R2*0.98
+#for ra=0 to 23.9 step 1
+# {
+#  theta = ra/24*unit(rev)
+#  line from -R2*cos(theta),-R2*sin(theta) to -Rtick*cos(theta),-Rtick*sin(theta)
+#  text "%d$^\mathrm{h}$"%(ra) at -Rtick*cos(theta),-Rtick*sin(theta) rot (-90*unit(deg)+theta) hal c val b gap unit(mm)
+# }
+
+#Rtick = R2*0.99
+#for ra=0 to 23.9 step 1/6
+# {
+#  theta = ra/24*unit(rev)
+#  line from -R2*cos(theta),-R2*sin(theta) to -Rtick*cos(theta),-Rtick*sin(theta)
+# }
+
+# Draw ecliptic
+R_ecl_outer = (R2+R5)/2
+R_ecl_inner = R_ecl_outer*0.9
+
+circle 0,(R2-R5)/2 radius (R_ecl_outer+R_ecl_inner)/2 with lw (R_ecl_outer-R_ecl_inner)/unit(0.2*mm) col white
+circle 0,(R2-R5)/2 radius R_ecl_outer
+circle 0,(R2-R5)/2 radius R_ecl_inner
+
+# Draw tick marks along ecliptic
+y_ecl = (R2-R5)/2
+for theta=0*unit(deg) to 359*unit(deg) step 2*unit(deg)
+ {
+  alpha = asin(y_ecl * sin(theta) / R_ecl_outer) # Sine rule
+  psi   = theta + alpha # Angles in triangle add up to 180 degrees
+
+  t = floor((theta/unit(deg))+0.01)
+  if      ((t%30)==0) { Rtick_inner = R_ecl_inner;   } \
+  else if ((t%10)==0) { Rtick_inner = (  R_ecl_outer+R_ecl_inner)/2; } \
+  else                { Rtick_inner = (3*R_ecl_outer+R_ecl_inner)/4; }
+
+  line from R_ecl_outer*sin(psi) , y_ecl+R_ecl_outer*cos(psi) to Rtick_inner*sin(psi) , y_ecl+Rtick_inner*cos(psi)
+ }
+
+# Write text on rete
+
+# White out R3
+circle at 0,0 radius R3 w fillc white
+
+# Finish up
+title = "rete"
+load "end.ppl"
+

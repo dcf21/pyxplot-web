@@ -22,6 +22,7 @@
 set multiplot
 set nodisplay
 load "settings.ppl"
+clear
 set fontsize 1.2*FS
 
 # Radii of circles to be drawn on the mother

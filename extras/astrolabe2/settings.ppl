@@ -31,6 +31,4 @@ TabSize = 4*unit(deg)  # Size of tab into with climate slots
 CENTRE_SCALING = 1/2.5 * 0.6
 
 iEarth   = 23.5  # Inclination of the ecliptic
-#latitude = `echo $LATITUDE`
-latitude = 52
 

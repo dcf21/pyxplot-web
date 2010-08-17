@@ -20,7 +20,15 @@
 # Top level script for drawing the parts of the astrolabe
 
 !mkdir -p output
+!rm -f output/*
 
 load "mother_front.ppl"
 load "mother_back.ppl"
+load "rete.ppl"
+load "rule.ppl"
+
+for latitude=30 to 70 step 2
+ {
+  load "climate.ppl"
+ }
 
