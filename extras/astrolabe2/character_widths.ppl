@@ -19,7 +19,7 @@
 
 subroutine CharWidth(c)
  {
-  PS_TO_M = unit(inch)/72
+  PS_TO_M = unit(inch)/72 * 0.85
 
   if (strcmp(c,"A")==0) { ; return PS_TO_M * 7.471999 ; }
   if (strcmp(c,"B")==0) { ; return PS_TO_M * 7.056895 ; }

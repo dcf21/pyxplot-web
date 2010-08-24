@@ -25,33 +25,36 @@ load "settings.ppl"
 clear
 set fontsize 1.2*FS
 
-# Radii of circles to be drawn on the mother
+# Radii of circles to be drawn on front of mother
 R2 = R1 - D12 * 1.5
 R3 = R2 - D12
 R4 = R3 - D12/2
 R5 =      D12*CENTRE_SCALING
 
-# Handle on top of astrolabe
+# Draw the handle at the top of the astrolabe
 circle at 0,R1 radius 2*unit(cm)
 line from 0,R1-2*unit(cm) to 0,R1+2*unit(cm)
 
-# Draw circles onto mother
+# Draw circles 1-5 onto front of mother
 circle at 0,0 radius R1 w fillc white
 circle at 0,0 radius R2
 circle at 0,0 radius R3
-arc    at 0,0 radius R4 from TabSize to 360*unit(deg)-TabSize
+arc    at 0,0 radius R4 from TabSize to 360*unit(deg)-TabSize # Circle four has tab cut out
 circle at 0,0 radius R5
 
+# Between circles 2 and 4, mark 5-degree intervals
 for theta=5*unit(deg) to 359*unit(deg) step 5*unit(deg)
  {
   line from R2*sin(theta),R2*cos(theta) to R4*sin(theta),R4*cos(theta)
  }
 
+# Between circles 3 and 4, have a fine scale of 1-degree intervals
 for theta=TabSize to 360.9*unit(deg)-TabSize step 1*unit(deg)
  {
   line from R3*sin(theta),R3*cos(theta) to R4*sin(theta),R4*cos(theta)
  }
 
+# Between circles 2 and 3, label every 10 degrees
 RT1 = (R2+R3)/2
 set textvalign centre
 for theta=-180*unit(deg) to 170*unit(deg) step 10*unit(deg)
@@ -82,6 +85,7 @@ for theta=-180*unit(deg) to 170*unit(deg) step 10*unit(deg)
    }
  }
 
+# Between circles 1 and 2, label 24 hours with large letters. A cross marks midnight.
 RT1 = (R1+R2)/2
 set texthalign centre ; set textvalign centre
 set fontsize 2*FS

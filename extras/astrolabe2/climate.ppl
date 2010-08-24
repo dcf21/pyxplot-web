@@ -24,22 +24,22 @@ clear
 set fontsize 0.8*FS
 
 Rtab = R1 - D12*2.5 - unit(mm)
-R2   = R1 - D12*3 - unit(mm)
-R3   =      D12*CENTRE_SCALING
+R2   = R1 - D12*3 - unit(mm)    # Outer radius of climate
+R3   =      D12*CENTRE_SCALING  # Radius of central hole
 
 R4 = R2 * tan((90-iEarth)/2*unit(deg))
 R5 = R4 * tan((90-iEarth)/2*unit(deg))
 
-circle at 0,0 radius R2
-circle at 0,0 radius R4
-circle at 0,0 radius R5
+circle at 0,0 radius R2 # Outer edge of climate
+circle at 0,0 radius R4 # The equator
+circle at 0,0 radius R5 # The tropic of Cancer
 
-# Make tab
+# Make tab at top of climate
 arc at 0,0 radius Rtab from -TabSize to TabSize
 line from  Rtab*sin(TabSize),Rtab*cos(TabSize) to  R2*sin(TabSize),R2*cos(TabSize)
 line from -Rtab*sin(TabSize),Rtab*cos(TabSize) to -R2*sin(TabSize),R2*cos(TabSize)
 
-# Lines of constant altitude
+# Draw lines of constant altitude
 foreach c in (-6,0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85)
  {
   theta1 = (-latitude-(90-c))*unit(deg)
@@ -51,7 +51,7 @@ foreach c in (-6,0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85)
   yA = y1 * (R4 / (R4-x1))
   yB = y2 * (R4 / (R4-x2))
 
-  # Record centre and radius of the horizon arc
+  # Record centre and radius of the arc denoting the horizon
   if (c==0)
    {
     Hcentre = (yA+yB)/2
@@ -101,7 +101,7 @@ theta = atan2(Zx-(-R4),Zy-0*unit(m))
 Tx = 0*unit(m)
 Ty = ZHy + ZHx * tan(theta)
 
-# Lines of constant azimuth
+# Draw lines of constant azimuth
 ss = 11.25*unit(deg)
 c=-90*unit(deg)+ss
 foreach dir in ("","NNW","","NW","","WNW","","W","","WSW","","SW","","SSW","")
@@ -147,7 +147,7 @@ foreach dir in ("","NNW","","NW","","WNW","","W","","WSW","","SW","","SSW","")
 
 text "N" at 0,Hcentre-Hradius hal c val t gap unit(mm)
 
-# Draw lines of unequal hours
+# Draw lines of unequal hours below the horizon
 for h=1 to 12
  {
   for r=R5 to R2 step unit(mm)
@@ -162,6 +162,7 @@ for h=1 to 12
    }
  }
 
+# Label the unequal hours
 set fontsize 2*FS
 h = 0.5
 r = R2-unit(2*mm)

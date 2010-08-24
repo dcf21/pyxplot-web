@@ -43,9 +43,10 @@ subroutine CircularText(text, special, centre_x, centre_y, radius, azimuth, spac
    {
     char = strrange(text,i,i+1)
     if (strcmp(char,"*")==0) { ; char=special ; }
-    text "%s"%(char) at centre_x+radius*cos(az) , centre_y+radius*sin(az) rot az+90*unit(deg) hal c val c
     twidth = CharWidth("%s"%(char))
-    az = az + twidth * spacing / radius * unit(rad)
+    az = az + twidth / 2 * spacing / radius * unit(rad)
+    text "%s"%(char) at centre_x+radius*cos(az) , centre_y+radius*sin(az) rot az+90*unit(deg) hal c val c
+    az = az + twidth / 2 * spacing / radius * unit(rad)
    }
 
   return 0

@@ -34,12 +34,14 @@ GreekAlphabet = {'Alp':r'\alpha' , 'Bet':r'\beta' , 'Gam':r'\gamma' , 'Del':r'\d
 StarNames = {}
 for line in open("RawData/bright_star_names.dat"):
  if len(line)<5: continue
+ if (line[0]=='#'): continue
  bs = int(line[0:4])
  name = line[5:]
  StarNames[bs]=re.sub(' ','_',name.strip())
 
 bs = 0
 for line in open("RawData/YBSC.dat"):
+ if len(line)<100: continue
  bs = bs + 1 # Bright Star Number
  try:
   hd     = int(line[25:31])
