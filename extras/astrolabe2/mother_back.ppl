@@ -73,11 +73,6 @@ for theta=0*unit(deg) to 359.9*unit(deg) step 1*unit(deg)
   line from R2*cos(theta),R2*sin(theta) to R3*cos(theta),R3*sin(theta)
  }
 
-for theta=0*unit(rev) to 1*unit(rev) step 1/365*unit(rev)
- {
-  line from R7*cos(theta),R7*sin(theta) to R8*cos(theta),R8*sin(theta)
- }
-
 RT1 = (R1+R2)/2
 RT2 = (R3+R4)/2
 set textvalign centre
@@ -117,9 +112,20 @@ for theta=-180*unit(deg) to 170*unit(deg) step 10*unit(deg)
 
 RT1 = (R6+R7)/2
 RT2 = (R8+R9)/2
-foreach datum m,d,last,z1394,a1394,z1974,a1974 in "RawData/tuckerman.dat"
+last_theta = 30*unit(deg)*(10-1) + 9.4*unit(deg)
+
+foreach datum m,d,interval,last,z1394,a1394,z1974,a1974 in "RawData/tuckerman.dat"
  {
   theta = 30*unit(deg)*(z1974-1) + a1974*unit(deg)
+
+  if (last_theta > theta) { last_theta=last_theta-unit(rev) ; }
+  for i=0 to interval
+   {
+    theta_day = last_theta + (theta - last_theta)*(i+1)/interval
+    line from R7*cos(theta_day),R7*sin(theta_day) to R8*cos(theta_day),R8*sin(theta_day)
+   }
+  last_theta = theta
+
   if (last) { line from R5*cos(theta),R5*sin(theta) to R7*cos(theta),R7*sin(theta) ; } \
   else      { line from R6*cos(theta),R6*sin(theta) to R7*cos(theta),R7*sin(theta) ; }
 
