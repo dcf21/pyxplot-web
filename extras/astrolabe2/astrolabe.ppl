@@ -27,7 +27,7 @@ load "mother_back.ppl"
 load "rete.ppl"
 load "rule.ppl"
 
-for latitude=30 to 70 step 2
+for latitude=8 to 86 step 2
  {
   load "climate.ppl"
  }

@@ -17,70 +17,94 @@
 
 # ----------------------------------------------------------------------------
 
-set multiplot
-set nodisplay
-load "settings.ppl"
-clear
-set fontsize 1.2*FS
-
-margin = 2*unit(cm)
-
-R2   = R1 - D12*3 - unit(mm)
-R3   =      D12*CENTRE_SCALING
-
-R4 = R2 * tan((90-iEarth)/2*unit(deg))
-R5 = R4 * tan((90-iEarth)/2*unit(deg))
-
-R6 = 0.8*unit(cm)
-
-# Draw outlines of rules
-
-subroutine RuleDraw(xpos,ypos)
+# First make a northern hemisphere astrolabe. Then a southern hemisphere astrolabe.
+foreach Ns in (1,0)
  {
-  circle at xpos,ypos radius R3
-  arc    at xpos,ypos radius R6 from   0 to  90
-  arc    at xpos,ypos radius R6 from 180 to 270
-  line from xpos,ypos-R6 to xpos,ypos-(R2+margin)-R6
-  line from xpos,ypos+R6 to xpos,ypos+(R2+margin)+R6
-  line from xpos,ypos+(R2+margin)+R6 to xpos-R6,ypos+(R2+margin)
-  line from xpos,ypos-(R2+margin)-R6 to xpos+R6,ypos-(R2+margin)
-  line from xpos-R6,ypos+(R2+margin) to xpos-R6,ypos
-  line from xpos+R6,ypos-(R2+margin) to xpos+R6,ypos
- }
+  set multiplot
+  set nodisplay
+  load "settings.ppl"
+  clear
 
-call RuleDraw (0*unit(cm),0*unit(cm))
-call RuleDraw (5*unit(cm),0*unit(cm))
+  margin = 2*unit(cm)
 
-# Draw declination scale on rule
-BTL = 4*unit(mm)
-STL = 2*unit(mm)
-for dec=-25 to 70 step 5
- {
-  theta = (90-dec)*unit(deg) / 2
-  r = R4 * tan(theta)
-  if ((dec%10)==0)
+  R2   = R1 - D12*3 - unit(mm)    # Outer radius of rete
+  R3   =      D12*CENTRE_SCALING  # Radius of central hole
+
+  R4 = R2 * tan((90-iEarth)/2*unit(deg)) # Radius of equator
+  R5 = R4 * tan((90-iEarth)/2*unit(deg)) # Radius of tropic of Cancer
+
+  R6 = 0.8*unit(cm) # Width of alidade
+
+  R12= R1 - D12*10 # Outer radius of shadow scale
+
+  # Subroutine to draw outlines of rule and the alidade
+  subroutine RuleDraw(xpos,ypos,sight)
    {
-    line from 0, r to -BTL, r
-    text "$%d$"%(dec) at -BTL, r hal c val t rot -90
-    line from 0,-r to  BTL,-r
-    text "$%d$"%(dec) at  BTL,-r hal c val t rot  90
-   } else {
-    line from 0, r to -STL, r
-    line from 0,-r to  STL,-r
+    circle at xpos,ypos radius R3
+    arc    at xpos,ypos radius R6 from   0 to  90
+    arc    at xpos,ypos radius R6 from 180 to 270
+    line from xpos,ypos-R6 to xpos,ypos-(R2+margin)-R6
+    line from xpos,ypos+R6 to xpos,ypos+(R2+margin)+R6
+    line from xpos,ypos+(R2+margin)+R6 to xpos-R6,ypos+(R2+margin)
+    line from xpos,ypos-(R2+margin)-R6 to xpos+R6,ypos-(R2+margin)
+    line from xpos-R6,ypos+(R2+margin) to xpos-R6,ypos
+    line from xpos+R6,ypos-(R2+margin) to xpos+R6,ypos
+
+    if (sight)
+     {
+      box from xpos,ypos-R2*0.65 to xpos-R2*0.1,ypos-R2*0.85
+      box from xpos,ypos+R2*0.65 to xpos+R2*0.1,ypos+R2*0.85
+     }
    }
+
+  # Draw outlines of rule and the alidade
+  call RuleDraw (0*unit(cm),0*unit(cm),1) # Alidade has a sight
+  call RuleDraw (5*unit(cm),0*unit(cm),0)
+
+  # Draw declination scale on rule
+  BTL = 4*unit(mm)
+  STL = 2*unit(mm)
+  if (Ns) { set fontsize 1.0*FS; } \
+  else    { set fontsize 0.7*FS; }
+  for dec=-25 to 70 step 5
+   {
+    theta = (90-dec)*unit(deg) / 2
+    r = R4 * tan(theta)
+    if (Ns==0) { dec=-dec; }
+    if ((dec%10)==0)
+     {
+      line from 0, r to -BTL, r
+      text "$%d$"%(dec) at -BTL, r hal c val t rot -90
+      line from 0,-r to  BTL,-r
+      text "$%d$"%(dec) at  BTL,-r hal c val t rot  90
+     } else {
+      line from 0, r to -STL, r
+      line from 0,-r to  STL,-r
+     }
+   }
+
+  # Draw solar-altitude scale on alidade
+  set fontsize 1.0*FS
+
+  for i=20 to 90 step 5
+   {
+    r = R12 * sin(i*unit(deg))
+    line from unit(5*cm), r to unit(5*cm)-BTL/2, r
+    line from unit(5*cm),-r to unit(5*cm)+BTL/2,-r
+   }
+
+  foreach i in (20,35,50,80)
+   {
+    r = R12 * sin(i*unit(deg))
+    line from unit(5*cm), r to unit(5*cm)-BTL, r
+    text "$%d^\circ$"%(i) at unit(5*cm)-BTL, r hal c val t rot -90
+    line from unit(5*cm),-r to unit(5*cm)+BTL,-r
+    text "$%d^\circ$"%(i) at unit(5*cm)+BTL,-r hal c val t rot  90
+   }
+
+  # Finish up
+  if (Ns) { title = "rule_north"; } \
+  else    { title = "rule_south"; }
+  load "end.ppl"
  }
-
-# Draw numbers on second rule
-#for i=0 to 8
-# {
-#  r = R6+unit(5*mm) + i*unit(5*mm)
-#  line from unit(5*cm), r to unit(5*cm)-BTL, r
-#  text "$%d$"%(i) at unit(5*cm)-BTL, r hal c val t rot -90
-#  line from unit(5*cm),-r to unit(5*cm)+BTL,-r
-#  text "$%d$"%(i) at unit(5*cm)+BTL,-r hal c val t rot  90
-# }
-
-# Finish up
-title = "rule"
-load "end.ppl"
 

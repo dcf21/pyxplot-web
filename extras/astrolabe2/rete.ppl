@@ -17,90 +17,100 @@
 
 # ----------------------------------------------------------------------------
 
-set multiplot
-set nodisplay
-load "settings.ppl"
-load "circular_text.ppl"
-clear
-set fontsize 1.2*FS
-
 # Process the Yale Bright Star Catalogue into a form we can read
 !python YBSC_process.py
 
-Rtab = R1 - D12*2.5 - unit(mm)
-R2   = R1 - D12*3 - unit(mm)    # Outer radius of the rete
-R3   =      D12*CENTRE_SCALING  # Radius of the hole through the centre
-
-R4 = R2 * tan((90-iEarth)/2*unit(deg)) # Radius of the line denoting the equator
-R5 = R4 * tan((90-iEarth)/2*unit(deg)) # Radius of the line denoting the tropic of Cancer
-
-circle at 0,0 radius R2 # Outer edge of rete
-circle at 0,0 radius R4 # Equator
-circle at 0,0 radius R5 # Tropic of Cancer
-
-# Draw stars from Yale Bright Star Catalogue
-foreach datum ra,dec,mag in "ProcessedData/bright_stars.out" using 2:3:4
+# First make a northern hemisphere astrolabe. Then a southern hemisphere astrolabe.
+foreach Ns in (1,0)
  {
-  if (mag > 4.0) { continue; }
-  theta = (90-dec)*unit(deg) / 2
-  r = R4 * tan(theta)
-  if (r>R2) { continue; }
-  point -r*cos(ra*unit(deg)),-r*sin(ra*unit(deg)) with pt 10 ps 0.18*(5-mag)
+  set multiplot
+  set nodisplay
+  load "settings.ppl"
+  load "circular_text.ppl"
+  clear
+  set fontsize 1.2*FS
+
+  Rtab = R1 - D12*2.5 - unit(mm)
+  R2   = R1 - D12*3 - unit(mm)    # Outer radius of the rete
+  R3   =      D12*CENTRE_SCALING  # Radius of the hole through the centre
+
+  R4 = R2 * tan((90-iEarth)/2*unit(deg)) # Radius of the line denoting the equator
+  R5 = R4 * tan((90-iEarth)/2*unit(deg)) # Radius of the line denoting the tropic of Cancer
+
+  circle at 0,0 radius R2 # Outer edge of rete
+  circle at 0,0 radius R4 # Equator
+  circle at 0,0 radius R5 # Tropic of Cancer
+
+  # Draw stars from Yale Bright Star Catalogue
+  foreach datum ra,dec,mag in "ProcessedData/bright_stars.out" using 2:3:4
+   {
+    if (mag > 4.0) { continue; }
+    if (Ns==0) { dec=-dec; ra=-ra; }
+    theta = (90-dec)*unit(deg) / 2
+    r = R4 * tan(theta)
+    if (r>R2) { continue; }
+    point -r*cos(ra*unit(deg)),-r*sin(ra*unit(deg)) with pt 10 ps 0.18*(5-mag)
+   }
+
+  # Draw RA scale
+  Rtick = R2*0.98
+  for ra=0 to 23.9 step 1
+   {
+    theta = ra/24*unit(rev)
+    if (Ns==0) { ra=24-ra; }
+    line from -R2*cos(theta),-R2*sin(theta) to -Rtick*cos(theta),-Rtick*sin(theta)
+    text "%d$^\mathrm{h}$"%(ra) at -Rtick*cos(theta),-Rtick*sin(theta) rot (-90*unit(deg)+theta) hal c val b gap unit(mm)
+   }
+
+  Rtick = R2*0.99
+  for ra=0 to 23.9 step 1/6
+   {
+    theta = ra/24*unit(rev)
+    line from -R2*cos(theta),-R2*sin(theta) to -Rtick*cos(theta),-Rtick*sin(theta)
+   }
+
+  # Draw ecliptic
+  y_ecl_centre = (R2-R5)/2  # Ecliptic circle centred on centre point between +R2 and -R5
+  R_ecl_outer  = (R2+R5)/2  # Outer radius of ecliptic circle... circle touches R2 and -R5
+  R_ecl_inner  = R_ecl_outer*0.9
+  R_ecl_centre = (R_ecl_outer + R_ecl_inner*2)/3
+
+  circle 0,(R2-R5)/2 radius (R_ecl_outer+R_ecl_inner)/2 with lw (R_ecl_outer-R_ecl_inner)/unit(0.2*mm) col white
+  circle 0,(R2-R5)/2 radius R_ecl_outer
+  circle 0,(R2-R5)/2 radius R_ecl_inner
+
+  # Draw tick marks along ecliptic
+  for theta=0*unit(deg) to 359*unit(deg) step 2*unit(deg)
+   {
+    alpha = asin(y_ecl_centre * sin(theta) / R_ecl_outer) # Sine rule
+    psi   = theta + alpha # Angles in triangle add up to 180 degrees
+
+    t = floor((theta/unit(deg))+0.01)
+    if      ((t%30)==0) { Rtick_inner = R_ecl_inner;   } \
+    else if ((t%10)==0) { Rtick_inner = (  R_ecl_outer+R_ecl_inner)/2; } \
+    else                { Rtick_inner = (3*R_ecl_outer+R_ecl_inner)/4; }
+
+    line from R_ecl_outer*sin(psi) , y_ecl_centre+R_ecl_outer*cos(psi) to Rtick_inner*sin(psi) , y_ecl_centre+Rtick_inner*cos(psi)
+   }
+
+  # Write zodiacal constellation names around ecliptic
+  if (Ns) { TextSize = 1  ; } \
+  else    { TextSize = 0.7; }
+  foreach datum i,name in "RawData/ZodiacalConstellations.dat" using 1:"%s"%($2)
+   {
+    if (Ns) { theta = (-90+15-30*i)*unit(deg); } \
+    else    { theta = (-90-15+30*i)*unit(deg); name="%s"%(strrange(name,0,8)); }
+    alpha = asin(y_ecl_centre * sin(theta) / R_ecl_outer) # Sine rule
+    psi   = unit(90*deg) - (theta + alpha) # Angles in triangle add up to 180 degrees
+    call CircularText(name,"",unit(0*m),y_ecl_centre,R_ecl_centre,psi,0.9,TextSize)
+   }
+
+  # White out R3
+  circle at 0,0 radius R3 w fillc white
+
+  # Finish up
+  if (Ns) { title = "rete_north"; } \
+  else    { title = "rete_south"; }
+  load "end.ppl"
  }
-
-# Draw RA scale
-Rtick = R2*0.98
-for ra=0 to 23.9 step 1
- {
-  theta = ra/24*unit(rev)
-  line from -R2*cos(theta),-R2*sin(theta) to -Rtick*cos(theta),-Rtick*sin(theta)
-  text "%d$^\mathrm{h}$"%(ra) at -Rtick*cos(theta),-Rtick*sin(theta) rot (-90*unit(deg)+theta) hal c val b gap unit(mm)
- }
-
-Rtick = R2*0.99
-for ra=0 to 23.9 step 1/6
- {
-  theta = ra/24*unit(rev)
-  line from -R2*cos(theta),-R2*sin(theta) to -Rtick*cos(theta),-Rtick*sin(theta)
- }
-
-# Draw ecliptic
-y_ecl_centre = (R2-R5)/2  # Ecliptic circle centred on centre point between +R2 and -R5
-R_ecl_outer  = (R2+R5)/2  # Outer radius of ecliptic circle... circle touches R2 and -R5
-R_ecl_inner  = R_ecl_outer*0.9
-R_ecl_centre = (R_ecl_outer + R_ecl_inner*2)/3
-
-circle 0,(R2-R5)/2 radius (R_ecl_outer+R_ecl_inner)/2 with lw (R_ecl_outer-R_ecl_inner)/unit(0.2*mm) col white
-circle 0,(R2-R5)/2 radius R_ecl_outer
-circle 0,(R2-R5)/2 radius R_ecl_inner
-
-# Draw tick marks along ecliptic
-for theta=0*unit(deg) to 359*unit(deg) step 2*unit(deg)
- {
-  alpha = asin(y_ecl_centre * sin(theta) / R_ecl_outer) # Sine rule
-  psi   = theta + alpha # Angles in triangle add up to 180 degrees
-
-  t = floor((theta/unit(deg))+0.01)
-  if      ((t%30)==0) { Rtick_inner = R_ecl_inner;   } \
-  else if ((t%10)==0) { Rtick_inner = (  R_ecl_outer+R_ecl_inner)/2; } \
-  else                { Rtick_inner = (3*R_ecl_outer+R_ecl_inner)/4; }
-
-  line from R_ecl_outer*sin(psi) , y_ecl_centre+R_ecl_outer*cos(psi) to Rtick_inner*sin(psi) , y_ecl_centre+Rtick_inner*cos(psi)
- }
-
-# Write zodiacal constellation names around ecliptic
-foreach datum i,name in "RawData/ZodiacalConstellations.dat" using 1:"%s"%($2)
- {
-  theta = (-90+15-30*i)*unit(deg)
-  alpha = asin(y_ecl_centre * sin(theta) / R_ecl_outer) # Sine rule
-  psi   = unit(90*deg) - (theta + alpha) # Angles in triangle add up to 180 degrees
-  call CircularText(name,"",unit(0*m),y_ecl_centre,R_ecl_centre,psi,0.9,1)
- }
-
-# White out R3
-circle at 0,0 radius R3 w fillc white
-
-# Finish up
-title = "rete"
-load "end.ppl"
 

@@ -17,170 +17,202 @@
 
 # ----------------------------------------------------------------------------
 
-set multiplot
-set nodisplay
-load "settings.ppl"
-clear
-set fontsize 0.8*FS
-
-Rtab = R1 - D12*2.5 - unit(mm)
-R2   = R1 - D12*3 - unit(mm)    # Outer radius of climate
-R3   =      D12*CENTRE_SCALING  # Radius of central hole
-
-R4 = R2 * tan((90-iEarth)/2*unit(deg))
-R5 = R4 * tan((90-iEarth)/2*unit(deg))
-
-circle at 0,0 radius R2 # Outer edge of climate
-circle at 0,0 radius R4 # The equator
-circle at 0,0 radius R5 # The tropic of Cancer
-
-# Make tab at top of climate
-arc at 0,0 radius Rtab from -TabSize to TabSize
-line from  Rtab*sin(TabSize),Rtab*cos(TabSize) to  R2*sin(TabSize),R2*cos(TabSize)
-line from -Rtab*sin(TabSize),Rtab*cos(TabSize) to -R2*sin(TabSize),R2*cos(TabSize)
-
-# Draw lines of constant altitude
-foreach c in (-6,0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85)
+# First make a northern hemisphere astrolabe. Then a southern hemisphere astrolabe.
+foreach Ns in (1,0)
  {
-  theta1 = (-latitude-(90-c))*unit(deg)
-  theta2 = (-latitude+(90-c))*unit(deg)
+  set multiplot
+  set nodisplay
+  load "settings.ppl"
+  clear
+  set fontsize 0.8*FS
 
-  x1 = R4 * sin(theta1) ; y1 = R4 * cos(theta1)
-  x2 = R4 * sin(theta2) ; y2 = R4 * cos(theta2)
+  Rtab = R1 - D12*2.5 - unit(mm)
+  R2   = R1 - D12*3 - unit(mm)    # Outer radius of climate
+  R3   =      D12*CENTRE_SCALING  # Radius of central hole
 
-  yA = y1 * (R4 / (R4-x1))
-  yB = y2 * (R4 / (R4-x2))
+  R4 = R2 * tan((90-iEarth)/2*unit(deg))
+  R5 = R4 * tan((90-iEarth)/2*unit(deg))
 
-  # Record centre and radius of the arc denoting the horizon
-  if (c==0)
+  circle at 0,0 radius R2 # Outer edge of climate
+  circle at 0,0 radius R4 # The equator
+  circle at 0,0 radius R5 # The tropic of Cancer
+
+  # Make tab at top of climate
+  arc at 0,0 radius Rtab from -TabSize to TabSize
+  line from  Rtab*sin(TabSize),Rtab*cos(TabSize) to  R2*sin(TabSize),R2*cos(TabSize)
+  line from -Rtab*sin(TabSize),Rtab*cos(TabSize) to -R2*sin(TabSize),R2*cos(TabSize)
+
+  # Draw lines of constant altitude
+  foreach c in (-6,0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85)
    {
-    Hcentre = (yA+yB)/2
-    Hradius = (yB-yA)/2
-   }
+    theta1 = (-latitude-(90-c))*unit(deg)
+    theta2 = (-latitude+(90-c))*unit(deg)
 
-  if (yB < R2)
-   {
-    start = 0
-    end = 360
-    if ((c%10)==0)
+    x1 = R4 * sin(theta1) ; y1 = R4 * cos(theta1)
+    x2 = R4 * sin(theta2) ; y2 = R4 * cos(theta2)
+
+    yA = y1 * (R4 / (R4-x1))
+    yB = y2 * (R4 / (R4-x2))
+
+    # Record centre and radius of the arc denoting the horizon
+    if (c==0)
      {
-      text "%d"%(c) at 0,yB hal c val b
+      Hcentre = (yA+yB)/2
+      Hradius = (yB-yA)/2
      }
-   } else {
-    r = (yB-yA)/2
-    y = (yA+yB)/2
-    start = 180*unit(deg) - acos( (r**2 + y**2 - R2**2 ) / (2*((yB-yA)/2)*((yA+yB)/2)))
-    end   = -start
-    if ((c%10)==0)
+
+    if (yB < R2)
      {
-      text "%d"%(c) at r*sin(start+unit(deg)),(yA+yB)/2+r*cos(start+unit(deg)) hal r val t gap unit(mm)
-      text "%d"%(c) at r*sin(end  -unit(deg)),(yA+yB)/2+r*cos(end  -unit(deg)) hal l val t gap unit(mm)
+      start = 0
+      end = 360
+      if ((c%10)==0)
+       {
+        text "%d"%(c) at 0,yB hal c val b
+       }
+     } else {
+      r = (yB-yA)/2
+      y = (yA+yB)/2
+      start = 180*unit(deg) - acos( (r**2 + y**2 - R2**2 ) / (2*((yB-yA)/2)*((yA+yB)/2)))
+      end   = -start
+      if ((c%10)==0)
+       {
+        text "%d"%(c) at r*sin(start+unit(deg)),(yA+yB)/2+r*cos(start+unit(deg)) hal r val t gap unit(mm)
+        text "%d"%(c) at r*sin(end  -unit(deg)),(yA+yB)/2+r*cos(end  -unit(deg)) hal l val t gap unit(mm)
+       }
+     }
+
+    arc at 0,(yA+yB)/2 radius (yB-yA)/2 from start to end with linetype 1+(c<0) linewidth 0.5+1.5*(c==0)
+   }
+
+  # Find coordinates of P
+  theta = -latitude*unit(deg)
+  Px    =  R4 * sin(theta)
+  Py    =  R4 * cos(theta)
+
+  # Find coordinates of Z
+  Zx    =  0*unit(m)
+  Zy    =  0*unit(m) + Py / (R4-Px) * R4
+
+  # Find midpoint between Z and H
+  ZHx = -R4/2
+  ZHy = Zy/2
+
+  # Find bearing of T from ZH (clockwise from right-going axis)
+  theta = atan2(Zx-(-R4),Zy-0*unit(m))
+
+  # Find coordinates of T
+  Tx = 0*unit(m)
+  Ty = ZHy + ZHx * tan(theta)
+
+  # Draw lines of constant azimuth
+  ss = 11.25*unit(deg)
+  c=-90*unit(deg)+ss
+  foreach dir in ("","NNW","","NW","","WNW","","W","","WSW","","SW","","SSW","")
+   {
+    if (Ns==0)
+     {
+      dir =~ s/N/s/g
+      dir =~ s/S/N/g
+      dir =~ s/s/S/g
+      dir =~ s/W/e/g
+      dir =~ s/E/W/g
+      dir =~ s/e/E/g
+     }
+
+    Tx = (Zy-Ty) * tan(c)
+    Tr = hypot(Tx , Ty-Zy) # Radius of arc of constant azimuth
+
+    t_hc = hypot(Tx , Ty-Hcentre) # Distance from T to centre of horizon
+    theta = acos( (Tr**2+t_hc**2-Hradius**2) / (2*Tr*t_hc) )
+    phi   = atan2(Tx-0*unit(m) , Hcentre-Ty)
+    start = -phi-theta
+    end   = -phi+theta
+
+    t_c = hypot(Tx , Ty) # Distance from T to centre of the astrolabe
+    arg = (Tr**2+t_c**2-R2**2) / (2*Tr*t_c)
+    if ((arg>=1)or(arg<=-1)) { start2=start; end2=end; } \
+    else
+     {
+      theta = acos( (Tr**2+t_c**2-R2**2) / (2*Tr*t_c) )
+      phi   = atan2(Tx , -Ty)
+      start2= -phi-theta
+      end2  = -phi+theta
+     }
+
+    arc at Tx,Ty radius Tr from max(start,start2) to min(end,end2) with lw 0.5
+
+    if (end < end2-unit(2*deg))
+     {
+      text "%s"%(dir) at Tx+Tr*sin(end),Ty+Tr*cos(end) hal c val t gap unit(mm) rot 90*unit(deg)-end
+     } else {
+      text "%s"%(dir) at Tx+Tr*sin(end2-unit(3*deg)),Ty+Tr*cos(end2-unit(3*deg)) hal r val b gap unit(mm) rot -(end-unit(3*deg))
+     }
+
+    dir =~ s/N/s/g
+    dir =~ s/S/N/g
+    dir =~ s/s/S/g
+    dir =~ s/W/e/g
+    dir =~ s/E/W/g
+    dir =~ s/e/E/g
+
+    if (start > start2+unit(2*deg))
+     {
+      text "%s"%(dir) at Tx+Tr*sin(start),Ty+Tr*cos(start) hal c val t gap unit(mm) rot -90*unit(deg)-start
+     } else {
+      text "%s"%(dir) at Tx+Tr*sin(start2+unit(3*deg)),Ty+Tr*cos(start2+unit(3*deg)) hal l val b gap unit(mm) rot -(start+unit(3*deg))
+     }
+
+    c = c + ss
+   }
+
+  if (Ns) { text "N" at 0,Hcentre-Hradius hal c val t gap unit(mm); } \
+  else    { text "S" at 0,Hcentre-Hradius hal c val t gap unit(mm); }
+
+  # Subroutine for calculating the azimuthal angle of the lines of the unequal hours
+  subroutine ThetaUH(r)
+   {
+    arg = (r**2 + Hcentre**2 - Hradius**2)/(2*r*Hcentre)
+    if (arg<=-1) { return unit(180*deg); }
+    if (arg>= 1) { return unit(  0*deg); }
+    return acos(arg)
+   }
+
+  # Draw lines of unequal hours below the horizon
+  for h=1 to 12
+   {
+    for r=max(R5,Hradius-Hcentre) to R2 step unit(0.5*mm)
+     {
+      r0 = r
+      r1 = min(r+unit(0.5*mm) , R2)
+      theta0 = ThetaUH(r0)
+      theta1 = ThetaUH(r1)
+      psi0   = theta0 + (360*unit(deg)-2*theta0)/12*h
+      psi1   = theta1 + (360*unit(deg)-2*theta1)/12*h
+      line from r0*sin(psi0),r0*cos(psi0) to r1*sin(psi1),r1*cos(psi1)
      }
    }
 
-  arc at 0,(yA+yB)/2 radius (yB-yA)/2 from start to end with linetype 1+(c<0) linewidth 0.5+1.5*(c==0)
- }
-
-# Find coordinates of P
-theta = -latitude*unit(deg)
-Px    =  R4 * sin(theta)
-Py    =  R4 * cos(theta)
-
-# Find coordinates of Z
-Zx    =  0*unit(m)
-Zy    =  0*unit(m) + Py / (R4-Px) * R4
-
-# Find midpoint between Z and H
-ZHx = -R4/2
-ZHy = Zy/2
-
-# Find bearing of T from ZH (clockwise from right-going axis)
-theta = atan2(Zx-(-R4),Zy-0*unit(m))
-
-# Find coordinates of T
-Tx = 0*unit(m)
-Ty = ZHy + ZHx * tan(theta)
-
-# Draw lines of constant azimuth
-ss = 11.25*unit(deg)
-c=-90*unit(deg)+ss
-foreach dir in ("","NNW","","NW","","WNW","","W","","WSW","","SW","","SSW","")
- {
-  Tx = -Ty * tan(c)
-  Tr = hypot(Tx , Ty-Zy) # Radius of arc of constant azimuth
-
-  t_hc = hypot(Tx , Ty-Hcentre) # Distance from T to centre of horizon
-  theta = acos( (Tr**2+t_hc**2-Hradius**2) / (2*Tr*t_hc) )
-  phi   = atan2(Tx-0*unit(m) , Hcentre-Ty)
-  start = -phi-theta
-  end   = -phi+theta
-
-  t_c = hypot(Tx , Ty) # Distance from T to centre of the astrolabe
-  theta = acos( (Tr**2+t_c**2-R2**2) / (2*Tr*t_c) )
-  phi   = atan2(Tx , -Ty)
-  start2= -phi-theta
-  end2  = -phi+theta
-
-  arc at Tx,Ty radius Tr from max(start,start2) to min(end,end2) with lw 0.5
-
-  if (end < end2-unit(2*deg))
+  # Label the unequal hours
+  set fontsize 2*FS
+  h      = 0.5
+  r      = R2-unit(2*mm)
+  theta0 = ThetaUH(r)
+  foreach hr in ("I","II","III","IV","V","VI","VII","VII","IX","X","XI","XII")
    {
-    text "%s"%(dir) at Tx+Tr*sin(end),Ty+Tr*cos(end) hal c val t gap unit(mm) rot 90*unit(deg)-end
-   } else {
-    text "%s"%(dir) at Tx+Tr*sin(end2-unit(3*deg)),Ty+Tr*cos(end2-unit(3*deg)) hal r val b gap unit(mm) rot -(end-unit(3*deg))
-   }
-
-  dir =~ s/N/s/g
-  dir =~ s/W/E/g
-  dir =~ s/S/N/g
-  dir =~ s/s/S/g
-
-  if (start > start2+unit(2*deg))
-   {
-    text "%s"%(dir) at Tx+Tr*sin(start),Ty+Tr*cos(start) hal c val t gap unit(mm) rot -90*unit(deg)-start
-   } else {
-    text "%s"%(dir) at Tx+Tr*sin(start2+unit(3*deg)),Ty+Tr*cos(start2+unit(3*deg)) hal l val b gap unit(mm) rot -(start+unit(3*deg))
-   }
-
-  c = c + ss
- }
-
-text "N" at 0,Hcentre-Hradius hal c val t gap unit(mm)
-
-# Draw lines of unequal hours below the horizon
-for h=1 to 12
- {
-  for r=R5 to R2 step unit(mm)
-   {
-    r0 = r
-    r1 = r+unit(mm)
-    theta0 = acos((r0**2 + Hcentre**2 - Hradius**2)/(2*r0*Hcentre))
-    theta1 = acos((r1**2 + Hcentre**2 - Hradius**2)/(2*r1*Hcentre))
     psi0   = theta0 + (360*unit(deg)-2*theta0)/12*h
-    psi1   = theta1 + (360*unit(deg)-2*theta1)/12*h
-    line from r0*sin(psi0),r0*cos(psi0) to r1*sin(psi1),r1*cos(psi1)
+    psi0   = (psi0-180*unit(deg))*0.95+180*unit(deg)
+    text "%s"%(hr) at r*sin(psi0),r*cos(psi0) rot (180*unit(deg)-psi0) hal c val b gap unit(mm)
+    h=h+1
    }
+
+  # White out R3
+  line from -R2,0 to R2,0
+  line from 0,-R2 to 0,R2
+  circle at 0,0 radius R3 w fillc white
+
+  # Finish up
+  if (Ns) { title = "climate_%dN"%(latitude); } \
+  else    { title = "climate_%dS"%(latitude); }
+  load "end.ppl"
  }
-
-# Label the unequal hours
-set fontsize 2*FS
-h = 0.5
-r = R2-unit(2*mm)
-foreach hr in ("I","II","III","IV","V","VI","VII","VII","IX","X","XI","XII")
- {
-  theta0 = acos((r**2 + Hcentre**2 - Hradius**2)/(2*r*Hcentre))
-  psi0   = theta0 + (360*unit(deg)-2*theta0)/12*h
-  psi0   = (psi0-180*unit(deg))*0.95+180*unit(deg)
-  text "%s"%(hr) at r*sin(psi0),r*cos(psi0) rot (180*unit(deg)-psi0) hal c val b gap unit(mm)
-  h=h+1
- }
-
-# White out R3
-line from -R2,0 to R2,0
-line from 0,-R2 to 0,R2
-circle at 0,0 radius R3 w fillc white
-
-# Finish up
-title = "climate_%d"%(latitude)
-load "end.ppl"
 
