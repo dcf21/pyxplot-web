@@ -32,3 +32,13 @@ for latitude=8 to 86 step 2
   load "climate.ppl"
  }
 
+set term eps
+set output "output/mother_front_combi.eps"
+set multiplot
+set nodisplay
+clear
+eps "output/mother_front.eps"
+eps "output/climate_52N.eps" at D12*3+unit(mm),D12*3+unit(mm)
+set display
+refresh
+

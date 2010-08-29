@@ -41,11 +41,12 @@ R12= R11- D12
 R13=      D12*CENTRE_SCALING
 
 # Draw the handle at the top of the astrolabe
-circle at 0,R1 radius 2*unit(cm)
+ang = unit(180*deg) - acos( unit(cm) / R1 )
+arc at 0,R1 radius 2*unit(cm) from -ang to ang
 line from 0,R1-2*unit(cm) to 0,R1+2*unit(cm)
 
 # Draw circles 1-13 onto back of mother
-circle at 0,0 radius R1 w fillc white
+circle at 0,0 radius R1
 circle at 0,0 radius R2
 circle at 0,0 radius R3 with lw 3
 circle at 0,0 radius R4
@@ -273,6 +274,7 @@ for theta = 15*unit(deg) to 75*unit(deg) step 15*unit(deg)
 circle at 0,0 radius R13 w fillc white
 
 # Finish up
+call CircularText("* Dominic Ford 2010","\copyright",unit(0*m),unit(0*m),R12-unit(2*mm),unit(270*deg),0.8,0.7)
 title = "mother_back"
 load "end.ppl"
 

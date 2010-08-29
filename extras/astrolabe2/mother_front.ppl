@@ -32,11 +32,12 @@ R4 = R3 - D12/2
 R5 =      D12*CENTRE_SCALING
 
 # Draw the handle at the top of the astrolabe
-circle at 0,R1 radius 2*unit(cm)
+ang = unit(180*deg) - acos( unit(cm) / R1 )
+arc at 0,R1 radius 2*unit(cm) from -ang to ang
 line from 0,R1-2*unit(cm) to 0,R1+2*unit(cm)
 
 # Draw circles 1-5 onto front of mother
-circle at 0,0 radius R1 w fillc white
+circle at 0,0 radius R1
 circle at 0,0 radius R2
 circle at 0,0 radius R3
 arc    at 0,0 radius R4 from TabSize to 360*unit(deg)-TabSize # Circle four has tab cut out

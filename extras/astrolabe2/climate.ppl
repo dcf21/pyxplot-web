@@ -211,6 +211,7 @@ foreach Ns in (1,0)
   circle at 0,0 radius R3 w fillc white
 
   # Finish up
+  call CircularText("* Dominic Ford 2010","\copyright",unit(0*m),unit(0*m),R2-unit(1.2*cm),unit(270*deg),0.8,0.7)
   if (Ns) { title = "climate_%dN"%(latitude); } \
   else    { title = "climate_%dS"%(latitude); }
   load "end.ppl"
