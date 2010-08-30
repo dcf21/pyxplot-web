@@ -1,13 +1,15 @@
 # astrolabe.ppl
 #
-# The PyXPlot code in this file is part of an astrolabe
+# The PyXPlot code in this file makes the various parts of a model astrolabe as
+# described by Dominic Ford's paper in the Journal of the British Astronomical
+# Association (2011).
 #
 # Copyright (C) 2010 Dominic Ford <dcf21@mrao.cam.ac.uk>
 #
 # $Id$
 #
-# PyXPlot is free software; you can redistribute it and/or modify it under the
-# terms of the GNU General Public License as published by the Free Software
+# This code is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
 # Foundation; either version 2 of the License, or (at your option) any later
 # version.
 #
@@ -22,15 +24,21 @@
 !mkdir -p output
 !rm -f output/*
 
-load "mother_front.ppl"
-load "mother_back.ppl"
-load "rete.ppl"
-load "rule.ppl"
+load "mother_front.ppl" # Render the front of the mother of the astrolabe
+load "mother_back.ppl"  # Render the back of the mother of the astrolabe
+load "rete.ppl"         # Render the rete of the astrolabe
+load "rule.ppl"         # Render the rule and the alidade of the astrolabe
 
+# Render climates for latitudes at 2-degree spacings from 2 deg -- 86 deg
 for latitude=8 to 86 step 2
  {
   load "climate.ppl"
  }
+
+# Render a combined version of the front of the mother of the astrolabe with a
+# superimposed climate for a latitude of 52N. This is combined version is that
+# which appears in the Journal of the British Astronomical Association (to save
+# space).
 
 set term eps
 set output "output/mother_front_combi.eps"

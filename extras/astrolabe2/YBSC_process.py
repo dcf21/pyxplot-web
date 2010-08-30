@@ -1,13 +1,15 @@
 # YBSC_process.py
 #
-# The PyXPlot code in this file is part of an astrolabe
+# The python script in this file makes the various parts of a model astrolabe
+# as described by Dominic Ford's paper in the Journal of the British
+# Astronomical Association (2011).
 #
 # Copyright (C) 2010 Dominic Ford <dcf21@mrao.cam.ac.uk>
 #
 # $Id$
 #
-# PyXPlot is free software; you can redistribute it and/or modify it under the
-# terms of the GNU General Public License as published by the Free Software
+# This code is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
 # Foundation; either version 2 of the License, or (at your option) any later
 # version.
 #
@@ -17,7 +19,8 @@
 
 # ----------------------------------------------------------------------------
 
-# Takes the Yale Bright Star Catalogue, and adds names of objects
+# This python script takes the Yale Bright Star Catalogue, formats it into
+# plaintext columns which PyXPlot can read, and adds the names of objects
 
 import os
 import gzip

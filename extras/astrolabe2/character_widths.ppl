@@ -1,13 +1,15 @@
 # character_widths.ppl
 #
-# The PyXPlot code in this file is part of an astrolabe
+# The PyXPlot code in this file makes the various parts of a model astrolabe as
+# described by Dominic Ford's paper in the Journal of the British Astronomical
+# Association (2011).
 #
 # Copyright (C) 2010 Dominic Ford <dcf21@mrao.cam.ac.uk>
 #
 # $Id$
 #
-# PyXPlot is free software; you can redistribute it and/or modify it under the
-# terms of the GNU General Public License as published by the Free Software
+# This code is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
 # Foundation; either version 2 of the License, or (at your option) any later
 # version.
 #
@@ -17,9 +19,15 @@
 
 # ----------------------------------------------------------------------------
 
+# This file contains a subroutine which returns the widths of different
+# characters in the Computer Modern font. These widths are used when
+# calculating how to arrange text around circular paths.
+
 subroutine CharWidth(c)
  {
   PS_TO_M = unit(inch)/72 * 0.85
+
+  if (strcmp(c," ")==0) { ; return PS_TO_M * 6        ; }
 
   if (strcmp(c,"A")==0) { ; return PS_TO_M * 7.471999 ; }
   if (strcmp(c,"B")==0) { ; return PS_TO_M * 7.056895 ; }

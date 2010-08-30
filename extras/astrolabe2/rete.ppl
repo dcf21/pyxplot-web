@@ -1,13 +1,15 @@
 # rete.ppl
 #
-# The PyXPlot code in this file is part of an astrolabe
+# The PyXPlot code in this file makes the various parts of a model astrolabe as
+# described by Dominic Ford's paper in the Journal of the British Astronomical
+# Association (2011).
 #
 # Copyright (C) 2010 Dominic Ford <dcf21@mrao.cam.ac.uk>
 #
 # $Id$
 #
-# PyXPlot is free software; you can redistribute it and/or modify it under the
-# terms of the GNU General Public License as published by the Free Software
+# This code is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
 # Foundation; either version 2 of the License, or (at your option) any later
 # version.
 #
@@ -16,6 +18,8 @@
 # Street, Fifth Floor, Boston, MA  02110-1301, USA
 
 # ----------------------------------------------------------------------------
+
+# This file renders the rete of the astrolabe.
 
 # Process the Yale Bright Star Catalogue into a form we can read
 !python YBSC_process.py

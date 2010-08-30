@@ -1,0 +1,113 @@
+% combined.tex
+%
+% The LaTeX code in this file brings together into a single document the
+% various components of the model astrolabe described by Dominic Ford's paper
+% in the Journal of the British Astronomical Association (2011).
+%
+% Copyright (C) 2010 Dominic Ford <dcf21@mrao.cam.ac.uk>
+%
+% $Id$
+%
+% This code is free software; you can redistribute it and/or modify it under
+% the terms of the GNU General Public License as published by the Free Software
+% Foundation; either version 2 of the License, or (at your option) any later
+% version.
+%
+% You should have received a copy of the GNU General Public License along with
+% PyXPlot; if not, write to the Free Software Foundation, Inc., 51 Franklin
+% Street, Fifth Floor, Boston, MA  02110-1301, USA
+
+% ----------------------------------------------------------------------------
+
+\documentclass[a4paper,onecolumn,10pt]{article}
+\usepackage[dvips]{graphicx}
+\usepackage{fancyhdr,url}
+\pagestyle{fancy}
+
+\lhead{\it MODEL ASTROLABE KIT}
+\chead{}
+\rhead{\thepage}
+\lfoot{}\rfoot{}
+\cfoot{\bf\footnotesize\copyright\ 2010 Dominic Ford. Distributed under the GNU General Public License, version 2.}
+
+\fancypagestyle{plain}{%
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[C]{\bf\footnotesize\copyright\ 2010 Dominic Ford. Distributed under the GNU General Public License, version 2.}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+
+\title{Building a Model Astrolabe}
+\author{Dominic Ford\footnote{Cavendish Laboratory, J.J.\ Thomson Ave, Cambridge, CB3 0HE, UK.}}
+\date{October 2010}
+
+\addtolength{\topmargin}{-.3in}
+\addtolength{\textheight}{.6in}
+
+\begin{document}
+\maketitle
+\setcounter{footnote}{3}
+
+This document contains the various components needed to build a model
+astrolabe. More details can be found in Dominic Ford's paper, {\it Building a
+Model Astrolabe} in the Journal of the British Astronomical Association.  The
+resulting astrolabe is a simplified and modernised version of that described in
+Geoffrey Chaucer's c.\ 1391 {\it Treatise on the Astrolabe}, and has been
+constructed following the prescription described in Eisner (1975, 1976a,
+1976b). The diagrams in this document have been produced using
+PyXPlot.\footnote{\url{http://www.pyxplot.org.uk}}
+
+The images in this file are free; you can redistribute them and/or modify them
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; either version~2 of the License, or (at your option) any
+later version.
+
+\section*{Instructions}
+
+Figures~\ref{mother_back}, \ref{mother_front} and~\ref{rule} should be printed
+out onto paper, or more preferably onto thin card.  Figure~\ref{rete} should be
+printed onto a sheet of transparent acetate.  The two sides of the {\it mother}
+(Figures~\ref{mother_back} and~\ref{mother_front}) should be glued rigidly
+back-to-back, perhaps sandwiching a piece of rigid card. The {\it r\^ete},
+printed onto transparent acetate, should be placed over the {\it climate} on
+the front of the mother.  The {\it rule} and the {\it alidade} should be placed
+on either side of the astrolabe: the rule, marked out with a declination scale,
+should rotate over the front of the mother; the alidade should rotate over the
+back of the mother.  The whole construction may then be fastened together by
+placing a split-pin paper fastener through the centre.
+
+\begin{thebibliography}{9}
+\bibitem{Ford}Ford, D.C., \textit{J.\ Brit. astr. Ass.}, submitted.
+\bibitem{chaucer}Chaucer, G., \textit{Treatise on the Astrolabe}, in {\it The Riverside Chaucer}, ed.\ L.D.\ Benson (Boston, 1987)
+\bibitem{pap1}Eisner, S., \textit{J.\ Brit. astr. Ass.}, \textbf{86}(1), 18-29 (1975)
+\bibitem{pap2}Eisner, S., \textit{J.\ Brit. astr. Ass.}, \textbf{86}(2), 125-132 (1976a)
+\bibitem{pap3}Eisner, S., \textit{J.\ Brit. astr. Ass.}, \textbf{86}(3), 219-227 (1976b)
+\end{thebibliography}
+
+\newpage
+
+\begin{figure}
+\centerline{\includegraphics{../output/mother_back.eps}}
+\caption{The back of the mother of the astrolabe.}
+\label{mother_back}
+\end{figure}
+
+\begin{figure}
+\centerline{\includegraphics{../output/mother_front_combi.eps}}
+\caption{The front of the mother of the astrolabe, with combined climate prepared for a latitude of $52^\circ$N. Should a climate for a different latitude be required, the electronic materials which accompany this paper should be downloaded. These include separate images of the front of the mother, and of climates for any latitude on the Earth at $2^\circ$ intervals.}
+\label{mother_front}
+\end{figure}
+
+\begin{figure}
+\centerline{\includegraphics{../output/rule_north.eps}}
+\caption{Left: The rule, which should be mounted on the front of the astrolabe. Right: The alidade, which should be mounted on the back of the astrolabe.}
+\label{rule}
+\end{figure}
+
+\begin{figure}
+\centerline{\includegraphics{../output/rete_north.eps}}
+\caption{The r\^ete of the astrolabe, showing the stars of the northern sky. This should be printed onto a piece of transparent plastic; most stationers should be able to provide acetate sheets for use on overhead projectors, which are ideal for this purpose. Should a southern-hemisphere astrolabe be required, the electronic materials which accompany this paper should be downloaded.}
+\label{rete}
+\end{figure}
+
+\end{document}
+
