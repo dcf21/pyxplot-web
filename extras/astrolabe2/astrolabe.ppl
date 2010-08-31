@@ -21,6 +21,8 @@
 
 # Top level script for drawing the parts of the astrolabe
 
+assert version >=0.8.3
+
 !mkdir -p output
 !rm -f output/*
 

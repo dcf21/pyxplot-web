@@ -21,6 +21,8 @@
 
 # The file contains global settings for the astrolabe.
 
+assert version >=0.8.3
+
 set preamble "\usepackage{wasysym}"
 
 set term dpi 400

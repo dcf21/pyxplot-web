@@ -154,7 +154,7 @@ foreach datum m,d,interval,last,z1394,a1394,z1974,a1974 in "RawData/tuckerman.da
 
   # Interpolate interval into number of days since last datapoint in table (normally five)
   if (last_theta > theta) { last_theta=last_theta-unit(rev) ; }
-  for i=0 to interval
+  for i=0 to interval-1
    {
     theta_day = last_theta + (theta - last_theta)*(i+1)/interval
     line from R7*cos(theta_day),R7*sin(theta_day) to R8*cos(theta_day),R8*sin(theta_day)
@@ -162,20 +162,6 @@ foreach datum m,d,interval,last,z1394,a1394,z1974,a1974 in "RawData/tuckerman.da
   last_theta = theta
 
   # Draw a marker line on calendar. Month ends get longer markers
-  if (last) { line from R5*cos(theta),R5*sin(theta) to R7*cos(theta),R7*sin(theta) ; } \
-  else      { line from R6*cos(theta),R6*sin(theta) to R7*cos(theta),R7*sin(theta) ; }
-
-  # Label 10th and 20th day of month, and last day of month
-  if (((d%10)==0) | (d>26))
-   {
-    set texthalign right ; theta2 = theta-0.2*unit(deg)
-    text "%d"%(d/10) at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
-    set texthalign left ; theta2 = theta+0.2*unit(deg)
-    text "%d"%(d%10) at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
-   }
-
-  # Work out azimuth of given date in 1394 calendar
-  theta = 30*unit(deg)*(z1394-1) + a1394*unit(deg)
   if (last) { line from R8*cos(theta),R8*sin(theta) to R10*cos(theta),R10*sin(theta) ; } \
   else      { line from R8*cos(theta),R8*sin(theta) to R9 *cos(theta),R9 *sin(theta) ; }
 
@@ -187,16 +173,30 @@ foreach datum m,d,interval,last,z1394,a1394,z1974,a1974 in "RawData/tuckerman.da
     set texthalign left ; theta2 = theta+0.2*unit(deg)
     text "%d"%(d%10) at RT2*cos(theta2),RT2*sin(theta2) rot theta+90*unit(deg)
    }
+
+  # Work out azimuth of given date in 1394 calendar
+  theta = 30*unit(deg)*(z1394-1) + a1394*unit(deg)
+  if (last) { line from R5*cos(theta),R5*sin(theta) to R7*cos(theta),R7*sin(theta) ; } \
+  else      { line from R6*cos(theta),R6*sin(theta) to R7*cos(theta),R7*sin(theta) ; }
+
+  # Label 10th and 20th day of month, and last day of month
+  if (((d%10)==0) | (d>26))
+   {
+    set texthalign right ; theta2 = theta-0.2*unit(deg)
+    text "%d"%(d/10) at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
+    set texthalign left ; theta2 = theta+0.2*unit(deg)
+    text "%d"%(d%10) at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
+   }
  }
 
 # Label names of months
 foreach datum mn,mlen,name in "RawData/MonthNames.dat" using 1:2:"%s"%($3)
  {
   theta = theta1974(time_julianday(1974,mn,mlen/2,12,0,0))
-  call CircularText(name,"",unit(0*m),unit(0*m),(R5+R6 )/2,theta,1,1)
+  call CircularText(name,"",unit(0*m),unit(0*m),(R9+R10)/2,theta,1,1)
 
   theta = theta1394(time_julianday(1394,mn,mlen/2,12,0,0))
-  call CircularText(name,"",unit(0*m),unit(0*m),(R9+R10)/2,theta,1,1)
+  call CircularText(name,"",unit(0*m),unit(0*m),(R5+R6 )/2,theta,1,1)
  }
 
 #

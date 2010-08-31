@@ -32,7 +32,7 @@ subroutine CircularText(text, special, centre_x, centre_y, radius, azimuth, spac
   twidth = unit(0*m)
   len    = strlen(text)
   # First calculate total length of text
-  for i=0 to len
+  for i=0 to len-1
    {
     char = strrange(text,i,i+1)
     twidth = twidth + CharWidth("%s"%(char))
@@ -41,7 +41,7 @@ subroutine CircularText(text, special, centre_x, centre_y, radius, azimuth, spac
   twidth = twidth/radius*unit(rad)
   az = azimuth - spacing*twidth/2
   # Then render text
-  for i=0 to len
+  for i=0 to len-1
    {
     char = strrange(text,i,i+1)
     if (strcmp(char,"*")==0) { ; char=special ; }

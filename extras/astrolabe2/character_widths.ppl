@@ -94,6 +94,11 @@ subroutine CharWidth(c)
   if (strcmp(c,"8")==0) { ; return PS_TO_M * 4.981339 ; }
   if (strcmp(c,"9")==0) { ; return PS_TO_M * 4.981339 ; }
 
+  if (strcmp(c,"/")==0) { ; return PS_TO_M * 4.981339 ; }
+  if (strcmp(c,"$\sim")==0){;return PS_TO_M* 7.748748 ; }
+  if (strcmp(c,".")==0) { ; return PS_TO_M * 3 ; }
+  if (strcmp(c,":")==0) { ; return PS_TO_M * 3 ; }
+
   return PS_TO_M * 10
  }
 
