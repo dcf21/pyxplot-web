@@ -24,15 +24,14 @@
 \usepackage{fancyhdr,url}
 \pagestyle{fancy}
 
-\lhead{\it MODEL ASTROLABE KIT}
+\lhead{\it BUILDING A MODEL ASTROLABE}
 \chead{}
 \rhead{\thepage}
 \lfoot{}\rfoot{}
-\cfoot{\bf\footnotesize\copyright\ 2010 Dominic Ford. Distributed under the GNU General Public License, version 2.}
+\cfoot{\bf\footnotesize\copyright\ 2010 Dominic Ford. Distributed under the GNU General Public License, version 2. Document downloaded from \url{http://dcford.org.uk/~dcf21/astrolabe/astrolabe.pdf}}
 
 \fancypagestyle{plain}{%
 \fancyhf{} % clear all header and footer fields
-\fancyfoot[C]{\bf\footnotesize\copyright\ 2010 Dominic Ford. Distributed under the GNU General Public License, version 2.}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}}
 
@@ -45,24 +44,30 @@
 
 \begin{document}
 \maketitle
-\setcounter{footnote}{3}
+\setcounter{footnote}{1}
 
-This document contains the various components needed to build a model
-astrolabe. More details can be found in Dominic Ford's paper, {\it Building a
-Model Astrolabe} in the Journal of the British Astronomical Association.  The
-resulting astrolabe is a simplified and modernised version of that described in
-Geoffrey Chaucer's c.\ 1391 {\it Treatise on the Astrolabe}, and has been
-constructed following the prescription described in Eisner (1975, 1976a,
-1976b). The diagrams in this document have been produced using
-PyXPlot.\footnote{\url{http://www.pyxplot.org.uk}}
+This document describes the electronic materials which accompany the author's
+paper of the same title in the Journal of the British Astronomical Association.
+It also contains all of the components needed to build a model astrolabe
+tailored for a latitude of $52^\circ$N. This is a simplified and modernised
+version of that described in Geoffrey Chaucer's c.\ 1391 {\it Treatise on the
+Astrolabe}, and has been constructed following the prescription described in
+Eisner (1975, 1976a, 1976b).
 
-The images in this file are free; you can redistribute them and/or modify them
-under the terms of the GNU General Public License as published by the Free
-Software Foundation; either version~2 of the License, or (at your option) any
-later version.
+The images and text in this document may be duplicated, redistributed and/or
+modified under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version~2 of the License, or (at your option)
+any later version. However, the copyright notices must remain in all copies.
 
-\section*{Instructions}
+This document can be downloaded from
+\url{http://dcford.org.uk/~dcf21/astrolabe/astrolabe.pdf}, and the accompanying
+files may be downloaded from
+\url{http://dcford.org.uk/~dcf21/astrolabe/astrolabe.tar.gz} (tarball) or
+\url{http://dcford.org.uk/~dcf21/astrolabe/astrolabe.zip} (zip archive).
 
+\section*{Assembly Instructions}
+
+To build a model astrolabe tailored for a latitude of $52^\circ$N,
 Figures~\ref{mother_back}, \ref{mother_front} and~\ref{rule} should be printed
 out onto paper, or more preferably onto thin card.  Figure~\ref{rete} should be
 printed onto a sheet of transparent acetate.  The two sides of the {\it mother}
@@ -74,6 +79,30 @@ on either side of the astrolabe: the rule, marked out with a declination scale,
 should rotate over the front of the mother; the alidade should rotate over the
 back of the mother.  The whole construction may then be fastened together by
 placing a split-pin paper fastener through the centre.
+
+\section*{Astrolabes for Other Latitudes}
+
+Each image is available as encapsulated postscript ({\tt .eps}), as a GIF
+bitmap image ({\tt .gif}), or in Adobe portable document format ({\tt .pdf}).
+Note that all of the components printed off to form a single model astrolabe
+must be printed at exactly the same scale. Thus, the option to enlarge each of
+the pdf documents to fit the page size must {\it not} be selected in Adobe
+Acrobat Reader.
+
+\section*{Customised Astrolabes}
+
+The diagrams in this document have been produced using PyXPlot, an open-source
+vector graphics language designed by the same author. PyXPlot has an extensive
+website\footnote{\url{http://www.pyxplot.org.uk}} and is available as a
+standard package in a number of Linux distributions including Ubuntu, Debian
+and Gentoo. PyXPlot is not available for Microsoft Windows at the present time.
+
+The PyXPlot scripts used to generate the astrolabe images in this document are
+included among the accompanying files and may be customised. For example, to
+produce an astrolabe with your own choice of saints' days or birthdays on the
+back of the mother, the file {\tt RawData/SaintsDays.dat} should be modified. A
+{\tt Makefile} is included which rebuilds all of the image files shipped in the
+{\tt output} directory.
 
 \begin{thebibliography}{9}
 \bibitem{Ford}Ford, D.C., \textit{J.\ Brit. astr. Ass.}, submitted.
