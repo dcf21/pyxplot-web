@@ -1,4 +1,4 @@
-% combined.tex
+% astrolabe.tex
 %
 % The LaTeX code in this file brings together into a single document the
 % various components of the model astrolabe described by Dominic Ford's paper
@@ -48,16 +48,18 @@
 
 This document describes the electronic materials which accompany the author's
 paper of the same title in the Journal of the British Astronomical Association.
-It also contains all of the components needed to build a model astrolabe
-tailored for a latitude of $52^\circ$N. This is a simplified and modernised
-version of that described in Geoffrey Chaucer's c.\ 1391 {\it Treatise on the
-Astrolabe}, and has been constructed following the prescription described in
-Eisner (1975, 1976a, 1976b).
+It also contains images of all of the components which need to be printed out
+to build a model astrolabe tailored for a latitude of $52^\circ$N. The
+astrolabe presented in this document is a slightly modernised version of that
+described in Geoffrey Chaucer's c.\ 1391 {\it Treatise on the Astrolabe}, and
+has been constructed following a slight modification of the prescription
+described in Eisner (1975, 1976a, 1976b).
 
 The images and text in this document may be duplicated, redistributed and/or
 modified under the terms of the GNU General Public License as published by the
 Free Software Foundation; either version~2 of the License, or (at your option)
-any later version. However, the copyright notices must remain in all copies.
+any later version. The only restriction placed on the duplication of this
+document is that the copyright notices must remain intact.
 
 This document can be downloaded from
 \url{http://dcford.org.uk/~dcf21/astrolabe/astrolabe.pdf}, and the accompanying
@@ -73,36 +75,73 @@ out onto paper, or more preferably onto thin card.  Figure~\ref{rete} should be
 printed onto a sheet of transparent acetate.  The two sides of the {\it mother}
 (Figures~\ref{mother_back} and~\ref{mother_front}) should be glued rigidly
 back-to-back, perhaps sandwiching a piece of rigid card. The {\it r\^ete},
-printed onto transparent acetate, should be placed over the {\it climate} on
-the front of the mother.  The {\it rule} and the {\it alidade} should be placed
-on either side of the astrolabe: the rule, marked out with a declination scale,
-should rotate over the front of the mother; the alidade should rotate over the
-back of the mother.  The whole construction may then be fastened together by
-placing a split-pin paper fastener through the centre.
+printed onto transparent acetate\footnote{Historically, the r\^ete would have
+been made of the same material as the rest of the astrolabe and marked with
+arrows showing the positions of prominent stars. As much of the material of the
+r\^ete as possible would then have been cut away to allow the climate below to
+be seen. We use transparent plastic here because it is so much more practical
+than the traditional form of r\^ete.}, should be placed over the {\it climate},
+which for simplicity is incorporated into the front of the mother in this
+document.
+
+The {\it rule} and the {\it alidade} should be placed on either side of the
+astrolabe: the rule, marked out with a declination scale, should rotate over
+the front of the mother; the alidade should rotate over the back of the mother.
+The two tabs on the side of the alidade should be folded out to form a sight
+used for measuring the altitudes of celestial and terrestrial objects.  The
+whole construction may then finally be fastened together by placing a split-pin
+paper fastener through the centre.
 
 \section*{Astrolabes for Other Latitudes}
 
-Each image is available as encapsulated postscript ({\tt .eps}), as a GIF
-bitmap image ({\tt .gif}), or in Adobe portable document format ({\tt .pdf}).
-Note that all of the components printed off to form a single model astrolabe
-must be printed at exactly the same scale. Thus, the option to enlarge each of
-the pdf documents to fit the page size must {\it not} be selected in Adobe
-Acrobat Reader.
+The components needed to build astrolabes tailored for latitudes other than
+$52^\circ$N can be found in the electronic accompanying materials, which can be
+downloaded \url{http://dcford.org.uk/~dcf21/astrolabe/astrolabe.tar.gz}
+(tarball) or \url{http://dcford.org.uk/~dcf21/astrolabe/astrolabe.zip} (zip
+archive).  The images are stored in the {\tt output} directory of this archive,
+and each is available as encapsulated postscript ({\tt .eps}), as a GIF bitmap
+image ({\tt .gif}), or in pdf format.  Note that all of the required components
+must be printed at exactly the same scale in order to be of consistent sizes
+when fitted together. For example, the option to enlarge each of the pdf
+documents to fit the page size must {\it not} be selected in the printer setup
+options in Adobe Acrobat Reader, and the GIF images must be printed at a common
+dots-per-inch resolution.
+
+For latitudes in the northern hemisphere, the following images should be
+printed:
+\begin{itemize}
+\item {\tt mother\_back.???} -- The back of the mother of the astrolabe. This image also appears in Figure~\ref{mother_back}, and is not latitude dependent.
+\item {\tt mother\_front.???} -- The front of the mother of the astrolabe.
+\item {\tt rule\_north.???} -- The rule and the alidade of a northern-hemisphere astrolabe.
+\item {\tt rete\_north.???} -- The rete of a northern-hemisphere astrolabe.
+\item{\tt climate\_xxN.???} -- The climate of the astrolabe, customised to the required latitude {\tt xx}.
+\end{itemize}
+
+For latitudes in the southern hemisphere, the following images should be
+printed. Note that a different r\^ete is required, showing the southern sky:
+\begin{itemize}
+\item {\tt mother\_back.???} -- The back of the mother of the astrolabe. This image also appears in Figure~\ref{mother_back}, and is not latitude dependent.
+\item {\tt mother\_front.???} -- The front of the mother of the astrolabe.
+\item {\tt rule\_south.???} -- The rule and the alidade of a southern-hemisphere astrolabe.
+\item {\tt rete\_south.???} -- The rete of a southern-hemisphere astrolabe.
+\item{\tt climate\_xxS.???} -- The climate of the astrolabe, customised to the required latitude $-${\tt xx}.
+\end{itemize}
 
 \section*{Customised Astrolabes}
 
-The diagrams in this document have been produced using PyXPlot, an open-source
-vector graphics language designed by the same author. PyXPlot has an extensive
-website\footnote{\url{http://www.pyxplot.org.uk}} and is available as a
-standard package in a number of Linux distributions including Ubuntu, Debian
-and Gentoo. PyXPlot is not available for Microsoft Windows at the present time.
+The astrolabe images in this document were produced using PyXPlot, an
+open-source vector graphics scripting language designed by the same author.
+PyXPlot has a website\footnote{\url{http://www.pyxplot.org.uk}} with extensive
+documentation, and is available as a standard package in a number of Linux
+distributions including Ubuntu, Debian and Gentoo. Unfortunately, PyXPlot is
+not available for Microsoft Windows at the present time.
 
-The PyXPlot scripts used to generate the astrolabe images in this document are
-included among the accompanying files and may be customised. For example, to
-produce an astrolabe with your own choice of saints' days or birthdays on the
-back of the mother, the file {\tt RawData/SaintsDays.dat} should be modified. A
-{\tt Makefile} is included which rebuilds all of the image files shipped in the
-{\tt output} directory.
+The PyXPlot scripts used to generate the images in this document are included
+in the accompanying file archive and may be modified to generate customised
+astrolabes. For example, to produce an astrolabe with your own choice of
+saints' days or birthdays on the back of the mother, the file {\tt
+RawData/SaintsDays.dat} should be modified. A {\tt Makefile} is included which
+rebuilds all of the image files shipped in the {\tt output} directory.
 
 \begin{thebibliography}{9}
 \bibitem{Ford}Ford, D.C., \textit{J.\ Brit. astr. Ass.}, submitted.

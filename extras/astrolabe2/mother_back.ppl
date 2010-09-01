@@ -1,8 +1,8 @@
 # mother_back.ppl
 #
-# The PyXPlot code in this file makes the various parts of a model astrolabe as
-# described by Dominic Ford's paper in the Journal of the British Astronomical
-# Association (2011).
+# The PyXPlot code in this file makes one of the various parts of a model
+# astrolabe as described by Dominic Ford's paper in the Journal of the British
+# Astronomical Association (2011).
 #
 # Copyright (C) 2010 Dominic Ford <dcf21@mrao.cam.ac.uk>
 #
