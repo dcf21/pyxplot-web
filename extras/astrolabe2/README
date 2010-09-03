@@ -1,0 +1,43 @@
+BUILDING A MODEL ASTROLABE
+
+Dominic Ford
+Cavendish Laboratory, J.J. Thomson Ave, Cambridge, CB3 0HE, UK.
+
+October 2010
+
+$Id$
+
+--------------------------------------------------------------------------
+
+The files in this directory are the electronic materials which accompany the
+author's paper, "Building a Model Astrolabe" in the Journal of the British
+Astronomical Association.  It also contains images of all of the components
+which need to be printed out to build model astrolabes tailored for a range of
+latitudes. The astrolabe presented here is a slightly modernised version of
+that described in Geoffrey Chaucer's c. 1391 Treatise on the Astrolabe, and has
+been constructed following a slight modification of the prescription described
+in Eisner (1975, 1976a, 1976b).
+
+The files in this directory may be duplicated, redistributed and/or modified
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 2 of the License, or (at your option) any
+later version. The only restriction placed on the duplication of this document
+is that the copyright notices must remain intact.
+
+This file archive can be downloaded from
+<http://dcford.org.uk/~dcf21/astrolabe/astrolabe.tar.gz> (tarball) or
+<http://dcford.org.uk/~dcf21/astrolabe/astrolabe.zip> (zip archive).
+
+Further information can be found in the file <doc/astrolabe.pdf>.
+
+----
+Dominic Ford
+
+References
+
+Ford, D.C., J. Brit. astr. Ass., submitted.
+Chaucer, G., Treatise on the Astrolabe, in The Riverside Chaucer, ed. L.D. Benson (Boston, 1987)
+Eisner, S., J. Brit. astr. Ass., 86(1), 18-29 (1975)
+Eisner, S., J. Brit. astr. Ass., 86(2), 125-132 (1976a)
+Eisner, S., J. Brit. astr. Ass., 86(3), 219-227 (1976b)
+
