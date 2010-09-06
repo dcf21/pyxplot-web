@@ -243,23 +243,36 @@ text "VERSA" at RS2*cos(thetaB),0 hal r val b gap 0.7*unit(mm) rot 90
 text "ORIENS" at -R12,0 hal l val b gap 0.7*unit(mm)
 text "OCCIDENS" at R12,0 hal r val b gap 0.7*unit(mm)
 
+Rlabel = (RS1+RS2)/2
+offset = unit(5*deg)
+
 theta = - 15*unit(deg) ; line from RS2*cos(thetaB),RS2*cos(thetaB)*tan(theta) to R12*cos(thetaB),R12*cos(thetaB)*tan(theta)
+                         text "4" at Rlabel*cos(thetaB),Rlabel*cos(thetaB)*tan(theta-offset) hal c val c rot 90-15
 theta = - 30*unit(deg) ; line from RS2*cos(thetaB),RS2*cos(thetaB)*tan(theta) to R12*cos(thetaB),R12*cos(thetaB)*tan(theta)
+                         text "8" at Rlabel*cos(thetaB),Rlabel*cos(thetaB)*tan(theta-offset) hal c val c rot 90-30
+theta = - 45*unit(deg) ; text "12" at Rlabel*sin(thetaB)/tan(theta-offset),Rlabel*sin(thetaB) hal c val c rot 90-45
 theta = - 60*unit(deg) ; line from RS2*sin(thetaB)/tan(theta),RS2*sin(thetaB) to R12*sin(thetaB)/tan(theta),R12*sin(thetaB)
+                         text "8" at Rlabel*sin(thetaB)/tan(theta-offset),Rlabel*sin(thetaB) hal c val c rot 90-60
 theta = - 75*unit(deg) ; line from RS2*sin(thetaB)/tan(theta),RS2*sin(thetaB) to R12*sin(thetaB)/tan(theta),R12*sin(thetaB)
+                         text "4" at Rlabel*sin(thetaB)/tan(theta-offset),Rlabel*sin(thetaB) hal c val c rot 90-75
 theta = -105*unit(deg) ; line from RS2*sin(thetaB)/tan(theta),RS2*sin(thetaB) to R12*sin(thetaB)/tan(theta),R12*sin(thetaB)
+                         text "4" at Rlabel*sin(thetaB)/tan(theta+offset),Rlabel*sin(thetaB) hal c val c rot 90-105
 theta = -120*unit(deg) ; line from RS2*sin(thetaB)/tan(theta),RS2*sin(thetaB) to R12*sin(thetaB)/tan(theta),R12*sin(thetaB)
+                         text "8" at Rlabel*sin(thetaB)/tan(theta+offset),Rlabel*sin(thetaB) hal c val c rot 90-120
+theta = -135*unit(deg) ; text "12" at Rlabel*sin(thetaB)/tan(theta+offset),Rlabel*sin(thetaB) hal c val c rot 90-135
 theta = -150*unit(deg) ; line from RS2*cos(thetaC),RS2*cos(thetaC)*tan(theta) to R12*cos(thetaC),R12*cos(thetaC)*tan(theta)
+                         text "8" at Rlabel*cos(thetaC),Rlabel*cos(thetaC)*tan(theta+offset) hal c val c rot 90-150
 theta = -165*unit(deg) ; line from RS2*cos(thetaC),RS2*cos(thetaC)*tan(theta) to R12*cos(thetaC),R12*cos(thetaC)*tan(theta)
+                         text "4" at Rlabel*cos(thetaC),Rlabel*cos(thetaC)*tan(theta+offset) hal c val c rot 90-165
 
 # Fine division of shadow scale
 for theta =   0*unit(deg) to - 44*unit(deg) step -3.75*unit(deg)
   { line from RS1*cos(thetaB),RS1*cos(thetaB)*tan(theta) to R12*cos(thetaB),R12*cos(thetaB)*tan(theta) ; }
 for theta =- 45*unit(deg) to - 89*unit(deg) step -3.75*unit(deg)
   { line from RS1*sin(thetaB)/tan(theta),RS1*sin(thetaB) to R12*sin(thetaB)/tan(theta),R12*sin(thetaB) ; }
-for theta =- 90*unit(deg) to -134*unit(deg) step -5.00*unit(deg)
+for theta =- 90*unit(deg) to -134*unit(deg) step -3.75*unit(deg)
   { line from RS1*sin(thetaB)/tan(theta),RS1*sin(thetaB) to R12*sin(thetaB)/tan(theta),R12*sin(thetaB) ; }
-for theta =-135*unit(deg) to -179*unit(deg) step -5.00*unit(deg)
+for theta =-135*unit(deg) to -179*unit(deg) step -3.75*unit(deg)
   { line from RS1*cos(thetaC),RS1*cos(thetaC)*tan(theta) to R12*cos(thetaC),R12*cos(thetaC)*tan(theta) ; }
 
 # Unequal hours scale
