@@ -64,6 +64,7 @@ foreach Ns in (1,0)
   # Draw outlines of rule and the alidade
   sep = unit(2.2*cm)
 
+  set fontsize 1*FS
   call RuleDraw (0*unit(cm),0*unit(cm),0) # Only alidade has a sight
   text "(a) Rule" at unit(-7*mm),-(R2+margin+1.5*R6)
   call RuleDraw (sep       ,0*unit(cm),1)
