@@ -201,7 +201,7 @@ foreach Ns in (1,0)
   h      = 0.5
   r      = R2-unit(2*mm)
   theta0 = ThetaUH(r)
-  foreach hr in ("I","II","III","IV","V","VI","VII","VII","IX","X","XI","XII")
+  foreach hr in ("I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII")
    {
     psi0   = theta0 + (360*unit(deg)-2*theta0)/12*h
     psi0   = (psi0-180*unit(deg))*0.95+180*unit(deg)

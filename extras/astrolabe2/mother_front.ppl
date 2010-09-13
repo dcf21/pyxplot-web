@@ -21,86 +21,92 @@
 
 # This file renders the front of the mother of the astrolabe.
 
-set multiplot
-set nodisplay
-load "settings.ppl"
-clear
-set fontsize 1.2*FS
-
-# Radii of circles to be drawn on front of mother
-R2 = R1 - D12 * 1.5
-R3 = R2 - D12
-R4 = R3 - D12/2
-R5 =      D12*CENTRE_SCALING
-
-# Draw the handle at the top of the astrolabe
-ang = unit(180*deg) - acos( unit(cm) / R1 )
-arc at 0,R1 radius 2*unit(cm) from -ang to ang
-line from 0,R1-2*unit(cm) to 0,R1+2*unit(cm)
-
-# Draw circles 1-5 onto front of mother
-circle at 0,0 radius R1
-circle at 0,0 radius R2
-circle at 0,0 radius R3
-arc    at 0,0 radius R4 from TabSize to 360*unit(deg)-TabSize # Circle four has tab cut out
-circle at 0,0 radius R5
-
-# Between circles 2 and 4, mark 5-degree intervals
-for theta=5*unit(deg) to 359*unit(deg) step 5*unit(deg)
+# First make a northern hemisphere astrolabe. Then a southern hemisphere astrolabe.
+foreach Ns in (1,0)
  {
-  line from R2*sin(theta),R2*cos(theta) to R4*sin(theta),R4*cos(theta)
- }
+  set multiplot
+  set nodisplay
+  load "settings.ppl"
+  clear
+  set fontsize 1.2*FS
 
-# Between circles 3 and 4, have a fine scale of 1-degree intervals
-for theta=TabSize to 360.9*unit(deg)-TabSize step 1*unit(deg)
- {
-  line from R3*sin(theta),R3*cos(theta) to R4*sin(theta),R4*cos(theta)
- }
+  # Radii of circles to be drawn on front of mother
+  R2 = R1 - D12 * 1.5
+  R3 = R2 - D12
+  R4 = R3 - D12/2
+  R5 =      D12*CENTRE_SCALING
 
-# Between circles 2 and 3, label every 10 degrees
-RT1 = (R2+R3)/2
-set textvalign centre
-for theta=-180*unit(deg) to 170*unit(deg) step 10*unit(deg)
- {
-  if      (theta<-179*unit(deg)) { theta_disp = theta               ; } \
-  else if (theta<- 90*unit(deg)) { theta_disp = theta+180*unit(deg) ; } \
-  else if (theta<   0*unit(deg)) { theta_disp =-theta               ; } \
-  else if (theta<  90*unit(deg)) { theta_disp = theta               ; } \
-  else                          { theta_disp =-theta+180*unit(deg)  ; }
-  theta_disp = floor(theta_disp/unit(deg) + 0.01)
+  # Draw the handle at the top of the astrolabe
+  ang = unit(180*deg) - acos( unit(cm) / R1 )
+  arc at 0,R1 radius 2*unit(cm) from -ang to ang
+  line from 0,R3 to 0,R1+2*unit(cm)
 
-  if (theta_disp == 0)
+  # Draw circles 1-5 onto front of mother
+  circle at 0,0 radius R1
+  circle at 0,0 radius R2
+  circle at 0,0 radius R3
+  arc    at 0,0 radius R4 from TabSize to 360*unit(deg)-TabSize # Circle four has tab cut out
+  circle at 0,0 radius R5
+
+  # Between circles 2 and 4, mark 5-degree intervals
+  for theta=5*unit(deg) to 359*unit(deg) step 5*unit(deg)
    {
-    set texthalign centre ; theta2 = theta
-    text "0" at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
-   } \
-  else if (theta_disp == -180)
-   {
-    set texthalign centre ; theta2 = theta
-    text "\LARGE\kreuz" at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
-   } \
-  else
-   {
-    set texthalign right ; theta2 = theta-0.2*unit(deg)
-    text "%d"%(theta_disp/10) at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
-    set texthalign left ; theta2 = theta+0.2*unit(deg)
-    text "%d"%(theta_disp%10) at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
+    line from R2*sin(theta),R2*cos(theta) to R4*sin(theta),R4*cos(theta)
    }
- }
 
-# Between circles 1 and 2, label 24 hours with large letters. A cross marks midnight.
-RT1 = (R1+R2)/2
-set texthalign centre ; set textvalign centre
-set fontsize 2*FS
-i=0
-foreach t in ("\LARGE\kreuz","A","B","C","D","E","F","G","H","I","K","L","M","N","O","P","Q","R","S","T","U","X","Y","Z")
- {
-  theta = i/24*unit(rev)
-  text "%s"%(t) at RT1*sin(theta),RT1*cos(theta) rot -theta
-  i=i+1
- }
+  # Between circles 3 and 4, have a fine scale of 1-degree intervals
+  for theta=TabSize to 360*unit(deg)-TabSize step 1*unit(deg)
+   {
+    line from R3*sin(theta),R3*cos(theta) to R4*sin(theta),R4*cos(theta)
+   }
 
-# Finish up
-title = "mother_front"
-load "end.ppl"
+  # Between circles 2 and 3, label every 10 degrees
+  RT1 = (R2+R3)/2
+  set textvalign centre
+  for theta=-180*unit(deg) to 179*unit(deg) step 10*unit(deg)
+   {
+    if      (theta<-179*unit(deg)) { theta_disp = theta               ; } \
+    else if (theta<- 90*unit(deg)) { theta_disp = theta+180*unit(deg) ; } \
+    else if (theta<   0*unit(deg)) { theta_disp =-theta               ; } \
+    else if (theta<  90*unit(deg)) { theta_disp = theta               ; } \
+    else                          { theta_disp =-theta+180*unit(deg)  ; }
+    theta_disp = floor(theta_disp/unit(deg) + 0.01)
+  
+    if (theta_disp == 0)
+     {
+      set texthalign centre ; theta2 = theta
+      text "0" at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
+     } \
+    else if (theta_disp == -180)
+     {
+      set texthalign centre ; theta2 = theta
+      text "\LARGE\kreuz" at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
+     } \
+    else
+     {
+      set texthalign right ; theta2 = theta-0.2*unit(deg)
+      text "%d"%(theta_disp/10) at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
+      set texthalign left ; theta2 = theta+0.2*unit(deg)
+      text "%d"%(theta_disp%10) at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
+     }
+   }
+
+  # Between circles 1 and 2, label 24 hours with large letters. A cross marks midnight.
+  RT1 = (R1+R2)/2
+  set texthalign centre ; set textvalign centre
+  set fontsize 2*FS
+  i=0
+  foreach t in ("\LARGE\kreuz","A","B","C","D","E","F","G","H","I","K","L","M","N","O","P","Q","R","S","T","U","X","Y","Z")
+   {
+    theta = i/24*unit(rev)
+    if (Ns==0) { ; theta=-theta ; }
+    text "%s"%(t) at RT1*sin(theta),RT1*cos(theta) rot -theta
+    i=i+1
+   }
+
+  # Finish up
+  if (Ns) { title = "mother_front_north"; } \
+  else    { title = "mother_front_south"; }
+  load "end.ppl"
+ }
 
