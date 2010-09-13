@@ -53,7 +53,7 @@ foreach Ns in (1,0)
     theta = (90-dec)*unit(deg) / 2
     r = R4 * tan(theta)
     if (r>R2) { continue; }
-    point -r*cos(ra*unit(deg)),-r*sin(ra*unit(deg)) with pt 10 ps 0.18*(5-mag)
+    point -r*cos(ra*unit(deg)),-r*sin(ra*unit(deg)) with pt 17 ps 0.18*(5-mag)
    }
 
   # Draw RA scale
