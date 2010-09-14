@@ -168,6 +168,7 @@ foreach datum m,d,interval,last,z1394,a1394,z1974,a1974 in "RawData/tuckerman.da
   # Label 10th and 20th day of month, and last day of month
   if (((d%10)==0) | (d>26))
    {
+    set fontsize 1*FS
     set texthalign right ; theta2 = theta-0.2*unit(deg)
     text "%d"%(d/10) at RT2*cos(theta2),RT2*sin(theta2) rot theta+90*unit(deg)
     set texthalign left ; theta2 = theta+0.2*unit(deg)
@@ -182,6 +183,7 @@ foreach datum m,d,interval,last,z1394,a1394,z1974,a1974 in "RawData/tuckerman.da
   # Label 10th and 20th day of month, and last day of month
   if (((d%10)==0) | (d>26))
    {
+    set fontsize 0.8*FS
     set texthalign right ; theta2 = theta-0.2*unit(deg)
     text "%d"%(d/10) at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
     set texthalign left ; theta2 = theta+0.2*unit(deg)
@@ -196,13 +198,14 @@ foreach datum mn,mlen,name in "RawData/MonthNames.dat" using 1:2:"%s"%($3)
   call CircularText(name,"",unit(0*m),unit(0*m),(R9+R10)/2,theta,1,1)
 
   theta = theta1394(time_julianday(1394,mn,mlen/2,12,0,0))
-  call CircularText(name,"",unit(0*m),unit(0*m),(R5+R6 )/2,theta,1,1)
+  call CircularText(name,"",unit(0*m),unit(0*m),(R5+R6 )/2,theta,1,0.8)
  }
 
 #
 # Add significant dates between circles 10 and 12
 #
 
+set fontsize 1*FS
 foreach datum d,m,name in "RawData/SaintsDays.dat" using 1:2:"%s"%($3)
  {
   DayWeek = floor(time_julianday(1974,m,d,12,0,0) - time_julianday(1974,1,1,12,0,0)) % 7
