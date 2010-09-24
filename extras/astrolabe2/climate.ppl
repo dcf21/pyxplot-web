@@ -182,9 +182,9 @@ foreach Ns in (1,0)
    }
 
   # Draw lines of unequal hours below the horizon
-  for h=1 to 11
+  for h=1 to 11.1
    {
-    for r=max(R5,Hradius-Hcentre) to R2 step unit(0.5*mm)
+    for r=max(R5,Hradius-Hcentre) to R2+unit(0.05*mm) step unit(0.5*mm)
      {
       r0 = r
       r1 = min(r+unit(0.5*mm) , R2)

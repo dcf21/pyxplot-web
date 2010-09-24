@@ -21,7 +21,7 @@
 
 # The file contains global settings for the astrolabe.
 
-assert version >=0.8.3
+# assert version >=0.8.2
 
 set preamble "\usepackage{wasysym}"
 

@@ -21,7 +21,7 @@
 
 # Top level script for drawing the parts of the astrolabe
 
-assert version >=0.8.3
+# assert version >=0.8.2
 
 !mkdir -p output
 !rm -f output/*
@@ -32,7 +32,7 @@ load "rete.ppl"         # Render the rete of the astrolabe
 load "rule.ppl"         # Render the rule and the alidade of the astrolabe
 
 # Render climates for latitudes at 2-degree spacings from 2 deg -- 86 deg
-for latitude=8 to 86 step 2
+for latitude=8 to 86.1 step 2
  {
   load "climate.ppl"
  }

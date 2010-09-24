@@ -75,7 +75,7 @@ foreach Ns in (1,0)
   STL = 2*unit(mm)
   if (Ns) { set fontsize 1.0*FS; } \
   else    { set fontsize 0.7*FS; }
-  for dec=-25 to 70 step 5
+  for dec=-25 to 71 step 5
    {
     theta = (90-dec)*unit(deg) / 2
     r = R4 * tan(theta)
@@ -95,7 +95,7 @@ foreach Ns in (1,0)
   # Draw solar-altitude scale on alidade
   set fontsize 1.0*FS
 
-  for i=20 to 90 step 5
+  for i=20 to 91 step 5
    {
     r = R12 * sin(i*unit(deg))
     line from sep, r to sep-BTL/2, r
