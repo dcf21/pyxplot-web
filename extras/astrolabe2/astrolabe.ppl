@@ -43,12 +43,11 @@ for latitude=8 to 86.1 step 2
 # space).
 
 set term eps
-set output "output/mother_front_combi.eps"
+title="mother_front_combi"
 set multiplot
 set nodisplay
 clear
 eps "output/mother_front_north.eps"
 eps "output/climate_52N.eps" at D12*3+unit(mm),D12*3+unit(mm)
-set display
-refresh
+load "end.ppl"
 
