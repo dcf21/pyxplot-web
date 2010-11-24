@@ -45,8 +45,21 @@ foreach Ns in (1,0)
   circle at 0,0 radius R4 # Equator
   circle at 0,0 radius R5 # Tropic of Cancer
 
+  # Draw constellation stick figures
+  foreach datum ra1,dec1,ra2,dec2 in "RawData/ConstellationStickFigures.dat" using 2:3:4:5
+   {
+    if (Ns==0) { dec1=-dec1; ra1=-ra1; dec2=-dec2; ra2=-ra2; }
+    theta1 = (90-dec1)*unit(deg) / 2
+    r1 = R4 * tan(theta1)
+    if (r1>R2) { continue; }
+    theta2 = (90-dec2)*unit(deg) / 2
+    r2 = R4 * tan(theta2)
+    if (r2>R2) { continue; }
+    line from -r1*cos(ra1*unit(deg)),-r1*sin(ra1*unit(deg)) to -r2*cos(ra2*unit(deg)),-r2*sin(ra2*unit(deg)) with lt 2 lw 1 col grey50
+   }
+
   # Draw stars from Yale Bright Star Catalogue
-  foreach datum ra,dec,mag in "ProcessedData/bright_stars.out" using 2:3:4
+  foreach datum ra,dec,mag in "ProcessedData/BrightStars.out" using 2:3:4
    {
     if (mag > 4.0) { continue; }
     if (Ns==0) { dec=-dec; ra=-ra; }

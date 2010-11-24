@@ -35,7 +35,7 @@ stars = {}
 GreekAlphabet = {'Alp':r'\alpha' , 'Bet':r'\beta' , 'Gam':r'\gamma' , 'Del':r'\delta' , 'Eps':r'\epsilon' , 'Zet':r'\zeta' , 'Eta':r'\eta' , 'The':r'\theta' , 'Iot':r'\iota' , 'Kap':r'\kappa' , 'Lam':r'\lambda' , 'Mu':r'\mu' , 'Nu':r'\nu' , 'Xi':r'\xi' , 'Omi':'O' , 'Pi':r'\pi' , 'Rho':r'\rho' , 'Sig':r'\sigma' , 'Tau':r'\tau' , 'Ups':r'\upsilon' , 'Phi':r'\phi' , 'Chi':r'\chi' , 'Psi':r'\psi' , 'Ome':r'\omega'}
 
 StarNames = {}
-for line in open("RawData/bright_star_names.dat"):
+for line in open("RawData/BrightStarNames.dat"):
  if len(line)<5: continue
  if (line[0]=='#'): continue
  bs = int(line[0:4])
@@ -86,7 +86,7 @@ keys = stars.keys()
 keys.sort()
 
 os.system("mkdir -p ProcessedData")
-output = open("ProcessedData/bright_stars.out","w")
+output = open("ProcessedData/BrightStars.out","w")
 for k in keys:
  item = stars[k]
  if item[3] == None: continue
