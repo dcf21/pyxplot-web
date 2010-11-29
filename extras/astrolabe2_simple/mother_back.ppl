@@ -1,0 +1,292 @@
+# mother_back.ppl
+#
+# The PyXPlot code in this file makes one of the various parts of a model
+# astrolabe as described by Dominic Ford's paper in the Journal of the British
+# Astronomical Association (2011).
+#
+# Copyright (C) 2010 Dominic Ford <dcf21@mrao.cam.ac.uk>
+#
+# $Id$
+#
+# This code is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
+# Foundation; either version 2 of the License, or (at your option) any later
+# version.
+#
+# You should have received a copy of the GNU General Public License along with
+# PyXPlot; if not, write to the Free Software Foundation, Inc., 51 Franklin
+# Street, Fifth Floor, Boston, MA  02110-1301, USA
+
+# ----------------------------------------------------------------------------
+
+# This file renders the back of the mother of the astrolabe.
+
+set multiplot
+set nodisplay
+load "settings.ppl"
+load "circular_text.ppl"
+clear
+set fontsize 1.2*FS
+
+# Radii of circles to be drawn on back of mother
+R2 = R1 - D12
+R3 = R2 - D12/2
+R4 = R3 - D12
+R5 = R4 - D12
+R6 = R5 - D12
+R7 = R6 - D12
+R8 = R7 - D12/2
+R9 = R8 - D12
+R10= R9 - D12
+R11= R10- D12
+R12= R11- D12
+R13=      D12*CENTRE_SCALING
+
+# Draw the handle at the top of the astrolabe
+ang = unit(180*deg) - acos( unit(cm) / R1 )
+arc at 0,R1 radius 2*unit(cm) from -ang to ang
+line from 0,R1-2*unit(cm) to 0,R1+2*unit(cm)
+
+# Draw circles 1-13 onto back of mother
+circle at 0,0 radius R1
+circle at 0,0 radius R2
+circle at 0,0 radius R3 with lw 3
+circle at 0,0 radius R4
+circle at 0,0 radius R5 with lw 3
+circle at 0,0 radius R6
+circle at 0,0 radius R7
+circle at 0,0 radius R8
+circle at 0,0 radius R9
+circle at 0,0 radius R10 with lw 3
+#circle at 0,0 radius R11
+#circle at 0,0 radius R12
+circle at 0,0 radius R13
+
+#
+# Label space between circles 1-5 with passage of Sun through zodiacal constellations
+#
+
+# Mark every 30 degrees, where Sun enters new zodiacal constellation
+for theta=0*unit(deg) to 359*unit(deg) step 30*unit(deg)
+ {
+  line from R1*cos(theta),R1*sin(theta) to R5*cos(theta),R5*sin(theta)
+ }
+
+# Mark five degree intervals within each zodiacal constellation
+for theta=0*unit(deg) to 359*unit(deg) step 5*unit(deg)
+ {
+  line from R1*cos(theta),R1*sin(theta) to R4*cos(theta),R4*sin(theta)
+ }
+
+# Mark fine scale of 1-degree intervals between circles 2 and 3
+for theta=0*unit(deg) to 359.9*unit(deg) step 1*unit(deg)
+ {
+  line from R2*cos(theta),R2*sin(theta) to R3*cos(theta),R3*sin(theta)
+ }
+
+# Between circles 3 and 4 mark each constellation 10, 20, 30 degrees
+# Also, between circles 1 and 2, surround entire astrolabe with 0, 10, .. 90 degrees
+
+RT1 = (R1+R2)/2
+RT2 = (R3+R4)/2
+set textvalign centre
+for theta=-180*unit(deg) to 179*unit(deg) step 10*unit(deg)
+ {
+  if      (theta<-179*unit(deg)) { theta_disp = theta               ; } \
+  else if (theta<- 90*unit(deg)) { theta_disp = theta+180*unit(deg) ; } \
+  else if (theta<   0*unit(deg)) { theta_disp =-theta               ; } \
+  else if (theta<  90*unit(deg)) { theta_disp = theta               ; } \
+  else                          { theta_disp =-theta+180*unit(deg)  ; }
+  theta_disp = floor(theta_disp/unit(deg) + 0.01)
+
+  if (theta_disp == 0)
+   {
+    set texthalign centre ; theta2 = theta
+    text "0" at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
+   } \
+  else if (theta_disp == -180)
+   {
+    set texthalign centre ; theta2 = theta
+    text "\LARGE\kreuz" at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
+   } \
+  else
+   {
+    set texthalign right ; theta2 = theta-0.2*unit(deg)
+    text "%d"%(theta_disp/10) at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
+    set texthalign left ; theta2 = theta+0.2*unit(deg)
+    text "%d"%(theta_disp%10) at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
+   }
+
+  theta_disp = floor(theta/unit(deg) + 380.01) % 30 + 10
+  set texthalign right ; theta2 = theta-0.2*unit(deg)
+  text "%d"%(theta_disp/10) at RT2*cos(theta2),RT2*sin(theta2) rot theta+90*unit(deg)
+  set texthalign left ; theta2 = theta+0.2*unit(deg)
+  text "%d"%(theta_disp%10) at RT2*cos(theta2),RT2*sin(theta2) rot theta+90*unit(deg)
+ }
+
+# Write names of zodiacal constellations
+
+foreach datum i,name,symbol in "RawData/ZodiacalConstellations.dat" using 1:"%s *"%($2):"%s"%($3)
+ {
+  call CircularText(name,symbol,unit(0*m),unit(0*m),(R4+R5)/2,(-15+30*i)*unit(deg),1,1)
+ }
+
+#
+# Between circles 5 and 10, display calendars for 1394 and 1974
+#
+
+# Produce functions from Tuckerman tables
+
+interpolate linear theta1394() "RawData/tuckerman.dat" using time_julianday(1394,$1,$2,12,0,0):(30*unit(deg)*($5-1) + $6*unit(deg))
+interpolate linear theta1974() "RawData/tuckerman.dat" using time_julianday(1974,$1,$2,12,0,0):(30*unit(deg)*($7-1) + $8*unit(deg))
+
+# Use Tuckerman tables to mark 365 days around calendar.
+# Write numbers on the 10th, 20th and last day of each month
+
+RT1 = (R6+R7)/2
+RT2 = (R8+R9)/2
+last_theta = 30*unit(deg)*(10-1) + 9.4*unit(deg)
+
+foreach datum m,d,interval,last,z1394,a1394,z1974,a1974 in "RawData/tuckerman.dat"
+ {
+  # Work out azimuth of given date in 1974 calendar
+  theta = 30*unit(deg)*(z1974-1) + a1974*unit(deg)
+
+  # Interpolate interval into number of days since last datapoint in table (normally five)
+  if (last_theta > theta) { last_theta=last_theta-unit(rev) ; }
+  for i=0 to interval-0.1
+   {
+    theta_day = last_theta + (theta - last_theta)*(i+1)/interval
+    line from R7*cos(theta_day),R7*sin(theta_day) to R8*cos(theta_day),R8*sin(theta_day)
+   }
+  last_theta = theta
+
+  # Draw a marker line on calendar. Month ends get longer markers
+  if (last) { line from R5*cos(theta),R5*sin(theta) to R7 *cos(theta),R7 *sin(theta) ; } \
+  else      { line from R6*cos(theta),R6*sin(theta) to R7 *cos(theta),R7 *sin(theta) ; }
+
+  # Label 10th and 20th day of month, and last day of month
+  if (((d%10)==0) | (d>26))
+   {
+    set fontsize 1*FS
+    set texthalign right ; theta2 = theta-0.2*unit(deg)
+    text "%d"%(d/10) at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
+    set texthalign left ; theta2 = theta+0.2*unit(deg)
+    text "%d"%(d%10) at RT1*cos(theta2),RT1*sin(theta2) rot theta+90*unit(deg)
+   }
+
+  # Work out azimuth of given date in 1394 calendar
+  #theta = 30*unit(deg)*(z1394-1) + a1394*unit(deg)
+  #if (last) { line from R5*cos(theta),R5*sin(theta) to R7*cos(theta),R7*sin(theta) ; } \
+  #else      { line from R6*cos(theta),R6*sin(theta) to R7*cos(theta),R7*sin(theta) ; }
+
+  # Label 10th and 20th day of month, and last day of month
+  #if (((d%10)==0) | (d>26))
+  # {
+  #  set fontsize 0.8*FS
+  #  set texthalign right ; theta2 = theta-0.2*unit(deg)
+  #  text "%d"%(d/10) at RT2*cos(theta2),RT2*sin(theta2) rot theta+90*unit(deg)
+  #  set texthalign left ; theta2 = theta+0.2*unit(deg)
+  #  text "%d"%(d%10) at RT2*cos(theta2),RT2*sin(theta2) rot theta+90*unit(deg)
+  # }
+ }
+
+# Label names of months
+foreach datum mn,mlen,name in "RawData/MonthNames.dat" using 1:2:"%s"%($3)
+ {
+  theta = theta1974(time_julianday(1974,mn,mlen/2,12,0,0))
+  call CircularText(name,"",unit(0*m),unit(0*m),(R5+R6 )/2,theta,1,1)
+
+  #theta = theta1394(time_julianday(1394,mn,mlen/2,12,0,0))
+  #call CircularText(name,"",unit(0*m),unit(0*m),(R9+R10)/2,theta,1,0.8)
+ }
+
+#
+# Add significant dates between circles 10 and 12
+#
+
+#set fontsize 1*FS
+#foreach datum d,m,name in "RawData/SaintsDays.dat" using 1:2:"%s"%($3)
+# {
+#  DayWeek = floor(time_julianday(1974,m,d,12,0,0) - time_julianday(1974,1,1,12,0,0)) % 7
+#  SundayLetter = strrange("abcdefg",DayWeek,DayWeek+1)
+#  theta = theta1974(time_julianday(1974,m,d,12,0,0))
+#  call CircularText(name        ,"",unit(0*m),unit(0*m),(R10+R11)/2,theta,1,1)
+#  call CircularText(SundayLetter,"",unit(0*m),unit(0*m),(R11+R12)/2,theta,1,1)
+# }
+
+#
+# Shadow Scale in middle of astrolabe
+#
+
+#thetaA =   0*unit(deg) ; line from R12*cos(thetaA),R12*sin(thetaA) to R13*cos(thetaA),R13*sin(thetaA)
+#thetaB =- 45*unit(deg) ; line from R12*cos(thetaB),R12*sin(thetaB) to R13*cos(thetaB),R13*sin(thetaB)
+#thetaC =-135*unit(deg) ; line from R12*cos(thetaC),R12*sin(thetaC) to R13*cos(thetaC),R13*sin(thetaC)
+#thetaD = 180*unit(deg) ; line from R12*cos(thetaD),R12*sin(thetaD) to R13*cos(thetaD),R13*sin(thetaD)
+#line from R12*cos(thetaB),R12*sin(thetaB) to R12*cos(thetaB),0
+#line from R12*cos(thetaB),R12*sin(thetaB) to R12*cos(thetaC),R12*sin(thetaC)
+#line from R12*cos(thetaC),R12*sin(thetaC) to R12*cos(thetaC),0
+#line from 0,R12*sin(thetaC) to 0,-R13
+#line from 0,R12 to 0,R13
+
+#RS1 = R12 - 0.75*D12/2
+#RS2 = RS1 - 0.75*D12
+#line from RS1*cos(thetaB),RS1*sin(thetaB) to RS1*cos(thetaB),0
+#line from RS1*cos(thetaB),RS1*sin(thetaB) to RS1*cos(thetaC),RS1*sin(thetaC)
+#line from RS1*cos(thetaC),RS1*sin(thetaC) to RS1*cos(thetaC),0
+#line from RS2*cos(thetaB),RS2*sin(thetaB) to RS2*cos(thetaB),0
+#line from RS2*cos(thetaB),RS2*sin(thetaB) to RS2*cos(thetaC),RS2*sin(thetaC)
+#line from RS2*cos(thetaC),RS2*sin(thetaC) to RS2*cos(thetaC),0
+
+#set fontsize 0.6*FS
+#text "UMBRA" at 0,RS2*sin(thetaC) hal r val b gap 0.7*unit(mm)
+#text "UMBRA" at RS2*cos(thetaC),0 hal l val b gap 0.7*unit(mm) rot -90
+#text "RECTA" at 0,RS2*sin(thetaC) hal l val b gap 0.7*unit(mm)
+#text "VERSA" at RS2*cos(thetaB),0 hal r val b gap 0.7*unit(mm) rot 90
+#text "ORIENS" at -R12,0 hal l val b gap 0.7*unit(mm)
+#text "OCCIDENS" at R12,0 hal r val b gap 0.7*unit(mm)
+
+#Rlabel = (RS1+RS2)/2
+#offset = unit(5*deg)
+
+# Divisions of scale
+#q = unit(90*deg)
+#for i=1 to 11.9
+# {
+#  RS = conditionalN((i%4==0) , RS2 , RS1)
+#  theta = -atan(i/12)
+#  line from RS*cos(thetaB),RS*cos(thetaB)*tan(theta) to R12*cos(thetaB),R12*cos(thetaB)*tan(theta)
+#  if (i%4==0) { ; text "%d"%(i) at Rlabel*cos(thetaB),Rlabel*cos(thetaB)*tan(theta-offset) hal c val c rot q+theta ; }
+#  theta = -atan(12/i)
+#  line from RS*sin(thetaB)/tan(theta),RS*sin(thetaB) to R12*sin(thetaB)/tan(theta),R12*sin(thetaB)
+#  if (i%4==0) { ; text "%d"%(i) at Rlabel*sin(thetaB)/tan(theta-offset),Rlabel*sin(thetaB) hal c val c rot q+theta ; }
+#  theta = -2*q-theta
+#  line from RS*sin(thetaB)/tan(theta),RS*sin(thetaB) to R12*sin(thetaB)/tan(theta),R12*sin(thetaB)
+#  if (i%4==0) { ; text "%d"%(i) at Rlabel*sin(thetaB)/tan(theta+offset),Rlabel*sin(thetaB) hal c val c rot q+theta ; }
+#  theta = -2*q+atan(i/12)
+#  line from RS*cos(thetaC),RS*cos(thetaC)*tan(theta) to R12*cos(thetaC),R12*cos(thetaC)*tan(theta)
+#  if (i%4==0) { ; text "%d"%(i) at Rlabel*cos(thetaC),Rlabel*cos(thetaC)*tan(theta+offset) hal c val c rot q+theta ; }
+# }
+
+#theta = - 45*unit(deg) ; text "12" at Rlabel*sin(thetaB)/tan(theta-offset),Rlabel*sin(thetaB) hal c val c rot 90-45
+#theta = -135*unit(deg) ; text "12" at Rlabel*sin(thetaB)/tan(theta+offset),Rlabel*sin(thetaB) hal c val c rot 90-135
+
+# Unequal hours scale
+#circle at 0,R12/2 radius R12/2
+
+#for theta = 15*unit(deg) to 75.1*unit(deg) step 15*unit(deg)
+# {
+#  y_centre = R12*cos(theta)/2 + R12*sin(theta)/2*tan(theta)
+#  arcend   = atan2(R12*sin(theta) , R12*cos(theta)/2 - R12*sin(theta)/2*tan(theta))
+#  arc at 0,y_centre radius y_centre from arcend to -arcend
+# }
+
+# White out R13
+circle at 0,0 radius R13 w fillc white
+
+# Finish up
+call CircularText("http://www.joh.cam.ac.uk/library/library*exhibitions/schoolresources/astrolabe","\_",unit(0*m),unit(0*m),R10-unit(2*mm),unit(90*deg),0.8,0.7)
+call CircularText("* Dominic Ford 2010","\copyright",unit(0*m),unit(0*m),R10-unit(2*mm),unit(270*deg),0.8,0.7)
+title = "mother_back"
+load "end.ppl"
+

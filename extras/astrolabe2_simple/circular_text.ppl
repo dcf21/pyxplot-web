@@ -1,0 +1,56 @@
+# circular_text.ppl
+#
+# The PyXPlot code in this file makes one of the various parts of a model
+# astrolabe as described by Dominic Ford's paper in the Journal of the British
+# Astronomical Association (2011).
+#
+# Copyright (C) 2010 Dominic Ford <dcf21@mrao.cam.ac.uk>
+#
+# $Id$
+#
+# This code is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
+# Foundation; either version 2 of the License, or (at your option) any later
+# version.
+#
+# You should have received a copy of the GNU General Public License along with
+# PyXPlot; if not, write to the Free Software Foundation, Inc., 51 Franklin
+# Street, Fifth Floor, Boston, MA  02110-1301, USA
+
+# ----------------------------------------------------------------------------
+
+load "settings.ppl"
+load "character_widths.ppl"
+
+# This file contains a crude routine for drawing text around a circular path
+
+subroutine CircularText(text, special, centre_x, centre_y, radius, azimuth, spacing, size)
+ {
+  size = size * FS
+  set fontsize size
+
+  twidth = unit(0*m)
+  len    = strlen(text)
+  # First calculate total length of text
+  for i=0 to len-0.1
+   {
+    char = strrange(text,i,i+1)
+    twidth = twidth + CharWidth("%s"%(char))
+   }
+
+  twidth = twidth/radius*unit(rad)
+  az = azimuth - spacing*twidth/2
+  # Then render text
+  for i=0 to len-0.1
+   {
+    char = strrange(text,i,i+1)
+    if (strcmp(char,"*")==0) { ; char=special ; }
+    twidth = CharWidth("%s"%(char))
+    az = az + twidth / 2 * spacing / radius * unit(rad)
+    text "%s"%(char) at centre_x+radius*cos(az) , centre_y+radius*sin(az) rot az+90*unit(deg) hal c val c
+    az = az + twidth / 2 * spacing / radius * unit(rad)
+   }
+
+  return 0
+ }
+

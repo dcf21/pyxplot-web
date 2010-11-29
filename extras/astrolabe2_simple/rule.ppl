@@ -1,0 +1,119 @@
+# rule.ppl
+#
+# The PyXPlot code in this file makes one of the various parts of a model
+# astrolabe as described by Dominic Ford's paper in the Journal of the British
+# Astronomical Association (2011).
+#
+# Copyright (C) 2010 Dominic Ford <dcf21@mrao.cam.ac.uk>
+#
+# $Id$
+#
+# This code is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
+# Foundation; either version 2 of the License, or (at your option) any later
+# version.
+#
+# You should have received a copy of the GNU General Public License along with
+# PyXPlot; if not, write to the Free Software Foundation, Inc., 51 Franklin
+# Street, Fifth Floor, Boston, MA  02110-1301, USA
+
+# ----------------------------------------------------------------------------
+
+# This file renders the rule and the alidade of the astrolabe.
+
+# First make a northern hemisphere astrolabe. Then a southern hemisphere astrolabe.
+foreach Ns in (1,0)
+ {
+  set multiplot
+  set nodisplay
+  load "settings.ppl"
+  clear
+
+  margin = 2*unit(cm)
+
+  R2   = R1 - D12*3 - unit(mm)    # Outer radius of rete
+  R3   =      D12*CENTRE_SCALING  # Radius of central hole
+
+  R4 = R2 * tan((90-iEarth)/2*unit(deg)) # Radius of equator
+  R5 = R4 * tan((90-iEarth)/2*unit(deg)) # Radius of tropic of Cancer
+
+  R6 = 0.8*unit(cm) # Width of alidade
+
+  R12= R1 - D12*10 # Outer radius of shadow scale
+
+  # Subroutine to draw outlines of rule and the alidade
+  subroutine RuleDraw(xpos,ypos,sight)
+   {
+    circle at xpos,ypos radius R3
+    arc    at xpos,ypos radius R6 from   0 to  90
+    arc    at xpos,ypos radius R6 from 180 to 270
+    line from xpos,ypos-R6 to xpos,ypos-(R2+margin)-R6
+    line from xpos,ypos+R6 to xpos,ypos+(R2+margin)+R6
+    line from xpos,ypos+(R2+margin)+R6 to xpos-R6,ypos+(R2+margin)
+    line from xpos,ypos-(R2+margin)-R6 to xpos+R6,ypos-(R2+margin)
+    line from xpos-R6,ypos+(R2+margin) to xpos-R6,ypos
+    line from xpos+R6,ypos-(R2+margin) to xpos+R6,ypos
+
+    if (sight)
+     {
+      box from xpos,ypos-R2*0.65 to xpos-R2*0.1,ypos-R2*0.85
+      box from xpos,ypos+R2*0.65 to xpos+R2*0.1,ypos+R2*0.85
+     }
+   }
+
+  # Draw outlines of rule and the alidade
+  sep = unit(2.2*cm)
+
+  set fontsize 1.1*FS
+  call RuleDraw (0*unit(cm),0*unit(cm),0) # Only alidade has a sight
+  text "(a) Rule" at unit(-7*mm),-(R2+margin+1.5*R6)
+  call RuleDraw (sep       ,0*unit(cm),1)
+  text "(b) Alidade" at sep-unit(7*mm),-(R2+margin+1.5*R6)
+
+  # Draw declination scale on rule
+  BTL = 4*unit(mm)
+  STL = 2*unit(mm)
+  if (Ns) { set fontsize 1.0*FS; } \
+  else    { set fontsize 0.7*FS; }
+  for dec=-25 to 71 step 5
+   {
+    theta = (90-dec)*unit(deg) / 2
+    r = R4 * tan(theta)
+    if (Ns==0) { dec=-dec; }
+    if ((dec%10)==0)
+     {
+      line from 0, r to -BTL, r
+      text "$%d$"%(dec) at -BTL, r hal c val t rot -90
+      line from 0,-r to  BTL,-r
+      text "$%d$"%(dec) at  BTL,-r hal c val t rot  90
+     } else {
+      line from 0, r to -STL, r
+      line from 0,-r to  STL,-r
+     }
+   }
+
+  # Draw solar-altitude scale on alidade
+  set fontsize 1.0*FS
+
+  for i=20 to 91 step 5
+   {
+    r = R12 * sin(i*unit(deg))
+    line from sep, r to sep-BTL/2, r
+    line from sep,-r to sep+BTL/2,-r
+   }
+
+  foreach i in (20,35,50,80)
+   {
+    r = R12 * sin(i*unit(deg))
+    line from sep, r to sep-BTL, r
+    text "$%d^\circ$"%(i) at sep-BTL, r hal c val t rot -90
+    line from sep,-r to sep+BTL,-r
+    text "$%d^\circ$"%(i) at sep+BTL,-r hal c val t rot  90
+   }
+
+  # Finish up
+  if (Ns) { title = "rule_north"; } \
+  else    { title = "rule_south"; }
+  load "end.ppl"
+ }
+

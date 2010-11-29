@@ -1,0 +1,18 @@
+# ZodiacalConstellations.dat
+# $Id$
+
+# A list of the names of the zodiacal constellations
+
+01 ARIES        \aries
+02 TAURUS       \taurus
+03 GEMINI       \gemini
+04 CANCER       \cancer
+05 LEO          \leo
+06 VIRGO        \virgo
+07 LIBRA        \libra
+08 SCORPIO      \scorpio
+09 SAGITTARIUS  \sagittarius
+10 CAPRICORNUS  \capricornus
+11 AQUARIUS     \aquarius
+12 PISCES       \pisces
+

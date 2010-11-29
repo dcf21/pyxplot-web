@@ -1,0 +1,35 @@
+# end.ppl
+#
+# The PyXPlot code in this file makes the various parts of a model astrolabe as
+# described by Dominic Ford's paper in the Journal of the British Astronomical
+# Association (2011).
+#
+# Copyright (C) 2010 Dominic Ford <dcf21@mrao.cam.ac.uk>
+#
+# $Id$
+#
+# This code is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
+# Foundation; either version 2 of the License, or (at your option) any later
+# version.
+#
+# You should have received a copy of the GNU General Public License along with
+# PyXPlot; if not, write to the Free Software Foundation, Inc., 51 Franklin
+# Street, Fifth Floor, Boston, MA  02110-1301, USA
+
+# ----------------------------------------------------------------------------
+
+# This file contains common commands which are used to finish the rendering of
+# all parts of the astrolabe.
+
+set term eps
+set output 'output/%s.eps'%(title)
+set display
+refresh
+#set term pdf
+#set output 'output/%s.pdf'%(title)
+#refresh
+#set term gif
+#set output 'output/%s.gif'%(title)
+#refresh
+
