@@ -55,7 +55,7 @@ foreach Ns in (1,0)
     theta2 = (90-dec2)*unit(deg) / 2
     r2 = R4 * tan(theta2)
     if (r2>R2) { continue; }
-    line from -r1*cos(ra1*unit(deg)),-r1*sin(ra1*unit(deg)) to -r2*cos(ra2*unit(deg)),-r2*sin(ra2*unit(deg)) with lt 2 lw 1 col grey50
+    line from -r1*cos(ra1*unit(deg)),-r1*sin(ra1*unit(deg)) to -r2*cos(ra2*unit(deg)),-r2*sin(ra2*unit(deg)) with lt 2 lw 1 col grey25
    }
 
   # Draw stars from Yale Bright Star Catalogue
