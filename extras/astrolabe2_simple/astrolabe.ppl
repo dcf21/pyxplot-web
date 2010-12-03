@@ -53,8 +53,8 @@ for latitude=8 to 86.1 step 2
 
     !cp output/mother_back.eps doc/tmp
     !cp output/mother_front_combi.eps doc/tmp/mother_front.eps
-    exec "!mv output/rete_%s.eps doc/tmp/rete.eps"%(conditionalS(Ns,"north","south"))
-    exec "!mv output/rule_%s.eps doc/tmp/rule.eps"%(conditionalS(Ns,"north","south"))
+    exec "!cp output/rete_%s.eps doc/tmp/rete.eps"%(conditionalS(Ns,"north","south"))
+    exec "!cp output/rule_%s.eps doc/tmp/rule.eps"%(conditionalS(Ns,"north","south"))
 
     cd doc
     !latex astrolabe.tex
