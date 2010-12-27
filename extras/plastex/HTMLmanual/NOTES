@@ -10,6 +10,8 @@ This file is to be used to generate tex for the HTML manual that goes on the PyX
 
 (d) Modify all the tex files that are using \begin{enumerate}[(i)] by removing the [(i)]
 
+(d.5) Copy cross.eps and tick.eps into place.
+
 (e) Run plastex pyxplot-plastex.tex
 
 Then either
