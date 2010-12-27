@@ -3,10 +3,10 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: do</title>
+<title>: continue</title>
 
-<link href="sect0087.html" title="ellipse" rel="next" />
-<link href="sect0085.html" title="delete" rel="prev" />
+<link href="sect0087.html" title="delete" rel="next" />
+<link href="sect0085.html" title="clear" rel="prev" />
 <link href="ch-reference.html" title="Command Reference" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0085.html" title="delete"><img alt="Previous: delete" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0085.html" title="clear"><img alt="Previous: clear" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0087.html" title="ellipse"><img alt="Next: ellipse" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0087.html" title="delete"><img alt="Next: delete" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0074.html">Reference Manual</a> <b>:</b>
+<a href="sect0075.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -50,26 +50,29 @@
 </span><span>
 
 <span>
-<b class="current">do</b>
+<b class="current">continue</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000087">1.12 do</h1>
-<p><a name="a0000000982" id="a0000000982"></a> </p><pre>
-do [loopname &lt;loopname&gt;]
- "{"
-  ...
- "}" while &lt;condition&gt;
-</pre><p>The <tt class="tt">do</tt> command<a name="a0000000983" id="a0000000983"></a> executes a block of commands repeatedly, checking the condition given in the <tt class="tt">while</tt> clause at the end of each iteration. If the condition is true then the loop executes again. This is similar to a <tt class="tt">while</tt> loop, except that the contents of a <tt class="tt">do</tt> loop are <em>a</em>lways executed at least once. The following example prints the numbers 1, 2 and 3: </p><pre>
-i=1
-do
+<div><h1 id="a0000000087">1.11 continue</h1>
+<p><a name="a0000001007" id="a0000001007"></a> </p><pre>
+continue [&lt;loopname&gt;]
+</pre><p>The <tt class="tt">continue</tt> command<a name="a0000001008" id="a0000001008"></a> terminates execution of the current iteration of <tt class="tt">for</tt>, <tt class="tt">foreach</tt>, <tt class="tt">do</tt> and <tt class="tt">while</tt> loops in an analogous manner to the <tt class="tt">continue</tt> statement in the C programming language. Execution resumes at the first statement of the next iteration of the loop, or at the first statement following the end of the loop in the case of the last iteration of the loop. For example, the following script will not print the number 2: </p><pre>
+for i = 0 to 5
  {
+  if (i==2)
+   {
+    continue
+   }
   print i
-  i = i + 1
- } while (i &lt; 4)
-</pre><p>Note that there must always be a newline following the opening brace after the <tt class="tt">do</tt> command<a name="a0000000984" id="a0000000984"></a>, and the while clause must always be on the same line as the closing brace. </p></div>
+ }
+</pre><p>If several loops are nested, the <tt class="tt">continue</tt> statement only acts on the innermost loop. If the <tt class="tt">continue</tt> statement is encountered outside of any loop structure, an error results. Optionally, the <tt class="tt">for</tt>, <tt class="tt">foreach</tt>, <tt class="tt">do</tt> and <tt class="tt">while</tt> statements may be supplied with a name for the loop, prefixed by the word <tt class="tt">loopname</tt>, as in the examples: </p><pre>
+for i=0 to 4 loopname iloop
+
+foreach i in "*.dat" loopname DatafileLoop
+</pre><p>When loops are given such names, the <tt class="tt">continue</tt> statement may be followed by the name of the loop whose iteration is to be broken, allowing it to act upon loops other than the innermost one. </p><p>See also the <tt class="tt">break</tt> command. </p></div>
 
 
 
@@ -78,16 +81,16 @@ do
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0085.html" title="delete"><img alt="Previous: delete" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0085.html" title="clear"><img alt="Previous: clear" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0087.html" title="ellipse"><img alt="Next: ellipse" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0087.html" title="delete"><img alt="Next: delete" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

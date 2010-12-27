@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Previewing Graphs On Screen</title>
+<title>: Custom Colour Mappings</title>
 
-<link href="sect0061.html" title="Producing Images on Disk" rel="next" />
-<link href="sec-set_terminal.html" title="The set terminal Command" rel="prev" />
-<link href="sec-set_terminal.html" title="The set terminal Command" rel="up" />
+<link href="ex-mandelbrot.html" title="Colour Scale Bars" rel="next" />
+<link href="sec-colourmaps.html" title="Colour Maps" rel="prev" />
+<link href="sec-colourmaps.html" title="Colour Maps" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-set_terminal.html" title="The set terminal Command"><img alt="Previous: The set terminal Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-colourmaps.html" title="Colour Maps"><img alt="Previous: Colour Maps" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-set_terminal.html" title="The set terminal Command"><img alt="Up: The set terminal Command" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sec-colourmaps.html" title="Colour Maps"><img alt="Up: Colour Maps" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0061.html" title="Producing Images on Disk"><img alt="Next: Producing Images on Disk" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ex-mandelbrot.html" title="Colour Scale Bars"><img alt="Next: Colour Scale Bars" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,38 +39,58 @@
 
 </span><span>
 <span>
-<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+<a href="sect0043.html">Plotting and Vector Graphics</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="ch-image_formats.html">Producing Image Files</a> <b>:</b>
+<a href="ch-plotting.html">Plotting: A Detailed Survey</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="sec-set_terminal.html">The <tt class="tt">set terminal</tt> Command</a> <b>:</b>
+<a href="sec-colourmaps.html">Colour Maps</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">Previewing Graphs On Screen</b>
+<b class="current">Custom Colour Mappings</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000061">2.1.1 Previewing Graphs On Screen</h2>
-<p> <a name="a0000000837" id="a0000000837"></a> </p><p>Three output terminal produce immediate previews to the screen: <tt class="tt">X11_­Single­Window</tt>, <tt class="tt">X11_­Persist</tt>, <tt class="tt">X11_­Multi­Window</tt>. The default of these options – i.e. the default terminal when PyXPlot is started up in interactive mode – is <tt class="tt">X11_­Single­Window</tt>. In this terminal, each time a new plot is generated, if the previous plot is still open on the display, the old plot is replaced with the new one. This way, only one plot window is open at any one time. This behaviour is intended to prevent the desktop from becoming flooded with plot windows. </p><p>The alternative <tt class="tt">X11_­Multi­Window</tt> terminal is similar in all respects except that each new plot is generated in a new window, regardless of whether any previous plots are still open on the display. This is especially useful when multiple plots are to be compared side-by-side:<a name="a0000000838" id="a0000000838"></a> </p><pre>
-set terminal X11_SingleWindow
-plot 'data1.dat'
-plot 'data2.dat'  &lt;-- first plot window disappears
-</pre><p>c.f.: </p><pre>
-set terminal X11_MultiWindow
-plot 'data1.dat'
-plot 'data2.dat'  &lt;-- first plot window remains
-</pre><p>The third of these terminals, <tt class="tt">X11_­Persist</tt>, is similar to <tt class="tt">X11_­Multi­Window</tt> but keeps plot windows open after PyXPlot terminates in distinction from the above two terminals, which close all plot windows upon exit. </p></div>
+<div><h2 id="a0000000061">1.12.1 Custom Colour Mappings</h2>
+<p>The colour mapping used by the <tt class="tt">colourmap</tt> plot style is set using the <tt class="tt">set colourmap</tt> command<a name="a0000000844" id="a0000000844"></a>, which takes algebraic expressions for the RGB, HSB or CMYK components of the colour to use as a function of the variables <tt class="tt">c1</tt>, <tt class="tt">c2</tt>, <tt class="tt">c3</tt> and <tt class="tt">c4</tt>. As elsewhere in PyXPlot, these colour components should take values in the range zero to one; values outside of this range are clipped. The syntax of the <tt class="tt">set colourmap</tt> command<a name="a0000000845" id="a0000000845"></a> is as follows: </p><pre>
+set colourmap ( rgb&lt;r&gt;:&lt;g&gt;:&lt;b&gt; |
+                hsb&lt;h&gt;:&lt;s&gt;:&lt;b&gt; |
+                cmyk&lt;c&gt;:&lt;m&gt;:&lt;y&gt;:&lt;k&gt; )
+              [ mask &lt;expr&gt; ]
+</pre><p>If the optional mask expression is supplied, then any areas in a colour map where this expression evaluates to zero (i.e. false) are made transparent. The following colour mapping, which is the default, produces a greyscale colour mapping of the third column of data supplied to the <tt class="tt">colourmap</tt><a name="a0000000846" id="a0000000846"></a><a name="a0000000847" id="a0000000847"></a> plot style; further columns of data, if supplied, are not used: </p><pre>
+set c1range [*:*] renormalise noreverse
+set colourmap rgb(c1):(c1):(c1)
+</pre><p>The <tt class="tt">set c&lt;n&gt;range</tt> command<a name="a0000000848" id="a0000000848"></a> command specifies how the values of <img src="images/img-0521.png" alt="$c_ n$" style="vertical-align:-2px; 
+                                     width:16px; 
+                                     height:10px" class="math gen" /> are processed before being used in the expressions supplied to the <tt class="tt">set colourmap</tt> command<a name="a0000000849" id="a0000000849"></a>. It has the following syntax: </p><pre>
+set c&lt;n&gt;range [ &lt;range&gt; ]
+              [ reversed | noreversed ]
+              [ renormalise | norenormalise ]
+</pre><p>If the <tt class="tt">renor­malise</tt> option is specified, then the values of <img src="images/img-0521.png" alt="$c_ n$" style="vertical-align:-2px; 
+                                     width:16px; 
+                                     height:10px" class="math gen" /> at each point in the data grid are first scaled into the range zero to one. This is generally useful, since the colour components themselves must be in this range; in the example given above, the lowest value of <img src="images/img-0510.png" alt="$c_1$" style="vertical-align:-2px; 
+                                     width:14px; 
+                                     height:10px" class="math gen" /> corresponds to black (i.e. brightness 0), and the highest value corresponds to white (i.e. brightness 1). If an explicit range is specified to the <tt class="tt">set c&lt;n&gt;range</tt> command, then the upper limit of this range maps to the value one, and the lower limit maps to the value zero. An asterisk (<tt class="tt">*</tt>) means that the lowest or highest value is substituted. The mapping is inverted if the <tt class="tt">reverse</tt> option is specified, such that the upper limit maps to zero, and the lower limit maps to one. Intermediate values are scaled either linearly or logarithmically, and these behaviours can be selected with the following commands: </p><pre>
+set logscale c1
+set linearscale c1
+</pre><p>In the example below, a colour map of the function <img src="images/img-0522.png" alt="$f(z)=3x^2/(x^3+1)$" style="vertical-align:-5px; 
+                                     width:156px; 
+                                     height:21px" class="math gen" /> is made, using hue to represent the magnitude of <img src="images/img-0300.png" alt="$f(z)$" style="vertical-align:-4px; 
+                                     width:32px; 
+                                     height:18px" class="math gen" /> and saturation to represent the complex argument of <img src="images/img-0300.png" alt="$f(z)$" style="vertical-align:-4px; 
+                                     width:32px; 
+                                     height:18px" class="math gen" />: </p><p><tt class="tt">set numerics complex</tt><br /><tt class="tt">set sample grid 400x400</tt><br /><tt class="tt">set nogrid</tt><br /><tt class="tt">set size square</tt><br /><tt class="tt">set key below</tt><br /><tt class="tt">set c1range[0:2]</tt><br /><tt class="tt">set colmap hsb(c1):(c2*0.7+0.3):1</tt><br /><tt class="tt">f(x) = 3*x**2 / (x**3+1)</tt><br /><tt class="tt">plot [-3:3][-3:3] abs(f(x+i*y)):arg(f(x+i*y)) with colourmap</tt> </p><p><center>
+<img src="images/img-0524.png" alt="\includegraphics[width=8cm]{examples/eps/ex_branch_cuts}" style="width:8cm" /></center> </p></div>
 
 
 
@@ -79,16 +99,16 @@ plot 'data2.dat'  &lt;-- first plot window remains
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-set_terminal.html" title="The set terminal Command"><img alt="Previous: The set terminal Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-colourmaps.html" title="Colour Maps"><img alt="Previous: Colour Maps" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-set_terminal.html" title="The set terminal Command"><img alt="Up: The set terminal Command" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sec-colourmaps.html" title="Colour Maps"><img alt="Up: Colour Maps" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0061.html" title="Producing Images on Disk"><img alt="Next: Producing Images on Disk" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ex-mandelbrot.html" title="Colour Scale Bars"><img alt="Next: Colour Scale Bars" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

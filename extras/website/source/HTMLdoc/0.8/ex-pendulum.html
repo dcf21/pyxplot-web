@@ -5,7 +5,7 @@
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
 <title>: Subroutines</title>
 
-<link href="sect0039.html" title="The exec command" rel="next" />
+<link href="ex-macro.html" title="Macros" rel="next" />
 <link href="sect0038.html" title="Conditional Functions" rel="prev" />
 <link href="sect0031.html" title="Programming and Flow Control" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
@@ -19,12 +19,12 @@
 
 <td><a href="sect0031.html" title="Programming and Flow Control"><img alt="Up: Programming and Flow Control" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0039.html" title="The exec command"><img alt="Next: The exec command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ex-macro.html" title="Macros"><img alt="Next: Macros" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -57,7 +57,7 @@
 </div>
 
 <div><h1 id="ex:pendulum">6.9 Subroutines</h1>
-<p> <a name="a0000000590" id="a0000000590"></a>  </p><p>Subroutines are similar to mathematical functions (see Section <a href="sec-functions.html">4.3</a>), and once defined, can be used anywhere in algebraic expressions, just as functions can be. However, instead of being defined by a single algebraic expression, whenever a subroutine is evaluated, a block of PyXPlot commands of arbitrary length is executed. This gives much greater flexibility for implementing complex algorithms. Subroutines are defined using the following syntax: </p><pre>
+<p> <a name="a0000000596" id="a0000000596"></a>  </p><p>Subroutines are similar to mathematical functions (see Section <a href="sec-functions.html">4.3</a>), and once defined, can be used anywhere in algebraic expressions, just as functions can be. However, instead of being defined by a single algebraic expression, whenever a subroutine is evaluated, a block of PyXPlot commands of arbitrary length is executed. This gives much greater flexibility for implementing complex algorithms. Subroutines are defined using the following syntax: </p><pre>
 subroutine &lt;name&gt;(&lt;variable1&gt;,...)
  {
   ...
@@ -72,13 +72,13 @@ subroutine f(x,y)
  }
 </pre><p> In either case, the function/subroutine could be evaluated by typing: </p><pre>
 print f(1,pi/2)
-</pre><p> If a subroutine ends without any value being returned using the <tt class="tt">return</tt> statement, then a value of zero is returned. </p><p>Subroutines may serve one of two purposes. In many cases they are used to implement complicated mathematical functions for which no simple algebraic expression may be given. Secondly, they may be used to repetitively execute a set of commands whenever they are required. In the latter case, the subroutine may not have a return value, but may merely be used as a mechanism for encapsulating a block of commands. In this case, the <tt class="tt">call</tt> command<a name="a0000000591" id="a0000000591"></a> may be used to execute a subroutine, discarding any return value which it may produce, as in the example: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">subroutine f(x,y)</b></tt><br /><tt class="tt">subrtne&gt;  <b class="bf">{</b></tt><br /><tt class="tt">subrtne&gt;   <b class="bf">print "%s - %s = %s"%(x,y,x-y)</b></tt><br /><tt class="tt">subrtne&gt;  <b class="bf">}</b></tt> <br /><tt class="tt">pyxplot&gt; <b class="bf">call f(2,1)</b></tt><br /><tt class="tt">2 - 1 = 1</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">call f(5*unit(inch), 10*unit(mm))</b></tt><br />127 mm - 10 mm = 117 mm  </p><p> <span class="upshape"><span class="mdseries"><span class="rm">An image of a Newton fractal.</span></span></span></p><div>
+</pre><p> If a subroutine ends without any value being returned using the <tt class="tt">return</tt> statement, then a value of zero is returned. </p><p>Subroutines may serve one of two purposes. In many cases they are used to implement complicated mathematical functions for which no simple algebraic expression may be given. Secondly, they may be used to repetitively execute a set of commands whenever they are required. In the latter case, the subroutine may not have a return value, but may merely be used as a mechanism for encapsulating a block of commands. In this case, the <tt class="tt">call</tt> command<a name="a0000000597" id="a0000000597"></a> may be used to execute a subroutine, discarding any return value which it may produce, as in the example: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">subroutine f(x,y)</b></tt><br /><tt class="tt">subrtne&gt;  <b class="bf">{</b></tt><br /><tt class="tt">subrtne&gt;   <b class="bf">print "%s - %s = %s"%(x,y,x-y)</b></tt><br /><tt class="tt">subrtne&gt;  <b class="bf">}</b></tt> <br /><tt class="tt">pyxplot&gt; <b class="bf">call f(2,1)</b></tt><br /><tt class="tt">2 - 1 = 1</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">call f(5*unit(inch), 10*unit(mm))</b></tt><br />127 mm - 10 mm = 117 mm  </p><p> <span class="upshape"><span class="mdseries"><span class="rm">An image of a Newton fractal.</span></span></span></p><div>
 
 <table cellspacing="0" class="tabular">
 <tr>
 
     
-    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> Newton fractals are formed by iterating the equation </p><table id="a0000000592" class="equation" width="100%" cellspacing="0" cellpadding="7">
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> Newton fractals are formed by iterating the equation </p><table id="a0000000598" class="equation" width="100%" cellspacing="0" cellpadding="7">
 <tr>
     
     <td style="width:40%">&nbsp;</td>
@@ -185,7 +185,7 @@ print f(1,pi/2)
 </tr><tr>
 
     
-    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><table id="&lt;plasTeX.TeXFragment object at 0x104606460&gt;" class="equation" width="100%" cellspacing="0" cellpadding="7">
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><table id="&lt;plasTeX.TeXFragment object at 0x10464f7a0&gt;" class="equation" width="100%" cellspacing="0" cellpadding="7">
 <tr>
     
     <td style="width:40%">&nbsp;</td>
@@ -207,7 +207,7 @@ print f(1,pi/2)
 </tr><tr>
 
     
-    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><table id="&lt;plasTeX.TeXFragment object at 0x104606940&gt;" class="equation" width="100%" cellspacing="0" cellpadding="7">
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><table id="&lt;plasTeX.TeXFragment object at 0x10464fc80&gt;" class="equation" width="100%" cellspacing="0" cellpadding="7">
 <tr>
     
     <td style="width:40%">&nbsp;</td>
@@ -321,12 +321,12 @@ print f(1,pi/2)
 
 <td><a href="sect0031.html" title="Programming and Flow Control"><img alt="Up: Programming and Flow Control" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0039.html" title="The exec command"><img alt="Next: The exec command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ex-macro.html" title="Macros"><img alt="Next: Macros" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

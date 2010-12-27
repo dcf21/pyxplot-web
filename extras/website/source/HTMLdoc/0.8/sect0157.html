@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: multiplot</title>
+<title>: linewidth</title>
 
-<link href="sect0158.html" title="mxtics" rel="next" />
-<link href="sect0156.html" title="logscale" rel="prev" />
-<link href="sect0124.html" title="set" rel="up" />
+<link href="sect0158.html" title="logscale" rel="next" />
+<link href="sect0156.html" title="label" rel="prev" />
+<link href="sect0126.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0156.html" title="logscale"><img alt="Previous: logscale" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0156.html" title="label"><img alt="Previous: label" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0158.html" title="mxtics"><img alt="Next: mxtics" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0158.html" title="logscale"><img alt="Next: logscale" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0074.html">Reference Manual</a> <b>:</b>
+<a href="sect0075.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,24 +49,25 @@
 
 </span><span>
 <span>
-<a href="sect0124.html">set</a> <b>:</b>
+<a href="sect0126.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">multiplot</b>
+<b class="current">linewidth</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000158">1.46.33 multiplot</h2>
-<p><a name="a0000001156" id="a0000001156"></a> </p><pre>
-set multiplot
-</pre><p>Issuing the command </p><pre>
-set multiplot
-</pre><p>causes PyXPlot to enter multiplot mode, which allows many graphs to be plotted together and displayed side-by-side. See Section <a href="sec-multiplot.html">3.1</a> for a full discussion of multiplot mode. </p></div>
+<div><h2 id="a0000000158">1.47.31 linewidth</h2>
+<p><a name="a0000001182" id="a0000001182"></a> </p><pre>
+set linewidth &lt;value&gt;
+</pre><p>The <tt class="tt">set linewidth</tt> command<a name="a0000001183" id="a0000001183"></a> sets the default line width of the lines used to plot datasets onto graphs using plot styles such as <tt class="tt">lines</tt>, <tt class="tt">errorbars</tt>, etc. The value supplied should be a multiplicative factor relative to the default line width; a value of 1.0 would result in lines being drawn with their default thickness. For example, in the following statement, lines of three times the default thickness are drawn: </p><pre>
+set linewidth 3
+plot sin(x) with lines
+</pre><p>The <tt class="tt">set linewidth</tt> command only affects plot statements where no line width is manually specified. </p></div>
 
 
 
@@ -75,16 +76,16 @@ set multiplot
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0156.html" title="logscale"><img alt="Previous: logscale" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0156.html" title="label"><img alt="Previous: label" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0158.html" title="mxtics"><img alt="Next: mxtics" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0158.html" title="logscale"><img alt="Next: logscale" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

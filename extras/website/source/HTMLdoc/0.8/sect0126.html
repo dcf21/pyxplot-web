@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: autoscale</title>
+<title>: set</title>
 
-<link href="sect0127.html" title="axescolour" rel="next" />
-<link href="sect0125.html" title="arrow" rel="prev" />
-<link href="sect0124.html" title="set" rel="up" />
+<link href="sect0127.html" title="arrow" rel="next" />
+<link href="sect0125.html" title="save" rel="prev" />
+<link href="ch-reference.html" title="Command Reference" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0125.html" title="arrow"><img alt="Previous: arrow" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0125.html" title="save"><img alt="Previous: save" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0127.html" title="axescolour"><img alt="Next: axescolour" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0127.html" title="arrow"><img alt="Next: arrow" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0074.html">Reference Manual</a> <b>:</b>
+<a href="sect0075.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -48,45 +48,245 @@
 </span>
 
 </span><span>
-<span>
-<a href="sect0124.html">set</a> <b>:</b>
-</span>
-
-</span><span>
 
 <span>
-<b class="current">autoscale</b>
+<b class="current">set</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000127">1.46.2 autoscale</h2>
-<p><a name="a0000001090" id="a0000001090"></a> </p><pre>
-set autoscale {&lt;axis&gt;}
-</pre><p>The <tt class="tt">set autoscale</tt> command<a name="a0000001091" id="a0000001091"></a> causes PyXPlot to choose the scaling for an axis automatically based on the data and/or functions to be plotted against it. The example </p><pre>
-set autoscale x1
-</pre><p>would cause the range of the first horizontal axis to be scaled to fit the data. Multiple axes can be specified, as in the example </p><pre>
-set autoscale x1y3
-</pre><p>Note that ranges explicitly specified in a <tt class="tt">plot</tt> command<a name="a0000001092" id="a0000001092"></a> will override the <tt class="tt">set autoscale</tt> command. </p></div>
+<div><h1 id="a0000000127">1.47 set</h1>
+<p><a name="a0000001115" id="a0000001115"></a> </p><pre>
+set &lt;option&gt; &lt;value&gt;
+</pre><p>The <tt class="tt">set</tt> command<a name="a0000001116" id="a0000001116"></a> is used to configure the values of a wide range of parameters within PyXPlot which control its behaviour and the style of the output which it produces. For example: </p><pre>
+set pointsize 2
+</pre><p>would set the size of points plotted by PyXPlot to be twice the default. In the majority of cases, the syntax follows that above: the <tt class="tt">set</tt> command should be followed by a keyword which specifies which parameter should be set, followed by the value to which that parameter should be set. Those parameters which work in an on/off fashion take a different syntax along the lines of: </p><table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="text-align:left"><p> <tt class="tt">set key</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <tt class="tt"><i class="it"># Set option ON</i></tt> </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left"><p><tt class="tt">set nokey</tt> </p></td>
+
+    
+    <td style="text-align:left"><p> <tt class="tt"><i class="it"># Set option OFF</i></tt> </p></td>
+
+</tr>
+</table><p>More details of the effects of each individual parameter can be found in the subsections below, which forms a complete list of the recognised setting keywords. </p><p>The reader should also see the <tt class="tt">show</tt> command, which can be used to display the current values of settings, and the <tt class="tt">unset</tt> command, which returns settings to their default values. Chapter <a href="ch-configuration.html">8</a> describes how commonly used settings can be saved into a configuration file. </p></div>
+
+<div class="contents section-contents"><!--<strong>Subsections</strong>-->
+<ul>
+<li><a href="sect0127.html">1.47.1 arrow</a>
+   
+</li><li><a href="sect0128.html">1.47.2 autoscale</a>
+   
+</li><li><a href="sect0129.html">1.47.3 axescolour</a>
+   
+</li><li><a href="sect0130.html">1.47.4 axis</a>
+   
+</li><li><a href="sect0131.html">1.47.5 axisunitstyle</a>
+   
+</li><li><a href="sect0132.html">1.47.6 backup</a>
+   
+</li><li><a href="sect0133.html">1.47.7 bar</a>
+   
+</li><li><a href="sect0134.html">1.47.8 binorigin</a>
+   
+</li><li><a href="sect0135.html">1.47.9 binwidth</a>
+   
+</li><li><a href="sect0136.html">1.47.10 boxfrom</a>
+   
+</li><li><a href="sect0137.html">1.47.11 boxwidth</a>
+   
+</li><li><a href="sect0138.html">1.47.12 c1format</a>
+   
+</li><li><a href="sect0139.html">1.47.13 c1label</a>
+   
+</li><li><a href="sect0140.html">1.47.14 calendar</a>
+   
+</li><li><a href="sect0141.html">1.47.15 clip</a>
+   
+</li><li><a href="sect0142.html">1.47.16 colourkey</a>
+   
+</li><li><a href="sect0143.html">1.47.17 colourmap</a>
+   
+</li><li><a href="sect0144.html">1.47.18 contours</a>
+   
+</li><li><a href="sect0145.html">1.47.19 c<img src="images/img-0034.png" alt="$&lt;$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" />n<img src="images/img-0035.png" alt="$&gt;$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" />range</a>
+   
+</li><li><a href="sect0146.html">1.47.20 data style</a>
+   
+</li><li><a href="sect0147.html">1.47.21 display</a>
+   
+</li><li><a href="sect0148.html">1.47.22 filter</a>
+   
+</li><li><a href="sect0149.html">1.47.23 fontsize</a>
+   
+</li><li><a href="sect0150.html">1.47.24 function style</a>
+   
+</li><li><a href="sect0151.html">1.47.25 grid</a>
+   
+</li><li><a href="sect0152.html">1.47.26 gridmajcolour</a>
+   
+</li><li><a href="sect0153.html">1.47.27 gridmincolour</a>
+   
+</li><li><a href="sect0154.html">1.47.28 key</a>
+   
+</li><li><a href="sect0155.html">1.47.29 keycolumns</a>
+   
+</li><li><a href="sect0156.html">1.47.30 label</a>
+   
+</li><li><a href="sect0157.html">1.47.31 linewidth</a>
+   
+</li><li><a href="sect0158.html">1.47.32 logscale</a>
+   
+</li><li><a href="sect0159.html">1.47.33 multiplot</a>
+   
+</li><li><a href="sect0160.html">1.47.34 mxtics</a>
+   
+</li><li><a href="sect0161.html">1.47.35 mytics</a>
+   
+</li><li><a href="sect0162.html">1.47.36 mztics</a>
+   
+</li><li><a href="sect0163.html">1.47.37 noarrow</a>
+   
+</li><li><a href="sect0164.html">1.47.38 noaxis</a>
+   
+</li><li><a href="sect0165.html">1.47.39 nobackup</a>
+   
+</li><li><a href="sect0166.html">1.47.40 noclip</a>
+   
+</li><li><a href="sect0167.html">1.47.41 nocolourkey</a>
+   
+</li><li><a href="sect0168.html">1.47.42 nodisplay</a>
+   
+</li><li><a href="sect0169.html">1.47.43 nogrid</a>
+   
+</li><li><a href="sect0170.html">1.47.44 nokey</a>
+   
+</li><li><a href="sect0171.html">1.47.45 nolabel</a>
+   
+</li><li><a href="sect0172.html">1.47.46 nologscale</a>
+   
+</li><li><a href="sect0173.html">1.47.47 nomultiplot</a>
+   
+</li><li><a href="sect0174.html">1.47.48 nostyle</a>
+   
+</li><li><a href="sect0175.html">1.47.49 notitle</a>
+   
+</li><li><a href="sect0176.html">1.47.50 noxtics</a>
+   
+</li><li><a href="sect0177.html">1.47.51 noytics</a>
+   
+</li><li><a href="sect0178.html">1.47.52 noztics</a>
+   
+</li><li><a href="sect0179.html">1.47.53 numerics</a>
+   
+</li><li><a href="sect0180.html">1.47.54 origin</a>
+   
+</li><li><a href="sect0181.html">1.47.55 output</a>
+   
+</li><li><a href="sect0182.html">1.47.56 palette</a>
+   
+</li><li><a href="sect0183.html">1.47.57 papersize</a>
+   
+</li><li><a href="sect0184.html">1.47.58 pointlinewidth</a>
+   
+</li><li><a href="sect0185.html">1.47.59 pointsize</a>
+   
+</li><li><a href="sect0186.html">1.47.60 preamble</a>
+   
+</li><li><a href="sect0187.html">1.47.61 samples</a>
+   
+</li><li><a href="sect0188.html">1.47.62 seed</a>
+   
+</li><li><a href="sect0189.html">1.47.63 size</a>
+   
+</li><li><a href="sect0190.html">1.47.64 style</a>
+   
+</li><li><a href="sect0191.html">1.47.65 style data | style function</a>
+   
+</li><li><a href="sect0192.html">1.47.66 terminal</a>
+   
+</li><li><a href="sect0193.html">1.47.67 textcolour</a>
+   
+</li><li><a href="sect0194.html">1.47.68 texthalign</a>
+   
+</li><li><a href="sect0195.html">1.47.69 textvalign</a>
+   
+</li><li><a href="sect0196.html">1.47.70 title</a>
+   
+</li><li><a href="sect0197.html">1.47.71 trange</a>
+   
+</li><li><a href="sect0198.html">1.47.72 unit</a>
+   
+</li><li><a href="sect0199.html">1.47.73 urange</a>
+   
+</li><li><a href="sect0200.html">1.47.74 view</a>
+   
+</li><li><a href="sect0201.html">1.47.75 viewer</a>
+   
+</li><li><a href="sect0202.html">1.47.76 vrange</a>
+   
+</li><li><a href="sect0203.html">1.47.77 width</a>
+   
+</li><li><a href="sect0204.html">1.47.78 xformat</a>
+   
+</li><li><a href="sect0205.html">1.47.79 xlabel</a>
+   
+</li><li><a href="sect0206.html">1.47.80 xrange</a>
+   
+</li><li><a href="sect0207.html">1.47.81 xtics</a>
+   
+</li><li><a href="sect0208.html">1.47.82 yformat</a>
+   
+</li><li><a href="sect0209.html">1.47.83 ylabel</a>
+   
+</li><li><a href="sect0210.html">1.47.84 yrange</a>
+   
+</li><li><a href="sect0211.html">1.47.85 ytics</a>
+   
+</li><li><a href="sect0212.html">1.47.86 zformat</a>
+   
+</li><li><a href="sect0213.html">1.47.87 zlabel</a>
+   
+</li><li><a href="sect0214.html">1.47.88 zrange</a>
+   
+</li><li><a href="sect0215.html">1.47.89 ztics</a>
+   
+</li>
 
 
+
+</ul>
+</div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0125.html" title="arrow"><img alt="Previous: arrow" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0125.html" title="save"><img alt="Previous: save" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0127.html" title="axescolour"><img alt="Next: axescolour" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0127.html" title="arrow"><img alt="Next: arrow" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Plots with Multiple Axes</title>
+<title>: Delivering your Talk</title>
 
-<link href="sect0238.html" title="Plotting Parametric Functions" rel="next" />
-<link href="sect0236.html" title="The Multiplot Environment" rel="prev" />
-<link href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot" rel="up" />
+<link href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot" rel="next" />
+<link href="sect0236.html" title="Writing A Short Example Talk" rel="prev" />
+<link href="sect0234.html" title="Delivering Talks in PyXPlot" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0236.html" title="The Multiplot Environment"><img alt="Previous: The Multiplot Environment" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0236.html" title="Writing A Short Example Talk"><img alt="Previous: Writing A Short Example Talk" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot"><img alt="Up: Summary of Differences Between PyXPlot and Gnuplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0234.html" title="Delivering Talks in PyXPlot"><img alt="Up: Delivering Talks in PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0238.html" title="Plotting Parametric Functions"><img alt="Next: Plotting Parametric Functions" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot"><img alt="Next: Summary of Differences Between PyXPlot and Gnuplot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,32 +39,32 @@
 
 </span><span>
 <span>
-<a href="sect0226.html">Appendices</a> <b>:</b>
+<a href="sect0230.html">Appendices</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="ch-gnuplot_diffs.html">Summary of Differences Between PyXPlot and Gnuplot</a> <b>:</b>
+<a href="sect0231.html">Other Applications of PyXPlot</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0234.html">Delivering Talks in PyXPlot</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">Plots with Multiple Axes</b>
+<b class="current">Delivering your Talk</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000238">B.4 Plots with Multiple Axes</h1>
-<p>In Gnuplot, a maximum of two horizontal and two vertical axes may be associated with each graph, placed in each case with one on either side of the plot. These are referred to as the <tt class="tt">x</tt> (bottom) and <tt class="tt">x2</tt> (top), or <tt class="tt">y</tt> (left) and <tt class="tt">y2</tt> (right) axes. This behaviour is reproduced in PyXPlot, and so the syntax </p><pre>
-set x2label 'Axis label'
-</pre><p>works similarly in both programs. However, in PyXPlot the position of each axis may be set individually using syntax such as </p><pre>
-set axis x2 top
-</pre><p>and furthermore up to 128 axes may be placed parallel to one another: </p><pre>
-set axis x127 top
-set x127label "This is axis number 127"
-</pre><p>More details of how to configure axes can be found in Section <a href="sec-multiple_axes.html">1.8.1</a>. </p></div>
+<div><h2 id="a0000000238">A.3.3 Delivering your Talk</h2>
+<p>There are two straightforward ways in which you can give your talk. The quickest way is simply to use the <i class="it">Quick Image Viewer</i><a name="a0000001662" id="a0000001662"></a> (<tt class="tt">qiv</tt>): </p><pre>
+qiv slides_cropped/*
+</pre><p> Press the left mouse button to move forward through your talk, and the right mouse button to go back a slide. </p><p>This method does lack some of the niceties of Microsoft <i class="it">Powerpoint</i> – for example, the ability to jump to any arbitrary slide number, compatibility with wireless remote controls to advance your slides, and the ability to use animated slide transitions. It may be preferably, therefore, to paste the jpeg images of your slides into a <i class="it">Powerpoint</i> or OpenOffice <i class="it">Impress</i> presentation before you give your talk. </p></div>
 
 
 
@@ -73,16 +73,16 @@ set x127label "This is axis number 127"
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0236.html" title="The Multiplot Environment"><img alt="Previous: The Multiplot Environment" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0236.html" title="Writing A Short Example Talk"><img alt="Previous: Writing A Short Example Talk" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot"><img alt="Up: Summary of Differences Between PyXPlot and Gnuplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0234.html" title="Delivering Talks in PyXPlot"><img alt="Up: Delivering Talks in PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0238.html" title="Plotting Parametric Functions"><img alt="Next: Plotting Parametric Functions" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot"><img alt="Next: Summary of Differences Between PyXPlot and Gnuplot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

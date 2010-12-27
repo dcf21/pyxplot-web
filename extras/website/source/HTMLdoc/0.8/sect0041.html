@@ -3,10 +3,10 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Script Watching: pyxplot_watch</title>
+<title>: Shell Commands</title>
 
-<link href="sect0042.html" title="Plotting and Vector Graphics" rel="next" />
-<link href="sect0040.html" title="Shell Commands" rel="prev" />
+<link href="sect0042.html" title="Script Watching: pyxplotwatch" rel="next" />
+<link href="sect0040.html" title="Assertions" rel="prev" />
 <link href="sect0031.html" title="Programming and Flow Control" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0040.html" title="Shell Commands"><img alt="Previous: Shell Commands" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0040.html" title="Assertions"><img alt="Previous: Assertions" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="sect0031.html" title="Programming and Flow Control"><img alt="Up: Programming and Flow Control" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0042.html" title="Plotting and Vector Graphics"><img alt="Next: Plotting and Vector Graphics" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0042.html" title="Script Watching: pyxplot_watch"><img alt="Next: Script Watching: pyxplot_watch" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -50,44 +50,92 @@
 </span><span>
 
 <span>
-<b class="current">Script Watching: pyxplot_watch</b>
+<b class="current">Shell Commands</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000042">6.12 Script Watching: pyxplot_watch</h1>
-<p>PyXPlot includes a simple tool for watching command script files and executing them whenever they are modified. This may be useful when developing a command script, if one wants to make small modifications to it and see the results in a semi-live fashion. This tool is invoked by calling the <tt class="tt">pyxplot_watch</tt><a name="a0000000601" id="a0000000601"></a><a name="a0000000602" id="a0000000602"></a> command from a shell prompt. The command-line syntax of <tt class="tt">pyxplot_watch</tt> is similar to that of PyXPlot itself, for example: </p><pre>
-pyxplot_watch script.ppl
-</pre><p>would set <tt class="tt">pyxplot_watch</tt> to watch the command script file <tt class="tt">script.ppl</tt>. One difference, however, is that if multiple script files are specified on the command line, they are watched and executed independently, <i class="itshape">not</i> sequentially, as PyXPlot itself would do. Wildcard characters can also be used to set <tt class="tt">pyxplot_watch</tt> to watch multiple files.<a href="#a0000000603" class="footnote"><sup class="footnotemark">1</sup></a> </p><p>This is especially useful when combined with Ghostview’s<a name="a0000000604" id="a0000000604"></a> watch facility. For example, suppose that a script <tt class="tt">foo.ppl</tt> produces PostScript output <tt class="tt">foo.ps</tt>. The following two commands could be used to give a live view of the result of executing this script: </p><pre>
-gv --watch foo.ps &amp;
-pyxplot_watch foo.ppl
-</pre></div>
+<div><h1 id="a0000000042">6.13 Shell Commands</h1>
+<p>Shell commands<a name="a0000000606" id="a0000000606"></a> may be executed directly from within PyXPlot by prefixing them with an <tt class="tt">!</tt><a name="a0000000607" id="a0000000607"></a> character. The remainder of the line is sent directly to the shell, for example: </p><pre>
+!ls -l
+</pre><p>Semi-colons cannot be used to place further PyXPlot commands after a shell command on the same line. </p><p><table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="text-align:left"><p>
+<img src="images/img-0029.png" alt="\includegraphics[width=0.9cm]{cross.eps}" style="width:0.9cm" /></p></td>
+
+    
+    <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> !ls -l ; set key top left </tt></div></p></td>
+
+</tr>
+</table> </p><p>It is also possible to substitute the output of a shell command into a PyXPlot command. To do this, the shell command should be enclosed in back-quotes (‘), as in the following example:<a name="a0000000608" id="a0000000608"></a><a name="a0000000609" id="a0000000609"></a> </p><pre>
+a=`ls -l *.ppl | wc -l`
+print "The current directory contains %d PyXPlot scripts."%(a)
+</pre><p>It should be noted that back-quotes can only be used outside quotes. For example, </p><p><table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="text-align:left"><p>
+<img src="images/img-0029.png" alt="\includegraphics[width=0.9cm]{cross.eps}" style="width:0.9cm" /></p></td>
+
+    
+    <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> set xlabel ’‘ls‘’ </tt></div></p></td>
+
+</tr>
+</table> </p><p>will not work. The best way to do this would be: </p><p><table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="text-align:left"><p>
+<img src="images/img-0030.png" alt="\includegraphics[width=0.9cm]{tick.eps}" style="width:0.9cm" /> </p></td>
+
+    
+    <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> set xlabel ‘echo "’" ; ls ; echo "’"‘ </tt></div></p></td>
+
+</tr>
+</table> </p><p>Note that it is not possible to change the current working directory by sending the <tt class="tt">cd</tt> command to a shell, as this command would only change the working directory of the shell in which the single command is executed: </p><p><table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="text-align:left"><p>
+<img src="images/img-0029.png" alt="\includegraphics[width=0.9cm]{cross.eps}" style="width:0.9cm" /></p></td>
+
+    
+    <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> !cd .. </tt></div></p></td>
+
+</tr>
+</table> </p><p>PyXPlot has its own <tt class="tt">cd</tt> command<a name="a0000000610" id="a0000000610"></a> for this purpose, as well as its own <tt class="tt">pwd</tt> command<a name="a0000000611" id="a0000000611"></a>: </p><p><table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="text-align:left"><p>
+<img src="images/img-0030.png" alt="\includegraphics[width=0.9cm]{tick.eps}" style="width:0.9cm" /> </p></td>
+
+    
+    <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> cd .. </tt></div></p></td>
+
+</tr>
+</table> </p></div>
 
 
 
-<div id="footnotes">
-<p><b>Footnotes</b></p>
-<ol>
-<li id="a0000000603">Note that <tt class="tt">pyxplot_watch *.script</tt> and <tt class="tt">pyxplot_watch <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
-                                     width:7px; 
-                                     height:18px" class="math gen" />*.script</tt> will behave differently in most UNIX shells. In the first case, the wildcard is expanded by your shell, and a list of files passed to <tt class="tt">pyxplot_watch</tt>. Any files matching the wildcard, created after running <tt class="tt">pyxplot_watch</tt>, will not be picked up. In the latter case, the wildcard is expanded by <tt class="tt">pyxplot_watch</tt> itself, which <i class="it">will</i> pick up any newly created files.</li>
-</ol>
-</div>
+
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0040.html" title="Shell Commands"><img alt="Previous: Shell Commands" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0040.html" title="Assertions"><img alt="Previous: Assertions" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="sect0031.html" title="Programming and Flow Control"><img alt="Up: Programming and Flow Control" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0042.html" title="Plotting and Vector Graphics"><img alt="Next: Plotting and Vector Graphics" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0042.html" title="Script Watching: pyxplot_watch"><img alt="Next: Script Watching: pyxplot_watch" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

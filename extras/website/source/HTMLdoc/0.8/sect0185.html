@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: samples</title>
+<title>: pointsize</title>
 
-<link href="sect0186.html" title="seed" rel="next" />
-<link href="sect0184.html" title="preamble" rel="prev" />
-<link href="sect0124.html" title="set" rel="up" />
+<link href="sect0186.html" title="preamble" rel="next" />
+<link href="sect0184.html" title="pointlinewidth" rel="prev" />
+<link href="sect0126.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0184.html" title="preamble"><img alt="Previous: preamble" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0184.html" title="pointlinewidth"><img alt="Previous: pointlinewidth" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0186.html" title="seed"><img alt="Next: seed" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0186.html" title="preamble"><img alt="Next: preamble" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0074.html">Reference Manual</a> <b>:</b>
+<a href="sect0075.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,28 +49,24 @@
 
 </span><span>
 <span>
-<a href="sect0124.html">set</a> <b>:</b>
+<a href="sect0126.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">samples</b>
+<b class="current">pointsize</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000186">1.46.61 samples</h2>
-<p><a name="a0000001189" id="a0000001189"></a> </p><pre>
-set samples [&lt;value&gt;]
-            [grid &lt;x_samples&gt; [x] &lt;y_samples&gt;]
-            [interpolate ( InverseSquare |
-                           MonaghanLattanzio |
-                           NearestNeighbour ) ]
-</pre><p>The setting <tt class="tt">samples</tt> determines the number of values along the ordinate axis at which functions are evaluated when they are plotted. For example, the command </p><pre>
-set samples 100
-</pre><p>would cause functions to be evaluated at 100 points along the ordinate axis. Increasing this value will cause functions to be plotted more smoothly, but also more slowly, and the PostScript files generated will also be larger. When functions are plotted with the <tt class="tt">points</tt> plot style, this setting controls the number of points plotted. </p><p>After the keyword <tt class="tt">grid</tt> may be specified the dimensions of the two-dimensional grid of samples used in the <tt class="tt">colourmap</tt><a name="a0000001190" id="a0000001190"></a><a name="a0000001191" id="a0000001191"></a> and <tt class="tt">surface</tt><a name="a0000001192" id="a0000001192"></a><a name="a0000001193" id="a0000001193"></a> plot styles, and internally when calculating the contours to be plotted in the <tt class="tt">contourmap</tt><a name="a0000001194" id="a0000001194"></a><a name="a0000001195" id="a0000001195"></a> plot style. If a <tt class="tt">*</tt> is given in place of either of the dimensions, then the same number of samples as are specified in <tt class="tt">&lt;value&gt;</tt> are taken. </p><p>After the keyword <tt class="tt">interpolate</tt>, the method used for interpolating non-gridded two-dimensional data onto the above-mentioned grid may be specified. The available options are <tt class="tt">Inverse­Square</tt>, <tt class="tt">Monag­han­Lat­tan­zio</tt> and <tt class="tt">Nearest­Neigh­bour</tt>. </p></div>
+<div><h2 id="a0000000186">1.47.59 pointsize</h2>
+<p><a name="a0000001216" id="a0000001216"></a> </p><pre>
+set pointsize &lt;value&gt;
+</pre><p>The setting <tt class="tt">pointsize</tt> changes the size at which points are drawn, relative to their default size. It should be followed by a single value which can be any positive multiplicative factor. For example, </p><pre>
+set pointsize 1.5
+</pre><p>would cause points to be drawn at 1.5 times their default size. </p></div>
 
 
 
@@ -79,16 +75,16 @@ set samples 100
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0184.html" title="preamble"><img alt="Previous: preamble" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0184.html" title="pointlinewidth"><img alt="Previous: pointlinewidth" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0186.html" title="seed"><img alt="Next: seed" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0186.html" title="preamble"><img alt="Next: preamble" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

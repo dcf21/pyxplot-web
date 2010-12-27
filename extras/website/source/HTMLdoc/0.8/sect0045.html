@@ -3,10 +3,10 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Shaded Regions</title>
+<title>: Lines and Points</title>
 
-<link href="sec-barcharts.html" title="Barcharts and Histograms" rel="next" />
-<link href="sec-errorbars.html" title="Error Bars" rel="prev" />
+<link href="sec-errorbars.html" title="Error Bars" rel="next" />
+<link href="sec-list_of_plotstyles.html" title="PyXPlot’s Plot Styles" rel="prev" />
 <link href="sec-list_of_plotstyles.html" title="PyXPlot’s Plot Styles" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-errorbars.html" title="Error Bars"><img alt="Previous: Error Bars" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-list_of_plotstyles.html" title="PyXPlot’s Plot Styles"><img alt="Previous: PyXPlot’s Plot Styles" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="sec-list_of_plotstyles.html" title="PyXPlot’s Plot Styles"><img alt="Up: PyXPlot’s Plot Styles" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-barcharts.html" title="Barcharts and Histograms"><img alt="Next: Barcharts and Histograms" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sec-errorbars.html" title="Error Bars"><img alt="Next: Error Bars" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+<a href="sect0043.html">Plotting and Vector Graphics</a> <b>:</b>
 </span>
 
 </span><span>
@@ -55,24 +55,86 @@
 </span><span>
 
 <span>
-<b class="current">Shaded Regions</b>
+<b class="current">Lines and Points</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000046">1.2.3 Shaded Regions</h2>
-<p>The following plot styles allow regions of graphs to be shaded with colour: </p><ul class="itemize">
-<li><p><tt class="tt">yerrorshaded</tt><a name="a0000000656" id="a0000000656"></a><a name="a0000000657" id="a0000000657"></a> </p></li><li><p><tt class="tt">shadedregion</tt><a name="a0000000658" id="a0000000658"></a><a name="a0000000659" id="a0000000659"></a> </p></li>
-</ul><p>Both of these plot styles fill specified regions of graphs with the selected <tt class="tt">fillcolour</tt> and draw a line around the boundary of the region with the selected <tt class="tt">colour</tt>, <tt class="tt">linetype</tt> and <tt class="tt">linewidth</tt>. They differ in the format in which they expect the input data to be arranged. The <tt class="tt">yerrorshaded</tt><a name="a0000000660" id="a0000000660"></a><a name="a0000000661" id="a0000000661"></a> plot style is similar to the <tt class="tt">yerrorrange</tt><a name="a0000000662" id="a0000000662"></a><a name="a0000000663" id="a0000000663"></a> plot style, and expects three columns of data, specifying respectively the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+<div><h2 id="a0000000046">1.2.1 Lines and Points</h2>
+<p>The following is a list of PyXPlot’s simplest plot styles, all of which take two (or three) columns of input data on 2D (or 3D) plots, representing the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
                                      width:10px; 
-                                     height:8px" class="math gen" />-coordinate and the minimum and maximum extremes of the vertical errorbar on each datapoint. The region contained between the upper and lower limits of these error bars is filled with colour. Note that the datapoints must be sorted in order of either increasing or decreasing <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
-                                     width:10px; 
-                                     height:8px" class="math gen" />-coordinate for sensible behaviour. </p><p>The <tt class="tt">shadedregion</tt><a name="a0000000664" id="a0000000664"></a><a name="a0000000665" id="a0000000665"></a> plot style takes only two columns of input data, specifying the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
-                                     width:10px; 
-                                     height:8px" class="math gen" />- and <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
+                                     height:8px" class="math gen" />-, <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
                                      width:9px; 
-                                     height:12px" class="math gen" />-coordinates of a series of datapoints which are to be joined in a join-the-dots fashion. At the end of each dataset, the drawn path is closed and filled. </p><p>The use of these plot styles on three-dimensional graphs may produce unexpected results. </p></div>
+                                     height:12px" class="math gen" />- (and <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:8px" class="math gen" />-)coordinates of the positions of each point: </p><ul class="itemize">
+<li><p><tt class="tt">dots</tt><a name="a0000000630" id="a0000000630"></a><a name="a0000000631" id="a0000000631"></a> – places a small dot at each datum. </p></li><li><p><tt class="tt">lines</tt><a name="a0000000632" id="a0000000632"></a><a name="a0000000633" id="a0000000633"></a> – connects adjacent datapoints with straight lines. </p></li><li><p><tt class="tt">linespoints</tt><a name="a0000000634" id="a0000000634"></a><a name="a0000000635" id="a0000000635"></a> – a combination of both lines and points. </p></li><li><p><tt class="tt">lowerlimits</tt><a name="a0000000636" id="a0000000636"></a><a name="a0000000637" id="a0000000637"></a> – places a lower-limit sign (<img src="images/img-0365.png" alt="\includegraphics{examples/eps/ex_lowerlimit}" style="width:11px; height:11px" />
+) at each datum.<a name="a0000000638" id="a0000000638"></a> </p></li><li><p><tt class="tt">points</tt><a name="a0000000639" id="a0000000639"></a><a name="a0000000640" id="a0000000640"></a> – places a marker symbol at each datum. </p></li><li><p><tt class="tt">stars</tt><a name="a0000000641" id="a0000000641"></a><a name="a0000000642" id="a0000000642"></a> – similar to <tt class="tt">points</tt>, but uses a different set of marker symbols, based upon the stars drawn in Johann Bayer’s highly ornate star atlas <i class="it">Uranometria</i> of 1603. </p></li><li><p><tt class="tt">upperlimits</tt><a name="a0000000643" id="a0000000643"></a><a name="a0000000644" id="a0000000644"></a> – places an upper-limit sign (<img src="images/img-0372.png" alt="\includegraphics{examples/eps/ex_upperlimit}" style="width:11px; height:11px" />
+) at each datum.<a name="a0000000645" id="a0000000645"></a> </p></li>
+</ul><p> <span class="upshape"><span class="mdseries"><span class="rm">A Hertzsprung-Russell Diagram.</span></span></span></p><div>
+
+<table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> Hertzsprung-Russell (HR) Diagrams are scatter-plots of the luminosities of stars plotted against their colours, on which most normal stars lie along a tight line called the main sequence, whilst unusual classes of stars – giants and dwarfs – can be readily identified on account of their not lying along this main sequence. The principal difficulty in constructing accurate HR diagrams is that the luminosities <img src="images/img-0378.png" alt="$L$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:12px" class="math gen" /> of stars can only be calculated from their observed brightnesses <img src="images/img-0379.png" alt="$F$" style="vertical-align:0px; 
+                                     width:14px; 
+                                     height:12px" class="math gen" />, using the relation <img src="images/img-0380.png" alt="$L=Fd^2$" style="vertical-align:0px; 
+                                     width:66px; 
+                                     height:16px" class="math gen" /> if their distances <img src="images/img-0041.png" alt="$d$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:13px" class="math gen" /> are known. In this example, we construct an HR diagram using observations made by the European Space Agency’s <i class="it">Hipparcos</i> spacecraft, which accurately measured the distances of over a million stars between 1989 and 1993. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>The Hipparcos catalogue can be downloaded for free from ftp://cdsarc.u-strasbg.fr/pub/cats/I/239/hip_main.dat.gz; a description of the catalogue can be found at http://cdsarc.u-strasbg.fr/viz-bin/Cat?I/239. In summary, though the data is arranged in a non-standard format which PyXPlot cannot read without a special input filter, the following Python script generates a text file with four columns containing the magnitudes <img src="images/img-0312.png" alt="$m$" style="vertical-align:0px; 
+                                     width:16px; 
+                                     height:8px" class="math gen" />, <img src="images/img-0381.png" alt="$B-V$" style="vertical-align:0px; 
+                                     width:51px; 
+                                     height:12px" class="math gen" /> colours and parallaxes <img src="images/img-0270.png" alt="$p$" style="vertical-align:-4px; 
+                                     width:10px; 
+                                     height:12px" class="math gen" /> of the stars, together with the uncertainties in the parallaxes. From these values, the absolute magnitudes <img src="images/img-0382.png" alt="$M$" style="vertical-align:0px; 
+                                     width:19px; 
+                                     height:12px" class="math gen" /> of the stars – a measure of their luminosities – can be calculated using the expression <img src="images/img-0383.png" alt="$M=m+5\log _{10}\left(10^{2}p\right)$" style="vertical-align:-6px; 
+                                     width:185px; 
+                                     height:22px" class="math gen" />, where <img src="images/img-0270.png" alt="$p$" style="vertical-align:-4px; 
+                                     width:10px; 
+                                     height:12px" class="math gen" /> is measured in milli-arcseconds: </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">for line in open("hip_main.dat"):</tt><br /><tt class="tt">try:</tt><br /><tt class="tt">Vmag = float(line[41:46])</tt><br /><tt class="tt">BVcol = float(line[245:251])</tt><br /><tt class="tt">parr = float(line[79:86])</tt><br /><tt class="tt">parre = float(line[119:125])</tt><br /><tt class="tt">print "%s,%s,%s,%s"%(Vmag, BVcol, parr, parre)</tt><br /><tt class="tt">except ValueError: pass</tt> </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>The resultant four columns of data can then be plotted in the <tt class="tt">dots</tt> style using the following PyXPlot script. Because the catalogue is very large, and many of the parallax datapoints have large errorbars producing large uncertainties in their vertical positions on the plot, we use the <tt class="tt">select</tt> statement to pick out those datapoints with parallax signal-to-noise ratios of better than 20. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">set nokey</tt><br /><tt class="tt">set size square</tt><br /><tt class="tt">set xlabel ’$B-V$ colour’</tt><br /><tt class="tt">set ylabel ’Absolute magnitude $M$’</tt><br /><tt class="tt">plot [-0.4:2][14:-4] ’hr_data.dat’ <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" /></tt><br /><tt class="tt">using $2:($1+5*log10(1e2*$3)) <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" /></tt><br /><tt class="tt">select ($4/$3&lt;0.05) <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" /></tt><br /><tt class="tt">with dots ps 3</tt> </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><p><center>
+<img src="images/img-0385.png" alt="\includegraphics[width=10cm]{examples/eps/ex_hrdiagram}" style="width:10cm" /></center>  </p></td>
+
+</tr>
+</table>
+</div></div>
 
 
 
@@ -81,16 +143,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-errorbars.html" title="Error Bars"><img alt="Previous: Error Bars" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-list_of_plotstyles.html" title="PyXPlot’s Plot Styles"><img alt="Previous: PyXPlot’s Plot Styles" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="sec-list_of_plotstyles.html" title="PyXPlot’s Plot Styles"><img alt="Up: PyXPlot’s Plot Styles" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-barcharts.html" title="Barcharts and Histograms"><img alt="Next: Barcharts and Histograms" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sec-errorbars.html" title="Error Bars"><img alt="Next: Error Bars" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

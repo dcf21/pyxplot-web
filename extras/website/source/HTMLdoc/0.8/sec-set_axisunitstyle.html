@@ -5,9 +5,9 @@
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
 <title>: Plotting Quantities with Physical Units</title>
 
-<link href="sect0054.html" title="Specifying the Positioning of Axes" rel="next" />
-<link href="sect0053.html" title="Selecting which Axes to Plot Against" rel="prev" />
-<link href="sect0052.html" title="Configuring Axes" rel="up" />
+<link href="sect0055.html" title="Specifying the Positioning of Axes" rel="next" />
+<link href="sect0054.html" title="Selecting which Axes to Plot Against" rel="prev" />
+<link href="sect0053.html" title="Configuring Axes" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0053.html" title="Selecting which Axes to Plot Against"><img alt="Previous: Selecting which Axes to Plot Against" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0054.html" title="Selecting which Axes to Plot Against"><img alt="Previous: Selecting which Axes to Plot Against" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0052.html" title="Configuring Axes"><img alt="Up: Configuring Axes" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0053.html" title="Configuring Axes"><img alt="Up: Configuring Axes" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0054.html" title="Specifying the Positioning of Axes"><img alt="Next: Specifying the Positioning of Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0055.html" title="Specifying the Positioning of Axes"><img alt="Next: Specifying the Positioning of Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+<a href="sect0043.html">Plotting and Vector Graphics</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,7 +49,7 @@
 
 </span><span>
 <span>
-<a href="sect0052.html">Configuring Axes</a> <b>:</b>
+<a href="sect0053.html">Configuring Axes</a> <b>:</b>
 </span>
 
 </span><span>
@@ -68,14 +68,14 @@ plot [0:10] x using 1:$2*unit(m)
 plot [0*unit(m):1*unit(m)] x**2
 
 set unit angle nodimensionless ; plot [0:1] asin(x)
-</pre><p> the axis is set to share the particular physical dimensions of that unit, and thereafter no data with any other physical dimensions may be plotted against that axis. When the axis comes to be drawn, PyXPlot makes a decision about which physical unit should be used to label the axis. For example, in the default SI system and with no preferred unit of length set, axes with units of length might be displayed in millimetres, metres or kilometres depending upon their scales. </p><p>The chosen unit is indicated in one of three styles in the axis label, selected using the <tt class="tt">set axisunitstyle</tt> command<a name="a0000000743" id="a0000000743"></a>: </p><pre>
+</pre><p> the axis is set to share the particular physical dimensions of that unit, and thereafter no data with any other physical dimensions may be plotted against that axis. When the axis comes to be drawn, PyXPlot makes a decision about which physical unit should be used to label the axis. For example, in the default SI system and with no preferred unit of length set, axes with units of length might be displayed in millimetres, metres or kilometres depending upon their scales. </p><p>The chosen unit is indicated in one of three styles in the axis label, selected using the <tt class="tt">set axisunitstyle</tt> command<a name="a0000000769" id="a0000000769"></a>: </p><pre>
 set axisunitstyle ratio
 set axisunitstyle bracketed
 set axisunitstyle squarebracketed
 </pre><p> The effect of these three options, respectively, is shown below for an axis with units of momentum. In each case, the axis label was set simply using </p><pre>
 set xlabel "Momentum"
 </pre><p> and the subsequent text was appended automatically by PyXPlot: </p><p> <center>
-<img src="images/img-0428.png" alt="\includegraphics[width=10cm]{examples/eps/ex_axisunits}" style="width:10cm" /></center>  </p><p>When the <tt class="tt">set xformat</tt> command<a name="a0000000744" id="a0000000744"></a> is used (see Section <a href="sec-set_xformat.html">1.8.8</a>), no indication of the units associated with axes are appended to axis labels, as the <tt class="tt">set xformat</tt> command<a name="a0000000745" id="a0000000745"></a> can be used to hard-code this information. The user must include this information in the axis label manually if it is needed. </p></div>
+<img src="images/img-0453.png" alt="\includegraphics[width=10cm]{examples/eps/ex_axisunits}" style="width:10cm" /></center>  </p><p>When the <tt class="tt">set xformat</tt> command<a name="a0000000770" id="a0000000770"></a> is used (see Section <a href="sec-set_xformat.html">1.8.8</a>), no indication of the units associated with axes are appended to axis labels, as the <tt class="tt">set xformat</tt> command<a name="a0000000771" id="a0000000771"></a> can be used to hard-code this information. The user must include this information in the axis label manually if it is needed. </p></div>
 
 
 
@@ -84,16 +84,16 @@ set xlabel "Momentum"
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0053.html" title="Selecting which Axes to Plot Against"><img alt="Previous: Selecting which Axes to Plot Against" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0054.html" title="Selecting which Axes to Plot Against"><img alt="Previous: Selecting which Axes to Plot Against" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0052.html" title="Configuring Axes"><img alt="Up: Configuring Axes" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0053.html" title="Configuring Axes"><img alt="Up: Configuring Axes" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0054.html" title="Specifying the Positioning of Axes"><img alt="Next: Specifying the Positioning of Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0055.html" title="Specifying the Positioning of Axes"><img alt="Next: Specifying the Positioning of Axes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

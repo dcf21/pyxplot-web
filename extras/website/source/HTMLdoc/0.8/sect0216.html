@@ -3,10 +3,10 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: tabulate</title>
+<title>: show</title>
 
-<link href="sect0217.html" title="text" rel="next" />
-<link href="sect0215.html" title="swap" rel="prev" />
+<link href="sect0217.html" title="solve" rel="next" />
+<link href="sect0215.html" title="ztics" rel="prev" />
 <link href="ch-reference.html" title="Command Reference" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0215.html" title="swap"><img alt="Previous: swap" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0215.html" title="ztics"><img alt="Previous: ztics" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0217.html" title="text"><img alt="Next: text" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0217.html" title="solve"><img alt="Next: solve" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0074.html">Reference Manual</a> <b>:</b>
+<a href="sect0075.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -50,42 +50,19 @@
 </span><span>
 
 <span>
-<b class="current">tabulate</b>
+<b class="current">show</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000217">1.51 tabulate</h1>
-<p><a name="a0000001315" id="a0000001315"></a> </p><pre>
-tabulate [ &lt;range&gt; ] ( &lt;expression&gt; | &lt;filename&gt; )
-       [ every &lt;expression&gt; {:&lt;expression&gt;} ]
-       [ index &lt;value&gt; ]
-       [ select &lt;expression&gt; ]
-       [ sortby &lt;expression&gt; ]
-       [ using &lt;expression&gt;  {:&lt;expression&gt;} ]
-       [ with &lt;output format&gt; ]
-</pre><p>PyXPlot’s <tt class="tt">tabulate</tt> command<a name="a0000001316" id="a0000001316"></a> is similar to its <tt class="tt">plot</tt> command, but instead of plotting a series of datapoints onto a graph, it outputs them to datafiles. This can be used to produce text files containing samples of functions, to rearrange/filter the columns in datafiles, to change the units in which data is expressed in datafiles, and so forth. The following example would produce a datafile called <tt class="tt">gamma.dat</tt> containing a list of values of the gamma function: </p><pre>
-set output 'gamma.dat'
-tabulate [1:5] gamma(x)
-</pre><p>Multiple functions may be tabulated into the same file, either by using the <tt class="tt">using</tt><a name="a0000001317" id="a0000001317"></a> modifier: </p><pre>
-tabulate [0:2*pi] sin(x):cos(x):tan(x) u 1:2:3:4
-</pre><p>or by placing them in a comma-separated list, as in the <tt class="tt">plot</tt> command: </p><pre>
-tabulate [0:2*pi] sin(x), cos(x), tan(x)
-</pre><p>In the former case, the functions are tabulated horizontally alongside one another in a series of columns. In the latter case, the functions are tabulated one after another in a series of index blocks separated by double linefeeds (see Section <a href="sec-plot_datafiles.html">3.8</a>). </p><p>The setting <tt class="tt">samples</tt> can be used to control the number of points that are produced when tabulating functions, in the same way that it controls the <tt class="tt">plot</tt> command:<a name="a0000001318" id="a0000001318"></a> </p><pre>
-set samples 200
-</pre><p>If the ordinate axis is set to be logarithmic then the points at which functions are evaluated are spaced logarithmically, otherwise they are spaced linearly. </p><p>The <tt class="tt">select</tt><a name="a0000001319" id="a0000001319"></a>, <tt class="tt">using</tt><a name="a0000001320" id="a0000001320"></a> and <tt class="tt">every</tt><a name="a0000001321" id="a0000001321"></a> modifiers operate in the same manner in the <tt class="tt">tabulate</tt> command as in the <tt class="tt">plot</tt> command. Thus, the following example would write out the third, sixth and ninth columns of the datafile <tt class="tt">input.dat</tt>, but only when the arcsine of the value in the fourth column is positive: </p><pre>
-set output 'filtered.dat'
-tabulate 'input.dat' u 3:6:9 select (asin($4)&gt;0)
-</pre><p>The numerical display format used in each column of the output file is chosen automatically to preserve accuracy whilst simultaneously being as easily human readable as possible. Thus, columns which contain only integers are displayed as such, and scientific notation is only used in columns which contain very large or very small values. If desired, however, a format statement may be specified using the <tt class="tt">with format</tt> specifier. The syntax for this is similar to that expected by the string substitution operator (<tt class="tt">%</tt>; see Section <a href="sec-stringsubop.html">6.1.1</a>). As an example, to tabulate the values of <img src="images/img-0164.png" alt="$x^2$" style="vertical-align:0px; 
-                                     width:17px; 
-                                     height:16px" class="math gen" /> to very many significant figures with some additional text, one could use: </p><pre>
-tabulate x**2 with format "x = %f ; x**2 = %27.20e"
-</pre><p>This might produce the following output: </p><pre>
-x = 0.000000 ; x**2 =  0.00000000000000000000e+00
-x = 0.833333 ; x**2 =  6.94444444444442421371e-01
-x = 1.666667 ; x**2 =  2.77777777777778167589e+00
-</pre><p>The data produced by the <tt class="tt">tabulate</tt> command can be sorted in order of any arbitrary metric by supplying an expression after the <tt class="tt">sortby</tt> modifier; where such expressions are supplied, the data is sorted in order from the smallest value of the expression to the largest. </p></div>
+<div><h1 id="a0000000217">1.48 show</h1>
+<p><a name="a0000001337" id="a0000001337"></a> </p><pre>
+show { all | axes | functions | settings | units
+       | userfunctions | variables | &lt;parameter&gt; }
+</pre><p>The <tt class="tt">show</tt> command<a name="a0000001338" id="a0000001338"></a> displays the present state of parameters which can be set with the <tt class="tt">set</tt> command. For example, </p><pre>
+show pointsize
+</pre><p>displays the currently set point size. </p><p>Details of the various parameters which can be queried can be found under the <tt class="tt">set</tt> command; any keyword which can follow the <tt class="tt">set</tt> command can also follow the <tt class="tt">show</tt> command. </p><p>In addition, <tt class="tt">show all</tt> shows a complete list of the present values of all of PyXPlot’s configurable parameters. The command <tt class="tt">show settings</tt> shows all of these parameters, but does not list the currently-configured variables, functions and axes. <tt class="tt">show axes</tt> shows the configuration states of all graph axes. <tt class="tt">show variables</tt> lists all of the currently defined variables. And finally, <tt class="tt">show functions</tt> lists all of the current user-defined functions. </p></div>
 
 
 
@@ -94,16 +71,16 @@ x = 1.666667 ; x**2 =  2.77777777777778167589e+00
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0215.html" title="swap"><img alt="Previous: swap" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0215.html" title="ztics"><img alt="Previous: ztics" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0217.html" title="text"><img alt="Next: text" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0217.html" title="solve"><img alt="Next: solve" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: The eps Command</title>
+<title>: The image Command</title>
 
-<link href="ex-noentry.html" title="The box and circle Commands" rel="next" />
-<link href="sect0071.html" title="The image Command" rel="prev" />
-<link href="sect0069.html" title="Adding Other Vector Graphics Objects" rel="up" />
+<link href="sect0073.html" title="The eps Command" rel="next" />
+<link href="ex-nanotubes.html" title="The arrow and line Commands" rel="prev" />
+<link href="sect0070.html" title="Adding Other Vector Graphics Objects" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0071.html" title="The image Command"><img alt="Previous: The image Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="ex-nanotubes.html" title="The arrow and line Commands"><img alt="Previous: The arrow and line Commands" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0069.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0070.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="ex-noentry.html" title="The box and circle Commands"><img alt="Next: The box and circle Commands" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0073.html" title="The eps Command"><img alt="Next: The eps Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+<a href="sect0043.html">Plotting and Vector Graphics</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,42 +49,45 @@
 
 </span><span>
 <span>
-<a href="sect0069.html">Adding Other Vector Graphics Objects</a> <b>:</b>
+<a href="sect0070.html">Adding Other Vector Graphics Objects</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">The <tt class="tt">eps</tt> Command</b>
+<b class="current">The <tt class="tt">image</tt> Command</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000073">3.4.4 The <tt class="tt">eps</tt> Command</h2>
-<p>Vector graphic images in eps format may be placed on multiplot canvases using the <tt class="tt">eps</tt> command<a name="a0000000933" id="a0000000933"></a>, which has a syntax analogous to the <tt class="tt">image</tt> command. However neither height nor width need be specified; in this case the image will be included at its native size. For example: </p><pre>
-eps 'filename' at 3,2 rotate 5
-</pre><p>will place the eps file with its bottom-left corner at position <img src="images/img-0553.png" alt="$(3,2)$" style="vertical-align:-4px; 
-                                     width:38px; 
-                                     height:18px" class="math gen" /> cm from the origin, rotated counter-clockwise through 5 degrees. </p></div>
+<div><h2 id="a0000000073">3.4.3 The <tt class="tt">image</tt> Command</h2>
+<p>Graphical images in <tt class="tt">bmp</tt>, <tt class="tt">gif</tt>, <tt class="tt">jpeg</tt> or <tt class="tt">png</tt> format may be placed on multiplot canvases using the <tt class="tt">image</tt> command<a name="a0000000952" id="a0000000952"></a><a href="#a0000000953" class="footnote"><sup class="footnotemark">1</sup></a>. In its simplest form, this has the syntax: </p><pre>
+image 'filename' at x,y width w
+</pre><p>As an alternative to the <tt class="tt">width</tt><a name="a0000000954" id="a0000000954"></a> keyword the height of the image can be specified, using the analogous <tt class="tt">height</tt><a name="a0000000955" id="a0000000955"></a> keyword. An optional angle can also be specified using the <tt class="tt">rotate</tt><a name="a0000000956" id="a0000000956"></a> keyword; this causes the included image to be rotated counter-clockwise by a specified angle, measured in degrees. The keyword <tt class="tt">smooth</tt> may optionally be supplied to cause the pixels of the image to be interpolated<a href="#a0000000957" class="footnote"><sup class="footnotemark">2</sup></a>. </p><p>Images which include transparency are supported. The optional keyword <tt class="tt">notransparent</tt> may be supplied to the <tt class="tt">image</tt> command<a name="a0000000958" id="a0000000958"></a> to cause transparent regions to be filled with the image’s default background colour. Alternatively, an RGB colour may be specified in the form <tt class="tt">rgb&lt;r&gt;:&lt;g&gt;:&lt;b&gt;</tt> after the keyword <tt class="tt">transparent</tt> to cause that particular colour to become transparent; the three components of the RGB colour should be in the range 0 to 255. </p></div>
 
 
 
-
+<div id="footnotes">
+<p><b>Footnotes</b></p>
+<ol>
+<li id="a0000000953">To maintain compatibility with historic versions of PyXPlot, the <tt class="tt">image</tt> command may also be spelt <tt class="tt">jpeg</tt>, with the identical syntax thereafter.</li><li id="a0000000957">Many commonly-used PostScript display engines, including Ghostscript, do not support this functionality.</li>
+</ol>
+</div>
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0071.html" title="The image Command"><img alt="Previous: The image Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="ex-nanotubes.html" title="The arrow and line Commands"><img alt="Previous: The arrow and line Commands" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0069.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0070.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="ex-noentry.html" title="The box and circle Commands"><img alt="Next: The box and circle Commands" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0073.html" title="The eps Command"><img alt="Next: The eps Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

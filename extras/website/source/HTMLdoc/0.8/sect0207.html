@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: ytics</title>
+<title>: xtics</title>
 
-<link href="sect0208.html" title="zformat" rel="next" />
-<link href="sect0206.html" title="yrange" rel="prev" />
-<link href="sect0124.html" title="set" rel="up" />
+<link href="sect0208.html" title="yformat" rel="next" />
+<link href="sect0206.html" title="xrange" rel="prev" />
+<link href="sect0126.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0206.html" title="yrange"><img alt="Previous: yrange" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0206.html" title="xrange"><img alt="Previous: xrange" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0208.html" title="zformat"><img alt="Next: zformat" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0208.html" title="yformat"><img alt="Next: yformat" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0074.html">Reference Manual</a> <b>:</b>
+<a href="sect0075.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,20 +49,33 @@
 
 </span><span>
 <span>
-<a href="sect0124.html">set</a> <b>:</b>
+<a href="sect0126.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">ytics</b>
+<b class="current">xtics</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000208">1.46.83 ytics</h2>
-<p><a name="a0000001301" id="a0000001301"></a> </p><p>See <tt class="tt">xtics</tt>. </p></div>
+<div><h2 id="a0000000208">1.47.81 xtics</h2>
+<p><a name="a0000001317" id="a0000001317"></a> </p><pre>
+set [m]&lt;axis&gt;tics
+    [ ( axis | border | inward | outward | both ) ]
+    [ ( autofreq
+          | [&lt;minimum&gt;,] &lt;increment&gt; [, &lt;maximum&gt;]
+          | \( { '&lt;label&gt;' &lt;position&gt; } \)
+         ] )
+</pre><p>By default, PyXPlot places a series of tick marks at significant points along each axis, with the most significant points being labelled. Labelled tick marks are termed <i class="it">major</i> ticks, and unlabelled tick marks are termed <i class="it">minor</i> ticks. The position and appearance of the major ticks along the <tt class="tt">x</tt>-axis can be configured using the <tt class="tt">set xtics</tt> command<a name="a0000001318" id="a0000001318"></a>; the corresponding <tt class="tt">set mxtics</tt> command configures the appearance of the minor ticks along the <tt class="tt">x</tt>-axis. Analogous commands such as <tt class="tt">set ytics</tt> and <tt class="tt">set mx2tics</tt> configure the major and minor ticks along other axes. </p><p>The keywords <tt class="tt">inward</tt><a name="a0000001319" id="a0000001319"></a>, <tt class="tt">outward</tt><a name="a0000001320" id="a0000001320"></a> and <tt class="tt">both</tt><a name="a0000001321" id="a0000001321"></a> are used to configure how the ticks appear – whether they point inward, towards the plot, as is default, or outwards towards the axis labels, or in both directions. The keyword <tt class="tt">axis</tt><a name="a0000001322" id="a0000001322"></a> is an alias for <tt class="tt">inward</tt><a name="a0000001323" id="a0000001323"></a>, and <tt class="tt">border</tt><a name="a0000001324" id="a0000001324"></a> is an alias for <tt class="tt">outward</tt><a name="a0000001325" id="a0000001325"></a>. </p><p>The remaining options are used to configure where along the axis ticks are placed. If a series of comma-separated values <tt class="tt">&lt;minimum&gt;, &lt;increment&gt;, &lt;maximum&gt;</tt> are specified, then ticks are placed at evenly spaced intervals between the specified limits. The <tt class="tt">&lt;minimum&gt;</tt> and <tt class="tt">&lt;maximum&gt;</tt> values are optional; if only one value is specified then it is taken to be the step size between ticks. If two values are specified, then the first is taken to be <tt class="tt">&lt;minimum&gt;</tt>. In the case of logarithmic axes, <tt class="tt">&lt;increment&gt;</tt> is applied as a multiplicative step size. </p><p>Alternatively, if a bracketed list of quoted tick labels and tick positions are provided, then ticks can be placed on an axis manually and each given its own textual label. The quoted tick labels may be omitted, in which case they are automatically generated: </p><pre>
+set xtics ("a" 1, "b" 2, "c" 3)
+set xtics (1,2,3)
+</pre><p> The keyword <tt class="tt">autofreq</tt><a name="a0000001326" id="a0000001326"></a> overrides any manual selection of ticks which may have been placed on an axis and resumes the automatic placement of ticks along it. The <tt class="tt">show xtics</tt> command<a name="a0000001327" id="a0000001327"></a>, together with its companions such as <tt class="tt">show x2tics</tt> and <tt class="tt">show ytics</tt>, is used to query the current ticking options. The <tt class="tt">set noxtics</tt> command<a name="a0000001328" id="a0000001328"></a> is used to stipulate that no ticks should appear along a particular axis: </p><pre>
+set noxtics
+show xtics
+</pre></div>
 
 
 
@@ -71,16 +84,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0206.html" title="yrange"><img alt="Previous: yrange" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0206.html" title="xrange"><img alt="Previous: xrange" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0208.html" title="zformat"><img alt="Next: zformat" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0208.html" title="yformat"><img alt="Next: yformat" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

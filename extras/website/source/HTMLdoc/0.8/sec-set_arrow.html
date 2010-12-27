@@ -6,8 +6,8 @@
 <title>: Arrows</title>
 
 <link href="ex-australia.html" title="Text Labels" rel="next" />
-<link href="sect0058.html" title="Labelling Graphs" rel="prev" />
-<link href="sect0058.html" title="Labelling Graphs" rel="up" />
+<link href="sect0059.html" title="Labelling Graphs" rel="prev" />
+<link href="sect0059.html" title="Labelling Graphs" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0058.html" title="Labelling Graphs"><img alt="Previous: Labelling Graphs" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0059.html" title="Labelling Graphs"><img alt="Previous: Labelling Graphs" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0058.html" title="Labelling Graphs"><img alt="Up: Labelling Graphs" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0059.html" title="Labelling Graphs"><img alt="Up: Labelling Graphs" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="ex-australia.html" title="Text Labels"><img alt="Next: Text Labels" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+<a href="sect0043.html">Plotting and Vector Graphics</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,7 +49,7 @@
 
 </span><span>
 <span>
-<a href="sect0058.html">Labelling Graphs</a> <b>:</b>
+<a href="sect0059.html">Labelling Graphs</a> <b>:</b>
 </span>
 
 </span><span>
@@ -62,22 +62,22 @@
 </div>
 
 <div><h2 id="sec:set_arrow">1.11.1 Arrows</h2>
-<p><a name="a0000000779" id="a0000000779"></a> The <tt class="tt">set arrow</tt> command<a name="a0000000780" id="a0000000780"></a> may be used to draw arrows on top of graphs; its syntax is illustrated by the following simple example: </p><pre>
+<p><a name="a0000000805" id="a0000000805"></a> The <tt class="tt">set arrow</tt> command<a name="a0000000806" id="a0000000806"></a> may be used to draw arrows on top of graphs; its syntax is illustrated by the following simple example: </p><pre>
 set arrow 1 from 0,0 to 1,1
-</pre><p>Optionally, a third coordinate may be specified. On 2D plots, this is ignored. If no third coordinate is supplied then a value of <img src="images/img-0395.png" alt="$z=0$" style="vertical-align:0px; 
+</pre><p>Optionally, a third coordinate may be specified. On 2D plots, this is ignored. If no third coordinate is supplied then a value of <img src="images/img-0396.png" alt="$z=0$" style="vertical-align:0px; 
                                      width:42px; 
-                                     height:12px" class="math gen" /> is substituted when the arrow is plotted on 3D graphs. The number <tt class="tt">1</tt> immediately following <tt class="tt">set arrow</tt><a name="a0000000781" id="a0000000781"></a> specifies an identification number for the arrow, allowing it to be subsequently removed via the command </p><pre>
+                                     height:12px" class="math gen" /> is substituted when the arrow is plotted on 3D graphs. The number <tt class="tt">1</tt> immediately following <tt class="tt">set arrow</tt><a name="a0000000807" id="a0000000807"></a> specifies an identification number for the arrow, allowing it to be subsequently removed via the command </p><pre>
 unset arrow 1
-</pre><p>or equivalently, via<a name="a0000000782" id="a0000000782"></a> </p><pre>
+</pre><p>or equivalently, via<a name="a0000000808" id="a0000000808"></a> </p><pre>
 set noarrow 1
-</pre><p>or to be replaced with a different arrow by issuing a new command of the form <tt class="tt">set arrow 1 ...</tt>. The <tt class="tt">set arrow</tt> command may be followed by the keyword <tt class="tt">with</tt> to specify the style of the arrow. The keywords <tt class="tt">nohead</tt><a name="a0000000783" id="a0000000783"></a>, <tt class="tt">head</tt><a name="a0000000784" id="a0000000784"></a> and <tt class="tt">twohead</tt><a name="a0000000785" id="a0000000785"></a>, placed after the keyword <tt class="tt">with</tt>, can be used to generate arrows with no arrow heads, normal arrow heads, or with two arrow heads. <tt class="tt">twoway</tt><a name="a0000000786" id="a0000000786"></a> is an alias for <tt class="tt">twohead</tt><a name="a0000000787" id="a0000000787"></a>, as in the following example: </p><pre>
+</pre><p>or to be replaced with a different arrow by issuing a new command of the form <tt class="tt">set arrow 1 ...</tt>. The <tt class="tt">set arrow</tt> command may be followed by the keyword <tt class="tt">with</tt> to specify the style of the arrow. The keywords <tt class="tt">nohead</tt><a name="a0000000809" id="a0000000809"></a>, <tt class="tt">head</tt><a name="a0000000810" id="a0000000810"></a> and <tt class="tt">twohead</tt><a name="a0000000811" id="a0000000811"></a>, placed after the keyword <tt class="tt">with</tt>, can be used to generate arrows with no arrow heads, normal arrow heads, or with two arrow heads. <tt class="tt">twoway</tt><a name="a0000000812" id="a0000000812"></a> is an alias for <tt class="tt">twohead</tt><a name="a0000000813" id="a0000000813"></a>, as in the following example: </p><pre>
 set arrow 1 from 0,0 to 1,1 with twoway
 </pre><p>Line types and colours can also be specified after the keyword <tt class="tt">with</tt>, as in the example: </p><pre>
 set arrow 1 from 0,0 to 1,1 with nohead \
 linetype 1 c blue
-</pre><p>The coordinates for the start and end points of the arrow can be specified in a range of coordinate systems. The coordinate system to be used should be specified immediately before the coordinate value. The default system, <tt class="tt">first</tt><a name="a0000000788" id="a0000000788"></a> measures the graph using the <tt class="tt">x</tt>- and <tt class="tt">y</tt>-axes. The <tt class="tt">second</tt><a name="a0000000789" id="a0000000789"></a> system uses the <tt class="tt">x2</tt>- and <tt class="tt">y2</tt>-axes. <tt class="tt">axis&lt;n&gt;</tt><a name="a0000000790" id="a0000000790"></a> specifies that the position is to be measured along the <img src="images/img-0466.png" alt="$n\, $" style="vertical-align:0px; 
+</pre><p>The coordinates for the start and end points of the arrow can be specified in a range of coordinate systems. The coordinate system to be used should be specified immediately before the coordinate value. The default system, <tt class="tt">first</tt><a name="a0000000814" id="a0000000814"></a> measures the graph using the <tt class="tt">x</tt>- and <tt class="tt">y</tt>-axes. The <tt class="tt">second</tt><a name="a0000000815" id="a0000000815"></a> system uses the <tt class="tt">x2</tt>- and <tt class="tt">y2</tt>-axes. <tt class="tt">axis&lt;n&gt;</tt><a name="a0000000816" id="a0000000816"></a> specifies that the position is to be measured along the <img src="images/img-0491.png" alt="$n\, $" style="vertical-align:0px; 
                                      width:11px; 
-                                     height:8px" class="math gen" />th horizontal or vertical axis – for example, <tt class="tt">axis3</tt>.<a name="a0000000791" id="a0000000791"></a> This allows the graph to be measured with reference to any arbitrary axis on plots which make use of large numbers of parallel axes (see Section <a href="sec-multiple_axes.html">1.8.1</a>). The <tt class="tt">page</tt><a name="a0000000792" id="a0000000792"></a> and <tt class="tt">graph</tt><a name="a0000000793" id="a0000000793"></a> systems both measure in centimetres from the origin of the graph. In the following example, we use these specifiers, and specify coordinates using variables rather than doing so explicitly: </p><pre>
+                                     height:8px" class="math gen" />th horizontal or vertical axis – for example, <tt class="tt">axis3</tt>.<a name="a0000000817" id="a0000000817"></a> This allows the graph to be measured with reference to any arbitrary axis on plots which make use of large numbers of parallel axes (see Section <a href="sec-multiple_axes.html">1.8.1</a>). The <tt class="tt">page</tt><a name="a0000000818" id="a0000000818"></a> and <tt class="tt">graph</tt><a name="a0000000819" id="a0000000819"></a> systems both measure in centimetres from the origin of the graph. In the following example, we use these specifiers, and specify coordinates using variables rather than doing so explicitly: </p><pre>
 x0 = 0.0
 y0 = 0.0
 x1 = 1.0
@@ -94,16 +94,16 @@ set arrow 1 from first  x0, first  y0 \
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0058.html" title="Labelling Graphs"><img alt="Previous: Labelling Graphs" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0059.html" title="Labelling Graphs"><img alt="Previous: Labelling Graphs" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0058.html" title="Labelling Graphs"><img alt="Up: Labelling Graphs" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0059.html" title="Labelling Graphs"><img alt="Up: Labelling Graphs" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="ex-australia.html" title="Text Labels"><img alt="Next: Text Labels" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

@@ -3,10 +3,10 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: exit</title>
+<title>: eps</title>
 
-<link href="sect0092.html" title="fft" rel="next" />
-<link href="sect0090.html" title="exec" rel="prev" />
+<link href="sect0092.html" title="exec" rel="next" />
+<link href="sect0090.html" title="else" rel="prev" />
 <link href="ch-reference.html" title="Command Reference" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0090.html" title="exec"><img alt="Previous: exec" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0090.html" title="else"><img alt="Previous: else" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0092.html" title="fft"><img alt="Next: fft" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0092.html" title="exec"><img alt="Next: exec" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0074.html">Reference Manual</a> <b>:</b>
+<a href="sect0075.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -50,16 +50,17 @@
 </span><span>
 
 <span>
-<b class="current">exit</b>
+<b class="current">eps</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000092">1.17 exit</h1>
-<p><a name="a0000000992" id="a0000000992"></a> </p><pre>
-exit
-</pre><p>The <tt class="tt">exit</tt> command<a name="a0000000993" id="a0000000993"></a> can be used to quit PyXPlot. If multiple command files, or a mixture of command files and interactive sessions, were specified on PyXPlot’s command line, then PyXPlot moves onto the next command-line item after receiving the <tt class="tt">exit</tt> command. </p><p>PyXPlot may also be quit be pressing CTRL-D or using the <tt class="tt">quit</tt> command. In interactive mode, CTRL-C terminates the current command, if one is running. When running a script, CTRL-C terminates execution of the script. </p></div>
+<div><h1 id="a0000000092">1.16 eps</h1>
+<p><a name="a0000001017" id="a0000001017"></a> </p><pre>
+eps [ item &lt;id&gt; ] '&lt;filename&gt;' [at &lt;x&gt;, &lt;y&gt;] [rotate &lt;angle&gt;]
+                            [width &lt;width&gt;] [height &lt;height&gt;]
+</pre><p>The <tt class="tt">eps</tt> command<a name="a0000001018" id="a0000001018"></a> allows Encapsulated PostScript (EPS) images to be inserted onto multiplot canvases. The <tt class="tt">at</tt> modifier can be used to specify where the bottom-left corner of the image should be placed; if it is not, then the image is placed at the origin. The <tt class="tt">rotate</tt> modifier can be used to rotate the image by any angle, measured in degrees counter-clockwise. The <tt class="tt">width</tt> or <tt class="tt">height</tt> modifiers can be used to specify the width or height with which the image should be rendered; both should be specified in centimetres. If neither is specified then the image will be rendered with the native dimensions specified within the PostScript. The <tt class="tt">eps</tt> command is often useful in multiplot mode, allowing PostScript images to be combined with plots, text labels, etc. </p><p>All vector graphics objects placed on multiplot canvases receive unique identification numbers which count sequentially from one, and which may be listed using the <tt class="tt">list</tt> command. By reference to these numbers, they can be deleted and subsequently restored with the <tt class="tt">delete</tt> and <tt class="tt">undelete</tt> commands respectively. </p></div>
 
 
 
@@ -68,16 +69,16 @@ exit
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0090.html" title="exec"><img alt="Previous: exec" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0090.html" title="else"><img alt="Previous: else" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0092.html" title="fft"><img alt="Next: fft" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0092.html" title="exec"><img alt="Next: exec" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

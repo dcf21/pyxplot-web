@@ -3,10 +3,10 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Producing Images on Disk</title>
+<title>: Previewing Graphs On Screen</title>
 
-<link href="sect0062.html" title="The Complete Syntax of the set terminal Command" rel="next" />
-<link href="sect0060.html" title="Previewing Graphs On Screen" rel="prev" />
+<link href="sect0062.html" title="Producing Images on Disk" rel="next" />
+<link href="sec-set_terminal.html" title="The set terminal Command" rel="prev" />
 <link href="sec-set_terminal.html" title="The set terminal Command" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0060.html" title="Previewing Graphs On Screen"><img alt="Previous: Previewing Graphs On Screen" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-set_terminal.html" title="The set terminal Command"><img alt="Previous: The set terminal Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="sec-set_terminal.html" title="The set terminal Command"><img alt="Up: The set terminal Command" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0062.html" title="The Complete Syntax of the set terminal Command"><img alt="Next: The Complete Syntax of the set terminal Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0062.html" title="Producing Images on Disk"><img alt="Next: Producing Images on Disk" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+<a href="sect0043.html">Plotting and Vector Graphics</a> <b>:</b>
 </span>
 
 </span><span>
@@ -55,18 +55,22 @@
 </span><span>
 
 <span>
-<b class="current">Producing Images on Disk</b>
+<b class="current">Previewing Graphs On Screen</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000062">2.1.2 Producing Images on Disk</h2>
-<p>The remaining terminals listed in Table <a href="sec-set_terminal.html#tab:output_terminals">2.1</a> direct graphical output to disk in a selection of rasterised and vector graphics formats. The filename of the resulting image file may be set using the <tt class="tt">set output</tt> command<a name="a0000000839" id="a0000000839"></a>, as in the example: </p><pre>
-set output 'my_plot.eps'
-</pre><p>Use of rasterised image formats inevitably results in some loss of image quality since the plot has to be rasterised into a bitmapped graphic image. By default, this rasterisation is performed at a resolution of <img src="images/img-0534.png" alt="$300\, \mathrm{dpi}$" style="vertical-align:-3px; 
-                                     width:55px; 
-                                     height:16px" class="math gen" />, though this may be changed using the <tt class="tt">set terminal dpi</tt> command<a name="a0000000840" id="a0000000840"></a>, which should be followed by a numerical value. Alternatively, the resolution may be changed using the <tt class="tt">DPI</tt> option in the <tt class="tt">settings</tt> section of a configuration file (see Chapter <a href="ch-configuration.html">8</a>).<a name="a0000000841" id="a0000000841"></a><a name="a0000000842" id="a0000000842"></a><a name="a0000000843" id="a0000000843"></a> </p></div>
+<div><h2 id="a0000000062">2.1.1 Previewing Graphs On Screen</h2>
+<p> <a name="a0000000863" id="a0000000863"></a> </p><p>Three output terminal produce immediate previews to the screen: <tt class="tt">X11_­Single­Window</tt>, <tt class="tt">X11_­Persist</tt>, <tt class="tt">X11_­Multi­Window</tt>. The default of these options – i.e. the default terminal when PyXPlot is started up in interactive mode – is <tt class="tt">X11_­Single­Window</tt>. In this terminal, each time a new plot is generated, if the previous plot is still open on the display, the old plot is replaced with the new one. This way, only one plot window is open at any one time. This behaviour is intended to prevent the desktop from becoming flooded with plot windows. </p><p>The alternative <tt class="tt">X11_­Multi­Window</tt> terminal is similar in all respects except that each new plot is generated in a new window, regardless of whether any previous plots are still open on the display. This is especially useful when multiple plots are to be compared side-by-side:<a name="a0000000864" id="a0000000864"></a> </p><pre>
+set terminal X11_SingleWindow
+plot 'data1.dat'
+plot 'data2.dat'  &lt;-- first plot window disappears
+</pre><p>c.f.: </p><pre>
+set terminal X11_MultiWindow
+plot 'data1.dat'
+plot 'data2.dat'  &lt;-- first plot window remains
+</pre><p>The third of these terminals, <tt class="tt">X11_­Persist</tt>, is similar to <tt class="tt">X11_­Multi­Window</tt> but keeps plot windows open after PyXPlot terminates in distinction from the above two terminals, which close all plot windows upon exit. </p></div>
 
 
 
@@ -75,16 +79,16 @@ set output 'my_plot.eps'
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0060.html" title="Previewing Graphs On Screen"><img alt="Previous: Previewing Graphs On Screen" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-set_terminal.html" title="The set terminal Command"><img alt="Previous: The set terminal Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="sec-set_terminal.html" title="The set terminal Command"><img alt="Up: The set terminal Command" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0062.html" title="The Complete Syntax of the set terminal Command"><img alt="Next: The Complete Syntax of the set terminal Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0062.html" title="Producing Images on Disk"><img alt="Next: Producing Images on Disk" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

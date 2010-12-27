@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -62,12 +62,12 @@
 </div>
 
 <div><h2 id="a0000000033">6.1.2 Regular Expressions</h2>
-<p>String variables can be modified using the search-and-replace string operator<a name="a0000000564" id="a0000000564"></a><a href="#a0000000565" class="footnote"><sup class="footnotemark">1</sup></a>, =<img src="images/img-0028.png" alt="$\sim $" style="vertical-align:2px; 
+<p>String variables can be modified using the search-and-replace string operator<a name="a0000000570" id="a0000000570"></a><a href="#a0000000571" class="footnote"><sup class="footnotemark">1</sup></a>, =<img src="images/img-0028.png" alt="$\sim $" style="vertical-align:2px; 
                                      width:12px; 
-                                     height:5px" class="math gen" /><a name="a0000000566" id="a0000000566"></a>, which takes a regular expression with a syntax similar to that expected by the shell command <tt class="tt">sed</tt><a name="a0000000567" id="a0000000567"></a> and applies it to the relevant string variable.<a href="#a0000000568" class="footnote"><sup class="footnotemark">2</sup></a><a name="a0000000569" id="a0000000569"></a> In the following example, the first instance of the letter <tt class="tt">s</tt> in the string variable <tt class="tt">twister</tt> is replaced with the letters <tt class="tt">th</tt>: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">twister="seven silver soda syphons"</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">twister =<img src="images/img-0028.png" alt="$\sim $" style="vertical-align:2px; 
+                                     height:5px" class="math gen" /><a name="a0000000572" id="a0000000572"></a>, which takes a regular expression with a syntax similar to that expected by the shell command <tt class="tt">sed</tt><a name="a0000000573" id="a0000000573"></a> and applies it to the relevant string variable.<a href="#a0000000574" class="footnote"><sup class="footnotemark">2</sup></a><a name="a0000000575" id="a0000000575"></a> In the following example, the first instance of the letter <tt class="tt">s</tt> in the string variable <tt class="tt">twister</tt> is replaced with the letters <tt class="tt">th</tt>: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">twister="seven silver soda syphons"</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">twister =<img src="images/img-0028.png" alt="$\sim $" style="vertical-align:2px; 
                                      width:12px; 
                                      height:5px" class="math gen" /> s/s/th/</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print twister</b></tt><br /><tt class="tt">theven silver soda syphons</tt>  </p><p>Note that only the <tt class="tt">s</tt> (substitute) command of <tt class="tt">sed</tt> is implemented in PyXPlot. Any character can be used in place of the <tt class="tt">/</tt> characters in the above example, for example: </p><pre>
-twister =~ s@s@th@
+twister =~ s's'th'
 </pre><p>Flags can be passed, as in <tt class="tt">sed</tt> or <tt class="tt">perl</tt>, to modify the precise behaviour of the regular expression. In the following example the <tt class="tt">g</tt> flag is used to perform a global search-and-replace of all instances of the letter <tt class="tt">s</tt> with the letters <tt class="tt">th</tt>: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">twister="seven silver soda syphons"</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">twister =<img src="images/img-0028.png" alt="$\sim $" style="vertical-align:2px; 
                                      width:12px; 
                                      height:5px" class="math gen" /> s/s/th/g</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print twister</b></tt><br /><tt class="tt">theven thilver thoda thyphonth</tt>  </p><p>Table <a href="sect0032.html#tab:re_flags">6.2</a> lists all of the regular expression flags recognised by the =<img src="images/img-0028.png" alt="$\sim $" style="vertical-align:2px; 
@@ -163,7 +163,7 @@ twister =~ s@s@th@
 <div id="footnotes">
 <p><b>Footnotes</b></p>
 <ol>
-<li id="a0000000565">Programmers with experience of <tt class="tt">perl</tt> will recognise this syntax.</li><li id="a0000000568">Regular expression syntax is a massive subject, and is beyond the scope of this manual. The official GNU documentation for the <tt class="tt">sed</tt> command is heavy reading, but there are many more accessible tutorials on the web.</li>
+<li id="a0000000571">Programmers with experience of <tt class="tt">perl</tt> will recognise this syntax.</li><li id="a0000000574">Regular expression syntax is a massive subject, and is beyond the scope of this manual. The official GNU documentation for the <tt class="tt">sed</tt> command is heavy reading, but there are many more accessible tutorials on the web.</li>
 </ol>
 </div>
 
@@ -179,7 +179,7 @@ twister =~ s@s@th@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

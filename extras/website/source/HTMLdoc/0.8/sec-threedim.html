@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+<a href="sect0043.html">Plotting and Vector Graphics</a> <b>:</b>
 </span>
 
 </span><span>
@@ -58,7 +58,7 @@
 
 <div><h1 id="sec:threedim">1.14 Three-Dimensional Plotting</h1>
 <p>Three-dimensional graphs may be produced by placing the modifier <tt class="tt">3d</tt> immediately after the <tt class="tt">plot</tt> command, as demonstrated by the following simple example which draws a helix: </p><p> <tt class="tt">set key below</tt><br /><tt class="tt">set size 8 ratio 0.6 zratio 0.6</tt><br /><tt class="tt">set grid</tt><br /><tt class="tt">plot 3d sin(x):cos(x) with lw 3 col hsb(x/20+0.5):0.9:0.8</tt> </p><p> <center>
-<img src="images/img-0516.png" alt="\includegraphics[width=10cm]{examples/eps/ex_3d_helix}" style="width:10cm" /></center>  </p><p>Many plot styles take additional columns of data when used on three-dimen­sional plots, reading in three values for the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+<img src="images/img-0541.png" alt="\includegraphics[width=10cm]{examples/eps/ex_3d_helix}" style="width:10cm" /></center>  </p><p>Many plot styles take additional columns of data when used on three-dimen­sional plots, reading in three values for the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
                                      width:10px; 
                                      height:8px" class="math gen" />, <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
                                      width:9px; 
@@ -68,7 +68,7 @@
                                      width:10px; 
                                      height:8px" class="math gen" /> and <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
                                      width:9px; 
-                                     height:12px" class="math gen" /> coordinates were required. In the above example, the <tt class="tt">lines</tt> plot style is used, which takes three columns of input data when used on three-dimensional plots, as compared to two on two-dimensional plots. The descriptions of each plot style in Section <a href="sec-list_of_plotstyles.html">1.2</a> includes information on the number of columns of data required for two- and three-dimensional plots. </p><p>The example above also demonstrates that the <tt class="tt">set size</tt> command<a name="a0000000832" id="a0000000832"></a> takes an additional aspect ratio <tt class="tt">zratio</tt> which affects three-dimensional plots; whereas the aspect ratio <tt class="tt">ratio</tt> determines the ratio of the lengths of the <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
+                                     height:12px" class="math gen" /> coordinates were required. In the above example, the <tt class="tt">lines</tt> plot style is used, which takes three columns of input data when used on three-dimensional plots, as compared to two on two-dimensional plots. The descriptions of each plot style in Section <a href="sec-list_of_plotstyles.html">1.2</a> includes information on the number of columns of data required for two- and three-dimensional plots. </p><p>The example above also demonstrates that the <tt class="tt">set size</tt> command<a name="a0000000858" id="a0000000858"></a> takes an additional aspect ratio <tt class="tt">zratio</tt> which affects three-dimensional plots; whereas the aspect ratio <tt class="tt">ratio</tt> determines the ratio of the lengths of the <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
                                      width:9px; 
                                      height:12px" class="math gen" />-axes of plots to their <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
                                      width:10px; 
@@ -76,12 +76,12 @@
                                      width:9px; 
                                      height:8px" class="math gen" />-axes of plots to their <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
                                      width:10px; 
-                                     height:8px" class="math gen" />-axes. </p><p>The angle from which three-dimensional plots are viewed can be set using the <tt class="tt">set view</tt> command<a name="a0000000833" id="a0000000833"></a>. This should be followed by two angles, which can either be expressed in degrees, as dimensionless numbers, or as quantities with physical units of angle: </p><pre>
+                                     height:8px" class="math gen" />-axes. </p><p>The angle from which three-dimensional plots are viewed can be set using the <tt class="tt">set view</tt> command<a name="a0000000859" id="a0000000859"></a>. This should be followed by two angles, which can either be expressed in degrees, as dimensionless numbers, or as quantities with physical units of angle: </p><pre>
 set view 60,30
 
 set unit angle nodimensionless
 set view unit(0.1*rev),unit(2*rad)
-</pre><p> The orientation <img src="images/img-0518.png" alt="$(0,0)$" style="vertical-align:-4px; 
+</pre><p> The orientation <img src="images/img-0543.png" alt="$(0,0)$" style="vertical-align:-4px; 
                                      width:38px; 
                                      height:18px" class="math gen" /> corresponds to having the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
                                      width:10px; 
@@ -93,7 +93,7 @@ set view unit(0.1*rev),unit(2*rad)
                                      width:40px; 
                                      height:18px" class="math gen" /> plane, and the second angle tips the plot up in the plane containing the <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
                                      width:9px; 
-                                     height:8px" class="math gen" />-axis and the normal to the user’s two-dimensional display. </p><p>The <tt class="tt">replot</tt> command<a name="a0000000834" id="a0000000834"></a> command may be used to add additional datasets to three-dimensional plots in an entirely analogous fashion to two-dimensional plots. </p></div>
+                                     height:8px" class="math gen" />-axis and the normal to the user’s two-dimensional display. </p><p>The <tt class="tt">replot</tt> command<a name="a0000000860" id="a0000000860"></a> command may be used to add additional datasets to three-dimensional plots in an entirely analogous fashion to two-dimensional plots. </p></div>
 
 <div class="contents section-contents"><!--<strong>Subsections</strong>-->
 <ul>
@@ -120,7 +120,7 @@ set view unit(0.1*rev),unit(2*rad)
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

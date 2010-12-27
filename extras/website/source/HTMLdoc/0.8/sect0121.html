@@ -3,10 +3,10 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: replot</title>
+<title>: refresh</title>
 
-<link href="sect0122.html" title="reset" rel="next" />
-<link href="sect0120.html" title="point" rel="prev" />
+<link href="sect0122.html" title="point" rel="next" />
+<link href="sect0120.html" title="rectangle" rel="prev" />
 <link href="ch-reference.html" title="Command Reference" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0120.html" title="point"><img alt="Previous: point" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0120.html" title="rectangle"><img alt="Previous: rectangle" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0122.html" title="reset"><img alt="Next: reset" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0122.html" title="point"><img alt="Next: point" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0074.html">Reference Manual</a> <b>:</b>
+<a href="sect0075.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -50,33 +50,16 @@
 </span><span>
 
 <span>
-<b class="current">replot</b>
+<b class="current">refresh</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000122">1.43 replot</h1>
-<p><a name="a0000001078" id="a0000001078"></a> </p><pre>
-replot [ item &lt;id&gt; ] ...
-</pre><p>The <tt class="tt">replot</tt> command<a name="a0000001079" id="a0000001079"></a> has the same syntax as the <tt class="tt">plot</tt> command and is used to add more datasets to an existing plot, or to change its axis ranges. For example, having plotted one datafile using the command </p><pre>
-plot 'datafile1.dat'
-</pre><p>another can be plotted on the same axes using the command </p><pre>
-replot 'datafile2.dat' using 1:3
-</pre><p>or the ranges of the axes on the original plot can be changed using the command </p><pre>
-replot [0:1][0:1]
-</pre><p>The plot is also updated to reflect any changes to settings made using the <tt class="tt">set</tt> command. In multiplot mode, the <tt class="tt">replot</tt> command<a name="a0000001080" id="a0000001080"></a> can likewise be used to modify the last plot added to the page. For example, the following would change the title of the latest plot to ‘foo’, and add a plot of the function <img src="images/img-0410.png" alt="$g(x)$" style="vertical-align:-4px; 
-                                     width:32px; 
-                                     height:18px" class="math gen" /> to it: </p><pre>
-set title 'foo'
-replot cos(x)
-</pre><p>Additionally, in multiplot mode it is possible to modify any plot on the current multiplot canvas by adding an <tt class="tt">item</tt> modifier to the <tt class="tt">replot</tt> statement to specify which plot should be replotted. The following example would produce two plots, and then add an additional function to the first plot: </p><pre>
-set multiplot
-plot f(x)
-set origin 10,0
-plot g(x)
-replot item 1 h(x)
-</pre><p>If no <tt class="tt">item</tt> number is specified, then the <tt class="tt">replot</tt> command<a name="a0000001081" id="a0000001081"></a> acts by default upon the most recent plot to have been added to the multiplot canvas. </p></div>
+<div><h1 id="a0000000122">1.42 refresh</h1>
+<p><a name="a0000001103" id="a0000001103"></a> </p><pre>
+refresh
+</pre><p>The <tt class="tt">refresh</tt> command<a name="a0000001104" id="a0000001104"></a> produces an exact copy of the latest display. It can be useful, for example, after changing the terminal type, to produce a second copy of a plot in a different graphic format. It differs from the <tt class="tt">replot</tt> command in that it doesn’t replot anything; use of the <tt class="tt">set</tt> command since the previous <tt class="tt">plot</tt> command has no effect on the output. </p></div>
 
 
 
@@ -85,16 +68,16 @@ replot item 1 h(x)
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0120.html" title="point"><img alt="Previous: point" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0120.html" title="rectangle"><img alt="Previous: rectangle" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0122.html" title="reset"><img alt="Next: reset" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0122.html" title="point"><img alt="Next: point" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

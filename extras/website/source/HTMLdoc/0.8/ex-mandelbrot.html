@@ -6,7 +6,7 @@
 <title>: Colour Scale Bars</title>
 
 <link href="sec-contourmaps.html" title="Contour Maps" rel="next" />
-<link href="sect0059.html" title="Custom Colour Mappings" rel="prev" />
+<link href="sect0060.html" title="Custom Colour Mappings" rel="prev" />
 <link href="sec-colourmaps.html" title="Colour Maps" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,7 +15,7 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0059.html" title="Custom Colour Mappings"><img alt="Previous: Custom Colour Mappings" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0060.html" title="Custom Colour Mappings"><img alt="Previous: Custom Colour Mappings" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="sec-colourmaps.html" title="Colour Maps"><img alt="Up: Colour Maps" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+<a href="sect0043.html">Plotting and Vector Graphics</a> <b>:</b>
 </span>
 
 </span><span>
@@ -62,7 +62,7 @@
 </div>
 
 <div><h2 id="ex:mandelbrot">1.12.2 Colour Scale Bars</h2>
-<p>By default, plots with colour maps with single-parameter colour mappings are accompanied by colour scale bars, which appear by default on the right-hand side of the plot. Such scale bars may be configured using the <tt class="tt">set colourkey</tt> command<a name="a0000000824" id="a0000000824"></a>. Issuing the command </p><pre>
+<p>By default, plots with colour maps with single-parameter colour mappings are accompanied by colour scale bars, which appear by default on the right-hand side of the plot. Such scale bars may be configured using the <tt class="tt">set colourkey</tt> command<a name="a0000000850" id="a0000000850"></a>. Issuing the command </p><pre>
 set colourkey
 </pre><p>by itself causes such a scale to be drawn on graphs in the default position, usually along the right-hand edge of the graphs. The converse action is achieved by: </p><pre>
 set nocolourkey
@@ -70,7 +70,7 @@ set nocolourkey
 unset colourkey
 </pre><p>causes PyXPlot to revert to its default behaviour, as specified in a configuration file, if present. A position for the key may optionally be specified after the <tt class="tt">set colourkey</tt> command, as in the example: </p><pre>
 set colourkey bottom
-</pre><p>Recognised positions are <tt class="tt">top</tt>, <tt class="tt">bottom</tt>, <tt class="tt">left</tt> and <tt class="tt">right</tt>. <tt class="tt">above</tt> is an alias for <tt class="tt">top</tt>; <tt class="tt">below</tt> is an alias for <tt class="tt">bottom</tt> and <tt class="tt">outside</tt> is an alias for <tt class="tt">right</tt>. </p><p>The format of the ticks along such scale bars may be set using the <tt class="tt">set c1format</tt> command<a name="a0000000825" id="a0000000825"></a> command, which is similar in syntax to the <tt class="tt">set xformat</tt> command (see Section <a href="sec-set_xformat.html">1.8.8</a>), but which uses <tt class="tt">c</tt> as its dummy variable. </p><p> <span class="upshape"><span class="mdseries"><span class="rm">An image of the Mandelbrot Set.</span></span></span></p><div>
+</pre><p>Recognised positions are <tt class="tt">top</tt>, <tt class="tt">bottom</tt>, <tt class="tt">left</tt> and <tt class="tt">right</tt>. <tt class="tt">above</tt> is an alias for <tt class="tt">top</tt>; <tt class="tt">below</tt> is an alias for <tt class="tt">bottom</tt> and <tt class="tt">outside</tt> is an alias for <tt class="tt">right</tt>. </p><p>The format of the ticks along such scale bars may be set using the <tt class="tt">set c1format</tt> command<a name="a0000000851" id="a0000000851"></a> command, which is similar in syntax to the <tt class="tt">set xformat</tt> command (see Section <a href="sec-set_xformat.html">1.8.8</a>), but which uses <tt class="tt">c</tt> as its dummy variable. </p><p> <span class="upshape"><span class="mdseries"><span class="rm">An image of the Mandelbrot Set.</span></span></span></p><div>
 
 <table cellspacing="0" class="tabular">
 <tr>
@@ -78,17 +78,17 @@ set colourkey bottom
     
     <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> The Mandelbrot set is a set of points in the complex plane whose boundary forms a fractal with a Hausdorff dimension of two. A point <img src="images/img-0040.png" alt="$c$" style="vertical-align:0px; 
                                      width:8px; 
-                                     height:8px" class="math gen" /> in the complex plane is defined to lie within the Mandelbrot set if the complex sequence of numbers </p><table id="a0000000826" class="equation" width="100%" cellspacing="0" cellpadding="7">
+                                     height:8px" class="math gen" /> in the complex plane is defined to lie within the Mandelbrot set if the complex sequence of numbers </p><table id="a0000000852" class="equation" width="100%" cellspacing="0" cellpadding="7">
 <tr>
     
     <td style="width:40%">&nbsp;</td>
-    <td><img src="images/img-0501.png" alt="\[  z_{n+1} = z_ n^2 + c,  \]" style="width:113px; 
+    <td><img src="images/img-0526.png" alt="\[  z_{n+1} = z_ n^2 + c,  \]" style="width:113px; 
                             height:21px" class="math gen" /></td>
     
     <td style="width:40%">&nbsp;</td>
     <td class="eqnnum" style="width:20%">&nbsp;</td>
 </tr>
-</table><p> subject to the starting condition <img src="images/img-0502.png" alt="$z_0=0$" style="vertical-align:-2px; 
+</table><p> subject to the starting condition <img src="images/img-0527.png" alt="$z_0=0$" style="vertical-align:-2px; 
                                      width:49px; 
                                      height:14px" class="math gen" />, remains bounded. </p></td>
 
@@ -97,17 +97,17 @@ set colourkey bottom
     
     <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>The map of this set of points has become a widely-used image of the power of chaos theory to produce complicated structure out of simple algorithms. To produce a more pleasing image, points in the complex plane are often coloured differently, depending upon how many iterations <img src="images/img-0014.png" alt="$n$" style="vertical-align:0px; 
                                      width:11px; 
-                                     height:8px" class="math gen" /> of the above series are required for <img src="images/img-0503.png" alt="$|z_ n|$" style="vertical-align:-5px; 
+                                     height:8px" class="math gen" /> of the above series are required for <img src="images/img-0528.png" alt="$|z_ n|$" style="vertical-align:-5px; 
                                      width:24px; 
-                                     height:18px" class="math gen" /> to exceed 2. This is the point of no return, beyond which it can be shown that <img src="images/img-0504.png" alt="$|z_{n+1}|&gt;|z_ n|$" style="vertical-align:-5px; 
+                                     height:18px" class="math gen" /> to exceed 2. This is the point of no return, beyond which it can be shown that <img src="images/img-0529.png" alt="$|z_{n+1}|&gt;|z_ n|$" style="vertical-align:-5px; 
                                      width:94px; 
                                      height:18px" class="math gen" /> and that divergence is guaranteed. In numerical implementations of the above iteration, in the absence of any better way to prove that the iteration remains bounded for a certain value of <img src="images/img-0040.png" alt="$c$" style="vertical-align:0px; 
                                      width:8px; 
                                      height:8px" class="math gen" />, some maximum number of iterations <img src="images/img-0312.png" alt="$m$" style="vertical-align:0px; 
                                      width:16px; 
-                                     height:8px" class="math gen" /> is chosen, and the series is deemed to have remained bounded if <img src="images/img-0505.png" alt="$|z_ m|&lt;2$" style="vertical-align:-5px; 
+                                     height:8px" class="math gen" /> is chosen, and the series is deemed to have remained bounded if <img src="images/img-0530.png" alt="$|z_ m|&lt;2$" style="vertical-align:-5px; 
                                      width:63px; 
-                                     height:18px" class="math gen" />. This is implemented in PyXPlot by the built-in mathematical function <tt class="tt">fractal_­mandel­brot(z,m)</tt><a name="a0000000827" id="a0000000827"></a>, which returns an integer in the range <img src="images/img-0506.png" alt="$0\leq i\leq m$" style="vertical-align:-3px; 
+                                     height:18px" class="math gen" />. This is implemented in PyXPlot by the built-in mathematical function <tt class="tt">fractal_­mandel­brot(z,m)</tt><a name="a0000000853" id="a0000000853"></a>, which returns an integer in the range <img src="images/img-0531.png" alt="$0\leq i\leq m$" style="vertical-align:-3px; 
                                      width:79px; 
                                      height:15px" class="math gen" />. </p></td>
 
@@ -125,7 +125,7 @@ set colourkey bottom
 
     
     <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><center> 
-<img src="images/img-0508.png" alt="\includegraphics[width=8cm]{examples/eps/ex_mandelbrot}" style="width:8cm" /> </center></td>
+<img src="images/img-0533.png" alt="\includegraphics[width=8cm]{examples/eps/ex_mandelbrot}" style="width:8cm" /> </center></td>
 
 </tr>
 </table>
@@ -138,7 +138,7 @@ set colourkey bottom
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0059.html" title="Custom Colour Mappings"><img alt="Previous: Custom Colour Mappings" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0060.html" title="Custom Colour Mappings"><img alt="Previous: Custom Colour Mappings" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="sec-colourmaps.html" title="Colour Maps"><img alt="Up: Colour Maps" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
@@ -147,7 +147,7 @@ set colourkey bottom
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

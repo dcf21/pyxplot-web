@@ -3,10 +3,10 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Plotting Parametric Functions</title>
+<title>: The Typesetting of Text</title>
 
-<link href="ch-fit_maths.html" title="The fit Command: Mathematical Details" rel="next" />
-<link href="sect0237.html" title="Plots with Multiple Axes" rel="prev" />
+<link href="sect0239.html" title="Complex Numbers" rel="next" />
+<link href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot" rel="prev" />
 <link href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0237.html" title="Plots with Multiple Axes"><img alt="Previous: Plots with Multiple Axes" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot"><img alt="Previous: Summary of Differences Between PyXPlot and Gnuplot" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot"><img alt="Up: Summary of Differences Between PyXPlot and Gnuplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-fit_maths.html" title="The fit Command: Mathematical Details"><img alt="Next: The fit Command: Mathematical Details" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0239.html" title="Complex Numbers"><img alt="Next: Complex Numbers" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0226.html">Appendices</a> <b>:</b>
+<a href="sect0230.html">Appendices</a> <b>:</b>
 </span>
 
 </span><span>
@@ -50,14 +50,42 @@
 </span><span>
 
 <span>
-<b class="current">Plotting Parametric Functions</b>
+<b class="current">The Typesetting of Text</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000239">B.5 Plotting Parametric Functions</h1>
-<p>The syntax used for plotting parametric functions differs between Gnuplot and PyXPlot. Whereas parametric plotting is enabled in Gnuplot using the <tt class="tt">set parametric</tt> command, in PyXPlot it is enabled on a per-dataset basis by placing the keyword <tt class="tt">parametric</tt> before the algebraic expression to be plotted: </p><p> <tt class="tt">gnuplot&gt; <b class="bf">set parametric</b></tt><br /><tt class="tt">gnuplot&gt; <b class="bf">set trange [0:2*pi]</b></tt><br /><tt class="tt">gnuplot&gt; <b class="bf">plot sin(t),cos(t)</b></tt> <br /><tt class="tt">pyxplot&gt; <b class="bf">set trange [0:2*pi]</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">plot parametric sin(t):cos(t)</b></tt>  </p><p>This makes it straightforward to plot parametric functions alongside non-parametric functions. For more information, see Section <a href="ex-spirograph.html">1.6</a>. </p></div>
+<div><h1 id="a0000000239">B.1 The Typesetting of Text</h1>
+<p>PyXPlot renders all text labels automatically in the L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X typesetting environment. This brings many advantages: it produces neater labels than the default typesetting engine used by Gnuplot, makes it straightforward to label graphs with mathematical expressions, and moreover makes it straightforward when importing graphs into L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X documents to match the fonts used in figures with those used in the main text of the document. It does, however, also necessarily introduce some incompatibility with Gnuplot. Some strings which are valid in Gnuplot are not valid in PyXPlot (see Section <a href="sec-latex_incompatibility.html">3.6</a> for more details). For example,<a name="a0000001663" id="a0000001663"></a> </p><p><table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="text-align:left"><p>
+<img src="images/img-0029.png" alt="\includegraphics[width=0.9cm]{cross.eps}" style="width:0.9cm" /></p></td>
+
+    
+    <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> set xlabel ’x<img src="images/img-0024.png" alt="\^{}" style="vertical-align:9px; width:5px; height:4px" class="accent gen" />2’ </tt></div></p></td>
+
+</tr>
+</table> </p><p>is a valid label in Gnuplot, but is not valid input for L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X and therefore fails in PyXPlot. In PyXPlot, it needs to be written in L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X mathmode as: </p><p><table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="text-align:left"><p>
+<img src="images/img-0030.png" alt="\includegraphics[width=0.9cm]{tick.eps}" style="width:0.9cm" /> </p></td>
+
+    
+    <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> set xlabel ’$x<img src="images/img-0024.png" alt="\^{}" style="vertical-align:9px; width:5px; height:4px" class="accent gen" />2$’ </tt></div></p></td>
+
+</tr>
+</table> </p><p>A useful introduction to L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X’s syntax can be found in Tobias Oetiker’s<a name="a0000001664" id="a0000001664"></a> excellent free tutorial, <i class="it">The Not So Short Guide to L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X <img src="images/img-0013.png" alt="$2\epsilon $" style="vertical-align:0px; 
+                                     width:15px; 
+                                     height:12px" class="math gen" /></i><a name="a0000001665" id="a0000001665"></a>, which is available for free download from: </p><p>http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf </p><p>PyXPlot’s built-in <tt class="tt">texify()</tt> function can also assist by automatically converting mathematical expressions and strings of text into L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X, as in the following examples: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">a=50</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print texify("A %d% increase"%(a))</b></tt><br /><tt class="tt">A 50<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />% increase</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print texify(sqrt(x**2+1))</b></tt><br /><tt class="tt">$<br />displaystyle <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     width:7px; 
+                                     height:18px" class="math gen" />sqrt{x<img src="images/img-0024.png" alt="\^{}" style="vertical-align:9px; width:5px; height:4px" class="accent gen" />{2}+1}$</tt>  </p></div>
 
 
 
@@ -66,16 +94,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0237.html" title="Plots with Multiple Axes"><img alt="Previous: Plots with Multiple Axes" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot"><img alt="Previous: Summary of Differences Between PyXPlot and Gnuplot" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot"><img alt="Up: Summary of Differences Between PyXPlot and Gnuplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-fit_maths.html" title="The fit Command: Mathematical Details"><img alt="Next: The fit Command: Mathematical Details" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0239.html" title="Complex Numbers"><img alt="Next: Complex Numbers" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

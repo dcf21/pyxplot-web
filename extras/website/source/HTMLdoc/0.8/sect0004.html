@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -57,11 +57,11 @@
 </div>
 
 <div><h1 id="a0000000005">1.3 A Whirlwind Tour</h1>
-<p>Before beginning a more systematic tutorial in Chapter <a href="ch-first_steps.html">3</a>, we provide a brief tour of a subset of PyXPlot’s features, with references to those chapters of this manual where further details can be found. This section should provide some flavour of the wide range of tasks for which PyXPlot can be used. This is not the place for long-winded explanations of the syntax of each of the quoted PyXPlot commands, but most of the examples will work if pasted directly into a PyXPlot command prompt. </p><p>We will assume that the user has already successfully installed PyXPlot, and has just opened a new PyXPlot command prompt. For instructions on how to install PyXPlot, see Chapter <a href="ch-installation.html">2</a>. </p><p>The first command which any such tour must visit – the workhorse command of PyXPlot – is the <tt class="tt">plot</tt> command<a name="a0000000251" id="a0000000251"></a>. This can be used to plot graphs of either mathematical functions, by typing, for example </p><pre>
+<p>Before beginning a more systematic tutorial in Chapter <a href="ch-first_steps.html">3</a>, we provide a brief tour of a subset of PyXPlot’s features, with references to those chapters of this manual where further details can be found. This section should provide some flavour of the wide range of tasks for which PyXPlot can be used. This is not the place for long-winded explanations of the syntax of each of the quoted PyXPlot commands, but most of the examples will work if pasted directly into a PyXPlot command prompt. </p><p>We will assume that the user has already successfully installed PyXPlot, and has just opened a new PyXPlot command prompt. For instructions on how to install PyXPlot, see Chapter <a href="ch-installation.html">2</a>. </p><p>The first command which any such tour must visit – the workhorse command of PyXPlot – is the <tt class="tt">plot</tt> command<a name="a0000000257" id="a0000000257"></a>. This can be used to plot graphs of either mathematical functions, by typing, for example </p><pre>
 plot log(x)
-</pre><p>or datafiles, by typing<a href="#a0000000252" class="footnote"><sup class="footnotemark">1</sup></a> </p><pre>
+</pre><p>or datafiles, by typing<a href="#a0000000258" class="footnote"><sup class="footnotemark">1</sup></a> </p><pre>
 plot 'datafile.dat'
-</pre><p>There are many commands which allow you to configure the appearance of the plots produced by the <tt class="tt">plot</tt> command<a name="a0000000253" id="a0000000253"></a>, or to select which data from a datafile are plotted; these will be discussed at length in Chapters <a href="ch-first_steps.html">3</a> and <a href="ch-plotting.html">1</a>. </p><p>PyXPlot has extensive facilities for converting datafiles between different physical units – for example, you can tell it that a column of a datafile represents lengths measured in inches, and request it to plot those lengths on a graph in millimetres. These facilities can also be applied to numerical quantities entered by the user. For example, you can define a variable which has physical dimensions of length, and then display its value in different units as follows: </p><pre>
+</pre><p>There are many commands which allow you to configure the appearance of the plots produced by the <tt class="tt">plot</tt> command<a name="a0000000259" id="a0000000259"></a>, or to select which data from a datafile are plotted; these will be discussed at length in Chapters <a href="ch-first_steps.html">3</a> and <a href="ch-plotting.html">1</a>. </p><p>PyXPlot has extensive facilities for converting datafiles between different physical units – for example, you can tell it that a column of a datafile represents lengths measured in inches, and request it to plot those lengths on a graph in millimetres. These facilities can also be applied to numerical quantities entered by the user. For example, you can define a variable which has physical dimensions of length, and then display its value in different units as follows: </p><pre>
 x = 2 * unit(m)
 print x / unit(inch)
 </pre><p>When arithmetic operations are applied to numerical quantities which have physical units, the units propagate intuitively: in the above example, <tt class="tt">x*x</tt> would compute to four square metres. However, the expression <tt class="tt">x*x+x</tt> would throw an error message because it is not dimensionally correct: the first term has dimensions of area whilst the second term has dimensions of length, and these cannot be added. More details of the use of physical units in PyXPlot are given in Section <a href="sec-units.html">4.6</a>, and Appendix <a href="ch-unit_list.html">4</a> lists all of the physical units which PyXPlot recognises by default. </p><p>Users can add their own units to those recognised by PyXPlot by means of a configuration file, and these can be declared either as alternative measures of existing quantities such as length or mass, or as measures of new base quantities such as man-hours of labour or numbers of CPU cycles. More details about how to do this are given in Chapter <a href="ch-configuration.html">8</a>. </p><p>The way in which physical units are displayed can be extensively configured – for example, the automatic use of SI prefixes such as milli- and kilo- is optional, and the user can request that quantities be displayed in CGS or imperial units by default. Other settings instruct PyXPlot to display numerical results in a way which can be pasted into future PyXPlot sessions – <tt class="tt">2*unit(m)</tt> instead of <img src="images/img-0004.png" alt="$2\, \mathrm{m}$" style="vertical-align:0px; 
@@ -70,7 +70,7 @@ print x / unit(inch)
                                      width:16px; 
                                      height:18px" class="math gen" />,<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
                                      width:7px; 
-                                     height:18px" class="math gen" />mathrm{m}$</tt>. </p><p>PyXPlot can perform algebra on complex as well as real numbers. By default, evaluation of <tt class="tt">sqrt(-1)</tt> throws an error, as the emergence of complex numbers is often an indication that a calculation has gone wrong. Complex arithmetic can be enabled by typing<a name="a0000000254" id="a0000000254"></a> </p><pre>
+                                     height:18px" class="math gen" />mathrm{m}$</tt>. </p><p>PyXPlot can perform algebra on complex as well as real numbers. By default, evaluation of <tt class="tt">sqrt(-1)</tt> throws an error, as the emergence of complex numbers is often an indication that a calculation has gone wrong. Complex arithmetic can be enabled by typing<a name="a0000000260" id="a0000000260"></a> </p><pre>
 set numerics complex
 print sqrt(-1)
 </pre><p>Many of the mathematical functions which are built into PyXPlot, a complete list of which can be found in Appendix <a href="ch-function_list.html">2</a> or by typing <tt class="tt">show functions</tt>, can take complex arguments, for example </p><pre>
@@ -95,7 +95,7 @@ print sin(i)
 <div id="footnotes">
 <p><b>Footnotes</b></p>
 <ol>
-<li id="a0000000252">This example requires you to have a plain text data file called <tt class="tt">datafile.dat</tt> in your current working directory, and is the only example in this section which may not work out of the box.</li>
+<li id="a0000000258">This example requires you to have a plain text data file called <tt class="tt">datafile.dat</tt> in your current working directory, and is the only example in this section which may not work out of the box.</li>
 </ol>
 </div>
 
@@ -111,7 +111,7 @@ print sin(i)
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

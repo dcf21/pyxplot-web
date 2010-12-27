@@ -3,10 +3,10 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: text</title>
+<title>: solve</title>
 
-<link href="sect0218.html" title="undelete" rel="next" />
-<link href="sect0216.html" title="tabulate" rel="prev" />
+<link href="sect0218.html" title="spline" rel="next" />
+<link href="sect0216.html" title="show" rel="prev" />
 <link href="ch-reference.html" title="Command Reference" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0216.html" title="tabulate"><img alt="Previous: tabulate" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0216.html" title="show"><img alt="Previous: show" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0218.html" title="undelete"><img alt="Next: undelete" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0218.html" title="spline"><img alt="Next: spline" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0074.html">Reference Manual</a> <b>:</b>
+<a href="sect0075.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -50,27 +50,49 @@
 </span><span>
 
 <span>
-<b class="current">text</b>
+<b class="current">solve</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000218">1.52 text</h1>
-<p><a name="a0000001322" id="a0000001322"></a> </p><pre>
-text [ item &lt;id&gt; ] '&lt;text string&gt;' [ at &lt;x&gt;, &lt;y&gt; ]
-     [ rotate &lt;angle&gt; ] [ gap &lt;gap&gt; ]
-     [ halign &lt;alignment&gt; ] [ valign &lt;alignment&gt; ]
-     [ with colour &lt;colour&gt; ]
-</pre><p>The <tt class="tt">text</tt> command<a name="a0000001323" id="a0000001323"></a> allows strings of text to a added as labels on multiplot canvases. The example </p><pre>
-text 'Hello World!' at 0,2
-</pre><p>would render the text ‘Hello World!’ at position <img src="images/img-0613.png" alt="$(0,2)$" style="vertical-align:-4px; 
-                                     width:38px; 
-                                     height:18px" class="math gen" />, measured in centimetres. The alignment of the text item with respect to this position can be set using the <tt class="tt">set texthalign</tt> and <tt class="tt">set textvalign</tt> commands, or using the <tt class="tt">halign</tt> and <tt class="tt">valign</tt> modifiers supplied to the <tt class="tt">text</tt> command itself. </p><p>A gap may be specified, which should either have dimensions of length, or be dimensionless, in which case it is interpreted as being measured in centimetres. If a gap is specified, then the text string is slightly displaced from the specified position, in the direction in which it is being aligned. </p><p>A rotation angle may optionally be specified after the keyword <tt class="tt">rotate</tt> to produce text rotated to any arbitrary angle, measured in degrees counter-clockwise. The following example would produce upward-running text: </p><pre>
-text 'Hello' at 1.5, 3.6 rotate 90
-</pre><p>By default the text is black; however, an arbitrary colour may be specified using the <tt class="tt">with colour</tt> modifier. For example: </p><pre>
-text 'A purple label' at 0, 0 with colour purple
-</pre><p>would add a purple label at the origin of the multiplot. </p><p>Outside of multiplot mode, the text command can be used to produce images consisting simply of one single text item. This can be useful for importing L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>Xed equations as gif images into slideshow programs such as Microsoft Powerpoint which are incapable of producing such neat mathematical notation by themselves. </p><p>All vector graphics objects placed on multiplot canvases receive unique identification numbers which count sequentially from one, and which may be listed using the <tt class="tt">list</tt> command. By reference to these numbers, they can be deleted and subsequently restored with the <tt class="tt">delete</tt> and <tt class="tt">undelete</tt> commands respectively. </p></div>
+<div><h1 id="a0000000218">1.49 solve</h1>
+<p><a name="a0000001339" id="a0000001339"></a> </p><pre>
+solve &lt;equation&gt; {, &lt;equation&gt;}
+    via &lt;variable&gt; {, &lt;variable&gt;}
+</pre><p>The <tt class="tt">solve</tt> command<a name="a0000001340" id="a0000001340"></a> can be used to solve simple systems of one or more equations numerically. It takes as its arguments a comma-separated list of the equations which are to be solved, and a comma-separated list of the variables which are to be found. The latter should be prefixed by the word <tt class="tt">via</tt>, to separate it from the list of equations. </p><p>Note that the time taken by the solver dramatically increases with the number of variables which are simultaneously found, whereas the accuracy achieved simultaneously decreases. The following example solves a simple pair of simultaneous equations of two variables: </p><pre>
+pyxplot&gt; solve x+y=10, x-y=3 via x,y
+pyxplot&gt; print x
+6.5
+pyxplot&gt; print y
+3.5
+</pre><p>No output is returned to the terminal if the numerical solver succeeds, otherwise an error message is displayed. If any of the fitting variables are already defined prior to the <tt class="tt">solve</tt> command’s being called, their values are used as initial guesses, otherwise an initial guess of unity for each fitting variable is assumed. Thus, the same <tt class="tt">solve</tt> command<a name="a0000001341" id="a0000001341"></a> returns two different values in the following two cases: </p><pre>
+pyxplot&gt; x= # Undefine x
+pyxplot&gt; solve cos(x)=0 via x
+pyxplot&gt; print x/pi
+0.5
+pyxplot&gt; x=10
+pyxplot&gt; solve cos(x)=0 via x
+pyxplot&gt; print x/pi
+3.5
+</pre><p>In cases where any of the variables being solved for are not dimensionless, it is essential that an initial guess with appropriate units be supplied, otherwise the solver will try and fail to solve the system of equations using dimensionless values: </p><pre>
+x = unit(m)
+y = 5*unit(km)
+solve x=y via x
+</pre><p>The <tt class="tt">solve</tt> command works by minimising the squares of the residuals of all of the equations supplied, and so even when no exact solution can be found, the best compromise is returned. The following example has no solution – a system of three equations with two variables is over-constrained – but PyXPlot nonetheless finds a compromise solution: </p><pre>
+pyxplot&gt; solve x+y=10, x-y=3, 2*x+y=16 via x,y
+pyxplot&gt; print x
+6.3571429
+pyxplot&gt; print y
+3.4285714
+</pre><p>When complex arithmetic is enabled, the <tt class="tt">solve</tt> command allows each of the variables being fitted to take any value in the complex plane, and thus the number of dimensions of the fitting problem is effectively doubled – the real and imaginary components of each variable are solved for separately – as in the following example: </p><pre>
+pyxplot&gt; set numerics complex
+pyxplot&gt; solve exp(x)=e*i via x
+pyxplot&gt; print Re(x)
+1
+pyxplot&gt; print Im(x)/pi
+0.5
+</pre></div>
 
 
 
@@ -79,16 +101,16 @@ text 'A purple label' at 0, 0 with colour purple
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0216.html" title="tabulate"><img alt="Previous: tabulate" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0216.html" title="show"><img alt="Previous: show" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0218.html" title="undelete"><img alt="Next: undelete" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0218.html" title="spline"><img alt="Next: spline" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

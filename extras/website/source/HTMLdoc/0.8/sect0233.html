@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Delivering your Talk</title>
+<title>: Inserting Equations in Powerpoint Presentations</title>
 
-<link href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot" rel="next" />
-<link href="sect0232.html" title="Writing A Short Example Talk" rel="prev" />
-<link href="sect0230.html" title="Delivering Talks in PyXPlot" rel="up" />
+<link href="sect0234.html" title="Delivering Talks in PyXPlot" rel="next" />
+<link href="sect0232.html" title="Conversion of JPEG Images to PostScript" rel="prev" />
+<link href="sect0231.html" title="Other Applications of PyXPlot" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0232.html" title="Writing A Short Example Talk"><img alt="Previous: Writing A Short Example Talk" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0232.html" title="Conversion of JPEG Images to PostScript"><img alt="Previous: Conversion of JPEG Images to PostScript" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0230.html" title="Delivering Talks in PyXPlot"><img alt="Up: Delivering Talks in PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0231.html" title="Other Applications of PyXPlot"><img alt="Up: Other Applications of PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot"><img alt="Next: Summary of Differences Between PyXPlot and Gnuplot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0234.html" title="Delivering Talks in PyXPlot"><img alt="Next: Delivering Talks in PyXPlot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,32 +39,36 @@
 
 </span><span>
 <span>
-<a href="sect0226.html">Appendices</a> <b>:</b>
+<a href="sect0230.html">Appendices</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="sect0227.html">Other Applications of PyXPlot</a> <b>:</b>
-</span>
-
-</span><span>
-<span>
-<a href="sect0230.html">Delivering Talks in PyXPlot</a> <b>:</b>
+<a href="sect0231.html">Other Applications of PyXPlot</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">Delivering your Talk</b>
+<b class="current">Inserting Equations in Powerpoint Presentations</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000234">A.3.3 Delivering your Talk</h2>
-<p>There are two straightforward ways in which you can give your talk. The quickest way is simply to use the <i class="it">Quick Image Viewer</i><a name="a0000001624" id="a0000001624"></a> (<tt class="tt">qiv</tt>): </p><pre>
-qiv slides_cropped/*
-</pre><p> Press the left mouse button to move forward through your talk, and the right mouse button to go back a slide. </p><p>This method does lack some of the niceties of Microsoft <i class="it">Powerpoint</i> – for example, the ability to jump to any arbitrary slide number, compatibility with wireless remote controls to advance your slides, and the ability to use animated slide transitions. It may be preferably, therefore, to paste the jpeg images of your slides into a <i class="it">Powerpoint</i> or OpenOffice <i class="it">Impress</i> presentation before you give your talk. </p></div>
+<div><h1 id="a0000000234">A.2 Inserting Equations in Powerpoint Presentations</h1>
+<p> <a name="a0000001652" id="a0000001652"></a><a name="a0000001653" id="a0000001653"></a> </p><p>The two tools most commonly used for presenting talks<a name="a0000001654" id="a0000001654"></a> – Microsoft <i class="it">Powerpoint</i><a name="a0000001655" id="a0000001655"></a> and OpenOffice<a name="a0000001656" id="a0000001656"></a> <i class="it">Impress</i> – have limited facilities for importing text rendered in L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X into slides. <i class="it">Powerpoint</i> does include its own <i class="it">Equation Editor</i>, but its output is considerably less professional than that produced by L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X. This can prove a frustration for anyone who works in a field with notation which makes use of non-standard characters, but especially for those who work in mathematical and equation-centric disciplines. </p><p>It is possible to import graphic images into <i class="it">Powerpoint</i>, but it cannot read images in PostScript format, the format in which L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X usually produces its output. PyXPlot’s <tt class="tt">gif</tt> and <tt class="tt">png</tt> terminals provide a fix for this problem, as the following example demonstrates: </p><pre>
+set term transparent noantialias gif
+set term dpi 300
+set output 'equation.gif'
+set multiplot
+
+# Render the Planck blackbody formula in LaTeX
+set textcolour yellow
+text '$B_\nu = \frac{8\pi h}{c^3} \
+\frac{\nu^3}{\exp \left( h\nu / kT \right) -1 }$' at 0,0
+text 'The Planck Blackbody Formula:' at 0 , 0.75
+</pre><p>The result is a <tt class="tt">gif</tt> image of the desired equation, with yellow text on a transparent background. This can readily be imported into <i class="it">Powerpoint</i> and re-scaled to the desired size. </p></div>
 
 
 
@@ -73,16 +77,16 @@ qiv slides_cropped/*
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0232.html" title="Writing A Short Example Talk"><img alt="Previous: Writing A Short Example Talk" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0232.html" title="Conversion of JPEG Images to PostScript"><img alt="Previous: Conversion of JPEG Images to PostScript" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0230.html" title="Delivering Talks in PyXPlot"><img alt="Up: Delivering Talks in PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0231.html" title="Other Applications of PyXPlot"><img alt="Up: Other Applications of PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot"><img alt="Next: Summary of Differences Between PyXPlot and Gnuplot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0234.html" title="Delivering Talks in PyXPlot"><img alt="Next: Delivering Talks in PyXPlot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

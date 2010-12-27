@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Custom Colour Mappings</title>
+<title>: Labelling Graphs</title>
 
-<link href="ex-mandelbrot.html" title="Colour Scale Bars" rel="next" />
-<link href="sec-colourmaps.html" title="Colour Maps" rel="prev" />
-<link href="sec-colourmaps.html" title="Colour Maps" rel="up" />
+<link href="sec-set_arrow.html" title="Arrows" rel="next" />
+<link href="sect0058.html" title="Clipping Behaviour" rel="prev" />
+<link href="ch-plotting.html" title="Plotting: A Detailed Survey" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-colourmaps.html" title="Colour Maps"><img alt="Previous: Colour Maps" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0058.html" title="Clipping Behaviour"><img alt="Previous: Clipping Behaviour" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-colourmaps.html" title="Colour Maps"><img alt="Up: Colour Maps" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-plotting.html" title="Plotting: A Detailed Survey"><img alt="Up: Plotting: A Detailed Survey" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="ex-mandelbrot.html" title="Colour Scale Bars"><img alt="Next: Colour Scale Bars" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sec-set_arrow.html" title="Arrows"><img alt="Next: Arrows" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+<a href="sect0043.html">Plotting and Vector Graphics</a> <b>:</b>
 </span>
 
 </span><span>
@@ -48,67 +48,45 @@
 </span>
 
 </span><span>
-<span>
-<a href="sec-colourmaps.html">Colour Maps</a> <b>:</b>
-</span>
-
-</span><span>
 
 <span>
-<b class="current">Custom Colour Mappings</b>
+<b class="current">Labelling Graphs</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000060">1.12.1 Custom Colour Mappings</h2>
-<p>The colour mapping used by the <tt class="tt">colourmap</tt> plot style is set using the <tt class="tt">set colourmap</tt> command<a name="a0000000818" id="a0000000818"></a>, which takes algebraic expressions for the RGB, HSB or CMYK components of the colour to use as a function of the variables <tt class="tt">c1</tt>, <tt class="tt">c2</tt>, <tt class="tt">c3</tt> and <tt class="tt">c4</tt>. As elsewhere in PyXPlot, these colour components should take values in the range zero to one; values outside of this range are clipped. The syntax of the <tt class="tt">set colourmap</tt> command<a name="a0000000819" id="a0000000819"></a> is as follows: </p><pre>
-set colourmap ( rgb&lt;r&gt;:&lt;g&gt;:&lt;b&gt; |
-                hsb&lt;h&gt;:&lt;s&gt;:&lt;b&gt; |
-                cmyk&lt;c&gt;:&lt;m&gt;:&lt;y&gt;:&lt;k&gt; )
-              [ mask &lt;expr&gt; ]
-</pre><p>If the optional mask expression is supplied, then any areas in a colour map where this expression evaluates to zero (i.e. false) are made transparent. The following colour mapping, which is the default, produces a greyscale colour mapping of the third column of data supplied to the <tt class="tt">colourmap</tt><a name="a0000000820" id="a0000000820"></a><a name="a0000000821" id="a0000000821"></a> plot style; further columns of data, if supplied, are not used: </p><pre>
-set c1range [*:*] renormalise noreverse
-set colourmap rgb(c1):(c1):(c1)
-</pre><p>The <tt class="tt">set c&lt;n&gt;range</tt> command<a name="a0000000822" id="a0000000822"></a> command specifies how the values of <img src="images/img-0496.png" alt="$c_ n$" style="vertical-align:-2px; 
-                                     width:16px; 
-                                     height:10px" class="math gen" /> are processed before being used in the expressions supplied to the <tt class="tt">set colourmap</tt> command<a name="a0000000823" id="a0000000823"></a>. It has the following syntax: </p><pre>
-set c&lt;n&gt;range [ &lt;range&gt; ]
-              [ reversed | noreversed ]
-              [ renormalise | norenormalise ]
-</pre><p>If the <tt class="tt">renor­malise</tt> option is specified, then the values of <img src="images/img-0496.png" alt="$c_ n$" style="vertical-align:-2px; 
-                                     width:16px; 
-                                     height:10px" class="math gen" /> at each point in the data grid are first scaled into the range zero to one. This is generally useful, since the colour components themselves must be in this range; in the example given above, the lowest value of <img src="images/img-0485.png" alt="$c_1$" style="vertical-align:-2px; 
-                                     width:14px; 
-                                     height:10px" class="math gen" /> corresponds to black (i.e. brightness 0), and the highest value corresponds to white (i.e. brightness 1). If an explicit range is specified to the <tt class="tt">set c&lt;n&gt;range</tt> command, then the upper limit of this range maps to the value one, and the lower limit maps to the value zero. An asterisk (<tt class="tt">*</tt>) means that the lowest or highest value is substituted. The mapping is inverted if the <tt class="tt">reverse</tt> option is specified, such that the upper limit maps to zero, and the lower limit maps to one. Intermediate values are scaled either linearly or logarithmically, and these behaviours can be selected with the following commands: </p><pre>
-set logscale c1
-set linearscale c1
-</pre><p>In the example below, a colour map of the function <img src="images/img-0497.png" alt="$f(z)=3x^2/(x^3+1)$" style="vertical-align:-5px; 
-                                     width:156px; 
-                                     height:21px" class="math gen" /> is made, using hue to represent the magnitude of <img src="images/img-0300.png" alt="$f(z)$" style="vertical-align:-4px; 
-                                     width:32px; 
-                                     height:18px" class="math gen" /> and saturation to represent the complex argument of <img src="images/img-0300.png" alt="$f(z)$" style="vertical-align:-4px; 
-                                     width:32px; 
-                                     height:18px" class="math gen" />: </p><p><tt class="tt">set numerics complex</tt><br /><tt class="tt">set sample grid 400x400</tt><br /><tt class="tt">set nogrid</tt><br /><tt class="tt">set size square</tt><br /><tt class="tt">set key below</tt><br /><tt class="tt">set c1range[0:2]</tt><br /><tt class="tt">set colmap hsb(c1):(c2*0.7+0.3):1</tt><br /><tt class="tt">f(x) = 3*x**2 / (x**3+1)</tt><br /><tt class="tt">plot [-3:3][-3:3] abs(f(x+i*y)):arg(f(x+i*y)) with colourmap</tt> </p><p><center>
-<img src="images/img-0499.png" alt="\includegraphics[width=8cm]{examples/eps/ex_branch_cuts}" style="width:8cm" /></center> </p></div>
+<div><h1 id="a0000000060">1.11 Labelling Graphs</h1>
+<p>The <tt class="tt">set arrow</tt><a name="a0000000803" id="a0000000803"></a> and <tt class="tt">set label</tt> command<a name="a0000000804" id="a0000000804"></a>s allow arrows and text labels to be added to graphs to label significant points or to add simple vector graphics to them. </p></div>
+
+<div class="contents section-contents"><!--<strong>Subsections</strong>-->
+<ul>
+<li><a href="sec-set_arrow.html">1.11.1 Arrows</a>
+   
+</li><li><a href="ex-australia.html">1.11.2 Text Labels</a>
+   
+</li>
 
 
+
+</ul>
+</div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-colourmaps.html" title="Colour Maps"><img alt="Previous: Colour Maps" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0058.html" title="Clipping Behaviour"><img alt="Previous: Clipping Behaviour" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-colourmaps.html" title="Colour Maps"><img alt="Up: Colour Maps" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-plotting.html" title="Plotting: A Detailed Survey"><img alt="Up: Plotting: A Detailed Survey" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="ex-mandelbrot.html" title="Colour Scale Bars"><img alt="Next: Colour Scale Bars" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sec-set_arrow.html" title="Arrows"><img alt="Next: Arrows" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: view</title>
+<title>: trange</title>
 
-<link href="sect0198.html" title="viewer" rel="next" />
-<link href="sect0196.html" title="unit" rel="prev" />
-<link href="sect0124.html" title="set" rel="up" />
+<link href="sect0198.html" title="unit" rel="next" />
+<link href="sect0196.html" title="title" rel="prev" />
+<link href="sect0126.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0196.html" title="unit"><img alt="Previous: unit" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0196.html" title="title"><img alt="Previous: title" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0198.html" title="viewer"><img alt="Next: viewer" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0198.html" title="unit"><img alt="Next: unit" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0074.html">Reference Manual</a> <b>:</b>
+<a href="sect0075.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,39 +49,22 @@
 
 </span><span>
 <span>
-<a href="sect0124.html">set</a> <b>:</b>
+<a href="sect0126.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">view</b>
+<b class="current">trange</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000198">1.46.73 view</h2>
-<p><a name="a0000001275" id="a0000001275"></a> </p><pre>
-set view &lt;theta&gt;, &lt;phi&gt;
-</pre><p>The <tt class="tt">set view</tt> command<a name="a0000001276" id="a0000001276"></a> is used to specify the angle from which three-dimensional plots are viewed. It should be followed by two angles, which can either be expressed in degrees, as dimensionless numbers, or as quantities with physical units of angle: </p><pre>
-set view 60,30
-
-set unit angle nodimensionless
-set view unit(0.1*rev),unit(2*rad)
-</pre><p> The orientation <img src="images/img-0518.png" alt="$(0,0)$" style="vertical-align:-4px; 
-                                     width:38px; 
-                                     height:18px" class="math gen" /> corresponds to having the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
-                                     width:10px; 
-                                     height:8px" class="math gen" />-axis horizontal, the <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
-                                     width:9px; 
-                                     height:8px" class="math gen" />-axis vertical, and the <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
-                                     width:9px; 
-                                     height:12px" class="math gen" />-axis directed into the page. The first angle supplied to the <tt class="tt">set view</tt> command rotates the plot in the <img src="images/img-0188.png" alt="$(x,y)$" style="vertical-align:-4px; 
-                                     width:40px; 
-                                     height:18px" class="math gen" /> plane, and the second angle tips the plot up in the plane containing the <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
-                                     width:9px; 
-                                     height:8px" class="math gen" />-axis and the normal to the user’s two-dimensional display. </p></div>
+<div><h2 id="a0000000198">1.47.71 trange</h2>
+<p><a name="a0000001292" id="a0000001292"></a> </p><pre>
+set trange [&lt;range&gt;] [reverse]
+</pre><p>The <tt class="tt">set trange</tt> command changes the range of the free parameter <tt class="tt">t</tt> used when generating parametric plots. For more details of the syntax of the range specifier, see the <tt class="tt">set xrange</tt> command. Note that <tt class="tt">t</tt> is not allowed to autoscale, and so the <tt class="tt">*</tt> character is not permitted in the specified range. </p></div>
 
 
 
@@ -90,16 +73,16 @@ set view unit(0.1*rev),unit(2*rad)
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0196.html" title="unit"><img alt="Previous: unit" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0196.html" title="title"><img alt="Previous: title" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0198.html" title="viewer"><img alt="Next: viewer" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0198.html" title="unit"><img alt="Next: unit" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

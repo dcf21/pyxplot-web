@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -57,18 +57,18 @@
 </div>
 
 <div><h1 id="ex:meansd">6.5 Foreach Datum Loops</h1>
-<p>Foreach datum loops are similar to foreach loops in that they run a script block once for each item in a list. In this case, however, the list in question is the list of datapoints in a file. The syntax of the <tt class="tt">foreach datum</tt> command<a name="a0000000580" id="a0000000580"></a> is similar to that of the commands met in the previous chapter for acting upon datafiles: the standard modifiers <tt class="tt">every</tt>, <tt class="tt">index</tt>, <tt class="tt">select</tt> and <tt class="tt">using</tt> can be used to select which columns of the datafile, and which subset of the datapoints, should be used: </p><pre>
+<p>Foreach datum loops are similar to foreach loops in that they run a script block once for each item in a list. In this case, however, the list in question is the list of datapoints in a file. The syntax of the <tt class="tt">foreach datum</tt> command<a name="a0000000586" id="a0000000586"></a> is similar to that of the commands met in the previous chapter for acting upon datafiles: the standard modifiers <tt class="tt">every</tt>, <tt class="tt">index</tt>, <tt class="tt">select</tt> and <tt class="tt">using</tt> can be used to select which columns of the datafile, and which subset of the datapoints, should be used: </p><pre>
 foreach datum i,j,name in "data.dat" using 1:2:"%s"%($3)
  {
   ...
  }
-</pre><p>The <tt class="tt">foreach datum</tt> command<a name="a0000000581" id="a0000000581"></a> is followed by a comma-separated list of the variable(s) which are to be read from the datafile on each iteration of the loop. The <tt class="tt">using</tt> modifier specifies the columns or rows of data which are to be used to set the values of each variable. In this example, the third variable, <tt class="tt">name</tt>, is set using a quoted string, indicating that it will be set to equal whatever string of text is found in the third column of the datafile. </p><p> <span class="upshape"><span class="mdseries"><span class="rm">Calculating the Mean and Standard Deviation of Data.</span></span></span></p><div>
+</pre><p>The <tt class="tt">foreach datum</tt> command<a name="a0000000587" id="a0000000587"></a> is followed by a comma-separated list of the variable(s) which are to be read from the datafile on each iteration of the loop. The <tt class="tt">using</tt> modifier specifies the columns or rows of data which are to be used to set the values of each variable. In this example, the third variable, <tt class="tt">name</tt>, is set using a quoted string, indicating that it will be set to equal whatever string of text is found in the third column of the datafile. </p><p> <span class="upshape"><span class="mdseries"><span class="rm">Calculating the Mean and Standard Deviation of Data.</span></span></span></p><div>
 
 <table cellspacing="0" class="tabular">
 <tr>
 
     
-    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> The following PyXPlot script calculates the mean and standard deviation of a set of datapoints using the <tt class="tt">foreach datum</tt> command<a name="a0000000582" id="a0000000582"></a>: </p></td>
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> The following PyXPlot script calculates the mean and standard deviation of a set of datapoints using the <tt class="tt">foreach datum</tt> command<a name="a0000000588" id="a0000000588"></a>: </p></td>
 
 </tr><tr>
 
@@ -119,7 +119,7 @@ foreach datum i,j,name in "data.dat" using 1:2:"%s"%($3)
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

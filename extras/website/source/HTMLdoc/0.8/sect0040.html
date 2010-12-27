@@ -3,9 +3,9 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Shell Commands</title>
+<title>: Assertions</title>
 
-<link href="sect0041.html" title="Script Watching: pyxplotwatch" rel="next" />
+<link href="sect0041.html" title="Shell Commands" rel="next" />
 <link href="sect0039.html" title="The exec command" rel="prev" />
 <link href="sect0031.html" title="Programming and Flow Control" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
@@ -19,12 +19,12 @@
 
 <td><a href="sect0031.html" title="Programming and Flow Control"><img alt="Up: Programming and Flow Control" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0041.html" title="Script Watching: pyxplot_watch"><img alt="Next: Script Watching: pyxplot_watch" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0041.html" title="Shell Commands"><img alt="Next: Shell Commands" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -50,74 +50,24 @@
 </span><span>
 
 <span>
-<b class="current">Shell Commands</b>
+<b class="current">Assertions</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000041">6.11 Shell Commands</h1>
-<p>Shell commands<a name="a0000000595" id="a0000000595"></a> may be executed directly from within PyXPlot by prefixing them with an <tt class="tt">!</tt><a name="a0000000596" id="a0000000596"></a> character. The remainder of the line is sent directly to the shell, for example: </p><pre>
-!ls -l
-</pre><p>Semi-colons cannot be used to place further PyXPlot commands after a shell command on the same line. </p><p><table cellspacing="0" class="tabular">
-<tr>
-
-    
-    <td style="text-align:left"><p>
-<img src="images/img-0029.png" alt="\includegraphics[width=0.9cm]{cross.eps}" style="width:0.9cm" /></p></td>
-
-    
-    <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> !ls -l ; set key top left </tt></div></p></td>
-
-</tr>
-</table> </p><p>It is also possible to substitute the output of a shell command into a PyXPlot command. To do this, the shell command should be enclosed in back-quotes (‘), as in the following example:<a name="a0000000597" id="a0000000597"></a><a name="a0000000598" id="a0000000598"></a> </p><pre>
-a=`ls -l *.ppl | wc -l`
-print "The current directory contains %d PyXPlot scripts."%(a)
-</pre><p>It should be noted that back-quotes can only be used outside quotes. For example, </p><p><table cellspacing="0" class="tabular">
-<tr>
-
-    
-    <td style="text-align:left"><p>
-<img src="images/img-0029.png" alt="\includegraphics[width=0.9cm]{cross.eps}" style="width:0.9cm" /></p></td>
-
-    
-    <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> set xlabel ’‘ls‘’ </tt></div></p></td>
-
-</tr>
-</table> </p><p>will not work. The best way to do this would be: </p><p><table cellspacing="0" class="tabular">
-<tr>
-
-    
-    <td style="text-align:left"><p>
-<img src="images/img-0030.png" alt="\includegraphics[width=0.9cm]{tick.eps}" style="width:0.9cm" /> </p></td>
-
-    
-    <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> set xlabel ‘echo "’" ; ls ; echo "’"‘ </tt></div></p></td>
-
-</tr>
-</table> </p><p>Note that it is not possible to change the current working directory by sending the <tt class="tt">cd</tt> command to a shell, as this command would only change the working directory of the shell in which the single command is executed: </p><p><table cellspacing="0" class="tabular">
-<tr>
-
-    
-    <td style="text-align:left"><p>
-<img src="images/img-0029.png" alt="\includegraphics[width=0.9cm]{cross.eps}" style="width:0.9cm" /></p></td>
-
-    
-    <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> !cd .. </tt></div></p></td>
-
-</tr>
-</table> </p><p>PyXPlot has its own <tt class="tt">cd</tt> command<a name="a0000000599" id="a0000000599"></a> for this purpose, as well as its own <tt class="tt">pwd</tt> command<a name="a0000000600" id="a0000000600"></a>: </p><p><table cellspacing="0" class="tabular">
-<tr>
-
-    
-    <td style="text-align:left"><p>
-<img src="images/img-0030.png" alt="\includegraphics[width=0.9cm]{tick.eps}" style="width:0.9cm" /> </p></td>
-
-    
-    <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> cd .. </tt></div></p></td>
-
-</tr>
-</table> </p></div>
+<div><h1 id="a0000000041">6.12 Assertions</h1>
+<p> <a name="a0000000603" id="a0000000603"></a> </p><p>The <tt class="tt">assert</tt> command<a name="a0000000604" id="a0000000604"></a> can be used to assert that a logical expression, such as <tt class="tt">x&gt;0</tt>, is true. An error is reported if the expression is false, and optionally a string can be supplied to provide a more informative error message to the user: </p><pre>
+assert x&gt;0
+assert y&lt;0 "y must be less than zero."
+</pre><p>The <tt class="tt">assert</tt> command<a name="a0000000605" id="a0000000605"></a> can also be used to test the version number of PyXPlot. It is possible to test either that the version is newer than or equal to a specific version, using the <tt class="tt"><img src="images/img-0035.png" alt="$&gt;$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" />=</tt> operator, or that it is older than a specific version, using the <tt class="tt"><img src="images/img-0034.png" alt="$&lt;$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" /></tt> operator, as demonstrated in the following examples: </p><pre>
+assert version &gt;= 0.8.2
+assert version &lt;  0.8  "This script is designed for PyXPlot 0.7"
+</pre></div>
 
 
 
@@ -130,12 +80,12 @@ print "The current directory contains %d PyXPlot scripts."%(a)
 
 <td><a href="sect0031.html" title="Programming and Flow Control"><img alt="Up: Programming and Flow Control" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0041.html" title="Script Watching: pyxplot_watch"><img alt="Next: Script Watching: pyxplot_watch" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0041.html" title="Shell Commands"><img alt="Next: Shell Commands" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: 2010 May 19: PyXPlot 0.8.0</title>
+<title>: The Covariance Matrix</title>
 
-<link href="sect0245.html" title="2009 Nov 17: PyXPlot 0.7.1" rel="next" />
-<link href="sect0243.html" title="2010 Jun 1: PyXPlot 0.8.1" rel="prev" />
-<link href="sect0241.html" title="ChangeLog" rel="up" />
+<link href="sec-correlation_matrix.html" title="The Correlation Matrix" rel="next" />
+<link href="sect0243.html" title="Estimating the Error in u0" rel="prev" />
+<link href="ch-fit_maths.html" title="The fit Command: Mathematical Details" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0243.html" title="2010 Jun 1: PyXPlot 0.8.1"><img alt="Previous: 2010 Jun 1: PyXPlot 0.8.1" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0243.html" title="Estimating the Error in "><img alt="Previous: Estimating the Error in " border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0241.html" title="ChangeLog"><img alt="Up: ChangeLog" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-fit_maths.html" title="The fit Command: Mathematical Details"><img alt="Up: The fit Command: Mathematical Details" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0245.html" title="2009 Nov 17: PyXPlot 0.7.1"><img alt="Next: 2009 Nov 17: PyXPlot 0.7.1" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sec-correlation_matrix.html" title="The Correlation Matrix"><img alt="Next: The Correlation Matrix" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,29 +39,250 @@
 
 </span><span>
 <span>
-<a href="sect0226.html">Appendices</a> <b>:</b>
+<a href="sect0230.html">Appendices</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="sect0241.html">ChangeLog</a> <b>:</b>
+<a href="ch-fit_maths.html">The <tt class="tt">fit</tt> Command: Mathematical Details</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">2010 May 19: PyXPlot 0.8.0</b>
+<b class="current">The Covariance Matrix</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000245">2010 May 19: PyXPlot 0.8.0</h2>
-<h3 id="a0000001669">Summary:</h3>
-<p>This release is a major update, for which PyXPlot’s original python code has been completely rewritten in C with the addition of many new features. Because of the scale of this update, there is some minor syntax incompatibility with previous versions where features have undergone particularly heavy change. The most apparent change is the increase in speed and efficiency resultant from the use of a compiled language: especially when handling large datafiles, PyXPlot 0.8.0 can run more than an order-of-magnitude faster than previous versions. </p><h3 id="a0000001670">Details:</h3>
-<ul class="itemize">
-<li><p>The handling of large datafiles has been streamlined to require around an order-of-magnitude less time and memory. </p></li><li><p>PyXPlot’s mathematical environment has been extended to handle complex numbers and quantities with physical units. </p></li><li><p>The range of mathematical functions built into PyXPlot has been massively extended. </p></li><li><p>The <tt class="tt">solve</tt> command has been added to allow the solution of systems of equations. </p></li><li><p>The <tt class="tt">maximise</tt> and <tt class="tt">minimise</tt> commands have been added to allow searches for local extrema of functions. </p></li><li><p>An <tt class="tt">fft</tt> command has been added for performing Fourier transforms on data. </p></li><li><p>New plot styles – <tt class="tt">filledregion</tt> and <tt class="tt">yerrorshaded</tt> – have been added for plotting filled error regions. </p></li><li><p>The configuration of linked axes has been entirely redesigned. </p></li><li><p>Parametric function plotting has been implemented. </p></li><li><p>Colours can now be specified by RGB, HSB or CMYK components, as well as by name. </p></li><li><p>Several commands, e.g. <tt class="tt">box</tt>, <tt class="tt">circle</tt>, <tt class="tt">ellipse</tt>, etc., have been added to allow vector graphics to be produced in PyXPlot’s multiplot environment. </p></li><li><p>The <tt class="tt">jpeg</tt> command has been generalised to allow the incorporation of not only <tt class="tt">jpeg</tt> images, but also <tt class="tt">bmp</tt>, <tt class="tt">gif</tt> and <tt class="tt">png</tt> images, onto multiplot canvases. The command has been renamed <tt class="tt">image</tt> in recognition of its wider applicability. Image transparency is now supported in <tt class="tt">gif</tt> and <tt class="tt">png</tt> images. </p></li><li><p>The <tt class="tt">spline</tt> command, now renamed the <tt class="tt">interpolate</tt> command, has been extended up provide many types of interpolation between datapoints. </p></li><li><p>A wide range of conditional and flow control structures have been added to PyXPlot’s command language – these are the <tt class="tt">do</tt>, <tt class="tt">for</tt>, <tt class="tt">foreach</tt>, <tt class="tt">if</tt> and <tt class="tt">while</tt> commands and the <tt class="tt">cond­ition­alS</tt> and <tt class="tt">con­dition­alN</tt> mathematical functions. </p></li><li><p>Input filters have been introduced as a mechanism by which datafiles in arbitrary formats can be read. </p></li><li><p>PyXPlot’s commandline interface now supports tab completion. </p></li><li><p>The <tt class="tt">show</tt> command has been reworked to produce pastable output. </p></li><li><p>Many minor bugs have been fixed. </p></li>
-</ul></div>
+<div><h1 id="a0000000245">C.4 The Covariance Matrix</h1>
+<p> <a name="a0000001676" id="a0000001676"></a> </p><p>The terms of the covariance matrix <img src="images/img-0822.png" alt="$V_{ij}$" style="vertical-align:-5px; 
+                                     width:21px; 
+                                     height:17px" class="math gen" /> are defined by: </p><table id="&lt;plasTeX.TeXFragment object at 0x106837808&gt;" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td><img src="images/img-0823.png" alt="\begin{equation}  V_{ij} = \left&lt; \left(u_ i - u^0_ i\right) \left(u_ j - u^0_ j\right) \right&gt; \label{eqn:def_ covar} \end{equation}" style="width:404px; 
+                            height:24px" class="math gen" /></td>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td class="eqnnum" style="width:20%"><span>(<span>C.8</span>)</span></td>
+</tr>
+</table><p>Its leading diagonal terms may be recognised as equalling the variances of each of our <img src="images/img-0794.png" alt="$n_\mathrm {u}$" style="vertical-align:-2px; 
+                                     width:19px; 
+                                     height:10px" class="math gen" /> variables; its cross terms measure the correlation between the variables. If a component <img src="images/img-0824.png" alt="$V_{ij} &gt; 0$" style="vertical-align:-5px; 
+                                     width:55px; 
+                                     height:17px" class="math gen" />, it implies that higher estimates of the coefficient <img src="images/img-0821.png" alt="$u_ i$" style="vertical-align:-2px; 
+                                     width:15px; 
+                                     height:10px" class="math gen" /> make higher estimates of <img src="images/img-0825.png" alt="$u_ j$" style="vertical-align:-5px; 
+                                     width:16px; 
+                                     height:13px" class="math gen" /> more favourable also; if <img src="images/img-0826.png" alt="$V_{ij} &lt; 0$" style="vertical-align:-5px; 
+                                     width:55px; 
+                                     height:17px" class="math gen" />, the converse is true. </p><p>It is a standard statistical result that <img src="images/img-0827.png" alt="$\mathbf{V} = (-\mathbf{A})^{-1}$" style="vertical-align:-4px; 
+                                     width:101px; 
+                                     height:20px" class="math gen" />. In the remainder of this section we prove this; readers who are willing to accept this may skip onto Section <a href="sec-correlation_matrix.html">C.5</a>. </p><p>Using <img src="images/img-0828.png" alt="$\Delta u_ i$" style="vertical-align:-2px; 
+                                     width:29px; 
+                                     height:14px" class="math gen" /> to denote <img src="images/img-0829.png" alt="$\left(u_ i - u^0_ i\right)$" style="vertical-align:-6px; 
+                                     width:69px; 
+                                     height:22px" class="math gen" />, we may proceed by rewriting Equation (<a></a>) as: </p><table id="a0000001677" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
+<tr id="a0000001678">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0830.png" alt="$\displaystyle  V_{ij}  $" style="vertical-align:-5px; width:21px;                     height:17px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0831.png" alt="$\displaystyle  \idotsint _{u_ i=-\infty }^{\infty } \Delta u_ i \Delta u_ j \mathrm{P}\left( \mathbf{u} | \left\{  \mathbf{x}_ i, f_ i, \sigma _ i \right\}  \right) \, \mathrm{d}^{n_\mathrm {u}}\mathbf{u}  $" style="vertical-align:-18px; width:348px;                     height:44px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum"><span>(<span>C.9</span>)</span></td>
+</tr><tr id="a0000001679">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0175.png" alt="$\displaystyle  $" style="vertical-align:0px; width:1px;                     height:1px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0832.png" alt="$\displaystyle  \frac{ \idotsint _{u_ i=-\infty }^{\infty } \Delta u_ i \Delta u_ j \exp (-Q) \, \mathrm{d}^{n_\mathrm {u}}\mathbf{u} }{ \idotsint _{u_ i=-\infty }^{\infty } \exp (-Q) \, \mathrm{d}^{n_\mathrm {u}}\mathbf{u} } \nonumber  $" style="vertical-align:-22px; width:278px;                     height:53px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr>
+</table><p>The normalisation factor in the denominator of this expression, which we denote as <img src="images/img-0833.png" alt="$Z$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:12px" class="math gen" />, the <i class="itshape">partition function</i>, may be evaluated by <img src="images/img-0794.png" alt="$n_\mathrm {u}$" style="vertical-align:-2px; 
+                                     width:19px; 
+                                     height:10px" class="math gen" />-dimensional Gaussian integration, and is a standard result: </p><table id="a0000001680" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
+<tr id="a0000001681">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0834.png" alt="$\displaystyle  Z  $" style="vertical-align:0px; width:12px;                     height:12px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0835.png" alt="$\displaystyle  \idotsint _{u_ i=-\infty }^{\infty } \exp \left(\frac{1}{2} \Delta \mathbf{u}^\mathbf {T} \mathbf{A} \Delta \mathbf{u} \right) \, \mathrm{d}^{n_\mathrm {u}}\mathbf{u}  $" style="vertical-align:-18px; width:305px;                     height:45px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum"><span>(<span>C.10</span>)</span></td>
+</tr><tr id="a0000001682">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0175.png" alt="$\displaystyle  $" style="vertical-align:0px; width:1px;                     height:1px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0836.png" alt="$\displaystyle  \frac{(2\pi )^{n_\mathrm {u}/2}}{\mathrm{Det}(\mathbf{-A})} \nonumber  $" style="vertical-align:-17px; width:74px;                     height:47px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr>
+</table><p>Differentiating <img src="images/img-0837.png" alt="$\log _ e(Z)$" style="vertical-align:-4px; 
+                                     width:57px; 
+                                     height:18px" class="math gen" /> with respect of any given component of the Hessian matrix <img src="images/img-0838.png" alt="$A_{ij}$" style="vertical-align:-5px; 
+                                     width:25px; 
+                                     height:17px" class="math gen" /> yields: </p><table id="a0000001683" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td><img src="images/img-0839.png" alt="\begin{equation}  -2 \frac{\partial }{\partial A_{ij}} \left[ \log _ e(Z) \right] = \frac{1}{Z} \idotsint _{u_ i=-\infty }^{\infty } \Delta u_ i \Delta u_ j \exp (-Q) \, \mathrm{d}^{n_\mathrm {u}}\mathbf{u} \end{equation}" style="width:547px; 
+                            height:44px" class="math gen" /></td>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td class="eqnnum" style="width:20%"><span>(<span>C.11</span>)</span></td>
+</tr>
+</table><p>which we may identify as equalling <img src="images/img-0822.png" alt="$V_{ij}$" style="vertical-align:-5px; 
+                                     width:21px; 
+                                     height:17px" class="math gen" />: </p><table id="&lt;plasTeX.TeXFragment object at 0x10684c530&gt;" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
+<tr id="a0000001684">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0840.png" alt="$\displaystyle  \label{eqa:v_ zrelate} V_{ij}  $" style="vertical-align:-5px; width:21px;                     height:17px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0841.png" alt="$\displaystyle  -2 \frac{\partial }{\partial A_{ij}} \left[ \log _ e(Z) \right]  $" style="vertical-align:-19px; width:132px;                     height:44px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum"><span>(<span>C.12</span>)</span></td>
+</tr><tr id="a0000001685">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0175.png" alt="$\displaystyle  $" style="vertical-align:0px; width:1px;                     height:1px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0842.png" alt="$\displaystyle  -2 \frac{\partial }{\partial A_{ij}} \left[ \log _ e((2\pi )^{n_\mathrm {u}/2}) - \log _ e(\mathrm{Det}(\mathbf{-A})) \right] \nonumber  $" style="vertical-align:-19px; width:329px;                     height:44px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr><tr id="a0000001686">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0175.png" alt="$\displaystyle  $" style="vertical-align:0px; width:1px;                     height:1px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0843.png" alt="$\displaystyle  2 \frac{\partial }{\partial A_{ij}} \left[ \log _ e(\mathrm{Det}(\mathbf{-A})) \right] \nonumber  $" style="vertical-align:-19px; width:177px;                     height:44px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr>
+</table><p>This expression may be simplified by recalling that the determinant of a matrix is equal to the scalar product of any of its rows with its cofactors, yielding the result: </p><table id="a0000001687" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td><img src="images/img-0844.png" alt="\begin{equation}  \frac{\partial }{\partial A_{ij}} \left[\mathrm{Det}(\mathbf{-A})\right] = -a_{ij} \end{equation}" style="width:389px; 
+                            height:44px" class="math gen" /></td>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td class="eqnnum" style="width:20%"><span>(<span>C.13</span>)</span></td>
+</tr>
+</table><p>where <img src="images/img-0845.png" alt="$a_{ij}$" style="vertical-align:-5px; 
+                                     width:21px; 
+                                     height:13px" class="math gen" /> is the cofactor of <img src="images/img-0838.png" alt="$A_{ij}$" style="vertical-align:-5px; 
+                                     width:25px; 
+                                     height:17px" class="math gen" />. Substituting this into Equation (<a></a>) yields: </p><table id="a0000001688" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td><img src="images/img-0846.png" alt="\begin{equation}  V_{ij} = \frac{-a_{ij}}{\mathrm{Det}(\mathbf{-A})} \end{equation}" style="width:358px; 
+                            height:37px" class="math gen" /></td>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td class="eqnnum" style="width:20%"><span>(<span>C.14</span>)</span></td>
+</tr>
+</table><p>Recalling that the adjoint <img src="images/img-0847.png" alt="$\mathbf{A}^\dagger $" style="vertical-align:0px; 
+                                     width:22px; 
+                                     height:16px" class="math gen" /> of the Hessian matrix is the matrix of cofactors of its transpose, and that <img src="images/img-0812.png" alt="$\mathbf{A}$" style="vertical-align:0px; 
+                                     width:15px; 
+                                     height:12px" class="math gen" /> is symmetric, we may write: </p><table id="a0000001689" class="equation" width="100%" cellspacing="0" cellpadding="7">
+<tr>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td><img src="images/img-0848.png" alt="\begin{equation}  V_{ij} = \frac{-\mathbf{A}^\dagger }{\mathrm{Det}(\mathbf{-A})} \equiv (-\mathbf{A})^{-1} \end{equation}" style="width:402px; 
+                            height:44px" class="math gen" /></td>
+    
+    <td style="width:40%">&nbsp;</td>
+    <td class="eqnnum" style="width:20%"><span>(<span>C.15</span>)</span></td>
+</tr>
+</table><p>which proves the result stated earlier. </p></div>
 
 
 
@@ -70,16 +291,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0243.html" title="2010 Jun 1: PyXPlot 0.8.1"><img alt="Previous: 2010 Jun 1: PyXPlot 0.8.1" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0243.html" title="Estimating the Error in "><img alt="Previous: Estimating the Error in " border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0241.html" title="ChangeLog"><img alt="Up: ChangeLog" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-fit_maths.html" title="The fit Command: Mathematical Details"><img alt="Up: The fit Command: Mathematical Details" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0245.html" title="2009 Nov 17: PyXPlot 0.7.1"><img alt="Next: 2009 Nov 17: PyXPlot 0.7.1" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sec-correlation_matrix.html" title="The Correlation Matrix"><img alt="Next: The Correlation Matrix" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

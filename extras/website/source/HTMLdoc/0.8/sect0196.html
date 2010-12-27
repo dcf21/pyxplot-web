@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: unit</title>
+<title>: title</title>
 
-<link href="sect0197.html" title="view" rel="next" />
-<link href="sect0195.html" title="trange" rel="prev" />
-<link href="sect0124.html" title="set" rel="up" />
+<link href="sect0197.html" title="trange" rel="next" />
+<link href="sect0195.html" title="textvalign" rel="prev" />
+<link href="sect0126.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0195.html" title="trange"><img alt="Previous: trange" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0195.html" title="textvalign"><img alt="Previous: textvalign" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0197.html" title="view"><img alt="Next: view" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0197.html" title="trange"><img alt="Next: trange" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0074.html">Reference Manual</a> <b>:</b>
+<a href="sect0075.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,40 +49,25 @@
 
 </span><span>
 <span>
-<a href="sect0124.html">set</a> <b>:</b>
+<a href="sect0126.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">unit</b>
+<b class="current">title</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000197">1.46.72 unit</h2>
-<p><a name="a0000001264" id="a0000001264"></a> </p><pre>
-set unit [ angle ( dimensionless | nodimensionless ) ]
-         [ of &lt;dimension&gt; &lt;unit&gt; ]
-         [ scheme &lt;unit scheme&gt; ]
-         [ preferred &lt;unit&gt; ]
-         [ nopreferred &lt;unit&gt; ]
-         [ display ( full | abbreviated | prefix | noprefix ) ]
-</pre><p>The <tt class="tt">set unit</tt> command<a name="a0000001265" id="a0000001265"></a> controls how quantities with physical units are displayed by PyXPlot. The <tt class="tt">set unit scheme</tt> command<a name="a0000001266" id="a0000001266"></a> provides the most general configuration option, allowing one of several <i class="it">units schemes</i><a name="a0000001267" id="a0000001267"></a> to be selected, each of which comprises a list of units which are deemed to be members of that particular scheme. For example, in the CGS unit scheme<a name="a0000001268" id="a0000001268"></a><a name="a0000001269" id="a0000001269"></a>, all lengths are displayed in centimetres, all masses are displayed in grammes, all energies are displayed in ergs, and so forth. In the imperial unit scheme<a name="a0000001270" id="a0000001270"></a><a name="a0000001271" id="a0000001271"></a>, quantities are displayed in British imperial units – inches, pounds, pints, and so forth – and in the US unit scheme, US customary units are used. The available schemes are: <tt class="tt">ancient</tt>, <tt class="tt">cgs</tt>, <tt class="tt">imperial</tt>, <tt class="tt">planck</tt>, <tt class="tt">si</tt>, and <tt class="tt">us</tt>. </p><p>To fine-tune the unit used to display quantities with a particular set of physical dimensions, the <tt class="tt">set unit of</tt> form of the command should be used. For example, the following command would cause all lengths to be displayed in inches: </p><pre>
-set unit of length inch
-</pre><p>The <tt class="tt">set unit preferred</tt> command<a name="a0000001272" id="a0000001272"></a> offers a slightly more flexible way of achieving the same result. Whereas the <tt class="tt">set unit of</tt> command<a name="a0000001273" id="a0000001273"></a> can only operate on named quantities such as lengths and powers, and cannot act upon compound units such as <tt class="tt">W/Hz</tt>, the <tt class="tt">set unit preferred</tt> command<a name="a0000001274" id="a0000001274"></a> can act upon any unit or combination of units, as in the examples: </p><pre>
-set unit preferred parsec
-set unit preferred W/Hz
-set unit preferred N*m
-</pre><p> The latter two examples are particularly useful when working with spectral densities (powers per unit frequency) or torques (forces multiplied by distances). Unfortunately, both of these units are dimensionally equal to energies, and so are displayed by PyXPlot in Joules by default. The above statement overrides such behaviour. Having set a particular unit to be preferred, this can be unset as in the following example: </p><pre>
-set unit nopreferred parsec
-</pre><p>By default, units are displayed in their abbreviated forms, for example <tt class="tt">A</tt> instead of <tt class="tt">amperes</tt> and <tt class="tt">W</tt> instead of <tt class="tt">watts</tt>. Furthermore, SI prefixes such as milli- and kilo- are applied to SI units where they are appropriate. Both of these behaviours can be turned on or off, in the former case with the commands </p><pre>
-set unit display abbreviated
-set unit display full
-</pre><p>and in the latter case using the following pair of commands: </p><pre>
-set unit display prefix
-set unit display noprefix
+<div><h2 id="a0000000197">1.47.70 title</h2>
+<p><a name="a0000001291" id="a0000001291"></a> </p><pre>
+set title '&lt;title&gt;'
+</pre><p>The setting <tt class="tt">title</tt> can be used to set a title for a plot, to be displayed above it. For example, the command: </p><pre>
+set title 'foo'
+</pre><p>would cause a title ‘foo’ to be displayed above a graph. The easiest way to remove a title, having set one, is using the command: </p><pre>
+set notitle
 </pre></div>
 
 
@@ -92,16 +77,16 @@ set unit display noprefix
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0195.html" title="trange"><img alt="Previous: trange" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0195.html" title="textvalign"><img alt="Previous: textvalign" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0197.html" title="view"><img alt="Next: view" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0197.html" title="trange"><img alt="Next: trange" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

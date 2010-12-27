@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: The text Command</title>
+<title>: Adding Other Vector Graphics Objects</title>
 
-<link href="ex-nanotubes.html" title="The arrow and line Commands" rel="next" />
-<link href="sect0069.html" title="Adding Other Vector Graphics Objects" rel="prev" />
-<link href="sect0069.html" title="Adding Other Vector Graphics Objects" rel="up" />
+<link href="sect0071.html" title="The text Command" rel="next" />
+<link href="sect0069.html" title="The replot Command Revisited" rel="prev" />
+<link href="ch-vector_graphics.html" title="Producing Vector Graphics" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0069.html" title="Adding Other Vector Graphics Objects"><img alt="Previous: Adding Other Vector Graphics Objects" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0069.html" title="The replot Command Revisited"><img alt="Previous: The replot Command Revisited" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0069.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-vector_graphics.html" title="Producing Vector Graphics"><img alt="Up: Producing Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="ex-nanotubes.html" title="The arrow and line Commands"><img alt="Next: The arrow and line Commands" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0071.html" title="The text Command"><img alt="Next: The text Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+<a href="sect0043.html">Plotting and Vector Graphics</a> <b>:</b>
 </span>
 
 </span><span>
@@ -48,50 +48,61 @@
 </span>
 
 </span><span>
-<span>
-<a href="sect0069.html">Adding Other Vector Graphics Objects</a> <b>:</b>
-</span>
-
-</span><span>
 
 <span>
-<b class="current">The <tt class="tt">text</tt> Command</b>
+<b class="current">Adding Other Vector Graphics Objects</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000071">3.4.1 The <tt class="tt">text</tt> Command</h2>
-<p>Text labels may be added to multiplot canvases using the <tt class="tt">text</tt> command<a name="a0000000911" id="a0000000911"></a>. This has the following syntax: </p><pre>
-text 'This is some text' at x,y
-</pre><p>In this case, the string ‘This is some text’ would be rendered at position <img src="images/img-0188.png" alt="$(x,y)$" style="vertical-align:-4px; 
-                                     width:40px; 
-                                     height:18px" class="math gen" /> on the multiplot. As with the <tt class="tt">set label</tt> command<a name="a0000000912" id="a0000000912"></a>, a colour may optionally be specified with the <tt class="tt">with colour</tt> modifier, as well as a rotation angle to rotate text labels through any given angle, measured in degrees counter-clockwise. For example:<a name="a0000000913" id="a0000000913"></a> </p><pre>
-text 'This is some text' at x,y rotate r with colour red
-</pre><p>The commands <tt class="tt">set textcolour</tt><a name="a0000000914" id="a0000000914"></a>, <tt class="tt">set texthalign</tt><a name="a0000000915" id="a0000000915"></a> and <tt class="tt">set textvalign</tt><a name="a0000000916" id="a0000000916"></a> can be used to set the colour and alignment of the text produced with the <tt class="tt">text</tt> command<a name="a0000000917" id="a0000000917"></a>. Alternatively, the <tt class="tt">text</tt> command<a name="a0000000918" id="a0000000918"></a> takes three modifiers to control the alignment of the text which override these <tt class="tt">set</tt> commands. The <tt class="tt">halign</tt> and <tt class="tt">valign</tt> modifiers may be followed by any of the settings which may follow the <tt class="tt">set texthalign</tt> and <tt class="tt">set textvalign</tt> commands respectively, as in the following examples: </p><pre>
-text 'This is some text' at 0,0 halign left valign top
-text 'This is some text' at 0,0 halign right valign centre
-</pre><p>The <tt class="tt">gap</tt> modifier allows a gap to be inserted in the alignment of the text. For example, the string <tt class="tt">halign left gap 3*unit(mm)</tt> would cause text to be rendered with its left side <img src="images/img-0543.png" alt="$3\, \mathrm{mm}$" style="vertical-align:0px; 
-                                     width:42px; 
-                                     height:12px" class="math gen" /> to the right of the position specified for the text. This is useful for labelling points on diagrams, where the labels should be slightly offset from the points that they are associated with. If the <tt class="tt">gap</tt> modifier is followed by a dimensionless number, rather than one with dimensions of lengths, then it is assumed to be measured in centimetres. </p><p>It should be noted that the <tt class="tt">text</tt> command<a name="a0000000919" id="a0000000919"></a> can also be used outside of the multiplot environment, to render a single piece of short text instead of a graph. One obvious application is to produce equations rendered as graphical files which can subsequently be imported into documents, slideshows or webpages.<a name="a0000000920" id="a0000000920"></a> </p></div>
+<div><h1 id="a0000000071">3.4 Adding Other Vector Graphics Objects</h1>
+<p>In addition to graphs, a range of other objects can be placed on multiplot canvases: </p><ul class="itemize">
+<li><p>Arcs of circles (the <tt class="tt">arc</tt> command<a name="a0000000926" id="a0000000926"></a>). </p></li><li><p>Arrows (the <tt class="tt">arrow</tt> command<a name="a0000000927" id="a0000000927"></a>). </p></li><li><p>Rectangular boxes (the <tt class="tt">box</tt> command<a name="a0000000928" id="a0000000928"></a>). </p></li><li><p>Circles (the <tt class="tt">circle</tt> command<a name="a0000000929" id="a0000000929"></a>). </p></li><li><p>Ellipses (the <tt class="tt">ellipse</tt> command<a name="a0000000930" id="a0000000930"></a>). </p></li><li><p>Encapsulated PostScript images (the <tt class="tt">eps</tt> command<a name="a0000000931" id="a0000000931"></a>). </p></li><li><p>Graphical images in <tt class="tt">bmp</tt>, <tt class="tt">gif</tt>, <tt class="tt">jpeg</tt> or <tt class="tt">png</tt> formats (the <tt class="tt">image</tt> command<a name="a0000000932" id="a0000000932"></a>). </p></li><li><p>Lines (the <tt class="tt">line</tt> command<a name="a0000000933" id="a0000000933"></a>). </p></li><li><p>Piecharts (the <tt class="tt">piechart</tt> command<a name="a0000000934" id="a0000000934"></a>). </p></li><li><p>Points labelled by crosses and other symbols (the <tt class="tt">point</tt> command<a name="a0000000935" id="a0000000935"></a>). </p></li><li><p>Text labels (the <tt class="tt">text</tt> command<a name="a0000000936" id="a0000000936"></a>). </p></li>
+</ul><p> Put together, these commands can be used to produce a wide range of vector graphics. In the remainder of this chapter, we describe these commands in turn, providing a variety of examples of their use. </p></div>
+
+<div class="contents section-contents"><!--<strong>Subsections</strong>-->
+<ul>
+<li><a href="sect0071.html">3.4.1 The <tt class="tt">text</tt> Command</a>
+   
+</li><li><a href="ex-nanotubes.html">3.4.2 The <tt class="tt">arrow</tt> and <tt class="tt">line</tt> Commands</a>
+   
+</li><li><a href="sect0072.html">3.4.3 The <tt class="tt">image</tt> Command</a>
+   
+</li><li><a href="sect0073.html">3.4.4 The <tt class="tt">eps</tt> Command</a>
+   
+</li><li><a href="ex-noentry.html">3.4.5 The <tt class="tt">box</tt> and <tt class="tt">circle</tt> Commands</a>
+   
+</li><li><a href="ex-lens.html">3.4.6 The <tt class="tt">arc</tt> Command</a>
+   
+</li><li><a href="sec-point.html">3.4.7 The <tt class="tt">point</tt> Command</a>
+   
+</li><li><a href="sec-ellipse.html">3.4.8 The <tt class="tt">ellipse</tt> Command</a>
+   
+</li><li><a href="sec-piechart.html">3.4.9 The <tt class="tt">piechart</tt> Command</a>
+   
+</li>
 
 
+
+</ul>
+</div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0069.html" title="Adding Other Vector Graphics Objects"><img alt="Previous: Adding Other Vector Graphics Objects" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0069.html" title="The replot Command Revisited"><img alt="Previous: The replot Command Revisited" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0069.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-vector_graphics.html" title="Producing Vector Graphics"><img alt="Up: Producing Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="ex-nanotubes.html" title="The arrow and line Commands"><img alt="Next: The arrow and line Commands" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0071.html" title="The text Command"><img alt="Next: The text Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

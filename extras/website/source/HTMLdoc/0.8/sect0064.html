@@ -3,10 +3,10 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: PostScript Output</title>
+<title>: The Default Terminal</title>
 
-<link href="sec-set_papersize.html" title="Paper Sizes" rel="next" />
-<link href="sect0063.html" title="The Default Terminal" rel="prev" />
+<link href="sect0065.html" title="PostScript Output" rel="next" />
+<link href="sect0063.html" title="The Complete Syntax of the set terminal Command" rel="prev" />
 <link href="ch-image_formats.html" title="Producing Image Files" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0063.html" title="The Default Terminal"><img alt="Previous: The Default Terminal" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0063.html" title="The Complete Syntax of the set terminal Command"><img alt="Previous: The Complete Syntax of the set terminal Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-image_formats.html" title="Producing Image Files"><img alt="Up: Producing Image Files" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-set_papersize.html" title="Paper Sizes"><img alt="Next: Paper Sizes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0065.html" title="PostScript Output"><img alt="Next: PostScript Output" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+<a href="sect0043.html">Plotting and Vector Graphics</a> <b>:</b>
 </span>
 
 </span><span>
@@ -50,41 +50,32 @@
 </span><span>
 
 <span>
-<b class="current">PostScript Output</b>
+<b class="current">The Default Terminal</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000065">2.3 PostScript Output</h1>
-<p>If the <tt class="tt">enlarge</tt> modifier is used with the <tt class="tt">set terminal</tt> command<a name="a0000000869" id="a0000000869"></a> then the whole plot is enlarged, or, in the case of large plots, shrunk, to the current paper size, minus a small margin. The aspect ratio of the plot is preserved. </p></div>
-
-<div class="contents section-contents"><!--<strong>Subsections</strong>-->
-<ul>
-<li><a href="sec-set_papersize.html">2.3.1 Paper Sizes</a>
-   
-</li>
+<div><h1 id="a0000000065">2.2 The Default Terminal</h1>
+<p>The default terminal is normally <tt class="tt">X11_SingleWindow</tt>, except when PyXPlot is used non-interactively – i.e. one or more command scripts are specified on the command line, and PyXPlot exits as soon as it finishes executing them. In this case, the <tt class="tt">X11_SingleWindow</tt> would not be a very sensible terminal to use as any plot window would close as soon as PyXPlot exited. The default terminal in this case changes to <tt class="tt">eps</tt>. </p><p>This rule does not apply when the special ‘–’ filename is specified in a list of command scripts on the command line, where an interactive terminal will operate between running a series of scripts. In this case, PyXPlot detects that the session will be interactive, and defaults to the usual <tt class="tt">X11_SingleWindow</tt> terminal. Conversely, on machines where the <tt class="tt">DISPLAY</tt> environment variable<a name="a0000000894" id="a0000000894"></a> is not set, PyXPlot detects that it has access to no X-terminal on which to display plots, and defaults to the <tt class="tt">eps</tt> terminal. </p></div>
 
 
-
-</ul>
-</div>
 
 
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0063.html" title="The Default Terminal"><img alt="Previous: The Default Terminal" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0063.html" title="The Complete Syntax of the set terminal Command"><img alt="Previous: The Complete Syntax of the set terminal Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-image_formats.html" title="Producing Image Files"><img alt="Up: Producing Image Files" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-set_papersize.html" title="Paper Sizes"><img alt="Next: Paper Sizes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0065.html" title="PostScript Output"><img alt="Next: PostScript Output" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

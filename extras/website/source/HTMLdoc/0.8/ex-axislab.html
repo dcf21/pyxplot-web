@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -57,7 +57,7 @@
 </div>
 
 <div><h1 id="ex:axislab">3.14 Setting Axis Ranges</h1>
-<p>By default, PyXPlot automatically scales axes to some sensible range which contains all of the plotted data. However, it is possible for the user to override this and set his own range.<a name="a0000000386" id="a0000000386"></a> This can be done directly from the plot command, by following the word <tt class="tt">plot</tt> with the syntax <tt class="tt">[minimum:maximum]</tt>.<a href="#a0000000387" class="footnote"><sup class="footnotemark">1</sup></a> The first specified range applies to the <tt class="tt">x</tt>-axis, and the second to the <tt class="tt">y</tt>-axis.<a href="#a0000000388" class="footnote"><sup class="footnotemark">2</sup></a> In the following example, the first three cylindrical Bessel functions are plotted in the range <img src="images/img-0047.png" alt="$0&lt;x&lt;10$" style="vertical-align:0px; 
+<p>By default, PyXPlot automatically scales axes to some sensible range which contains all of the plotted data. However, it is possible for the user to override this and set his own range.<a name="a0000000392" id="a0000000392"></a> This can be done directly from the plot command, by following the word <tt class="tt">plot</tt> with the syntax <tt class="tt">[minimum:maximum]</tt>.<a href="#a0000000393" class="footnote"><sup class="footnotemark">1</sup></a> The first specified range applies to the <tt class="tt">x</tt>-axis, and the second to the <tt class="tt">y</tt>-axis.<a href="#a0000000394" class="footnote"><sup class="footnotemark">2</sup></a> In the following example, the first three cylindrical Bessel functions are plotted in the range <img src="images/img-0047.png" alt="$0&lt;x&lt;10$" style="vertical-align:0px; 
                                      width:86px; 
                                      height:12px" class="math gen" />: </p><pre>
 plot [0:10][-0.5:1] besselJ(0,x), besselJ(1,x), besselJ(2,x)
@@ -66,12 +66,12 @@ plot [0:10][-0.5:1] besselJ(0,x), besselJ(1,x), besselJ(2,x)
 set key xcentre
 plot [-1:1][:] legendreP(2,x), legendreP(4,x), legendreP(6,x)
 </pre><center> 
-<img src="images/img-0052.png" alt="\includegraphics[width=8cm]{examples/eps/ex_intro_legendre}" style="width:8cm" /> </center><p>Here, we have used the <tt class="tt">set key</tt> command to specify that the plot’s legend should be horizontally aligned in the centre of the plot, to complement the symmetry of the Legendre polynomials. This command will be described more fully in Section <a href="sec-legends.html">1.7</a>. </p><p>Alternatively, ranges can be set before the <tt class="tt">plot</tt> statement, using the <tt class="tt">set xrange</tt> command<a name="a0000000389" id="a0000000389"></a>, as in the examples: </p><pre>
+<img src="images/img-0052.png" alt="\includegraphics[width=8cm]{examples/eps/ex_intro_legendre}" style="width:8cm" /> </center><p>Here, we have used the <tt class="tt">set key</tt> command to specify that the plot’s legend should be horizontally aligned in the centre of the plot, to complement the symmetry of the Legendre polynomials. This command will be described more fully in Section <a href="sec-legends.html">1.7</a>. </p><p>Alternatively, ranges can be set before the <tt class="tt">plot</tt> statement, using the <tt class="tt">set xrange</tt> command<a name="a0000000395" id="a0000000395"></a>, as in the examples: </p><pre>
 set xrange [-2:2]
 set yrange [a:b]
 </pre><p>If an asterisk is supplied in place of either of the limits in this command, then any limit which had previously been set is switched off, and the axis returns to its default autoscaling behaviour: </p><pre>
 set xrange [-2:*]
-</pre><p>A similar effect may be obtained using the <tt class="tt">set autoscale</tt> command<a name="a0000000390" id="a0000000390"></a>, which takes a list of the axes to which it is to apply. Both the upper and lower limits of these axes are set to scale automatically. If no list is supplied, then the command is applied to all axes. </p><pre>
+</pre><p>A similar effect may be obtained using the <tt class="tt">set autoscale</tt> command<a name="a0000000396" id="a0000000396"></a>, which takes a list of the axes to which it is to apply. Both the upper and lower limits of these axes are set to scale automatically. If no list is supplied, then the command is applied to all axes. </p><pre>
 set autoscale x y
 set autoscale
 </pre><p>The range supplied to the <tt class="tt">set xrange</tt> can be followed by the word <tt class="tt">reverse</tt> to indicate that the axis should run from right-to-left, or from top-to-bottom. In practice, this is of limited use when an explicit range is specified, as the following two commands are equivalent: </p><pre>
@@ -79,7 +79,7 @@ set xrange [-2:2] reverse
 set xrange [2:-2] noreverse
 </pre><p>However, this is useful when axes are set to autoscale: </p><pre>
 set xrange [*:*] reverse
-</pre><p>Axes can be set to have logarithmic scales by using the <tt class="tt">set logscale</tt> command<a name="a0000000391" id="a0000000391"></a>, which also takes a list of axes to which it should apply. Its converse is <tt class="tt">set nologscale</tt><a name="a0000000392" id="a0000000392"></a>: </p><pre>
+</pre><p>Axes can be set to have logarithmic scales by using the <tt class="tt">set logscale</tt> command<a name="a0000000397" id="a0000000397"></a>, which also takes a list of axes to which it should apply. Its converse is <tt class="tt">set nologscale</tt><a name="a0000000398" id="a0000000398"></a>: </p><pre>
 set logscale
 set nologscale y x x2
 </pre><p>Further discussion of the configuration of axes can be found in Section <a href="sec-multiple_axes.html">1.8.1</a>. </p><p> <span class="upshape"><span class="mdseries"><span class="rm">A diagram of the trajectories of projectiles fired with different initial velocities.</span></span></span></p><div>
@@ -94,8 +94,8 @@ set nologscale y x x2
                                      width:9px; 
                                      height:12px" class="math gen" />. According to the equations of motion under constant acceleration, the distance of such a projectile from the origin after time <img src="images/img-0056.png" alt="$t$" style="vertical-align:0px; 
                                      width:6px; 
-                                     height:12px" class="math gen" /> is given by </p><table id="a0000000393" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
-<tr id="a0000000394">
+                                     height:12px" class="math gen" /> is given by </p><table id="a0000000399" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
+<tr id="a0000000400">
     
     <td style="width:40%">&nbsp;</td>
     
@@ -114,7 +114,7 @@ set nologscale y x x2
     
     <td style="width:40%">&nbsp;</td>
     <td style="width:20%" class="eqnnum">&nbsp;</td>
-</tr><tr id="a0000000395">
+</tr><tr id="a0000000401">
     
     <td style="width:40%">&nbsp;</td>
     
@@ -140,7 +140,7 @@ set nologscale y x x2
                                      width:29px; 
                                      height:18px" class="math gen" /> the vertical displacement. Eliminating <img src="images/img-0056.png" alt="$t$" style="vertical-align:0px; 
                                      width:6px; 
-                                     height:12px" class="math gen" /> from these equation gives the expression </p><table id="a0000000396" class="equation" width="100%" cellspacing="0" cellpadding="7">
+                                     height:12px" class="math gen" /> from these equation gives the expression </p><table id="a0000000402" class="equation" width="100%" cellspacing="0" cellpadding="7">
 <tr>
     
     <td style="width:40%">&nbsp;</td>
@@ -275,7 +275,7 @@ set nologscale y x x2
 <div id="footnotes">
 <p><b>Footnotes</b></p>
 <ol>
-<li id="a0000000387">An alternative valid syntax is to replace the colon with the word <tt class="tt">to</tt>: <tt class="tt">[minimum to maximum]</tt>.</li><li id="a0000000388">As will be discussed in Section <a href="sec-multiple_axes.html">1.8.1</a>, if further ranges are specified, they apply to the <tt class="tt">x2</tt>-axis, then the <tt class="tt">y2</tt>-axis, and so forth.</li>
+<li id="a0000000393">An alternative valid syntax is to replace the colon with the word <tt class="tt">to</tt>: <tt class="tt">[minimum to maximum]</tt>.</li><li id="a0000000394">As will be discussed in Section <a href="sec-multiple_axes.html">1.8.1</a>, if further ranges are specified, they apply to the <tt class="tt">x2</tt>-axis, then the <tt class="tt">y2</tt>-axis, and so forth.</li>
 </ol>
 </div>
 
@@ -291,7 +291,7 @@ set nologscale y x x2
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: mxtics</title>
+<title>: logscale</title>
 
-<link href="sect0159.html" title="mytics" rel="next" />
-<link href="sect0157.html" title="multiplot" rel="prev" />
-<link href="sect0124.html" title="set" rel="up" />
+<link href="sect0159.html" title="multiplot" rel="next" />
+<link href="sect0157.html" title="linewidth" rel="prev" />
+<link href="sect0126.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0157.html" title="multiplot"><img alt="Previous: multiplot" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0157.html" title="linewidth"><img alt="Previous: linewidth" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0159.html" title="mytics"><img alt="Next: mytics" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0159.html" title="multiplot"><img alt="Next: multiplot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0074.html">Reference Manual</a> <b>:</b>
+<a href="sect0075.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,20 +49,40 @@
 
 </span><span>
 <span>
-<a href="sect0124.html">set</a> <b>:</b>
+<a href="sect0126.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">mxtics</b>
+<b class="current">logscale</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000159">1.46.34 mxtics</h2>
-<p><a name="a0000001157" id="a0000001157"></a> </p><p>See <tt class="tt">set xtics</tt>. </p></div>
+<div><h2 id="a0000000159">1.47.32 logscale</h2>
+<p><a name="a0000001184" id="a0000001184"></a> </p><pre>
+set logscale {&lt;axis&gt;} [&lt;base&gt;]
+</pre><p>The setting <tt class="tt">logscale</tt> causes an axis to be laid out with logarithmically, rather than linearly, spaced intervals. For example, issuing the command: </p><pre>
+set log
+</pre><p>would cause all of the axes of a plot to be scaled logarithmically. Alternatively, only one, or a selection of axes, can be set to scale logarithmically as follows: </p><pre>
+set log x1 y2
+</pre><p>This would cause the first horizontal and second vertical axes to be scaled logarithmically. Linear scaling can be restored to all axes using the command </p><pre>
+set nolog
+</pre><p>meanwhile the command </p><pre>
+unset log
+</pre><p>restores axes to their default scaling, as specified in any configuration file which may be present. Both of these commands can also be applied to only one or a selection of axes, as in the examples </p><pre>
+set nolog x1 y2
+</pre><p>and </p><pre>
+unset log x1y2
+</pre><p>Optionally, a base may be specified at the end of the <tt class="tt">set logscale</tt> command, to produce axes labelled in logarithms of arbitrary bases. The default base is 10. </p><p>In addition to acting upon any combination of <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" />-, <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
+                                     width:9px; 
+                                     height:12px" class="math gen" />- and <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:8px" class="math gen" />-axes, the <tt class="tt">set logscale</tt> command may also be requested to set the <tt class="tt">c1</tt>, <tt class="tt">c2</tt>, <tt class="tt">c3</tt>, <tt class="tt">c4</tt>, <tt class="tt">t</tt>, <tt class="tt">u</tt> and/or <tt class="tt">v</tt> axes to scale logarithmically. The first four of these options affect whether the colours on colour maps scale linearly or logarithmically with input ordinate values; see the <tt class="tt">set c&lt;n&gt;range</tt> command for more details. The final three of these options specifies whether parametric functions are sampled linearly or logarithmically in the variables <tt class="tt">t</tt> (one-dimensional), or <tt class="tt">u</tt> and <tt class="tt">v</tt> (two-dimensional); see the <tt class="tt">set trange</tt>, <tt class="tt">set urange</tt> and <tt class="tt">set vrange</tt> commands for more details. </p></div>
 
 
 
@@ -71,16 +91,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0157.html" title="multiplot"><img alt="Previous: multiplot" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0157.html" title="linewidth"><img alt="Previous: linewidth" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0159.html" title="mytics"><img alt="Next: mytics" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0159.html" title="multiplot"><img alt="Next: multiplot" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

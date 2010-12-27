@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: pointsize</title>
+<title>: papersize</title>
 
-<link href="sect0184.html" title="preamble" rel="next" />
-<link href="sect0182.html" title="pointlinewidth" rel="prev" />
-<link href="sect0124.html" title="set" rel="up" />
+<link href="sect0184.html" title="pointlinewidth" rel="next" />
+<link href="sect0182.html" title="palette" rel="prev" />
+<link href="sect0126.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0182.html" title="pointlinewidth"><img alt="Previous: pointlinewidth" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0182.html" title="palette"><img alt="Previous: palette" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0184.html" title="preamble"><img alt="Next: preamble" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0184.html" title="pointlinewidth"><img alt="Next: pointlinewidth" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0074.html">Reference Manual</a> <b>:</b>
+<a href="sect0075.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,24 +49,26 @@
 
 </span><span>
 <span>
-<a href="sect0124.html">set</a> <b>:</b>
+<a href="sect0126.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">pointsize</b>
+<b class="current">papersize</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000184">1.46.59 pointsize</h2>
-<p><a name="a0000001187" id="a0000001187"></a> </p><pre>
-set pointsize &lt;value&gt;
-</pre><p>The setting <tt class="tt">pointsize</tt> changes the size at which points are drawn, relative to their default size. It should be followed by a single value which can be any positive multiplicative factor. For example, </p><pre>
-set pointsize 1.5
-</pre><p>would cause points to be drawn at 1.5 times their default size. </p></div>
+<div><h2 id="a0000000184">1.47.57 papersize</h2>
+<p><a name="a0000001214" id="a0000001214"></a> </p><pre>
+set papersize ( &lt;named size&gt; | &lt;height&gt;,&lt;width&gt; )
+</pre><p>The setting <tt class="tt">papersize</tt> changes the size of output produced by the <tt class="tt">postscript</tt> terminal, and whenever the <tt class="tt">enlarge</tt> terminal option is set (see the <tt class="tt">set terminal</tt> command). This can take the form of either a recognised paper size name – a list of these is given in Appendix <a href="ch-paper_sizes.html">5</a> – or as a (height, width) pair of values, both measured in millimetres. The following examples demonstrate these possibilities: </p><pre>
+set papersize a4
+set papersize letter
+set papersize 200,100
+</pre></div>
 
 
 
@@ -75,16 +77,16 @@ set pointsize 1.5
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0182.html" title="pointlinewidth"><img alt="Previous: pointlinewidth" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0182.html" title="palette"><img alt="Previous: palette" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0184.html" title="preamble"><img alt="Next: preamble" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0184.html" title="pointlinewidth"><img alt="Next: pointlinewidth" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

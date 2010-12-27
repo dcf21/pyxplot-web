@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+<a href="sect0043.html">Plotting and Vector Graphics</a> <b>:</b>
 </span>
 
 </span><span>
@@ -62,11 +62,11 @@
 </div>
 
 <div><h2 id="ex:surface-sinc">1.14.1 Surface Plotting</h2>
-<p>The <tt class="tt">surface</tt> plot style is similar to the <tt class="tt">colourmap</tt> and <tt class="tt">contourmap</tt> plot styles, but produces maps of the values <img src="images/img-0484.png" alt="$z(x,y)$" style="vertical-align:-4px; 
+<p>The <tt class="tt">surface</tt> plot style is similar to the <tt class="tt">colourmap</tt> and <tt class="tt">contourmap</tt> plot styles, but produces maps of the values <img src="images/img-0509.png" alt="$z(x,y)$" style="vertical-align:-4px; 
                                      width:50px; 
-                                     height:18px" class="math gen" /> of functions of two variables using three-dimensional surfaces. The surface is displayed as a grid of four-sided elements, whose number may be specified using the <tt class="tt">set samples</tt> command<a name="a0000000835" id="a0000000835"></a>, as in the example </p><pre>
+                                     height:18px" class="math gen" /> of functions of two variables using three-dimensional surfaces. The surface is displayed as a grid of four-sided elements, whose number may be specified using the <tt class="tt">set samples</tt> command<a name="a0000000861" id="a0000000861"></a>, as in the example </p><pre>
 set samples grid 40x40
-</pre><p> If data is supplied from a datafile, then it is first re-sampled onto a regular grid using one of the methods described in Section <a href="sec-colourmaps.html">1.12</a>. </p><p>The example below plots a surface indicating the magnitude of the imaginary part of <img src="images/img-0519.png" alt="$\log (x+iy)$" style="vertical-align:-4px; 
+</pre><p> If data is supplied from a datafile, then it is first re-sampled onto a regular grid using one of the methods described in Section <a href="sec-colourmaps.html">1.12</a>. </p><p>The example below plots a surface indicating the magnitude of the imaginary part of <img src="images/img-0544.png" alt="$\log (x+iy)$" style="vertical-align:-4px; 
                                      width:85px; 
                                      height:18px" class="math gen" />: </p><p> <tt class="tt">set numerics complex</tt><br /><tt class="tt">set xlabel "Re($z$)"</tt><br /><tt class="tt">set ylabel "Im($z$)"</tt><br /><tt class="tt">set zlabel "$<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
                                      width:7px; 
@@ -75,13 +75,13 @@ set samples grid 40x40
                                      height:18px" class="math gen" />mathrm{log}[z])$"</tt><br /><tt class="tt">set key below</tt><br /><tt class="tt">set size 8 square</tt><br /><tt class="tt">set grid</tt><br /><tt class="tt">set view -30,30</tt><br /><tt class="tt">plot 3d [-10:10][-10:10] Im(log(x+i*y)) <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
                                      width:7px; 
                                      height:18px" class="math gen" /></tt><br /><tt class="tt">with surface col black fillcol blue</tt> </p><p> <center>
-<img src="images/img-0521.png" alt="\includegraphics[width=10cm]{examples/eps/ex_surface_log}" style="width:10cm" /></center>  </p><p> <span class="upshape"><span class="mdseries"><span class="rm">A surface plotted above a contour map.</span></span></span></p><div>
+<img src="images/img-0546.png" alt="\includegraphics[width=10cm]{examples/eps/ex_surface_log}" style="width:10cm" /></center>  </p><p> <span class="upshape"><span class="mdseries"><span class="rm">A surface plotted above a contour map.</span></span></span></p><div>
 
 <table cellspacing="0" class="tabular">
 <tr>
 
     
-    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this example, we plot a surface showing the value of the expression <img src="images/img-0511.png" alt="$x^3/20+y^2$" style="vertical-align:-5px; 
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this example, we plot a surface showing the value of the expression <img src="images/img-0536.png" alt="$x^3/20+y^2$" style="vertical-align:-5px; 
                                      width:84px; 
                                      height:21px" class="math gen" />, and project below it a series of contours in the <img src="images/img-0188.png" alt="$(x,y)$" style="vertical-align:-4px; 
                                      width:40px; 
@@ -103,7 +103,7 @@ set samples grid 40x40
 
     
     <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><center> 
-<img src="images/img-0524.png" alt="\includegraphics[width=10cm]{examples/eps/ex_surface_polynomial}" style="width:10cm" /> </center></td>
+<img src="images/img-0549.png" alt="\includegraphics[width=10cm]{examples/eps/ex_surface_polynomial}" style="width:10cm" /> </center></td>
 
 </tr>
 </table>
@@ -115,11 +115,11 @@ set samples grid 40x40
 <tr>
 
     
-    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this example, we produce a surface showing the function <img src="images/img-0526.png" alt="$\mathrm{sinc}(r)$" style="vertical-align:-4px; 
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this example, we produce a surface showing the function <img src="images/img-0551.png" alt="$\mathrm{sinc}(r)$" style="vertical-align:-4px; 
                                      width:52px; 
-                                     height:18px" class="math gen" /> where <img src="images/img-0527.png" alt="$r=\sqrt {x^2+y^2}$" style="vertical-align:-5px; 
+                                     height:18px" class="math gen" /> where <img src="images/img-0552.png" alt="$r=\sqrt {x^2+y^2}$" style="vertical-align:-5px; 
                                      width:109px; 
-                                     height:22px" class="math gen" />. To produce a prettier result, we vary the colour of the surface such that the hue of the surface varies with azimuthal position, its saturation varies with radius <img src="images/img-0415.png" alt="$r$" style="vertical-align:0px; 
+                                     height:22px" class="math gen" />. To produce a prettier result, we vary the colour of the surface such that the hue of the surface varies with azimuthal position, its saturation varies with radius <img src="images/img-0416.png" alt="$r$" style="vertical-align:0px; 
                                      width:8px; 
                                      height:8px" class="math gen" />, and its brightness varies with height <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
                                      width:9px; 
@@ -149,7 +149,7 @@ set samples grid 40x40
 
     
     <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><center> 
-<img src="images/img-0529.png" alt="\includegraphics[width=10cm]{examples/eps/ex_surface_sinc}" style="width:10cm" /> </center></td>
+<img src="images/img-0554.png" alt="\includegraphics[width=10cm]{examples/eps/ex_surface_sinc}" style="width:10cm" /> </center></td>
 
 </tr>
 </table>
@@ -171,7 +171,7 @@ set samples grid 40x40
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

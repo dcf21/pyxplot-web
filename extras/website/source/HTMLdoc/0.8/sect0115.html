@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: print</title>
+<title>: title</title>
 
-<link href="sect0116.html" title="pwd" rel="next" />
-<link href="sect0114.html" title="with" rel="prev" />
-<link href="ch-reference.html" title="Command Reference" rel="up" />
+<link href="sect0116.html" title="with" rel="next" />
+<link href="sect0114.html" title="label" rel="prev" />
+<link href="sect0112.html" title="plot" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0114.html" title="with"><img alt="Previous: with" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0114.html" title="label"><img alt="Previous: label" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0112.html" title="plot"><img alt="Up: plot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0116.html" title="pwd"><img alt="Next: pwd" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0116.html" title="with"><img alt="Next: with" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0074.html">Reference Manual</a> <b>:</b>
+<a href="sect0075.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -48,22 +48,23 @@
 </span>
 
 </span><span>
+<span>
+<a href="sect0112.html">plot</a> <b>:</b>
+</span>
+
+</span><span>
 
 <span>
-<b class="current">print</b>
+<b class="current">title</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000116">1.37 print</h1>
-<p><a name="a0000001067" id="a0000001067"></a> </p><pre>
-print &lt;expression&gt; {, &lt;expression&gt;}
-</pre><p>The <tt class="tt">print</tt> command<a name="a0000001068" id="a0000001068"></a> displays a string or the value of a mathematical expression to the terminal. It is most often used to find the value of a variable, though it can also be used to produce formatted textual output from a PyXPlot script. For example, </p><pre>
-print a
-</pre><p>would print the value of the variable <tt class="tt">a</tt>, and </p><pre>
-print "a = %s"%(a)
-</pre><p>would produce the same result in the midst of formatted text. </p></div>
+<div><h2 id="a0000000116">1.37.3 title</h2>
+<p><a name="a0000001086" id="a0000001086"></a> </p><p>By default, PyXPlot generates its own entry in the legend of a plot for each dataset plotted. This default behaviour can be overridden using the <tt class="tt">title</tt> modifier. The following example labels a dataset as ‘Dataset 1’: </p><pre>
+plot sin(x) title 'Dataset 1'
+</pre><p>If a blank string, i.e. <tt class="tt">""</tt>, is supplied, then no entry is made in the plot’s legend for that dataset. The same effect can be achieved using the <tt class="tt">notitle</tt> modifier. </p></div>
 
 
 
@@ -72,16 +73,16 @@ print "a = %s"%(a)
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0114.html" title="with"><img alt="Previous: with" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0114.html" title="label"><img alt="Previous: label" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0112.html" title="plot"><img alt="Up: plot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0116.html" title="pwd"><img alt="Next: pwd" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0116.html" title="with"><img alt="Next: with" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

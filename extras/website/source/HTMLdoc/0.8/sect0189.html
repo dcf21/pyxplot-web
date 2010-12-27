@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: style data | style function</title>
+<title>: size</title>
 
-<link href="sect0190.html" title="terminal" rel="next" />
-<link href="sect0188.html" title="style" rel="prev" />
-<link href="sect0124.html" title="set" rel="up" />
+<link href="sect0190.html" title="style" rel="next" />
+<link href="sect0188.html" title="seed" rel="prev" />
+<link href="sect0126.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0188.html" title="style"><img alt="Previous: style" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0188.html" title="seed"><img alt="Previous: seed" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0190.html" title="terminal"><img alt="Next: terminal" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0190.html" title="style"><img alt="Next: style" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0074.html">Reference Manual</a> <b>:</b>
+<a href="sect0075.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,25 +49,47 @@
 
 </span><span>
 <span>
-<a href="sect0124.html">set</a> <b>:</b>
+<a href="sect0126.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">style data | style function</b>
+<b class="current">size</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000190">1.46.65 style data | style function</h2>
-<p><a name="a0000001206" id="a0000001206"></a><a name="a0000001207" id="a0000001207"></a> </p><pre>
-set style { data | function } {&lt;style option&gt;}
-</pre><p>The <tt class="tt">set style data</tt> command affects the default style with which data from files is plotted. Likewise the <tt class="tt">set style function</tt> command changes the default style with which functions are plotted. Any valid style modifier which can follow the keyword <tt class="tt">with</tt> in the <tt class="tt">plot</tt> command can be used. For example, the commands </p><pre>
-set style data points
-set style function lines linestyle 1
-</pre><p>would cause datafiles to be plotted, by default, using points and functions using lines with the first defined line style. </p></div>
+<div><h2 id="a0000000190">1.47.63 size</h2>
+<p><a name="a0000001227" id="a0000001227"></a> </p><pre>
+set size [&lt;width&gt;]
+         [( ratio &lt;ratio&gt; | noratio  | square)]
+         [(zratio &lt;ratio&gt; | nozratio )]
+</pre><p>The setting <tt class="tt">size</tt> is used to set the width or aspect ratio of the next graph to be generated. If a width is specified, then it may either take the form of a dimensionless number implicitly measured in centimetres, or a quantity with physical dimensions of length such as <tt class="tt">unit(50*mm)</tt>. </p><p>When the keyword <tt class="tt">ratio</tt> is specified, it should be followed by the ratio of the graph’s height to its width, i.e. of the length of its <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
+                                     width:9px; 
+                                     height:12px" class="math gen" />-axes to that of its <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" />-axes. The keyword <tt class="tt">noratio</tt> returns the aspect ratio to its default value of the golden ratio, and the keyword <tt class="tt">square</tt> sets the aspect ratio to one. </p><p>When the keyword <tt class="tt">zratio</tt> is specified, it should be followed by the ratio of the length of three-dimensional graphs’ <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:8px" class="math gen" />-axes to that of their <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" />-axes. The keyword <tt class="tt">nozratio</tt> returns this aspect ratio to its default value of the golden ratio. </p><h3 id="a0000001228">noratio</h3>
+<p><a name="a0000001229" id="a0000001229"></a> </p><pre>
+set size noratio
+</pre><p>Executing the command </p><pre>
+set size noratio
+</pre><p>resets PyXPlot to produce plots with its default aspect ratio, which is the golden ratio. Other aspect ratios can be set with the <tt class="tt">set size ratio</tt> command. </p><h3 id="a0000001230">ratio</h3>
+<p><a name="a0000001231" id="a0000001231"></a> </p><pre>
+set size ratio &lt;ratio&gt;
+</pre><p>This command sets the aspect ratio of plots produced by PyXPlot. The height of resulting plots will equal the plot width, as set by the <tt class="tt">set width</tt> command, multiplied by this aspect ratio. For example, </p><pre>
+set size ratio 2.0
+</pre><p>would cause PyXPlot to produce plots that are twice as high as they are wide. The default aspect ratio which PyXPlot uses is a golden ratio of <img src="images/img-0636.png" alt="$2/(1+\sqrt {5})$" style="vertical-align:-5px; 
+                                     width:85px; 
+                                     height:21px" class="math gen" />. </p><h3 id="a0000001232">square</h3>
+<p><a name="a0000001233" id="a0000001233"></a> </p><pre>
+set size square
+</pre><p>This command sets PyXPlot to produce square plots, i.e. with unit aspect ratio. Other aspect ratios can be set with the <tt class="tt">set size ratio</tt> command. </p></div>
 
 
 
@@ -76,16 +98,16 @@ set style function lines linestyle 1
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0188.html" title="style"><img alt="Previous: style" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0188.html" title="seed"><img alt="Previous: seed" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0190.html" title="terminal"><img alt="Next: terminal" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0190.html" title="style"><img alt="Next: style" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

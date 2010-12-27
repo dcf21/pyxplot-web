@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="generator" content="plasTeX" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>: Two-dimensional parametric surfaces</title>
+
+<link href="sec-legends.html" title="Graph Legends" rel="next" />
+<link href="ex-spirograph.html" title="Plotting Parametric Functions" rel="prev" />
+<link href="ex-spirograph.html" title="Plotting Parametric Functions" rel="up" />
+<link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="ex-spirograph.html" title="Plotting Parametric Functions"><img alt="Previous: Plotting Parametric Functions" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="ex-spirograph.html" title="Plotting Parametric Functions"><img alt="Up: Plotting Parametric Functions" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-legends.html" title="Graph Legends"><img alt="Next: Graph Legends" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<div class="breadcrumbs">
+<span>
+<span>
+<a href="index.html"></a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="sect0043.html">Plotting and Vector Graphics</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ch-plotting.html">Plotting: A Detailed Survey</a> <b>:</b>
+</span>
+
+</span><span>
+<span>
+<a href="ex-spirograph.html">Plotting Parametric Functions</a> <b>:</b>
+</span>
+
+</span><span>
+
+<span>
+<b class="current">Two-dimensional parametric surfaces</b>
+</span>
+</span>
+<hr />
+</div>
+
+<div><h2 id="ex:trefoil">1.6.1 Two-dimensional parametric surfaces</h2>
+<p>PyXPlot can also plot datasets which can be parameterised in terms of two free parameters <img src="images/img-0428.png" alt="$u$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" /> and <img src="images/img-0054.png" alt="$v$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:8px" class="math gen" />. This is most often useful in conjunction with the <tt class="tt">surface</tt> plot style, allowing any <img src="images/img-0429.png" alt="$(u,v)$" style="vertical-align:-4px; 
+                                     width:40px; 
+                                     height:18px" class="math gen" />-surface to be plotted. However, it also works in conjunction with any other plot style, allowing, for example, <img src="images/img-0429.png" alt="$(u,v)$" style="vertical-align:-4px; 
+                                     width:40px; 
+                                     height:18px" class="math gen" />-grids of points to be constructed. </p><p>As in the case of parametric lines above, the range of values that each free parameter should take must be specified. This can be done using the <a name="a0000000734" id="a0000000734"></a><tt class="tt">set urange</tt> and <a name="a0000000735" id="a0000000735"></a><tt class="tt">set vrange</tt> commands. These commands also act to switch PyXPlot between one- and two-dimensional parametric function evaluation; whilst the <tt class="tt">set trange</tt> command indicates that the next parametric function should be evaluated along a single raster of values of <img src="images/img-0056.png" alt="$t$" style="vertical-align:0px; 
+                                     width:6px; 
+                                     height:12px" class="math gen" />, the <tt class="tt">set urange</tt> and <tt class="tt">set vrange</tt> commands indicate that a grid of <img src="images/img-0429.png" alt="$(u,v)$" style="vertical-align:-4px; 
+                                     width:40px; 
+                                     height:18px" class="math gen" /> values should be used. By default, the range of values used for <img src="images/img-0428.png" alt="$u$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" /> and <img src="images/img-0054.png" alt="$v$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:8px" class="math gen" /> is <img src="images/img-0182.png" alt="$0\to 1$" style="vertical-align:0px; 
+                                     width:45px; 
+                                     height:12px" class="math gen" />. </p><p>The number of samples to be taken can be specified using a command of the form<a name="a0000000736" id="a0000000736"></a> </p><pre>
+set sample grid 20x50
+</pre><p> which specifies that 20 different values of <img src="images/img-0428.png" alt="$u$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" /> and 50 different values of <img src="images/img-0054.png" alt="$v$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:8px" class="math gen" /> should be used, yielding a total of 1000 datapoints. The following example uses the <tt class="tt">lines</tt> plot style to generate a sequence of cross-sections through a two-dimensional Gaussian surface: </p><pre>
+set sample grid 20x20
+set urange [-1:1]
+set vrange [-1:1]
+f(u,v) = 0.4*exp(-(u**2+v**2)/0.2)
+plot parametric u:v+f(u,v) with l
+</pre><p> <center>
+<img src="images/img-0431.png" alt="\includegraphics[width=5cm]{examples/eps/ex_datagrid}" style="width:5cm" /></center> </p><p>The ranges of values to use for <img src="images/img-0428.png" alt="$u$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" /> and <img src="images/img-0054.png" alt="$v$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:8px" class="math gen" /> may alternatively be specified on a dataset-by-dataset basis within the plot command, as in the example </p><pre>
+plot parametric [0:1][0:1] u:v , \
+     parametric [0:1] sin(t):cos(t)
+</pre><p> <span class="upshape"><span class="mdseries"><span class="rm">Torus.</span></span></span></p><div>
+
+<table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this example we plot a torus, which can be parametrised in terms of two free parameters <img src="images/img-0428.png" alt="$u$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" /> and <img src="images/img-0054.png" alt="$v$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:8px" class="math gen" /> as </p><table id="a0000000737" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
+<tr id="a0000000738">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0412.png" alt="$\displaystyle  x  $" style="vertical-align:0px; width:10px;                     height:8px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0433.png" alt="$\displaystyle  (R + r\cos (v))\cos (u)  $" style="vertical-align:-4px; width:159px;                     height:18px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr><tr id="a0000000739">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0414.png" alt="$\displaystyle y  $" style="vertical-align:-4px; width:9px;                     height:12px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0434.png" alt="$\displaystyle  (R + r\cos (v))\sin (u)  $" style="vertical-align:-4px; width:157px;                     height:18px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr><tr id="a0000000740">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0435.png" alt="$\displaystyle z  $" style="vertical-align:0px; width:9px;                     height:8px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0436.png" alt="$\displaystyle  r\sin (v) ,  $" style="vertical-align:-4px; width:61px;                     height:18px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr>
+</table><p> where <img src="images/img-0428.png" alt="$u$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" /> and <img src="images/img-0054.png" alt="$v$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:8px" class="math gen" /> both run in the range <img src="images/img-0437.png" alt="$[0:2\pi ]$" style="vertical-align:-5px; 
+                                     width:50px; 
+                                     height:18px" class="math gen" />, <img src="images/img-0438.png" alt="$R$" style="vertical-align:0px; 
+                                     width:14px; 
+                                     height:12px" class="math gen" /> is the distance of the tube’s centre from the centre of the torus, and <img src="images/img-0416.png" alt="$r$" style="vertical-align:0px; 
+                                     width:8px; 
+                                     height:8px" class="math gen" /> is the radius of the tube. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">R = 3</tt><br /><tt class="tt">r = 0.5</tt><br /><tt class="tt">set size square</tt><br /><tt class="tt">f(u,v) = (R+r*cos(v))*cos(u)</tt><br /><tt class="tt">g(u,v) = (R+r*cos(v))*sin(u)</tt><br /><tt class="tt">h(u,v) = r*sin(v)</tt><br /></p><p><tt class="tt">set urange [0:2*pi]</tt><br /><tt class="tt">set vrange [0:2*pi]</tt><br /><tt class="tt">set zrange [-2.5:2.5]</tt><br /></p><p><tt class="tt">set nokey</tt><br /><tt class="tt">set sample grid 50x20</tt><br /><tt class="tt">plot 3d parametric f(u,v):g(u,v):h(u,v) with surf fillcol blue</tt><br /></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><center>
+<img src="images/img-0440.png" alt="\includegraphics[width=8cm]{examples/eps/ex_torus}" style="width:8cm" /></center> </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black">&nbsp;</td>
+
+</tr>
+</table>
+</div><p> <span class="upshape"><span class="mdseries"><span class="rm">Trefoil knot.</span></span></span></p><div>
+
+<table cellspacing="0" class="tabular">
+<tr>
+
+    
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this example we plot a trefoil knot, which is the simplest non-trivial knot in topology. Simply put, this means that it is not possible to untie the knot without cutting it. The knot follows the line </p><table id="a0000000741" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
+<tr id="a0000000742">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0412.png" alt="$\displaystyle  x  $" style="vertical-align:0px; width:10px;                     height:8px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0442.png" alt="$\displaystyle  (2 + \cos (3t))\cos (2t)  $" style="vertical-align:-4px; width:155px;                     height:18px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr><tr id="a0000000743">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0414.png" alt="$\displaystyle y  $" style="vertical-align:-4px; width:9px;                     height:12px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0443.png" alt="$\displaystyle  (2 + \cos (3t))\sin (2t)  $" style="vertical-align:-4px; width:153px;                     height:18px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr><tr id="a0000000744">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0435.png" alt="$\displaystyle z  $" style="vertical-align:0px; width:9px;                     height:8px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0444.png" alt="$\displaystyle  \sin (3t) ,  $" style="vertical-align:-4px; width:56px;                     height:18px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr>
+</table><p> but in this example we construct a tube around this line using the following parameterisation: </p><table id="a0000000745" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
+<tr id="a0000000746">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0412.png" alt="$\displaystyle  x  $" style="vertical-align:0px; width:10px;                     height:8px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0445.png" alt="$\displaystyle  \cos (2u)\cos (v) + r\cos (2u)(1.5+\sin (3u)/2)  $" style="vertical-align:-5px; width:332px;                     height:19px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr><tr id="a0000000747">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0414.png" alt="$\displaystyle y  $" style="vertical-align:-4px; width:9px;                     height:12px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0446.png" alt="$\displaystyle  \sin (2u)\cos (v) + r\sin (2u)(1.5+\sin (3u)/2)  $" style="vertical-align:-5px; width:328px;                     height:19px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr><tr id="a0000000748">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0435.png" alt="$\displaystyle z  $" style="vertical-align:0px; width:9px;                     height:8px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0447.png" alt="$\displaystyle  \sin (v)+R\cos (3u) ,  $" style="vertical-align:-4px; width:146px;                     height:18px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr>
+</table><p> where <img src="images/img-0428.png" alt="$u$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" /> and <img src="images/img-0054.png" alt="$v$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:8px" class="math gen" /> run in the ranges <img src="images/img-0437.png" alt="$[0:2\pi ]$" style="vertical-align:-5px; 
+                                     width:50px; 
+                                     height:18px" class="math gen" /> and <img src="images/img-0448.png" alt="$[-\pi :\pi ]$" style="vertical-align:-5px; 
+                                     width:57px; 
+                                     height:18px" class="math gen" /> respectively, and <img src="images/img-0416.png" alt="$r$" style="vertical-align:0px; 
+                                     width:8px; 
+                                     height:8px" class="math gen" /> and <img src="images/img-0438.png" alt="$R$" style="vertical-align:0px; 
+                                     width:14px; 
+                                     height:12px" class="math gen" /> determine the size and thickness of the knot as in an analogous fashion to the previous example. </p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><tt class="tt">R = 2</tt><br /><tt class="tt">r = 5</tt><br /><tt class="tt">set size square</tt><br /><tt class="tt">f(u,v) = cos(2*u)*cos(v) + r*cos(2*u)*(1.5+sin(3*u)/2)</tt><br /><tt class="tt">g(u,v) = sin(2*u)*cos(v) + r*sin(2*u)*(1.5+sin(3*u)/2)</tt><br /><tt class="tt">h(u,v) = sin(v)+R*cos(3*u)</tt><br /></p><p><tt class="tt">set urange [0:2*pi]</tt><br /><tt class="tt">set vrange [-pi:pi]</tt><br /></p><p><tt class="tt">set nokey</tt><br /><tt class="tt">set sample grid 150x20</tt><br /><tt class="tt">plot 3d parametric f(u,v):g(u,v):h(u,v) with surf fillcol blue</tt><br /></p></td>
+
+</tr><tr>
+
+    
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p><center>
+<img src="images/img-0450.png" alt="\includegraphics[width=8cm]{examples/eps/ex_trefoil}" style="width:8cm" /></center> </p></td>
+
+</tr><tr>
+
+    
+    <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black">&nbsp;</td>
+
+</tr>
+</table>
+</div></div>
+
+
+
+
+
+<div class="navigation">
+<table cellspacing="2" cellpadding="0" width="100%">
+<tr>
+<td><a href="ex-spirograph.html" title="Plotting Parametric Functions"><img alt="Previous: Plotting Parametric Functions" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+
+<td><a href="ex-spirograph.html" title="Plotting Parametric Functions"><img alt="Up: Plotting Parametric Functions" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+
+<td><a href="sec-legends.html" title="Graph Legends"><img alt="Next: Graph Legends" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+
+<td class="navtitle" align="center">&nbsp;</td>
+<td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
+
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+
+<td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
+</tr>
+</table>
+</div>
+
+<script language="javascript" src="icons/imgadjust.js" type="text/javascript"></script>
+
+</body>
+</html>

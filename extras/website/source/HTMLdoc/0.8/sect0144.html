@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: data style</title>
+<title>: contours</title>
 
-<link href="sect0145.html" title="display" rel="next" />
-<link href="sect0143.html" title="c&lt;n&gt;range" rel="prev" />
-<link href="sect0124.html" title="set" rel="up" />
+<link href="sect0145.html" title="c&lt;n&gt;range" rel="next" />
+<link href="sect0143.html" title="colourmap" rel="prev" />
+<link href="sect0126.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0143.html" title="cnrange"><img alt="Previous: cnrange" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0143.html" title="colourmap"><img alt="Previous: colourmap" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0145.html" title="display"><img alt="Next: display" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0145.html" title="cnrange"><img alt="Next: cnrange" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0074.html">Reference Manual</a> <b>:</b>
+<a href="sect0075.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,20 +49,24 @@
 
 </span><span>
 <span>
-<a href="sect0124.html">set</a> <b>:</b>
+<a href="sect0126.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">data style</b>
+<b class="current">contours</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000145">1.46.20 data style</h2>
-<p><a name="a0000001140" id="a0000001140"></a> </p><p>See <tt class="tt">set style data</tt>. </p></div>
+<div><h2 id="a0000000145">1.47.18 contours</h2>
+<p><a name="a0000001159" id="a0000001159"></a> </p><pre>
+set contours [ ( &lt;number&gt; |
+               \( &lt;value&gt; {, &lt;value&gt;} \) ) ]
+             [ (label | nolabel) ]
+</pre><p>The setting <tt class="tt">contours</tt> is used to define the set of ordinate values for which contours are drawn when using the <tt class="tt">contourmap</tt><a name="a0000001160" id="a0000001160"></a><a name="a0000001161" id="a0000001161"></a> plot style. If <tt class="tt">&lt;number&gt;</tt> is specified, the contours are evenly spaced – either linearly or logarithmically, depending upon the state of the <tt class="tt">logscale c1</tt> setting – between the values specified in the <tt class="tt">c1range</tt> setting. Otherwise, the list of ordinate values may be specified as a ()-bracketed comma-separated list. </p><p>If the option <tt class="tt">label</tt> is specified, then each contour is labelled with the ordinate value that it follows. If the option <tt class="tt">nolabel</tt> is specified, then the contours are not labelled. </p></div>
 
 
 
@@ -71,16 +75,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0143.html" title="cnrange"><img alt="Previous: cnrange" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0143.html" title="colourmap"><img alt="Previous: colourmap" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0145.html" title="display"><img alt="Next: display" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0145.html" title="cnrange"><img alt="Next: cnrange" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

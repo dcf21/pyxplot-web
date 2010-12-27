@@ -5,7 +5,7 @@
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
 <title>: Multiplot Mode</title>
 
-<link href="sect0065.html" title="Settings Associated with Multiplot Items" rel="next" />
+<link href="sect0066.html" title="Settings Associated with Multiplot Items" rel="next" />
 <link href="ch-vector_graphics.html" title="Producing Vector Graphics" rel="prev" />
 <link href="ch-vector_graphics.html" title="Producing Vector Graphics" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
@@ -19,12 +19,12 @@
 
 <td><a href="ch-vector_graphics.html" title="Producing Vector Graphics"><img alt="Up: Producing Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0065.html" title="Settings Associated with Multiplot Items"><img alt="Next: Settings Associated with Multiplot Items" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0066.html" title="Settings Associated with Multiplot Items"><img alt="Next: Settings Associated with Multiplot Items" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+<a href="sect0043.html">Plotting and Vector Graphics</a> <b>:</b>
 </span>
 
 </span><span>
@@ -57,7 +57,7 @@
 </div>
 
 <div><h1 id="sec:multiplot">3.1 Multiplot Mode</h1>
-<p>  <a name="a0000000880" id="a0000000880"></a> </p><p>PyXPlot has two modes in which it can produce graphical output. In <i class="it">singleplot</i> mode, the default, each time the <tt class="tt">plot</tt> command is issued, the canvas is wiped clean and the new plot is placed alone on a blank page. In <i class="it">multiplot</i> mode, vector graphics objects accumulate on the canvas. Each time the <tt class="tt">plot</tt> command is issued, the new graph is placed on top of any other objects which were already on the canvas, and many plots can be placed side-by-side. </p><p>The user can switch between these two modes of operation by issuing the commands <tt class="tt">set multiplot</tt><a name="a0000000881" id="a0000000881"></a> and <tt class="tt">set nomultiplot</tt><a name="a0000000882" id="a0000000882"></a>. The <tt class="tt">set origin</tt> command<a name="a0000000883" id="a0000000883"></a> is required for multiplot mode to be useful when placing plots side-by-side: it sets the position on the page of the lower-left corner of the next plot. It takes a comma-separated <img src="images/img-0188.png" alt="$(x,y)$" style="vertical-align:-4px; 
+<p>  <a name="a0000000906" id="a0000000906"></a> </p><p>PyXPlot has two modes in which it can produce graphical output. In <i class="it">singleplot</i> mode, the default, each time the <tt class="tt">plot</tt> command is issued, the canvas is wiped clean and the new plot is placed alone on a blank page. In <i class="it">multiplot</i> mode, vector graphics objects accumulate on the canvas. Each time the <tt class="tt">plot</tt> command is issued, the new graph is placed on top of any other objects which were already on the canvas, and many plots can be placed side-by-side. </p><p>The user can switch between these two modes of operation by issuing the commands <tt class="tt">set multiplot</tt><a name="a0000000907" id="a0000000907"></a> and <tt class="tt">set nomultiplot</tt><a name="a0000000908" id="a0000000908"></a>. The <tt class="tt">set origin</tt> command<a name="a0000000909" id="a0000000909"></a> is required for multiplot mode to be useful when placing plots side-by-side: it sets the position on the page of the lower-left corner of the next plot. It takes a comma-separated <img src="images/img-0188.png" alt="$(x,y)$" style="vertical-align:-4px; 
                                      width:40px; 
                                      height:18px" class="math gen" /> coordinate pair, which may have units of length, or, if dimensionless, are assumed to be measured in centimetres. The following example plots a graph of <img src="images/img-0015.png" alt="$\sin (x)$" style="vertical-align:-4px; 
                                      width:45px; 
@@ -71,15 +71,15 @@ set origin 10,0
 plot cos(x)
 </pre><p>All objects on a multiplot canvas have a unique identification number. By default, these count up from one, such that the first item placed on the canvas is number one, the next is number two, and so forth. Alternatively, the user may specify a particular number for a particular object by supplying the modifier <tt class="tt">item</tt> to the <tt class="tt">plot</tt> command, followed by an integer identification number, as in the following example: </p><pre>
 plot item 6 'data.dat'
-</pre><p> If there were already an object on the canvas with identification number 6, this object would be deleted and replaced with the new object. </p><p>A list of all of the objects on the current multiplot canvas can be obtained using the <tt class="tt">list</tt> command<a name="a0000000884" id="a0000000884"></a>, which produces output in the following format: </p><pre>
+</pre><p> If there were already an object on the canvas with identification number 6, this object would be deleted and replaced with the new object. </p><p>A list of all of the objects on the current multiplot canvas can be obtained using the <tt class="tt">list</tt> command<a name="a0000000910" id="a0000000910"></a>, which produces output in the following format: </p><pre>
 # ID   Command
     1  plot item 1 'data1.dat'
     2  plot item 2 'data2.dat'
     3  [deleted] plot item 3 'data3.dat'
-</pre><p>A multiplot canvas can be wiped clean by issuing the <tt class="tt">clear</tt> command<a name="a0000000885" id="a0000000885"></a>, which removes all items currently on the canvas. Alternatively, individual items may be removed using the <tt class="tt">delete</tt> command<a name="a0000000886" id="a0000000886"></a>, which should be followed by a comma-separated list of the identification numbers of the objects to be deleted. Deleted items may be restored using the <tt class="tt">undelete</tt> command<a name="a0000000887" id="a0000000887"></a>, which likewise takes a comma-separated list of the identification numbers of the objects to be restored, e.g.: </p><pre>
+</pre><p>A multiplot canvas can be wiped clean by issuing the <tt class="tt">clear</tt> command<a name="a0000000911" id="a0000000911"></a>, which removes all items currently on the canvas. Alternatively, individual items may be removed using the <tt class="tt">delete</tt> command<a name="a0000000912" id="a0000000912"></a>, which should be followed by a comma-separated list of the identification numbers of the objects to be deleted. Deleted items may be restored using the <tt class="tt">undelete</tt> command<a name="a0000000913" id="a0000000913"></a>, which likewise takes a comma-separated list of the identification numbers of the objects to be restored, e.g.: </p><pre>
 delete 1,2
 undelete 2
-</pre><p> Once a canvas has been cleared using the <tt class="tt">clear</tt> command<a name="a0000000888" id="a0000000888"></a>, however, there is no way to restore it. Objects may be moved around on the canvas using the <tt class="tt">move</tt> command<a name="a0000000889" id="a0000000889"></a>. For example, the following would move item 23 to position <img src="images/img-0537.png" alt="$(8,8)$" style="vertical-align:-4px; 
+</pre><p> Once a canvas has been cleared using the <tt class="tt">clear</tt> command<a name="a0000000914" id="a0000000914"></a>, however, there is no way to restore it. Objects may be moved around on the canvas using the <tt class="tt">move</tt> command<a name="a0000000915" id="a0000000915"></a>. For example, the following would move item 23 to position <img src="images/img-0562.png" alt="$(8,8)$" style="vertical-align:-4px; 
                                      width:38px; 
                                      height:18px" class="math gen" /> measured in inches: </p><pre>
 move 23 to 8*unit(in), 8*unit(in)
@@ -87,9 +87,9 @@ move 23 to 8*unit(in), 8*unit(in)
 
 <div class="contents section-contents"><!--<strong>Subsections</strong>-->
 <ul>
-<li><a href="sect0065.html">3.1.1 Settings Associated with Multiplot Items</a>
+<li><a href="sect0066.html">3.1.1 Settings Associated with Multiplot Items</a>
    
-</li><li><a href="sect0066.html">3.1.2 Reordering Multiplot Items</a>
+</li><li><a href="sect0067.html">3.1.2 Reordering Multiplot Items</a>
    
 </li><li><a href="sec-set_display.html">3.1.3 The Construction of Large Multiplots</a>
    
@@ -109,12 +109,12 @@ move 23 to 8*unit(in), 8*unit(in)
 
 <td><a href="ch-vector_graphics.html" title="Producing Vector Graphics"><img alt="Up: Producing Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0065.html" title="Settings Associated with Multiplot Items"><img alt="Next: Settings Associated with Multiplot Items" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0066.html" title="Settings Associated with Multiplot Items"><img alt="Next: Settings Associated with Multiplot Items" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

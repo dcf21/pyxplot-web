@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: 2008 Oct 14: PyXPlot 0.7.0</title>
+<title>: 2011 Jan 7: PyXPlot 0.8.4</title>
 
-<link href="sect0247.html" title="2007 Feb 26: PyXPlot 0.6.3" rel="next" />
-<link href="sect0245.html" title="2009 Nov 17: PyXPlot 0.7.1" rel="prev" />
-<link href="sect0241.html" title="ChangeLog" rel="up" />
+<link href="sect0247.html" title="2010 Sep 15: PyXPlot 0.8.3" rel="next" />
+<link href="sect0245.html" title="ChangeLog" rel="prev" />
+<link href="sect0245.html" title="ChangeLog" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0245.html" title="2009 Nov 17: PyXPlot 0.7.1"><img alt="Previous: 2009 Nov 17: PyXPlot 0.7.1" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0245.html" title="ChangeLog"><img alt="Previous: ChangeLog" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0241.html" title="ChangeLog"><img alt="Up: ChangeLog" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0245.html" title="ChangeLog"><img alt="Up: ChangeLog" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0247.html" title="2007 Feb 26: PyXPlot 0.6.3"><img alt="Next: 2007 Feb 26: PyXPlot 0.6.3" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0247.html" title="2010 Sep 15: PyXPlot 0.8.3"><img alt="Next: 2010 Sep 15: PyXPlot 0.8.3" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,34 +39,28 @@
 
 </span><span>
 <span>
-<a href="sect0226.html">Appendices</a> <b>:</b>
+<a href="sect0230.html">Appendices</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="sect0241.html">ChangeLog</a> <b>:</b>
+<a href="sect0245.html">ChangeLog</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">2008 Oct 14: PyXPlot 0.7.0</b>
+<b class="current">2011 Jan 7: PyXPlot 0.8.4</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000247">2008 Oct 14: PyXPlot 0.7.0</h2>
-<h3 id="a0000001674">Summary:</h3>
-<p>Third PyXPlot beta-release. The code has undergone significant streamlining, and now runs approximately twice as fast as version 0.6.3 when handling large datafiles. Memory usage has also been radically reduced. Two new data processing commands have been introduced. The <tt class="tt">tabulate</tt> command can be used to produce textual datafiles, allowing the user to read data in from files, apply some analysis, and then write the processed data back to file. The <tt class="tt">histogram</tt> command can be used to estimate the frequency densities of sets of data points, either by binning them into a bar chart, or by fitting a functional form to their frequency density. </p><h3 id="a0000001675">Details – New and Extended Commands:</h3>
+<div><h2 id="a0000000247">2011 Jan 7: PyXPlot 0.8.4</h2>
+<h3 id="a0000001703">Summary:</h3>
+<p>This is a minor bugfix release. </p><h3 id="a0000001704">Details:</h3>
 <ul class="itemize">
-<li><p><tt class="tt">tabulate</tt> </p></li><li><p><tt class="tt">histogram</tt> </p></li><li><p><tt class="tt">set label</tt> and <tt class="tt">text</tt> commands extended to allow a colour to be specified. </p></li>
-</ul><h3 id="a0000001676">Details – API changes</h3>
-<ul class="itemize">
-<li><p><tt class="tt">diff_dx()</tt> and <tt class="tt">int_dx()</tt> functions – the function to be differentiated or integrated must now be placed in quotation marks. </p></li>
-</ul><h3 id="a0000001677">Details – Change of System Requirements:</h3>
-<ul class="itemize">
-<li><p>Requirement of PyX version 0.9 has been updated to PyX version 0.10. Note that new versions of the PyX graphics library are not generally backwardly compatible. </p></li>
+<li><p>Two-dimensional parametric grid plotting implemented. </p></li><li><p>Bugfix to the dots plot style; filled triangles replaces with filled circles. </p></li><li><p>Bugfix to linewidths used when drawing line icons on graph legends. </p></li><li><p>Bugfix to Makefile to ensure libraries link correctly under Red Hat and SUSE. </p></li><li><p>Code cleanup to ensure correct compilation with <tt class="tt">-O2</tt> optimisation. </p></li>
 </ul></div>
 
 
@@ -76,16 +70,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0245.html" title="2009 Nov 17: PyXPlot 0.7.1"><img alt="Previous: 2009 Nov 17: PyXPlot 0.7.1" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0245.html" title="ChangeLog"><img alt="Previous: ChangeLog" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0241.html" title="ChangeLog"><img alt="Up: ChangeLog" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0245.html" title="ChangeLog"><img alt="Up: ChangeLog" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0247.html" title="2007 Feb 26: PyXPlot 0.6.3"><img alt="Next: 2007 Feb 26: PyXPlot 0.6.3" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0247.html" title="2010 Sep 15: PyXPlot 0.8.3"><img alt="Next: 2010 Sep 15: PyXPlot 0.8.3" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

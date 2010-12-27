@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: LaTeX and PyXPlot</title>
+<title>: The eps Command</title>
 
-<link href="sect0074.html" title="Reference Manual" rel="next" />
-<link href="sec-piechart.html" title="The piechart Command" rel="prev" />
-<link href="ch-vector_graphics.html" title="Producing Vector Graphics" rel="up" />
+<link href="ex-noentry.html" title="The box and circle Commands" rel="next" />
+<link href="sect0072.html" title="The image Command" rel="prev" />
+<link href="sect0070.html" title="Adding Other Vector Graphics Objects" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-piechart.html" title="The piechart Command"><img alt="Previous: The piechart Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0072.html" title="The image Command"><img alt="Previous: The image Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-vector_graphics.html" title="Producing Vector Graphics"><img alt="Up: Producing Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0070.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0074.html" title="Reference Manual"><img alt="Next: Reference Manual" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ex-noentry.html" title="The box and circle Commands"><img alt="Next: The box and circle Commands" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+<a href="sect0043.html">Plotting and Vector Graphics</a> <b>:</b>
 </span>
 
 </span><span>
@@ -48,52 +48,43 @@
 </span>
 
 </span><span>
+<span>
+<a href="sect0070.html">Adding Other Vector Graphics Objects</a> <b>:</b>
+</span>
+
+</span><span>
 
 <span>
-<b class="current">LaTeX and PyXPlot</b>
+<b class="current">The <tt class="tt">eps</tt> Command</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000074">3.5 LaTeX and PyXPlot</h1>
-<p>The <tt class="tt">text</tt> command<a name="a0000000946" id="a0000000946"></a> can straightforwardly be used to render simple one-line L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X<a name="a0000000947" id="a0000000947"></a> strings, but sometimes the need arises to place more substantial blocks of text onto a plot. For this purpose, it can be useful to use the L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X <tt class="tt">parbox</tt> or <tt class="tt">minipage</tt> environments<a href="#a0000000948" class="footnote"><sup class="footnotemark">1</sup></a>. For example: </p><pre>
-text '\parbox[t]{6cm}{\setlength{\parindent}{1cm} \
-\noindent There once was a lady from Hyde, \newline \
-Who ate a green apple and died, \newline \
-\indent While her lover lamented, \newline \
-\indent The apple fermented, \newline \
-and made cider inside her inside.}'
-</pre><center> <span style="border: 1px solid black"><img src="images/img-0590.png" alt="\includegraphics{examples/eps/ex_text1}" style="width:249px; height:91px" />
-</span> </center><p>If unusual mathematical symbols are required, for example those in the <tt class="tt">amsmath</tt> package<a name="a0000000949" id="a0000000949"></a>, such a package can be loaded using the <tt class="tt">set preamble</tt> command<a name="a0000000950" id="a0000000950"></a>. For example: </p><pre>
-set preamble \usepackage{marvosym}
-text "{\Huge\Dontwash\ \NoIroning\ \NoTumbler}$\;$ Do not \
-wash, iron or tumble-dry this plot."
-</pre><center> <span style="border: 1px solid black"><img src="images/img-0597.png" alt="\includegraphics{examples/eps/ex_text2}" style="width:473px; height:36px" />
-</span> </center></div>
+<div><h2 id="a0000000074">3.4.4 The <tt class="tt">eps</tt> Command</h2>
+<p>Vector graphic images in eps format may be placed on multiplot canvases using the <tt class="tt">eps</tt> command<a name="a0000000959" id="a0000000959"></a>, which has a syntax analogous to the <tt class="tt">image</tt> command. However neither height nor width need be specified; in this case the image will be included at its native size. For example: </p><pre>
+eps 'filename' at 3,2 rotate 5
+</pre><p>will place the eps file with its bottom-left corner at position <img src="images/img-0578.png" alt="$(3,2)$" style="vertical-align:-4px; 
+                                     width:38px; 
+                                     height:18px" class="math gen" /> cm from the origin, rotated counter-clockwise through 5 degrees. </p></div>
 
 
 
-<div id="footnotes">
-<p><b>Footnotes</b></p>
-<ol>
-<li id="a0000000948">Remember, any valid L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X string can be passed to the <tt class="tt">text</tt> command<a name="a0000000951" id="a0000000951"></a> and <tt class="tt">set label</tt> command<a name="a0000000952" id="a0000000952"></a>.</li>
-</ol>
-</div>
+
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-piechart.html" title="The piechart Command"><img alt="Previous: The piechart Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0072.html" title="The image Command"><img alt="Previous: The image Command" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-vector_graphics.html" title="Producing Vector Graphics"><img alt="Up: Producing Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0070.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0074.html" title="Reference Manual"><img alt="Next: Reference Manual" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ex-noentry.html" title="The box and circle Commands"><img alt="Next: The box and circle Commands" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

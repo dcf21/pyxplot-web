@@ -24,7 +24,7 @@
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -57,7 +57,7 @@
 </div>
 
 <div><h1 id="sec:units">4.6 Working with Physical Units</h1>
-<p>  <a name="a0000000422" id="a0000000422"></a><a name="a0000000423" id="a0000000423"></a> </p><p>PyXPlot has extensive facilities for handling data with a range of physical units. These features make it a powerful desktop tool for converting measurements between different systems of units – for example, between imperial and metric units – and for doing simple back-of-the-envelope calculations. </p><p>All numerical variables in PyXPlot have not only a magnitude, but also a physical unit associated with them. In the case of a pure number such as 2, the quantity is said to be dimensionless. The special function <tt class="tt">unit()</tt><a name="a0000000424" id="a0000000424"></a> is used to specify the physical unit associated with a quantity. For example, the expression </p><pre>
+<p>  <a name="a0000000428" id="a0000000428"></a><a name="a0000000429" id="a0000000429"></a> </p><p>PyXPlot has extensive facilities for handling data with a range of physical units. These features make it a powerful desktop tool for converting measurements between different systems of units – for example, between imperial and metric units – and for doing simple back-of-the-envelope calculations. </p><p>All numerical variables in PyXPlot have not only a magnitude, but also a physical unit associated with them. In the case of a pure number such as 2, the quantity is said to be dimensionless. The special function <tt class="tt">unit()</tt><a name="a0000000430" id="a0000000430"></a> is used to specify the physical unit associated with a quantity. For example, the expression </p><pre>
 print 2*unit(s)
 </pre><p>takes the number 2 and multiplies it by the unit <tt class="tt">s</tt>, which is the SI abbreviation for seconds. The resulting quantity then has dimensions of time, and could, for example, be divided by the unit <tt class="tt">hr</tt> to find the dimensionless number of hours in two seconds: </p><pre>
 print 2*unit(s)/unit(hr)
@@ -65,10 +65,10 @@ print 2*unit(s)/unit(hr)
 print 2*unit(miles/hour)
 </pre><p>or, in many cases, have their own explicit abbreviations, in this case <tt class="tt">mph</tt>: </p><pre>
 print 2*unit(mph)
-</pre><p>As these examples demonstrate, the <tt class="tt">unit()</tt> function can be passed a string of units either multiplied together with the <tt class="tt">*</tt> operator, or divided using the <tt class="tt">/</tt> operator. Units may be raised to powers with the <tt class="tt">**</tt> operator<a href="#a0000000425" class="footnote"><sup class="footnotemark">1</sup></a>, as in the example: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">a = 2*unit(m**2)</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print "An area of %f square feet"%(a/unit(ft**2))</b></tt><br /><tt class="tt">An area of 21.527821 square feet</tt>  </p><p>As these examples also demonstrate, units may be referred to by either their abbreviated or full names, and each of these may be used in either their singular or plural forms. A complete list of all of the units which PyXPlot recognises by default, together with all of their recognised names can be found in Appendix <a href="ch-unit_list.html">4</a>. </p><p>SI units may also be preceded with SI prefixes<a name="a0000000426" id="a0000000426"></a>, as in the examples<a href="#a0000000427" class="footnote"><sup class="footnotemark">2</sup></a>: </p><pre>
+</pre><p>As these examples demonstrate, the <tt class="tt">unit()</tt> function can be passed a string of units either multiplied together with the <tt class="tt">*</tt> operator, or divided using the <tt class="tt">/</tt> operator. Units may be raised to powers with the <tt class="tt">**</tt> operator<a href="#a0000000431" class="footnote"><sup class="footnotemark">1</sup></a>, as in the example: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">a = 2*unit(m**2)</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print "An area of %f square feet"%(a/unit(ft**2))</b></tt><br /><tt class="tt">An area of 21.527821 square feet</tt>  </p><p>As these examples also demonstrate, units may be referred to by either their abbreviated or full names, and each of these may be used in either their singular or plural forms. A complete list of all of the units which PyXPlot recognises by default, together with all of their recognised names can be found in Appendix <a href="ch-unit_list.html">4</a>. </p><p>SI units may also be preceded with SI prefixes<a name="a0000000432" id="a0000000432"></a>, as in the examples<a href="#a0000000433" class="footnote"><sup class="footnotemark">2</sup></a>: </p><pre>
 a = 2*unit(um)
 a = 2*unit(micrometres)
-</pre><p>When quantities with physical units are substituted into algebraic expressions, PyXPlot automatically checks that the expression is dimensionally correct before evaluating it. For example, the following expression is not dimensionally correct and would return an error because the first term in the sum has dimensions of velocity, whereas the second term is a length: <a name="a0000000428" id="a0000000428"></a> </p><p><table cellspacing="0" class="tabular">
+</pre><p>When quantities with physical units are substituted into algebraic expressions, PyXPlot automatically checks that the expression is dimensionally correct before evaluating it. For example, the following expression is not dimensionally correct and would return an error because the first term in the sum has dimensions of velocity, whereas the second term is a length: <a name="a0000000434" id="a0000000434"></a> </p><p><table cellspacing="0" class="tabular">
 <tr>
 
     
@@ -79,7 +79,7 @@ a = 2*unit(micrometres)
     <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> a = 2*unit(m)<br />b = 4*unit(s)<br />print a/b + a </tt></div></p></td>
 
 </tr>
-</table> </p><p>PyXPlot continues to throw an error in this case, even when explicit numerical errors are turned off with the <tt class="tt">set numeric errors quiet</tt> command<a name="a0000000429" id="a0000000429"></a>, since it is deemed a serious error: the above expression would never be correct for any values of <tt class="tt">a</tt> and <tt class="tt">b</tt> given their dimensions. </p><p>A large number of units are pre-defined in PyXPlot by default, a complete list of which can be found in Appendix <a href="ch-unit_list.html">4</a>. However, the need may occasionally arise to define new units. It is not possible to do this from an interactive PyXPlot terminal, but it is possible to do so from a configuration script which PyXPlot runs upon start-up. Such configuration scripts will be discussed in Chapter <a href="ch-configuration.html">8</a>. New units may either be derived from existing SI units, alternative measures of existing quantities, or entirely new base units such as numbers of CPU cycles or man-hours of labour. </p></div>
+</table> </p><p>PyXPlot continues to throw an error in this case, even when explicit numerical errors are turned off with the <tt class="tt">set numeric errors quiet</tt> command<a name="a0000000435" id="a0000000435"></a>, since it is deemed a serious error: the above expression would never be correct for any values of <tt class="tt">a</tt> and <tt class="tt">b</tt> given their dimensions. </p><p>A large number of units are pre-defined in PyXPlot by default, a complete list of which can be found in Appendix <a href="ch-unit_list.html">4</a>. However, the need may occasionally arise to define new units. It is not possible to do this from an interactive PyXPlot terminal, but it is possible to do so from a configuration script which PyXPlot runs upon start-up. Such configuration scripts will be discussed in Chapter <a href="ch-configuration.html">8</a>. New units may either be derived from existing SI units, alternative measures of existing quantities, or entirely new base units such as numbers of CPU cycles or man-hours of labour. </p></div>
 
 <div class="contents section-contents"><!--<strong>Subsections</strong>-->
 <ul>
@@ -97,7 +97,7 @@ a = 2*unit(micrometres)
 <div id="footnotes">
 <p><b>Footnotes</b></p>
 <ol>
-<li id="a0000000425">The <tt class="tt"><img src="images/img-0024.png" alt="\^{}" style="vertical-align:9px; width:5px; height:4px" class="accent gen" /></tt> character may be used as an alias for the <tt class="tt">**</tt> operator, though this notation is arguably confusing, since the same character is used for the binary exclusive or operator in PyXPlot’s normal arithmetic.</li><li id="a0000000427">As the first of these examples demonstrates, the letter <tt class="tt">u</tt> is used as a Roman-alphabet substitute for the Greek letter <img src="images/img-0126.png" alt="$\upmu $" style="vertical-align:-4px; 
+<li id="a0000000431">The <tt class="tt"><img src="images/img-0024.png" alt="\^{}" style="vertical-align:9px; width:5px; height:4px" class="accent gen" /></tt> character may be used as an alias for the <tt class="tt">**</tt> operator, though this notation is arguably confusing, since the same character is used for the binary exclusive or operator in PyXPlot’s normal arithmetic.</li><li id="a0000000433">As the first of these examples demonstrates, the letter <tt class="tt">u</tt> is used as a Roman-alphabet substitute for the Greek letter <img src="images/img-0126.png" alt="$\upmu $" style="vertical-align:-4px; 
                                      width:11px; 
                                      height:14px" class="math gen" />.</li>
 </ol>
@@ -115,7 +115,7 @@ a = 2*unit(micrometres)
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

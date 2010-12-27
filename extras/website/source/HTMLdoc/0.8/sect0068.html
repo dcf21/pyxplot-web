@@ -3,10 +3,10 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: The replot Command Revisited</title>
+<title>: Linked Axes and Galleries of Plots</title>
 
-<link href="sect0069.html" title="Adding Other Vector Graphics Objects" rel="next" />
-<link href="sect0067.html" title="Linked Axes and Galleries of Plots" rel="prev" />
+<link href="sect0069.html" title="The replot Command Revisited" rel="next" />
+<link href="sec-set_display.html" title="The Construction of Large Multiplots" rel="prev" />
 <link href="ch-vector_graphics.html" title="Producing Vector Graphics" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0067.html" title="Linked Axes and Galleries of Plots"><img alt="Previous: Linked Axes and Galleries of Plots" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-set_display.html" title="The Construction of Large Multiplots"><img alt="Previous: The Construction of Large Multiplots" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-vector_graphics.html" title="Producing Vector Graphics"><img alt="Up: Producing Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0069.html" title="Adding Other Vector Graphics Objects"><img alt="Next: Adding Other Vector Graphics Objects" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0069.html" title="The replot Command Revisited"><img alt="Next: The replot Command Revisited" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+<a href="sect0043.html">Plotting and Vector Graphics</a> <b>:</b>
 </span>
 
 </span><span>
@@ -50,25 +50,21 @@
 </span><span>
 
 <span>
-<b class="current">The <tt class="tt">replot</tt> Command Revisited</b>
+<b class="current">Linked Axes and Galleries of Plots</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000069">3.3 The <tt class="tt">replot</tt> Command Revisited</h1>
-<p>In multiplot mode, the <tt class="tt">replot</tt> command<a name="a0000000898" id="a0000000898"></a> can be used to modify the last plot added to the page. For example, the following would change the title of the latest plot to ‘foo’, and add a plot of the function <img src="images/img-0410.png" alt="$g(x)$" style="vertical-align:-4px; 
-                                     width:32px; 
-                                     height:18px" class="math gen" /> to it: </p><pre>
-set title 'foo'
-replot cos(x)
-</pre><p>Additionally, it is possible to modify any plot on the page by adding an <tt class="tt">item</tt> modifier to the <tt class="tt">replot</tt> statement to specify which plot should be replotted. The following example would produce two plots, and then add an additional function to the first plot: </p><pre>
-set multiplot
-plot f(x)
-set origin 10,0
-plot g(x)
-replot item 1 h(x)
-</pre><p>If no <tt class="tt">item</tt> number is specified, then the <tt class="tt">replot</tt> command<a name="a0000000899" id="a0000000899"></a> acts by default upon the most recent plot to have been added to the multiplot canvas. </p></div>
+<div><h1 id="a0000000069">3.2 Linked Axes and Galleries of Plots</h1>
+<p>In the previous chapter (Section <a href="ex-cmbrtemp.html">1.8.9</a>), linked axes were introduced as a mechanism by which several axes on a single plot could be set to have the same range, or to be algebraically related to one another. Another common use for them is to make several plots on a multiplot canvas share common axes. Just as the following statement links two axes on a single plot to one another </p><pre>
+set axis x2 linked x
+</pre><p> axes on the current plot can be linked to those of previous plots which are already on the multiplot canvas using syntax of the form: </p><pre>
+set axis x2 linked item 2 x
+</pre><p>A common reason for doing this is to produce galleries of side-by-side plots. The following series of commands would produce a <img src="images/img-0564.png" alt="$2\times 2$" style="vertical-align:0px; 
+                                     width:39px; 
+                                     height:12px" class="math gen" /> grid of plots, with axes only labelled along the bottom and left sides of the grid: </p><p> <small class="footnotesize"><tt class="tt">set multiplot</tt><br /><tt class="tt">set nodisplay</tt><br /><tt class="tt">width=5.4</tt><br /></small><br /><small class="footnotesize"><tt class="tt">set width width</tt><br /><tt class="tt">set xrange [0:23.999]</tt><br /><tt class="tt">set yrange [0:0.11]</tt><br /><tt class="tt">set nokey</tt><br /><tt class="tt">set texthalign left</tt><br /><tt class="tt">set textvalign centre</tt><br /></small><br /><small class="footnotesize"><tt class="tt"># Plot 1 (bottom left)</tt><br /><tt class="tt">set xlabel "$x$"</tt><br /><tt class="tt">set ylabel ""</tt><br /><tt class="tt">set label 1 "(c) fsteps" at graph width*0.03 , graph width*gold_ratio*0.9</tt><br /><tt class="tt">plot "examples/ex_barchart1.dat" with fsteps, "" with points</tt><br /></small><br /><small class="footnotesize"><tt class="tt">set axis x linked item 1 x</tt><br /><tt class="tt">set axis y linked item 1 y</tt><br /></small><br /><small class="footnotesize"><tt class="tt"># Plot 2 (bottom right)</tt><br /><tt class="tt">set origin 1*width, 0*width*gold_ratio</tt><br /><tt class="tt">set yformat ""</tt><br /><tt class="tt">set label 1 "(d) histeps" at graph width*0.03 , graph width*gold_ratio*0.9</tt><br /><tt class="tt">plot "examples/ex_barchart1.dat" with histeps, "" with points</tt><br /></small><br /><small class="footnotesize"><tt class="tt"># Plot 3 (top left)</tt><br /><tt class="tt">set origin 0*width, 1*width*gold_ratio</tt><br /><tt class="tt">set xformat "" ; set xlabel ""</tt><br /><tt class="tt">unset yformat ; set ylabel texify(poissonPDF(x,18))</tt><br /><tt class="tt">set label 1 "(a) impulses" at graph width*0.03 , graph width*gold_ratio*0.9</tt><br /><tt class="tt">plot "examples/ex_barchart1.dat" with impulses, "" with points</tt><br /></small><br /><small class="footnotesize"><tt class="tt"># Plot 4 (top right)</tt><br /><tt class="tt">set origin 1*width, 1*width*gold_ratio</tt><br /><tt class="tt">set yformat "" ; set ylabel ""</tt><br /><tt class="tt">set label 1 "(b) steps" at graph width*0.03 , graph width*gold_ratio*0.9</tt><br /><tt class="tt">plot "examples/ex_barchart1.dat" with steps, "" with points</tt><br /></small><br /><small class="footnotesize"><tt class="tt"># Now that we are finished preparing multiplot, turn display on</tt><br /><tt class="tt">set display</tt><br /><tt class="tt">refresh</tt> </small> </p><p><center>
+<img src="images/img-0566.png" alt="\includegraphics[width=\textwidth ]{examples/eps/ex_gallery}" style="width:" /></center> </p></div>
 
 
 
@@ -77,16 +73,16 @@ replot item 1 h(x)
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0067.html" title="Linked Axes and Galleries of Plots"><img alt="Previous: Linked Axes and Galleries of Plots" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-set_display.html" title="The Construction of Large Multiplots"><img alt="Previous: The Construction of Large Multiplots" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-vector_graphics.html" title="Producing Vector Graphics"><img alt="Up: Producing Vector Graphics" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0069.html" title="Adding Other Vector Graphics Objects"><img alt="Next: Adding Other Vector Graphics Objects" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0069.html" title="The replot Command Revisited"><img alt="Next: The replot Command Revisited" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

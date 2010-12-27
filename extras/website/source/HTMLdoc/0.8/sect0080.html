@@ -3,10 +3,10 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: break</title>
+<title>: assert</title>
 
-<link href="sect0081.html" title="cd" rel="next" />
-<link href="sect0079.html" title="box" rel="prev" />
+<link href="sect0081.html" title="box" rel="next" />
+<link href="sect0079.html" title="arrow" rel="prev" />
 <link href="ch-reference.html" title="Command Reference" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0079.html" title="box"><img alt="Previous: box" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0079.html" title="arrow"><img alt="Previous: arrow" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0081.html" title="cd"><img alt="Next: cd" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0081.html" title="box"><img alt="Next: box" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0074.html">Reference Manual</a> <b>:</b>
+<a href="sect0075.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -50,29 +50,27 @@
 </span><span>
 
 <span>
-<b class="current">break</b>
+<b class="current">assert</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000081">1.6 break</h1>
-<p><a name="a0000000970" id="a0000000970"></a> </p><pre>
-break [&lt;loopname&gt;]
-</pre><p>The <tt class="tt">break</tt> command<a name="a0000000971" id="a0000000971"></a> terminates execution of <tt class="tt">do</tt>, <tt class="tt">while</tt>, <tt class="tt">for</tt> and <tt class="tt">foreach</tt> loops in an analogous manner to the <tt class="tt">break</tt> statement in the C programming language. Execution resumes at the statement following the end of the loop. For example, the following loop would only print the numbers 1 and 2: </p><pre>
-for i = 1 to 10
- {
-  print i
-  if (i==2)
-   {
-    break
-   }
- }
-</pre><p>If several loops are nested, the <tt class="tt">break</tt> statement only acts on the innermost loop. If the <tt class="tt">break</tt> statement is encountered outside of any loop structure, an error results. Optionally, the <tt class="tt">for</tt>, <tt class="tt">foreach</tt>, <tt class="tt">do</tt> and <tt class="tt">while</tt> commands may be supplied with a name for the loop, prefixed by the word <tt class="tt">loopname</tt>, as in the examples: </p><pre>
-for i=0 to 4 loopname iloop
-
-foreach i in "*.dat" loopname DatafileLoop
-</pre><p>When loops are given such names, the <tt class="tt">break</tt> statement may be followed by the name of the loop whose iteration is to be broken, allowing it to act upon loops other than the innermost one. </p><p>See also the <tt class="tt">continue</tt> command. </p></div>
+<div><h1 id="a0000000081">1.5 assert</h1>
+<p><a name="a0000000994" id="a0000000994"></a> </p><pre>
+assert ( &lt;expression&gt; | version ( &gt;= | &lt; ) &lt;version&gt; )
+       [&lt;error message&gt;]
+</pre><p>The <tt class="tt">assert</tt> command<a name="a0000000995" id="a0000000995"></a> can be used to assert that a logical expression, such as <tt class="tt">x&gt;0</tt>, is true. An error is reported if the expression is false, and optionally a string can be supplied to provide a more informative error message to the user: </p><pre>
+assert x&gt;0
+assert y&lt;0 "y must be less than zero."
+</pre><p>The <tt class="tt">assert</tt> command<a name="a0000000996" id="a0000000996"></a> can also be used to test the version number of PyXPlot. It is possible to test either that the version is newer than or equal to a specific version, using the <tt class="tt"><img src="images/img-0035.png" alt="$&gt;$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" />=</tt> operator, or that it is older than a specific version, using the <tt class="tt"><img src="images/img-0034.png" alt="$&lt;$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" /></tt> operator, as demonstrated in the following examples: </p><pre>
+assert version &gt;= 0.8.2
+assert version &lt;  0.8  "This script is designed for PyXPlot 0.7"
+</pre></div>
 
 
 
@@ -81,16 +79,16 @@ foreach i in "*.dat" loopname DatafileLoop
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0079.html" title="box"><img alt="Previous: box" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0079.html" title="arrow"><img alt="Previous: arrow" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0081.html" title="cd"><img alt="Next: cd" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0081.html" title="box"><img alt="Next: box" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

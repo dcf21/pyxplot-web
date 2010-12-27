@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: c1format</title>
+<title>: boxfrom</title>
 
-<link href="sect0137.html" title="c1label" rel="next" />
-<link href="sect0135.html" title="boxwidth" rel="prev" />
-<link href="sect0124.html" title="set" rel="up" />
+<link href="sect0137.html" title="boxwidth" rel="next" />
+<link href="sect0135.html" title="binwidth" rel="prev" />
+<link href="sect0126.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0135.html" title="boxwidth"><img alt="Previous: boxwidth" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0135.html" title="binwidth"><img alt="Previous: binwidth" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0137.html" title="c1label"><img alt="Next: c1label" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0137.html" title="boxwidth"><img alt="Next: boxwidth" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0074.html">Reference Manual</a> <b>:</b>
+<a href="sect0075.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,23 +49,28 @@
 
 </span><span>
 <span>
-<a href="sect0124.html">set</a> <b>:</b>
+<a href="sect0126.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">c1format</b>
+<b class="current">boxfrom</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000137">1.46.12 c1format</h2>
-<p><a name="a0000001108" id="a0000001108"></a> </p><pre>
-set c1format ( auto | '&lt;format&gt;' )
-      ( horizontal | vertical | rotate &lt;angle&gt; )
-</pre><p>The <tt class="tt">c1format</tt> setting is used to manually specify an explicit format for the axis labels to take along the colour scale bars drawn alongside plots which make use of the <tt class="tt">colourmap</tt><a name="a0000001109" id="a0000001109"></a><a name="a0000001110" id="a0000001110"></a> plot style. It has similar syntax to the <tt class="tt">set xformat</tt> command. </p></div>
+<div><h2 id="a0000000137">1.47.10 boxfrom</h2>
+<p><a name="a0000001135" id="a0000001135"></a> </p><pre>
+set boxfrom &lt;value&gt;
+</pre><p>The setting <tt class="tt">boxfrom</tt> alters the vertical line from which bars are drawn when PyXPlot draws bar charts. By default, bars all originate from the line <img src="images/img-0391.png" alt="$y=0$" style="vertical-align:-4px; 
+                                     width:42px; 
+                                     height:16px" class="math gen" />, but the example </p><pre>
+set boxfrom 2
+</pre><p>would make the bars originate from the line <img src="images/img-0634.png" alt="$y=2$" style="vertical-align:-4px; 
+                                     width:42px; 
+                                     height:16px" class="math gen" />. The specified vertical abscissa value may have any physical units, but must be real and finite. </p></div>
 
 
 
@@ -74,16 +79,16 @@ set c1format ( auto | '&lt;format&gt;' )
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0135.html" title="boxwidth"><img alt="Previous: boxwidth" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0135.html" title="binwidth"><img alt="Previous: binwidth" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0137.html" title="c1label"><img alt="Next: c1label" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0137.html" title="boxwidth"><img alt="Next: boxwidth" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

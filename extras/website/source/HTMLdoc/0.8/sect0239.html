@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: Estimating the Error in </title>
+<title>: Complex Numbers</title>
 
-<link href="sect0240.html" title="The Covariance Matrix" rel="next" />
-<link href="sec-bayes_pdf.html" title="The Probability Density Function" rel="prev" />
-<link href="ch-fit_maths.html" title="The fit Command: Mathematical Details" rel="up" />
+<link href="sect0240.html" title="The Multiplot Environment" rel="next" />
+<link href="sect0238.html" title="The Typesetting of Text" rel="prev" />
+<link href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-bayes_pdf.html" title="The Probability Density Function"><img alt="Previous: The Probability Density Function" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0238.html" title="The Typesetting of Text"><img alt="Previous: The Typesetting of Text" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-fit_maths.html" title="The fit Command: Mathematical Details"><img alt="Up: The fit Command: Mathematical Details" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot"><img alt="Up: Summary of Differences Between PyXPlot and Gnuplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0240.html" title="The Covariance Matrix"><img alt="Next: The Covariance Matrix" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0240.html" title="The Multiplot Environment"><img alt="Next: The Multiplot Environment" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,172 +39,43 @@
 
 </span><span>
 <span>
-<a href="sect0226.html">Appendices</a> <b>:</b>
+<a href="sect0230.html">Appendices</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="ch-fit_maths.html">The <tt class="tt">fit</tt> Command: Mathematical Details</a> <b>:</b>
+<a href="ch-gnuplot_diffs.html">Summary of Differences Between PyXPlot and Gnuplot</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">Estimating the Error in <img src="images/img-0780.png" alt="$\mathbf{u}^0$" style="vertical-align:0px; 
-                                     width:19px; 
-                                     height:16px" class="math gen" /></b>
+<b class="current">Complex Numbers</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000240">C.3 Estimating the Error in <img src="images/img-0780.png" alt="$\mathbf{u}^0$" style="vertical-align:0px; 
-                                     width:19px; 
-                                     height:16px" class="math gen" /></h1>
-<p>To estimate the error in the best-fitting parameter values that we find, we assume <img src="images/img-0774.png" alt="$\mathrm{P}\left( \mathbf{u} | \left\{  \mathbf{x}_ i, f_ i, \sigma _ i \right\}  \right)$" style="vertical-align:-5px; 
-                                     width:129px; 
-                                     height:19px" class="math gen" /> to be approximated by an <img src="images/img-0770.png" alt="$n_\mathrm {u}$" style="vertical-align:-2px; 
-                                     width:19px; 
-                                     height:10px" class="math gen" />-dimensional Gaussian distribution around <img src="images/img-0780.png" alt="$\mathbf{u}^0$" style="vertical-align:0px; 
-                                     width:19px; 
-                                     height:16px" class="math gen" />. Taking a Taylor expansion of <img src="images/img-0781.png" alt="$L(\mathbf{u})$" style="vertical-align:-4px; 
-                                     width:37px; 
-                                     height:18px" class="math gen" /> about <img src="images/img-0780.png" alt="$\mathbf{u}^0$" style="vertical-align:0px; 
-                                     width:19px; 
-                                     height:16px" class="math gen" />, we can write: </p><table id="&lt;plasTeX.TeXFragment object at 0x1063ba738&gt;" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
-<tr id="a0000001632">
-    
-    <td style="width:40%">&nbsp;</td>
-    
-    
-        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0782.png" alt="$\displaystyle  L(\mathbf{u})  $" style="vertical-align:-4px; width:37px;                     height:18px" class="math gen" /></td>
-    
-    
-    
-        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0058.png" alt="$\displaystyle  =  $" style="vertical-align:2px; width:12px;                     height:4px" class="math gen" /></td>
-    
-    
-    
-        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0783.png" alt="$\displaystyle  L(\mathbf{u}^0) + \underbrace{ \sum _{i=0}^{n_\mathrm {u}-1} \left( u_ i - u^0_ i \right) \left.\frac{\partial L}{\partial u_ i}\right|_{\mathbf{u}^0} }_{\textrm{Zero at $\mathbf{u}^0$ by definition}} + \label{eqa:L_ taylor_ expand} $" style="vertical-align:-53px; width:253px;                     height:85px" class="math gen" /></td>
-    
-    
-    
-    <td style="width:40%">&nbsp;</td>
-    <td style="width:20%" class="eqnnum"><span>(<span>C.4</span>)</span></td>
-</tr><tr id="a0000001633">
-    
-    <td style="width:40%">&nbsp;</td>
-    
-    
-        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0175.png" alt="$\displaystyle  $" style="vertical-align:0px; width:1px;                     height:1px" class="math gen" /></td>
-    
-    
-    
-        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0175.png" alt="$\displaystyle  $" style="vertical-align:0px; width:1px;                     height:1px" class="math gen" /></td>
-    
-    
-    
-        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0784.png" alt="$\displaystyle  \sum _{i=0}^{n_\mathrm {u}-1} \sum _{j=0}^{n_\mathrm {u}-1} \frac{\left( u_ i - u^0_ i \right) \left( u_ j - u^0_ j \right)}{2} \left.\frac{\partial ^2 L}{\partial u_ i \partial u_ j}\right|_{\mathbf{u}^0} + \mathcal{O}\left( \mathbf{u} - \mathbf{u}^0\right)^3 \nonumber  $" style="vertical-align:-25px; width:438px;                     height:65px" class="math gen" /></td>
-    
-    
-    
-    <td style="width:40%">&nbsp;</td>
-    <td style="width:20%" class="eqnnum">&nbsp;</td>
-</tr>
-</table><p>Since the logarithm of a Gaussian distribution is a parabola, the quadratic terms in the above expansion encode the Gaussian component of the probability distribution <img src="images/img-0774.png" alt="$\mathrm{P}\left( \mathbf{u} | \left\{  \mathbf{x}_ i, f_ i, \sigma _ i \right\}  \right)$" style="vertical-align:-5px; 
-                                     width:129px; 
-                                     height:19px" class="math gen" /> about <img src="images/img-0780.png" alt="$\mathbf{u}^0$" style="vertical-align:0px; 
-                                     width:19px; 
-                                     height:16px" class="math gen" />.<a href="#a0000001634" class="footnote"><sup class="footnotemark">1</sup></a> We may write the sum of these terms, which we denote <img src="images/img-0785.png" alt="$Q$" style="vertical-align:-4px; 
-                                     width:14px; 
-                                     height:16px" class="math gen" />, in matrix form: </p><table id="&lt;plasTeX.TeXFragment object at 0x1065b4328&gt;" class="equation" width="100%" cellspacing="0" cellpadding="7">
-<tr>
-    
-    <td style="width:40%">&nbsp;</td>
-    <td><img src="images/img-0786.png" alt="\begin{equation}  Q = \frac{1}{2} \left(\mathbf{u} - \mathbf{u}^0\right)^\mathbf {T} \mathbf{A} \left(\mathbf{u} - \mathbf{u}^0\right) \label{eqn:Q_ vector} \end{equation}" style="width:412px; 
-                            height:37px" class="math gen" /></td>
-    
-    <td style="width:40%">&nbsp;</td>
-    <td class="eqnnum" style="width:20%"><span>(<span>C.5</span>)</span></td>
-</tr>
-</table><p>where the superscript <img src="images/img-0787.png" alt="$^\mathbf {T}$" style="vertical-align:7px; 
-                                     width:11px; 
-                                     height:9px" class="math gen" /> represents the transpose of the vector displacement from <img src="images/img-0780.png" alt="$\mathbf{u}^0$" style="vertical-align:0px; 
-                                     width:19px; 
-                                     height:16px" class="math gen" />, and <img src="images/img-0788.png" alt="$\mathbf{A}$" style="vertical-align:0px; 
-                                     width:15px; 
-                                     height:12px" class="math gen" /> is the Hessian matrix of <img src="images/img-0377.png" alt="$L$" style="vertical-align:0px; 
-                                     width:12px; 
-                                     height:12px" class="math gen" />, given by: </p><table id="a0000001635" class="equation" width="100%" cellspacing="0" cellpadding="7">
-<tr>
-    
-    <td style="width:40%">&nbsp;</td>
-    <td><img src="images/img-0789.png" alt="\begin{equation}  A_{ij} = \nabla \nabla L = \left.\frac{\partial ^2 L}{\partial u_ i \partial u_ j}\right|_{\mathbf{u}^0} \end{equation}" style="width:399px; 
-                            height:46px" class="math gen" /></td>
-    
-    <td style="width:40%">&nbsp;</td>
-    <td class="eqnnum" style="width:20%"><span>(<span>C.6</span>)</span></td>
-</tr>
-</table><p> <a name="a0000001636" id="a0000001636"></a> </p><p>This is the Hessian matrix which is output by the <tt class="tt">fit</tt> command. In general, an <img src="images/img-0770.png" alt="$n_\mathrm {u}$" style="vertical-align:-2px; 
-                                     width:19px; 
-                                     height:10px" class="math gen" />-dimensional Gaussian distribution such as that given by Equation (<a></a>) yields elliptical contours of equi-probability in parameter space, whose principal axes need not be aligned with our chosen coordinate axes – the variables <img src="images/img-0790.png" alt="$u_0 ... u_{n_ u-1}$" style="vertical-align:-4px; 
-                                     width:77px; 
-                                     height:12px" class="math gen" />. The eigenvectors <img src="images/img-0791.png" alt="$\mathbf{e}_ i$" style="vertical-align:-2px; 
-                                     width:15px; 
-                                     height:10px" class="math gen" /> of <img src="images/img-0788.png" alt="$\mathbf{A}$" style="vertical-align:0px; 
-                                     width:15px; 
-                                     height:12px" class="math gen" /> are the principal axes of these ellipses, and the corresponding eigenvalues <img src="images/img-0792.png" alt="$\lambda _ i$" style="vertical-align:-2px; 
-                                     width:15px; 
-                                     height:15px" class="math gen" /> equal <img src="images/img-0793.png" alt="$1/\sigma _ i^2$" style="vertical-align:-5px; 
-                                     width:35px; 
-                                     height:21px" class="math gen" />, where <img src="images/img-0768.png" alt="$\sigma _ i$" style="vertical-align:-2px; 
-                                     width:15px; 
-                                     height:10px" class="math gen" /> is the standard deviation of the probability density function along the direction of these axes. </p><p>This can be visualised by imagining that we diagonalise <img src="images/img-0788.png" alt="$\mathbf{A}$" style="vertical-align:0px; 
-                                     width:15px; 
-                                     height:12px" class="math gen" />, and expand Equation (<a></a>) in our diagonal basis. The resulting expression for <img src="images/img-0377.png" alt="$L$" style="vertical-align:0px; 
-                                     width:12px; 
-                                     height:12px" class="math gen" /> is a sum of square terms; the cross terms vanish in this basis by definition. The equations of the equi-probability contours become the equations of ellipses: </p><table id="a0000001637" class="equation" width="100%" cellspacing="0" cellpadding="7">
-<tr>
-    
-    <td style="width:40%">&nbsp;</td>
-    <td><img src="images/img-0794.png" alt="\begin{equation}  Q = \frac{1}{2} \sum _{i=0}^{n_\mathrm {u}-1} A_{ii} \left(u_ i - u^0_ i\right)^2 = k \end{equation}" style="width:414px; 
-                            height:53px" class="math gen" /></td>
-    
-    <td style="width:40%">&nbsp;</td>
-    <td class="eqnnum" style="width:20%"><span>(<span>C.7</span>)</span></td>
-</tr>
-</table><p>where <img src="images/img-0626.png" alt="$k$" style="vertical-align:0px; 
-                                     width:9px; 
-                                     height:13px" class="math gen" /> is some constant. By comparison with the equation for the logarithm of a Gaussian distribution, we can associate <img src="images/img-0795.png" alt="$A_{ii}$" style="vertical-align:-2px; 
-                                     width:24px; 
-                                     height:14px" class="math gen" /> with <img src="images/img-0796.png" alt="$-1/\sigma _ i^2$" style="vertical-align:-5px; 
-                                     width:49px; 
-                                     height:21px" class="math gen" /> in our eigenvector basis. </p><p>The problem of evaluating the standard deviations of our variables <img src="images/img-0797.png" alt="$u_ i$" style="vertical-align:-2px; 
-                                     width:15px; 
-                                     height:10px" class="math gen" /> is more complicated, however, as we are attempting to evaluate the width of these elliptical equi-probability contours in directions which are, in general, not aligned with their principal axes. To achieve this, we first convert our Hessian matrix into a covariance matrix. </p></div>
+<div><h1 id="a0000000240">B.2 Complex Numbers</h1>
+<p>The syntax used for representing complex numbers in PyXPlot differs from that used in Gnuplot. Whereas Gnuplot expects the real and imaginary components of complex numbers to be represented <tt class="tt">{a,b}</tt>, PyXPlot uses the syntax <tt class="tt">a+b*i</tt>, assuming that the variable <tt class="tt">i</tt> has been defined to equal <tt class="tt">sqrt(-1)</tt>. In addition, in PyXPlot complex arithmetic must first be enabled using the <tt class="tt">set numerics complex</tt> command before complex numbers may be entered. This is illustrated by the following example: </p><p> <tt class="tt">gnuplot&gt; <b class="bf">print {1,2} + {3,4}</b></tt><br /><tt class="tt">{4.0, 6.0}</tt> <br /><tt class="tt">pyxplot&gt; <b class="bf">set numerics complex</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print (1+2*i) + (3+4*i)</b></tt><br /><tt class="tt">(4+6i)</tt>  </p></div>
 
 
 
-<div id="footnotes">
-<p><b>Footnotes</b></p>
-<ol>
-<li id="a0000001634">The use of this is called <i class="itshape">Gauss’ Method</i>. Higher order terms in the expansion represent any non-Gaussianity in the probability distribution, which we neglect. See MacKay, D.J.C., <i class="itshape">Information Theory, Inference and Learning Algorithms</i>, CUP (2003).</li>
-</ol>
-</div>
+
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-bayes_pdf.html" title="The Probability Density Function"><img alt="Previous: The Probability Density Function" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0238.html" title="The Typesetting of Text"><img alt="Previous: The Typesetting of Text" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-fit_maths.html" title="The fit Command: Mathematical Details"><img alt="Up: The fit Command: Mathematical Details" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot"><img alt="Up: Summary of Differences Between PyXPlot and Gnuplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0240.html" title="The Covariance Matrix"><img alt="Next: The Covariance Matrix" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0240.html" title="The Multiplot Environment"><img alt="Next: The Multiplot Environment" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

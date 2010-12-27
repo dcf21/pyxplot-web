@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: ylabel</title>
+<title>: xlabel</title>
 
-<link href="sect0206.html" title="yrange" rel="next" />
-<link href="sect0204.html" title="yformat" rel="prev" />
-<link href="sect0124.html" title="set" rel="up" />
+<link href="sect0206.html" title="xrange" rel="next" />
+<link href="sect0204.html" title="xformat" rel="prev" />
+<link href="sect0126.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0204.html" title="yformat"><img alt="Previous: yformat" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0204.html" title="xformat"><img alt="Previous: xformat" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0206.html" title="yrange"><img alt="Next: yrange" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0206.html" title="xrange"><img alt="Next: xrange" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0074.html">Reference Manual</a> <b>:</b>
+<a href="sect0075.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,20 +49,31 @@
 
 </span><span>
 <span>
-<a href="sect0124.html">set</a> <b>:</b>
+<a href="sect0126.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">ylabel</b>
+<b class="current">xlabel</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000206">1.46.81 ylabel</h2>
-<p><a name="a0000001299" id="a0000001299"></a> </p><p>See <tt class="tt">xlabel</tt>. </p></div>
+<div><h2 id="a0000000206">1.47.79 xlabel</h2>
+<p><a name="a0000001315" id="a0000001315"></a> </p><pre>
+set &lt;axis&gt;label '&lt;text&gt;' [ rotate &lt;angle&gt; ]
+</pre><p>The setting <tt class="tt">xlabel</tt> sets the label which should be written along the <tt class="tt">x</tt>-axis. For example, </p><pre>
+set xlabel '$x$'
+</pre><p>sets the label on the <tt class="tt">x</tt>-axis to read ‘<img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+                                     width:10px; 
+                                     height:8px" class="math gen" />’. Labels can be placed on higher numbered axes by inserting their number after the ‘<tt class="tt">x</tt>’; for example, </p><pre>
+set x10label 'foo'
+</pre><p>would label the tenth horizontal axis. Similarly, labels can be placed on vertical axes as follows: </p><pre>
+set ylabel '$y$'
+set y2label 'foo'
+</pre><p>An optional rotation angle may be specified to rotate axis labels clockwise by arbitrary angles. The angle should be specified either as a dimensionless number of degrees, or as a quantity with physical dimensions of angle. </p></div>
 
 
 
@@ -71,16 +82,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0204.html" title="yformat"><img alt="Previous: yformat" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0204.html" title="xformat"><img alt="Previous: xformat" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0206.html" title="yrange"><img alt="Next: yrange" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0206.html" title="xrange"><img alt="Next: xrange" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

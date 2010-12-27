@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: output</title>
+<title>: numerics</title>
 
-<link href="sect0180.html" title="palette" rel="next" />
-<link href="sect0178.html" title="origin" rel="prev" />
-<link href="sect0124.html" title="set" rel="up" />
+<link href="sect0180.html" title="origin" rel="next" />
+<link href="sect0178.html" title="noztics" rel="prev" />
+<link href="sect0126.html" title="set" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0178.html" title="origin"><img alt="Previous: origin" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0178.html" title="noztics"><img alt="Previous: noztics" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0180.html" title="palette"><img alt="Next: palette" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0180.html" title="origin"><img alt="Next: origin" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0074.html">Reference Manual</a> <b>:</b>
+<a href="sect0075.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,24 +49,26 @@
 
 </span><span>
 <span>
-<a href="sect0124.html">set</a> <b>:</b>
+<a href="sect0126.html">set</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">output</b>
+<b class="current">numerics</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000180">1.46.55 output</h2>
-<p><a name="a0000001183" id="a0000001183"></a> </p><pre>
-set output '&lt;filename&gt;'
-</pre><p>The setting <tt class="tt">output</tt> controls the name of the file that is produced for non-interactive terminals (<tt class="tt">postscript</tt>, <tt class="tt">eps</tt>, <tt class="tt">jpeg</tt>, <tt class="tt">gif</tt> and <tt class="tt">png</tt>). For example, </p><pre>
-set output 'myplot.eps'
-</pre><p>causes the output to be written to the file <tt class="tt">myplot.eps</tt>. </p></div>
+<div><h2 id="a0000000180">1.47.53 numerics</h2>
+<p><a name="a0000001208" id="a0000001208"></a> </p><pre>
+set numerics [ ( complex | real ) ] [ errors ( explicit | quiet) ]
+    [ display ( latex | natural | typeable) ]
+    [ sigfig &lt;precision&gt; ]
+</pre><p>The <tt class="tt">set numerics</tt> command<a name="a0000001209" id="a0000001209"></a> is used to adjust the way in which calculations are carried out and numerical quantities are displayed: </p><ul class="itemize">
+<li><p>The option <tt class="tt">complex</tt> causes PyXPlot to switch from performing real arithmetic (default) to performing complex arithmetic. The option <tt class="tt">real</tt> causes any calculations which return results with finite imaginary components to generate errors. </p></li><li><p>The option <tt class="tt">errors</tt> controls how numerical errors such as divisions by zero, numerical overflows, and the querying functions outside of the domains in which they are defined, are communicated to the user. The option <tt class="tt">explicit</tt> (default) causes an error message to be displayed on the terminal whenever a calculation causes an error. The option <tt class="tt">quiet</tt> causes such calculations to silently generate a <tt class="tt">nan</tt> (not a number) result. The latter is especially useful when, for example, plotting an expression with the ordinate axis range set to extend outside the domain in which that expression returns a well-defined real result; it suppresses the error messages which might otherwise result from PyXPlot’s attempts to evaluate the expression in those domains where its result is undefined. The option <tt class="tt">nan</tt> is a synonym for <tt class="tt">quiet</tt>. </p></li><li><p>The setting <tt class="tt">display</tt> changes the format in which numbers are displayed on the terminal. Setting the option to <tt class="tt">typeable</tt> causes the numbers to be printed in a form suitable for pasting back into PyXPlot commands. The setting <tt class="tt">latex</tt> causes L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X-compatible output to be generated. The setting <tt class="tt">natural</tt> generates concise, human-readable output which has neither of the above properties. </p></li><li><p>The setting <tt class="tt">sigfig</tt> changes the number of significant figures to which numbers are displayed on the PyXPlot terminal. Regardless of the value set, all calculations are internally carried out and stored at double precision, accurate to around 16 significant figures. </p></li>
+</ul></div>
 
 
 
@@ -75,16 +77,16 @@ set output 'myplot.eps'
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0178.html" title="origin"><img alt="Previous: origin" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0178.html" title="noztics"><img alt="Previous: noztics" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0124.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0126.html" title="set"><img alt="Up: set" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0180.html" title="palette"><img alt="Next: palette" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0180.html" title="origin"><img alt="Next: origin" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

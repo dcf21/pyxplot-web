@@ -5,7 +5,7 @@
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
 <title>: Colour Maps</title>
 
-<link href="sect0059.html" title="Custom Colour Mappings" rel="next" />
+<link href="sect0060.html" title="Custom Colour Mappings" rel="next" />
 <link href="ex-australia.html" title="Text Labels" rel="prev" />
 <link href="ch-plotting.html" title="Plotting: A Detailed Survey" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
@@ -19,12 +19,12 @@
 
 <td><a href="ch-plotting.html" title="Plotting: A Detailed Survey"><img alt="Up: Plotting: A Detailed Survey" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0059.html" title="Custom Colour Mappings"><img alt="Next: Custom Colour Mappings" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0060.html" title="Custom Colour Mappings"><img alt="Next: Custom Colour Mappings" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+<a href="sect0043.html">Plotting and Vector Graphics</a> <b>:</b>
 </span>
 
 </span><span>
@@ -57,9 +57,9 @@
 </div>
 
 <div><h1 id="sec:colourmaps">1.12 Colour Maps</h1>
-<p>Colour maps provide a graphical means of producing two-dimensional representations of <img src="images/img-0339.png" alt="$(x,y,z)$" style="vertical-align:-4px; 
+<p>Colour maps provide a graphical means of producing two-dimensional representations of <img src="images/img-0340.png" alt="$(x,y,z)$" style="vertical-align:-4px; 
                                      width:57px; 
-                                     height:18px" class="math gen" /> surfaces, or equivalently of producing maps of the values <img src="images/img-0484.png" alt="$z(x,y)$" style="vertical-align:-4px; 
+                                     height:18px" class="math gen" /> surfaces, or equivalently of producing maps of the values <img src="images/img-0509.png" alt="$z(x,y)$" style="vertical-align:-4px; 
                                      width:50px; 
                                      height:18px" class="math gen" /> of functions of two variables. Each point in the <img src="images/img-0188.png" alt="$(x,y)$" style="vertical-align:-4px; 
                                      width:40px; 
@@ -69,31 +69,31 @@
                                      width:8px; 
                                      height:8px" class="math gen" /> rather than <img src="images/img-0101.png" alt="$z$" style="vertical-align:0px; 
                                      width:9px; 
-                                     height:8px" class="math gen" />, to distinguish it from the third axes of three-dimensional plots<a href="#a0000000813" class="footnote"><sup class="footnotemark">1</sup></a>. </p><p>The default mapping used between values of <img src="images/img-0040.png" alt="$c$" style="vertical-align:0px; 
+                                     height:8px" class="math gen" />, to distinguish it from the third axes of three-dimensional plots<a href="#a0000000839" class="footnote"><sup class="footnotemark">1</sup></a>. </p><p>The default mapping used between values of <img src="images/img-0040.png" alt="$c$" style="vertical-align:0px; 
                                      width:8px; 
                                      height:8px" class="math gen" /> and colour is a greyscale mapping, such that the smallest value of <img src="images/img-0040.png" alt="$c$" style="vertical-align:0px; 
                                      width:8px; 
                                      height:8px" class="math gen" /> in any given colour map corresponds to black, and largest value corresponds to white. More generally, however, the user can supply any algebraic expressions for the RGB, HSB or CMYK components of the colours to be used, and even specify a mask such that some parts of the colour map appear transparent. Moreover, these custom colour mappings need not be one-parameter mappings depending only upon a single variable <img src="images/img-0040.png" alt="$c$" style="vertical-align:0px; 
                                      width:8px; 
-                                     height:8px" class="math gen" />, but can depend on up to four quantities <img src="images/img-0485.png" alt="$c_1$" style="vertical-align:-2px; 
+                                     height:8px" class="math gen" />, but can depend on up to four quantities <img src="images/img-0510.png" alt="$c_1$" style="vertical-align:-2px; 
                                      width:14px; 
-                                     height:10px" class="math gen" />, <img src="images/img-0486.png" alt="$c_2$" style="vertical-align:-2px; 
+                                     height:10px" class="math gen" />, <img src="images/img-0511.png" alt="$c_2$" style="vertical-align:-2px; 
                                      width:15px; 
-                                     height:10px" class="math gen" />, <img src="images/img-0487.png" alt="$c_3$" style="vertical-align:-2px; 
+                                     height:10px" class="math gen" />, <img src="images/img-0512.png" alt="$c_3$" style="vertical-align:-2px; 
                                      width:15px; 
-                                     height:10px" class="math gen" /> and <img src="images/img-0488.png" alt="$c_4$" style="vertical-align:-2px; 
+                                     height:10px" class="math gen" /> and <img src="images/img-0513.png" alt="$c_4$" style="vertical-align:-2px; 
                                      width:15px; 
-                                     height:10px" class="math gen" />. </p><p>PyXPlot’s <tt class="tt">colourmap</tt><a name="a0000000814" id="a0000000814"></a><a name="a0000000815" id="a0000000815"></a> plot style takes between three and seven columns of data, which may be supplied either from one or more function(s), or from a datafile. If data is read from a datafile, then the first two columns of output data are assumed to contain the respective positions of each datapoint along the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+                                     height:10px" class="math gen" />. </p><p>PyXPlot’s <tt class="tt">colourmap</tt><a name="a0000000840" id="a0000000840"></a><a name="a0000000841" id="a0000000841"></a> plot style takes between three and seven columns of data, which may be supplied either from one or more function(s), or from a datafile. If data is read from a datafile, then the first two columns of output data are assumed to contain the respective positions of each datapoint along the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
                                      width:10px; 
                                      height:8px" class="math gen" />-axis and the <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
                                      width:9px; 
-                                     height:12px" class="math gen" />-axis. The next column contains the value <img src="images/img-0485.png" alt="$c_1$" style="vertical-align:-2px; 
+                                     height:12px" class="math gen" />-axis. The next column contains the value <img src="images/img-0510.png" alt="$c_1$" style="vertical-align:-2px; 
                                      width:14px; 
-                                     height:10px" class="math gen" />, and may be followed by up to three further optional values <img src="images/img-0486.png" alt="$c_2$" style="vertical-align:-2px; 
+                                     height:10px" class="math gen" />, and may be followed by up to three further optional values <img src="images/img-0511.png" alt="$c_2$" style="vertical-align:-2px; 
                                      width:15px; 
-                                     height:10px" class="math gen" />, <img src="images/img-0487.png" alt="$c_3$" style="vertical-align:-2px; 
+                                     height:10px" class="math gen" />, <img src="images/img-0512.png" alt="$c_3$" style="vertical-align:-2px; 
                                      width:15px; 
-                                     height:10px" class="math gen" /> and <img src="images/img-0488.png" alt="$c_4$" style="vertical-align:-2px; 
+                                     height:10px" class="math gen" /> and <img src="images/img-0513.png" alt="$c_4$" style="vertical-align:-2px; 
                                      width:15px; 
                                      height:10px" class="math gen" />. In the case where one or more function(s) are supplied, they are assumed to be functions of both <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
                                      width:10px; 
@@ -101,9 +101,9 @@
                                      width:9px; 
                                      height:12px" class="math gen" />, and are sampled at a grid of points in the <img src="images/img-0188.png" alt="$(x,y)$" style="vertical-align:-4px; 
                                      width:40px; 
-                                     height:18px" class="math gen" /> plane; the first supplied function returns the value <img src="images/img-0485.png" alt="$c_1$" style="vertical-align:-2px; 
+                                     height:18px" class="math gen" /> plane; the first supplied function returns the value <img src="images/img-0510.png" alt="$c_1$" style="vertical-align:-2px; 
                                      width:14px; 
-                                     height:10px" class="math gen" />, and may be followed by up to three further optional functions. </p><p>In the following simple example, a colour map of the complex argument of the Riemann zeta function <img src="images/img-0489.png" alt="$\zeta (z)$" style="vertical-align:-4px; 
+                                     height:10px" class="math gen" />, and may be followed by up to three further optional functions. </p><p>In the following simple example, a colour map of the complex argument of the Riemann zeta function <img src="images/img-0514.png" alt="$\zeta (z)$" style="vertical-align:-4px; 
                                      width:31px; 
                                      height:18px" class="math gen" /> is produced, taking the <img src="images/img-0188.png" alt="$(x,y)$" style="vertical-align:-4px; 
                                      width:40px; 
@@ -116,16 +116,16 @@
                                      height:12px" class="math gen" /> being the imaginary axis: </p><p><tt class="tt">set numerics complex</tt><br /><tt class="tt">set nokey</tt><br /><tt class="tt">set size 8 square</tt><br /><tt class="tt">set samples grid 400x400</tt><br /><tt class="tt">set c1range[-pi:pi]</tt><br /><tt class="tt">set c1format "$%s<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
                                      width:7px; 
                                      height:18px" class="math gen" />pi$"%(c/pi)</tt><br /><tt class="tt">plot [-20:6][-13:13] arg(zeta(x+i*y)) with colourmap</tt> </p><p><center>
-<img src="images/img-0491.png" alt="\includegraphics[width=8cm]{examples/eps/ex_zeta_arg}" style="width:8cm" /></center> </p><p>The command <tt class="tt">set samples grid</tt> command<a name="a0000000816" id="a0000000816"></a> sets the dimensions of the grid of samples – or pixels – taken of the input functions. If either value is replaced with an asterisk (<tt class="tt">*</tt>) then the current number of samples set in the <tt class="tt">set samples</tt> command is substituted. </p><p>If a datafile is supplied to the <tt class="tt">colourmap</tt> plot style, then the datapoints need not lie on the specified regular grid, but are first re-sampled onto this grid using the interpolation method specified using the <tt class="tt">set samples interpolate</tt> command<a name="a0000000817" id="a0000000817"></a> (see Section <a href="ex-interpolation.html">5.7</a>). Three methods are available. <tt class="tt">NearestNeighbour</tt> uses the values of <img src="images/img-0485.png" alt="$c_1$" style="vertical-align:-2px; 
+<img src="images/img-0516.png" alt="\includegraphics[width=8cm]{examples/eps/ex_zeta_arg}" style="width:8cm" /></center> </p><p>The command <tt class="tt">set samples grid</tt> command<a name="a0000000842" id="a0000000842"></a> sets the dimensions of the grid of samples – or pixels – taken of the input functions. If either value is replaced with an asterisk (<tt class="tt">*</tt>) then the current number of samples set in the <tt class="tt">set samples</tt> command is substituted. </p><p>If a datafile is supplied to the <tt class="tt">colourmap</tt> plot style, then the datapoints need not lie on the specified regular grid, but are first re-sampled onto this grid using the interpolation method specified using the <tt class="tt">set samples interpolate</tt> command<a name="a0000000843" id="a0000000843"></a> (see Section <a href="ex-interpolation.html">5.7</a>). Three methods are available. <tt class="tt">NearestNeighbour</tt> uses the values of <img src="images/img-0510.png" alt="$c_1$" style="vertical-align:-2px; 
                                      width:14px; 
-                                     height:10px" class="math gen" />…<img src="images/img-0488.png" alt="$c_4$" style="vertical-align:-2px; 
+                                     height:10px" class="math gen" />…<img src="images/img-0513.png" alt="$c_4$" style="vertical-align:-2px; 
                                      width:15px; 
                                      height:10px" class="math gen" /> associated with the datapoint closest to each grid point, producing colour maps which look like Voronoi diagrams. <tt class="tt">InverseSquare</tt> interpolation returns a weighted average of the supplied datapoints, using the inverse squares of their distances from each grid point as weights. <tt class="tt">MonaghanLattanzio</tt> interpolation uses the weighting function of Monaghan &amp; Lattanzio (1985) which is described further in Section <a href="ex-interpolation.html">5.7</a>). </p><p>In the following example, a colour map of a quadrupole is produced using four input datapoints: </p><p><tt class="tt">set nokey</tt><br /><tt class="tt">set size 8 square</tt><br /><tt class="tt">set samples grid 200x200 interpolate InverseSquare</tt><br /><tt class="tt">plot [-4:4][-4:4] ’–’ with colourmap</tt><br /><tt class="tt">-1 -1 1</tt><br /><tt class="tt">-1 1 -1</tt><br /><tt class="tt">1 -1 -1</tt><br /><tt class="tt">1 1 1</tt><br /><tt class="tt">END</tt> </p><p><center>
-<img src="images/img-0494.png" alt="\includegraphics[width=8cm]{examples/eps/ex_quadrupole}" style="width:8cm" /></center> </p></div>
+<img src="images/img-0519.png" alt="\includegraphics[width=8cm]{examples/eps/ex_quadrupole}" style="width:8cm" /></center> </p></div>
 
 <div class="contents section-contents"><!--<strong>Subsections</strong>-->
 <ul>
-<li><a href="sect0059.html">1.12.1 Custom Colour Mappings</a>
+<li><a href="sect0060.html">1.12.1 Custom Colour Mappings</a>
    
 </li><li><a href="ex-mandelbrot.html">1.12.2 Colour Scale Bars</a>
    
@@ -139,7 +139,7 @@
 <div id="footnotes">
 <p><b>Footnotes</b></p>
 <ol>
-<li id="a0000000813">When colour maps are plotted on three-dimensional graphs, they appear in a flat plane on one of the back faces of the plot selected using the <tt class="tt">axes</tt> modifier to the <tt class="tt">plot</tt> command, and the <tt class="tt">c</tt>-axes associated with each are entirely independent of the plot’s <tt class="tt">z</tt>-axis.</li>
+<li id="a0000000839">When colour maps are plotted on three-dimensional graphs, they appear in a flat plane on one of the back faces of the plot selected using the <tt class="tt">axes</tt> modifier to the <tt class="tt">plot</tt> command, and the <tt class="tt">c</tt>-axes associated with each are entirely independent of the plot’s <tt class="tt">z</tt>-axis.</li>
 </ol>
 </div>
 
@@ -150,12 +150,12 @@
 
 <td><a href="ch-plotting.html" title="Plotting: A Detailed Survey"><img alt="Up: Plotting: A Detailed Survey" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0059.html" title="Custom Colour Mappings"><img alt="Next: Custom Colour Mappings" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0060.html" title="Custom Colour Mappings"><img alt="Next: Custom Colour Mappings" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

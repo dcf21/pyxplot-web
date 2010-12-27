@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: 2010 Aug 4: PyXPlot 0.8.2</title>
+<title>: Plotting Parametric Functions</title>
 
-<link href="sect0243.html" title="2010 Jun 1: PyXPlot 0.8.1" rel="next" />
-<link href="sect0241.html" title="ChangeLog" rel="prev" />
-<link href="sect0241.html" title="ChangeLog" rel="up" />
+<link href="ch-fit_maths.html" title="The fit Command: Mathematical Details" rel="next" />
+<link href="sect0241.html" title="Plots with Multiple Axes" rel="prev" />
+<link href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0241.html" title="ChangeLog"><img alt="Previous: ChangeLog" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0241.html" title="Plots with Multiple Axes"><img alt="Previous: Plots with Multiple Axes" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0241.html" title="ChangeLog"><img alt="Up: ChangeLog" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot"><img alt="Up: Summary of Differences Between PyXPlot and Gnuplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0243.html" title="2010 Jun 1: PyXPlot 0.8.1"><img alt="Next: 2010 Jun 1: PyXPlot 0.8.1" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ch-fit_maths.html" title="The fit Command: Mathematical Details"><img alt="Next: The fit Command: Mathematical Details" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,29 +39,25 @@
 
 </span><span>
 <span>
-<a href="sect0226.html">Appendices</a> <b>:</b>
+<a href="sect0230.html">Appendices</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="sect0241.html">ChangeLog</a> <b>:</b>
+<a href="ch-gnuplot_diffs.html">Summary of Differences Between PyXPlot and Gnuplot</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">2010 Aug 4: PyXPlot 0.8.2</b>
+<b class="current">Plotting Parametric Functions</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000243">2010 Aug 4: PyXPlot 0.8.2</h2>
-<h3 id="a0000001665">Summary:</h3>
-<p>This release introduces three-dimensional plotting, as well as the ability to plot two-dimensional maps of functions as either colour maps, contour plots, or as three-dimensional surfaces. A large number of bugs have also been fixed. </p><h3 id="a0000001666">Details:</h3>
-<ul class="itemize">
-<li><p>3D plotting implemented. </p></li><li><p>New plot styles colourmap, contourmap and surface added. </p></li><li><p>Interpolation of 2D datagrids and bitmap images implemented. </p></li><li><p>Stepwise interpolation mode added. </p></li><li><p>Dependency on libkpathsea relaxed to make installation under MacOS easier; linking to the library is still strongly recommended on systems where it is readily available. </p></li><li><p>Mathematical functions <tt class="tt">frac-tal_­julia()</tt>, <tt class="tt">frac­tal_­man­del­brot()</tt> and <tt class="tt">prime()</tt> added. </p></li><li><p>Many bug fixes, especially to the ticking of axes. </p></li>
-</ul></div>
+<div><h1 id="a0000000243">B.5 Plotting Parametric Functions</h1>
+<p>The syntax used for plotting parametric functions differs between Gnuplot and PyXPlot. Whereas parametric plotting is enabled in Gnuplot using the <tt class="tt">set parametric</tt> command, in PyXPlot it is enabled on a per-dataset basis by placing the keyword <tt class="tt">parametric</tt> before the algebraic expression to be plotted: </p><p> <tt class="tt">gnuplot&gt; <b class="bf">set parametric</b></tt><br /><tt class="tt">gnuplot&gt; <b class="bf">set trange [0:2*pi]</b></tt><br /><tt class="tt">gnuplot&gt; <b class="bf">plot sin(t),cos(t)</b></tt> <br /><tt class="tt">pyxplot&gt; <b class="bf">set trange [0:2*pi]</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">plot parametric sin(t):cos(t)</b></tt>  </p><p>This makes it straightforward to plot parametric functions alongside non-parametric functions. For more information, see Section <a href="ex-spirograph.html">1.6</a>. </p></div>
 
 
 
@@ -70,16 +66,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0241.html" title="ChangeLog"><img alt="Previous: ChangeLog" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0241.html" title="Plots with Multiple Axes"><img alt="Previous: Plots with Multiple Axes" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0241.html" title="ChangeLog"><img alt="Up: ChangeLog" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-gnuplot_diffs.html" title="Summary of Differences Between PyXPlot and Gnuplot"><img alt="Up: Summary of Differences Between PyXPlot and Gnuplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0243.html" title="2010 Jun 1: PyXPlot 0.8.1"><img alt="Next: 2010 Jun 1: PyXPlot 0.8.1" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ch-fit_maths.html" title="The fit Command: Mathematical Details"><img alt="Next: The fit Command: Mathematical Details" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

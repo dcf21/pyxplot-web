@@ -3,10 +3,10 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: ellipse</title>
+<title>: delete</title>
 
-<link href="sect0088.html" title="else" rel="next" />
-<link href="sect0086.html" title="do" rel="prev" />
+<link href="sect0088.html" title="do" rel="next" />
+<link href="sect0086.html" title="continue" rel="prev" />
 <link href="ch-reference.html" title="Command Reference" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0086.html" title="do"><img alt="Previous: do" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0086.html" title="continue"><img alt="Previous: continue" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0088.html" title="else"><img alt="Next: else" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0088.html" title="do"><img alt="Next: do" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0074.html">Reference Manual</a> <b>:</b>
+<a href="sect0075.html">Reference Manual</a> <b>:</b>
 </span>
 
 </span><span>
@@ -50,26 +50,18 @@
 </span><span>
 
 <span>
-<b class="current">ellipse</b>
+<b class="current">delete</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h1 id="a0000000088">1.13 ellipse</h1>
-<p><a name="a0000000985" id="a0000000985"></a> </p><p>Ellipses may be drawn on multiplot canvases using the <tt class="tt">ellipse</tt> command<a name="a0000000986" id="a0000000986"></a>. The shape of the ellipse may be specified in many different ways, by specifying </p><ol class="enumerate">
-<li><p>the position of two corners of the smallest rectangle which can enclose the ellipse when its major axis is horizontal, together with an optional counter-clockwise rotation angle, applied about the centre of the ellipse. For example: </p><pre>
-ellipse from 0,0 to 4,1 rot 70
-</pre></li><li><p>the position of both the centre and one of the foci of the ellipse, together with any one of the following additional pieces of information: the ellipse’s major axis length, its semi-major axis length, its minor axis length, its semi-minor axis length, its eccentricity, its latus rectum, or its semi-latus rectum. For example: </p><pre>
-ellipse focus 0,0 centre 2,2 majoraxis 4
-ellipse focus 0,0 centre 2,2 minoraxis 4
-ellipse focus 0,0 centre 2,2 ecc 0.5
-ellipse focus 0,0 centre 2,2 LatusRectum 6
-ellipse focus 0,0 centre 2,2 slr 3
-</pre></li><li><p>the position of either the centre or one of the foci of the ellipse, together with any two of the following additional pieces of information: the ellipse’s major axis length, its semi-major axis length, its minor axis length, its semi-minor axis length, its eccentricity, its latus rectum, or its semi-latus rectum. An optional counter-clockwise rotation angle may also be specified, applied about either the centre or one of the foci of the ellipse, whichever is specified. If no rotation angle is given, then the major axis of the ellipse is horizontal. For example: </p><pre>
-ellipse centre 0,0 majoraxis 4 minoraxis 4
-</pre></li>
-</ol><p>The line type, line width, and colour of line with which the outlines of ellipses are drawn may be specified after the keyword <tt class="tt">with</tt>, as in the <tt class="tt">box</tt> and <tt class="tt">circle</tt> commands above. Likewise, ellipses may be filled in the same manner. </p><p>All vector graphics objects placed on multiplot canvases receive unique identification numbers which count sequentially from one, and which may be listed using the <tt class="tt">list</tt> command. By reference to these numbers, they can be deleted and subsequently restored with the <tt class="tt">delete</tt> and <tt class="tt">undelete</tt> commands respectively. </p></div>
+<div><h1 id="a0000000088">1.12 delete</h1>
+<p><a name="a0000001009" id="a0000001009"></a> </p><pre>
+delete &lt;item number&gt; {, &lt;item number&gt;}
+</pre><p>The <tt class="tt">delete</tt> command<a name="a0000001010" id="a0000001010"></a> removes vector graphics objects such as plots, arrows or text items from the current multiplot canvas. All vector graphics objects placed on multiplot canvases receive unique identification numbers which count sequentially from one, and which may be listed using the <tt class="tt">list</tt> command. The items to be deleted should be identified using a comma-separated list of their identification numbers. The example </p><pre>
+delete 1,2,3
+</pre><p>would remove item numbers 1, 2 and 3. </p><p>Having been deleted, multiplot items can be restored using the <tt class="tt">undelete</tt> command. </p></div>
 
 
 
@@ -78,16 +70,16 @@ ellipse centre 0,0 majoraxis 4 minoraxis 4
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sect0086.html" title="do"><img alt="Previous: do" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0086.html" title="continue"><img alt="Previous: continue" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="ch-reference.html" title="Command Reference"><img alt="Up: Command Reference" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0088.html" title="else"><img alt="Next: else" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="sect0088.html" title="do"><img alt="Next: do" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>

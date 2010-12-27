@@ -3,11 +3,11 @@
 <head>
 <meta name="generator" content="plasTeX" />
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>: The image Command</title>
+<title>: The text Command</title>
 
-<link href="sect0072.html" title="The eps Command" rel="next" />
-<link href="ex-nanotubes.html" title="The arrow and line Commands" rel="prev" />
-<link href="sect0069.html" title="Adding Other Vector Graphics Objects" rel="up" />
+<link href="ex-nanotubes.html" title="The arrow and line Commands" rel="next" />
+<link href="sect0070.html" title="Adding Other Vector Graphics Objects" rel="prev" />
+<link href="sect0070.html" title="Adding Other Vector Graphics Objects" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,16 +15,16 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="ex-nanotubes.html" title="The arrow and line Commands"><img alt="Previous: The arrow and line Commands" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0070.html" title="Adding Other Vector Graphics Objects"><img alt="Previous: Adding Other Vector Graphics Objects" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0069.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0070.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0072.html" title="The eps Command"><img alt="Next: The eps Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ex-nanotubes.html" title="The arrow and line Commands"><img alt="Next: The arrow and line Commands" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0042.html">Plotting and Vector Graphics</a> <b>:</b>
+<a href="sect0043.html">Plotting and Vector Graphics</a> <b>:</b>
 </span>
 
 </span><span>
@@ -49,45 +49,49 @@
 
 </span><span>
 <span>
-<a href="sect0069.html">Adding Other Vector Graphics Objects</a> <b>:</b>
+<a href="sect0070.html">Adding Other Vector Graphics Objects</a> <b>:</b>
 </span>
 
 </span><span>
 
 <span>
-<b class="current">The <tt class="tt">image</tt> Command</b>
+<b class="current">The <tt class="tt">text</tt> Command</b>
 </span>
 </span>
 <hr />
 </div>
 
-<div><h2 id="a0000000072">3.4.3 The <tt class="tt">image</tt> Command</h2>
-<p>Graphical images in <tt class="tt">bmp</tt>, <tt class="tt">gif</tt>, <tt class="tt">jpeg</tt> or <tt class="tt">png</tt> format may be placed on multiplot canvases using the <tt class="tt">image</tt> command<a name="a0000000926" id="a0000000926"></a><a href="#a0000000927" class="footnote"><sup class="footnotemark">1</sup></a>. In its simplest form, this has the syntax: </p><pre>
-image 'filename' at x,y width w
-</pre><p>As an alternative to the <tt class="tt">width</tt><a name="a0000000928" id="a0000000928"></a> keyword the height of the image can be specified, using the analogous <tt class="tt">height</tt><a name="a0000000929" id="a0000000929"></a> keyword. An optional angle can also be specified using the <tt class="tt">rotate</tt><a name="a0000000930" id="a0000000930"></a> keyword; this causes the included image to be rotated counter-clockwise by a specified angle, measured in degrees. The keyword <tt class="tt">smooth</tt> may optionally be supplied to cause the pixels of the image to be interpolated<a href="#a0000000931" class="footnote"><sup class="footnotemark">2</sup></a>. </p><p>Images which include transparency are supported. The optional keyword <tt class="tt">notransparent</tt> may be supplied to the <tt class="tt">image</tt> command<a name="a0000000932" id="a0000000932"></a> to cause transparent regions to be filled with the image’s default background colour. Alternatively, an RGB colour may be specified in the form <tt class="tt">rgb&lt;r&gt;:&lt;g&gt;:&lt;b&gt;</tt> after the keyword <tt class="tt">transparent</tt> to cause that particular colour to become transparent; the three components of the RGB colour should be in the range 0 to 255. </p></div>
+<div><h2 id="a0000000072">3.4.1 The <tt class="tt">text</tt> Command</h2>
+<p>Text labels may be added to multiplot canvases using the <tt class="tt">text</tt> command<a name="a0000000937" id="a0000000937"></a>. This has the following syntax: </p><pre>
+text 'This is some text' at x,y
+</pre><p>In this case, the string ‘This is some text’ would be rendered at position <img src="images/img-0188.png" alt="$(x,y)$" style="vertical-align:-4px; 
+                                     width:40px; 
+                                     height:18px" class="math gen" /> on the multiplot. As with the <tt class="tt">set label</tt> command<a name="a0000000938" id="a0000000938"></a>, a colour may optionally be specified with the <tt class="tt">with colour</tt> modifier, as well as a rotation angle to rotate text labels through any given angle, measured in degrees counter-clockwise. For example:<a name="a0000000939" id="a0000000939"></a> </p><pre>
+text 'This is some text' at x,y rotate r with colour red
+</pre><p>The commands <tt class="tt">set textcolour</tt><a name="a0000000940" id="a0000000940"></a>, <tt class="tt">set texthalign</tt><a name="a0000000941" id="a0000000941"></a> and <tt class="tt">set textvalign</tt><a name="a0000000942" id="a0000000942"></a> can be used to set the colour and alignment of the text produced with the <tt class="tt">text</tt> command<a name="a0000000943" id="a0000000943"></a>. Alternatively, the <tt class="tt">text</tt> command<a name="a0000000944" id="a0000000944"></a> takes three modifiers to control the alignment of the text which override these <tt class="tt">set</tt> commands. The <tt class="tt">halign</tt> and <tt class="tt">valign</tt> modifiers may be followed by any of the settings which may follow the <tt class="tt">set texthalign</tt> and <tt class="tt">set textvalign</tt> commands respectively, as in the following examples: </p><pre>
+text 'This is some text' at 0,0 halign left valign top
+text 'This is some text' at 0,0 halign right valign centre
+</pre><p>The <tt class="tt">gap</tt> modifier allows a gap to be inserted in the alignment of the text. For example, the string <tt class="tt">halign left gap 3*unit(mm)</tt> would cause text to be rendered with its left side <img src="images/img-0568.png" alt="$3\, \mathrm{mm}$" style="vertical-align:0px; 
+                                     width:42px; 
+                                     height:12px" class="math gen" /> to the right of the position specified for the text. This is useful for labelling points on diagrams, where the labels should be slightly offset from the points that they are associated with. If the <tt class="tt">gap</tt> modifier is followed by a dimensionless number, rather than one with dimensions of lengths, then it is assumed to be measured in centimetres. </p><p>It should be noted that the <tt class="tt">text</tt> command<a name="a0000000945" id="a0000000945"></a> can also be used outside of the multiplot environment, to render a single piece of short text instead of a graph. One obvious application is to produce equations rendered as graphical files which can subsequently be imported into documents, slideshows or webpages.<a name="a0000000946" id="a0000000946"></a> </p></div>
 
 
 
-<div id="footnotes">
-<p><b>Footnotes</b></p>
-<ol>
-<li id="a0000000927">To maintain compatibility with historic versions of PyXPlot, the <tt class="tt">image</tt> command may also be spelt <tt class="tt">jpeg</tt>, with the identical syntax thereafter.</li><li id="a0000000931">Many commonly-used PostScript display engines, including Ghostscript, do not support this functionality.</li>
-</ol>
-</div>
+
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="ex-nanotubes.html" title="The arrow and line Commands"><img alt="Previous: The arrow and line Commands" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sect0070.html" title="Adding Other Vector Graphics Objects"><img alt="Previous: Adding Other Vector Graphics Objects" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0069.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0070.html" title="Adding Other Vector Graphics Objects"><img alt="Up: Adding Other Vector Graphics Objects" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0072.html" title="The eps Command"><img alt="Next: The eps Command" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
+<td><a href="ex-nanotubes.html" title="The arrow and line Commands"><img alt="Next: The arrow and line Commands" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
 <td class="navtitle" align="center">&nbsp;</td>
 <td><a href="index.html" title="Table of Contents"><img border="0" alt="" src="icons/contents.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0249.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
+<td><a href="sect0255.html" title="Index"><img border="0" alt="" src="icons/index.gif" width="32" height="32" /></a></td>
 
 <td><img border="0" alt="" src="icons/blank.gif" width="32" height="32" /></td>
 </tr>
