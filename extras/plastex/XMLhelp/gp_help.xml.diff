@@ -1,6 +1,6 @@
---- gp_help.xml.orig	2010-08-06 00:28:27.000000000 +0200
-+++ gp_help.xml	2010-08-06 00:45:36.000000000 +0200
-@@ -443,11 +443,11 @@
+--- gp_help.xml.orig	2010-12-27 15:34:53.000000000 +0000
++++ gp_help.xml	2010-12-27 15:37:41.000000000 +0000
+@@ -456,11 +456,11 @@
  
  f(x)#=#a*x+b\\fit#f()#'data.dat'#index#1#using#2:3#via#a,b\\
  
@@ -14,16 +14,16 @@
  
    </fit>
    <for>
-@@ -540,7 +540,7 @@
+@@ -553,7 +553,7 @@
  
  interpolate#(#akima#|#linear#|#loglinear#|#polynomial#|\\##############spline#|#stepwise#|\\##############2d#[(#bmp_r#|#bmp_g#|#bmp_b#)]#)\\############[\labrange#specification\rab]#\labfunction#name\rab"()"\\############'\labfilename\rab'\\############[#every#\labexpression\rab#{:\labexpression}#]\\############[#index#\labvalue\rab#]\\############[#select#\labexpression\rab#]\\############[#using#\labexpression\rab#{:\labexpression}#]\\
  
--The interpolate command can be used to generate a special function within PyXPlot's mathematical environment which interpolates a set of datapoints supplied from a datafile. Either one- or two-dimensional interpolation is possible. In the case of one-dimensional interpolation, various different types of interpolation are supported: linear interpolation, power law interpolation, polynomial interpolation, cubic spline interpolation and akima spline interpolation. Stepwise interpolation returns the value of the datapoint nearest to the requested point in argument space. The use of polynomial interpolation with large datasets is strongly discouraged, as polynomial fits tend to show severe oscillations between datapoints. Except in the case of stepwise interpolation, extrapolation is not permitted; if an attempt is made to evaluate an interpolated function beyond the limits of the datapoints which it interpolates, PyXPlot returns an error or value of not-a-number. In the case of two-dimensional interpolation, the type of interpolation to be used is set using the interpolate modifier to the set samples command, and may be changed at any time after the interpolation function has been created. The options available are nearest neighbour interpolation - which is the two-dimensional equivalent of stepwise interpolation, inverse square interpolation - which returns a weighted average of the supplied datapoints, using the inverse squares of their distances from the requested point in argument space as weights, and Monaghan Lattanzio interpolation, which uses the weighting function (Monaghan &amp; Lattanzio 1985)  where v=r/h for h=sqrtA/n, A is the product (x-x)(y-y) and n is the number of input datapoints. These are selected as follows: 
-+The interpolate command can be used to generate a special function within PyXPlot's mathematical environment which interpolates a set of datapoints supplied from a datafile. Either one- or two-dimensional interpolation is possible. In the case of one-dimensional interpolation, various different types of interpolation are supported: linear interpolation, power law interpolation, polynomial interpolation, cubic spline interpolation and akima spline interpolation. Stepwise interpolation returns the value of the datapoint nearest to the requested point in argument space. The use of polynomial interpolation with large datasets is strongly discouraged, as polynomial fits tend to show severe oscillations between datapoints. Except in the case of stepwise interpolation, extrapolation is not permitted; if an attempt is made to evaluate an interpolated function beyond the limits of the datapoints which it interpolates, PyXPlot returns an error or value of not-a-number. In the case of two-dimensional interpolation, the type of interpolation to be used is set using the interpolate modifier to the set samples command, and may be changed at any time after the interpolation function has been created. The options available are nearest neighbour interpolation - which is the two-dimensional equivalent of stepwise interpolation, inverse square interpolation - which returns a weighted average of the supplied datapoints, using the inverse squares of their distances from the requested point in argument space as weights, and Monaghan Lattanzio interpolation, which uses the weighting function given in (Monaghan &amp; Lattanzio 1985).  These are selected as follows: 
+-The interpolate command can be used to generate a special function within PyXPlot's mathematical environment which interpolates a set of datapoints supplied from a datafile. Either one- or two-dimensional interpolation is possible. In the case of one-dimensional interpolation, various different types of interpolation are supported: linear interpolation, power law interpolation, polynomial interpolation, cubic spline interpolation and akima spline interpolation. Stepwise interpolation returns the value of the datapoint nearest to the requested point in argument space. The use of polynomial interpolation with large datasets is strongly discouraged, as polynomial fits tend to show severe oscillations between datapoints. Except in the case of stepwise interpolation, extrapolation is not permitted; if an attempt is made to evaluate an interpolated function beyond the limits of the datapoints which it interpolates, PyXPlot returns an error or value of not-a-number. In the case of two-dimensional interpolation, the type of interpolation to be used is set using the interpolate modifier to the set samples command, and may be changed at any time after the interpolation function has been created. The options available are nearest neighbour interpolation - which is the two-dimensional equivalent of stepwise interpolation, inverse square interpolation - which returns a weighted average of the supplied datapoints, using the inverse squares of their distances from the requested point in argument space as weights, and Monaghan Lattanzio interpolation, which uses the weighting function (Monaghan &amp; Lattanzio 1985)  where v=r/h for h=sqrtA/n, A is the product (xmax-xmin)(ymax-ymin) and n is the number of input datapoints. These are selected as follows: 
++The interpolate command can be used to generate a special function within PyXPlot's mathematical environment which interpolates a set of datapoints supplied from a datafile. Either one- or two-dimensional interpolation is possible. In the case of one-dimensional interpolation, various different types of interpolation are supported: linear interpolation, power law interpolation, polynomial interpolation, cubic spline interpolation and akima spline interpolation. Stepwise interpolation returns the value of the datapoint nearest to the requested point in argument space. The use of polynomial interpolation with large datasets is strongly discouraged, as polynomial fits tend to show severe oscillations between datapoints. Except in the case of stepwise interpolation, extrapolation is not permitted; if an attempt is made to evaluate an interpolated function beyond the limits of the datapoints which it interpolates, PyXPlot returns an error or value of not-a-number. In the case of two-dimensional interpolation, the type of interpolation to be used is set using the interpolate modifier to the set samples command, and may be changed at any time after the interpolation function has been created. The options available are nearest neighbour interpolation - which is the two-dimensional equivalent of stepwise interpolation, inverse square interpolation - which returns a weighted average of the supplied datapoints, using the inverse squares of their distances from the requested point in argument space as weights, and Monaghan Lattanzio interpolation, which uses the weighting function  given in (Monaghan &amp; Lattanzio 1985). These are selected as follows: 
  
  set#samples#interpolate#NearestNeighbour\\set#samples#interpolate#InverseSquare\\set#samples#interpolate#MonaghanLattanzio\\
  
-@@ -632,11 +632,11 @@
+@@ -645,11 +645,11 @@
  
  plot#'data.dat'#with#points\\
  
@@ -37,7 +37,7 @@
     <axes>
  
  The axes modifier may be used to specify which axes data should be plotted against when plots have multiple parallel axes - for example, if a plot has an x-axis along its lower edge and an x2-axis along its upper edge. The following example would plot data using the x2-axis as the ordinate axis and the y-axis as the abscissa axis: 
-@@ -678,13 +678,13 @@
+@@ -691,13 +691,13 @@
  
   would use twice the default width of line. The following is a complete list of all of PyXPlot's plot styles - i.e. all of the words which may be used in place of lines: arrows_head, arrows_nohead, arrows_twohead, boxes, ColourMap, ContourMap, dots, FilledRegion, fsteps, histeps, impulses, lines, LinesPoints, LowerLimits, points, stars, steps, surface, UpperLimits, wboxes, XErrorBars, XErrorRange, XYErrorBars, XYErrorRange, XYZErrorBars, XYZErrorRange, XZErrorBars, XZErrorRange, YErrorBars, YErrorRange, YErrorShaded, YZErrorBars, YZErrorRange, ZErrorBars, ZErrorRange. In addition, lp and pl are recognised as abbreviations for linespoints; errorbars is recognised as an abbreviation for yerrorbars; errorrange is recognised as an abbreviation for yerrorrange; and arrows_twoway is recognised as an alternative for arrows_twohead. As well as the names of these plot styles, the with modifier can also be followed by style modifiers such as linewidth which alter the exact appearance of various plot styles. A complete list of these is as follows: 
  
@@ -54,7 +54,7 @@
  
  Any number of these modifiers may be placed sequentially after the keyword with, as in the following examples: 
  
-@@ -805,7 +805,7 @@
+@@ -818,7 +818,7 @@
  set key###|#Elephants Set option ON#\\
  set nokey#|#Elephants Set option OFF
  
@@ -63,7 +63,7 @@
     <arrow>
  
  set#arrow#\labarrow#number\rab\\######from#[\labsystem\rab]#\labx\rab,#[\labsystem\rab]#\laby\rab\\######to###[\labsystem\rab]#\labx\rab,#[\labsystem\rab]#\laby\rab\\######[#with#{\laboption\rab}#]\\
-@@ -846,7 +846,7 @@
+@@ -859,7 +859,7 @@
  
  set#axescolour#blue\\
  
@@ -72,7 +72,7 @@
  
     </axescolour>
     <axis>
-@@ -871,13 +871,13 @@
+@@ -884,13 +884,13 @@
  * atzero - Specifies that rather than being placed along an edge of the plot, the axis should mark the lines where the perpendicular axes x1, y1 and/or z1 are zero. [Not default].  \\
  * automirrored - Specifies that an automatic decision should be made between the behaviour of mirrored and nomirrored. If there are no axes on the opposite side of the graph, a mirror axis is produced. If there are already axes on the opposite side of the graph, no mirror axis is produced. [Default].  \\
  * fullmirrored - Similar to mirrored. Specifies that this axis should have a corresponding twin placed on the opposite side of the graph with mirroring ticks and labelling. [Not default; see automirrored].  \\
@@ -89,7 +89,7 @@
  * reversearrow - Specifies that an arrowhead should be drawn on the left/bottom end of the axis. [Not default].  \\
  * twowayarrow - Specifies that arrowheads should be drawn on both ends of the axis. [Not default].  \\
  * visible - Specifies that the axis should be displayed; opposite of invisible. [Default].  \\
-@@ -1017,7 +1017,7 @@
+@@ -1030,7 +1030,7 @@
  The setting contours is used to define the set of ordinate values for which contours are drawn when using the contourmap plot style. If \labnumber\rab is specified, the contours are evenly spaced - either linearly or logarithmically, depending upon the state of the logscale c1 setting - between the values specified in the c1range setting. Otherwise, the list of ordinate values may be specified as a ()-bracketed comma-separated list. If the option label is specified, then each contour is labelled with the ordinate value that it follows. If the option nolabel is specified, then the contours are not labelled. 
  
     </contours>
@@ -98,7 +98,7 @@
  
  set#c\labn\rabrange#[#\labrange\rab#]\\##############[#reversed#|#noreversed#]\\##############[#renormalise#|#norenormalise#]\\
  
-@@ -1033,7 +1033,7 @@
+@@ -1046,7 +1046,7 @@
  
      </Colour_Maps>
  
@@ -107,7 +107,7 @@
     <data_style>
  
  See set style data. 
-@@ -1100,7 +1100,7 @@
+@@ -1113,7 +1113,7 @@
  
  set#gridmajcolour#purple\\
  
@@ -116,7 +116,7 @@
  
     </gridmajcolour>
     <gridmincolour>
-@@ -1111,7 +1111,7 @@
+@@ -1124,7 +1124,7 @@
  
  set#gridmincolour#purple\\
  
@@ -125,7 +125,7 @@
  
     </gridmincolour>
     <key>
-@@ -1227,7 +1227,7 @@
+@@ -1240,7 +1240,7 @@
  
  set#multiplot\\
  
@@ -134,7 +134,7 @@
  
     </multiplot>
     <mxtics>
-@@ -1339,7 +1339,7 @@
+@@ -1352,7 +1352,7 @@
  
  set#nomultiplot\\
  
@@ -143,7 +143,7 @@
  
     </nomultiplot>
     <nostyle>
-@@ -1427,17 +1427,148 @@
+@@ -1440,17 +1440,148 @@
  
  plot#sin(x),#cos(x),#tan(x),#exp(x)\\
  
@@ -294,7 +294,7 @@
     </papersize>
     <pointlinewidth>
  
-@@ -1687,7 +1818,7 @@
+@@ -1700,7 +1831,7 @@
  
  set#textcolour#red\\
  
@@ -303,7 +303,7 @@
  
     </textcolour>
     <texthalign>
-@@ -1968,7 +2099,7 @@
+@@ -1995,7 +2126,7 @@
  
  tabulate#[0:2*pi]#sin(x),#cos(x),#tan(x)\\
  
@@ -312,7 +312,7 @@
  
  set#samples#200\\
  
-@@ -1976,7 +2107,7 @@
+@@ -2003,7 +2134,7 @@
  
  set#output#'filtered.dat'\\tabulate#'input.dat'#u#3:6:9#select#(asin($4)\rab0)\\
  

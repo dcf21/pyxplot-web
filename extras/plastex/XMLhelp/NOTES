@@ -11,3 +11,5 @@
 6.  Check that ppl help still works
 
 7.  Check it in!
+
+8.  Run diff -u gp_help.xml{.orig,} > gp_help.xml.diff to re-generate the diff with your patches from step 4.

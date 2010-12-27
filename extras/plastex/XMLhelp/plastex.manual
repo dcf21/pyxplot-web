@@ -1,4 +1,4 @@
-#!/usr/bin/python2.4
+#!/usr/bin/python
 
 import os, sys, codecs, string, glob, re
 sys.path.append("/home/rpc25/plastex/lib/python2.4/site-packages")
