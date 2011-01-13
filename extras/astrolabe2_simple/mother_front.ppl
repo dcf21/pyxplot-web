@@ -94,9 +94,9 @@ foreach Ns in (1,0)
   # Between circles 1 and 2, label 24 hours with large letters. A cross marks midnight.
   RT1 = (R1+R2)/2
   set texthalign centre ; set textvalign centre
-  set fontsize 2*FS
+  set fontsize 1.5*FS
   i=0
-  foreach t in ("\LARGE\kreuz","A","B","C","D","E","F","G","H","I","K","L","M","N","O","P","Q","R","S","T","U","X","Y","Z")
+  foreach t in ("\LARGE\kreuz","13","14","15","16","17","18","19","20","21","22","23","Midnight","1","2","3","4","5","6","7","8","9","10","11")
    {
     theta = i/24*unit(rev)
     if (Ns==0) { ; theta=-theta ; }

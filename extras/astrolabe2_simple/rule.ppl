@@ -67,7 +67,7 @@ foreach Ns in (1,0)
   set fontsize 1.1*FS
   call RuleDraw (0*unit(cm),0*unit(cm),0) # Only alidade has a sight
   text "(a) Rule" at unit(-7*mm),-(R2+margin+1.5*R6)
-  call RuleDraw (sep       ,0*unit(cm),1)
+  call RuleDraw (sep       ,0*unit(cm),0)
   text "(b) Alidade" at sep-unit(7*mm),-(R2+margin+1.5*R6)
 
   # Draw declination scale on rule
@@ -95,21 +95,21 @@ foreach Ns in (1,0)
   # Draw solar-altitude scale on alidade
   set fontsize 1.0*FS
 
-  for i=20 to 91 step 5
-   {
-    r = R12 * sin(i*unit(deg))
-    line from sep, r to sep-BTL/2, r
-    line from sep,-r to sep+BTL/2,-r
-   }
+  #for i=20 to 91 step 5
+  # {
+  #  r = R12 * sin(i*unit(deg))
+  #  line from sep, r to sep-BTL/2, r
+  #  line from sep,-r to sep+BTL/2,-r
+  # }
 
-  foreach i in (20,35,50,80)
-   {
-    r = R12 * sin(i*unit(deg))
-    line from sep, r to sep-BTL, r
-    text "$%d^\circ$"%(i) at sep-BTL, r hal c val t rot -90
-    line from sep,-r to sep+BTL,-r
-    text "$%d^\circ$"%(i) at sep+BTL,-r hal c val t rot  90
-   }
+  #foreach i in (20,35,50,80)
+  # {
+  #  r = R12 * sin(i*unit(deg))
+  #  line from sep, r to sep-BTL, r
+  #  text "$%d^\circ$"%(i) at sep-BTL, r hal c val t rot -90
+  #  line from sep,-r to sep+BTL,-r
+  #  text "$%d^\circ$"%(i) at sep+BTL,-r hal c val t rot  90
+  # }
 
   # Finish up
   if (Ns) { title = "rule_north"; } \
