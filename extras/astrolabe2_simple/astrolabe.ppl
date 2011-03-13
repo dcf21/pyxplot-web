@@ -46,8 +46,8 @@ for latitude=8 to 86.1 step 2
     set nodisplay
     clear
     eps "output/mother_front_north.eps"
-    if (Ns) { f = "output/climate_%dN.eps"%(latitude); } \
-    else    { f = "output/climate_%dS.eps"%(latitude); }
+    if (Ns) { f = "output/climate_%02dN.eps"%(latitude); } \
+    else    { f = "output/climate_%02dS.eps"%(latitude); }
     eps f at D12*3+unit(mm),D12*3+unit(mm)
     load "end.ppl"
 
@@ -62,7 +62,7 @@ for latitude=8 to 86.1 step 2
     !latex astrolabe.tex
     !dvips astrolabe.dvi -o astrolabe.ps
     !ps2pdf astrolabe.ps astrolabe.pdf
-    exec "!cp astrolabe.pdf output/astrolabe_%d%s.pdf"%(latitude,conditionalS(Ns,"N","S"))
+    exec "!cp astrolabe.pdf output/astrolabe_%02d%s.pdf"%(latitude,conditionalS(Ns,"N","S"))
     !rm *.aux *.log *.dvi *.ps *.pdf
     cd ..
    }
