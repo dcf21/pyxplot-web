@@ -130,11 +130,11 @@ plot [-pi:2*pi] sin(x)
 </tr>
 </table> </p><h3 id="a0000000791">Changing the Slant of Axis Labels</h3>
 <p>The <tt class="tt">set xformat</tt> command<a name="a0000000792" id="a0000000792"></a> and its companions may also be followed by keywords which control the angle at which tick labels are drawn. By default, all tick labels are written horizontally, a behaviour which may be reproduced by issuing the command: </p><pre>
-set xformat horizontal
+set xformat auto horizontal
 </pre><p> Alternatively, tick labels may be set to be written vertically, by issuing the command </p><pre>
-set xformat vertical
+set xformat auto vertical
 </pre><p> or to be written at any clockwise rotation angle from the horizontal using commands of the form </p><pre>
-set xformat rotate 10
+set xformat auto rotate 10
 </pre><p>Axis labels may also be made to appear at arbitrary rotations using commands such as </p><pre>
 set unit angle nodimensionless
 set xlabel "I'm upside down" rotate unit(0.5*revolution)
