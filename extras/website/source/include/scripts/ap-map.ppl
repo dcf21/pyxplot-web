@@ -36,5 +36,5 @@ set label 20 '{\Huge \sf \slshape Australia}' 117,-42
 
 # Plot the coastline and cities
 plot 'map_1.dat.gz' every ::1 with lines, \
-     'map_2.dat' with points pointtype 10 pointsize 1.4
+     'map_2.dat' with points pointtype 17 pointsize 1.4
 
