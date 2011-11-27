@@ -5,7 +5,7 @@ def openaDB(dbname):
    import os
    from pysqlite2 import dbapi2 as sqlite
    # connection = sqlite.connect("/home/ftcb/ftcb/ftcb.db")
-   connection = sqlite.connect(os.environ["HOME"] + "/sw/pyxplot/extras/testing/v0.2/" + dbname)
+   connection = sqlite.connect(os.environ["HOME"] + "/ppltest/" + dbname)
    cursor = connection.cursor()
    return (connection, cursor)
 
@@ -33,4 +33,11 @@ def getFromDB(sql, vars, cursor):
 def ucornone(string):
    if (string==None): return None
    else             : return unicode(string)
-           
+ 
+
+# Close database connections etc.
+def gcdb(connection, cursor):
+   cursor.close()
+   connection.commit()
+   return
+

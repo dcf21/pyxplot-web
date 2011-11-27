@@ -1,6 +1,12 @@
 # This file contains shared web routines for the great pyxplot testing system
 
+from general import *
+import cgi
+
 cookie = None
+
+def openDB():
+   return openaDB("webstuff.db")
 
 def err404Page(cursor):
    page = "Status: 404\n"
@@ -35,11 +41,11 @@ def httpHeaders():
 
 def makeHttpHeaders():
    str=u"Content-Type: text/html; charset=UTF-8\n"
-   str += cookie.output()
+   # str += cookie.output()
    str += "\n\n"     # HTML follows
    return str
 
-# Make the stuff at the top of all the pages (before the link bar)
+# Make the stuff at the top of all the pages
 def makePageTop(title, css, cursor):
    import re
    text = u""
@@ -81,17 +87,16 @@ def makePage(params, content, cursor):
    page += makePageHead(title, cursor)
 
    # Body section
-   page += "\n<body>\n"
    page += '<div id="page-container">\n'
    
-   # Sidebar
-   # page += '<div id="sidebar">\n'
-   page += getFromDB('SELECT text FROM htmlchunks WHERE (name=?);', ("sidebartop",), cursor)
-   page += makeSideBarContent(active, cursor)
-   page += '</div>'   # End of side bar
+   # # Sidebar
+   # # page += '<div id="sidebar">\n'
+   # page += getFromDB('SELECT text FROM htmlchunks WHERE (name=?);', ("sidebartop",), cursor)
+   # page += makeSideBarContent(active, cursor)
+   # page += '</div>'   # End of side bar
 
-   # Top navigation
-   page += makeNavTop(active, cursor)
+   # # Top navigation
+   # page += makeNavTop(active, cursor)
 
    # Content
    page += '<div id="content">\n'
@@ -149,7 +154,43 @@ def makeNewSession(sessionCursor):
    id = getFromDB("SELECT id FROM session WHERE atime=? AND mtime=? AND ctime=?;", (tstring,tstring,tstring,), sessionCursor)
    return id
 
-   
+def renderInputControl(field, table, name, w, h, id, cursor):
+   val = getFromDB("SELECT %s FROM %s WHERE id IS ?;"%(field,table), (id,), cursor)
+   text = u''
+   # text = u'<p>val=%s table=%s field=%s</p>'%(val,table,field)
+   text += renderInputControlFromString(field, name, w, h, val)
+   return text
+
+def renderInputControlFromString(formname, name, w, h, val):
+   if (h==0): return '%s: <input type="text" name="%s" value="%s" size="%s" />\n'%(name, formname, cgi.escape(val,True),w)
+   else     : return '%s<br />\n<textarea name="%s" rows=%s cols=%s >\n%s</textarea>\n'%(name,formname,h,w,cgi.escape(val,True))
+
+def renderOptionBox(field, table, formname, default, cursor):
+   options = cursor.execute("SELECT %s,id FROM %s;"%(field,table)).fetchall()
+   text = u'<select name="%s">\n'%(formname)
+   found = False
+   for option in options:
+      if (option[1] == default[1]):
+         sel = " selected"
+         found = True
+      else:
+         sel = ""
+      text += '<option %s label="%s" value="%s" />\n'%(sel,option[0],option[1])
+   if (not found):
+      text += '<option selected label="%s" value="%s" />\n'%(default[0],default[1])
+   text += "</select>\n"
+   return text
+
+
+def renderRadioButton(name, formname, value, options):
+   text = u"%s: "%name
+   for i in range(len(options)):
+      if (i==value): chk = "checked"
+      else         : chk = ""
+      text += '<input type="radio" name="%s" value="%s" %s />%s\n'%(formname,i,chk,options[i])
+   return text
+
+
 
 ######################################
 # New for the ppl website

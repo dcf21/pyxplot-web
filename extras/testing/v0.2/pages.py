@@ -38,13 +38,13 @@ def buildPage(fn):
    # Find the page
    try: pid = getFromDB('SELECT id FROM pages WHERE (page=?);',(fn,),cursor)
    except:
-      errPage("Page not found!")
+      errPage("Page %s not found!"%fn)
       exit(1)
    # Title
    title = getFromDB('SELECT name FROM pages WHERE (id=?);',(pid,),cursor)
 
    # Process the body for recipe lines
-   body = filterHTML(getFromDB('SELECT body FROM pages WHERE (id=?);', (pid,),cursor), cursor)
+   body = getFromDB('SELECT body FROM pages WHERE (id=?);', (pid,),cursor)
 
    active = ["%s"%title, None, None]
    makePage({"title": title, "active":active}, body, cursor)
