@@ -104,7 +104,7 @@ def renderChunkEditorsMain(cursor):
 
 
 
-initialiseCookie()
+# initialiseCookie()
 
 
 editChunks()
