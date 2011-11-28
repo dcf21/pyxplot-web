@@ -164,13 +164,14 @@ def parseTestEditSubmission(id, form, cursor, warnings, updates):
       if (j==None): new.append("")
       else: new.append(j)
    (special, filename, mode, outcmptxt, diffrules, diffrutxt) = new
+   diffrules = int(diffrules)-1
    #if (None in new):
    #   warnings.append("Partial content recieved for new output: skipping")
    # Check for some content
    if (special != "2" or filename != ""):
       cursor.execute("INSERT INTO files (mode, value) VALUES (?,?);", (0,outcmptxt))
-      fid = cursor.execute("SELECT id FROM files WHERE (mode=? AND value=?);", (0, outcmptxt)).fetchall()[-1]
-      if (diffrules == "2"):
+      fid = cursor.execute("SELECT id FROM files WHERE (mode=? AND value=?);", (0, outcmptxt)).fetchall()[-1][0]
+      if (diffrules == "1"):
          cursor.execute("INSERT INTO diffrules (rules) VALUES (?);", (diffrutxt,))
          diffrules = cursor.execute("SELECT id FROM diffrules WHERE (rules=?);", (diffrutxt,)).fetchall()[-1]
       cursor.execute("INSERT INTO outputs (tid, special, mode, fid, filename, diffrules) VALUES (?,?,?,?,?,?);", (id, special, mode, fid, filename, diffrules))
@@ -273,8 +274,8 @@ def renderTestOutput(id, data,testCursor):
 
    # Comparison text
    if (omd==1):
-      fout = getPossibleItemFromDB("SELECT mode, value FROM files WHERE (id=?);", fid, testCursor)
-      if (fout==None):
+      fout = testCursor.execute("SELECT mode, value FROM files WHERE (id=?);", (ofid,)).fetchall()[0]
+      if (len(fout)==0):
          fmode = 0
          fval = ""
       else:
