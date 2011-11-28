@@ -1,11 +1,14 @@
 # This file contains shared routines for database handling for the great pyxplot testing system
 
+subdir = "/ppltest/"
+
 # Open any named db
 def openaDB(dbname):
    import os
    from pysqlite2 import dbapi2 as sqlite
+   global subdir
    # connection = sqlite.connect("/home/ftcb/ftcb/ftcb.db")
-   connection = sqlite.connect(os.environ["HOME"] + "/ppltest/" + dbname)
+   connection = sqlite.connect(os.environ["HOME"] + subdir  + dbname)
    cursor = connection.cursor()
    return (connection, cursor)
 
@@ -41,3 +44,8 @@ def gcdb(connection, cursor):
    connection.commit()
    return
 
+# Produce a file string for a file id
+def buildFileString(id):
+   import os
+   global subdir
+   return os.environ["HOME"] + subdir + "cache/cache.%s"%(id)
