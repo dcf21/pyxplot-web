@@ -64,9 +64,10 @@ def uploadFile():
 
 # Parse the data that we have just got back in our form
 def parseFileUploadSubmission(id, form, cursor, warnings, updates):
+   import os, stat
    uploadOutcome = {"partialData":{}}
    page = u''
-   for key in ["name", "file"]:
+   for key in ["name"]:
       data = form.getfirst(key)
       if (data==None): warnings.append("Failed to supply item %s to edit script!"%key)
       if (data == ""): warnings.append("Supplied empty content for %s: ignoring!"%key)
@@ -75,13 +76,28 @@ def parseFileUploadSubmission(id, form, cursor, warnings, updates):
    if (id != None and id != -1): uploadOutcome["partialData"]["id"] = id
    if (len(warnings)!=0): return uploadOutcome
 
+   # Insert the file into the database
+   cursor.execute("INSERT INTO files (mode) VALUES (?);", (1,))
+   id = getFromDB('SELECT id FROM files WHERE mode=? ORDER BY id DESC LIMIT 1;', (1,), cursor)
+   fn = buildFileString(id)
+   cursor.execute("UPDATE files SET value=? WHERE id=?;", (fn, id))
+
+   # Write the file to disc
+   fp = open(fn, "w")
+   while (True):
+      chunk = form["file"].file.read(100000)
+      if not chunk: break
+      fp.write(chunk)
+   fp.close()
+
+   # Permissions
+   os.chmod(fn, stat.S_IREAD | stat.S_IWRITE | stat.S_IEXEC)
+
+   # Insert into instances database
+   cursor.execute("INSERT INTO pplversions (name, binary) VALUES (?,?);", (uploadOutcome["partialData"]["name"], id))
+
    # We have all the required data
    page += "<p>Uploaded file %s sucessfully</p>"%(uploadOutcome["partialData"]["name"])
-   page += "<p> %s </p>"%(uploadOutcome["partialData"]["file"])
-   page += "<p> %s </p>"%(form["file"].file)
-   page += "<p>"
-   for i in form.keys(): page += "%s &nbsp;"%i
-   page += "</p>"
 
    uploadOutcome["page"] = page
    return  uploadOutcome
