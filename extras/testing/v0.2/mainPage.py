@@ -128,16 +128,56 @@ def renderMainPageMain(testCursor,cursor, partialData):
    nsub = {"i": 0}
 
    # Set of boxes for ppl version, most recent first
-   for (pplId, pplName) in testCursor.execute("SELECT id, name FROM pplversions ORDER BY id DESC;").fetchall()
-
-   page += renderMainPagePplVersionBox(pplId, pplName, cursor, testCursor)
+   for (pplId, pplName) in testCursor.execute("SELECT id, name FROM pplversions ORDER BY id DESC;").fetchall():
+      page += renderMainPagePplVersionBox(pplId, pplName, cursor, testCursor)
    return page
 
 def renderMainPagePplVersionBox(pplId, pplName, cursor, testCursor):
    page = u""
+   page += '<div class="pplVersionBox">\n<div class="pplVersionBoxHead">PyXPlot version %s\n'%(pplName)
+   page += '<div class="buttonStrip">'
+   for (a,b) in [["all", "all"], ["new","new"], ["fail", "failed"]]:
+      page += '<a class="run%s" href="runtests.html?act=run%s%s">Run %s</a> - '%(a,a,pplId,b)
+   page = '%s </div></div>\n <div class="testResults">'%(page[:-3])
+   testResults = updateTestResults(pplId, testCursor)
+   page += renderTestResults(pplId, testCursor, testResults)
+   page += "</div>\n</div>\n"
+
    return page
 
-uploadFile()
+# Render test result to the page
+def renderTestResults(pplId, cursor, testResults):
+   page = u""
+   states = cursor.execute("SELECT text FROM teststates ORDER BY id ASC;").fetchall()
+   tids = testResults.keys()
+   tids.sort()
+   for tid in tids:
+      i=testResults[tid]
+      page += '<div class="test%s" title="test %s - %s - %s"></div>'%(i["state"],tid,i["name"],states[i["state"]-1][0])
+      #page += '<div class="test%s" title="test %s - %s - %s">%s</div>'%(i["state"],tid,i["name"],states[i["state"]-1][0],tid)
+   return page
+
+
+# Update test result map table for this instance, returning a complete list of test results at the present moment
+def updateTestResults(pplId, cursor):
+   allTests = {}
+   testMap = {}
+   # Obtain current state of test map
+   for (tid, state) in cursor.execute("SELECT tid,state FROM insttestmap WHERE (iid=?);", (pplId,)).fetchall():
+      testMap[tid] = state
+   # Obtain complete list of tests
+   for (tid, tname) in cursor.execute("SELECT id, name FROM tests;").fetchall():
+      allTests[tid] = {"name": tname}
+      if (tid in testMap): allTests[tid]["state"] = testMap[tid]
+      else:      # If test not mapped, insert as "not run"
+         cursor.execute("INSERT INTO insttestmap (iid, tid, state) VALUES (?,?,?);", (pplId, tid, 1))
+         allTests[tid]["state"] = 1
+   return allTests
+
+
+      
+
+mainPage()
 
 def bar():
    # The ingredients.  Pain and suffering.
