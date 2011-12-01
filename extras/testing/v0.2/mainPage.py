@@ -39,6 +39,7 @@ def mainPage():
       return
 
    # Do all the other stuff
+   #XXX all redundant after this point
    uploadOutcome = parseMainPageSubmission(id, form, testCursor, warnings, updates)
 
    # If the instructions say to redirect the user off elsewhere, do that
@@ -115,13 +116,6 @@ def renderMainPageHead(id,testCursor, cursor):
    page += "<hr>\n"
    return page
 
-
-
-
-def subBut(dic):
-   return u'<input type="submit" name="sub%s" value="Save" />\n'%dic["i"]
-   dic["i"]+=1
-   
 # Produce the html for the main editor page
 def renderMainPageMain(testCursor,cursor, partialData):
    page = u''
@@ -178,37 +172,4 @@ def updateTestResults(pplId, cursor):
       
 
 mainPage()
-
-def bar():
-   # The ingredients.  Pain and suffering.
-   page += '<h3>Ingredients</h3><input type="submit" name="sub1" value="Save changes" /><br />\n'
-   # First fetch all the sub-recipes
-   subrlist = cursor.execute("SELECT id,sort,name1,name2 FROM subrecipes WHERE rid=? ORDER BY sort;", (id,)).fetchall()
-   for subr in subrlist:
-      page += "Section heading<br />\n"
-      tlist = [""]
-      if (subr[2]==None): tlist.append("")
-      else              : tlist.append(subr[2])
-      tlist.append(None)
-      tlist.append(None)
-      if (subr[3]==None): tlist.append("")
-      else              : tlist.append(subr[3])
-      page += renderIngredientLine(subr[0],tlist)
-      page += "Ingredients<br />\n"
-
-      # For each sub-test fetch the ingredientlines
-      illist = cursor.execute("SELECT il.id,il.quantity,il.main,il.ingredient,ig.name FROM ingredientlines il LEFT JOIN ingredientlinesmap ilm ON (il.id=ilm.ilid) LEFT JOIN ingredients ig ON ig.id=il.ingredient WHERE ilm.srid=? ORDER BY ilm.sort;", (subr[0],)).fetchall()
-      for il in illist: page += renderIngredientLine(subr[0],il)
-
-      # Blank lines for fresh ingredients
-      for i in range(5): page += renderIngredientLine(subr[0],["new%s"%i,"","FALSE","",""])
-   # One blank subrecipe line
-   page += "New section heading<br />\n"
-   page += renderIngredientLine("new", ["", "", "FALSE", "", ""])
-
-        
-
-
-   page += '<h3>Test method</h3><input type="submit" name="sub2" value="Save changes" /><br />\n'
-   page += renderInputControl("method", "Method", 100, 50, id, cursor)
 

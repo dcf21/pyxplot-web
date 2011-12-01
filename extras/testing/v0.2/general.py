@@ -44,8 +44,11 @@ def gcdb(connection, cursor):
    connection.commit()
    return
 
-# Produce a file string for a file id
-def buildFileString(id):
+def workdir():
    import os
    global subdir
-   return os.environ["HOME"] + subdir + "cache/cache.%s"%(id)
+   return os.environ["HOME"] + subdir
+
+# Produce a file string for a file id
+def buildFileString(id):
+   return workdir() + "cache/cache.%s"%(id) 
