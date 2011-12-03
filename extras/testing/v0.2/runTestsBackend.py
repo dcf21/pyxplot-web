@@ -53,7 +53,8 @@ def runTest(test, options):
    options["pyxplot"] = instanceCache[iid]
 
    # Make a directory for the test
-   options["testdir"] = options["workdir"] + "test_%s_%s"%(iid,tid)
+   testname = "test_%s_%s"%(iid,tid)
+   options["testdir"] = os.path.join(options["workdir"], testname)
    os.mkdir(options["testdir"])
 
    # Grab everything that we need to know about the test
@@ -86,7 +87,42 @@ def runTest(test, options):
             shutil.copyfile(i[3], fnout)
 
 
-      
+    # Run pyxplot
+    outfile = os.path.join(options["workdir"], "%s.stdout"%testname)
+    errfile = os.path.join(options["workdir"], "%s.stderr"%testname)
+    system("cd %s ; %s > %s 2> %s"%(options["testdir"],options["pyxplot"],options["outfile"],options["errfile"])
+
+    # Capture the outputs
+    passed = True
+    for i in outputs:
+       (special, filename, mode, diffrules, fmode, fval) = i
+       # XXX Deal with stdout / stdin here
+       if (int(special)!=2): continue
+       try: fp = open(filename, "r")
+       except:    # The test did not produce this required output
+          passed = False
+          continue
+       obtained = fp.read()
+       fp.close()
+
+       expected = obtainFileContents(fmode,fval)
+
+
+
+def obtainFileContents(mode, value):
+   text = u""
+   if (int(mode)==0): return value
+   else:
+      fp = open(value, "r")
+      try: text = fp.read()
+      except:
+         fp.close()
+         raise
+      fp.close()
+      return text
+
+
+
       
 
 
