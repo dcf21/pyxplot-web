@@ -52,3 +52,9 @@ def workdir():
 # Produce a file string for a file id
 def buildFileString(id):
    return workdir() + "cache/cache.%s"%(id) 
+
+# Insert some text into the files database and return the id for the newly created record
+def insertIntoFileDB(text, cursor):
+   cursor.execute("INSERT INTO files (mode,value) VALUES (?,?);", (0, text))
+   fid = cursor.execute("SELECT id FROM files WHERE (mode=? AND value=?);", (0, text)).fetchall()[-1][0]
+   return fid

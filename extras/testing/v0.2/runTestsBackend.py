@@ -21,14 +21,23 @@ instanceCache = {}
 
 # Main routine
 def runTestsBackend(options):
+   # Initial setup
+   initTestBackend(options)
+
    # Take out the lock on running tests
-   if (not takeOutTestRunLock()): return
+   if (not takeOutTestRunLock()): 
+      log("Failed to take out test run lock; aborting")
+      return
 
    # Loop, carring out tests
    while (True):
-      testsToRun = getPendingTests():
+      testsToRun = getPendingTests()
+      log("Retrieved %s tests"%(len(testsToRun)))
       if (len(testsToRun)==0): break
-      for test in testsToRun: runTest(test, options)
+      for test in testsToRun: 
+         result = runTest(test, options)
+         log("Run test with result %s"%result)
+         removeFromPendingTests(test)
 
    # Finished: give the lock back again
    releaseTestRunLock()
@@ -59,8 +68,8 @@ def runTest(test, options):
 
    # Grab everything that we need to know about the test
    (tMode, script) = cursor.execute("SELECT mode, script FROM tests WHERE (id=?);", (tid,)).fetchall()[0]
-   inputs = cursor.execute("SELECT i.special, i.filename, f.mode, f.value FROM inputs i LEFT JOIN files f ON (f.id=i.fid) WHERE (i.tid=?)'", (tid,)).fetchall()
-   outputs = cursor.execute("SELECT o.special, o.filename, o.mode, o.diffrules f.mode, f.value FROM outputs o LEFT JOIN files f ON (f.id=o.fid) WHERE (o.tid=?);", (tid,)).fetchall()
+   inputs = cursor.execute("SELECT i.special, i.filename, f.mode, f.value FROM inputs i LEFT JOIN files f ON (f.id=i.fid) WHERE (i.tid=?);", (tid,)).fetchall()
+   outputs = cursor.execute("SELECT o.id, o.special, o.filename, o.mode, o.diffrules, f.mode, f.value FROM outputs o LEFT JOIN files f ON (f.id=o.fid) WHERE (o.tid=?);", (tid,)).fetchall()
 
    # XXX Deal with diff rules
 
@@ -87,25 +96,72 @@ def runTest(test, options):
             shutil.copyfile(i[3], fnout)
 
 
-    # Run pyxplot
-    outfile = os.path.join(options["workdir"], "%s.stdout"%testname)
-    errfile = os.path.join(options["workdir"], "%s.stderr"%testname)
-    system("cd %s ; %s > %s 2> %s"%(options["testdir"],options["pyxplot"],options["outfile"],options["errfile"])
+   # Write the script into a file
+   scriptfile = os.path.join(options["testdir"], "script.ppl")
+   fout = open(scriptfile, "w")
+   fout.write(script)
+   fout.close()
 
-    # Capture the outputs
-    passed = True
-    for i in outputs:
-       (special, filename, mode, diffrules, fmode, fval) = i
-       # XXX Deal with stdout / stdin here
-       if (int(special)!=2): continue
-       try: fp = open(filename, "r")
-       except:    # The test did not produce this required output
-          passed = False
-          continue
-       obtained = fp.read()
-       fp.close()
+   # Run pyxplot
+   outfile = os.path.join(options["workdir"], "%s.stdout"%testname)
+   errfile = os.path.join(options["workdir"], "%s.stderr"%testname)
+   os.system("cd %s ; DISPLAY= %s script.ppl > %s 2> %s"%(options["testdir"],options["pyxplot"],outfile,errfile))
 
-       expected = obtainFileContents(fmode,fval)
+   # Re-open test database
+   (connection, cursor) = openaDB("ppltest.db")
+
+   # Capture the outputs
+   passed = True
+   for i in outputs:
+      (oid, special, filename, mode, diffrules, fmode, fval) = i
+      # XXX Deal with stdout / stdin here
+      if (int(special)!=2): continue
+      try: fp = open(filename, "r")
+      except:    # The test did not produce this required output
+         passed = False
+         continue
+      Sobtained = fp.read()
+      fp.close()
+
+      # Check this output for correctness
+      Sexpected = obtainFileContents(fmode,fval)
+      obtained = convertStringToArray(Sobtained, diffrules)
+      expected = convertStringToArray(Sexpected, diffrules)
+      if (obtained != expected): passed = False
+
+      # Insert output into files data base
+      fid = getPossibleItemFromDB("SELECT fid FROM instoutmap WHERE (iid=? AND oid=?);", (iid, oid), cursor)
+      if (fid==None):
+         fid = insertIntoFileDB(Sobtained, cursor)
+         cursor.execute("INSERT INTO instoutmap (iid, oid, fid) VALUES (?,?,?);", (iid, oid, fid))
+      else:
+         cursor.execute("UPDATE files SET mode=?, value=? WHERE id=?;", (0, Sobtained, fid))
+
+   state = getPossibleItemFromDB("SELECT state FROM insttestmap WHERE (iid=? AND tid=?);", (iid, tid), cursor)
+   if (state==None): cursor.execute("INSERT INTO insttestmap (iid,tid,state) VALUES (?,?,?);", (iid, tid, 3-passed))
+   else:             cursor.execute("UPDATE insttestmap SET state=? WHERE (iid=? AND tid=?);", (3-passed, iid, tid))
+
+   # Write out the changes to the DB
+   gcdb(connection, cursor)
+
+   return passed
+      
+
+def convertStringToArray(string, diffrules):
+   # Convert to arrays and prepare to diff
+   string.replace("\r\n", "\n")    # Windows
+   l = []
+   for i in string.split("\n"):
+      keep = True
+      # Check against the diff rules
+      for dr in diffrules:
+         if re.search(dr, i):
+            keep = False
+            break
+      if (keep): l.append(i)
+   while (len(l)>0 and l[-1]==""): l.pop()
+   return l
+
 
 
 
@@ -122,20 +178,18 @@ def obtainFileContents(mode, value):
       return text
 
 
-
-      
-
-
-
-
-
-
-
+# Remove a completed test from the list of pending tests
+def removeFromPendingTests(test):
+   (connection, cursor) = openaDB("ppltest.db")
+   pendingTests = cursor.execute("DELETE FROM pendingTests WHERE (iid=? AND tid=?);", (test[0], test[1])).fetchall()
+   log("Removed test")
+   gcdb(connection, cursor)
 
 # Obtain a list of pending tests from the database
 def getPendingTests():
    (connection, cursor) = openaDB("ppltest.db")
-   pendingTests = cursor.execute("SELECT (iid, tid) FROM pendingTests;").fetchall()
+   pendingTests = cursor.execute("SELECT iid, tid FROM pendingTests;").fetchall()
+   log("Retrieved tests")
    gcdb(connection, cursor)
    return pendingTests
 
@@ -161,223 +215,9 @@ def initTestBackend(options):
    options["workdir"] = tempfile.mkdtemp() + '/'
    return
 
+# Logging
+def log(string):
+   print string
+
+log("Hellllooooooo")
 runTestsBackend(options)
-# Prepare working directories
-def prepareDirs(options):
-   # Make an appropriate working directory for this version
-   options['runningdir'] = options['workdir'] + "/" + options['version']
-   if (os.path.exists(options['runningdir'])):
-      print "Directory %s already exists!"%options['runningdir']
-      try: assert(os.path.isdir(options['runningdir']))
-      except: 
-         print "FAIL: %s is not a directory!"%options['runningdir']
-         raise
-   else: os.mkdir(options['runningdir'])
-
-   # If we are doing comparions...
-   if (len(options['compare']) > 0):
-      # Version to compare to
-      options['comparetodir'] = options['workdir'] + "/" + options['compareversion']
-      # Place to put comparisons
-      options['comparedir'] = options['workdir'] + "/%s%s%s"%(options['version'],"VS",options['compareversion'])
-      os.mkdir(options['comparedir'])
-
-# Some basic checks on the sanity of the supplied options
-def sanityCheck(options):
-   print "Sanity check..."
-   assert(os.path.isdir(options['scriptdir']))
-   assert(os.path.isdir(options['workdir']))
-   assert(os.path.isdir(options['runningdir']))
-   # Checks we need if we're doing comparisons
-   if (len(options['compare']) > 0):
-      assert(os.path.isdir(options['comparedir']))
-
-######################################################################
-# Run a test
-def runTest(test, options):
-   print "running test %s"%test
-   scriptdir = options['scriptdir'] + '/' + test
-   workdir = options['runningdir'] + '/' + test
-   # Check that the scripts exist
-   try:    assert(os.path.isdir(scriptdir))
-   except:
-      print "Cannot find script directory for %s: %s.  Skipping"%(test, scriptdir)
-      return
-   # Check that there's somewhere to put them
-   try: assert(not os.path.exists(workdir))
-   except:
-      print "Working dir for test %s, %s exists.  Skipping"%(test, workdir)
-      return
-   # Make the working directory
-   os.system("cp -r %s %s"%(scriptdir,workdir))
-
-   # Check to see whether there's a test.ppl script and if so run
-   scriptfile = workdir + "/" + 'test.ppl'
-   if (os.path.isfile(scriptfile)):
-      os.system("cd %s ; %s %s > output 2> errors"%(workdir, options['pyxplot'], scriptfile))
-      return
-
-   # Check to see whether there's a test.sh script
-   scriptfile = workdir + "/" + 'test.sh'
-   if (os.path.isfile(scriptfile)):
-      os.system("mv %s %s"%(scriptfile, scriptfile + ".orig"))
-      fin = open(scriptfile + ".orig", "r")
-      fout = open(scriptfile, "w")
-      for line in fin:
-         re.sub('PYXPLOT', options['pyxplot'], line)
-         fout.write(line)
-      fin.close()
-      fout.close()
-      os.system("cd %s; chmod u+x test.sh ; ./test.sh > output 2> errors"%workdir)
-      return
-
-   print "Cannot find script for test %s: skipping"%test
-
-######################################################################
-# Test comparion routines
-def parseConfigFile(configFile, filesToCompare):
-   try: f = open(configFile, "r")
-   except:
-      print "Failed to open config file %s"%configFile
-      raise
-   name = ""
-   for line in f:
-      try: [key, value] = re.split(':\s+', line, 1)
-      except: 
-         print "Failed to parse config file entry %s"%line
-         continue
-      if (key == 'name'):
-         name = value
-         # Check that we already have this filename and add a default entry if not
-         try:    test = filesToCompare[name]
-         except: filesToCompare[name] = {'type':'text', 'exclude':[]}
-      elif (key == 'type'):    filesToCompare[name]['type'] = value
-      elif (key == 'exclude'): filesToCompare[name]['exclude'].append(value) 
-      elif (key == 'notes'):   break
-      else:                    print "Incomprehensible config file key %s"%key
-   f.close()
-
-   # Add default entries for eps files
-   for key in filesToCompare.keys():
-      if (filesToCompare[key]['type'] == 'eps'):
-         filesToCompare[key]['exclude'].append("^%%CreationDate: ")
-
-######################################################################
-# Compare two tests
-def compareTest(test, options):
-   print "comparing test %s"%test
-   runningDir = options['runningdir'] + "/%s"%test
-   comparetoDir = options['comparetodir'] + "/%s"%test
-   for dir in [runningDir, comparetoDir]:
-      if (not os.path.isdir(dir)):
-         print "Skipping test %s: directory %s missing"%(test,dir)
-         return
-   testDir = options['comparedir'] + "/%s"%test
-   try: assert(not os.path.exists(testDir))
-   except: 
-      print "Output of comparison %s already exists!  Skipping."%testDir
-   os.mkdir(testDir)
-   assert(os.path.isdir(testDir))
-
-   # The set of files to compare.  Always compare output and errors
-   filesToCompare = {'output': {'type':'text', 'exclude':[]}, 
-                     'errors': {'type':'text', 'exclude':[]}}
-   # Parse the config file for this test
-   configFile = runningDir + "/config"
-   parseConfigFile(configFile, filesToCompare)
-
-   # Loop through the output files doing the comparison
-   for file in filesToCompare.keys():
-      file1 = "%s/%s"%(runningDir,file)
-      file2 = "%s/%s"%(comparetoDir,file)
-      if (not (os.path.isfile(file1) and os.path.isfile(file2))):
-         print "Can't find one of two files to compare: %s %s"%(file1,file2)
-         continue
-      diffobj = subprocess.Popen("diff %s %s"%(file1,file2), shell=True, stdout=subprocess.PIPE)
-      diff = re.split("\n",diffobj.communicate()[0])
-      # Parse the diff
-      output = []
-      header = ''
-      cache = []
-      for line in diff:
-         if (len(line)==0): continue
-         if (line[0:3] == '---'):
-            if (len(cache)>0): cache.append(line)
-            continue
-         # Check for a new section of diff
-         if (line[0] != ">" and line[0] != "<"):
-            if (len(cache) > 0):
-               output.append(header)
-               for l in cache: output.append(l)
-               cache = []
-            header = line
-         else:
-            # Check against all the exclusion regexes
-            exclude = False
-            for regex in filesToCompare[file]['exclude']:
-               if (re.search(regex, line) != None):
-                  exclude = True
-                  break
-            if (not exclude): cache.append(line)
-      # Catch any output cached but not written to output buffer yet
-      if (len(cache) > 0):
-         output.append(header)
-         for l in cache: output.append(l)
-         cache = []
-
-      if (len(output) > 0):
-         outputFile = testDir + "/%s"%file
-         f = open(outputFile, "w")
-         for line in output: f.write("%s\n"%line)
-         f.close()
-         os.system("wc -l %s"%outputFile)
-
-
-##################################################
-# MAIN ROUTINE STARTS HERE
-parseCommandLine(options, sys.argv)
-prepareDirs(options)
-sanityCheck(options)
-
-# Run the requested tests
-for test in options['run']:
-   runTest(test, options)
-
-# Do the requested comparisons
-for test in options['compare']:
-   compareTest(test, options)
-
-
-
-
-
-# OLD SHIT
-# Parse command-line options
-def parseCommandLine(options, argv):
-   for argument in argv[1:]:
-      try:    [key, value] = re.split('=', argument)
-      except: 
-         print "Bad command-line argument %s: skipping"%argument
-         continue
-      # Simple options: set and continue
-      found = False
-      for option in ["pyxplot", "version", "compareversion", "scriptdir", "workdir"]:
-         if (key == option) :
-            options[key] = value
-            found = True
-            break
-      if (found) : continue
-
-      # Options which require a list to be created
-      for option in ["run", "compare"]:
-         if (key == option):
-           found = True
-           # Test to see if only a single value is specified
-           for item in re.split(",", value): options[key].append(item)
-           break
-      if (found): continue
-
-      # Didn't understand this item
-      print "Failed to understand command-line argument %s: skipping"%argument
-
-

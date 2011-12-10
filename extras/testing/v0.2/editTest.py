@@ -107,16 +107,14 @@ def parseTestEditSubmission(id, form, cursor, warnings, updates):
    #   warnings.append("Partial content recieved for new input: skipping")
    # Check that we have some content
    if (filename != ""):
-      cursor.execute("INSERT INTO files (mode,value) VALUES (?,?);", (0, text))
-      fid = cursor.execute("SELECT id FROM files WHERE (mode=? AND value=?);", (0, text)).fetchall()[-1][0]
+      fid = insertIntoFileDB(text, cursor)
       cursor.execute("INSERT INTO inputs (tid,fid,filename,special) VALUES (?,?,?,?);", (id,fid,filename,special))
    elif (selfn != ""):
       (fid, filename) = cursor.execute("SELECT fid, filename FROM inputs WHERE (id=?);", (selfn,)).fetchall()[0]
       cursor.execute("INSERT INTO inputs (tid,fid,filename,special) VALUES (?,?,?,?);", (id,fid,filename,special))
       srgjnirjn=1
    elif (special == "0"):
-      cursor.execute("INSERT INTO files (mode,value) VALUES (?,?);", (0, text))
-      fid = cursor.execute("SELECT id FROM files WHERE (mode=? AND value=?);", (0, text)).fetchall()[-1][0]
+      fid = insertIntoFileDB(text, cursor)
       cursor.execute("INSERT INTO inputs (tid,fid,filename,special) VALUES (?,?,?,?);", (id,fid,filename,special))
 
 
