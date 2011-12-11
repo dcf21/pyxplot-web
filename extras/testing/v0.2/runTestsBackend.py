@@ -66,14 +66,11 @@ def runTest(test, options):
    options["testdir"] = os.path.join(options["workdir"], testname)
    os.mkdir(options["testdir"])
 
-   # Grab everything that we need to know about the test
+   # Grab everything that we need to know about the test in order to run it
    (tMode, script) = cursor.execute("SELECT mode, script FROM tests WHERE (id=?);", (tid,)).fetchall()[0]
    inputs = cursor.execute("SELECT i.special, i.filename, f.mode, f.value FROM inputs i LEFT JOIN files f ON (f.id=i.fid) WHERE (i.tid=?);", (tid,)).fetchall()
-   outputs = cursor.execute("SELECT o.id, o.special, o.filename, o.mode, o.diffrules, f.mode, f.value FROM outputs o LEFT JOIN files f ON (f.id=o.fid) WHERE (o.tid=?);", (tid,)).fetchall()
 
-   # XXX Deal with diff rules
-
-   # GC the database as the next bit may take some time!
+   # Close the database connection as the next bit may take some time!
    gcdb(connection, cursor)
 
    # Make all the apropriate inputs
@@ -110,21 +107,63 @@ def runTest(test, options):
    # Re-open test database
    (connection, cursor) = openaDB("ppltest.db")
 
+   # Obtain details of the required outputs
+   outputs = cursor.execute("SELECT id, special, filename, mode, diffrules, fid FROM outputs WHERE (tid=?);", (tid,)).fetchall()
+   # outputs = cursor.execute("SELECT o.id, o.special, o.filename, o.mode, o.diffrules, f.mode, f.value FROM outputs o LEFT JOIN files f ON (f.id=o.fid) WHERE (o.tid=?);", (tid,)).fetchall()
+
    # Capture the outputs
    passed = True
    for i in outputs:
-      (oid, special, filename, mode, diffrules, fmode, fval) = i
-      # XXX Deal with stdout / stdin here
-      if (int(special)!=2): continue
-      try: fp = open(filename, "r")
+      (oid, special, filename, mode, idr, fid) = i
+      # Correct location for stdout / stdin
+      special = int(special)
+      if (special==0):   filename = outfile
+      elif (special==1): filename = errfile
+      else:              filename = os.path.join(options["testdir"],filename)
+      try: 
+         fp = open(filename, "r")
+         Sobtained = fp.read()
+         fp.close()
       except:    # The test did not produce this required output
+         log("Test failed to produce output %s"%filename)
          passed = False
-         continue
-      Sobtained = fp.read()
-      fp.close()
+         Sobtained = ""
+
+      # Obtain expected output 
+      Sexpected = obtainExpectedOutput(tid, oid, int(mode), fid, Sobtained, cursor)
+
+      # Diff rules
+      idr = int(idr)
+      if (idr==0): diffrules = []
+      elif (idr==-1):    # Default diff rules
+         if (special!=2):
+            diffrules = []
+         else:
+            temp = re.search(r"\.[a-zA-Z0-9]+$", filename)
+            if (temp==None):
+               log("Warning: failed to detect file type for %s; falling back to no diff rules"%filename)
+               diffrules = []
+            else:
+               ending = temp.group(0)[1:]
+               temp2 = getPossibleItemFromDB("SELECT rules FROM diffrules WHERE (extension=?);", (ending,), cursor)
+               if (temp2==None): 
+                  log("Warning: no diff rules found for ending %s"%(ending))
+                  diffrules = []
+               else: 
+                  diffrules = temp2.split("\n")
+      else:
+         temp = getPossibleItemFromDB("SELECT rules FROM diffrules WHERE (id=?);", (idr,), cursor)
+         if (temp==None):
+            log("Warning: diff rules set %s not found"%idr)
+            diffrules = []
+         else:
+            diffrules = temp.split("\n")
+                  
+
 
       # Check this output for correctness
-      Sexpected = obtainFileContents(fmode,fval)
+      # log("Testing output %s against %s"%(Sobtained,Sexpected))
+
       obtained = convertStringToArray(Sobtained, diffrules)
       expected = convertStringToArray(Sexpected, diffrules)
       if (obtained != expected): passed = False
@@ -162,6 +201,24 @@ def convertStringToArray(string, diffrules):
    while (len(l)>0 and l[-1]==""): l.pop()
    return l
 
+
+
+# Obtain the output expected from a test
+def obtainExpectedOutput(tid, oid, mode, fid, Sobtained, cursor):
+   # mode=0 => Compare against previous, 1=> Compare against stored value
+   if (mode==0):
+      previous = cursor.execute("SELECT iom.fid FROM instoutmap iom LEFT JOIN insttestmap itm ON (iom.iid=itm.iid) WHERE (itm.tid=? AND iom.oid=? AND itm.state=?);", (tid, oid, 2)).fetchall()
+      if (len(previous)==0): 
+         log("No previous values found for output %s; taking input as canon"%oid)
+         return Sobtained
+      fid = previous[-1][0]
+      log("fid for previous value of output %s is %s"%(oid,fid))
+   fdetails = cursor.execute("SELECT mode, value FROM files WHERE (id=?);", (fid,)).fetchall()
+   if (len(fdetails)==0):
+      log("Stored file %s appears to be missing!"%fid)
+      return ""
+   (fmode, fval) = fdetails[0]
+   return obtainFileContents(fmode,fval)
 
 
 
