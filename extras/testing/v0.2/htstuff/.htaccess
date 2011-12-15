@@ -1,0 +1,16 @@
+AddDefaultCharset utf-8
+
+AuthType Basic
+AuthName "Trac"
+AuthUserFile /home/rpc25/ppltest/htpasswd.trac
+Require valid-user
+
+RewriteEngine on
+RewriteBase /~rpc25/ppltest/
+#RewriteBase /
+
+RewriteRule ^test.html$ scripts/pages.py?page=test.html
+RewriteRule ^editChunks.html$ scripts/editChunks.py
+RewriteRule ^editTest.html$ scripts/editTest.py
+RewriteRule ^uploadFile.html$ scripts/uploadFile.py
+RewriteRule ^mainPage.html$ scripts/mainPage.py

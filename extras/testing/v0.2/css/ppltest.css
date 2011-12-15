@@ -1,0 +1,127 @@
+.pplVersionBox {
+   background-color: #ddf;
+   border: 1px solid salmon;
+}
+
+.pplVersionBox div {
+   margin: 0.25em;
+}
+
+.pplVersionBoxHead {
+   margin: 0.25em;
+   overflow: hidden;
+   background-color: #eee;
+   border: 1px solid #ddd;
+}
+
+.pplVersionBoxHead a {
+   padding: 0.15em;
+   border: 1px solid #444;
+   text-decoration: none;
+   color: #00d;
+}
+
+.runall {
+   background-color: white;
+}
+.runnew {
+   background-color: #aaa;
+}
+.runfail {
+   background-color: #faa;
+}
+
+.testResults {
+   background-color: #dfd;
+   border: 1px solid darkgreen;
+   overflow: hidden;
+}
+
+.testResults div {
+   padding: .4em;
+   margin: .2em;
+   float: left;
+   border: 1px solid #444;
+}
+
+.test1 {
+   background-color: #aaa;
+}
+
+.test2 {
+   background-color: green;
+}
+
+.test3 {
+   background-color: red;
+}
+
+.test4 {
+   background-color: black;
+}
+
+.test5 {
+   background-color: white;
+}
+
+/* ### Edit test form ### */
+#testEditForm div {
+}
+
+#scriptInput {
+   background-color: #cec;
+   margin: .5em;
+   padding: .5em;
+}
+
+.colourBox1 {
+   background-color: #cce;
+   border: 1px solid #00e;
+   margin: .5em;
+   padding: .5em;
+   min-width: 45%;
+   float: left;
+}
+
+.colourSubBox1 {
+   background-color: #ddf;
+   margin: .25em;
+   padding: 0.2em;
+   overflow: hidden;
+   /* border: 1px solid #00e; */
+}
+
+.colourBox0 {
+   background-color: #cec;
+   margin: .5em;
+   padding: .5em;
+   border: 1px solid #0e0;
+   min-width: 45%;
+   float: left;
+
+}
+
+.colourSubBox0 {
+   background-color: #dfd;
+   margin: .25em;
+   padding: 0.2em;
+   overflow: hidden;
+   /* border: 1px solid #00e; */
+}
+
+.lrel {
+   margin: 0;
+   padding: 0;
+   /* border: 1px solid darkgreen; */
+   overflow: none;
+}
+
+.lflt {
+   margin-left: .5em;
+   margin-right: .5em;
+   margin-top: 0;
+   margin-bottom: 0;
+   padding: 0;
+   float: left;
+   /* border: 1px solid red; */
+}
