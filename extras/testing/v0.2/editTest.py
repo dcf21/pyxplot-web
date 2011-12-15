@@ -13,6 +13,8 @@ cgitb.enable()
 from general import *
 from web import *
 
+divcount = 0
+
 # Test edit page
 def editTest():
 
@@ -61,7 +63,7 @@ def editTest():
    if (len(warnings)>0):
       page += "<h3 style='color: red'>Warnings</h3><p style='color:red'>\n"
       for warning in warnings: page += "%s<br />"%warning
-      page += "</p><hr />\n"
+      page += "</p>\n"
 
    # If we get back from parsing the page then we need to re-issue the edit page
    page += renderTestEditMain(id,testCursor,cursor)
@@ -202,7 +204,6 @@ def renderTestEditHead(id,testCursor, cursor):
    page = makePageTop("PyXPlot test interface: edit test", "index.css", cursor)
    page += "<h2>PyXPlot test interface</h2>\n"
    page += "<p>Editing test id %s\n"%(id)  #  (<a href='../tests/%s' target='_blank'>view test</a> | <a href='edit.py?id=%s'>reload</a> discarding unsaved changes ).  Go to <a href='editors.py' target='_blank'>editors' interface</a></p>\n"%(id,filename,id)
-   page += "<hr>\n"
    return page
 
 
@@ -217,7 +218,7 @@ def renderTestEditMain(id,testCursor,cursor):
    page = ''
    nsub = {"i": 0}
    # Big form'o'doom
-   page += "</p>\n"
+   page += '</p>\n<div id="testEditForm">\n'
    page += '<form action="editTest.html" method="post" id="tehform">\n'
    page += "<input type='hidden' name='id' value='%s' />\n"%(id)
    page += "<input type='hidden' name='hidden' value='a' />\n"
@@ -230,8 +231,9 @@ def renderTestEditMain(id,testCursor,cursor):
    page += renderRadioButton("Mode", "mode", mode, ["normal", "require no error", "require error"])
    # page += 'Visible: <input type="checkbox" name="visible" %s /><br />'%(visible)
    page += subBut(nsub)
+   page += '<div class="colourBox%s">\n'%(dvcount())
    page += renderInputControl("script", "tests", "Script", 100, 10, id, testCursor)
-   page += "<br />"
+   page += "</div>\n"
 
    # Inputs
    page += renderTestInputs(id, testCursor,cursor, nsub)
@@ -241,7 +243,7 @@ def renderTestEditMain(id,testCursor,cursor):
 
 
    page += subBut(nsub)
-   page += '</p></form>'
+   page += '</form></div>'
 
    # page += "<p><a href='edit.py'>clear</a></p>\n"
    page += getFromDB('SELECT text FROM htmlchunks WHERE (name=?);',("footer",),cursor)
@@ -250,15 +252,17 @@ def renderTestEditMain(id,testCursor,cursor):
 
 def renderTestOutputs(id, testCursor, cursor, nsub):
    # Render pre-existing inputs
-   text = u"<hr /><b>Outputs</b><br />\n"
+   text = u'<div class="colourBox%s"><b>Outputs</b><br />\n'%(dvcount())
    for outpt in testCursor.execute("SELECT id, filename, special, mode, fid, diffrules  FROM outputs WHERE (tid=?);", (id,)).fetchall():
       text += renderTestOutput(id,outpt,testCursor)
    # Render a blank output
    text += renderTestOutput(id,[-1,"",2,0,-1,-1], testCursor)
+   text += "</div>\n"
    return text
 
 def renderTestOutput(id, data,testCursor):
-   text = u""
+   global divcount
+   text = u'<div class="colourSubBox%s">\n'%(divcount)
    (oid, ofn, osp, omd, ofid, odif) = data
    prefix = u"oup_%s_"%oid
    # Radio button for special
@@ -299,39 +303,44 @@ def renderTestOutput(id, data,testCursor):
    text += renderRadioButton("Diff rules", "%s%s"%(prefix, "diffrules"), odifp, ["Default", "None", "Custom (below)"])
    text += renderInputControlFromString("%s%s"%(prefix,"diffrutxt"), "", 50, 4, diffrules)
 
-   
+   text += "</div>\n"
    return text
 
+def dvcount():
+   global divcount
+   divcount = (divcount+1)%2
+   return divcount
 
 def renderTestInputs(id, testCursor, cursor, nsub):
    # Render pre-existing inputs
-   text = u"<hr /><b>Inputs</b><br />\n"
+   text = u'<div class="colourBox%s"><b>Inputs</b><br />\n'%(dvcount())
    for inpt in testCursor.execute("SELECT id, filename, special  FROM inputs WHERE (tid=?);", (id,)).fetchall():
       text += renderTestInput(id,inpt,testCursor)
    # Render a blank input
    text += renderTestInput(id,[-1,"",1], testCursor)
+   text += "</div>\n"
    return text
 
 def renderTestInput(id, data,testCursor):
-   text = u""
+   global divcount
+   text = u'<div class="colourSubBox%s">\n'%(divcount)
    iid = data[0]
    ifn = data[1]
    isp = data[2]
    prefix = u"inp_%s_"%iid
    # Radio button
-   text += renderRadioButton("Input", "%s%s"%(prefix,"special"), isp, ["stdin", "file"])
+   text += divit(renderRadioButton("Input", "%s%s"%(prefix,"special"), isp, ["stdin", "file"]),"lflt")
    # Existing input: Cannot choose filename
    if (iid>=0):
-      text += "Filename: %s<br />"%(ifn)
+      text += divit("Filename: %s"%(ifn),"lflt")
    else:
-      # Filename box
-      text += renderInputControlFromString("%s%s"%(prefix,"filename"), "", 50, 0, ifn)
-      # Option box
-      text += renderOptionBox("filename", "inputs", "%s%s"%(prefix, "selfn"), ["", ""], testCursor)
-      text += "<br />"
+      # Filename box and option box (XXX WTF Firefox)
+      temp = renderInputControlFromString("%s%s"%(prefix,"filename"), "Filename", 50, 0, ifn)
+      temp += renderOptionBox("filename", "inputs", "%s%s"%(prefix, "selfn"), ["", ""], testCursor)
+      text += divit(temp,"lflt")
       # Contents
-      text += renderInputControlFromString("%s%s"%(prefix,"text"), "File contents", 100, 10, "")
-      text += "<br />"
+      text += divit(renderInputControlFromString("%s%s"%(prefix,"text"), "File contents", 100, 10, ""), "lflt")
+   text += "</div>\n"
    return text
 
 

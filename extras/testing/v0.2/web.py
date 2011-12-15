@@ -45,6 +45,11 @@ def makeHttpHeaders():
    str += "\n\n"     # HTML follows
    return str
 
+# Wrap something in a simple div
+def divit(text, dname):
+   return u'<div class="%s">%s</div>\n'%(dname, text)
+
+
 # Make the stuff at the top of all the pages
 def makePageTop(title, css, cursor):
    import re
@@ -163,7 +168,7 @@ def renderInputControl(field, table, name, w, h, id, cursor):
 
 def renderInputControlFromString(formname, name, w, h, val):
    if (h==0): return '%s: <input type="text" name="%s" value="%s" size="%s" />\n'%(name, formname, cgi.escape(val,True),w)
-   else     : return '%s<br />\n<textarea name="%s" rows=%s cols=%s >\n%s</textarea>\n'%(name,formname,h,w,cgi.escape(val,True))
+   else     : return '<div class="lrel">%s</div>\n<textarea name="%s" rows="%s" cols="%s" >\n%s</textarea>\n'%(name,formname,h,w,cgi.escape(val,True))
 
 def renderOptionBox(field, table, formname, default, cursor):
    options = cursor.execute("SELECT %s,id FROM %s;"%(field,table)).fetchall()
@@ -171,13 +176,13 @@ def renderOptionBox(field, table, formname, default, cursor):
    found = False
    for option in options:
       if (option[1] == default[1]):
-         sel = " selected"
+         sel = ' selected="selected"'
          found = True
       else:
          sel = ""
       text += '<option %s label="%s" value="%s" />\n'%(sel,option[0],option[1])
    if (not found):
-      text += '<option selected label="%s" value="%s" />\n'%(default[0],default[1])
+      text += '<option selected="selected" label="%s" value="%s" />\n'%(default[0],default[1])
    text += "</select>\n"
    return text
 
@@ -185,7 +190,7 @@ def renderOptionBox(field, table, formname, default, cursor):
 def renderRadioButton(name, formname, value, options):
    text = u"%s: "%name
    for i in range(len(options)):
-      if (i==value): chk = "checked"
+      if (i==value): chk = 'checked="checked"'
       else         : chk = ""
       text += '<input type="radio" name="%s" value="%s" %s />%s\n'%(formname,i,chk,options[i])
    return text
