@@ -58,3 +58,11 @@ def insertIntoFileDB(text, cursor):
    cursor.execute("INSERT INTO files (mode,value) VALUES (?,?);", (0, text))
    fid = cursor.execute("SELECT id FROM files WHERE (mode=? AND value=?);", (0, text)).fetchall()[-1][0]
    return fid
+
+#########
+def addNewTest(d, cursor):
+   for i in ["name", "script"]:
+      if (not i in d):
+         d[i] = ""
+   cursor.execute("INSERT INTO tests (name, script) VALUES (?,?);", (d["name"], d["script"]))
+   return

@@ -13,6 +13,7 @@ cgitb.enable()
 from general import *
 from web import *
 
+
 # Test edit page
 def mainPage():
 
@@ -121,9 +122,19 @@ def renderMainPageMain(testCursor,cursor, partialData):
    page = u''
    nsub = {"i": 0}
 
+   page += renderMainPageAddButtons()
+
    # Set of boxes for ppl version, most recent first
    for (pplId, pplName) in testCursor.execute("SELECT id, name FROM pplversions ORDER BY id DESC;").fetchall():
       page += renderMainPagePplVersionBox(pplId, pplName, cursor, testCursor)
+   return page
+
+def renderMainPageAddButtons():
+   page = u""
+   page += '<div class="pplVersionBox">\n'
+   page += '<div class="pplVersionBoxHead">Tasks<div class="buttonStrip">\n'
+   page += '<a class="runall" href="addTest.html">Add new test</a>'
+   page += '</div>\n</div>\n</div>\n'
    return page
 
 def renderMainPagePplVersionBox(pplId, pplName, cursor, testCursor):
