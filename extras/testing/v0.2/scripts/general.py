@@ -59,6 +59,95 @@ def insertIntoFileDB(text, cursor):
    fid = cursor.execute("SELECT id FROM files WHERE (mode=? AND value=?);", (0, text)).fetchall()[-1][0]
    return fid
 
+def gcdbsAndErr(dbs, err):
+   gcdb(dbs[0], dbs[1])
+   errPage(err)
+   exit(1)
+
+# Logging
+def log(string):
+   import time, os
+   pid = os.getpid()
+   dts = time.asctime(time.localtime())
+   print "[%s] %s: %s"%(pid,dts,string)
+
+####################################################
+# Routines taken from the test run backend         #
+####################################################
+
+# Obtain the output produced by a test
+def obtainObtainedOutput(tid, oid, iid, cursor):
+   fid = cursor.execute("SELECT fid FROM instoutmap WHERE (iid=? AND oid=?);", (iid, oid)).fetchall()
+   if (len(fid)==0): 
+      log("  No contents found for output %s"%oid)
+      return ""
+   elif (len(fid)!=1):
+      log("Error: odd fid result %s"%fid)
+   fid = fid[0][0]
+   fdetails = cursor.execute("SELECT mode, value FROM files WHERE (id=?);", (fid,)).fetchall()
+   if (len(fdetails)==0):
+      log("  Stored file %s appears to be missing!"%fid)
+      return ""
+   (fmode, fval) = fdetails[0]
+   return obtainFileContents(fmode,fval)
+
+
+# Obtain the output expected from a test
+def obtainExpectedOutput(tid, oid, mode, fid, Sobtained, cursor):
+   # mode=0 => Compare against previous, 1=> Compare against stored value
+   if (mode==0):
+      previous = cursor.execute("SELECT iom.fid FROM instoutmap iom LEFT JOIN insttestmap itm ON (iom.iid=itm.iid) WHERE (itm.tid=? AND iom.oid=? AND itm.state=?);", (tid, oid, 2)).fetchall()
+      if (len(previous)==0): 
+         log("  No previous values found for output %s; taking input as canon"%oid)
+         return Sobtained
+      fid = previous[-1][0]
+      log("  fid for previous value of output %s is %s"%(oid,fid))
+   fdetails = cursor.execute("SELECT mode, value FROM files WHERE (id=?);", (fid,)).fetchall()
+   if (len(fdetails)==0):
+      log("  Stored file %s appears to be missing!"%fid)
+      return ""
+   (fmode, fval) = fdetails[0]
+   return obtainFileContents(fmode,fval)
+
+def obtainFileContents(mode, value):
+   text = u""
+   if (int(mode)==0): return value
+   else:
+      fp = open(value, "r")
+      try: text = fp.read()
+      except:
+         fp.close()
+         raise
+      fp.close()
+      return text
+
+def obtainDiffRules(idr, special, filename, cursor):
+   import re
+   if (idr==0): diffrules = []
+   elif (idr==-1):    # Default diff rules
+      if (special!=2): diffrules = []
+      else:
+         temp = re.search(r"\.[a-zA-Z0-9]+$", filename)
+         if (temp==None):
+            log("  Warning: failed to detect file type for %s; falling back to no diff rules"%filename)
+            diffrules = []
+         else:
+            ending = temp.group(0)[1:]
+            temp2 = getPossibleItemFromDB("SELECT rules FROM diffrules WHERE (extension=?);", (ending,), cursor)
+            if (temp2==None): 
+               log("  Warning: no diff rules found for ending %s"%(ending))
+               diffrules = []
+            else: 
+               diffrules = temp2.split("\n")
+   else:
+      temp = getPossibleItemFromDB("SELECT rules FROM diffrules WHERE (id=?);", (idr,), cursor)
+      if (temp==None):
+         log("  Warning: diff rules set %s not found"%idr)
+         diffrules = []
+      else:
+         diffrules = temp.split("\n")
+   return diffrules
+
 #########
 def addNewTest(d, cursor):
    for i in ["name", "script"]:

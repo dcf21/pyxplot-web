@@ -142,7 +142,7 @@ def renderMainPagePplVersionBox(pplId, pplName, cursor, testCursor):
    page += '<div class="pplVersionBox">\n<div class="pplVersionBoxHead">PyXPlot version %s\n'%(pplName)
    page += '<div class="buttonStrip">'
    for (a,b) in [["all", "all"], ["new","new"], ["fail", "failed"]]:
-      page += '<a class="run%s" href="runtests.html?act=run%s%s">Run %s</a> - '%(a,a,pplId,b)
+      page += '<a class="run%s" href="runtests.html?act=run%s_%s">Run %s</a> - '%(a,a,pplId,b)
    page = '%s </div></div>\n <div class="testResults">'%(page[:-3])
    testResults = updateTestResults(pplId, testCursor)
    page += renderTestResults(pplId, testCursor, testResults)

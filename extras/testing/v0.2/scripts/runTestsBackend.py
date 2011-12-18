@@ -22,25 +22,32 @@ instanceCache = {}
 # Main routine
 def runTestsBackend(options):
    # Initial setup
+   log("Test system: initialising")
    initTestBackend(options)
 
    # Take out the lock on running tests
    if (not takeOutTestRunLock()): 
-      log("Failed to take out test run lock; aborting")
+      log(" Failed to take out test run lock; aborting")
       return
+   else:
+      log(" Sucesfully aquired test lock")
 
    # Loop, carring out tests
    while (True):
       testsToRun = getPendingTests()
-      log("Retrieved %s tests"%(len(testsToRun)))
+      log(" Retrieved %s tests"%(len(testsToRun)))
       if (len(testsToRun)==0): break
       for test in testsToRun: 
+         log(" Running test iid=%s tid=%s"%(test[0],test[1]))
          result = runTest(test, options)
-         log("Run test with result %s"%result)
+         log("  Run test with result %s"%result)
          removeFromPendingTests(test)
 
    # Finished: give the lock back again
+   log(" About to return test lock")
    releaseTestRunLock()
+   log("Sucesfully completed testing PyXPlot")
+   log("")
    return
 
 # Run a test
@@ -125,7 +132,7 @@ def runTest(test, options):
          Sobtained = fp.read()
          fp.close()
       except:    # The test did not produce this required output
-         log("Test failed to produce output %s"%filename)
+         log("  Test failed to produce output %s"%filename)
          passed = False
          Sobtained = ""
 
@@ -133,33 +140,7 @@ def runTest(test, options):
       Sexpected = obtainExpectedOutput(tid, oid, int(mode), fid, Sobtained, cursor)
 
       # Diff rules
-      idr = int(idr)
-      if (idr==0): diffrules = []
-      elif (idr==-1):    # Default diff rules
-         if (special!=2):
-            diffrules = []
-         else:
-            temp = re.search(r"\.[a-zA-Z0-9]+$", filename)
-            if (temp==None):
-               log("Warning: failed to detect file type for %s; falling back to no diff rules"%filename)
-               diffrules = []
-            else:
-               ending = temp.group(0)[1:]
-               temp2 = getPossibleItemFromDB("SELECT rules FROM diffrules WHERE (extension=?);", (ending,), cursor)
-               if (temp2==None): 
-                  log("Warning: no diff rules found for ending %s"%(ending))
-                  diffrules = []
-               else: 
-                  diffrules = temp2.split("\n")
-      else:
-         temp = getPossibleItemFromDB("SELECT rules FROM diffrules WHERE (id=?);", (idr,), cursor)
-         if (temp==None):
-            log("Warning: diff rules set %s not found"%idr)
-            diffrules = []
-         else:
-            diffrules = temp.split("\n")
-                  
-
+      diffrules = obtainDiffRules(int(idr), special, filename, cursor)
 
       # Check this output for correctness
       # log("Testing output %s against %s"%(Sobtained,Sexpected))
@@ -203,50 +184,18 @@ def convertStringToArray(string, diffrules):
 
 
 
-# Obtain the output expected from a test
-def obtainExpectedOutput(tid, oid, mode, fid, Sobtained, cursor):
-   # mode=0 => Compare against previous, 1=> Compare against stored value
-   if (mode==0):
-      previous = cursor.execute("SELECT iom.fid FROM instoutmap iom LEFT JOIN insttestmap itm ON (iom.iid=itm.iid) WHERE (itm.tid=? AND iom.oid=? AND itm.state=?);", (tid, oid, 2)).fetchall()
-      if (len(previous)==0): 
-         log("No previous values found for output %s; taking input as canon"%oid)
-         return Sobtained
-      fid = previous[-1][0]
-      log("fid for previous value of output %s is %s"%(oid,fid))
-   fdetails = cursor.execute("SELECT mode, value FROM files WHERE (id=?);", (fid,)).fetchall()
-   if (len(fdetails)==0):
-      log("Stored file %s appears to be missing!"%fid)
-      return ""
-   (fmode, fval) = fdetails[0]
-   return obtainFileContents(fmode,fval)
-
-
-
-def obtainFileContents(mode, value):
-   text = u""
-   if (int(mode)==0): return value
-   else:
-      fp = open(value, "r")
-      try: text = fp.read()
-      except:
-         fp.close()
-         raise
-      fp.close()
-      return text
-
 
 # Remove a completed test from the list of pending tests
 def removeFromPendingTests(test):
    (connection, cursor) = openaDB("ppltest.db")
    pendingTests = cursor.execute("DELETE FROM pendingTests WHERE (iid=? AND tid=?);", (test[0], test[1])).fetchall()
-   log("Removed test")
+   log(" Removed test")
    gcdb(connection, cursor)
 
 # Obtain a list of pending tests from the database
 def getPendingTests():
    (connection, cursor) = openaDB("ppltest.db")
    pendingTests = cursor.execute("SELECT iid, tid FROM pendingTests;").fetchall()
-   log("Retrieved tests")
    gcdb(connection, cursor)
    return pendingTests
 
@@ -272,9 +221,4 @@ def initTestBackend(options):
    options["workdir"] = tempfile.mkdtemp() + '/'
    return
 
-# Logging
-def log(string):
-   print string
-
-log("Hellllooooooo")
 runTestsBackend(options)

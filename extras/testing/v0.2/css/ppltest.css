@@ -1,6 +1,7 @@
 .pplVersionBox {
    background-color: #ddf;
    border: 1px solid salmon;
+   margin-bottom: 0.25em;
 }
 
 .pplVersionBox div {
