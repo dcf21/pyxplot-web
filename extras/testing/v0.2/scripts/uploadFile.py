@@ -77,10 +77,7 @@ def parseFileUploadSubmission(id, form, cursor, warnings, updates):
    if (len(warnings)!=0): return uploadOutcome
 
    # Insert the file into the database
-   cursor.execute("INSERT INTO files (mode) VALUES (?);", (1,))
-   id = getFromDB('SELECT id FROM files WHERE mode=? ORDER BY id DESC LIMIT 1;', (1,), cursor)
-   fn = buildFileString(id)
-   cursor.execute("UPDATE files SET value=? WHERE id=?;", (fn, id))
+   (id, fn) = insertInPlaceFileRecord(cursor)
 
    # Write the file to disc
    fp = open(fn, "w")

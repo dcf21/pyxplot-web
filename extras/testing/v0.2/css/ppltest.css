@@ -74,6 +74,7 @@
 }
 .testOutputHeader {
    background: #ddddff;
+   font-weight: bold;
 }
 .testLineContainer {
    overflow: hidden;
@@ -82,6 +83,13 @@
    border: 1px solid #00aa00;
    background: #ddffdd;
    margin: 0.2em;
+}
+.passedTestLine {
+   float: left;
+   width: 49%;
+   margin: .2em;
+   border: 1px solid blue;
+   background: #ddddff;
 }
 .failedTestLine {
    float: left;
@@ -193,4 +201,11 @@ h2 {
 h2 a {
    text-decoration: none;
    color: blue;
+}
+
+.warning {
+   margin: 0.5em;
+   padding: 0.5em;
+   border: 1px solid red;
+   background-color: salmon;
 }

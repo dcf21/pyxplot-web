@@ -51,7 +51,7 @@ def divit(text, dname):
 
 
 # Make the stuff at the top of all the pages
-def makePageTop(title, css, cursor):
+def makePageTop(title, css, cursor, headExtra = ""):
    import re
    text = u""
    # Pre-title text
@@ -62,6 +62,8 @@ def makePageTop(title, css, cursor):
    # Ugly hack!
    if (css != None): text = re.sub(r"recipe.css", css, text)
    text += u'<h2><a href="mainPage.html">PyXPlot test interface</a>: %s</h2>\n'%(title)
+   # And another one!
+   text = re.sub(r"</head>", headExtra + "</head>", text)
    return text
 
 def makePageHead(title, cursor):

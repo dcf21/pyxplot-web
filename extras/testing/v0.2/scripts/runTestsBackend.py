@@ -190,18 +190,11 @@ def getPendingTests():
 
 # Take out lock on running tests
 def takeOutTestRunLock():
-   (connection, cursor) = openaDB("lock.db")
-   N = getFromDB("SELECT COUNT(*) FROM locks WHERE (id=?);", (1,), cursor) 
-   if (N != 0): return False
-   cursor.execute("INSERT INTO locks (id) VALUES (?);", (1,))
-   gcdb(connection, cursor)
-   return True
+   return takeOutLock(1)
 
 # Release lock on running tests
 def releaseTestRunLock():
-   (connection, cursor) = openaDB("lock.db")
-   cursor.execute("DELETE FROM locks WHERE (id=?);", (1,))
-   gcdb(connection, cursor)
+   releaseLock(1)
    return
 
 # Initialise

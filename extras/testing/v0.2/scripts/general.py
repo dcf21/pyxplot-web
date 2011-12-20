@@ -53,6 +53,14 @@ def workdir():
 def buildFileString(id):
    return workdir() + "cache/cache.%s"%(id) 
 
+# Insert a record for an "in-place" file into the files database
+def insertInPlaceFileRecord(cursor):
+   cursor.execute("INSERT INTO files (mode) VALUES (?);", (1,))
+   id = getFromDB('SELECT id FROM files WHERE mode=? ORDER BY id DESC LIMIT 1;', (1,), cursor)
+   fn = buildFileString(id)
+   cursor.execute("UPDATE files SET value=? WHERE id=?;", (fn, id))
+   return(id, fn)
+
 # Insert some text into the files database and return the id for the newly created record
 def insertIntoFileDB(text, cursor):
    cursor.execute("INSERT INTO files (mode,value) VALUES (?,?);", (0, text))
@@ -165,6 +173,21 @@ def convertStringToArray(string, diffrules):
    while (len(l)>0 and l[-1]==""): l.pop()
    return l
 
+
+# LOCKS
+def takeOutLock(lock):
+   (connection, cursor) = openaDB("lock.db")
+   N = getFromDB("SELECT COUNT(*) FROM locks WHERE (id=?);", (lock,), cursor) 
+   if (N != 0): return False
+   cursor.execute("INSERT INTO locks (id) VALUES (?);", (lock,))
+   gcdb(connection, cursor)
+   return True
+
+def releaseLock(lock):
+   (connection, cursor) = openaDB("lock.db")
+   cursor.execute("DELETE FROM locks WHERE (id=?);", (lock,))
+   gcdb(connection, cursor)
+   return
 
 #########
 def addNewTest(d, cursor):

@@ -113,8 +113,8 @@ def hilight(txt): return u'<span class="testOutputHeader">%s</span>'%txt
 def renderTestOutputFailed(ob, ex, filename):
    while (len(ob) < len(ex)): ob.append("")
    while (len(ex) < len(ob)): ex.append("")
-   text = u'<div class="failedTestOutput">Test failed.  Filename: <span class="testOutputHeader">%s</span>\n'%filename
-   text += u'<div class="testLineContainer"><div class="failedTestLine">Output produced</div><div class="failedTestLine">Output expected</div></div>\n'
+   text = u'<div class="failedTestOutput">File <span class="testOutputHeader">%s</span> contained the incorrect content\n'%filename
+   text += u'<div class="testLineContainer"><div class="passedTestLine">Output produced</div><div class="passedTestLine">Output expected</div></div>\n'
    for i in range(len(ob)):
       o = ob[i]
       e = ex[i]
@@ -128,15 +128,15 @@ def renderTestOutputFailed(ob, ex, filename):
    return text
 
 def renderTestOutputNone(filename):
-   text = u'<div class="failedTestOutput">Test failed.  Filename: <span class="testOutputHeader">%s</span> was not produced</div>\n'%filename
+   text = u'<div class="failedTestOutput">File <span class="testOutputHeader">%s</span> was not produced</div>\n'%filename
    return text
    
 def renderTestOutputBlank(filename):
-   text = u'<div class="passedTestOutput">Filename: <span class="testOutputHeader">%s</span> was blank</div>\n'%filename
+   text = u'<div class="passedTestOutput">File <span class="testOutputHeader">%s</span> was blank</div>\n'%filename
    return text
 
 def renderTestOutputPassed(content, filename):
-   txt = u'<div class="passedTestOutput"><div class="testOutputHeader">%s</div>\n'%filename 
+   txt = u'<div class="passedTestOutput">File <span class="testOutputHeader">%s</span> correctly contained the following content\n'%filename 
    for i in content:
       txt += u'<div class="passedTestLine">%s</div>\n'%i
    txt += '</div>\n'

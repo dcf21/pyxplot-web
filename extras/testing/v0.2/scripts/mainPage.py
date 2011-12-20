@@ -107,13 +107,24 @@ def parseFileUploadSubmission(id, form, cursor, warnings, updates):
 
 
 def renderMainPage(id, testCursor, cursor):
-   page = renderMainPageHead(id,testCursor,cursor)
+   page = None
+   # Establish whether a new version of pyxplot is being added
+   (lockCon, lockCur) = openaDB("lock.db")
+   iLock = int(getFromDB("SELECT COUNT(*) FROM locks WHERE (id=2);", [], lockCur))
+   gcdb(lockCon, lockCur)
+   if (iLock != 0):
+      if (page==None): page = makePageTop("Control deck", "index.css", cursor, '<meta http-equiv="refresh" content="10">\n')  
+      page += '<div class="warning">PyXPlot version currently being added.  This page will refresh shortly.</div>\n'
+   # Establish whether there are any tests running
+   Ntests = int(getFromDB("SELECT COUNT(*) FROM pendingTests;", [], testCursor))
+   if (Ntests > 0): 
+      if (page==None): page = makePageTop("Control deck", "index.css", cursor, '<meta http-equiv="refresh" content="10">\n')  
+      page += '<div class="warning">%s tests are currently running.  This page will refresh shortly.</div>\n'%Ntests
+   
+   if (page==None): page = makePageTop("Control deck", "index.css", cursor)
    page += renderMainPageMain(testCursor, cursor, None)
    return page
 
-def renderMainPageHead(id,testCursor, cursor):
-   page = makePageTop("Control deck", "index.css", cursor)
-   return page
 
 # Produce the html for the main editor page
 def renderMainPageMain(testCursor,cursor, partialData):
