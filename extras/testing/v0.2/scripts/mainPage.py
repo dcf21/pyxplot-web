@@ -142,7 +142,8 @@ def renderMainPageAddButtons():
    page = u""
    page += '<div class="pplVersionBox">\n'
    page += '<div class="pplVersionBoxHead">Tasks<div class="buttonStrip">\n'
-   page += '<a class="runall" href="addTest.html">Add new test</a>'
+   page += '<a class="runall" href="addTest.html">Add new test</a> - '
+   page += '<a class="runall" href="addNewVersionFromSVN.html">Add new version from SVN</a>'
    page += '</div>\n</div>\n</div>\n'
    return page
 
