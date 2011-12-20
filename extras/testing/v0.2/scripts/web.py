@@ -56,11 +56,12 @@ def makePageTop(title, css, cursor):
    text = u""
    # Pre-title text
    text += getFromDB('SELECT text FROM htmlchunks WHERE (name=?);',("pretitlehead",),cursor)
-   text += title
+   text += u"PyXPlot test interface: %s"%title
    # Post-title
    text += getFromDB('SELECT text FROM htmlchunks WHERE (name=?);',("posttitlehead",),cursor)
    # Ugly hack!
    if (css != None): text = re.sub(r"recipe.css", css, text)
+   text += u'<h2><a href="mainPage.html">PyXPlot test interface</a>: %s</h2>\n'%(title)
    return text
 
 def makePageHead(title, cursor):
@@ -167,8 +168,8 @@ def renderInputControl(field, table, name, w, h, id, cursor):
    return text
 
 def renderInputControlFromString(formname, name, w, h, val):
-   if (h==0): return '%s: <input type="text" name="%s" value="%s" size="%s" />\n'%(name, formname, cgi.escape(val,True),w)
-   else     : return '<div class="lrel">%s</div>\n<textarea name="%s" rows="%s" cols="%s" >\n%s</textarea>\n'%(name,formname,h,w,cgi.escape(val,True))
+   if (h==0): return '<div class="linl">%s: <input type="text" name="%s" value="%s" size="%s" /></div>\n'%(name, formname, cgi.escape(val,True),w)
+   else     : return '<div class="linl">%s</div>\n<div class="lrel"><textarea name="%s" rows="%s" cols="%s" >\n%s\n</textarea></div>\n'%(name,formname,h,w,cgi.escape(val,True))
 
 def renderOptionBox(field, table, formname, default, cursor):
    options = cursor.execute("SELECT %s,id FROM %s;"%(field,table)).fetchall()
@@ -500,3 +501,7 @@ def makeIngredientsList(ridlist, cursor):
    return text
 
    
+def gcdbsAndErr(dbs, err):
+   gcdb(dbs[0], dbs[1])
+   errPage(err)
+   exit(1)

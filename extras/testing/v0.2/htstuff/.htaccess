@@ -16,3 +16,4 @@ RewriteRule ^addTest.html$ scripts/addTest.py
 RewriteRule ^uploadFile.html$ scripts/uploadFile.py
 RewriteRule ^mainPage.html$ scripts/mainPage.py
 RewriteRule ^runtests.html scripts/runTestsFrontend.py
+RewriteRule ^viewtest.html scripts/viewTestResults.py

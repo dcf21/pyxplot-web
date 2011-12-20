@@ -1,6 +1,5 @@
 .pplVersionBox {
    background-color: #ddf;
-   border: 1px solid salmon;
    margin-bottom: 0.25em;
 }
 
@@ -34,7 +33,6 @@
 
 .testResults {
    background-color: #dfd;
-   border: 1px solid darkgreen;
    overflow: hidden;
 }
 
@@ -69,36 +67,79 @@
 #testEditForm div {
 }
 
+.failedTestOutput {
+   border: 1px solid red;
+   background: #ffdddd;
+   margin: 0.2em;
+}
+.testOutputHeader {
+   background: #ddddff;
+}
+.testLineContainer {
+   overflow: hidden;
+}
+.passedTestOutput {
+   border: 1px solid #00aa00;
+   background: #ddffdd;
+   margin: 0.2em;
+}
+.failedTestLine {
+   float: left;
+   width: 49%;
+   margin: .2em;
+   border: 1px solid salmon;
+}
+
 #scriptInput {
    background-color: #cec;
    margin: .5em;
    padding: .5em;
 }
 
-.colourBox1 {
-   background-color: #cce;
-   border: 1px solid #00e;
+.colourBox2 {
+   background-color: #ecc;
    margin: .5em;
    padding: .5em;
+   overflow: hidden;
+}
+
+.colourSubBox2 {
+   background-color: #fdd;
+   margin: .25em;
+   padding: 0.2em;
    min-width: 45%;
    float: left;
+}
+
+.hl2 {
+   background-color: #fee;
+}
+
+
+.colourBox1 {
+   background-color: #cce;
+   margin: .5em;
+   padding: .5em;
+   overflow: hidden;
 }
 
 .colourSubBox1 {
    background-color: #ddf;
    margin: .25em;
    padding: 0.2em;
-   overflow: hidden;
-   /* border: 1px solid #00e; */
+   min-width: 45%;
+   float: left;
+}
+
+.hl1 {
+   background-color: #eef;
 }
 
 .colourBox0 {
    background-color: #cec;
    margin: .5em;
    padding: .5em;
-   border: 1px solid #0e0;
-   min-width: 45%;
-   float: left;
+   overflow: hidden;
 
 }
 
@@ -106,15 +147,24 @@
    background-color: #dfd;
    margin: .25em;
    padding: 0.2em;
-   overflow: hidden;
-   /* border: 1px solid #00e; */
+   min-width: 45%;
+   float: left;
+}
+
+.hl0 {
+   background-color: #efe;
 }
 
 .lrel {
    margin: 0;
    padding: 0;
-   /* border: 1px solid darkgreen; */
    overflow: none;
+}
+
+.linl {
+   margin: 0;
+   padding: 0;
+   display: inline;
 }
 
 .lflt {
@@ -124,5 +174,23 @@
    margin-bottom: 0;
    padding: 0;
    float: left;
-   /* border: 1px solid red; */
+}
+
+.cl {
+   clear: left;
+}
+
+.hilight {
+   background: #ffcccc;
+}
+
+h2 {
+  text-align: center;
+  margin: 1em;
+  background-color: #ffddff;
+}
+
+h2 a {
+   text-decoration: none;
+   color: blue;
 }

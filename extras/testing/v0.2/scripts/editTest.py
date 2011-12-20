@@ -133,12 +133,12 @@ def parseTestEditSubmission(id, form, cursor, warnings, updates):
       # Content if comparing against stored content
       if (omd==1):
          outputCmpTxt = form.getfirst("%s%s"%(prefix,"outcmptxt"))
-         if (fid<0): # New file
+         if (ofid<0): # New file
             if (outputCmpTxt==None): outputCmpTxt = ""
             cursor.execute("INSERT INTO files (mode,value) VALUES (?,?);", (0,outputCmpTxt))
-            fid = cursor.execute("SELECT id FROM files WHERE (mode=? AND value=?);", (mode, outputCmpTxt)).fetchall()[-1]
+            ofid = cursor.execute("SELECT id FROM files WHERE (mode=? AND value=?);", (mode, outputCmpTxt)).fetchall()[-1]
          elif (outputCmpTxt != None):
-            cursor.execute("UPDATE files SET value=? WHERE (id=?);", (fid, outputCmpTxt))
+            cursor.execute("UPDATE files SET value=? WHERE (id=?);", (outputCmpTxt, ofid))
 
       # Diff rules content
       nodr = form.getfirst("%s%s"%(prefix, "diffrules"))
@@ -201,12 +201,8 @@ def renderTestEditForm(id, testCursor, cursor):
 
 def renderTestEditHead(id,testCursor, cursor):
    name = getFromDB("SELECT name FROM tests WHERE id=?;", (id, ), testCursor)
-   page = makePageTop("PyXPlot test interface: edit test", "index.css", cursor)
-   page += "<h2>PyXPlot test interface</h2>\n"
-   page += "<p>Editing test id %s\n"%(id)  #  (<a href='../tests/%s' target='_blank'>view test</a> | <a href='edit.py?id=%s'>reload</a> discarding unsaved changes ).  Go to <a href='editors.py' target='_blank'>editors' interface</a></p>\n"%(id,filename,id)
+   page = makePageTop("Edit test", "index.css", cursor)
    return page
-
-
 
 
 def subBut(dic):
@@ -215,6 +211,7 @@ def subBut(dic):
    
 # Produce the html for the main editor page
 def renderTestEditMain(id,testCursor,cursor):
+   global divcount
    page = ''
    nsub = {"i": 0}
    # Big form'o'doom
@@ -222,21 +219,32 @@ def renderTestEditMain(id,testCursor,cursor):
    page += '<form action="editTest.html" method="post" id="tehform">\n'
    page += "<input type='hidden' name='id' value='%s' />\n"%(id)
    page += "<input type='hidden' name='hidden' value='a' />\n"
-   page += subBut(nsub)
 
    # Render the obvious content
-   page += renderInputControl("name", "tests", "Test name", 100, 0, id, testCursor)
-   page += "<br />"
-   mode = getFromDB("SELECT mode FROM tests WHERE id IS ?", (id,), testCursor)
-   page += renderRadioButton("Mode", "mode", mode, ["normal", "require no error", "require error"])
-   # page += 'Visible: <input type="checkbox" name="visible" %s /><br />'%(visible)
+   page += u'<div class="colourBox%s"><b>Basic data (test id=<span class="hl%s">%s</span>)</b>\n'%(dvcount(), divcount,id)
    page += subBut(nsub)
-   page += '<div class="colourBox%s">\n'%(dvcount())
-   page += renderInputControl("script", "tests", "Script", 100, 10, id, testCursor)
-   page += "</div>\n"
+   page += u'<div class="lrel">\n'
+   page += renderInputControl("name", "tests", "Test name", 100, 0, id, testCursor)
+   page += "</div>"
+   mode = getFromDB("SELECT mode FROM tests WHERE id IS ?", (id,), testCursor)
+   page += u'<div class="lrel">\n'
+   page += renderRadioButton("Mode", "mode", mode, ["normal", "require no error", "require error"])
+   page += "</div>"
+   page += "</div>"
+   # page += 'Visible: <input type="checkbox" name="visible" %s /><br />'%(visible)
+
+   # Script and inputs
+   page += u'<div class="colourBox%s"><b>Inputs</b>\n'%(dvcount())
+   page += subBut(nsub)
+   page += u'<div class="lrel">\n'
+   page += u'<div class="colourSubBox%s">\n'%(divcount)
+   # page += '<div class="colourBox%s">\n'%(dvcount())
+   page += renderInputControl("script", "tests", "Script", 50, 10, id, testCursor)
+   page += u'</div>'
 
    # Inputs
    page += renderTestInputs(id, testCursor,cursor, nsub)
+   # page += "</div>\n"
 
    # Outputs
    page += renderTestOutputs(id, testCursor, cursor, nsub)
@@ -251,22 +259,34 @@ def renderTestEditMain(id,testCursor,cursor):
 
 
 def renderTestOutputs(id, testCursor, cursor, nsub):
-   # Render pre-existing inputs
-   text = u'<div class="colourBox%s"><b>Outputs</b><br />\n'%(dvcount())
-   for outpt in testCursor.execute("SELECT id, filename, special, mode, fid, diffrules  FROM outputs WHERE (tid=?);", (id,)).fetchall():
-      text += renderTestOutput(id,outpt,testCursor)
+   text = u'<div class="colourBox%s"><b>Outputs</b>\n'%(dvcount())
+   text += subBut(nsub)
+   text += u'<div class="lrel">\n'
    # Render a blank output
    text += renderTestOutput(id,[-1,"",2,0,-1,-1], testCursor)
-   text += "</div>\n"
+   Noup = 1
+   # Render pre-existing outputs
+   for outpt in testCursor.execute("SELECT id, filename, special, mode, fid, diffrules  FROM outputs WHERE (tid=?);", (id,)).fetchall():
+      text += renderTestOutput(id,outpt,testCursor)
+      Noup += 1
+      if (Noup % 2 == 0):
+         text += u'<div class="cl"></div></div>\n<div class="lrel">\n'
+   text += '<div class="cl"></div></div>\n</div>\n'
    return text
 
 def renderTestOutput(id, data,testCursor):
    global divcount
-   text = u'<div class="colourSubBox%s">\n'%(divcount)
    (oid, ofn, osp, omd, ofid, odif) = data
    prefix = u"oup_%s_"%oid
    # Radio button for special
-   text += renderRadioButton("Output", "%s%s"%(prefix,"special"), osp, ["stdout", "stderr", "file"])
+   if (int(oid)==-1): 
+      tmp = "New output"
+      dc = 2
+   else:              
+      tmp = "Old output"
+      dc = divcount
+   text = u'<div class="colourSubBox%s">\n'%(dc)
+   text += renderRadioButton(tmp, "%s%s"%(prefix,"special"), osp, ["stdout", "stderr", "file"])
    # Filename
    text += renderInputControlFromString("%s%s"%(prefix,"filename"), "", 50, 0, ofn)
    text += "<br />"
@@ -312,73 +332,50 @@ def dvcount():
    return divcount
 
 def renderTestInputs(id, testCursor, cursor, nsub):
-   # Render pre-existing inputs
-   text = u'<div class="colourBox%s"><b>Inputs</b><br />\n'%(dvcount())
-   for inpt in testCursor.execute("SELECT id, filename, special  FROM inputs WHERE (tid=?);", (id,)).fetchall():
-      text += renderTestInput(id,inpt,testCursor)
+   # text = u'<div class="colourBox%s"><b>Inputs</b><br />\n'%(dvcount())
    # Render a blank input
-   text += renderTestInput(id,[-1,"",1], testCursor)
-   text += "</div>\n"
+   text = renderTestInput(id,[-1,"",1, None], testCursor)
+   text += u'<div class="cl"></div></div>\n<div class="lrel">\n'
+   Ninp = 0
+   # Render pre-existing inputs
+   for inpt in testCursor.execute("SELECT id, filename, special, fid  FROM inputs WHERE (tid=?);", (id,)).fetchall():
+      text += renderTestInput(id,inpt,testCursor)
+      Ninp += 1
+      if (Ninp % 2 == 0):
+         text += u'<div class="cl"></div></div>\n<div class="lrel">\n'
+   text += '<div class="cl"></div></div>\n</div>\n'
    return text
 
 def renderTestInput(id, data,testCursor):
    global divcount
-   text = u'<div class="colourSubBox%s">\n'%(divcount)
    iid = data[0]
    ifn = data[1]
    isp = data[2]
+   fid = data[3]
    prefix = u"inp_%s_"%iid
+   # First line: radio button and fileanme input
    # Radio button
-   text += divit(renderRadioButton("Input", "%s%s"%(prefix,"special"), isp, ["stdin", "file"]),"lflt")
-   # Existing input: Cannot choose filename
    if (iid>=0):
-      text += divit("Filename: %s"%(ifn),"lflt")
+      # Existing input: Cannot choose filename
+      dc = divcount
+      temp1 = divit("Existing input %s"%([": stdin", ""][isp]),"linl")
+      if (isp==1): temp1 += divit(' file: <span class="hl%s">%s</span>'%(dc,ifn),"linl")
+      if (fid==None): temp2 = u""
+      else:
+         oldFileContents = obtainFileContentsFromDB(fid, testCursor)
+         temp2 = divit(renderInputControlFromString("%s%s"%(prefix,"text"), "File contents", 50, 10, cgi.escape(oldFileContents,True)), "lrel")
    else:
       # Filename box and option box (XXX WTF Firefox)
+      dc = 2
+      temp1 = divit(renderRadioButton("New input", "%s%s"%(prefix,"special"), isp, ["stdin", "file"]),"linl")
       temp = renderInputControlFromString("%s%s"%(prefix,"filename"), "Filename", 50, 0, ifn)
       temp += renderOptionBox("filename", "inputs", "%s%s"%(prefix, "selfn"), ["", ""], testCursor)
-      text += divit(temp,"lflt")
+      temp1 += divit(temp,"linl")
       # Contents
-      text += divit(renderInputControlFromString("%s%s"%(prefix,"text"), "File contents", 100, 10, ""), "lflt")
-   text += "</div>\n"
+      temp2 = divit(renderInputControlFromString("%s%s"%(prefix,"text"), "File contents", 50, 10, ""), "lrel")
+   text = u'<div class="colourSubBox%s">\n'%(dc)
+   text += (divit(temp1, "lrel") + temp2 + "</div>\n")
    return text
-
-
-      
-
-
 
 editTest()
 
-def bar():
-   # The ingredients.  Pain and suffering.
-   page += '<h3>Ingredients</h3><input type="submit" name="sub1" value="Save changes" /><br />\n'
-   # First fetch all the sub-recipes
-   subrlist = cursor.execute("SELECT id,sort,name1,name2 FROM subrecipes WHERE rid=? ORDER BY sort;", (id,)).fetchall()
-   for subr in subrlist:
-      page += "Section heading<br />\n"
-      tlist = [""]
-      if (subr[2]==None): tlist.append("")
-      else              : tlist.append(subr[2])
-      tlist.append(None)
-      tlist.append(None)
-      if (subr[3]==None): tlist.append("")
-      else              : tlist.append(subr[3])
-      page += renderIngredientLine(subr[0],tlist)
-      page += "Ingredients<br />\n"
-
-      # For each sub-test fetch the ingredientlines
-      illist = cursor.execute("SELECT il.id,il.quantity,il.main,il.ingredient,ig.name FROM ingredientlines il LEFT JOIN ingredientlinesmap ilm ON (il.id=ilm.ilid) LEFT JOIN ingredients ig ON ig.id=il.ingredient WHERE ilm.srid=? ORDER BY ilm.sort;", (subr[0],)).fetchall()
-      for il in illist: page += renderIngredientLine(subr[0],il)
-
-      # Blank lines for fresh ingredients
-      for i in range(5): page += renderIngredientLine(subr[0],["new%s"%i,"","FALSE","",""])
-   # One blank subrecipe line
-   page += "New section heading<br />\n"
-   page += renderIngredientLine("new", ["", "", "FALSE", "", ""])
-
-        
-
-
-   page += '<h3>Test method</h3><input type="submit" name="sub2" value="Save changes" /><br />\n'
-   page += renderInputControl("method", "Method", 100, 50, id, cursor)

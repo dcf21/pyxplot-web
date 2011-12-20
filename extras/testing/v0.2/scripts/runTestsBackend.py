@@ -134,7 +134,10 @@ def runTest(test, options):
       except:    # The test did not produce this required output
          log("  Test failed to produce output %s"%filename)
          passed = False
-         Sobtained = ""
+         Sobtained = None
+         # Remove any previous output from database
+         cursor.execute("DELETE FROM instoutmap WHERE (iid=? AND oid=?);", (iid, oid))
+         continue
 
       # Obtain expected output 
       Sexpected = obtainExpectedOutput(tid, oid, int(mode), fid, Sobtained, cursor)
@@ -147,7 +150,9 @@ def runTest(test, options):
 
       obtained = convertStringToArray(Sobtained, diffrules)
       expected = convertStringToArray(Sexpected, diffrules)
-      if (obtained != expected): passed = False
+      if (obtained != expected): 
+         passed = False
+         log("  Obtained output %s whilst expecting %s"%(obtained,expected))
 
       # Insert output into files data base
       fid = getPossibleItemFromDB("SELECT fid FROM instoutmap WHERE (iid=? AND oid=?);", (iid, oid), cursor)
@@ -166,22 +171,6 @@ def runTest(test, options):
 
    return passed
       
-
-def convertStringToArray(string, diffrules):
-   # Convert to arrays and prepare to diff
-   string.replace("\r\n", "\n")    # Windows
-   l = []
-   for i in string.split("\n"):
-      keep = True
-      # Check against the diff rules
-      for dr in diffrules:
-         if re.search(dr, i):
-            keep = False
-            break
-      if (keep): l.append(i)
-   while (len(l)>0 and l[-1]==""): l.pop()
-   return l
-
 
 
 

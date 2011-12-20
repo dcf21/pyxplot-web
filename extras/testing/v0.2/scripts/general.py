@@ -59,11 +59,6 @@ def insertIntoFileDB(text, cursor):
    fid = cursor.execute("SELECT id FROM files WHERE (mode=? AND value=?);", (0, text)).fetchall()[-1][0]
    return fid
 
-def gcdbsAndErr(dbs, err):
-   gcdb(dbs[0], dbs[1])
-   errPage(err)
-   exit(1)
-
 # Logging
 def log(string):
    import time, os
@@ -80,14 +75,14 @@ def obtainObtainedOutput(tid, oid, iid, cursor):
    fid = cursor.execute("SELECT fid FROM instoutmap WHERE (iid=? AND oid=?);", (iid, oid)).fetchall()
    if (len(fid)==0): 
       log("  No contents found for output %s"%oid)
-      return ""
+      return None
    elif (len(fid)!=1):
       log("Error: odd fid result %s"%fid)
    fid = fid[0][0]
    fdetails = cursor.execute("SELECT mode, value FROM files WHERE (id=?);", (fid,)).fetchall()
    if (len(fdetails)==0):
       log("  Stored file %s appears to be missing!"%fid)
-      return ""
+      return None
    (fmode, fval) = fdetails[0]
    return obtainFileContents(fmode,fval)
 
@@ -108,6 +103,12 @@ def obtainExpectedOutput(tid, oid, mode, fid, Sobtained, cursor):
       return ""
    (fmode, fval) = fdetails[0]
    return obtainFileContents(fmode,fval)
+
+def obtainFileContentsFromDB(fid, cursor):
+   fromDB = cursor.execute("SELECT mode, value FROM files WHERE (id=?);", (fid, )).fetchall()
+   if (len(fromDB)<1): return None
+   (mode, value) = fromDB[0]
+   return obtainFileContents(mode, value)
 
 def obtainFileContents(mode, value):
    text = u""
@@ -147,6 +148,23 @@ def obtainDiffRules(idr, special, filename, cursor):
       else:
          diffrules = temp.split("\n")
    return diffrules
+
+def convertStringToArray(string, diffrules):
+   # Convert to arrays and prepare to diff
+   # Excessive formatting  and line ending wankery
+   string = unicode(string).replace("\r\n", "\n").replace("\r", "\n")
+   l = []
+   for i in string.split("\n"):
+      keep = True
+      # Check against the diff rules
+      for dr in diffrules:
+         if re.search(dr, i):
+            keep = False
+            break
+      if (keep): l.append(i)
+   while (len(l)>0 and l[-1]==""): l.pop()
+   return l
+
 
 #########
 def addNewTest(d, cursor):

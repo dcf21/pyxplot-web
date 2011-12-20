@@ -112,9 +112,7 @@ def renderMainPage(id, testCursor, cursor):
    return page
 
 def renderMainPageHead(id,testCursor, cursor):
-   page = makePageTop("PyXPlot test interface: Control deck", "index.css", cursor)
-   page += "<h2>PyXPlot test interface: Control deck</h2>\n"
-   page += "<hr>\n"
+   page = makePageTop("Control deck", "index.css", cursor)
    return page
 
 # Produce the html for the main editor page
@@ -158,7 +156,8 @@ def renderTestResults(pplId, cursor, testResults):
    tids.sort()
    for tid in tids:
       i=testResults[tid]
-      page += '<div class="test%s" title="test %s - %s - %s"></div>'%(i["state"],tid,i["name"],states[i["state"]-1][0])
+      # page += '<div class="test%s" title="test %s - %s - %s"></div>'%(i["state"],tid,i["name"],states[i["state"]-1][0])
+      page += '<a href="viewtest.html?iid=%s&tid=%s"><div class="test%s" title="test %s - %s - %s"></div></a>'%(pplId,tid,i["state"],tid,i["name"],states[i["state"]-1][0])
       #page += '<div class="test%s" title="test %s - %s - %s">%s</div>'%(i["state"],tid,i["name"],states[i["state"]-1][0],tid)
    return page
 
