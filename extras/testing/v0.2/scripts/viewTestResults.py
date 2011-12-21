@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import cgi, re, sys, os
+import cgi, re, sys, os, tempfile
 from pysqlite2 import dbapi2 as sqlite
 import cgitb
 
@@ -45,6 +45,13 @@ def viewTestResultsPage():
    (istate, sstate)  = cursor.execute("SELECT itm.state, ts.text FROM insttestmap itm LEFT JOIN teststates ts ON (ts.id=itm.state) WHERE (itm.tid=? AND itm.iid=?);", (tid, pplid)).fetchall()[0]
    istate = int(istate)
 
+   # Special case: if there are neither inputs nor outputs use python to generate the expected answer
+   if (len(outputs)==0):
+      Ninputs = int(getFromDB("SELECT COUNT(*) FROM inputs WHERE (tid=?);", (tid,), cursor))
+      if (Ninputs == 0): 
+         outputs = [[-1, 0, "", 2, None, None]]
+         script = getFromDB("SELECT script FROM tests WHERE (id=?);", (tid,), cursor)
+
    textPass = u""
    textFail = u""
    for i in outputs:
@@ -54,16 +61,22 @@ def viewTestResultsPage():
       if (special==0):   filename = "stdout"
       elif (special==1): filename = "stderr"
 
-      # Obtain expected output 
-      Sobtained = obtainObtainedOutput(tid, oid, pplid, cursor)
 
+      Sobtained = obtainObtainedOutput(tid, oid, pplid, cursor)
       if (Sobtained == None):
         textFail += renderTestOutputNone(filename)
         continue
-      Sexpected = obtainExpectedOutput(tid, oid, int(mode), fid, Sobtained, cursor)
+
+      # Obtain expected output 
+      if (mode != 2):
+         Sexpected = obtainExpectedOutput(tid, oid, int(mode), fid, Sobtained, cursor)
+         diffrules = obtainDiffRules(int(idr), special, filename, cursor)
+      else:
+         tempdir = tempfile.mkdtemp()
+         Sexpected = obtainExpectedOutputFromScript(script, tempdir)
+         diffrules = []
 
       # Apply diff rules
-      diffrules = obtainDiffRules(int(idr), special, filename, cursor)
       obtained = convertStringToArray(Sobtained, diffrules)
       expected = convertStringToArray(Sexpected, diffrules)
 
@@ -138,7 +151,7 @@ def renderTestOutputBlank(filename):
 def renderTestOutputPassed(content, filename):
    txt = u'<div class="passedTestOutput">File <span class="testOutputHeader">%s</span> correctly contained the following content\n'%filename 
    for i in content:
-      txt += u'<div class="passedTestLine">%s</div>\n'%i
+      txt += u'<div class="testLineContainer"><div class="passedTestLine">%s</div></div>\n'%i
    txt += '</div>\n'
    return txt
 

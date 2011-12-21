@@ -112,6 +112,29 @@ def obtainExpectedOutput(tid, oid, mode, fid, Sobtained, cursor):
    (fmode, fval) = fdetails[0]
    return obtainFileContents(fmode,fval)
 
+# And in the case where we make it with python
+def obtainExpectedOutputFromScript(script, workdir):
+   import os, os.path
+   lines = []
+   for line in script.split("\n"):
+      if (line==""): continue
+      lines.append("print %s"%line)
+   # If some script has been generated, run it and return the output
+   if (len(lines)>0):
+      pythonScript = "\n".join(lines)
+      fn = os.path.join(workdir, "script.py")
+      fp = open(fn, "w")
+      fp.write(pythonScript)
+      fp.close()
+      os.system("cd %s ; python script.py > script.out"%(workdir))
+      fn = os.path.join(workdir, "script.out")
+      fp = open(fn, "r")
+      output = fp.read()
+      fp.close()
+      return output
+   else:
+      return ""
+
 def obtainFileContentsFromDB(fid, cursor):
    fromDB = cursor.execute("SELECT mode, value FROM files WHERE (id=?);", (fid, )).fetchall()
    if (len(fromDB)<1): return None

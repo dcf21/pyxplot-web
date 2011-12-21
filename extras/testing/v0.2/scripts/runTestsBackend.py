@@ -118,6 +118,10 @@ def runTest(test, options):
    outputs = cursor.execute("SELECT id, special, filename, mode, diffrules, fid FROM outputs WHERE (tid=?);", (tid,)).fetchall()
    # outputs = cursor.execute("SELECT o.id, o.special, o.filename, o.mode, o.diffrules, f.mode, f.value FROM outputs o LEFT JOIN files f ON (f.id=o.fid) WHERE (o.tid=?);", (tid,)).fetchall()
 
+   # Special case: if there are neither inputs nor outputs use python to generate the expected answer
+   if (len(inputs)==0 and len(outputs)==0):
+      outputs = [[-1, 0, "", 2, None, None]]
+
    # Capture the outputs
    passed = True
    for i in outputs:
@@ -139,14 +143,15 @@ def runTest(test, options):
          cursor.execute("DELETE FROM instoutmap WHERE (iid=? AND oid=?);", (iid, oid))
          continue
 
-      # Obtain expected output 
-      Sexpected = obtainExpectedOutput(tid, oid, int(mode), fid, Sobtained, cursor)
+      if (mode != 2):
+         # Obtain expected output 
+         Sexpected = obtainExpectedOutput(tid, oid, int(mode), fid, Sobtained, cursor)
 
-      # Diff rules
-      diffrules = obtainDiffRules(int(idr), special, filename, cursor)
-
-      # Check this output for correctness
-      # log("Testing output %s against %s"%(Sobtained,Sexpected))
+         # Diff rules
+         diffrules = obtainDiffRules(int(idr), special, filename, cursor)
+      else:
+         Sexpected = obtainExpectedOutputFromScript(script, options["testdir"])
+         diffrules = []
 
       obtained = convertStringToArray(Sobtained, diffrules)
       expected = convertStringToArray(Sexpected, diffrules)
