@@ -33,13 +33,13 @@ def runTestsPage():
       
 
    # Work out what we're supposed to do
-   mo = re.match("run([a-z]+)_([0-9]+)$", action)
-   if (action==None): gcdbsAndErr(dbs, "You need to tell me what to do!")
+   mo = re.match("run([a-z0-9]+)_([0-9]+)$", action)
+   if (mo==None): gcdbsAndErr(dbs, "You need to tell me what to do!")
 
    atype = mo.group(1)
    pplId = mo.group(2)
 
-   # Test that the ID exists
+   # Test that the ppl version exists
    if (int(getFromDB("SELECT COUNT(*) FROM pplVersions WHERE (id=?);", (pplId,), cursor))!=1):
        gcdbsAndErr(dbs, "Your ppl instance does not exist")
 
@@ -49,13 +49,14 @@ def runTestsPage():
       cursor.execute("INSERT OR IGNORE INTO pendingTests (iid, tid) SELECT ?, itm.tid FROM insttestmap itm WHERE (iid=? AND state=1);", (pplId,pplId))
    elif (atype == "fail"):
       cursor.execute("INSERT OR IGNORE INTO pendingTests (iid, tid) SELECT ?, itm.tid FROM insttestmap itm WHERE (iid=? AND state=3);", (pplId,pplId))
+   elif (re.match("[0-9]+$", atype)):   # Run a particular test
+      cursor.execute("INSERT OR IGNORE INTO pendingTests (iid, tid) VALUES (?,?);", (pplId, atype))
    else:
       gcdbsAndErr(dbs, "Did not understand answer")
 
    # Run the tests
    gcdb(connection, cursor)
-   os.system(os.path.join(workdir(), "scripts", "runTestsBackend.py") + " >> /home/rpc25/ppltestlog &")
-
+   launchTests()
    redirect303("mainPage.html")
 
 

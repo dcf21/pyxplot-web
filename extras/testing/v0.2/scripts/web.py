@@ -502,6 +502,17 @@ def makeIngredientsList(ridlist, cursor):
    text += '</div>\n'
    return text
 
+# Make a button strip to go along the top of a page
+def makeButtonStrip(instructions):
+   page = u""
+   page += '<div class="pplVersionBox">\n'
+   page += '<div class="pplVersionBoxHead">Tasks\n<div class="buttonStrip">\n'
+   for i in instructions:
+      if not "class" in i: i["class"] = "runall"
+      if not "text" in i : i["text"] = ""
+      page += '<a class="%s" href="%s">%s</a>\n'%(i["class"],i["link"],i["text"])
+   page += '</div>\n</div>\n</div>\n'
+   return page
    
 def gcdbsAndErr(dbs, err):
    gcdb(dbs[0], dbs[1])

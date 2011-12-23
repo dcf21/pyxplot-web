@@ -1,4 +1,4 @@
-#!/opt/local/bin/python2.6
+#!/usr/bin/env python2.6
 
 import cgi, re, sys
 from pysqlite2 import dbapi2 as sqlite
@@ -19,7 +19,6 @@ divcount = 0
 def editTest():
 
    # Fire up sqlite
-   (connection, cursor) = openDB()
    (testConnection, testCursor) = openaDB("ppltest.db")
 
    # Check for the id number and sanitise it
@@ -48,6 +47,7 @@ def editTest():
    # Check whether there is an edit to commit
    if (form.getfirst("hidden")==None):
       httpHeaders()
+      (connection, cursor) = openDB()
       page = renderTestEditForm(id, testCursor, cursor)
       sys.stdout.write(page)
       # except: headlessErrPage("Failed to render the test edit form!")
@@ -56,9 +56,18 @@ def editTest():
       return
 
    # Do all the other stuff
-   httpHeaders()
+   testEditFallout = parseTestEditSubmission(id, form, testCursor, warnings, updates)
+   # Set the test as "new" as it has been edited
+   testCursor.execute("UPDATE insttestmap SET state=? WHERE (tid=?);", (1, id))
+
+   # Check to see if the page wanted us to be re-directed away 
+   if ("redirect" in testEditFallout):
+      gcdb(testConnection, testCursor)
+      redirect303(testEditFallout["redirect"])
+   # Other fallout work will go here
+   (connection, cursor) = openDB()
    page = renderTestEditHead(id,testCursor, cursor)
-   page += parseTestEditSubmission(id, form, testCursor, warnings, updates)
+   if ("text" in testEditFallout): page += testEditFallout["text"]
    # Warnings
    if (len(warnings)>0):
       page += "<h3 style='color: red'>Warnings</h3><p style='color:red'>\n"
@@ -70,12 +79,12 @@ def editTest():
    gcdb(testConnection, testCursor)
    gcdb(connection, cursor)
 
+   httpHeaders()
    print page
    return
 
-# Parse the data that we have just got back in our form
+# Parse the data that we have just got back from the test edit form
 def parseTestEditSubmission(id, form, cursor, warnings, updates):
-   page = u''
    for key in ["name", "mode", "script"]:
       data = form.getfirst(key)
       if (data==None): headlessErrPage("Failed to supply item %s to edit script!"%key)
@@ -176,22 +185,29 @@ def parseTestEditSubmission(id, form, cursor, warnings, updates):
          diffrules = cursor.execute("SELECT id FROM diffrules WHERE (rules=?);", (diffrutxt,)).fetchall()[-1]
       cursor.execute("INSERT INTO outputs (tid, special, mode, fid, filename, diffrules) VALUES (?,?,?,?,?,?);", (id, special, mode, fid, filename, diffrules))
       
+   # Find the submit button
+   subs = []
+   output = {}
+   for i in postkeys:
+      if (re.match("sub", i)): subs.append(i)
+   if (len(subs) > 0):  # Should never have more than one of these in normal usage
+      submb = subs[0][:-1]   # Chop off the terminal digit
+      if (submb == "sub"): return
+      if (submb == "subRun"):
+         runTestOnAllVersions(id, cursor)
+         output["redirect"] = "mainPage.html"
+         return output
+      if (submb == "subRet"):
+         output["redirect"] = "mainPage.html"
+         return output
+
    # Wrap up and go home
+   page = u''
    page += "<p>"
    postkeys.sort()
    for i in postkeys: page = "%s %s &nbsp;"%(page,i)
-   return "%s</p>"%page 
-
-
-         
-
-        
-
-      
-      
-      
-
-
+   output["text"] = "%s</p>"%page 
+   return output
 
 
 def renderTestEditForm(id, testCursor, cursor):
@@ -206,8 +222,11 @@ def renderTestEditHead(id,testCursor, cursor):
 
 
 def subBut(dic):
-   return u'<input type="submit" name="sub%s" value="Save" />\n'%dic["i"]
    dic["i"]+=1
+   text =  u'<input type="submit" name="sub%s" value="Save" />\n'%dic["i"]
+   text += u'<input type="submit" name="subRun%s" value="Save and run" />\n'%dic["i"]
+   text += u'<input type="submit" name="subRet%s" value="Save and return" />\n'%dic["i"]
+   return text
    
 # Produce the html for the main editor page
 def renderTestEditMain(id,testCursor,cursor):
@@ -291,7 +310,7 @@ def renderTestOutput(id, data,testCursor):
    text += renderInputControlFromString("%s%s"%(prefix,"filename"), "", 50, 0, ofn)
    text += "<br />"
    # Mode
-   text += renderRadioButton("Mode", "%s%s"%(prefix,"mode"), omd, ["Compare against previous", "Compare against stored output"])
+   text += renderRadioButton("Mode", "%s%s"%(prefix,"mode"), omd, ["Compare against previous", "Compare against stored output", "Compare against python output"])
    text += "<br />"
 
    # Comparison text

@@ -67,6 +67,37 @@ def insertIntoFileDB(text, cursor):
    fid = cursor.execute("SELECT id FROM files WHERE (mode=? AND value=?);", (0, text)).fetchall()[-1][0]
    return fid
 
+# Delete a test thoroughly
+def deleteTest(tid, cursor):
+   cursor.execute("DELETE FROM tests WHERE (id=?);", (tid,))
+   cursor.execute("DELETE FROM pendingTests WHERE (tid=?);", (tid,))
+   cursor.execute("DELETE FROM instTestMap WHERE (tid=?);", (tid,))
+   for i in cursor.execute("SELECT id,fid FROM outputs WHERE (tid=?);", (tid,)).fetchall():
+      (oid, fid) = i
+      deleteFileFromDB(fid, cursor)
+      for j in cursor.execute("SELECT fid FROM instoutmap WHERE (oid=?);", (oid, )).fetchall():
+         deleteFileFromDB(j[0])
+      cursor.execute("DELETE FROM instoutmap WHERE (oid=?);", (oid,));
+   cursor.execute("DELETE FROM outputs WHERE (tid=?);", (tid,))
+   cursor.execute("DELETE FROM inputs WHERE (tid=?);", (tid,))
+   return
+
+def deleteFileFromDB(fid, cursor):
+   # We should do this properly, but running rm is scary
+   cursor.execute("DELETE FROM files WHERE (id=?);", (fid,))
+   return
+
+def runTestOnAllVersions(tid, cursor):
+   cursor.execute("INSERT OR IGNORE INTO pendingTests (iid, tid) SELECT id,? FROM pplVersions;", (tid,))
+   launchTests()
+   return
+
+def launchTests():
+   import os, os.path
+   os.system(os.path.join(workdir(), "scripts", "runTestsBackend.py") + " >> /home/rpc25/ppltestlog &")
+   return
+
+
 # Logging
 def log(string):
    import time, os

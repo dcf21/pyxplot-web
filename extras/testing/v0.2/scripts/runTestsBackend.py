@@ -145,6 +145,7 @@ def runTest(test, options):
 
          # Obtain expected output 
       if (mode == 2):
+         log("  Obtaining expected output from python")
          Sexpected = obtainExpectedOutputFromScript(script, options["testdir"])
       else:
          Sexpected = obtainExpectedOutput(tid, oid, int(mode), fid, Sobtained, cursor)

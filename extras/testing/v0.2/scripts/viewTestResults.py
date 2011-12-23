@@ -38,6 +38,8 @@ def viewTestResultsPage():
    testname = getFromDB("SELECT name FROM tests WHERE (id=?);", (tid,), cursor)
    (pplName, pplSVN) = cursor.execute("SELECT name, svn FROM pplVersions WHERE (id=?);", (pplid,)).fetchall()[0]
 
+   pplName += "(%s)"%pplid
+
    # Obtain expected and produced outputs from test
    outputs = cursor.execute("SELECT id, special, filename, mode, diffrules, fid FROM outputs WHERE (tid=?);", (tid,)).fetchall()
 
@@ -54,6 +56,7 @@ def viewTestResultsPage():
 
    textPass = u""
    textFail = u""
+   script = getFromDB("SELECT script FROM tests WHERE (id=?);", (tid,), cursor)
    for i in outputs:
       (oid, special, filename, mode, idr, fid) = i
       # Correct location for stdout / stdin
@@ -96,12 +99,12 @@ def viewTestResultsPage():
 
    (webConnection, webCursor) = openDB()
    page = makePageTop("Test output", "ppltest.css", webCursor)
-   page += renderTestResultPage(tid, istate, textFail + textPass, testname, pplName, pplSVN)
+   page += renderTestResultPage(tid, istate, textFail + textPass, testname, pplName, pplSVN, pplid)
 
    httpHeaders()
    print page
 
-def renderTestResultPage(tid, istate, txt, testname, pplName, pplSVN):
+def renderTestResultPage(tid, istate, txt, testname, pplName, pplSVN, pplId):
    if (testname == "") : testname = "[no name]"
    if (istate == 1): passfail = "has not yet been run by"
    elif (istate==2): passfail = "passed when run by"
@@ -109,7 +112,11 @@ def renderTestResultPage(tid, istate, txt, testname, pplName, pplSVN):
    elif (istate==4): passfail = "crashed when run by"
    elif (istate==5): passfail = "can not be run by"
    else            : passfail = "is in an <b>undefined state</b> with"
-   text = u'<div><div>Test <a href="editTest.html?id=%s">%s</a> with id %s %s '%(tid,hilight(testname),tid,passfail)
+   editLink = u'editTest.html?id=%s'%tid
+   text = makeButtonStrip([{"link":editLink, "text":"Edit"},
+                           {"link":"confirmDeny.html?tid=%s&act=del"%tid, "text":"Delete"},
+                           {"link":"runtests.html?act=run%s_%s"%(tid,pplId), "text":"Re-run"}])
+   text += u'<div><div>Test <a href="%s">%s</a> with id %s %s '%(editLink,hilight(testname),tid,passfail)
    text += u' PyXPlot version %s (svn %s).'%(hilight(pplName), hilight(pplSVN))
    if (txt != ""):
       text += u'  See output below</div>\n'
