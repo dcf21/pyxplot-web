@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python2.6
 
 import cgi, re, sys, os, tempfile
 from pysqlite2 import dbapi2 as sqlite
@@ -45,12 +45,12 @@ def viewTestResultsPage():
    (istate, sstate)  = cursor.execute("SELECT itm.state, ts.text FROM insttestmap itm LEFT JOIN teststates ts ON (ts.id=itm.state) WHERE (itm.tid=? AND itm.iid=?);", (tid, pplid)).fetchall()[0]
    istate = int(istate)
 
-   # Special case: if there are neither inputs nor outputs use python to generate the expected answer
-   if (len(outputs)==0):
-      Ninputs = int(getFromDB("SELECT COUNT(*) FROM inputs WHERE (tid=?);", (tid,), cursor))
-      if (Ninputs == 0): 
-         outputs = [[-1, 0, "", 2, None, None]]
-         script = getFromDB("SELECT script FROM tests WHERE (id=?);", (tid,), cursor)
+   # XXX OLD # Special case: if there are neither inputs nor outputs use python to generate the expected answer
+   # XXX OLD if (len(outputs)==0):
+   # XXX OLD    Ninputs = int(getFromDB("SELECT COUNT(*) FROM inputs WHERE (tid=?);", (tid,), cursor))
+   # XXX OLD    if (Ninputs == 0): 
+   # XXX OLD       outputs = [[-1, 0, "", 2, None, None]]
+   # XXX OLD       script = getFromDB("SELECT script FROM tests WHERE (id=?);", (tid,), cursor)
 
    textPass = u""
    textFail = u""
@@ -68,13 +68,13 @@ def viewTestResultsPage():
         continue
 
       # Obtain expected output 
-      if (mode != 2):
-         Sexpected = obtainExpectedOutput(tid, oid, int(mode), fid, Sobtained, cursor)
-         diffrules = obtainDiffRules(int(idr), special, filename, cursor)
-      else:
+      if (mode == 2):
          tempdir = tempfile.mkdtemp()
          Sexpected = obtainExpectedOutputFromScript(script, tempdir)
-         diffrules = []
+      else:
+         Sexpected = obtainExpectedOutput(tid, oid, int(mode), fid, Sobtained, cursor)
+
+      diffrules = obtainDiffRules(int(idr), special, filename, cursor)
 
       # Apply diff rules
       obtained = convertStringToArray(Sobtained, diffrules)

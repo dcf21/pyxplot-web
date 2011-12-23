@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python2.6
 
 # This is a script to run tests for the pyxplot test system
 
@@ -118,9 +118,9 @@ def runTest(test, options):
    outputs = cursor.execute("SELECT id, special, filename, mode, diffrules, fid FROM outputs WHERE (tid=?);", (tid,)).fetchall()
    # outputs = cursor.execute("SELECT o.id, o.special, o.filename, o.mode, o.diffrules, f.mode, f.value FROM outputs o LEFT JOIN files f ON (f.id=o.fid) WHERE (o.tid=?);", (tid,)).fetchall()
 
-   # Special case: if there are neither inputs nor outputs use python to generate the expected answer
-   if (len(inputs)==0 and len(outputs)==0):
-      outputs = [[-1, 0, "", 2, None, None]]
+   # XXX OLD # Special case: if there are neither inputs nor outputs use python to generate the expected answer
+   # XXX OLD if (len(inputs)==0 and len(outputs)==0):
+   # XXX OLD    outputs = [[-1, 0, "", 2, None, None]]
 
    # Capture the outputs
    passed = True
@@ -143,15 +143,13 @@ def runTest(test, options):
          cursor.execute("DELETE FROM instoutmap WHERE (iid=? AND oid=?);", (iid, oid))
          continue
 
-      if (mode != 2):
          # Obtain expected output 
+      if (mode == 2):
+         Sexpected = obtainExpectedOutputFromScript(script, options["testdir"])
+      else:
          Sexpected = obtainExpectedOutput(tid, oid, int(mode), fid, Sobtained, cursor)
 
-         # Diff rules
-         diffrules = obtainDiffRules(int(idr), special, filename, cursor)
-      else:
-         Sexpected = obtainExpectedOutputFromScript(script, options["testdir"])
-         diffrules = []
+      diffrules = obtainDiffRules(int(idr), special, filename, cursor)
 
       obtained = convertStringToArray(Sobtained, diffrules)
       expected = convertStringToArray(Sexpected, diffrules)

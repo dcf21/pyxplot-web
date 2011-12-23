@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/opt/local/bin/python2.6
 
 import cgi, re, sys
 from pysqlite2 import dbapi2 as sqlite

@@ -218,4 +218,7 @@ def addNewTest(d, cursor):
       if (not i in d):
          d[i] = ""
    cursor.execute("INSERT INTO tests (name, script) VALUES (?,?);", (d["name"], d["script"]))
+   tid = getFromDB("SELECT id FROM tests WHERE (name=? AND script=?);", (d["name"], d["script"]), cursor)
+   # Add default output from python script
+   cursor.execute("INSERT INTO outputs (tid, special, mode, diffrules) VALUES (?,?,?,?);", (tid, 0, 2, 0))
    return
