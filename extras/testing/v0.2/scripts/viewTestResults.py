@@ -113,7 +113,7 @@ def renderTestResultPage(tid, istate, txt, testname, pplName, pplSVN, pplId):
    elif (istate==5): passfail = "can not be run by"
    else            : passfail = "is in an <b>undefined state</b> with"
    editLink = u'editTest.html?id=%s'%tid
-   text = makeButtonStrip([{"link":editLink, "text":"Edit"},
+   text = makeButtonStrip("Tasks", [{"link":editLink, "text":"Edit"},
                            {"link":"confirmDeny.html?tid=%s&act=del"%tid, "text":"Delete"},
                            {"link":"runtests.html?act=run%s_%s"%(tid,pplId), "text":"Re-run"}])
    text += u'<div><div>Test <a href="%s">%s</a> with id %s %s '%(editLink,hilight(testname),tid,passfail)

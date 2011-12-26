@@ -134,20 +134,34 @@ def renderMainPageMain(testCursor,cursor, partialData):
    page += renderMainPageAddButtons()
 
    # Set of boxes for ppl version, most recent first
-   for (pplId, pplName) in testCursor.execute("SELECT id, name FROM pplversions ORDER BY id DESC;").fetchall():
+   for (pplId, pplName) in testCursor.execute("SELECT id, name FROM pplversions WHERE (hidden != ?) ORDER BY id DESC;", (1,)).fetchall():
       page += renderMainPagePplVersionBox(pplId, pplName, cursor, testCursor)
+
+   # Hidden ppl versions
+   bs = []
+   for (id, name, svn) in testCursor.execute("SELECT id, name, svn from pplVersions WHERE (hidden=1);").fetchall(): 
+      bs.append({"link":"hideVersion.html?pplid=%s&act=show"%id, "text":'%s</a>'%(name)})
+   if (len(bs)>0): page += makeButtonStrip("Show hidden versions", bs)
+
+      
+
    return page
 
 def renderMainPageAddButtons():
-   return makeButtonStrip([{"link":"addTest.html", "text":"Add new test"},{"link":"addNewVersionFromSVN.html", "text":"Add new version from SVN"}])
+   return makeButtonStrip("Tasks", [{"link":"addTest.html", "text":"Add new test"},
+                                    {"link":"addNewVersionFromSVN.html", "text":"Add new version from SVN"},
+                                    {"link":"runtests.html?act=runall_all", "text":"Run all the tests"},
+                                    {"link":"runtests.html?act=runfail_all", "text":"Run failed tests"},
+                                    {"link":"runtests.html?act=runnew_all", "text":"Run all new tests"},
+                                    ])
 
 def renderMainPagePplVersionBox(pplId, pplName, cursor, testCursor):
-   page = u""
-   page += '<div class="pplVersionBox">\n<div class="pplVersionBoxHead">PyXPlot version %s\n'%(pplName)
-   page += '<div class="buttonStrip">'
-   for (a,b) in [["all", "all"], ["new","new"], ["fail", "failed"]]:
-      page += '<a class="run%s" href="runtests.html?act=run%s_%s">Run %s</a> - '%(a,a,pplId,b)
-   page = '%s </div></div>\n <div class="testResults">'%(page[:-3])
+   i = []
+   title = u'PyXPlot version %s\n'%(pplName)
+   for (a,b) in [["all", "all"], ["new","new"], ["fail", "failed"]]: i.append({"class":"run%s"%a, "link":"runtests.html?act=run%s_%s"%(a,pplId), "text":"Run %s"%b})
+   i.append({"link":"hideVersion.html?act=hide&pplid=%s"%pplId,"text":"Hide"})
+   page = makeButtonStrip(title, i)[:-7]   # -7 strips off </div> at the end
+   page += '<div class="testResults">'
    testResults = updateTestResults(pplId, testCursor)
    page += renderTestResults(pplId, testCursor, testResults)
    page += "</div>\n</div>\n"

@@ -171,7 +171,7 @@ def renderInputControl(field, table, name, w, h, id, cursor):
 
 def renderInputControlFromString(formname, name, w, h, val):
    if (h==0): return '<div class="linl">%s: <input type="text" name="%s" value="%s" size="%s" /></div>\n'%(name, formname, cgi.escape(val,True),w)
-   else     : return '<div class="linl">%s</div>\n<div class="lrel"><textarea name="%s" rows="%s" cols="%s" >\n%s\n</textarea></div>\n'%(name,formname,h,w,cgi.escape(val,True))
+   else     : return '<div class="linl">%s</div>\n<div class="lrel"><textarea name="%s" rows="%s" cols="%s" >%s</textarea></div>\n'%(name,formname,h,w,cgi.escape(val,True))
 
 def renderOptionBox(field, table, formname, default, cursor):
    options = cursor.execute("SELECT %s,id FROM %s;"%(field,table)).fetchall()
@@ -503,15 +503,15 @@ def makeIngredientsList(ridlist, cursor):
    return text
 
 # Make a button strip to go along the top of a page
-def makeButtonStrip(instructions):
+def makeButtonStrip(title, instructions):
    page = u""
    page += '<div class="pplVersionBox">\n'
-   page += '<div class="pplVersionBoxHead">Tasks\n<div class="buttonStrip">\n'
+   page += '<div class="pplVersionBoxHead">%s\n<div class="buttonStrip">\n'%title
    for i in instructions:
       if not "class" in i: i["class"] = "runall"
       if not "text" in i : i["text"] = ""
-      page += '<a class="%s" href="%s">%s</a>\n'%(i["class"],i["link"],i["text"])
-   page += '</div>\n</div>\n</div>\n'
+      page += '<a class="%s" href="%s">%s</a> - '%(i["class"],i["link"],i["text"])
+   page = page[:-3] + '</div>\n</div>\n</div>\n'
    return page
    
 def gcdbsAndErr(dbs, err):

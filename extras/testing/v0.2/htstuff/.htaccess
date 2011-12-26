@@ -20,4 +20,5 @@ RewriteRule ^addNewVersionFromSVN.html$ scripts/obtainPyXPlotFromSvnFrontend.py
 RewriteRule ^runtests.html scripts/runTestsFrontend.py
 RewriteRule ^viewtest.html scripts/viewTestResults.py
 RewriteRule ^confirmDeny.html scripts/confirmDeny.py
+RewriteRule ^hideVersion.html scripts/hideVersion.py
 

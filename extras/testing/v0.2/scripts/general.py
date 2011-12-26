@@ -74,13 +74,16 @@ def deleteTest(tid, cursor):
    cursor.execute("DELETE FROM instTestMap WHERE (tid=?);", (tid,))
    for i in cursor.execute("SELECT id,fid FROM outputs WHERE (tid=?);", (tid,)).fetchall():
       (oid, fid) = i
-      deleteFileFromDB(fid, cursor)
-      for j in cursor.execute("SELECT fid FROM instoutmap WHERE (oid=?);", (oid, )).fetchall():
-         deleteFileFromDB(j[0])
-      cursor.execute("DELETE FROM instoutmap WHERE (oid=?);", (oid,));
-   cursor.execute("DELETE FROM outputs WHERE (tid=?);", (tid,))
+      deleteTestOutput(oid, fid, cursor)
    cursor.execute("DELETE FROM inputs WHERE (tid=?);", (tid,))
    return
+
+def deleteTestOutput(oid, fid, cursor):
+   if (fid == None): fid = getFromDB("SELECT fid FROM outputs WHERE (id=?);", (oid,), cursor)
+   deleteFileFromDB(fid, cursor)
+   for j in cursor.execute("SELECT fid FROM instoutmap WHERE (oid=?);", (oid, )).fetchall(): deleteFileFromDB(j[0])
+   cursor.execute("DELETE FROM instoutmap WHERE (oid=?);", (oid,));
+   cursor.execute("DELETE FROM outputs WHERE (id=?);", (oid,))
 
 def deleteTestInput(iid, cursor):
    cursor.execute("DELETE FROM inputs WHERE (id=?);", (iid,))
