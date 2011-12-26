@@ -82,6 +82,10 @@ def deleteTest(tid, cursor):
    cursor.execute("DELETE FROM inputs WHERE (tid=?);", (tid,))
    return
 
+def deleteTestInput(iid, cursor):
+   cursor.execute("DELETE FROM inputs WHERE (id=?);", (iid,))
+   return
+   
 def deleteFileFromDB(fid, cursor):
    # We should do this properly, but running rm is scary
    cursor.execute("DELETE FROM files WHERE (id=?);", (fid,))

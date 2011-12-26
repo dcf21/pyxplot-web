@@ -1,6 +1,7 @@
 .pplVersionBox {
    background-color: #ddf;
    margin-bottom: 0.25em;
+   padding: 0.15em;
 }
 
 .pplVersionBox div {
@@ -9,6 +10,7 @@
 
 .pplVersionBoxHead {
    margin: 0.25em;
+   padding: 0.15em
    overflow: hidden;
    background-color: #eee;
    border: 1px solid #ddd;

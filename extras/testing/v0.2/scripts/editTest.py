@@ -192,7 +192,7 @@ def parseTestEditSubmission(id, form, cursor, warnings, updates):
       if (re.match("sub", i)): subs.append(i)
    if (len(subs) > 0):  # Should never have more than one of these in normal usage
       submb = subs[0][:-1]   # Chop off the terminal digit
-      if (submb == "sub"): return
+      if (submb == "sub"): return output
       if (submb == "subRun"):
          runTestOnAllVersions(id, cursor)
          output["redirect"] = "mainPage.html"
@@ -200,6 +200,11 @@ def parseTestEditSubmission(id, form, cursor, warnings, updates):
       if (submb == "subRet"):
          output["redirect"] = "mainPage.html"
          return output
+      mg = re.match(r"sub_del_inp_([0-9]+)$", subs[0])
+      if (mg != None):
+         deleteTestInput(int(mg.group(1)), cursor)
+         return output
+         
 
    # Wrap up and go home
    page = u''
@@ -379,6 +384,7 @@ def renderTestInput(id, data,testCursor):
       dc = divcount
       temp1 = divit("Existing input %s"%([": stdin", ""][isp]),"linl")
       if (isp==1): temp1 += divit(' file: <span class="hl%s">%s</span>'%(dc,ifn),"linl")
+      temp1 += u'<input type="submit" name="sub_del_inp_%s" value="Remove" />'%(iid)
       if (fid==None): temp2 = u""
       else:
          oldFileContents = obtainFileContentsFromDB(fid, testCursor)
