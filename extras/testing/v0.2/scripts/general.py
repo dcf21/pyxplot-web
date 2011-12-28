@@ -81,7 +81,7 @@ def deleteTest(tid, cursor):
 def deleteTestOutput(oid, fid, cursor):
    if (fid == None): fid = getFromDB("SELECT fid FROM outputs WHERE (id=?);", (oid,), cursor)
    deleteFileFromDB(fid, cursor)
-   for j in cursor.execute("SELECT fid FROM instoutmap WHERE (oid=?);", (oid, )).fetchall(): deleteFileFromDB(j[0])
+   for j in cursor.execute("SELECT fid FROM instoutmap WHERE (oid=?);", (oid, )).fetchall(): deleteFileFromDB(j[0], cursor)
    cursor.execute("DELETE FROM instoutmap WHERE (oid=?);", (oid,));
    cursor.execute("DELETE FROM outputs WHERE (id=?);", (oid,))
 
@@ -256,7 +256,8 @@ def addNewTest(d, cursor):
       if (not i in d):
          d[i] = ""
    cursor.execute("INSERT INTO tests (name, script) VALUES (?,?);", (d["name"], d["script"]))
-   tid = getFromDB("SELECT id FROM tests WHERE (name=? AND script=?);", (d["name"], d["script"]), cursor)
+   tid = getFromDB('SELECT id FROM tests ORDER BY id DESC LIMIT ?;', (1,), cursor)
+
    # Add default output from python script
    cursor.execute("INSERT INTO outputs (tid, special, mode, diffrules) VALUES (?,?,?,?);", (tid, 0, 2, 0))
-   return
+   return tid

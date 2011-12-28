@@ -78,8 +78,8 @@ def issueConfirmDenyPage(params):
    # Build new URL
    url = "confirmDeny.html?confirm=1"
    for i in params.keys(): url += "&%s=%s"%(i,params[i])
-   page += makeButtonStrip([{"link":url, "text":"Continue"},
-                            {"link":"mainPage.html", "text":"Cancel"}])
+   page += makeButtonStrip("Tasks",[{"link":url, "text":"Continue"},
+                                    {"link":"mainPage.html", "text":"Cancel"}])
 
    httpHeaders()
    print page

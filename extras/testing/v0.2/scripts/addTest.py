@@ -30,9 +30,7 @@ def addTestRedirect():
    if (script != None):
       d["script"] = script
 
-   addNewTest(d, cursor)
-
-   tid = getFromDB('SELECT id FROM tests ORDER BY id DESC LIMIT ?;', (1,), cursor)
+   tid = addNewTest(d, cursor)
 
    gcdb(connection, cursor)
 

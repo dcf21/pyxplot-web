@@ -164,12 +164,10 @@ def makeNewSession(sessionCursor):
 
 def renderInputControl(field, table, name, w, h, id, cursor):
    val = getFromDB("SELECT %s FROM %s WHERE id IS ?;"%(field,table), (id,), cursor)
-   text = u''
-   # text = u'<p>val=%s table=%s field=%s</p>'%(val,table,field)
-   text += renderInputControlFromString(field, name, w, h, val)
-   return text
+   return renderInputControlFromString(field, name, w, h, val)
 
 def renderInputControlFromString(formname, name, w, h, val):
+   if (val==None): val = u""
    if (h==0): return '<div class="linl">%s: <input type="text" name="%s" value="%s" size="%s" /></div>\n'%(name, formname, cgi.escape(val,True),w)
    else     : return '<div class="linl">%s</div>\n<div class="lrel"><textarea name="%s" rows="%s" cols="%s" >%s</textarea></div>\n'%(name,formname,h,w,cgi.escape(val,True))
 
