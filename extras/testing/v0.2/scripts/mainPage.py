@@ -151,34 +151,47 @@ def renderMainPageAddButtons():
    return makeButtonStrip("Tasks", [{"link":"addTest.html", "text":"Add new test"},
                                     {"link":"addNewVersionFromSVN.html", "text":"Add new version from SVN"},
                                     {"link":"runtests.html?act=runall_all", "text":"Run all the tests"},
-                                    {"link":"runtests.html?act=runfail_all", "text":"Run failed tests"},
-                                    {"link":"runtests.html?act=runnew_all", "text":"Run all new tests"},
+                                    {"link":"runtests.html?act=runfail_all", "text":"Run failed tests", "class":"runfail"},
+                                    {"link":"runtests.html?act=runnew_all", "text":"Run all new tests", "class":"runnew"},
                                     ])
 
 def renderMainPagePplVersionBox(pplId, pplName, cursor, testCursor):
    i = []
-   title = u'PyXPlot version %s\n'%(pplName)
+   title = u'Version %s\n'%(pplName)
+   # Button strip
    for (a,b) in [["all", "all"], ["new","new"], ["fail", "failed"]]: i.append({"class":"run%s"%a, "link":"runtests.html?act=run%s_%s"%(a,pplId), "text":"Run %s"%b})
    i.append({"link":"hideVersion.html?act=hide&pplid=%s"%pplId,"text":"Hide"})
    page = makeButtonStrip(title, i)[:-7]   # -7 strips off </div> at the end
-   page += '<div class="testResults">'
+   # Results
+   # Obtain results as dictionary (indexed by tid) of dictionaries (keys: name, state)
    testResults = updateTestResults(pplId, testCursor)
-   page += renderTestResults(pplId, testCursor, testResults)
-   page += "</div>\n</div>\n"
+   # Split test results up by group
+   testResultGroups = splitTestResultsPerGroup(testResults, testCursor)
+   for group in testResultGroups: page += renderTestResultsGroup(group["name"], pplId, testCursor, group["tests"])
+     
+   # page += renderTestResultsGroup("Others", pplId, testCursor, testResults)
+   page += "</div>\n"
 
    return page
 
 # Render test result to the page
-def renderTestResults(pplId, cursor, testResults):
+def renderTestResultsGroup(groupName, pplId, cursor, testResults):
    page = u""
+   page += '<span class="testResults">'
+   page += '<div class="lrel">%s</div>\n'%groupName
+   page += '<div class="lrel">'
    states = cursor.execute("SELECT text FROM teststates ORDER BY id ASC;").fetchall()
    tids = testResults.keys()
    tids.sort()
+   page += '<ul>'
    for tid in tids:
       i=testResults[tid]
       # page += '<div class="test%s" title="test %s - %s - %s"></div>'%(i["state"],tid,i["name"],states[i["state"]-1][0])
-      page += '<a href="viewtest.html?iid=%s&tid=%s"><div class="test%s" title="test %s - %s - %s"></div></a>'%(pplId,tid,i["state"],tid,i["name"],states[i["state"]-1][0])
+      page += '<a href="viewtest.html?iid=%s&tid=%s"><li class="test%s" title="test %s - %s - %s"></li></a>'%(pplId,tid,i["state"],tid,i["name"],states[i["state"]-1][0])
       #page += '<div class="test%s" title="test %s - %s - %s">%s</div>'%(i["state"],tid,i["name"],states[i["state"]-1][0],tid)
+   page += '</ul>\n'
+   page += "</div>\n"
+   page += "</span>\n"
    return page
 
 
@@ -187,8 +200,7 @@ def updateTestResults(pplId, cursor):
    allTests = {}
    testMap = {}
    # Obtain current state of test map
-   for (tid, state) in cursor.execute("SELECT tid,state FROM insttestmap WHERE (iid=?);", (pplId,)).fetchall():
-      testMap[tid] = state
+   for (tid, state) in cursor.execute("SELECT tid,state FROM insttestmap WHERE (iid=?);", (pplId,)).fetchall(): testMap[tid] = state
    # Obtain complete list of tests
    for (tid, tname) in cursor.execute("SELECT id, name FROM tests;").fetchall():
       allTests[tid] = {"name": tname}
@@ -198,7 +210,23 @@ def updateTestResults(pplId, cursor):
          allTests[tid]["state"] = 1
    return allTests
 
-
+# Split a set of tests up into their groups
+def splitTestResultsPerGroup(results, cursor):
+   out = []
+   groups = cursor.execute("SELECT g.id, g.name, g.visibility FROM testGroups g;").fetchall()
+   for (gid, gnam, gvis) in groups:
+      group = {"id":gid, "name":gnam, "visibility":gvis, "tests":{}}
+      for j in cursor.execute("SELECT tid FROM testgroupmap WHERE (gid=?);", (gid,)).fetchall():
+         i = j[0]
+         group["tests"][i] = results[i]
+         del results[i]
+      if (len(group["tests"])>0): out.append(group)
+   # Gather up the remaining tests
+   if (len(results)>0):
+      group    = {"id":-1, "name":"Others", "visibility":1, "tests":{}}
+      for i in results.keys(): group["tests"][i] = results[i]
+      out.append(group)
+   return out
       
 
 mainPage()

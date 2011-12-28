@@ -35,15 +35,28 @@
 
 .testResults {
    background-color: #dfd;
-   overflow: hidden;
+   border: 1px solid green;
+   display: inline-block;
+   margin: .2em;
 }
 
-.testResults div {
-   padding: .4em;
-   margin: .2em;
-   float: left;
-   border: 1px solid #444;
+ul {
+   margin: 0em;
+   padding: 0em;
+   /* -webkit-padding-start: 0em; */
 }
+.testResults li {
+   margin: .2em;
+   /* padding-left: .5em;
+   padding-right: .5em;
+   padding-top: -0em;
+   padding-bottom: 0em; */
+   border: 1px solid #444;
+   display: inline-block;
+   height: .8em;
+   width: .8em;
+}
+
 
 .test1 {
    background-color: #aaa;
@@ -170,6 +183,7 @@
 .lrel {
    margin: 0;
    padding: 0;
+   display: block;
    overflow: none;
 }
 

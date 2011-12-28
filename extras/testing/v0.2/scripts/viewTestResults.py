@@ -115,7 +115,8 @@ def renderTestResultPage(tid, istate, txt, testname, pplName, pplSVN, pplId):
    editLink = u'editTest.html?id=%s'%tid
    text = makeButtonStrip("Tasks", [{"link":editLink, "text":"Edit"},
                            {"link":"confirmDeny.html?tid=%s&act=del"%tid, "text":"Delete"},
-                           {"link":"runtests.html?act=run%s_%s"%(tid,pplId), "text":"Re-run"}])
+                           {"link":"runtests.html?act=run%s_%s"%(tid,pplId), "text":"Re-run"},
+                           {"link":"setTestState.html?act=passed&pplid=%s&tid=%s"%(pplId,tid), "text":"Mark as passed"}])
    text += u'<div><div>Test <a href="%s">%s</a> with id %s %s '%(editLink,hilight(testname),tid,passfail)
    text += u' PyXPlot version %s (svn %s).'%(hilight(pplName), hilight(pplSVN))
    if (txt != ""):

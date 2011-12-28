@@ -118,9 +118,10 @@ def runTest(test, options):
    outputs = cursor.execute("SELECT id, special, filename, mode, diffrules, fid FROM outputs WHERE (tid=?);", (tid,)).fetchall()
    # outputs = cursor.execute("SELECT o.id, o.special, o.filename, o.mode, o.diffrules, f.mode, f.value FROM outputs o LEFT JOIN files f ON (f.id=o.fid) WHERE (o.tid=?);", (tid,)).fetchall()
 
-   # XXX OLD # Special case: if there are neither inputs nor outputs use python to generate the expected answer
-   # XXX OLD if (len(inputs)==0 and len(outputs)==0):
-   # XXX OLD    outputs = [[-1, 0, "", 2, None, None]]
+   # Special output to test stderr when test_mode == 2
+   if (int(tMode)==2): 
+      outputs.append([-1, 1, "", 3, 1, -1])
+      log("  Requiring an error to occur")
 
    # Capture the outputs
    passed = True
@@ -143,7 +144,13 @@ def runTest(test, options):
          cursor.execute("DELETE FROM instoutmap WHERE (iid=? AND oid=?);", (iid, oid))
          continue
 
-         # Obtain expected output 
+      # If mode is 3 then nothing further needs to be done with the output
+      if (mode==3): 
+         if (len(Sobtained)==0):
+            passed = False
+            log("  Test failed to produce output on stderr")
+         continue
+      # Obtain expected output 
       if (mode == 2):
          log("  Obtaining expected output from python")
          Sexpected = obtainExpectedOutputFromScript(script, options["testdir"])
