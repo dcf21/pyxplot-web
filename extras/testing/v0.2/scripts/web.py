@@ -167,9 +167,18 @@ def renderInputControl(field, table, name, w, h, id, cursor):
    return renderInputControlFromString(field, name, w, h, val)
 
 def renderInputControlFromString(formname, name, w, h, val):
+   style = u""
    if (val==None): val = u""
+   else:   # Calculate sensible sizes for the box
+     for line in val.split("\n"):
+        if (len(line)>w): w = len(line)
+     if (w>150): style = u'style="width: 100%%;" '
+     if (h>0):
+        if (len(val.split("\n"))>h): h = len(val.split("\n"))+1
+        if (h>50) : h=50
    if (h==0): return '<div class="linl">%s: <input type="text" name="%s" value="%s" size="%s" /></div>\n'%(name, formname, cgi.escape(val,True),w)
-   else     : return '<div class="linl">%s</div>\n<div class="lrel"><textarea name="%s" rows="%s" cols="%s" >%s</textarea></div>\n'%(name,formname,h,w,cgi.escape(val,True))
+   else     : return '<div class="linl">%s</div>\n<div class="lrel"><textarea name="%s" rows="%s" cols="%s" %s>%s</textarea></div>\n'%(name,formname,h,w,style,cgi.escape(val,True))
+   # else     : return '<div class="linl">%s</div>\n<div class="lrel"><textarea name="%s" rows="%s" cols="%s" >%s</textarea></div>\n'%(name,formname,h,w,cgi.escape(val,True))
 
 def renderOptionBox(field, table, formname, default, cursor):
    options = cursor.execute("SELECT %s,id FROM %s;"%(field,table)).fetchall()

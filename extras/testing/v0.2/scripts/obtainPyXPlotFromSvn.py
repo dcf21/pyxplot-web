@@ -45,7 +45,7 @@ def main():
 
    log(" Building pyxplot")
 
-   os.system("cd %s ; ./configure > /dev/null && make > /dev/null"%workingCopy)
+   os.system("cd %s ; ./configure > /dev/null && nice -15 make -j 5 > /dev/null"%workingCopy)
    log("  ...done")
 
    pplBinary = os.path.join(workingCopy, "bin", "pyxplot")

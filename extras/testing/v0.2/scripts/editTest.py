@@ -87,9 +87,8 @@ def editTest():
 def parseTestEditSubmission(id, form, cursor, warnings, updates):
    for key in ["name", "mode", "script"]:
       data = form.getfirst(key)
-      if (data==None): headlessErrPage("Failed to supply item %s to edit script!"%key)
-      if (data == ""): warnings.append("Supplied empty content for %s: ignoring!"%key)
-      else           : updates[key] = unicode(data)
+      if (data == "" or data == None): warnings.append("Supplied empty content for %s: ignoring!"%key)
+      else                           : updates[key] = unicode(data)
 
    # Update test
    for key in updates.keys(): cursor.execute("UPDATE tests SET %s = ? WHERE id IS ?;"%(key), (updates[key], id, ))
@@ -392,7 +391,7 @@ def renderTestInput(id, data,testCursor):
       if (fid==None): temp2 = u""
       else:
          oldFileContents = obtainFileContentsFromDB(fid, testCursor)
-         temp2 = divit(renderInputControlFromString("%s%s"%(prefix,"text"), "File contents", 50, 10, cgi.escape(oldFileContents,True)), "lrel")
+         temp2 = divit(renderInputControlFromString("%s%s"%(prefix,"text"), "File contents", llen, 10, cgi.escape(oldFileContents,True)), "lrel")
    else:
       # Filename box and option box (XXX WTF Firefox)
       dc = 2

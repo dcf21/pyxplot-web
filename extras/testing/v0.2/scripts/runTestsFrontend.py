@@ -40,7 +40,7 @@ def runTestsPage():
    pplId = mo.group(2)
 
    # Mode 1: one ppl version specified
-   if (re.match("[0-9]+%", pplId)):
+   if (re.match("[0-9]+$", pplId)):
 
       # Test that the ppl version exists
       if (int(getFromDB("SELECT COUNT(*) FROM pplVersions WHERE (id=?);", (pplId,), cursor))!=1):
