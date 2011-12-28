@@ -90,14 +90,16 @@
    float: left;
    width: 49%;
    margin: .2em;
-   border: 1px solid blue;
+   border-bottom: 1px solid blue;
    background: #ddddff;
+   height: 1em;
 }
 .failedTestLine {
    float: left;
    width: 49%;
    margin: .2em;
-   border: 1px solid salmon;
+   border-bottom: 1px solid salmon;
+   height: 1em;
 }
 
 #scriptInput {
