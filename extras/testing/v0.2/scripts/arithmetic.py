@@ -7,17 +7,9 @@
 import os, sys, random, math
 from general import *
 
-# Table of symbols
-symbolTable = ["+", "-", "*", "/", "**"]
-# Table of equalities
-eqSymbolTable = [">", "<", ">=", "<=", "==", "!="]
-
-# Number of bracket pairs to include in the expression
-# Nbrackets = math.floor(random.random()*11)
-Nbrackets = 2
 
 # Generate mathematical expression
-def generateExpression(Nbrackets):
+def generateExpression(Nbrackets, symbolTable, eqSymbolTable):
    leftBracketCount = 0
    rightBracketCount = 0
    expression = ""
@@ -28,8 +20,9 @@ def generateExpression(Nbrackets):
       # First add a number
       if (operator == '**'): number = int(getNumber(-5, 5))
       else:                  number = getNumber(-100, 100)
-      if (number < 0): expression = expression + " (%g) "%number
-      else:            expression = expression + " %g "%number
+      # if (number < 0): expression = expression + " (%g) "%number
+      # else:            expression = expression + " %g "%number
+      expression = expression + " %g "%number
 
       # Then a close bracket if necessary
       if (rightBracketCount < leftBracketCount and random.random() > .75):
@@ -59,6 +52,57 @@ def generateExpression(Nbrackets):
             expression = expression + " %g "%number
             finished = True
    return expression
+
+# Generate mathematical expression
+def generateExpressionWithVariables(Nbrackets, symbolTable, eqSymbolTable):
+   leftBracketCount = 0
+   rightBracketCount = 0
+   script = ""
+   expression = ""
+   number = 0
+   operator = ""
+   finished = False
+   variables = ["a", "b", "c", "z", "badger", "x", "X", "y", "Y", "fishfork", "aquaplane", "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"]
+   # Give the variables values
+   for i in variables:
+      number = getNumber(-100, 100)
+      script += "%s = %s\n"%(i,number)
+   while (not finished):
+      # First add a number
+      assert (operator != "**")
+      variable = random.choice(variables)
+      # if (number < 0): expression = expression + " (%g) "%number
+      # else:            expression = expression + " %g "%number
+      expression = expression + " %s "%variable
+
+      # Then a close bracket if necessary
+      if (rightBracketCount < leftBracketCount and random.random() > .75):
+         expression = expression + " ) "
+         rightBracketCount += 1
+
+      # Now add an operator
+      gotOperator = False
+      if (random.random() > .1): newOperator = symbolTable[int(math.floor(random.random()*len(symbolTable)))]
+      else:                    newOperator = eqSymbolTable[int(math.floor(random.random()*len(symbolTable)))]
+      
+      while (operator == '**' and newOperator == '**'):
+         newOperator = symbolTable[int(math.floor(random.random()*len(symbolTable)))]
+      operator = newOperator
+      expression = expression + " %s "%operator
+
+      # Perhaps an open bracket?
+      if (leftBracketCount < Nbrackets and operator != '**' and random.random() > .75):
+         expression = expression + "("
+         leftBracketCount += 1
+
+      # Check if we can terminate the expression (and if we want to)
+      if (rightBracketCount == leftBracketCount and rightBracketCount == Nbrackets):
+         if (random.random() > .8):
+            if (operator == '**'): number = int(getNumber(-5, 5))
+            else:                  number = getNumber(-100, 100)
+            expression = expression + " %g "%number
+            finished = True
+   return [script, expression]
             
 def getNumber(minVal, maxVal):
    # random.random()*10**(random.random()*20-10)
@@ -81,27 +125,65 @@ def ppEval(expression):
    ppOutput = ppOutput.strip()
    return float(ppOutput)
 
-def generateScript(Nbrackets):
+def generateScriptWithVariables(Nbrackets, symbolTable, eqSymbolTable):
    done = False
    while (not done):
-      script = generateExpression(Nbrackets)
+      script = generateExpressionWithVariables(Nbrackets, symbolTable, eqSymbolTable)
+      try: 
+         exec(script[0])
+         pyVal = eval(script[1])
+      except:  continue
+      done = True
+      print pyVal
+   return "%s\n(%s)+0"%(script[0],script[1])
+
+
+def generateScript(Nbrackets, symbolTable, eqSymbolTable):
+   done = False
+   while (not done):
+      script = generateExpression(Nbrackets, symbolTable, eqSymbolTable)
       try: pyVal = eval(script)
       except:  continue
       done = True
+      print pyVal
    return "(%s)+0"%script
 
+# Generate a script to do arithmetic tests
+def generateArithmeticScript():
+   # Table of symbols
+   symbolTable = ["+", "-", "*", "/", "**"]
+   # symbolTable = ["+", "*", "**"]
+   # Table of equalities
+   eqSymbolTable = [">", "<", ">=", "<=", "==", "!="]
+   script = u""
+   for i in range(1):
+      # Number of bracket pairs to include in the expression
+      Nbrackets = math.floor(random.random()*11)
+      script += "%s\n"%generateScript(Nbrackets, symbolTable, eqSymbolTable)
+   d = {"script":script, "name":"Arithmetic"}
+   return d
 
-difference = 0
-sum = 1
-counter = 0
+# Generate a script to do arithmetic tests
+def generateAlgebraScript():
+   # Table of symbols
+   symbolTable = ["+", "-", "*", "/"]
+   # symbolTable = ["+", "*", "**"]
+   # Table of equalities
+   eqSymbolTable = [">", "<", ">=", "<=", "==", "!="]
+   script = u""
+   for i in range(100):
+      # Number of bracket pairs to include in the expression
+      Nbrackets = math.floor(random.random()*11)
+      script += "%s\n"%generateScriptWithVariables(Nbrackets, symbolTable, eqSymbolTable)
+   d = {"script":script, "name":"Algebra"}
+   return d
 
-script = u""
-for i in range(100):
-   script += "%s\n"%generateScript(Nbrackets)
 
-d = {"script":script, "name":"Arithmetic"}
 
+# d = generateArithmeticScript()
+d = generateAlgebraScript()
 
 (connection, cursor) = openaDB("ppltest.db")
 addNewTest(d, cursor)
+# print d
 gcdb(connection, cursor)
