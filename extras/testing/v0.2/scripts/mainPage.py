@@ -131,7 +131,8 @@ def renderMainPageMain(testCursor,cursor, partialData):
    page = u''
    nsub = {"i": 0}
 
-   page += renderMainPageAddButtons()
+   # Button strip along the top of the main page
+   page += renderMainPageAddButtons(testCursor)
 
    # Set of boxes for ppl version, most recent first
    for (pplId, pplName) in testCursor.execute("SELECT id, name FROM pplversions WHERE (hidden != ?) ORDER BY id DESC;", (1,)).fetchall():
@@ -147,13 +148,21 @@ def renderMainPageMain(testCursor,cursor, partialData):
 
    return page
 
-def renderMainPageAddButtons():
-   return makeButtonStrip("Tasks", [{"link":"addTest.html", "text":"Add new test"},
-                                    {"link":"addNewVersionFromSVN.html", "text":"Add new version from SVN"},
-                                    {"link":"runtests.html?act=runall_all", "text":"Run all the tests"},
-                                    {"link":"runtests.html?act=runfail_all", "text":"Run failed tests", "class":"runfail"},
-                                    {"link":"runtests.html?act=runnew_all", "text":"Run all new tests", "class":"runnew"},
-                                    ])
+# Button strip along the top of the main page
+def renderMainPageAddButtons(cursor):
+   # Default button set
+   buttonSet = [{"link":"addTest.html", "text":"Add new test"},
+                {"link":"addNewVersionFromSVN.html", "text":"Add new version from SVN"},
+                {"link":"runtests.html?act=runall_all", "text":"Run all the tests"},
+                {"link":"runtests.html?act=runfail_all", "text":"Run failed tests", "class":"runfail"},
+                {"link":"runtests.html?act=runnew_all", "text":"Run all new tests", "class":"runnew"},
+                ]
+   # Get system states
+   for (sid, name, state) in cursor.execute("SELECT * FROM systemStates;").fetchall():
+      bclass = "buttOn"
+      if (int(state)==0): bclass = "buttOff"
+      buttonSet.append({"link":"toggleState.html?id=%s"%(sid), "text":name, "class":bclass})
+   return makeButtonStrip("Tasks", buttonSet)
 
 def renderMainPagePplVersionBox(pplId, pplName, cursor, testCursor):
    i = []

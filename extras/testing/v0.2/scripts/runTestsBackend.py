@@ -61,6 +61,11 @@ def runTest(test, options):
    # Test database
    (connection, cursor) = openaDB("ppltest.db")
 
+   # Global system state
+   systemState = {}
+   temp = cursor.execute("SELECT * FROM systemStates;").fetchall()
+   for i in temp: systemState[i[1]] = int(i[2])
+
    # Locate the ppl instance
    if (not iid in instanceCache):
       (instMode, instLoc) = cursor.execute("SELECT f.mode, f.value FROM files f LEFT JOIN pplversions pv ON (pv.binary=f.id) WHERE (pv.id=?);", (iid,)).fetchall()[0]
@@ -107,9 +112,11 @@ def runTest(test, options):
    fout.close()
 
    # Run pyxplot
+   valgrind = u""
+   if (systemState["Valgrind"] == 1): valgrind = " valgrind "
    outfile = os.path.join(options["workdir"], "%s.stdout"%testname)
    errfile = os.path.join(options["workdir"], "%s.stderr"%testname)
-   os.system("cd %s ; DISPLAY= %s script.ppl > %s 2> %s"%(options["testdir"],options["pyxplot"],outfile,errfile))
+   os.system("cd %s ; DISPLAY= %s %s script.ppl > %s 2> %s"%(options["testdir"],valgrind,options["pyxplot"],outfile,errfile))
 
    # Re-open test database
    (connection, cursor) = openaDB("ppltest.db")
@@ -120,7 +127,7 @@ def runTest(test, options):
 
    # Special output to test stderr when test_mode == 2
    if (int(tMode)==2): 
-      outputs.append([-1, 1, "", 3, 1, -1])
+      outputs.append([-1, 1, "", 99, 1, -1])
       log("  Requiring an error to occur")
 
    # Capture the outputs
@@ -144,26 +151,33 @@ def runTest(test, options):
          cursor.execute("DELETE FROM instoutmap WHERE (iid=? AND oid=?);", (iid, oid))
          continue
 
-      # If mode is 3 then nothing further needs to be done with the output
-      if (mode==3): 
+      # Expected output
+      if (mode==99):    # MAGIC INTEGER VALUE to ensure that stderr is non-blank
          if (len(Sobtained)==0):
             passed = False
             log("  Test failed to produce output on stderr")
          continue
+      if (mode==3): 
+         Sexpected = u""
       # Obtain expected output 
-      if (mode == 2):
+      elif (mode == 2):
          log("  Obtaining expected output from python")
          Sexpected = obtainExpectedOutputFromScript(script, options["testdir"])
+         log("  Expected %s"%(Sexpected))
+         log("  Obtained %s"%(Sobtained))
       else:
          Sexpected = obtainExpectedOutput(tid, oid, int(mode), fid, Sobtained, cursor)
 
       diffrules = obtainDiffRules(int(idr), special, filename, cursor)
-
-      obtained = convertStringToArray(Sobtained, diffrules)
-      expected = convertStringToArray(Sexpected, diffrules)
-      if (obtained != expected): 
+      # obtained = convertStringToArray(Sobtained, diffrules)
+      # expected = convertStringToArray(Sexpected, diffrules)
+      (passFail,details) = hasMyTestPassed(Sobtained, Sexpected, diffrules)
+      if (not passFail):
          passed = False
-         log("  Obtained output %s whilst expecting %s"%(obtained,expected))
+         log("  Failed on output %s"%oid)
+      # if (obtained != expected): 
+      #   passed = False
+      #   log("  Obtained output %s whilst expecting %s"%(obtained,expected))
 
       # Insert output into files data base
       fid = getPossibleItemFromDB("SELECT fid FROM instoutmap WHERE (iid=? AND oid=?);", (iid, oid), cursor)

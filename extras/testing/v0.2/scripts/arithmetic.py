@@ -156,7 +156,7 @@ def generateArithmeticScript():
    # Table of equalities
    eqSymbolTable = [">", "<", ">=", "<=", "==", "!="]
    script = u""
-   for i in range(1):
+   for i in range(100):
       # Number of bracket pairs to include in the expression
       Nbrackets = math.floor(random.random()*11)
       script += "%s\n"%generateScript(Nbrackets, symbolTable, eqSymbolTable)
@@ -181,7 +181,8 @@ def generateAlgebraScript():
 
 
 # d = generateArithmeticScript()
-d = generateAlgebraScript()
+# d = generateAlgebraScript()
+d = generateArithmeticScript()
 
 (connection, cursor) = openaDB("ppltest.db")
 addNewTest(d, cursor)

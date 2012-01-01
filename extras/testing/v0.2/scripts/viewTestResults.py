@@ -59,6 +59,7 @@ def viewTestResultsPage():
    script = getFromDB("SELECT script FROM tests WHERE (id=?);", (tid,), cursor)
    for i in outputs:
       (oid, special, filename, mode, idr, fid) = i
+      mode = int(mode)
       # Correct location for stdout / stdin
       special = int(special)
       if (special==0):   filename = "stdout"
@@ -67,35 +68,42 @@ def viewTestResultsPage():
 
       Sobtained = obtainObtainedOutput(tid, oid, pplid, cursor)
       if (Sobtained == None):
-        textFail += renderTestOutputNone(filename)
-        continue
+        if (mode == 3):
+           Sobtained = ""
+        else:
+           textFail += renderTestOutputNone(filename)
+           continue
 
       # Obtain expected output 
       if (mode == 2):
          tempdir = tempfile.mkdtemp()
          Sexpected = obtainExpectedOutputFromScript(script, tempdir)
+      elif (mode == 3):
+         Sexpected = ""
       else:
          Sexpected = obtainExpectedOutput(tid, oid, int(mode), fid, Sobtained, cursor)
 
       diffrules = obtainDiffRules(int(idr), special, filename, cursor)
 
-      # Apply diff rules
-      obtained = convertStringToArray(Sobtained, diffrules)
-      expected = convertStringToArray(Sexpected, diffrules)
+      # Apply diff rules and test output
+      (passFail, details) = hasMyTestPassed(Sobtained, Sexpected, diffrules)
 
-      # Render test output
-      if (expected==obtained): 
-         if (len(obtained)==0):
+      if (passFail):
+         if (len(details)==0):
             textPass += renderTestOutputBlank(filename)
             continue
-         elif (len(obtained) > 5):
-            tmp = obtained[:5]
-            tmp.append("etc.")
+         elif (len(details) > 5 and special != 1):
+            tmp = details[:5]
+            tmp.append([1, "etc.", None])
          else:
-            tmp = obtained
+            tmp = details
          textPass += renderTestOutputPassed(tmp, filename)
       else: 
-         textFail += renderTestOutputFailed(obtained, expected, filename)
+         textFail += renderTestOutputFailed(details, filename)
+         
+
+      # obtained = convertStringToArray(Sobtained, diffrules)
+      # expected = convertStringToArray(Sexpected, diffrules)
 
    (webConnection, webCursor) = openDB()
    page = makePageTop("Test output", "ppltest.css", webCursor)
@@ -128,10 +136,24 @@ def renderTestResultPage(tid, istate, txt, testname, pplName, pplSVN, pplId):
 
 
 def hilight(txt): return u'<span class="testOutputHeader">%s</span>'%txt
-  
+
+def renderTestOutputFailed(details, filename):
+   text = u'<div class="failedTestOutput">File <span class="testOutputHeader">%s</span> contained the incorrect content\n'%filename
+   text += u'<div class="testLineContainer"><div class="passedTestLine">Output produced</div><div class="passedTestLine">Output expected</div></div>\n'
+   for (t, o, e) in details:
+      text += u'<div class="testLineContainer">'
+      if (t==2):
+         for j in [o, ""]: text += u'<div class="passedTestLine">%s</div>'%j
+      elif (t==1):
+         for j in [o, o]: text += u'<div class="passedTestLine">%s</div>'%j
+      else:
+         for j in [o, e]: text += u'<div class="failedTestLine">%s</div>'%j
+      text += "</div>\n"
+   text += "</div>\n"
+   return text
 
 
-def renderTestOutputFailed(ob, ex, filename):
+def renderTestOutputFailedOld(ob, ex, filename):
    while (len(ob) < len(ex)): ob.append("")
    while (len(ex) < len(ob)): ex.append("")
    text = u'<div class="failedTestOutput">File <span class="testOutputHeader">%s</span> contained the incorrect content\n'%filename
@@ -140,7 +162,7 @@ def renderTestOutputFailed(ob, ex, filename):
       o = ob[i]
       e = ex[i]
       text += u'<div class="testLineContainer">'
-      if (o==e):
+      if (compareTestOutputLines(o,e)):
          for j in [o, e]: text += u'<div class="passedTestLine">%s</div>'%j
       else:
          for j in [o, e]: text += u'<div class="failedTestLine">%s</div>'%j
@@ -156,10 +178,18 @@ def renderTestOutputBlank(filename):
    text = u'<div class="passedTestOutput">File <span class="testOutputHeader">%s</span> was blank</div>\n'%filename
    return text
 
-def renderTestOutputPassed(content, filename):
+def renderTestOutputPassedOld(content, filename):
    txt = u'<div class="passedTestOutput">File <span class="testOutputHeader">%s</span> correctly contained the following content\n'%filename 
    for i in content:
       txt += u'<div class="testLineContainer"><div class="passedTestLine">%s</div></div>\n'%i
+   txt += '</div>\n'
+   return txt
+
+
+def renderTestOutputPassed(content, filename):
+   txt = u'<div class="passedTestOutput">File <span class="testOutputHeader">%s</span> correctly contained the following content\n'%filename 
+   for i in content:
+      txt += u'<div class="testLineContainer"><div class="passedTestLine">%s</div><div class="passedTestLine">%s</div></div>\n'%(i[1],i[1])
    txt += '</div>\n'
    return txt
 

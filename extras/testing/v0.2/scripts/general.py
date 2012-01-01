@@ -156,7 +156,8 @@ def obtainExpectedOutputFromScript(script, workdir):
    lines = []
    for line in script.split("\n"):
       if (line==""): continue
-      lines.append("print %s"%line)
+      if (line[0]==u"("): lines.append("print %s"%line)
+      else:               lines.append(line)
    # If some script has been generated, run it and return the output
    if (len(lines)>0):
       pythonScript = "\n".join(lines)
@@ -164,7 +165,7 @@ def obtainExpectedOutputFromScript(script, workdir):
       fp = open(fn, "w")
       fp.write(pythonScript)
       fp.close()
-      os.system("cd %s ; python script.py > script.out"%(workdir))
+      os.system("cd %s ; python script.py > script.out 2> script.err"%(workdir))
       fn = os.path.join(workdir, "script.out")
       fp = open(fn, "r")
       output = fp.read()
@@ -195,7 +196,10 @@ def obtainDiffRules(idr, special, filename, cursor):
    import re
    if (idr==0): diffrules = []
    elif (idr==-1):    # Default diff rules
-      if (special!=2): diffrules = []
+      if (special == 0):   # Stdout
+         diffrules = []
+      elif (special == 1): # Stderr
+         diffrules = ["^==[0-9]+=="]   # Ignore valgrind output
       else:
          temp = re.search(r"\.[a-zA-Z0-9]+$", filename)
          if (temp==None):
@@ -218,8 +222,65 @@ def obtainDiffRules(idr, special, filename, cursor):
          diffrules = temp.split("\n")
    return diffrules
 
+def hasMyTestPassed(so, se, diffrules):
+   import re
+   # Excessive formatting  and line ending wankery
+   so = unicode(so).replace("\r\n", "\n").replace("\r", "\n")
+   se = unicode(se).replace("\r\n", "\n").replace("\r", "\n")
+   passFail = True
+   details = []
+   o = so.split("\n")
+   e = se.split("\n")
+
+   # Ignore terminal blank lines
+   while (len(o)>0 and o[-1]==""): o.pop()
+   log("  = %s = %s ="%(o,e))
+
+   # Iterate through the lines in the obtained output, o
+   while (len(o)>0):
+      (to, lo) = shiftAndTest(o, diffrules)
+      # If the line is not to be tested (it is excluded by the diff rules), store and continue
+      if (to == False): details.append([2, lo, None])
+      # Else obtain the next expected line and test against that 
+      else:
+         te = False
+         while (not te): (te, le) = shiftAndTest(e, diffrules)
+         if (compareTestOutputLines(lo,le)): 
+            details.append([1, lo, None])
+         else:
+            details.append([0, lo, le])
+            passFail = False
+         log("  - %s - %s - %s"%(lo, le, passFail))
+   return (passFail, details)
+
+def shiftAndTest(array, diffrules):
+   import re
+   if (len(array)==0): return (True, "")
+   line = array.pop(0)
+   keep = True
+   # Check against the diff rules
+   for dr in diffrules:
+      if re.search(dr, line):
+         keep = False
+         break
+   return (keep, line)
+
+
+def compareTestOutputLines(o,e):
+   if (o==e): return True
+   try: 
+      fo = float(o)
+      fe = float(e)
+   except: return False
+   den = abs(fo) + abs(fe)
+   if (den==0.): return True
+   if (abs(fo-fe)/den<1e-6): return True
+   return False
+
+
 def convertStringToArray(string, diffrules):
    # Convert to arrays and prepare to diff
+   import re
    # Excessive formatting  and line ending wankery
    string = unicode(string).replace("\r\n", "\n").replace("\r", "\n")
    l = []
@@ -260,4 +321,8 @@ def addNewTest(d, cursor):
 
    # Add default output from python script
    cursor.execute("INSERT INTO outputs (tid, special, mode, diffrules) VALUES (?,?,?,?);", (tid, 0, 2, 0))
+
+   # Add default blank output on stderr
+   # XXX Need to add a blank file too
+   cursor.execute("INSERT INTO outputs (tid, special, mode, diffrules) VALUES (?,?,?,?);", (tid, 1, 3, 0))
    return tid
