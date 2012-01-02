@@ -76,6 +76,7 @@ def deleteTest(tid, cursor):
       (oid, fid) = i
       deleteTestOutput(oid, fid, cursor)
    cursor.execute("DELETE FROM inputs WHERE (tid=?);", (tid,))
+   cursor.execute("DELETE FROM testgroupmap WHERE (tid=?);", (tid,))
    return
 
 def deleteTestOutput(oid, fid, cursor):
@@ -152,11 +153,11 @@ def obtainExpectedOutput(tid, oid, mode, fid, Sobtained, cursor):
 
 # And in the case where we make it with python
 def obtainExpectedOutputFromScript(script, workdir):
-   import os, os.path
+   import os, os.path, re
    lines = []
    for line in script.split("\n"):
       if (line==""): continue
-      if (line[0]==u"("): lines.append("print %s"%line)
+      if (re.match(r"[0-9(]", line)): lines.append("print %s"%line)
       else:               lines.append(line)
    # If some script has been generated, run it and return the output
    if (len(lines)>0):
@@ -194,6 +195,7 @@ def obtainFileContents(mode, value):
 
 def obtainDiffRules(idr, special, filename, cursor):
    import re
+   log("  Obtaining diff rules special=%s idr=%s"%(special,idr))
    if (idr==0): diffrules = []
    elif (idr==-1):    # Default diff rules
       if (special == 0):   # Stdout
@@ -234,23 +236,21 @@ def hasMyTestPassed(so, se, diffrules):
 
    # Ignore terminal blank lines
    while (len(o)>0 and o[-1]==""): o.pop()
-   log("  = %s = %s ="%(o,e))
 
    # Iterate through the lines in the obtained output, o
    while (len(o)>0):
       (to, lo) = shiftAndTest(o, diffrules)
       # If the line is not to be tested (it is excluded by the diff rules), store and continue
-      if (to == False): details.append([2, lo, None])
+      if (to == False): details.append([2, lo, ""])
       # Else obtain the next expected line and test against that 
       else:
          te = False
          while (not te): (te, le) = shiftAndTest(e, diffrules)
          if (compareTestOutputLines(lo,le)): 
-            details.append([1, lo, None])
+            details.append([1, lo, le])
          else:
             details.append([0, lo, le])
             passFail = False
-         log("  - %s - %s - %s"%(lo, le, passFail))
    return (passFail, details)
 
 def shiftAndTest(array, diffrules):
@@ -324,5 +324,5 @@ def addNewTest(d, cursor):
 
    # Add default blank output on stderr
    # XXX Need to add a blank file too
-   cursor.execute("INSERT INTO outputs (tid, special, mode, diffrules) VALUES (?,?,?,?);", (tid, 1, 3, 0))
+   cursor.execute("INSERT INTO outputs (tid, special, mode, diffrules) VALUES (?,?,?,?);", (tid, 1, 3, -1))
    return tid

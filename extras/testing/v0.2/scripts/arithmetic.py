@@ -16,6 +16,7 @@ def generateExpression(Nbrackets, symbolTable, eqSymbolTable):
    number = 0
    operator = ""
    finished = False
+   equalityOperatorUsed = False
    while (not finished):
       # First add a number
       if (operator == '**'): number = int(getNumber(-5, 5))
@@ -31,8 +32,11 @@ def generateExpression(Nbrackets, symbolTable, eqSymbolTable):
 
       # Now add an operator
       gotOperator = False
-      if (random.random() > .1): newOperator = symbolTable[int(math.floor(random.random()*len(symbolTable)))]
-      else:                    newOperator = eqSymbolTable[int(math.floor(random.random()*len(symbolTable)))]
+      if (random.random() > .1 or equalityOperatorUsed): 
+         newOperator = symbolTable[int(math.floor(random.random()*len(symbolTable)))]
+      else:                    
+         newOperator = eqSymbolTable[int(math.floor(random.random()*len(symbolTable)))]
+         equalityOperatorUsed = True
       
       while (operator == '**' and newOperator == '**'):
          newOperator = symbolTable[int(math.floor(random.random()*len(symbolTable)))]
@@ -62,6 +66,7 @@ def generateExpressionWithVariables(Nbrackets, symbolTable, eqSymbolTable):
    number = 0
    operator = ""
    finished = False
+   equalityOperatorUsed = False
    variables = ["a", "b", "c", "z", "badger", "x", "X", "y", "Y", "fishfork", "aquaplane", "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"]
    # Give the variables values
    for i in variables:
@@ -82,8 +87,11 @@ def generateExpressionWithVariables(Nbrackets, symbolTable, eqSymbolTable):
 
       # Now add an operator
       gotOperator = False
-      if (random.random() > .1): newOperator = symbolTable[int(math.floor(random.random()*len(symbolTable)))]
-      else:                    newOperator = eqSymbolTable[int(math.floor(random.random()*len(symbolTable)))]
+      if (random.random() > .1 or equalityOperatorUsed): 
+         newOperator = symbolTable[int(math.floor(random.random()*len(symbolTable)))]
+      else:                    
+         newOperator = eqSymbolTable[int(math.floor(random.random()*len(symbolTable)))]
+         equalityOperatorUsed = True
       
       while (operator == '**' and newOperator == '**'):
          newOperator = symbolTable[int(math.floor(random.random()*len(symbolTable)))]
@@ -135,7 +143,7 @@ def generateScriptWithVariables(Nbrackets, symbolTable, eqSymbolTable):
       except:  continue
       done = True
       print pyVal
-   return "%s\n(%s)+0"%(script[0],script[1])
+   return "%s(%s)+0"%(script[0],script[1])
 
 
 def generateScript(Nbrackets, symbolTable, eqSymbolTable):
@@ -151,38 +159,38 @@ def generateScript(Nbrackets, symbolTable, eqSymbolTable):
 # Generate a script to do arithmetic tests
 def generateArithmeticScript():
    # Table of symbols
-   symbolTable = ["+", "-", "*", "/", "**"]
+   symbolTable = ["+", "-", "*", "/", "**", "%"]
    # symbolTable = ["+", "*", "**"]
    # Table of equalities
-   eqSymbolTable = [">", "<", ">=", "<=", "==", "!="]
+   eqSymbolTable = [">", "<", ">=", "<=", "==", "!=", "%="]
    script = u""
-   for i in range(100):
+   for i in range(1000):
       # Number of bracket pairs to include in the expression
       Nbrackets = math.floor(random.random()*11)
       script += "%s\n"%generateScript(Nbrackets, symbolTable, eqSymbolTable)
-   d = {"script":script, "name":"Arithmetic"}
+   d = {"script":script[:-1], "name":"Arithmetic"}
    return d
 
 # Generate a script to do arithmetic tests
 def generateAlgebraScript():
    # Table of symbols
-   symbolTable = ["+", "-", "*", "/"]
+   symbolTable = ["+", "-", "*", "/", "%"]
    # symbolTable = ["+", "*", "**"]
    # Table of equalities
-   eqSymbolTable = [">", "<", ">=", "<=", "==", "!="]
+   eqSymbolTable = [">", "<", ">=", "<=", "==", "!=", "%="]
    script = u""
-   for i in range(100):
+   for i in range(1000):
       # Number of bracket pairs to include in the expression
       Nbrackets = math.floor(random.random()*11)
       script += "%s\n"%generateScriptWithVariables(Nbrackets, symbolTable, eqSymbolTable)
-   d = {"script":script, "name":"Algebra"}
+   d = {"script":script[:-1], "name":"Algebra"}
    return d
 
 
 
 # d = generateArithmeticScript()
-# d = generateAlgebraScript()
-d = generateArithmeticScript()
+d = generateAlgebraScript()
+# d = generateArithmeticScript()
 
 (connection, cursor) = openaDB("ppltest.db")
 addNewTest(d, cursor)

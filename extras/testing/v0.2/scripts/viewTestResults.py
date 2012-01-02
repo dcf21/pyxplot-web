@@ -138,37 +138,26 @@ def renderTestResultPage(tid, istate, txt, testname, pplName, pplSVN, pplId):
 def hilight(txt): return u'<span class="testOutputHeader">%s</span>'%txt
 
 def renderTestOutputFailed(details, filename):
-   text = u'<div class="failedTestOutput">File <span class="testOutputHeader">%s</span> contained the incorrect content\n'%filename
-   text += u'<div class="testLineContainer"><div class="passedTestLine">Output produced</div><div class="passedTestLine">Output expected</div></div>\n'
+   text = u'<div class="failedTestOutput">File <span class="testOutputHeader">%s</span> contained the <a href="#firstBug">incorrect content</a>\n'%filename
+   text += u'<div class="testLineContainer"><div class="testLineIndex">&nbsp;</div><div class="passedTestLine">Output produced</div><div class="passedTestLine">Output expected</div></div>\n'
+   i = 1
+   foundFirstBug = False
    for (t, o, e) in details:
-      text += u'<div class="testLineContainer">'
+      text += u'<div class="testLineContainer"><div class="testLineIndex">%s</div>'%i
       if (t==2):
          for j in [o, ""]: text += u'<div class="passedTestLine">%s</div>'%j
       elif (t==1):
          for j in [o, o]: text += u'<div class="passedTestLine">%s</div>'%j
       else:
+         if (not foundFirstBug):
+            text += u'<a name="firstBug" />'
+            foundFirstBug = True
          for j in [o, e]: text += u'<div class="failedTestLine">%s</div>'%j
       text += "</div>\n"
+      i += 1
    text += "</div>\n"
    return text
 
-
-def renderTestOutputFailedOld(ob, ex, filename):
-   while (len(ob) < len(ex)): ob.append("")
-   while (len(ex) < len(ob)): ex.append("")
-   text = u'<div class="failedTestOutput">File <span class="testOutputHeader">%s</span> contained the incorrect content\n'%filename
-   text += u'<div class="testLineContainer"><div class="passedTestLine">Output produced</div><div class="passedTestLine">Output expected</div></div>\n'
-   for i in range(len(ob)):
-      o = ob[i]
-      e = ex[i]
-      text += u'<div class="testLineContainer">'
-      if (compareTestOutputLines(o,e)):
-         for j in [o, e]: text += u'<div class="passedTestLine">%s</div>'%j
-      else:
-         for j in [o, e]: text += u'<div class="failedTestLine">%s</div>'%j
-      text += "</div>\n"
-   text += "</div>\n"
-   return text
 
 def renderTestOutputNone(filename):
    text = u'<div class="failedTestOutput">File <span class="testOutputHeader">%s</span> was not produced</div>\n'%filename
@@ -178,18 +167,12 @@ def renderTestOutputBlank(filename):
    text = u'<div class="passedTestOutput">File <span class="testOutputHeader">%s</span> was blank</div>\n'%filename
    return text
 
-def renderTestOutputPassedOld(content, filename):
-   txt = u'<div class="passedTestOutput">File <span class="testOutputHeader">%s</span> correctly contained the following content\n'%filename 
-   for i in content:
-      txt += u'<div class="testLineContainer"><div class="passedTestLine">%s</div></div>\n'%i
-   txt += '</div>\n'
-   return txt
 
 
 def renderTestOutputPassed(content, filename):
    txt = u'<div class="passedTestOutput">File <span class="testOutputHeader">%s</span> correctly contained the following content\n'%filename 
    for i in content:
-      txt += u'<div class="testLineContainer"><div class="passedTestLine">%s</div><div class="passedTestLine">%s</div></div>\n'%(i[1],i[1])
+      txt += u'<div class="testLineContainer"><div class="passedTestLine">%s</div><div class="passedTestLine">%s</div></div>\n'%(i[1],i[2])
    txt += '</div>\n'
    return txt
 

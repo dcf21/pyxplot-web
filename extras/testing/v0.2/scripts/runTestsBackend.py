@@ -76,7 +76,13 @@ def runTest(test, options):
    # Make a directory for the test
    testname = "test_%s_%s"%(iid,tid)
    options["testdir"] = os.path.join(options["workdir"], testname)
-   os.mkdir(options["testdir"])
+   madeTestDir = False
+   while (not madeTestDir):
+      try: 
+         os.mkdir(options["testdir"])
+         madeTestDir = True
+      except:
+         options["testdir"] += "X"
 
    # Grab everything that we need to know about the test in order to run it
    (tMode, script) = cursor.execute("SELECT mode, script FROM tests WHERE (id=?);", (tid,)).fetchall()[0]
@@ -163,12 +169,12 @@ def runTest(test, options):
       elif (mode == 2):
          log("  Obtaining expected output from python")
          Sexpected = obtainExpectedOutputFromScript(script, options["testdir"])
-         log("  Expected %s"%(Sexpected))
-         log("  Obtained %s"%(Sobtained))
+         # log("  Expected %s"%(Sexpected))
+         # log("  Obtained %s"%(Sobtained))
       else:
          Sexpected = obtainExpectedOutput(tid, oid, int(mode), fid, Sobtained, cursor)
 
-      diffrules = obtainDiffRules(int(idr), special, filename, cursor)
+      diffrules = obtainDiffRules(int(idr), int(special), filename, cursor)
       # obtained = convertStringToArray(Sobtained, diffrules)
       # expected = convertStringToArray(Sexpected, diffrules)
       (passFail,details) = hasMyTestPassed(Sobtained, Sexpected, diffrules)
