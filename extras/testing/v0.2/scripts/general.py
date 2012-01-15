@@ -1,6 +1,6 @@
 # This file contains shared routines for database handling for the great pyxplot testing system
 
-subdir = "/ppltest/"
+subdir = "ppltest"
 
 # Open any named db
 def openaDB(dbname):
@@ -9,7 +9,8 @@ def openaDB(dbname):
    global subdir
    # connection = sqlite.connect("/home/ftcb/ftcb/ftcb.db")
    # os.system(os.path.join(rootdir(), "scripts", "runTestsBackend.py") + " >> /home/rpc25/ppltestlog &")
-   connection = sqlite.connect(os.path.join(os.environ["HOME"], subdir, "dbs", dbname))
+   dbfn = os.path.join(os.environ["HOME"], subdir, "dbs", dbname)
+   connection = sqlite.connect(dbfn)
    cursor = connection.cursor()
    return (connection, cursor)
 
