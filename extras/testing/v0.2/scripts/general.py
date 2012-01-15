@@ -201,7 +201,7 @@ def obtainDiffRules(idr, special, filename, cursor):
       if (special == 0):   # Stdout
          diffrules = []
       elif (special == 1): # Stderr
-         diffrules = ["^==[0-9]+=="]   # Ignore valgrind output
+         diffrules = [] # ["^==[0-9]+=="]   # Ignore valgrind output
       else:
          temp = re.search(r"\.[a-zA-Z0-9]+$", filename)
          if (temp==None):
@@ -251,6 +251,24 @@ def hasMyTestPassed(so, se, diffrules):
          else:
             details.append([0, lo, le])
             passFail = False
+   return (passFail, details)
+
+def isMyValgrindOutputWorrying(txt):
+   import re
+   txt = unicode(txt).replace("\r\n", "\n").replace("\r", "\n")
+   passFail = True
+   details = []
+   failStrings = [r"Conditional jump or move", "at 0x", "by 0x"]
+   for line in txt.split("\n"):
+      i = 2
+      mo = re.match(r"==[0-9]+==(.*)", line)
+      if (mo):
+         l = mo.group(1)
+         for string in failStrings:
+            if (re.search(string, l)):
+               passFail = False
+               i = 0
+      details.append([i, line, ""])
    return (passFail, details)
 
 def shiftAndTest(array, diffrules):

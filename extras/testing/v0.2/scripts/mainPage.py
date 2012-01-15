@@ -196,7 +196,9 @@ def renderTestResultsGroup(groupName, pplId, cursor, testResults):
    for tid in tids:
       i=testResults[tid]
       # page += '<div class="test%s" title="test %s - %s - %s"></div>'%(i["state"],tid,i["name"],states[i["state"]-1][0])
-      page += '<a href="viewtest.html?iid=%s&tid=%s"><li class="test%s" title="test %s - %s - %s"></li></a>'%(pplId,tid,i["state"],tid,i["name"],states[i["state"]-1][0])
+      # Can't use li as Firefox fails to render it as clickable
+      # page += '<a href="viewtest.html?iid=%s&tid=%s"><li class="test%s" title="test %s - %s - %s"> </li></a>'%(pplId,tid,i["state"],tid,i["name"],states[i["state"]-1][0])
+      page += '<a href="viewtest.html?iid=%s&tid=%s"><div class="test%s" title="test %s - %s - %s"></div></a>'%(pplId,tid,i["state"],tid,i["name"],states[i["state"]-1][0])
       #page += '<div class="test%s" title="test %s - %s - %s">%s</div>'%(i["state"],tid,i["name"],states[i["state"]-1][0],tid)
    page += '</ul>\n'
    page += "</div>\n"

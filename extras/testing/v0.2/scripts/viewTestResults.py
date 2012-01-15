@@ -44,7 +44,7 @@ def viewTestResultsPage():
    outputs = cursor.execute("SELECT id, special, filename, mode, diffrules, fid FROM outputs WHERE (tid=?);", (tid,)).fetchall()
 
    # Obtain result of test
-   (istate, sstate)  = cursor.execute("SELECT itm.state, ts.text FROM insttestmap itm LEFT JOIN teststates ts ON (ts.id=itm.state) WHERE (itm.tid=? AND itm.iid=?);", (tid, pplid)).fetchall()[0]
+   (istate, sstate, valgrindOutput)  = cursor.execute("SELECT itm.state, ts.text, itm.valgrind FROM insttestmap itm LEFT JOIN teststates ts ON (ts.id=itm.state) WHERE (itm.tid=? AND itm.iid=?);", (tid, pplid)).fetchall()[0]
    istate = int(istate)
 
    # XXX OLD # Special case: if there are neither inputs nor outputs use python to generate the expected answer
@@ -104,6 +104,17 @@ def viewTestResultsPage():
 
       # obtained = convertStringToArray(Sobtained, diffrules)
       # expected = convertStringToArray(Sexpected, diffrules)
+
+   # Additionally render a box for valgrind output
+   if (valgrindOutput != None):
+      filename = "valgrind output"
+      (passFail, details) = isMyValgrindOutputWorrying(valgrindOutput)
+      if (passFail):
+         if (len(details)==0): textPass += renderTestOutputBlank(filename)
+         else: textPass += renderTestOutputPassed(details, filename)
+      else: 
+         textFail += renderTestOutputFailed(details, filename)
+         
 
    (webConnection, webCursor) = openDB()
    page = makePageTop("Test output", "ppltest.css", webCursor)

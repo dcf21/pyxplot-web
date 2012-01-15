@@ -119,7 +119,7 @@ def runTest(test, options):
 
    # Run pyxplot
    valgrind = u""
-   if (systemState["Valgrind"] == 1): valgrind = " valgrind "
+   if (systemState["Valgrind"] == 1): valgrind = " valgrind --log-file=valgrind.out "
    outfile = os.path.join(options["workdir"], "%s.stdout"%testname)
    errfile = os.path.join(options["workdir"], "%s.stderr"%testname)
    os.system("cd %s ; DISPLAY= %s %s script.ppl > %s 2> %s"%(options["testdir"],valgrind,options["pyxplot"],outfile,errfile))
@@ -135,6 +135,14 @@ def runTest(test, options):
    if (int(tMode)==2): 
       outputs.append([-1, 1, "", 99, 1, -1])
       log("  Requiring an error to occur")
+
+   # Capture Valgrind output
+   if (systemState["Valgrind"]==1):
+      fp = open(os.path.join(options["testdir"], "valgrind.out"), "r")
+      valgrindOutput = fp.read()
+      fp.close()
+   else:
+      valgrindOutput = None
 
    # Capture the outputs
    passed = True
@@ -192,6 +200,15 @@ def runTest(test, options):
          cursor.execute("INSERT INTO instoutmap (iid, oid, fid) VALUES (?,?,?);", (iid, oid, fid))
       else:
          cursor.execute("UPDATE files SET mode=?, value=? WHERE id=?;", (0, Sobtained, fid))
+
+   # Store and test the output from valgrind
+   cursor.execute("UPDATE insttestmap SET valgrind=? WHERE (iid=? AND tid=?);", (valgrindOutput, iid, tid))
+   if (valgrindOutput != None):
+      (passFail, details) = isMyValgrindOutputWorrying(valgrindOutput)
+      if (not passFail):
+         passed = False
+         log("  Failed on valgrind output")
+
 
    state = getPossibleItemFromDB("SELECT state FROM insttestmap WHERE (iid=? AND tid=?);", (iid, tid), cursor)
    if (state==None): cursor.execute("INSERT INTO insttestmap (iid,tid,state) VALUES (?,?,?);", (iid, tid, 3-passed))
