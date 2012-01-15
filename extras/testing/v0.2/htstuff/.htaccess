@@ -9,6 +9,7 @@ RewriteEngine on
 RewriteBase /~rpc25/ppltest/
 #RewriteBase /
 
+RewriteRule ^$ scripts/mainPage.py
 RewriteRule ^test.html$ scripts/pages.py?page=test.html
 RewriteRule ^editChunks.html$ scripts/editChunks.py
 RewriteRule ^editTest.html$ scripts/editTest.py
@@ -23,4 +24,6 @@ RewriteRule ^confirmDeny.html scripts/confirmDeny.py
 RewriteRule ^hideVersion.html scripts/hideVersion.py
 RewriteRule ^setTestState.html scripts/setTestState.py
 RewriteRule ^toggleState.html scripts/toggleState.py
+RewriteRule ^releaseLockOfDoom.html scripts/releaseLockOfDoom.py
+RewriteRule ^takeOutLockOfDoom.html scripts/takeOutLockOfDoom.py
 

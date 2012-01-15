@@ -160,6 +160,7 @@ def renderMainPageAddButtons(cursor):
                 {"link":"runtests.html?act=runall_all", "text":"Run all the tests"},
                 {"link":"runtests.html?act=runfail_all", "text":"Run failed tests", "class":"runfail"},
                 {"link":"runtests.html?act=runnew_all", "text":"Run all new tests", "class":"runnew"},
+                {"link":"takeOutLockOfDoom.html", "text":"Take out BLoD", "class":"runfail"},
                 ]
    # Get system states
    for (sid, name, state) in cursor.execute("SELECT * FROM systemStates;").fetchall():

@@ -49,11 +49,12 @@ def gcdb(connection, cursor):
 def rootdir():
    import os
    global subdir
-   return os.environ["HOME"] + subdir
+   return os.path.join(os.environ["HOME"], subdir)
 
 # Produce a file string for a file id
 def buildFileString(id):
-   return rootdir() + "cache/cache.%s"%(id) 
+   import os
+   return os.path.join(rootdir(), "cache/cache.%s"%(id))
 
 # Insert a record for an "in-place" file into the files database
 def insertInPlaceFileRecord(cursor):
@@ -317,17 +318,19 @@ def convertStringToArray(string, diffrules):
 
 
 # LOCKS
-def takeOutLock(lock):
+def takeOutLock(lock, blame=None):
    (connection, cursor) = openaDB("lock.db")
    N = getFromDB("SELECT COUNT(*) FROM locks WHERE (id=?);", (lock,), cursor) 
    if (N != 0): return False
    cursor.execute("INSERT INTO locks (id) VALUES (?);", (lock,))
+   if (blame != None): cursor.execute("INSERT INTO lockOwner (id,name) VALUES (?,?);", (lock, blame))
    gcdb(connection, cursor)
    return True
 
 def releaseLock(lock):
    (connection, cursor) = openaDB("lock.db")
    cursor.execute("DELETE FROM locks WHERE (id=?);", (lock,))
+   cursor.execute("DELETE FROM lockOwner WHERE (id=?);", (lock,))
    gcdb(connection, cursor)
    return
 
@@ -335,8 +338,16 @@ def releaseLock(lock):
 def checkLock(lock):
    (connection, cursor) = openaDB("lock.db")
    N = getFromDB("SELECT COUNT(*) FROM locks WHERE (id=?);", (lock,), cursor) 
+   gcdb(connection, cursor)
    if (N == 0): return True
    else:        return False
+ 
+# Identify the user responsible for taking a lock out
+def checkLockBlame(lock):
+   (connection, cursor) = openaDB("lock.db")
+   blame = cursor.execute("SELECT name FROM lockOwner WHERE (id=?);", (lock,)).fetchall()
+   if (len(blame)==0): return None
+   else: return blame[0][0]
    
 #########
 def addNewTest(d, cursor):

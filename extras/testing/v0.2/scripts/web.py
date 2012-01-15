@@ -528,6 +528,7 @@ def gcdbsAndErr(dbs, err):
 
 def testBigLock():
    if (checkLock(3)): return    # If the lock is not taken out, do nothing
+   user = checkLockBlame(3)
    # Produce an error page
    (connection, cursor) = openDB()
    title = "WARNING: Big Lock of Doom has been taken out!"
@@ -535,6 +536,7 @@ def testBigLock():
    page += makePageTop(title, None, cursor)
    page += "<h1>%s</h1>"%title
    page += '<p class="warning">If you are the user responsible for taking out the <b>Big Lock of Doom</b>, and you are willing to release it, please <a href="releaseLockOfDoom.html">click here</a>.  Please note that once the <b>Big Lock of Doom</b> has been released, you must discard any changes you have made to your local copy and revert your database to the checked-in version.</p>'
+   page += '<p class="warning">The user responsible for taking the lock out is %s</p>'%(user)
    page += makePageFoot(cursor)
    print page
    gcdb(connection, cursor)
