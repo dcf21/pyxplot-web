@@ -22,4 +22,5 @@ RewriteRule ^viewtest.html scripts/viewTestResults.py
 RewriteRule ^confirmDeny.html scripts/confirmDeny.py
 RewriteRule ^hideVersion.html scripts/hideVersion.py
 RewriteRule ^setTestState.html scripts/setTestState.py
+RewriteRule ^toggleState.html scripts/toggleState.py
 

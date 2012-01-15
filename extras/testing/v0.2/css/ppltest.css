@@ -18,19 +18,31 @@
 
 .pplVersionBoxHead a {
    padding: 0.15em;
-   border: 1px solid #444;
    text-decoration: none;
    color: #00d;
 }
 
 .runall {
    background-color: white;
+   border: 1px solid #444;
 }
 .runnew {
    background-color: #aaa;
+   border: 1px solid #444;
 }
 .runfail {
    background-color: #faa;
+   border: 1px solid #444;
+}
+
+.buttOff {
+   background-color: #aaa;
+   border: 1px solid #444;
+}
+
+.buttOn {
+   background-color: #5F5;
+   box-shadow: .125em .125em .0625em #8a8;
 }
 
 .testResults {
@@ -60,22 +72,42 @@ ul {
 
 .test1 {
    background-color: #aaa;
+   border: 1px solid #444;
+   display: inline-block;
+   height: .8em;
+   width: .8em;
 }
 
 .test2 {
    background-color: green;
+   border: 1px solid #444;
+   display: inline-block;
+   height: .8em;
+   width: .8em;
 }
 
 .test3 {
    background-color: red;
+   border: 1px solid #444;
+   display: inline-block;
+   height: .8em;
+   width: .8em;
 }
 
 .test4 {
    background-color: black;
+   border: 1px solid #444;
+   display: inline-block;
+   height: .8em;
+   width: .8em;
 }
 
 .test5 {
    background-color: white;
+   border: 1px solid #444;
+   display: inline-block;
+   height: .8em;
+   width: .8em;
 }
 
 /* ### Edit test form ### */
@@ -99,9 +131,16 @@ ul {
    background: #ddffdd;
    margin: 0.2em;
 }
+
+.testLineIndex {
+   float: left;
+   width: 3%;
+   margin: .2em;
+   height: 1em;
+}
 .passedTestLine {
    float: left;
-   width: 49%;
+   width: 47%;
    margin: .2em;
    border-bottom: 1px solid blue;
    background: #ddddff;
@@ -109,7 +148,7 @@ ul {
 }
 .failedTestLine {
    float: left;
-   width: 49%;
+   width: 47%;
    margin: .2em;
    border-bottom: 1px solid salmon;
    height: 1em;
