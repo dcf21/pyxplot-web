@@ -8,7 +8,8 @@ def openaDB(dbname):
    from pysqlite2 import dbapi2 as sqlite
    global subdir
    # connection = sqlite.connect("/home/ftcb/ftcb/ftcb.db")
-   connection = sqlite.connect(os.environ["HOME"] + subdir  + dbname)
+   # os.system(os.path.join(rootdir(), "scripts", "runTestsBackend.py") + " >> /home/rpc25/ppltestlog &")
+   connection = sqlite.connect(os.path.join(os.environ["HOME"], subdir, "dbs", dbname))
    cursor = connection.cursor()
    return (connection, cursor)
 
@@ -44,14 +45,14 @@ def gcdb(connection, cursor):
    connection.commit()
    return
 
-def workdir():
+def rootdir():
    import os
    global subdir
    return os.environ["HOME"] + subdir
 
 # Produce a file string for a file id
 def buildFileString(id):
-   return workdir() + "cache/cache.%s"%(id) 
+   return rootdir() + "cache/cache.%s"%(id) 
 
 # Insert a record for an "in-place" file into the files database
 def insertInPlaceFileRecord(cursor):
@@ -102,7 +103,7 @@ def runTestOnAllVersions(tid, cursor):
 
 def launchTests():
    import os, os.path
-   os.system(os.path.join(workdir(), "scripts", "runTestsBackend.py") + " >> /home/rpc25/ppltestlog &")
+   os.system(os.path.join(rootdir(), "scripts", "runTestsBackend.py") + " >> /home/rpc25/ppltestlog &")
    return
 
 
@@ -329,6 +330,13 @@ def releaseLock(lock):
    gcdb(connection, cursor)
    return
 
+# Check for a lock; return False if it has been taken out
+def checkLock(lock):
+   (connection, cursor) = openaDB("lock.db")
+   N = getFromDB("SELECT COUNT(*) FROM locks WHERE (id=?);", (lock,), cursor) 
+   if (N == 0): return True
+   else:        return False
+   
 #########
 def addNewTest(d, cursor):
    for i in ["name", "script"]:

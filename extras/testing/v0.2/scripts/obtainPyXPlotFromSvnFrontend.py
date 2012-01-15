@@ -17,7 +17,7 @@ from web import *
 def main():
 
    # Run the tests
-   os.system(os.path.join(workdir(), "scripts", "obtainPyXPlotFromSvn.py") + " >> /home/rpc25/ppltestlog &")
+   os.system(os.path.join(rootdir(), "scripts", "obtainPyXPlotFromSvn.py") + " >> /home/rpc25/ppltestlog &")
 
    redirect303("mainPage.html")
 

@@ -17,6 +17,9 @@ from web import *
 # Test edit page
 def mainPage():
 
+   # Check that the Big Lock has not been taken out
+   testBigLock()
+
    # Fire up sqlite
    (connection, cursor) = openDB()
    (testConnection, testCursor) = openaDB("ppltest.db")
@@ -41,6 +44,7 @@ def mainPage():
 
    # Do all the other stuff
    #XXX all redundant after this point
+   #XXX The following function does not, in fact, exist (!)
    uploadOutcome = parseMainPageSubmission(id, form, testCursor, warnings, updates)
 
    # If the instructions say to redirect the user off elsewhere, do that
