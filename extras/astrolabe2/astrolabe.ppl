@@ -23,8 +23,8 @@
 
 # assert version >=0.8.2
 
-!mkdir -p output
-!rm -f output/*
+!mkdir -p astrolabes
+!rm -f astrolabes/*
 
 load "mother_front.ppl" # Render the front of the mother of the astrolabe
 load "mother_back.ppl"  # Render the back of the mother of the astrolabe
@@ -47,7 +47,7 @@ title="mother_front_combi"
 set multiplot
 set nodisplay
 clear
-eps "output/mother_front_north.eps"
-eps "output/climate_52N.eps" at D12*3+unit(mm),D12*3+unit(mm)
+eps "astrolabes/mother_front_north.eps"
+eps "astrolabes/climate_52N.eps" at D12*3+unit(mm),D12*3+unit(mm)
 load "end.ppl"
 

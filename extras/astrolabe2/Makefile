@@ -21,8 +21,8 @@
 
 all:
 	pyxplot astrolabe.ppl
-	cd doc ; latex astrolabe.tex ; latex astrolabe.tex ; dvips astrolabe.dvi -o astrolabe.ps ; ps2pdf astrolabe.ps astrolabe.pdf
+	cd doc ; pdflatex astrolabe.tex ; pdflatex astrolabe.tex
 
 clean:
-	rm -Rf output ProcessedData
+	rm -Rf astrolabes ProcessedData
 	rm -Rf doc/*.aux doc/*.dvi doc/*.log doc/*.pdf doc/*.ps
