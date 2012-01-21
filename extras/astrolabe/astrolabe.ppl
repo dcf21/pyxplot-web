@@ -31,9 +31,11 @@ load "mother_back.ppl"  # Render the back of the mother of the astrolabe
 load "rete.ppl"         # Render the rete of the astrolabe
 load "rule.ppl"         # Render the rule and the alidade of the astrolabe
 
-# Render climates for latitudes at 2-degree spacings from 8 deg -- 86 deg
-for latitude=8 to 86.1 step 2
+# Render climates for latitudes at 2-degree spacings from 10 deg -- 85 deg, plus 52N
+for latcount=10 to 90.1 step 5
  {
+  latitude = latcount
+  if (latitude==90) { latitude=52; }
   load "climate.ppl"
 
   foreach Ns in (1,0)
