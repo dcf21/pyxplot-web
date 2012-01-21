@@ -20,9 +20,11 @@
 # ----------------------------------------------------------------------------
 
 all:
+	python YBSC_process.py
 	pyxplot astrolabe.ppl
-	cd doc ; pdflatex astrolabe.tex ; pdflatex astrolabe.tex
+	rm -Rf astrolabe_parts/*.eps astrolabe_parts/mother_front_combi* doc/*.aux doc/*.log doc/*.pdf doc/tmp ProcessedData
 
 clean:
-	rm -Rf astrolabes ProcessedData
-	rm -Rf doc/*.aux doc/*.dvi doc/*.log doc/*.pdf doc/*.ps
+	rm -Rf astrolabe_parts astrolabes ProcessedData
+	rm -Rf doc/*.aux doc/*.dvi doc/*.log doc/*.pdf doc/*.ps doc/tmp
+

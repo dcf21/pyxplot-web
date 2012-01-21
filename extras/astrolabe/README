@@ -13,11 +13,15 @@ The files in this directory are the electronic materials which accompany the
 author's paper, "Building a Model Astrolabe" in the Journal of the British
 Astronomical Association (February 2012).  It also contains images of all of
 the components which need to be printed out to build model astrolabes tailored
-for a range of latitudes, which are stored in the folder <astrolabes>. The
-astrolabe presented here is a slightly modernised version of that described in
-Geoffrey Chaucer's c. 1391 Treatise on the Astrolabe, and has been constructed
-following a slight modification of the prescription described in Eisner (1975,
-1976a, 1976b).
+for a range of latitudes, which are stored in the folder <astrolabes> (full
+astrolabe kits) and <astrolabe_parts> (individual images of astrolabe parts).
+The astrolabe presented here is a slightly modernised version of that described
+in Geoffrey Chaucer's c. 1391 Treatise on the Astrolabe, and has been
+constructed following a slight modification of the prescription described in
+Eisner (1975, 1976a, 1976b).
+
+Further information can be found in the file <doc/astrolabe.pdf>, or on the
+webpage <http://dcford.org.uk/astrolabe/index.html>.
 
 The files in this directory may be duplicated, redistributed and/or modified
 under the terms of the GNU General Public License as published by the Free
@@ -26,10 +30,7 @@ later version. The only restriction placed on the duplication of this document
 is that the copyright notices must remain intact.
 
 This file archive can be downloaded from
-<http://dcford.org.uk/~dcf21/astrolabe/astrolabe.zip> (zip archive).
-
-Further information can be found in the file <doc/astrolabe.pdf>, or on the webpage
-<http://dcford.org.uk/~dcf21/astrolabe/index.html>.
+<http://dcford.org.uk/astrolabe/astrolabe.zip> (zip archive).
 
 ----
 Dominic Ford

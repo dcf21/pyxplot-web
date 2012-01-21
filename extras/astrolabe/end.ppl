@@ -22,14 +22,14 @@
 # This file contains common commands which are used to finish the rendering of
 # all parts of the astrolabe.
 
-#set term eps
-#set output 'astrolabes/%s.eps'%(title)
-#set display
-#refresh
+set display
+set term eps
+set output 'astrolabe_parts/%s.eps'%(title)
+refresh
 set term pdf
-set output 'astrolabes/%s.pdf'%(title)
+set output 'astrolabe_parts/%s.pdf'%(title)
 refresh
 set term gif
-set output 'astrolabes/%s.gif'%(title)
+set output 'astrolabe_parts/%s.gif'%(title)
 refresh
 

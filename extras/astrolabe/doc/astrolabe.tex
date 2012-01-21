@@ -37,7 +37,7 @@
 \renewcommand{\footrulewidth}{0pt}}
 
 \title{Building a Model Astrolabe}
-\author{Dominic Ford\footnote{37 Coleridge Road, Cambridge, CB1 3PH.}}
+\author{Dominic Ford \\ 37 Coleridge Road, Cambridge, CB1 3PH.}
 \date{October 2010}
 
 \addtolength{\topmargin}{-.3in}
@@ -50,11 +50,14 @@
 This document describes the electronic file archive which accompanies the
 author's paper of the same title in the Journal of the British Astronomical
 Association.  It also contains images of all of the components which need to be
-printed out to build a model astrolabe tailored for a latitude of $52^\circ$N.
-The astrolabe presented in this document is a slightly modernised version of
-that described in Geoffrey Chaucer's c.\ 1391 {\it Treatise on the Astrolabe},
-and has been constructed following a prescription similar to that described in
-Eisner (1975, 1976a, 1976b).
+printed out to build a model astrolabe tailored for a latitude of
+\input{tmp/lat}\footnote{Alternative versions of this document prepared for
+other latitudes are available from the author's website:
+\url{http://dcford.org.uk/astrolabe/index.html}}.  The astrolabe presented in
+this document is a slightly modernised version of that described in Geoffrey
+Chaucer's c.\ 1391 {\it Treatise on the Astrolabe}, and has been constructed
+following a prescription similar to that described in Eisner (1975, 1976a,
+1976b).
 
 The images and text in this document may be duplicated, redistributed and/or
 modified under the terms of the GNU General Public License as published by the
@@ -62,13 +65,13 @@ Free Software Foundation; either version~2 of the License, or (at your option)
 any later version. The only restriction placed on the duplication of this
 document is that the copyright notices must remain intact.
 
-This document can be downloaded from the members only section of the British
-Astronomical Association website, at
+This document can be downloaded from the British Astronomical Association
+website, at
 \vspace{1mm}\newline\noindent
 \url{http://www.britastro.org/astrolabe},
 or from
 \vspace{1mm}\newline\noindent
-\url{http://dcford.org.uk/astrolabe/index.html},
+\url{http://dcford.org.uk/astrolabe/index.html} (index page),
 \vspace{1mm}\newline\noindent
 and the accompanying files may be downloaded from
 \vspace{1mm}\newline\noindent
@@ -76,7 +79,8 @@ and the accompanying files may be downloaded from
 
 \section*{Assembly Instructions}
 
-To build a model astrolabe tailored for a latitude of $52^\circ$N,
+To build a model astrolabe tailored for a latitude of
+\input{tmp/lat},
 Figures~\ref{mother_back}, \ref{mother_front} and~\ref{rule} should be printed
 out onto paper, or more preferably onto thin card.  Figure~\ref{rete} should be
 printed onto a sheet of transparent acetate.  The two sides of the {\it mother}
@@ -102,25 +106,33 @@ paper fastener through the centre.
 \section*{Astrolabes for Other Latitudes}
 
 The components needed to build astrolabes tailored for latitudes other than
-$52^\circ$N can be found in the accompanying electronic file archive, which can
-be downloaded from the members only section of the British Astronomical
-Association website, at
+\input{tmp/lat}
+can be found in the accompanying electronic file archive, which can be
+downloaded from the British Astronomical Association website, at
 \vspace{1mm}\newline\noindent
 \url{http://www.britastro.org/astrolabe},
-or from:
+or from the author's website at
+\vspace{1mm}\newline\noindent
+\url{http://dcford.org.uk/astrolabe/index.html} (index page)
+or
 \vspace{1mm}\newline\noindent
 \url{http://dcford.org.uk/astrolabe/astrolabe.zip} (zip archive).
 \vspace{1mm}\newline\noindent
-The images are stored in the {\tt astrolabes} directory of this archive, and
-each is available in PDF format, or as a GIF bitmap image ({\tt .gif}).  All of
-the required components must be printed at exactly the same scale in order to
-be of consistent sizes when fitted together. For example, the option to enlarge
-each of the PDF documents to fit the page size must {\it not} be selected in
-the printer setup options in Adobe Acrobat Reader, and the GIF images must be
-printed at a common dots-per-inch resolution.
+The simplest option is to use an alternative version of this document prepared
+for another latitudes; these are stored in the {\tt astrolabes} folder of the
+archive.
 
-For latitudes in the northern hemisphere, the following images should be
-printed:
+Alternatively, individual images of the various parts of the astrolabe model
+are stored in the {\tt astrolabe\_parts} folder of the archive, and each is
+available in PDF format, or as a GIF bitmap image ({\tt .gif}).  If these are
+used, then all of the required components must be printed at exactly the same
+scale in order to be of consistent sizes when fitted together. For example, the
+option to enlarge each of the PDF documents to fit the page size must {\it not}
+be selected in the printer setup options in Adobe Acrobat Reader, and the GIF
+images must be printed at a common dots-per-inch resolution.
+
+For latitudes in the northern hemisphere, the following images {\tt
+astrolabe\_parts} folder should be printed:
 \begin{itemize}
 \item {\tt mother\_back.???} -- The back of the mother of the astrolabe. This image also appears in Figure~\ref{mother_back}, and is not latitude dependent.
 \item {\tt mother\_front\_north.???} -- The front of the mother of a northern-hemi\-sp\-here astrolabe. Note that, in contrast to Figure~\ref{mother_front}, the rete is not incorporated into the mother here. The hours advance clockwise around the edge of the mother.
@@ -154,8 +166,8 @@ in the accompanying file archive and may be modified to generate customised
 astrolabes. For example, to produce an astrolabe with your own choice of
 saints' days or birthdays on the back of the mother, the file {\tt
 Raw\-Data/\-Saints\-Days\-.dat} should be modified. A {\tt Makefile} is
-included which rebuilds all of the image files shipped in the {\tt output}
-directory.
+included which rebuilds all of the image files shipped in the {\tt
+astrolabe\_parts} folder.
 
 \begin{thebibliography}{9}
 \bibitem{Ford}Ford, D.C., \textit{J.\ Brit.\ astr.\ Ass.}, 131(1), 33 (2012).
@@ -168,26 +180,27 @@ directory.
 \newpage
 
 \begin{figure}
-\centerline{\includegraphics{../output/mother_back.eps}}
+\centerline{\includegraphics{../astrolabe_parts/mother_back}}
 \caption{The back of the mother of the astrolabe.}
 \label{mother_back}
 \end{figure}
 
 \begin{figure}
-\centerline{\includegraphics{../output/mother_front_combi.eps}}
-\caption{The front of the mother of the astrolabe, with combined climate prepared for a latitude of $52^\circ$N. Should a climate for a different latitude be required, the accompanying file archive should be downloaded. This include separate images of the front of the mother, and of climates for any latitude on the Earth at $2^\circ$ intervals.}
+\centerline{\includegraphics{tmp/mother_front}}
+\caption{The front of the mother of the astrolabe, with combined climate.
+Should a climate for a different latitude be required, the accompanying file archive should be downloaded. This includes alternative versions of this document for any latitude on the Earth at $2^\circ$ intervals.}
 \label{mother_front}
 \end{figure}
 
 \begin{figure}
-\centerline{\includegraphics{../output/rule_north.eps}}
+\centerline{\includegraphics{tmp/rule}}
 \caption{Left: The rule, which should be mounted on the front of the astrolabe. Right: The alidade, which should be mounted on the back of the astrolabe.}
 \label{rule}
 \end{figure}
 
 \begin{figure}
-\centerline{\includegraphics{../output/rete_north.eps}}
-\caption{The rete of the astrolabe, showing the stars of the northern sky. This should be printed onto a piece of transparent plastic; most stationers should be able to provide acetate sheets for use on overhead projectors, which are ideal for this purpose. Should a southern-hemisphere astrolabe be required, the accompanying file archive should be downloaded.}
+\centerline{\includegraphics{tmp/rete}}
+\caption{The rete of the astrolabe, showing the stars of the night sky. This should be printed onto a piece of transparent plastic; most stationers should be able to provide acetate sheets for use on overhead projectors, which are ideal for this purpose.}
 \label{rete}
 \end{figure}
 

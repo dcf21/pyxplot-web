@@ -23,7 +23,7 @@
 
 # assert version >=0.8.2
 
-!mkdir -p astrolabes
+!mkdir -p astrolabes astrolabe_parts
 !rm -f astrolabes/*
 
 load "mother_front.ppl" # Render the front of the mother of the astrolabe
@@ -35,19 +35,34 @@ load "rule.ppl"         # Render the rule and the alidade of the astrolabe
 for latitude=8 to 86.1 step 2
  {
   load "climate.ppl"
+
+  foreach Ns in (1,0)
+   {
+    set term eps
+    title="mother_front_combi"
+    set multiplot
+    set nodisplay
+    clear
+    eps "astrolabe_parts/mother_front_north.eps"
+    if (Ns) { f = "astrolabe_parts/climate_%02dN.eps"%(latitude); } \
+    else    { f = "astrolabe_parts/climate_%02dS.eps"%(latitude); }
+    eps f at D12*3+unit(mm),D12*3+unit(mm)
+    load "end.ppl"
+
+    !mkdir -p doc/tmp
+    !cp astrolabe_parts/mother_back.pdf doc/tmp
+    !cp astrolabe_parts/mother_front_combi.pdf doc/tmp/mother_front.pdf
+    exec "!cp astrolabe_parts/rete_%s.pdf doc/tmp/rete.pdf"%(conditionalS(Ns,"north","south"))
+    exec "!cp astrolabe_parts/rule_%s.pdf doc/tmp/rule.pdf"%(conditionalS(Ns,"north","south"))
+    exec "!echo -n \"\\$%d^\\\\\\\\circ\\$%s\" > doc/tmp/lat.tex"%(latitude,conditionalS(Ns,"N","S"))
+
+    cd doc
+    !pdflatex astrolabe.tex
+    !pdflatex astrolabe.tex
+    !pdflatex astrolabe.tex
+    exec "!mv astrolabe.pdf ../astrolabes/astrolabe_%02d%s.pdf"%(latitude,conditionalS(Ns,"N","S"))
+    !rm *.aux *.log *.dvi *.ps *.pdf
+    cd ..
+   }
  }
-
-# Render a combined version of the front of the mother of the astrolabe with a
-# superimposed climate for a latitude of 52N. This is combined version is that
-# which appears in the Journal of the British Astronomical Association (to save
-# space).
-
-set term eps
-title="mother_front_combi"
-set multiplot
-set nodisplay
-clear
-eps "astrolabes/mother_front_north.eps"
-eps "astrolabes/climate_52N.eps" at D12*3+unit(mm),D12*3+unit(mm)
-load "end.ppl"
 
