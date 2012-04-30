@@ -4,7 +4,7 @@ import cgi, re, sys, os, os.path, shutil
 from pysqlite2 import dbapi2 as sqlite
 
 from general import *
-from web import redirect303, makeHttpHeaders
+from web import redirect303, makeHttpHeaders, errPage, headlessErrPage
 
 def main():
    username = os.environ["REMOTE_USER"]

@@ -15,6 +15,9 @@ from web import *
 
 # Test addition script
 def addTestRedirect():
+
+   testBigLock()
+
    (connection, cursor) = openaDB("ppltest.db")
 
    d = {}

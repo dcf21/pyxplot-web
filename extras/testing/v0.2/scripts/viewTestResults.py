@@ -14,6 +14,8 @@ from general import *
 from web import *
 
 def viewTestResultsPage():
+   testBigLock()
+
    # Fire up sqlite
    dbs = openaDB("ppltest.db")
    (connection, cursor) = dbs

@@ -18,6 +18,8 @@ divcount = 0
 # Test edit page
 def editTest():
 
+   testBigLock()
+
    # Fire up sqlite
    (testConnection, testCursor) = openaDB("ppltest.db")
 

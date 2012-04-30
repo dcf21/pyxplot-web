@@ -16,7 +16,10 @@ from web import *
 # Test edit page
 def main():
 
-   # Run the tests
+   # Check that the Big Lock has not been taken out
+   testBigLock()
+
+   # Run the backend command
    os.system(os.path.join(rootdir(), "scripts", "obtainPyXPlotFromSvn.py") + " >> /home/rpc25/ppltestlog &")
 
    redirect303("mainPage.html")

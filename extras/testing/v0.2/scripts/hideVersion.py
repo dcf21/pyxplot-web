@@ -16,6 +16,9 @@ from web import *
 # Test edit page
 def runTestsPage():
 
+   # Check that the Big Lock has not been taken out
+   testBigLock()
+
    # Fire up sqlite
    dbs = openaDB("ppltest.db")
    (connection, cursor) = dbs
