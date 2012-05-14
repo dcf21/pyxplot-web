@@ -99,7 +99,7 @@ def deleteFileFromDB(fid, cursor):
    return
 
 def runTestOnAllVersions(tid, cursor):
-   cursor.execute("INSERT OR IGNORE INTO pendingTests (iid, tid) SELECT id,? FROM pplVersions;", (tid,))
+   cursor.execute("INSERT OR IGNORE INTO pendingTests (iid, tid) SELECT id,? FROM pplVersions WHERE (hidden=0);", (tid,))
    launchTests()
    return
 
