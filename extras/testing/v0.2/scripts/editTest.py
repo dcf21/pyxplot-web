@@ -98,7 +98,7 @@ def parseTestEditSubmission(id, form, cursor, warnings, updates):
       try: 
          group = int(group)
          cursor.execute("DELETE FROM testgroupmap WHERE (tid=?);", (id,))
-         cursor.execute("INSERT INTO testgroupmap (tid, gid) VALUES (?,?);", (id, group))
+         if (group != 0): cursor.execute("INSERT INTO testgroupmap (tid, gid) VALUES (?,?);", (id, group))
       except:
          pass
 
@@ -259,7 +259,11 @@ def renderTestEditMain(id,testCursor,cursor):
    nsub = {"i": 0}
    # Test group id (if any)
    gid = getPossibleItemFromDB("SELECT gid FROM testGroupMap WHERE (tid=?);", (id,), testCursor)
-   if (gid==None): gid = ""
+   gdef = [""]
+   if (gid==None): 
+      gid = "0"
+      gdef[0] = "Other"
+   gdef.append(gid)
 
    # Big form'o'doom
    page += '</p>\n<div id="testEditForm">\n'
@@ -272,7 +276,7 @@ def renderTestEditMain(id,testCursor,cursor):
    page += subBut(nsub)
    page += u'<div class="lrel">\n'
    page += renderInputControl("name", "tests", "Test name", 100, 0, id, testCursor)
-   page += "Group:" + renderOptionBox("name", "testGroups", "testGroup", ["",gid], testCursor)
+   page += "Group:" + renderOptionBox("name", "testGroups", "testGroup", gdef, testCursor)
    page += "</div>"
    mode = getFromDB("SELECT mode FROM tests WHERE id IS ?", (id,), testCursor)
    page += u'<div class="lrel">\n'
