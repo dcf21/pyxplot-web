@@ -240,6 +240,12 @@ def hasMyTestPassed(so, se, diffrules):
    # Ignore terminal blank lines
    while (len(o)>0 and o[-1]==""): o.pop()
 
+   if (len(o)==0 and len(e)!=0): 
+      for line in e:
+         if (line != ""):
+            passFail = False
+            break
+
    # Iterate through the lines in the obtained output, o
    while (len(o)>0):
       (to, lo) = shiftAndTest(o, diffrules)
