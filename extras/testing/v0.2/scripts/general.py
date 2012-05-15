@@ -260,6 +260,14 @@ def hasMyTestPassed(so, se, diffrules):
          else:
             details.append([0, lo, le])
             passFail = False
+   while (len(e)>0):
+      te = False
+      while (not te and len(e)>0): (te, le) = shiftAndTest(e, diffrules)
+      if (le==""): continue
+      if (te):
+         details.append([0, "", le])
+         passFail = False
+      
    return (passFail, details)
 
 def isMyValgrindOutputWorrying(txt):
