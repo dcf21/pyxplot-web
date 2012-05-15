@@ -26,4 +26,5 @@ RewriteRule ^setTestState.html scripts/setTestState.py
 RewriteRule ^toggleState.html scripts/toggleState.py
 RewriteRule ^releaseLockOfDoom.html scripts/releaseLockOfDoom.py
 RewriteRule ^takeOutLockOfDoom.html scripts/takeOutLockOfDoom.py
+RewriteRule ^download.html scripts/download.py
 
