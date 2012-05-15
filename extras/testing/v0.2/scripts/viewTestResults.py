@@ -31,6 +31,7 @@ def viewTestResultsPage():
 
    pplid = form.getfirst("iid")
    tid = form.getfirst("tid")
+   showAll = form.getfirst("showAll")
 
    if (pplid==None or tid==None):           gcdbsAndErr(dbs, "Failed to supply the necessary inputs")
    elif (re.match("[0-9]+$", pplid)==None): gcdbsAndErr(dbs, "Failed to supply a valid ppl id")
@@ -94,14 +95,14 @@ def viewTestResultsPage():
          if (len(details)==0):
             textPass += renderTestOutputBlank(filename)
             continue
-         elif (len(details) > 5 and special != 1):
+         elif (len(details) > 5 and special != 1 and showAll==None):
             tmp = details[:5]
-            tmp.append([1, "etc.", None])
+            tmp.append([1, "etc.", ""])
          else:
             tmp = details
-         textPass += renderTestOutputPassed(tmp, filename)
+         textPass += renderTestOutputPassed(tmp, filename, oid, pplid)
       else: 
-         textFail += renderTestOutputFailed(details, filename)
+         textFail += renderTestOutputFailed(details, filename, oid, pplid)
          
 
       # obtained = convertStringToArray(Sobtained, diffrules)
@@ -113,19 +114,19 @@ def viewTestResultsPage():
       (passFail, details) = isMyValgrindOutputWorrying(valgrindOutput)
       if (passFail):
          if (len(details)==0): textPass += renderTestOutputBlank(filename)
-         else: textPass += renderTestOutputPassed(details, filename)
+         else: textPass += renderTestOutputPassed(details, filename, oid, pplid)
       else: 
-         textFail += renderTestOutputFailed(details, filename)
+         textFail += renderTestOutputFailed(details, filename, oid, pplid)
          
 
    (webConnection, webCursor) = openDB()
    page = makePageTop("Test output", "ppltest.css", webCursor)
-   page += renderTestResultPage(tid, istate, textFail + textPass, testname, pplName, pplSVN, pplid)
+   page += renderTestResultPage(tid, istate, textFail + textPass, testname, pplName, pplSVN, pplid, showAll)
 
    httpHeaders()
    print page
 
-def renderTestResultPage(tid, istate, txt, testname, pplName, pplSVN, pplId):
+def renderTestResultPage(tid, istate, txt, testname, pplName, pplSVN, pplId, showAll):
    if (testname == "") : testname = "[no name]"
    if (istate == 1): passfail = "has not yet been run by"
    elif (istate==2): passfail = "passed when run by"
@@ -134,10 +135,15 @@ def renderTestResultPage(tid, istate, txt, testname, pplName, pplSVN, pplId):
    elif (istate==5): passfail = "can not be run by"
    else            : passfail = "is in an <b>undefined state</b> with"
    editLink = u'editTest.html?id=%s'%tid
-   text = makeButtonStrip("Tasks", [{"link":editLink, "text":"Edit"},
+   taskStrip = [{"link":editLink, "text":"Edit"},
                            {"link":"confirmDeny.html?tid=%s&act=del"%tid, "text":"Delete"},
                            {"link":"runtests.html?act=run%s_%s"%(tid,pplId), "text":"Re-run"},
-                           {"link":"setTestState.html?act=passed&pplid=%s&tid=%s"%(pplId,tid), "text":"Mark as passed"}])
+                           {"link":"setTestState.html?act=passed&pplid=%s&tid=%s"%(pplId,tid), "text":"Mark as passed"}]
+                           
+
+   if (showAll==None): taskStrip.append({"link":"viewtest.html?iid=%s&tid=%s&showAll=1"%(pplId,tid), "text":"Show results in full"})
+   else:               taskStrip.append({"link":"viewtest.html?iid=%s&tid=%s"%(pplId,tid), "text":"Show results in part"})
+   text = makeButtonStrip("Tasks", taskStrip)
    text += u'<div><div>Test <a href="%s">%s</a> with id %s %s '%(editLink,hilight(testname),tid,passfail)
    text += u' PyXPlot version %s (svn %s).'%(hilight(pplName), hilight(pplSVN))
    if (txt != ""):
@@ -150,8 +156,8 @@ def renderTestResultPage(tid, istate, txt, testname, pplName, pplSVN, pplId):
 
 def hilight(txt): return u'<span class="testOutputHeader">%s</span>'%txt
 
-def renderTestOutputFailed(details, filename):
-   text = u'<div class="failedTestOutput">File <span class="testOutputHeader">%s</span> contained the <a href="#firstBug">incorrect content</a>\n'%filename
+def renderTestOutputFailed(details, filename, oid, pplid):
+   text = u'<div class="failedTestOutput">File <span class="testOutputHeader">%s</span> contained the <a href="#firstBug">incorrect content</a> (<a href="download.html?oid=%s&pplid=%s">download</a>)\n'%(filename,oid,pplid)
    text += u'<div class="testLineContainer"><div class="testLineIndex">&nbsp;</div><div class="passedTestLine">Output produced</div><div class="passedTestLine">Output expected</div></div>\n'
    i = 1
    foundFirstBug = False
@@ -182,8 +188,8 @@ def renderTestOutputBlank(filename):
 
 
 
-def renderTestOutputPassed(content, filename):
-   txt = u'<div class="passedTestOutput">File <span class="testOutputHeader">%s</span> correctly contained the following content\n'%filename 
+def renderTestOutputPassed(content, filename, oid, pplid):
+   txt = u'<div class="passedTestOutput">File <span class="testOutputHeader">%s</span> correctly contained the following content (<a href="download.html?oid=%s&pplid=%s">download</a>)\n'%(filename,oid,pplid)
    for i in content:
       txt += u'<div class="testLineContainer"><div class="passedTestLine">%s</div><div class="passedTestLine">%s</div></div>\n'%(i[1],i[2])
    txt += '</div>\n'
