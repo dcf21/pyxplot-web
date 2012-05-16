@@ -171,7 +171,7 @@ def parseTestEditSubmission(id, form, cursor, warnings, updates):
             if (drtxt != None):
                if (odr<1): # Completely new diff rules
                   cursor.execute("INSERT INTO diffrules (rules) VALUES (?);", (drtxt,))
-                  nodr = cursor.execute("SELECT id FROM diffrules WHERE (rules=?);", (drtxt,)).fetchall()[-1]
+                  nodr = cursor.execute("SELECT id FROM diffrules WHERE (rules=?);", (drtxt,)).fetchall()[-1][0]
                   cursor.execute("UPDATE outputs SET diffrules = ? WHERE (id=?);", (nodr, oid))
                else: # Possibly changed diff rules
                   cursor.execute("UPDATE diffrules SET rules=? WHERE (id=?);", (drtxt, odr))
