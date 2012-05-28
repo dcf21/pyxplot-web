@@ -1,21 +1,20 @@
 #contentinner {
-   margin-left:12.2em;
-   /*margin-left: 350pt;  */
-  margin-top: 0em;
-  margin-left: 10.3em;
+  margin-left: 12.2em;
+  margin-top: 0.7em;
+  margin-left: 11.4em;
   margin-right: 0.7em;
   padding-top: 0em;
   padding-bottom: 0.2em;
   padding-left: 1em;
-  background: #ddddff;
+  background: #aaaaff;
 }
 
 .warning {
-	color: #000000;
-	background: #ff5555;
-	border: #d2d2d2 solid 1px;
-	padding: 1em;
-	margin: 1em;
-	margin-right: 2em;
-	padding-right: 1em;
+   color: #000000;
+   background: #ff5555;
+   border: #d2d2d2 solid 1px;
+   padding: 1em;
+   margin: 1em;
+   margin-right: 2em;
+   padding-right: 1em;
 }

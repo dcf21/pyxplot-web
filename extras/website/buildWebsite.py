@@ -285,7 +285,7 @@ def getExamplesNode(configFH):
       raise
 
    # Default image is output of first leaf
-   if (node['image'] == None): node['image'] = os.path.join(node['leaves'][0]['dir'], 'output.png')
+   if (node['image'] == None): node['image'] = os.path.join(node['leaves'][0]['dir'], 'output_sm.png')
 
    # Check that all the necessary information has been supplied
    for x in 'name', 'dir':
@@ -359,13 +359,19 @@ def renderExamples(tree):
       line = fin.readline()
       assert(line != '')
    # Write boxes for examples
+   nodeCount = 0
    for node in tree['nodes']:
+      if   (nodeCount  ==0): ftmp.write("<tr>\n")
+      elif (nodeCount%2==0): ftmp.write("</tr><tr>\n")
       ftmp.write("<<SET exampleuri: %s>>\n"%node['uri'])
       ftmp.write("<<SET exampleimageuri: %s%s>>\n"%(node['uri'],node['image']))
       ftmp.write("<<SET examplename: %s>>\n"%node['name'].replace("_", " "))
       f = open(os.path.join(options['includedir'], 'examples-box.html'), 'r')  # UGLY
       for line in f: ftmp.write(line)
       f.close()
+      nodeCount+=1
+   if ((nodeCount>0)and(nodeCount%2==1)): ftmp.write("<td></td>\n")
+   if  (nodeCount>0)                    : ftmp.write("</tr>\n")
    line = fin.readline()
    while (line != ''): 
       ftmp.write(line)
@@ -395,7 +401,7 @@ def renderExamplesNode(node, tree, opt, var):
    # Write boxes for examples
    for leaf in node['leaves']:
       ftmp.write("<<SET exampleuri: %s>>\n"%leaf['uri'])
-      ftmp.write("<<SET exampleimageuri: %s%s>>\n"%(leaf['uri'],'output.png'))
+      ftmp.write("<<SET exampleimageuri: %s%s>>\n"%(leaf['uri'],'output_sm.png'))
       ftmp.write("<<SET examplename: %s>>\n"%leaf['name'].replace("_", " "))
       f = open(os.path.join(options['includedir'], 'examples-box.html'), 'r')  # UGLY
       for line in f: ftmp.write(line)
@@ -467,10 +473,10 @@ def renderExamplesLeaf(leaf, node, tree, opt, var):
    for datafile in leaf['datafiles']: shutil.copy2(os.path.join(options['includedir'],datafile), tempdir)
    os.system("cp .pyxplotrc %s"%tempdir) # Make sure that ppl uses default configuration options
    pplobj = subprocess.Popen(opt['pyxplot'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, cwd=tempdir)
-   [output, errors] = pplobj.communicate('set term eps\nset out "output.eps"\nload "script.ppl"\nset term png dpi 100\nset output "output.png"\nrefresh\n')
+   [output, errors] = pplobj.communicate('set term eps\nset out "output.eps"\nload "script.ppl"\nset term png trans dpi 100\nset output "output.png"\nrefresh\nset term png trans dpi 70\nset output "output_sm.png"\nrefresh')
    # In an ideal world we'd do something useful with the output here
    leafdir = os.path.join(opt['targetRoot'],tree['root'], node['dir'], leaf['dir'])
-   for file in ['output.eps', 'output.png', 'script.ppl']: shutil.copy2("%s/%s"%(tempdir,file), leafdir)
+   for file in ['output.eps', 'output.png', 'output_sm.png', 'script.ppl']: shutil.copy2("%s/%s"%(tempdir,file), leafdir)
    for file in leaf['datafiles']: shutil.copy2(os.path.join(options['includedir'],file), leafdir)
    shutil.rmtree(tempdir)
 

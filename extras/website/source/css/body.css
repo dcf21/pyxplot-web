@@ -1,26 +1,26 @@
 body {
    font-family: sans-serif, serif; 
-	background: #eeffff;
+   background: #eeffff;
   color: #444444;
-	border: 0;
+   border: 0;
 }
 
 body a {
-	color: #3333ff;
-	text-decoration: none;
+   color: #1818a0;
+   text-decoration: none;
 }
 
 body a:hover {
-	text-decoration: underline;
+   text-decoration: underline;
 }
 
 body a:visited {
-	text-decoration: none;
-   color: #703370;
+   text-decoration: none;
+   color: #582258;
 }
 
 body img {
-	border: 0em;
-	padding: 1em;
-	padding-top: 0em;
+   border: 0em;
+   padding: 1em;
+   padding-top: 0em;
 }

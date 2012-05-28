@@ -1,9 +1,9 @@
-BODY { 	
+BODY {
 font: 12pt;
 background: #ffe8ba;
 color: black;
 }
-			
+ 
 
 DIV.normal
 {font: 12pt;
@@ -78,8 +78,8 @@ margin-left: 20pt;
 margin-right: 20pt;
 }
 
-A:link {color: #0000FF;
+A:link {color: #0000C0;
 }
 
-A:visited {color: #7777FF;
+A:visited {color: #5555C0;
 }

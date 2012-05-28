@@ -1,33 +1,41 @@
 /* CSS definitions for the PyXPlot website sidebox */
 
 #sidebox {
-	float:left;
-	width: 8em;
-	text-align:left;	
-    background: #ccddff;
-    color: #747474;     
-    margin-left: 0em;
-    margin-right: 0em;
-    margin-top: 0px;
-    margin-bottom: 20px;
-    border: #d2d2d2 solid 1px;
-	 padding-right: 0.7em;
-	 padding-left: 0.5em;
-	 padding-bottom: 0.5em;
-	 padding-top: 0.5em;
+   float:left;
+   width: 9em;
+   text-align:left;   
+   background: #202080;
+   color: #ccccff;
+   margin-left: 4px;
+   margin-right: 0em;
+   margin-top: 0.7em;
+   margin-bottom: 20px;
+   border-left: 2px solid #4040C0;
+   border-right: 2px solid #101010;
+   border-top: 2px solid #4040C0;
+   border-bottom: 2px solid #101010;
+   padding-right: 0.7em;
+   padding-left: 0.5em;
+   padding-bottom: 0.5em;
+   padding-top: 0.5em;
 }
 #sidebox ul {
-	margin-top: 0.2em;
-	margin-bottom: 0.2em;
-	padding-left: 2em;
-	font-size: 80%;
+   margin-top: 0.2em;
+   margin-bottom: 0.2em;
+   padding-left: 2em;
+   font-size: 80%;
 }
 
 #sidebox ol {
-	margin-top: 0.2em;
-	margin-bottom: 0.2em;
-	font-size: 80%;
+   margin-top: 0.2em;
+   margin-bottom: 0.2em;
+   font-size: 80%;
 }
+
+#sidebox a {
+   color: #eeee00;
+ }
+
 .menuitem {
-	padding: 0.2em;
+   padding: 0.2em;
 }

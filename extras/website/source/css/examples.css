@@ -1,10 +1,10 @@
 /* Stolen from the PyX website */
 .exampledownloads {
-		  font-size: 80%;
-		  text-align: center;
-        border: 1px dashed #d2d2d2;
-		  margin: 1em;
-		  padding: 0.2em;
+        font-size: 80%;
+        text-align: center;
+        border: 1px solid #a0a0a0;
+        margin: 1em;
+        padding: 0.2em;
         float: right;
 }
 
@@ -20,66 +20,69 @@
 }
 
 .exampleimage {
-	text-align: center;
-	background: #ffddaa;
-	border: 1px dashed #d2d2d2;
-	padding: 1em;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	left: 0;
+   text-align: center;
+   background: #ffddaa;
+   border: 1px solid #a0a0a0;
+   padding: 1em;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 1em;
+   margin-bottom: 1em;
+   left: 0;
 }
 
 .examplebox   {
-	background: #ccddff;
-	border: 1px dashed #d2d2d2;
-	float: left;
-	margin: 0.7em;
-	padding: 0.7em;
-	/* margin-left: auto;
-	margin-right: auto;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	left: 0; */
+   margin: 15px;
+   background: #d0d0ff;
+   border-left: 2px solid #e0e0e0;
+   border-bottom: 2px solid #606060;
+   border-top: 2px solid #e0e0e0;
+   border-right: 2px solid #606060;
+   float: left;
+   padding: 0.7em;
+   /* margin-left: auto;
+   margin-right: auto;
+   margin-top: 1em;
+   margin-bottom: 1em;
+   left: 0; */
 }
 
 .examplebox h3 {
-	margin-top: 0em;
+   margin-top: 0em;
 }
 
 .examplebox p {
-	margin-top: 0em;
-	margin-bottom: 0em;
-	clear: both;
-	text-align: right;
+   margin-top: 0em;
+   margin-bottom: 0em;
+   clear: both;
+   text-align: right;
 }
 
 .examplescript {
-	/* float: left;
-	background: #ffddaa;
-	border: 1px dashed #d2d2d2;
-	clear: right;
-	*/
+   /* float: left;
+   background: #ffddaa;
+   border: 1px dashed #d2d2d2;
+   clear: right;
+   */
 }
 
 .exampletext {
-	clear: right;
+   clear: right;
 }
 
 .examplebuttons {
-	padding-bottom: 1.2em;
-	/* padding-top: -1em; */
+   padding-bottom: 1.2em;
+   /* padding-top: -1em; */
 }
 
 .examplebutton {
-	font-size: 90%;
-	float: left;
-   border: 1px dashed #d2d2d2;
-	padding: 0.2em;
-	/* margin-top: -0.8em; */
-	margin-left: 1em;
-	margin-right: 1em;
-	background: #ccddff;
+   font-size: 90%;
+   float: left;
+   border: 1px solid #a0a0a0;
+   padding: 0.2em;
+   /* margin-top: -0.8em; */
+   margin-left: 1em;
+   margin-right: 1em;
+   background: #ccddff;
 }
 
