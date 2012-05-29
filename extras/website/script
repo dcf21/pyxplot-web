@@ -1,0 +1,6 @@
+#!/bin/bash
+rm -Rf output
+./buildWebsite.py targetRoot=output configfile=website.config
+cd output
+python ../addGoogleAnalytics.py
+

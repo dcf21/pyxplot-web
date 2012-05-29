@@ -1,9 +1,14 @@
-#contentinner {
+#contentinner1 {
   margin-left: 12.2em;
   margin-top: 0.7em;
   margin-left: 11.4em;
   margin-right: 0.7em;
-  padding-top: 0em;
+  padding: 0px;
+}
+
+#contentinner2 {
+  margin: 0px;
+  padding-top: 0px;
   padding-bottom: 0.2em;
   padding-left: 1em;
   background: #aaaaff;

@@ -16,15 +16,15 @@
 #topbox h1 {
    border-spacing: 4px;
    margin: 4px;
-   padding-left: 15px;
+   padding-left: 35px;
    font-size: xx-large;
    text-align: left;
 }
 
 #topbox h2 {
-   border-spacing:4px;
+   border-spacing: 4px;
    margin: 4px;
-   padding-right:15px;
+   padding-right: 35px;
    font-size: medium;
    text-align: right;
 }

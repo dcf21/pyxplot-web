@@ -4,6 +4,7 @@
 @import url(<<CSSDIR>>topbox.css);
 @import url(<<CSSDIR>>footer.css);
 @import url(<<CSSDIR>>contentinner.css);
+@import url(<<CSSDIR>>news.css);
 html, body {margin:0; padding:0%; height:96%}
 
 #clearheader{height:160px;}/*needed to make room for header*/
