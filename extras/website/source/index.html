@@ -1,43 +1,67 @@
 <<SET title: A data processing, graph plotting and vector graphics suite>>
 <<INCLUDE header.html>>
       <div style="padding-top: 0.7em">
-      <img style="float: right" src="<<IMGDIR>>ex_blackbodies.png" />
 
-      <p style="margin-top: 0em;"> 
+<p style="margin-top: 0em;">
 
-PyXPlot is a multi-purpose command-line tool for performing simple data
-processing and for producing graphs and vector graphics. The central philosophy
-of PyXPlot's interface is that common tasks -- for example, plotting labelled
-graphs of data -- should be accessible via short, simple and intuitive commands
-which require minimal typing to produce a first draft result.  At the same
-time, these commands also take a sufficient range of optional arguments and
-settings to allow these figures to be subsequently fine-tuned into a wide range
-of different styles, appropriate for inclusion in reports, talks or academic
-journals.
-      </p>
-      <p>
-As well as being a graph-plotting package, PyXPlot also has facilities for
-fitting mathematical functions to data, for numerically solving simple systems
-of equations, and for converting datafiles between different formats.  Its
-mathematical environment can interpolate datasets, integrate and differentiate
-them, and take Fourier transforms.  PyXPlot's ability to keep track of the
-physical units in which data are expressed, and to convert data between
-different units of measurement, mean that it can be used as a powerful desktop
-calculator.
-      </p>
-      <p> 
-         The plots below give a taster of some of the things that PyXPlot
-         is capable of, more of which can be found in the <a
-         href="examples/">examples</a>.
-      </p>
-      <a href="examples/02pd/01hr_diagram/index.html"><img style="padding-right: 0;" src="<<IMGDIR>>ex_hrdiagram.png" /></a>
-      <a href="examples/03td/04surface_with_contours/index.html"><img style="padding-right: 0;" src="<<IMGDIR>>ex_surface_contours.png" /></a>
-      <a href="examples/07vg/01euclid/index.html"><img style="padding-right: 0;" src="<<IMGDIR>>ex_euclid_I_47.png" /></a>
-      <a href="examples/04cm/03branch_cuts/index.html"><img style="padding-right: 0;" src="<<IMGDIR>>ex_branchcut.png" /></a>
-      <a href="examples/01pf/06cornu/index.html"><img style="padding-right: 0;" src="<<IMGDIR>>ex_cornu.png" /></a>
-      <a href="examples/09fourier/03chequer/index.html"><img style="padding-right: 0;" src="<<IMGDIR>>ex_fft.png" /></a>
-      <a href="examples/07vg/06triangles/index.html"><img style="padding-right: 0;" src="<<IMGDIR>>ex_triangles.png" /></a>
-   </div>
+<img src="<<ROOT>>images/logo.png" style="float:right;padding:8px;" title="PyXPlot" alt="PyXPlot" />
+PyXPlot is available for <b><a href="<<ROOT>>src/pyxplot_0.9.0.tar.gz">free
+download</a></b> under the <a href="http://www.gnu.org/copyleft/gpl.html">GNU
+General Public License (GPL) Version 2</a>. It is available for Linux, MacOS
+and any other POSIX-compliant operating system.
+
+</p>
+
+<table style="border:0px none;">
+ <tr>
+   <td>
+<a href="<<ROOT>>src/pyxplot_0.9.0.tar.gz">
+<img width="50" src="<<ROOT>>images/download.png" style="vertical-align:middle;padding-left:20px;padding-right:3px;" title="Download PyXPlot 0.9.0" alt="Download PyXPlot 0.9.0" />
+Download the latest version
+</a>
+   </td>
+  </tr>
+  <tr>
+   <td>
+<a href="<<ROOT>>0.9/doc/pyxplot.pdf">
+<img width="50" src="<<ROOT>>images/book3.png" style="vertical-align:middle;padding-left:20px;padding-right:3px;" title="Download the PyXPlot User's Manual" alt="Download the PyXPlot User's Manual" />
+Download the latest user's manual
+</a>
+   </td>
+ </tr>
+</table>
+
+<img src="<<ROOT>>images/plotting.png" style="float:left;padding:8px;" title="A 3D surface plot" alt="A 3D surface plot" />
+<h3>Graph-plotting tool</h3>
+<p>
+PyXPlot is a multi-purpose command-line data processing, vector graphics and graph-plotting tool. Its interface is similar to that of Gnuplot, optimised so that common tasks are accessible via short, simple commands. It is simple enough to be used without prior programming experience, but powerful enough that programmers can extensively configure and script it.
+</p>
+
+<h3>Scientific scripting language</h3>
+<p>
+PyXPlot has all the features of a scripting language: string manipulation, modules and classes. Numbers have physical units associated with them, and calculations automatically express their results in an appropriate unit. PyXPlot natively handles a wealth of data types that include dictionaries, lists, dates and file handles. It also supports vector and matrix algebra.
+</p>
+
+<img src="<<ROOT>>images/vector.png" style="float:right;padding:8px;" title="A technical diagram" alt="A technical diagram" />
+<h3>Vector graphics suite</h3>
+<p>
+The canvas isn't just for plotting graphs. Circles, polygons and ellipses can be drawn using simple commands. Colors are a native type of object for easy customisation. For the mathematically minded, PyXPlot's canvas interfaces cleanly to its vector math environment.
+</p>
+
+<h3>Data processing package</h3>
+<p>
+PyXPlot can interpolate data, find best fit lines, and compile histograms. It can Fourier transform data, calculate statistics, and output results to new data files. Where fine control is needed, custom code can be used to process every data point in a file.
+</p>
+
+<hr />
+
+<p>
+For more information, see the <a href="<<ROOT>>examples/index.html">gallery of examples</a>.
+</p>
+
+<hr />
+
+</div>
 
 
 <<INCLUDE footer.html>>

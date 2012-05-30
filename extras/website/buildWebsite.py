@@ -399,13 +399,19 @@ def renderExamplesNode(node, tree, opt, var):
       line = fin.readline()
       assert(line != '')
    # Write boxes for examples
+   nodeCount = 0
    for leaf in node['leaves']:
+      if   (nodeCount  ==0): ftmp.write("<tr>\n")
+      elif (nodeCount%2==0): ftmp.write("</tr><tr>\n")
       ftmp.write("<<SET exampleuri: %s>>\n"%leaf['uri'])
       ftmp.write("<<SET exampleimageuri: %s%s>>\n"%(leaf['uri'],'output_sm.png'))
       ftmp.write("<<SET examplename: %s>>\n"%leaf['name'].replace("_", " "))
       f = open(os.path.join(options['includedir'], 'examples-box.html'), 'r')  # UGLY
       for line in f: ftmp.write(line)
       f.close()
+      nodeCount+=1
+   if ((nodeCount>0)and(nodeCount%2==1)): ftmp.write("<td></td>\n")
+   if  (nodeCount>0)                    : ftmp.write("</tr>\n")
    line = fin.readline()
    while (line != ''): 
       ftmp.write(line)
@@ -438,22 +444,23 @@ def renderExamplesLeaf(leaf, node, tree, opt, var):
       ftmp.write(line)
       line = fin.readline()
       assert(line != '')
+   # Write navboxes
+   ftmp.write('<div class="examplebutton">\n')
+   if (leaf['prevuri']!=None): ftmp.write('<a href="%sindex.html"><img src="<<ROOT>>images/arrow_back2.png" style="padding:4px;" title="Previous example" alt="Prev"></a>\n'%leaf['prevuri'])
+   else                      : ftmp.write('<img src="<<ROOT>>images/arrow_back3.png" style="padding:4px;" title="Previous example" alt="Prev">\n')
+   ftmp.write('</div>\n<div class="examplebutton">\n')
+   if (leaf['nexturi']!=None): ftmp.write('<a href="%sindex.html"><img src="<<ROOT>>images/arrow_forward2.png" style="padding:4px;" title="Next example" alt="Next"></a>\n'%leaf['nexturi'])
+   else                      : ftmp.write('<img src="<<ROOT>>images/arrow_forward3.png" style="padding:4px;" title="Next example" alt="Next">\n')
+   ftmp.write('</div>\n')
    # Write example downloads box
-   ftmp.write('<div class="exampledownloads">Download\n')
+   ftmp.write('<p style="clear:both; margin-bottom:2px;">Download this example:</p>\n')
+   ftmp.write('<div class="exampledownloads">\n')
    filelist = ['script.ppl', 'output.eps', 'output.png']
    for file in leaf['datafiles']: 
       m = re.match('.*/(.*?)$', file)
       filelist.append(m.group(1))
    for file in filelist:
       ftmp.write('<div class="exampledownload"><a href="%s/%s">%s</a></div>\n'%(leaf['uri'],file,file))
-   ftmp.write('</div>\n')
-   # Write navboxes
-   ftmp.write('<div class="examplebutton">\n')
-   if (leaf['prevuri']!=None): ftmp.write('<a href="%sindex.html">Prev</a>\n'%leaf['prevuri'])
-   else                      : ftmp.write('Prev\n')
-   ftmp.write('</div>\n<div class="examplebutton">\n')
-   if (leaf['nexturi']!=None): ftmp.write('<a href="%sindex.html">Next</a>\n'%leaf['nexturi'])
-   else                      : ftmp.write('Next\n')
    ftmp.write('</div>\n')
    line = fin.readline()
    while (line != ''): 
