@@ -155,11 +155,11 @@ def renderMainPageMain(testCursor,cursor, partialData):
 # Button strip along the top of the main page
 def renderMainPageAddButtons(cursor):
    # Default button set
-   buttonSet = [{"link":"addTest.html", "text":"Add new test"},
-                {"link":"addNewVersionFromSVN.html", "text":"Add new version from SVN"},
-                {"link":"runtests.html?act=runall_all", "text":"Run all the tests"},
+   buttonSet = [{"link":"addTest.html", "text":"Add test"},
+                {"link":"addNewVersionFromSVN.html", "text":"Add version from svn"},
+                {"link":"runtests.html?act=runall_all", "text":"Run all tests"},
                 {"link":"runtests.html?act=runfail_all", "text":"Run failed tests", "class":"runfail"},
-                {"link":"runtests.html?act=runnew_all", "text":"Run all new tests", "class":"runnew"},
+                {"link":"runtests.html?act=runnew_all", "text":"Run new tests", "class":"runnew"},
                 {"link":"takeOutLockOfDoom.html", "text":"Take out BLoD", "class":"runfail"},
                 ]
    # Get system states
@@ -190,6 +190,9 @@ def renderMainPagePplVersionBox(pplId, pplName, cursor, testCursor):
 
 # Render test result to the page
 def renderTestResultsGroup(groupName, pplId, cursor, testResults):
+   # Determine verbosity of output
+   verbose = int(getFromDB('SELECT state FROM systemStates WHERE (name=?);', ("Verbose", ), cursor))
+
    page = u""
    page += '<span class="testResults">'
    page += '<div class="lrel">%s</div>\n'%groupName
@@ -198,12 +201,17 @@ def renderTestResultsGroup(groupName, pplId, cursor, testResults):
    tids = testResults.keys()
    tids.sort()
    page += '<ul>'
-   for tid in tids:
-      i=testResults[tid]
+   if (verbose==0):
+      for tid in tids:
+         i=testResults[tid]
+         page += '<a href="viewtest.html?iid=%s&tid=%s"><div class="test%s" title="test %s - %s - %s"></div></a>'%(pplId,tid,i["state"],tid,i["name"],states[i["state"]-1][0])
+   else:
+      for tid in tids:
+         i=testResults[tid]
+         page += '<a href="viewtest.html?iid=%s&tid=%s"><div class="test%sb">test %s - %s - %s</div></a>'%(pplId,tid,i["state"],tid,i["name"],states[i["state"]-1][0])
       # page += '<div class="test%s" title="test %s - %s - %s"></div>'%(i["state"],tid,i["name"],states[i["state"]-1][0])
       # Can't use li as Firefox fails to render it as clickable
       # page += '<a href="viewtest.html?iid=%s&tid=%s"><li class="test%s" title="test %s - %s - %s"> </li></a>'%(pplId,tid,i["state"],tid,i["name"],states[i["state"]-1][0])
-      page += '<a href="viewtest.html?iid=%s&tid=%s"><div class="test%s" title="test %s - %s - %s"></div></a>'%(pplId,tid,i["state"],tid,i["name"],states[i["state"]-1][0])
       #page += '<div class="test%s" title="test %s - %s - %s">%s</div>'%(i["state"],tid,i["name"],states[i["state"]-1][0],tid)
    page += '</ul>\n'
    page += "</div>\n"

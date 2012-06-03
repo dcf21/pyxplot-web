@@ -114,9 +114,9 @@ def viewTestResultsPage():
       (passFail, details) = isMyValgrindOutputWorrying(valgrindOutput)
       if (passFail):
          if (len(details)==0): textPass += renderTestOutputBlank(filename)
-         else: textPass += renderTestOutputPassed(details, filename, oid, pplid)
+         else: textPass += renderTestOutputPassed(details, filename, None, pplid)
       else: 
-         textFail += renderTestOutputFailed(details, filename, oid, pplid)
+         textFail += renderTestOutputFailed(details, filename, None, pplid)
          
 
    (webConnection, webCursor) = openDB()
@@ -161,18 +161,33 @@ def renderTestOutputFailed(details, filename, oid, pplid):
    text += u'<div class="testLineContainer"><div class="testLineIndex">&nbsp;</div><div class="passedTestLine">Output produced</div><div class="passedTestLine">Output expected</div></div>\n'
    i = 1
    foundFirstBug = False
+   nGood=0
+   #if (len(details)>500): 
+   #   details = details[:500]
+   #   details.append([1,"etc.", ""])
    for (t, o, e) in details:
-      text += u'<div class="testLineContainer"><div class="testLineIndex">%s</div>'%i
       if (t==2):
+         text += u'<div class="testLineContainer"><div class="testLineIndex">%s</div>'%i
          for j in [o, ""]: text += u'<div class="passedTestLine">%s</div>'%j
+         text += "</div>\n"
       elif (t==1):
-         for j in [o, o]: text += u'<div class="passedTestLine">%s</div>'%j
+         if (nGood<5):
+            text += u'<div class="testLineContainer"><div class="testLineIndex">%s</div>'%i
+            for j in [o, o]: text += u'<div class="passedTestLine">%s</div>'%j
+            text += "</div>\n"
+         elif (nGood==5): 
+            text += u'<div class="testLineContainer"><div class="testLineIndex">%s</div>'%i
+            for j in ["etc.", ""]: text += u'<div class="passedTestLine">%s</div>'%j
+            text += "</div>\n"
+         nGood += 1
       else:
+         text += u'<div class="testLineContainer"><div class="testLineIndex">%s</div>'%i
          if (not foundFirstBug):
             text += u'<a name="firstBug" />'
             foundFirstBug = True
          for j in [o, e]: text += u'<div class="failedTestLine">%s</div>'%j
-      text += "</div>\n"
+         nGood = 0
+         text += "</div>\n"
       i += 1
    text += "</div>\n"
    return text

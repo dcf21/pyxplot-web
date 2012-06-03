@@ -70,6 +70,41 @@ ul {
 }
 
 
+.test1b {
+   background-color: #aaa;
+   border: 1px solid #444;
+   display: block;
+   color: white;
+}
+
+.test2b {
+   background-color: green;
+   border: 1px solid #444;
+   display: block;
+   color: white;
+}
+
+.test3b {
+   background-color: red;
+   border: 1px solid #444;
+   display: block;
+}
+
+.test4b {
+   background-color: black;
+   border: 1px solid #444;
+   display: block;
+   color: white;
+}
+
+.test5b {
+   background-color: white;
+   border: 1px solid #444;
+   display: block;
+   color: white;
+}
+
+
 .test1 {
    background-color: #aaa;
    border: 1px solid #444;

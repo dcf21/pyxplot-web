@@ -267,6 +267,9 @@ def hasMyTestPassed(so, se, diffrules):
       if (te):
          details.append([0, "", le])
          passFail = False
+         if (len(e)>0):
+            details.append([0, "", "etc."])
+            break
       
    return (passFail, details)
 
