@@ -367,6 +367,23 @@ def checkLockBlame(lock):
    else: return blame[0][0]
    
 #########
+
+def insertNewPyxplotVersionIntoDatabase(pplBinary, Nsvn, cursor):
+   import shutil
+   (fid, fn) = insertInPlaceFileRecord(cursor)
+
+   # Copy the file into place
+   shutil.copy(pplBinary, fn)
+
+   # Insert into instances database
+   if (Nsvn != None): 
+      nameStr = "PyXPlot 0.9 svn %s"%Nsvn
+   else:
+      nameStr = "PyXPlot (non-svn version)"
+      Nsvn = 0
+
+   cursor.execute("INSERT INTO pplversions (name, binary, svn) VALUES (?,?,?);", (nameStr, fid, Nsvn))
+
 def addNewTest(d, cursor):
    for i in ["name", "script"]:
       if (not i in d):

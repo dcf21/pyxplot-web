@@ -52,14 +52,7 @@ def main():
 
    # Insert a record for this version into the files database
    (connection, cursor) = openaDB("ppltest.db")
-   (fid, fn) = insertInPlaceFileRecord(cursor)
-
-   # Copy the file into place
-   shutil.copy(pplBinary, fn)
-
-   # Insert into instances database
-   nameStr = "PyXPlot 0.9 svn %s"%Nsvn
-   cursor.execute("INSERT INTO pplversions (name, binary, svn) VALUES (?,?,?);", (nameStr, fid, Nsvn))
+   insertNewPyxplotVersionIntoDatabase(pplBinary, Nsvn, cursor)
    log(" Success!")
 
    finish(connection, cursor)
