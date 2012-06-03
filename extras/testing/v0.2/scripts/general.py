@@ -384,6 +384,25 @@ def insertNewPyxplotVersionIntoDatabase(pplBinary, Nsvn, cursor):
 
    cursor.execute("INSERT INTO pplversions (name, binary, svn) VALUES (?,?,?);", (nameStr, fid, Nsvn))
 
+# Split a set of tests up into their groups
+def splitTestResultsPerGroup(results, cursor):
+   out = []
+   groups = cursor.execute("SELECT g.id, g.name, g.visibility FROM testGroups g;").fetchall()
+   for (gid, gnam, gvis) in groups:
+      group = {"id":gid, "name":gnam, "visibility":gvis, "tests":{}}
+      for j in cursor.execute("SELECT tid FROM testgroupmap WHERE (gid=?);", (gid,)).fetchall():
+         i = j[0]
+         group["tests"][i] = results[i]
+         del results[i]
+      if (len(group["tests"])>0): out.append(group)
+   # Gather up the remaining tests
+   if (len(results)>0):
+      group    = {"id":-1, "name":"Others", "visibility":1, "tests":{}}
+      for i in results.keys(): group["tests"][i] = results[i]
+      out.append(group)
+   return out
+      
+
 def addNewTest(d, cursor):
    for i in ["name", "script"]:
       if (not i in d):
