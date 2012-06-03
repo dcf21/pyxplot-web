@@ -28,15 +28,16 @@ def viewTestsRemotely():
 
    # View test output
    for group in testResultGroups: 
-      print "####################"
+      print 
       print "Test group %s"%group["name"]
       testResults = group["tests"]
       tids = testResults.keys()
       tids.sort()
       for tid in tids:
          i=testResults[tid]
-         result = states[i["state"]-1][0]
          if (i["state"]==2): result = ".     "
+         elif (i["state"]==1): result = "N     "
+         else: result = states[i["state"]-1][0]
          print "%s test %s (%s)"%(result, tid,i["name"])
  
       # page += renderTestResultsGroup(group["name"], pplId, cursor, group["tests"])
