@@ -29,4 +29,5 @@ def runTestsRemotely():
    # Run the tests
    os.system(os.path.join(rootdir(), "scripts", "runTestsBackend.py") + " >> ppltestlog")
 
+runTestsRemotely()
 
