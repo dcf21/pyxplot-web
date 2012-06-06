@@ -305,7 +305,22 @@ def shiftAndTest(array, diffrules):
 
 
 def compareTestOutputLines(o,e):
+   import re
    if (o==e): return True
+   # Try two similar moveto commands
+   if (re.search(" moveto$", o) and re.search(" moveto$", e)):
+      oL = o.split()
+      eL = e.split()
+      if (len(oL)==3 and len(eL)==3):
+         try:
+            oL = [float(i) for i in oL[:2]]
+            eL = [float(i) for i in eL[:2]]
+         except: return False
+         d0=abs((oL[0]-eL[0])/(oL[0]+eL[0]))
+         d1=abs((oL[1]-eL[1])/(oL[1]+eL[1]))
+         if (d0+d1<1e-6): return True
+         else:            return False
+   # Try two similar numbers
    try: 
       fo = float(o)
       fe = float(e)
