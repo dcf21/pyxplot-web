@@ -140,7 +140,8 @@ def renderTestResultPage(tid, istate, txt, testname, pplName, pplSVN, pplId, sho
    taskStrip = [{"link":editLink, "text":"Edit"},
                            {"link":"confirmDeny.html?tid=%s&act=del"%tid, "text":"Delete"},
                            {"link":"runtests.html?act=run%s_%s"%(tid,pplId), "text":"Re-run"},
-                           {"link":"setTestState.html?act=passed&pplid=%s&tid=%s"%(pplId,tid), "text":"Mark as passed"}]
+                           {"link":"setTestState.html?act=passed&pplid=%s&tid=%s"%(pplId,tid), "text":"Mark as passed"},
+                           {"link":"duplicateTest.html?tid=%s"%tid, "text":"Duplicate"}]
                            
 
    if (showAll==None): taskStrip.append({"link":"viewtest.html?iid=%s&tid=%s&showAll=1"%(pplId,tid), "text":"Show results in full"})

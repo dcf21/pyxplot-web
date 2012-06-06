@@ -432,3 +432,9 @@ def addNewTest(d, cursor):
    # XXX Need to add a blank file too
    cursor.execute("INSERT INTO outputs (tid, special, mode, diffrules) VALUES (?,?,?,?);", (tid, 1, 3, -1))
    return tid
+
+def copyFile(fid, cursor):
+   text = getFromDB("SELECT value FROM files WHERE (id=?);", (fid,), cursor)
+   return insertIntoFileDB(text, cursor)
+
+   
