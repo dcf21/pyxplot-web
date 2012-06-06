@@ -192,7 +192,7 @@ def renderOptionBox(field, table, formname, default, cursor):
          sel = ""
       text += '<option %s label="%s" value="%s">%s</option>\n'%(sel,option[0],option[1],option[0])
    if (not found):
-      text += '<option selected="selected" label="%s" value="%s">%s</option>\n'%(default[0],default[1],option[0])
+      text += '<option selected="selected" label="%s" value="%s">%s</option>\n'%(default[0],default[1],default[0])
    text += "</select>\n"
    return text
 
