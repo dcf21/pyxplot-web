@@ -426,7 +426,7 @@ def addNewTest(d, cursor):
    tid = getFromDB('SELECT id FROM tests ORDER BY id DESC LIMIT ?;', (1,), cursor)
 
    # Add default output from python script
-   cursor.execute("INSERT INTO outputs (tid, special, mode, diffrules) VALUES (?,?,?,?);", (tid, 0, 2, 0))
+   cursor.execute("INSERT INTO outputs (tid, special, mode, diffrules) VALUES (?,?,?,?);", (tid, 0, 0, 0))
 
    # Add default blank output on stderr
    # XXX Need to add a blank file too
