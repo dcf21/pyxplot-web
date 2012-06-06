@@ -21,7 +21,7 @@ def duplicateTest():
    testBigLock()
 
    # Fire up sqlite
-   (testConnection, testCursor) = openaDB("ppltest.db")
+   (connection, cursor) = openaDB("ppltest.db")
 
    # Check for the id number and sanitise it
    form = cgi.FieldStorage()
@@ -34,7 +34,7 @@ def duplicateTest():
       exit()
    
    # Check that this test exists
-   try: test = getFromDB("SELECT id FROM tests WHERE id IS ?;", (id,), testCursor)
+   try: test = getFromDB("SELECT id FROM tests WHERE id IS ?;", (id,), cursor)
    except: 
       errPage("Error: you are trying to duplicate a test that doesn't exist.")
       exit()
@@ -46,22 +46,33 @@ def duplicateTest():
    # Things to actually insert into the data base
    updates = {}
 
-   (connection, cursor) = openDB()
 
    # Obtain basic data about the old test
    (mode, script, name) = cursor.execute("SELECT mode, script, name FROM tests WHERE (id=?);", (id,)).fetchall()[0]
    name = "Copy of %s"%name
 
    # Make the new test to duplicate into
-   cursor.execute("INSERT INTO tests (name, script) VALUES (?,?);", (d["name"], d["script"]))
+   cursor.execute("INSERT INTO tests (name, script) VALUES (?,?);", (name, script, ))
    ntid = getFromDB('SELECT id FROM tests ORDER BY id DESC LIMIT ?;', (1,), cursor)
+
+   # Get the group right
+   cursor.execute("INSERT OR IGNORE INTO testGroupMap (tid, gid) SELECT ?, gid FROM testGroupMap WHERE (tid=?);", (ntid, id, ))
 
    # Obtain the expected outputs
    outputs = cursor.execute("SELECT id, special, filename, mode, diffrules, fid FROM outputs WHERE (tid=?);", (id,)).fetchall()
-   # For each output, copy the file and put it back into place
+   # For each output, copy the file and put it into the new test
    for (oid, osp, ofn, om, odr, ofid) in outputs:
-      ofid = copyFile(ofid)
+      if (ofid != None): ofid = copyFile(ofid, cursor)
       cursor.execute("INSERT INTO outputs (tid, special, filename, mode, diffrules, fid) VALUES (?,?,?,?,?,?);", (ntid, osp, ofn, om, odr, ofid, )) 
+   # Ditto with the inputs
+   for (iid, ifid, ifn, isp) in cursor.execute("SELECT id, fid, filename, special FROM inputs WHERE (tid=?);", (id,)).fetchall():
+      if (ifid != None): ifid = copyFile(ifid, cursor)
+      cursor.execute("INSERT INTO inputs (tid, fid, filename, special) VALUES (?,?,?,?);", (ntid, ifid, ifn, isp))
+
+   # Go to test edit page
+   gcdb(connection, cursor)
+   redirect303("editTest.html?id=%s"%ntid)
+
 
 
 duplicateTest()

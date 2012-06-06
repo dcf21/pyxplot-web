@@ -108,13 +108,17 @@ def parseTestEditSubmission(id, form, cursor, warnings, updates):
    postkeys = form.keys()
 
    # Test inputs
-   iids = cursor.execute("SELECT id, special FROM inputs WHERE (tid=?);", (id,)).fetchall()
+   iids = cursor.execute("SELECT id, fid, special FROM inputs WHERE (tid=?);", (id,)).fetchall()
    # Loop over exected test inputs
-   for (iid,oldspecial) in iids:
+   for (iid,ifid,oldspecial) in iids:
       prefix =  "inp_%s_"%(iid)
+      # Check for updating special
       special = form.getfirst("%s%s"%(prefix,"special"))
-      if (special != oldspecial and special != None):
-         cursor.execute("UPDATE inputs SET special = ? WHERE (id=?);", (special, iid))
+      if (special != oldspecial and special != None): cursor.execute("UPDATE inputs SET special = ? WHERE (id=?);", (special, iid))
+      # Check for updating text
+      oldText = obtainFileContentsFromDB(ifid, cursor)
+      text = form.getfirst("%s%s"%(prefix,"text"))
+      if (text != oldText): cursor.execute("UPDATE files SET value = ? WHERE (id=?);", (text, ifid))
 
    # New test input
    new = []
@@ -150,13 +154,17 @@ def parseTestEditSubmission(id, form, cursor, warnings, updates):
          newval = form.getfirst("%s%s"%(prefix,field))
          if (newval != value and newval != None): cursor.execute("UPDATE outputs SET %s = ? WHERE (id=?);"%(field), (newval, oid))
 
+      # Sync working values
+      (osp, ofn, omd) = cursor.execute("SELECT special, filename, mode FROM outputs WHERE (id=?);", (oid,)).fetchall()[0]
       # Content if comparing against stored content
       if (omd==1):
          outputCmpTxt = form.getfirst("%s%s"%(prefix,"outcmptxt"))
          if (ofid<0): # New file
             if (outputCmpTxt==None): outputCmpTxt = ""
             cursor.execute("INSERT INTO files (mode,value) VALUES (?,?);", (0,outputCmpTxt))
-            ofid = cursor.execute("SELECT id FROM files WHERE (mode=? AND value=?);", (mode, outputCmpTxt)).fetchall()[-1]
+            # ofid = cursor.execute("SELECT id FROM files WHERE (mode=? AND value=?);", (mode, outputCmpTxt)).fetchall()[-1]
+            ofid = getFromDB("SELECT id FROM files ORDER BY id DESC LIMIT ?;", (1,), cursor)
+            cursor.execute("UPDATE outputs SET fid=? WHERE (id=?);", (ofid, oid))
          elif (outputCmpTxt != None):
             cursor.execute("UPDATE files SET value=? WHERE (id=?);", (outputCmpTxt, ofid))
 
