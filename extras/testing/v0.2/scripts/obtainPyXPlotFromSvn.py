@@ -45,7 +45,7 @@ def main():
 
    log(" Building pyxplot")
 
-   os.system("cd %s ; ./configure > /dev/null && nice -15 make -j 5 > /dev/null"%workingCopy)
+   os.system("export CFLAGS='-D FLATE_DISABLE=1' ; cd %s ; ./configure > /dev/null && nice -15 make -j 5 > /dev/null"%workingCopy)
    log("  ...done")
 
    pplBinary = os.path.join(workingCopy, "bin", "pyxplot")
