@@ -38,7 +38,7 @@ def runTestsRemotely():
    gcdb(connection, cursor)
 
    # Run the tests
-   os.system(os.path.join(rootdir(), "scripts", "runTestsBackend.py") + " >> ppltestlog")
+   os.system(os.path.join(rootdir(), "scripts", "runTestsBackend.py") + " >> /home/ppltests/logs/ppltestrunlog")
 
 runTestsRemotely()
 

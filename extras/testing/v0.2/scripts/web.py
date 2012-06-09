@@ -527,6 +527,7 @@ def gcdbsAndErr(dbs, err):
    exit(1)
 
 def testBigLock():
+   import os
    if (checkLock(3)): return    # If the lock is not taken out, do nothing
    user = checkLockBlame(3)
    # Produce an error page
@@ -538,6 +539,12 @@ def testBigLock():
    page += '<p class="warning">If you are the user responsible for taking out the <b>Big Lock of Doom</b>, and you are willing to release it, please <a href="releaseLockOfDoom.html">click here</a>.  Please note that once the <b>Big Lock of Doom</b> has been released, you must discard any changes you have made to your local copy and revert your database to the checked-in version.</p>'
    page += '<p class="warning">The user responsible for taking the lock out is %s</p>'%(user)
    page += makePageFoot(cursor)
+
+   os.system("whoami > /tmp/whom ; groups >> /tmp/whom")
+   f = open("/tmp/whom", "r")
+   for i in f.readlines(): page += i
+   f.close()
+
    print page
    gcdb(connection, cursor)
    exit()

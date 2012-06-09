@@ -9,7 +9,8 @@ def openaDB(dbname):
    global subdir
    # connection = sqlite.connect("/home/ftcb/ftcb/ftcb.db")
    # os.system(os.path.join(rootdir(), "scripts", "runTestsBackend.py") + " >> /home/rpc25/ppltestlog &")
-   dbfn = os.path.join(os.environ["HOME"], subdir, "dbs", dbname)
+   # dbfn = os.path.join(os.environ["HOME"], subdir, "dbs", dbname)
+   dbfn = os.path.join(rootdir(), "dbs", dbname)
    connection = sqlite.connect(dbfn)
    cursor = connection.cursor()
    return (connection, cursor)
@@ -49,12 +50,13 @@ def gcdb(connection, cursor):
 def rootdir():
    import os
    global subdir
-   return os.path.join(os.environ["HOME"], subdir)
+   return os.path.join("/home/ppltest", subdir)
 
 # Produce a file string for a file id
 def buildFileString(id):
    import os
-   return os.path.join(rootdir(), "cache/cache.%s"%(id))
+   # return os.path.join(rootdir(), "cache/cache.%s"%(id))
+   return "cache.%s"%(id)
 
 # Insert a record for an "in-place" file into the files database
 def insertInPlaceFileRecord(cursor):
@@ -105,7 +107,7 @@ def runTestOnAllVersions(tid, cursor):
 
 def launchTests():
    import os, os.path
-   os.system(os.path.join(rootdir(), "scripts", "runTestsBackend.py") + " >> /home/rpc25/ppltestlog &")
+   os.system(os.path.join(rootdir(), "scripts", "runTestsBackend.py") + " >> /home/ppltest/logs/ppltestlog &")
    return
 
 
@@ -306,6 +308,7 @@ def shiftAndTest(array, diffrules):
 
 def compareTestOutputLines(o,e):
    import re
+   eps = 1e-100
    if (o==e): return True
    # Try two similar moveto commands
    if (re.search(" moveto$", o) and re.search(" moveto$", e)):
@@ -316,8 +319,8 @@ def compareTestOutputLines(o,e):
             oL = [float(i) for i in oL[:2]]
             eL = [float(i) for i in eL[:2]]
          except: return False
-         d0=abs((oL[0]-eL[0])/(oL[0]+eL[0]))
-         d1=abs((oL[1]-eL[1])/(oL[1]+eL[1]))
+         d0=abs((oL[0]-eL[0])/(oL[0]+eL[0]+eps))
+         d1=abs((oL[1]-eL[1])/(oL[1]+eL[1]+eps))
          if (d0+d1<1e-6): return True
          else:            return False
    # Try two similar numbers
@@ -385,9 +388,11 @@ def checkLockBlame(lock):
 
 def insertNewPyxplotVersionIntoDatabase(pplBinary, Nsvn, cursor):
    import shutil
+   import os
    (fid, fn) = insertInPlaceFileRecord(cursor)
 
    # Copy the file into place
+   fn = os.path.join(rootdir(), "cache", fn)
    shutil.copy(pplBinary, fn)
 
    # Insert into instances database

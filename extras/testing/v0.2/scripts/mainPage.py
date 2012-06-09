@@ -88,6 +88,7 @@ def parseFileUploadSubmission(id, form, cursor, warnings, updates):
    fn = buildFileString(id)
    cursor.execute("UPDATE files SET value=? WHERE id=?;", (fn, id))
 
+   fn = os.path.join(rootdir(), "cache", fn)
    # Write the file to disc
    fp = open(fn, "w")
    while (True):

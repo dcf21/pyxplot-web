@@ -7,7 +7,8 @@ from general import *
 
 # Import a PyXPlot version from the repositary and insert it into the database
 
-workingCopy = "/societies/pyxplot/code/pyxplot9"
+# workingCopy = "/societies/pyxplot/code/pyxplot9"
+workingCopy = "/home/ppltest/code/pyxplot9"
 
 def main():
    global workingCopy

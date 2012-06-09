@@ -20,7 +20,7 @@ def main():
    testBigLock()
 
    # Run the backend command
-   os.system(os.path.join(rootdir(), "scripts", "obtainPyXPlotFromSvn.py") + " >> /home/rpc25/ppltestlog &")
+   os.system(os.path.join(rootdir(), "scripts", "obtainPyXPlotFromSvn.py") + " >> /home/ppltest/logs/ppltestlog &")
 
    redirect303("mainPage.html")
 

@@ -70,7 +70,7 @@ def runTest(test, options):
    if (not iid in instanceCache):
       (instMode, instLoc) = cursor.execute("SELECT f.mode, f.value FROM files f LEFT JOIN pplversions pv ON (pv.binary=f.id) WHERE (pv.id=?);", (iid,)).fetchall()[0]
       assert(int(instMode)==1)  # PyXPlot binary must be a file on disc
-      instanceCache[iid] = instLoc
+      instanceCache[iid] = os.path.join(rootdir(), "cache", instLoc)
    options["pyxplot"] = instanceCache[iid]
 
    # Make a directory for the test
