@@ -84,6 +84,7 @@ def deleteTest(tid, cursor):
    cursor.execute("DELETE FROM testgroupmap WHERE (tid=?);", (tid,))
    return
 
+# Delete the outputs of a given test for every associated pplid
 def deleteTestOutput(oid, fid, cursor):
    if (fid == None): fid = getFromDB("SELECT fid FROM outputs WHERE (id=?);", (oid,), cursor)
    deleteFileFromDB(fid, cursor)
@@ -109,6 +110,36 @@ def launchTests():
    import os, os.path
    os.system(os.path.join(rootdir(), "scripts", "runTestsBackend.py") + " >> /home/ppltest/logs/ppltestlog &")
    return
+
+# Delete a pyxplot version
+def deleteVersion(pplid):
+   (connection, cursor) = openaDB("ppltest.db")
+   # Establish that this is a valid version
+   if (int(getFromDB("SELECT COUNT(*) FROM pplversions WHERE (id=?);", (pplid,), cursor)) != 1):
+      gcdb(connection, cursor)
+      return [1, "%s is not a valid PyXPlot instance ID"%pplid]
+
+   # Delete any pending tests for this version
+   cursor.execute("DELETE FROM pendingTests WHERE (iid=?);", (pplid,))
+   # Obtain file IDs for outputs
+   for i in cursor.execute("SELECT fid FROM instoutmap WHERE (iid=?);", (pplid,)).fetchall():
+      fid = i[0]
+      cursor.execute("DELETE FROM files WHERE (id=?);", (fid,))
+
+   # Delete references in output map
+   cursor.execute("DELETE FROM instoutmap WHERE (iid=?);", (pplid,))
+
+   # Delete from test outcomes
+   cursor.execute("DELETE FROM insttestmap WHERE (iid=?);", (pplid,))
+
+   # Delete from ppl versions
+   ifid = getFromDB("SELECT binary from pplVersions WHERE (id=?);", (pplid,), cursor)
+   cursor.execute("DELETE FROM files WHERE (id=?);", (ifid,))
+   cursor.execute("DELETE FROM pplVersions WHERE (id=?);", (pplid,))
+
+   gcdb(connection, cursor)
+   return [0, None]
+   
 
 
 # Logging

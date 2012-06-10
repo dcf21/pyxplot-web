@@ -17,8 +17,6 @@ from web import *
 def main():
 
    # Fire up sqlite
-   dbs = openaDB("ppltest.db")
-   (connection, cursor) = dbs
 
    # CGI output
    form = cgi.FieldStorage()
@@ -32,6 +30,7 @@ def main():
    # Parse the passed parameters
    for (field, check) in [["act", "[a-z]+$"], 
                           ["tid", "[0-9]+$"],
+                          ["iid", "[0-9]+$"],
                           ["confirm", "[0-9]$"]]:
       action = form.getfirst(field)
       if (action!=None):
@@ -40,24 +39,27 @@ def main():
 
    # Check whether the user has already confirmed
    if (not "confirm" in params):
-      gcdb(connection, cursor)
       issueConfirmDenyPage(params)
       return
 
    # Check whether we can find anything useful to do
    if (not "act" in params):
-      gcdbsAndErr(dbs, "You need to tell me what to do!")
+      errPage("You need to tell me what to do!")
 
    # Instructions are to delete something
    if (params["act"]=="del"):
       if ("tid" in params):
+         (connection, cursor) = openaDB("ppltest.db")
          deleteTest(int(params["tid"]), cursor)
          gcdb(connection, cursor)
          redirect303("mainPage.html")
+      elif ("iid" in params):
+         deleteVersion(params["iid"])
+         redirect303("mainPage.html")
       else:
-         gcdbsAndErr(dbs, "You need to tell me which test to delete!")
+         errPage("You need to tell me which test to delete!")
    else:
-      gcdbsAndErr(dbs, "You need to tell me what to do!")
+      errPage("You need to tell me what to do!")
       
 def issueConfirmDenyPage(params):
    # Parse the params (again)
@@ -67,6 +69,8 @@ def issueConfirmDenyPage(params):
       verb = "delete"
       if ("tid" in params):
          noun = "test id %s"%(params["tid"])
+      elif ("iid" in params):
+         noun = "PyXPlot version id %s"%(params["iid"])
       else:
          errPage("Confused about what to delete")
    else:
@@ -83,6 +87,7 @@ def issueConfirmDenyPage(params):
 
    httpHeaders()
    print page
+   gcdb(connection, cursor)
 main()
 
 

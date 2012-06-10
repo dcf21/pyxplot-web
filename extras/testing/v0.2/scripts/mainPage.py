@@ -176,6 +176,8 @@ def renderMainPagePplVersionBox(pplId, pplName, cursor, testCursor):
    # Button strip
    for (a,b) in [["all", "all"], ["new","new"], ["fail", "failed"]]: i.append({"class":"run%s"%a, "link":"runtests.html?act=run%s_%s"%(a,pplId), "text":"Run %s"%b})
    i.append({"link":"hideVersion.html?act=hide&pplid=%s"%pplId,"text":"Hide"})
+   i.append({"link":"confirmDeny.html?iid=%s&act=del&confirm=1"%pplId, "text":"Delete"})
+ 
    page = makeButtonStrip(title, i)[:-7]   # -7 strips off </div> at the end
    # Results
    # Obtain results as dictionary (indexed by tid) of dictionaries (keys: name, state)
