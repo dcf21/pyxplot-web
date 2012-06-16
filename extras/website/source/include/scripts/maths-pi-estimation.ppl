@@ -5,10 +5,12 @@ width = 7
 
 Nsamples = 500
 
+rand() = random.random()
+
 # Make a table of random numbers
 set samp Nsamples
 set output "temp.dat"
-tabulate 1-2*random():1-2*random() using 0:2:3
+tabulate 1-2*rand():1-2*rand() using 0:2:3
 
 # Draw a unit circle and a unit square
 box from -width/2,-width/2 to width/2,width/2

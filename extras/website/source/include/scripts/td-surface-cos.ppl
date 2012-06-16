@@ -1,10 +1,11 @@
 set numerics complex
-set xlabel "$x$"
-set ylabel "$y$"
-set zlabel "$\left|\cos(x+iy)\right|$"
-set xformat "%s$\pi$"%(x/pi)
+set xlabel r"$x$"
+set ylabel r"$y$"
+set zlabel r"$\left|\cos(x+iy)\right|$"
+set xformat r"%s$\pi$"%(x/pi)
 set key below
 set size 8 ratio 1 zratio 0.5
 set grid
-plot 3d [-pi:pi][-1:1] abs(cos(x+i*y)) with surface fillc hsb($1/pi/2+0.5):(0.9):(0.8)
+plot 3d [-pi:pi][-1:1] abs(cos(x+i*y)) with surface \
+            fillc hsb($1/pi/2+0.5,0.9,0.8)
 

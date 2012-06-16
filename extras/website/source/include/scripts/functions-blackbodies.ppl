@@ -6,15 +6,15 @@ set ylabel "Flux density"   ; set unit preferred W/Hz/m**2/sterad
 set x1label "Wavelength"
 set x2label "Frequency"     ; set unit of frequency Hz
 set x3label "Photon Energy" ; set unit of energy eV
-set axis x2 bottom linked x1 using phy_c/x
-set axis x3 bottom linked x2 using phy_h*x
+set axis x2 bottom linked x1 using phy.c/x
+set axis x3 bottom linked x2 using phy.h*x
 set xrange [80*unit(nm):unit(mm)]
 set yrange [1e-20*unit(W/Hz/m**2/sterad):]
 set xtics unit(0.1*um),10
 set x2tics 1e12*unit(Hz),10
 set x3tics 0.01*unit(eV),10
 
-bb(wlen,T) = Bv(phy_c/wlen,T)
+bb(wlen,T) = phy.Bv(phy.c/wlen,T)
 
 plot bb(x,  30) title "$T=  30$\,K", \
      bb(x, 100) title "$T= 100$\,K", \

@@ -1,5 +1,5 @@
-set xlabel '$\log (T/K)$'
-set ylabel '$\log(L/L_\odot)$'
+set xlabel r'$\log (T/K)$'
+set ylabel r'$\log(L/L_\odot)$'
 set nokey
 set grid x1y1
 plot [5.5:3.2][-2:4] 'stellar_evolution.dat' using 4:5 w l

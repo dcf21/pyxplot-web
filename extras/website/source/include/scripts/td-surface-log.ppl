@@ -1,11 +1,11 @@
 set numerics complex
-set xlabel "Re($z$)"
-set ylabel "Im($z$)"
-set zlabel "$\mathrm{Im}(\mathrm{log}[z])$"
+set xlabel r"Re($z$)"
+set ylabel r"Im($z$)"
+set zlabel r"$\mathrm{Im}(\mathrm{log}[z])$"
 set key below
 set size 8 square
 set grid
 set view -30,30
 plot 3d [-10:10][-10:10] Im(log(x+i*y)) \
      with surface col black \
-     fillcol hsb(atan2($1,$2)/(2*pi)+0.5):hypot($1,$2)/18+0.2:0.7
+     fillcol hsb(atan2($1,$2)/(2*pi)+0.5,hypot($1,$2)/18+0.2,0.7)

@@ -1,10 +1,12 @@
+set unit angle nodimensionless
+
 theta_approx(a,t) = a * sin(2*pi*t)
 theta_exact (a,t) = 2*asin(sin(a/2)*jacobi_sn(2*pi*t,sin(a/2)))
 
 set unit of angle degrees
 set key below
-set xlabel 'Time / $\sqrt{g/l}$'
-set ylabel '$\theta$'
+set xlabel r'Time / $\sqrt{g/l}$'
+set ylabel r'$\theta$'
 omega = unit(60*deg)
 plot [0:4] theta_approx(omega,x) title 'Approximate solution', \
            theta_exact (omega,x) title 'Exact solution'

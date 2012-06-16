@@ -8,7 +8,7 @@ w = unit(5*cm)
 set numerics complex
 set nogrid
 set key below
-set nocolourkey
+set nocolorkey
 set sample grid 300x300
 set size w square
 
@@ -16,12 +16,12 @@ set multiplot
 set nodisplay
 
 # Plot real-space image
-plot [-4:4][-4:4] chequer(x,y) with colourmap
+plot [-4:4][-4:4] chequer(x,y) with colormap
 
 # Plot Fourier-domain image
 set origin w+unit(5*mm),0
 set axis y right
-plot [-2.5:2.5][-2.5:2.5] abs(fft(x,y)) with colourmap
+plot [-2.5:2.5][-2.5:2.5] abs(fft(x,y)) with colormap
 
 set display
 refresh

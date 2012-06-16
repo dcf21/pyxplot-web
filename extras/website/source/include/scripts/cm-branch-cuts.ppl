@@ -5,8 +5,8 @@ set size square
 set key below
 
 set c1range[0:2]
-set colmap hsb(c1):(c2*0.7+0.3):1
+set colmap hsb(c1,c2*0.7+0.3,1)
 
 f(x) = 3*x**2 / (x**3+1)
-plot [-3:3][-3:3] abs(f(x+i*y)):arg(f(x+i*y)) with colourmap
+plot [-3:3][-3:3] abs(f(x+i*y)):arg(f(x+i*y)) with colormap
 

@@ -1,6 +1,6 @@
 set multiplot ; set nodisplay
 
-w = 10         # Width of notice / cm
+w = 10        # Width of notice / cm
 h = w/sqrt(2) # Height of notice / cm
 
 # Put a rectangular box around notice
@@ -10,9 +10,9 @@ line from w,h to 0,h with linewidth 2
 line from 0,h to 0,0 with linewidth 2
 
 # Write text of notice
-set texthalign centre ; set fontsize 1.5
-text "\bf Astrophysical Fluids Lecture" at w/2,3/4*h
-text "\bf MOVED to Seminar Room 3" at w/2, h/2
+set texthalign center ; set fontsize 1.5
+text r"\bf Astrophysical Fluids Lecture" at w/2,3/4*h
+text r"\bf MOVED to Seminar Room 3" at w/2, h/2
 arrow from w/4, h/4 to 3/4*w, h/4 with linewidth 4
 
 # Display notice

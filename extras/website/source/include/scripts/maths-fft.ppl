@@ -1,4 +1,4 @@
 set numerics complex
 step(x) = tophat(x,0.5)
 fft [-1:1:0.01] f() of step()
-plot [-10:10] Re(f(x*1)) title texify(Re(f(x))), sinc(pi*x)
+plot [-10:10] Re(f(x*1)) title texify("Re(f(x))"), sinc(pi*x)

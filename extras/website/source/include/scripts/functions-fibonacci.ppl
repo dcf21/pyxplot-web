@@ -4,7 +4,7 @@ f(x)[3:] = f(x-1) + f(x-2)
 
 # Binet's Formula for the Fibonacci numbers
 set numerics complex
-binet(x) = Re((GoldenRatio**x - (1-GoldenRatio)**x) / sqrt(5))
+binet(x) = Re((goldenRatio**x - (1-goldenRatio)**x) / sqrt(5))
 
 set samples 100
 set xrange [0:9.5]

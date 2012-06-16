@@ -7,5 +7,5 @@ set ytics 1
 set size square
 set key below
 set nocolkey
-plot [-2:2][-2:2] fractal_mandelbrot(x+i*y,80)+1 with colourmap
+plot [-2:2][-2:2] fractals.mandelbrot(x+i*y,80)+1 with colormap
 

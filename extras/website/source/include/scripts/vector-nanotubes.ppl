@@ -30,7 +30,7 @@ for XPOS=0 to 10
    {
     x = 1*XPOS + 2*YPOS
     y = 2*XPOS + 1*YPOS
-    call hexagon(x,y, conditionalN((XPOS-YPOS)%3==0,4,1))
+    call hexagon(x,y, ((XPOS-YPOS)%3==0)?4:1)
     text '%d,%d'%(XPOS,YPOS) \
       at ((x+1)*sin(BASIS_ANGLE_X)+y*sin(BASIS_ANGLE_Y))*LINELEN, \
          ((x+1)*cos(BASIS_ANGLE_X)+y*cos(BASIS_ANGLE_Y))*LINELEN \

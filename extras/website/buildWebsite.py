@@ -8,7 +8,7 @@
 
 import sys, os, re, subprocess, shutil, copy, tempfile
 
-options = {'pyxplot'       : "pyxplot",  # Default config goes here 
+options = {'pyxplot'       : "pyxplot9",  # Default config goes here 
            'sourceRoot'    : "source/",
            'targetRoot'    : "public_html/",
            'rooturi'       : None,
@@ -426,6 +426,8 @@ def renderExamplesNode(node, tree, opt, var):
       renderExamplesLeaf(leaf, node, tree, opt, var)
 
 def renderExamplesLeaf(leaf, node, tree, opt, var):
+   print "Working on example %s %s."%(node['dir'], leaf['dir'])
+
    # First write the index.html file
    object = {'source'  : None,
              'type'    : 'parsed'}
@@ -479,9 +481,12 @@ def renderExamplesLeaf(leaf, node, tree, opt, var):
    shutil.copy2(os.path.join(options['includedir'],leaf['scriptfile']), "%s/script.ppl"%tempdir)
    for datafile in leaf['datafiles']: shutil.copy2(os.path.join(options['includedir'],datafile), tempdir)
    os.system("cp .pyxplotrc %s"%tempdir) # Make sure that ppl uses default configuration options
-   pplobj = subprocess.Popen(opt['pyxplot'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, cwd=tempdir)
+   pplobj = subprocess.Popen(opt['pyxplot'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE, cwd=tempdir)
    [output, errors] = pplobj.communicate('set term eps\nset out "output.eps"\nload "script.ppl"\nset term png trans dpi 100\nset output "output.png"\nrefresh\nset term png trans dpi 70\nset output "output_sm.png"\nrefresh')
    # In an ideal world we'd do something useful with the output here
+   if (len(errors.strip())>0):
+     sys.stderr.write("PyXPlot error:\n%s"%errors)
+     raise RuntimeError
    leafdir = os.path.join(opt['targetRoot'],tree['root'], node['dir'], leaf['dir'])
    for file in ['output.eps', 'output.png', 'output_sm.png', 'script.ppl']: shutil.copy2("%s/%s"%(tempdir,file), leafdir)
    for file in leaf['datafiles']: shutil.copy2(os.path.join(options['includedir'],file), leafdir)

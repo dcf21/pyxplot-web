@@ -2,8 +2,8 @@ set xlabel "$x$"
 set ylabel "$y$"
 set xrange [-pi*0.4:pi*0.4]
 set yrange [-pi*0.4:pi*0.4]
-set xformat "%s$\pi$"%(x/pi)
-set yformat "%s$\pi$"%(y/pi)
+set xformat r"%s$\pi$"%(x/pi)
+set yformat r"%s$\pi$"%(y/pi)
 set xtics 0.2*pi ; set mxtics 0.05*pi
 set ytics 0.2*pi ; set mytics 0.05*pi
 set trange [-5:5]

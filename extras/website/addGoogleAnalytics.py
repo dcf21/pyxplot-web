@@ -11,7 +11,7 @@ assert os.path.exists("0.8") # Just double check that we're in the output HTML d
 os.system("rm -Rf .svn */.svn */*/.svn */*/*/.svn */*/*/*/.svn */*/*/*/*/.svn")
 
 for fn in glob.glob("0.*/doc/html/*.html"):
- print fn
+ #print fn
  contents = open(fn).read()
  lines = contents.split('\n')
  i = hadHead = hadBody = hadEndBody = 0

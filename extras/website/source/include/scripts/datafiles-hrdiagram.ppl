@@ -1,5 +1,5 @@
 set nokey
 set size square
-set xlabel '$B-V$ colour'
+set xlabel '$B-V$ color'
 set ylabel 'Absolute magnitude $M$'
 plot [-0.4:2][14:-4] 'hrdiagram.dat.gz' w d ps 3
