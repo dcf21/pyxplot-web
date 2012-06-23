@@ -1,10 +1,10 @@
-% PYXPLOT.TEX
+% pyxplot.tex
 %
 % The documentation in this file is part of PyXPlot
 % <http://www.pyxplot.org.uk>
 %
-% Copyright (C) 2006-2010 Dominic Ford <coders@pyxplot.org.uk>
-%               2009-2010 Ross Church
+% Copyright (C) 2006-2012 Dominic Ford <coders@pyxplot.org.uk>
+%               2009-2012 Ross Church
 %
 % $Id: pyxplot.tex 21 2007-02-26 15:14:43Z rpc25 $
 %
@@ -26,8 +26,8 @@
 %\usepackage{amssymb,amsmath,url,lscape,longtable,fancyvrb,makeidx,wasysym}
 \usepackage{afterpage,amssymb,amsmath,bbding,color,longtable,multirow,nicefrac,fancyvrb,makeidx,upgreek,wasysym}
 \makeindex
-\def\version{0.8.0}
-\def\reldate{May 2010}
+\def\version{0.9.0}
+\def\reldate{September 2012}
 \include{definitions}
 
 %\newcommand\columncolor[1]{}
@@ -45,20 +45,15 @@
 %\floatname{boxout2}{Box}
 
 \newcommand{\boxout}[3]{
-%\begin{boxout2}
-\begin{tabular}{|>{\columncolor{LightGrey}}l|}
-%\begin{tabular}{|l|}
-\hline
-\begin{minipage}{\textwidth}
-\vspace{2.5mm}
+\definecolor{boxoutcol}{rgb}{0.9,0.9,0.82}
+\newline
+\fcolorbox{black}{boxoutcol}{
+{\bf\large #1}
+\newline\newline
 #3
-\vspace{2.5mm}
-\end{minipage} \\
-\hline
-\end{tabular}
-%\caption{#1}
+}
 \label{#2}
-%\end{boxout2}
+\newline
 }
 
 % Make example float environment
@@ -66,51 +61,47 @@
 %\floatname{exampletag}{Example}
 
 \newcommand{\example}[3]{
-%\afterpage{
-%
-%\begin{exampletag}[H]
-%\caption[#2]
-{\upshape\mdseries\rm #2.}\label{#1}\end
-%{exampletag}
-%\vspace{-5mm}
-\begin{longtable}{|>{\columncolor{LightGrey}}p{\textwidth}|}
-\hline \endfoot
-\hline \endhead
+\definecolor{excol}{rgb}{0.82,0.9,0.82}
+\newline
+\fcolorbox{black}{excol}{
+{\bf\large Example: #2}
+\newline\newline
 #3
-\end{longtable}%\newpage
-%}
+}
+\label{#1}
+\newline
 }
 
 \newcommand{\nlnp} {\\\hspace{8mm}}
-\newcommand{\nlscf}{\vspace{3mm}\\\noindent}
-\newcommand{\nlfcf}{\vspace{3mm}\\\hspace{8mm}}
-
+\newcommand{\nlscf}{\newline\noindent}
+\newcommand{\nlfcf}{\newline\hspace{8mm}}
 
 \begin{document}
 
 \begin{titlepage}
 \normalsize
-\vspace*{0.5cm}
 \begin{center}
 {\Huge \bf PyXPlot Users' Guide}\\
 \end{center}
-\vspace*{0.5cm}
+\newline
 \begin{center}
-{\LARGE \bf A Command-line Data Processing, \\ \vspace{2mm} Graph Plotting and \\ \vspace{2mm} Vector Graphics Suite. \\}
+{\LARGE \bf A Scientific Scripting Language, \\ Graph Plotting and \\ Vector Graphics Suite. \\}
 \end{center}
-\vspace*{0.5cm}
+\newline
 \begin{center}
 {\Large Version \version \\}
 \end{center}
-\vspace*{0.0cm}
+\newline
 \begin{center}
-\includegraphics[width=10cm]{examples/eps/ex_cover}
+{\large
+Lead Developer: Dominic Ford \\
+\vspace{1mm}
+Lead Tester: Ross Church \\
+\vspace{2mm}
+Email: \noindent {\tt coders@pyxplot.org.uk} \\
+}
 \end{center}
-\vspace*{0.0cm}
-\begin{center}
-{\Large Dominic Ford, Ross Church \\ \vspace{2mm} Email: \noindent {\tt coders@pyxplot.org.uk} \\ }
-\end{center}
-\vspace*{0.5cm}
+\newline
 \begin{center}
 {\Large \reldate \\}
 \end{center}
@@ -123,13 +114,14 @@
 \include{calculations}
 \include{data}
 \include{programming}
-\part{Plotting and Vector Graphics}
+\part{Plotting and vector graphics}
 \include{plotting}
 \include{terminals}
 \include{vector_graphics}
-\part{Reference Manual}
+\part{Reference manual}
 \include{reference}
 \include{functions}
+\include{types}
 \include{constants}
 \include{units}
 \include{papersizes}

@@ -1,10 +1,10 @@
-% DEFINITIONS.TEX
+% definitions.tex
 %
 % The documentation in this file is part of PyXPlot
 % <http://www.pyxplot.org.uk>
 %
-% Copyright (C) 2006-2010 Dominic Ford <coders@pyxplot.org.uk>
-%               2008-2010 Ross Church
+% Copyright (C) 2006-2012 Dominic Ford <coders@pyxplot.org.uk>
+%               2008-2012 Ross Church
 %
 % $Id: definitions.tex 768 2010-05-15 20:26:07Z dcf21 $
 %
@@ -23,8 +23,8 @@
 
 % This file contains a list of macro definitions used in the manual
 
-\def\version{0.8.0}
-\def\reldate{May 2010}
+\def\version{0.9.0}
+\def\reldate{September 2012}
 
 % Put ticks and crosses next to code examples
 %\setlength{\dontdowidth}{10cm}
@@ -49,14 +49,15 @@
 \newcommand\indcot  [1]{{\tt #1}\indco{#1}}
 
 % Names of software packages where there's controversy over capitalisation
-\newcommand\gnuplot{Gnuplot}
-\newcommand\ghostview{Ghostview}
-\newcommand\imagemagick{ImageMagick}
+\newcommand\gnuplot{gnuplot}
+\newcommand\ghostview{ghostview}
+\newcommand\imagemagick{imagemagick}
 
 % There's some controversy over whether these should have a space in them
-\newcommand\datafile{datafile}
-\newcommand\Datafile{Datafile}
-\newcommand\datapoint{datapoint} % "Datum", surely?
+\newcommand\subpart[1]{\vspace{4mm}\noindent{\bf\large #1}\vspace{4mm}}
+\newcommand\datafile{data file}
+\newcommand\Datafile{Data file}
+\newcommand\datapoint{data point} % "Datum", surely?
 
 \def\sinc{{\rm sinc}}
 

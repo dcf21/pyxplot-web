@@ -482,7 +482,7 @@ def renderExamplesLeaf(leaf, node, tree, opt, var):
    for datafile in leaf['datafiles']: shutil.copy2(os.path.join(options['includedir'],datafile), tempdir)
    os.system("cp .pyxplotrc %s"%tempdir) # Make sure that ppl uses default configuration options
    pplobj = subprocess.Popen(opt['pyxplot'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE, cwd=tempdir)
-   [output, errors] = pplobj.communicate('set term eps\nset out "output.eps"\nload "script.ppl"\nset term png trans dpi 100\nset output "output.png"\nrefresh\nset term png trans dpi 70\nset output "output_sm.png"\nrefresh')
+   [output, errors] = pplobj.communicate('set width 6\nset fontsize 1.2\nset term eps\nset out "output.eps"\nload "script.ppl"\nset term png trans dpi 110\nset output "output.png"\nrefresh\nset term png trans dpi 90\nset output "output_sm.png"\nrefresh')
    # In an ideal world we'd do something useful with the output here
    if (len(errors.strip())>0):
      sys.stderr.write("PyXPlot error:\n%s"%errors)

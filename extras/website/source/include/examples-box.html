@@ -1,9 +1,15 @@
        <td>
          <div class="examplebox">
-            <a href="<<VARIABLE exampleuri>>index.html">
-               <h3><<VARIABLE examplename>></h3>
-               <img src="<<VARIABLE exampleimageuri>>" alt="Output from the <<VARIABLE examplename>> example" />
-               <p>More...</p>
-            </a>
+            <table width="100%" style="border:0px">
+             <tr>
+              <td><a href="<<VARIABLE exampleuri>>index.html"><h3><<VARIABLE examplename>></h3></a></td>
+              <td style="text-align:right;"><a href="<<VARIABLE exampleuri>>index.html">See more&nbsp;<img src="<<ROOT>>images/arrow_forward.png" style="vertical-align:middle;padding:1px;"></a></td>
+             </tr>
+            </table>
+           <a href="<<VARIABLE exampleuri>>index.html">
+            <p class="imgholder">
+               <img src="<<VARIABLE exampleimageuri>>" alt="<<VARIABLE examplename>> example: click to see more..." title="<<VARIABLE examplename>> example: click to see more..." />
+            </p>
+           </a>
          </div>
        </td>

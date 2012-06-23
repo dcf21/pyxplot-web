@@ -1,0 +1,14 @@
+set term eps
+!mkdir -p output
+set output "output/tick.eps"
+
+set size 3 square
+set axis x invisible
+set axis y invisible
+set nokey
+plot '--' with l lw 22 col green
+0 1
+1 0
+3 3
+END
+

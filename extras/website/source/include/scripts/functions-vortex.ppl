@@ -1,5 +1,5 @@
 set size square
-set width 9
+set width 7
 set nokey
 set xlabel 'x'
 set ylabel 'y'

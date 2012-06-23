@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# $Id$
+
+# Run this script at your own risk
+
+rm    -Rf /tmp/dcf_plastex/html /tmp/dcf_plastex/xml
+mkdir -p  /tmp/dcf_plastex/html /tmp/dcf_plastex/xml
+
+cp -r /home/dcf21/pyxplot/pyxplot9/doc/* /tmp/dcf_plastex/html
+cp /home/dcf21/pyxplot/extras/plastex/HTMLmanual/* /tmp/dcf_plastex/html
+
+cd /tmp/dcf_plastex/html
+for all in *.tex
+do
+cat $all | sed "s/\\\\begin{enumerate}\[(i)\]/\\begin{enumerate}/g" > ${all}_2
+mv ${all}_2 $all
+done
+
+plastex pyxplot-plastex.tex
+
+for all in pyxplot-plastex/*.html
+do
+cat $all     | sed "s@<span style=\"border:1px solid #000000;@<div style=\"border:1px solid #000000;@g" > ${all}_2
+cat ${all}_2 | sed "s@  </span>@  </div>@g" > ${all}_3
+rm ${all}_2
+mv ${all}_3 $all
+done
+
+rm -Rf /home/dcf21/pyxplot/extras/website/source/HTMLdoc/0.9
+mkdir -p /home/dcf21/pyxplot/extras/website/source/HTMLdoc/0.9
+cp -r /tmp/dcf_plastex/html/pyxplot-plastex/* /home/dcf21/pyxplot/extras/website/source/HTMLdoc/0.9
+cp /home/dcf21/pyxplot/pyxplot9/doc/pyxplot.pdf /home/dcf21/pyxplot/extras/website/source/library/manual-0.9.0.pdf
+

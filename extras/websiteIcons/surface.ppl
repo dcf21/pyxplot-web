@@ -1,0 +1,10 @@
+set term png trans dpi 70
+!mkdir -p output
+set output "output/plotting.png"
+
+set nokey
+set fontsize 1.25
+set size 8 square
+plot 3d x**3/20+y**2 with surface col black fillc green, \
+        x**3/20+y**2 with contours col black
+

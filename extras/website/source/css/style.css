@@ -59,10 +59,9 @@ html>body #content{height:auto}
 }
 
 #navline {
-	padding: 0em;
-	padding-top: 0.1em;
-	margin: 0em;
-	border: none;
+	padding: 3px;
+   border:1px solid #777777;
+   margin: 3px;
 	border-bottom: 1px solid #808080;
 }
 

@@ -1,5 +1,5 @@
 set numeric display latex
-set width 20
+set width 16
 set size ratio 0.4
 set numerics sf 4
 set log x

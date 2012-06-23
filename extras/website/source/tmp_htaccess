@@ -1,0 +1,4 @@
+AuthUserFile /home/pyxplot/pplnew_passwd
+AuthType Basic
+AuthName "The future of PyXPlot"
+Require valid-user

@@ -35,21 +35,12 @@
 
 .examplebox   {
    margin: 15px;
-   background: #d0d0ff;
-   border-left: 2px solid #e0e0e0;
-   border-bottom: 2px solid #606060;
-   border-top: 2px solid #e0e0e0;
-   border-right: 2px solid #606060;
-   float: left;
+   border: 2px solid #606060;
    padding: 0.7em;
-   /* margin-left: auto;
-   margin-right: auto;
-   margin-top: 1em;
-   margin-bottom: 1em;
-   left: 0; */
 }
 
 .examplebox h3 {
+   font-size: 110%;
    margin-top: 0em;
 }
 
@@ -58,6 +49,10 @@
    margin-bottom: 0em;
    clear: both;
    text-align: right;
+}
+
+.examplebox p.imgholder {
+   text-align: center;
 }
 
 .examplescript {

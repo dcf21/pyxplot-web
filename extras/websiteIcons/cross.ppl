@@ -1,0 +1,8 @@
+set term eps
+!mkdir -p output
+set output "output/cross.eps"
+
+set multiplot
+line from 0,0 to 3,3 with lw 22 col red
+line from 3,0 to 0,3 with lw 22 col red
+
