@@ -7,5 +7,6 @@ tabulate [1:10200] x*prime(x)
 histogram f() 'temp.dat' using 2 binwidth 100
 set output 'output.eps'
 set samples 1000
+set width 8
 plot [5:10000][0.05:0.25] f(x), 1/ln(x)
 

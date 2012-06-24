@@ -3,4 +3,6 @@ set key bottom right
 set xformat r"%s$\pi$"%(x/pi)
 set yformat r"%s$\pi$"%(y/pi)
 set xrange [-5*pi:5*pi]
+set width 7
+set key below
 plot int_dz(sinc(z),0,x)
