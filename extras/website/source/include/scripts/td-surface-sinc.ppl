@@ -8,7 +8,7 @@ set xtics 3*pi ; set mxtics pi
 set ytics 3*pi ; set mytics pi
 set ztics 
 set key below
-set size 8 square
+set size 6 square
 set grid
 plot 3d [-6*pi:6*pi][-6*pi:6*pi][-0.3:1] sinc(hypot(x,y)) \
      with surface col black \

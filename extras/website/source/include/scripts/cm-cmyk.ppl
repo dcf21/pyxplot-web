@@ -1,0 +1,17 @@
+set size 7.5 square
+set nokey
+set nocolkey
+set numeric errors quiet
+set noxtics ; set noytics
+set axis x invisible
+set axis y invisible
+d    = 0.5
+t(x) = max(0,2-exp(x**8))
+set colmap cmyk(t(hypot(c1  ,c2-d/sqrt(2))), \
+                t(hypot(c1+d,c2+d        )), \
+                t(hypot(c1-d,c2+d        )), \
+                0  )
+set sample grid 250x250
+set c1range norenorm
+set c2range norenorm
+plot [-1.5:1.5][-1.5:1.5] x:y with colormap

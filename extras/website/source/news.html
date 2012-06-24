@@ -7,6 +7,43 @@
 <h3>News</h3>
 
 <div class="news">
+<p class="newsdate">September 1, 2012</p>
+<p class="newshead">PyXPlot 0.9.0 released</p>
+<p class="newsbody">
+Version 0.9 is a major update. Many <b>new data types</b> have been introduced,
+each of which has methods which can be called in an <b>object-orientated</b>
+fashion. These include:
+</p>
+
+<ul class="newsbody">
+<li> <b>Colors</b>, which can be stored in variables for subsequent use in vector graphics commands. The addition and subtraction operators act on colors to allow color mixing.</li>
+<li> <b>Dates</b>, which can be imported from calendar dates, unix times or Julian dates. Dates can be subtracted to give time intervals.</li>
+<li> <b>Lists</b> and <b>dictionaries</b>, which can be iterated over, or used to feed calculated data into the plot and tabulate commands.</li>
+<li> <b>Vectors</b> and <b>matrices</b>, which allow matrix algebra. These types interface cleanly with PyXPlot's vector-graphics commands, allowing positions to be specified as vector expressions.</li>
+<li> <b>File handles</b>, which allow PyXPlot to read data from files, or write data or logs to files.</li>
+<li> <b>Modules</b> and <b>classes</b>, which allow object-orientated programming.</li>
+</ul>
+
+<p class="newsbody">
+In addition, PyXPlot's range of <b>operators</b> has been <b>extended</b> to include most of those in the C programming language, allowing expressions such as
+</p>
+
+<p class="newsbody" style="font-family: monospace;">
+<b>
+pyxplot&gt; print (a=3)+(b=2)<br />
+5<br />
+pyxplot&gt; print a&gt;0?"yes":"no"<br />
+yes<br />
+pyxplot&gt; print "%s %s"%(++a,b++)<br />
+4 2<br />
+pyxplot&gt; print (a+=10 , b+=10 , a+b)<br />
+27
+</b>
+</p>
+
+</div>
+
+<div class="news">
 <p class="newsdate">January 7, 2011</p>
 <p class="newshead">PyXPlot 0.8.4 released</p>
 <p class="newsbody">

@@ -1,7 +1,7 @@
 set multiplot ; set nodisplay
 
-a   = 6.0              # Semi-major axis
-b   = 4.0              # Semi-minor axis
+a   = 5.0              # Semi-major axis
+b   = a*2/3            # Semi-minor axis
 e   = sqrt(1-(b/a)**2) # Eccentricity
 slr = a*(1-e**2)       # Length of semi-latus rectum
 fd  = a*e              # Distance of focus from center

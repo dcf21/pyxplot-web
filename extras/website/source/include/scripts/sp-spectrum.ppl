@@ -1,0 +1,12 @@
+set nokey
+set nocolkey
+set size 11 ratio 0.2
+set noytics
+set xlabel 'Wavelength'
+set noylabel
+set linear x y
+set colmap colors.wavelength(c1,1)
+set sample grid 200x2
+set c1range norenorm
+set title 'The electromagnetic spectrum'
+plot [unit(350*nm):unit(700*nm)][0:1] x with colormap

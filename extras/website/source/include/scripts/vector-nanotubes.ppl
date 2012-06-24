@@ -1,6 +1,8 @@
 basisAngleX =   0*unit(deg)
 basisAngleY = 120*unit(deg)
-lineLen     =   5*unit(mm)
+lineLen     =   4*unit(mm)
+
+set fontsize 0.8
 
 # Set up a transformation matrix
 transformMat = matrix([[sin(basisAngleX),sin(basisAngleY)], \

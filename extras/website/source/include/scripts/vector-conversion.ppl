@@ -12,6 +12,7 @@ subroutine conversionScale(origin_x,origin_y,conversionFactor,unitA,unitB)
 
 set nodisplay
 set multiplot
+set width 9
 
 # Make a temperature conversion scale
 set xtics outward -10,10

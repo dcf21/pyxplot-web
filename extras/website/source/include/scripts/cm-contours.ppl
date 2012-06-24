@@ -1,7 +1,7 @@
 set xlabel "$x$"
 set ylabel "$y$"
 set nokey
-set size 8 square
+set size 6 square
 set samples grid 400x400
 set nogrid
 plot [-10:10][-10:10] x**3/20+y**2 with colormap, \

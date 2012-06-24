@@ -1,0 +1,14 @@
+set log x
+set linear y
+set nokey
+set nocolkey
+set size 11 ratio 0.2
+set noytics
+set xlabel 'Temperature'
+set noylabel
+f(lambda) = phy.Bv(phy.c/lambda,c1) / (c1**4 / unit(6000*K)**4)
+set colmap colors.spectrum(f,3e3)
+set sample grid 200x2
+set c1range norenorm
+set title 'Colors of blackbodies of different temperatures'
+plot [unit(2000*K):unit(20000*K)] x with colormap

@@ -8,25 +8,57 @@
 
 <ul>
    <li> Lead developer and programmer: Dominic Ford [<a href="http://www.dcford.org.uk">personal website</a>]</li>
-	<li> Alpha tester and webmonkey: Ross Church [<a href="http://www.srcf.ucam.org/~rpc25/">personal website</a>]</li>
-   <li> Development team: Zolt&#225n V&#246r&#246s.</li>
-   <li> Other contributors: Michael Rutter, Matthew Smith.</li>
+	<li> Lead tester: Ross Church [<a href="http://www.srcf.ucam.org/~rpc25/">personal website</a>]</li>
+   <li> Other contributors: Michael Rutter, Matthew Smith, <a href="http://pyxplot-tricks.blogspot.com">Zolt&#225n V&#246r&#246s</a>.</li>
 </ul>
 
 <h3>Acknowledgments</h3>
 
 <p>
-	The authors would like to express their thanks to Joerg Lehmann and Andre Wobst
-	for writing the <a href="http://pyx.sourceforge.net/">PyX</a> graphics
-	library for <a href="http://www.python.org">python</a>, upon which the
-	original version of this program was built.  
+PyXPlot builds on ideas from several pre-existing open-source software
+projects. We like gnuplot's simple and intuitive interface, and PyXPlot's
+command syntax is intentionally very similar, to the point of backwards
+compatibility in many cases. Even when designing the entirely new parts of
+PyXPlot's syntax, we have followed gnuplot's preference for short simple
+command-line syntax. In designing PyXPlot's graphical output engine, we
+borrowed many ideas from the <a href="http://pyx.sourceforge.net/">PyX</a>
+graphics library for Python.
+</p>
+
+<p>
+Several people have contributed code to PyXPlot. <a
+href="http://www.tcm.phy.cam.ac.uk/~mjr/">Michael Rutter</a> provided us with a
+copy of his public domain code for converting bitmap images into PostScript,
+which we used in the implementation of the image command and the colormap plot
+style. Matthew Smith provided C implementations of the Airy functions and the
+Riemann zeta function for general complex inputs, and helped to test PyXPlot's
+mathematical environment. <a
+href="http://pyxplot-tricks.blogspot.com">Zolt&#225n V&#246r&#246s</a> worked
+on our development team from 2010 until 2011.  <a
+href="http://www.fourmilab.ch/documents/specrend/">John Walker</a> has
+published public domain code which renders the electromagnetic spectrum as RGB
+colors, which we use in the colors.wavelength() function.
+</p>
+
+<p>
+We would also like to thank all the users who have got in touch with us by email
+since PyXPlot was first released on the web in 2006. Your feedback and
+suggestions have been gratefully received.
+</p>
+
+<p>
+Final thanks go to our team of alpha testers, without whose work PyXPlot would
+doubtless still contain many more bugs. Especial thanks go to Rachel Holdforth
+and <a
+href="http://www.bris.ac.uk/chemistry/people/stuart-w-prescott/index.html">Stuart
+Prescott</a>.
 </p>
 
 <h3>License</h3>
 
 <p>
 	PyXPlot is distributed under the <a
-	href="http://www.gnu.org/copyleft/gpl.html">Gnu General Public License</a>,
+	href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a>,
 	Version 2.
 </p>
 </div>

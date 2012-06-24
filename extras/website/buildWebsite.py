@@ -447,15 +447,15 @@ def renderExamplesLeaf(leaf, node, tree, opt, var):
       line = fin.readline()
       assert(line != '')
    # Write navboxes
-   ftmp.write('<div class="examplebutton">\n')
+   ftmp.write('<div class="examplebuttons" style="width:150px;"><div class="examplebutton">\n')
    if (leaf['prevuri']!=None): ftmp.write('<a href="%sindex.html"><img src="<<ROOT>>images/arrow_back2.png" style="padding:4px;" title="Previous example" alt="Prev"></a>\n'%leaf['prevuri'])
    else                      : ftmp.write('<img src="<<ROOT>>images/arrow_back3.png" style="padding:4px;" title="Previous example" alt="Prev">\n')
    ftmp.write('</div>\n<div class="examplebutton">\n')
    if (leaf['nexturi']!=None): ftmp.write('<a href="%sindex.html"><img src="<<ROOT>>images/arrow_forward2.png" style="padding:4px;" title="Next example" alt="Next"></a>\n'%leaf['nexturi'])
    else                      : ftmp.write('<img src="<<ROOT>>images/arrow_forward3.png" style="padding:4px;" title="Next example" alt="Next">\n')
-   ftmp.write('</div>\n')
+   ftmp.write('</div></div>\n')
    # Write example downloads box
-   ftmp.write('<p style="clear:both; margin-bottom:2px;">Download this example:</p>\n')
+   ftmp.write('<p style="text-align:center; clear: both; margin-bottom:4px;">Download this example:</p>\n')
    ftmp.write('<div class="exampledownloads">\n')
    filelist = ['script.ppl', 'output.eps', 'output.png']
    for file in leaf['datafiles']: 

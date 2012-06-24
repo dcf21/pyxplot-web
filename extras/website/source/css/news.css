@@ -38,3 +38,14 @@ p.newsbody {
    font-size: normal;
 }
 
+ul.newsbody {
+   padding-left: 25px;
+   padding-right: 25px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   border: 0px;
+   margin: 0px;
+   font-size: 90%;
+   font-size: normal;
+}
+

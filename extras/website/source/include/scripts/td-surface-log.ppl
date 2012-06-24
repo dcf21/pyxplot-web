@@ -3,7 +3,7 @@ set xlabel r"Re($z$)"
 set ylabel r"Im($z$)"
 set zlabel r"$\mathrm{Im}(\mathrm{log}[z])$"
 set key below
-set size 8 square
+set size 6 square
 set grid
 set view -30,30
 plot 3d [-10:10][-10:10] Im(log(x+i*y)) \
