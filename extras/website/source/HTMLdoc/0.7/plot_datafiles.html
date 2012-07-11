@@ -7,7 +7,7 @@
 
 <link href="directing_output.html" title="Directing Where Output Goes" rel="next" />
 <link href="sect0010.html" title="Operators and Functions" rel="prev" />
-<link href="gnuplot_intro.html" title="First Steps With PyXPlot" rel="up" />
+<link href="gnuplot_intro.html" title="First Steps With Pyxplot" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -17,7 +17,7 @@
 <tr>
 <td><a href="sect0010.html" title="Operators and Functions"><img alt="Previous: Operators and Functions" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="gnuplot_intro.html" title="First Steps With Pyxplot"><img alt="Up: First Steps With Pyxplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="directing_output.html" title="Directing Where Output Goes"><img alt="Next: Directing Where Output Goes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="gnuplot_intro.html">First Steps With PyXPlot</a> <b>:</b>
+<a href="gnuplot_intro.html">First Steps With Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -58,7 +58,7 @@ plot 'data.dat' using 3:5
 plot 'data.dat' using (3+$1+$2):(2+$3)
 </pre><p>In such expressions, column numbers are prefixed by dollar signs, to distinguish them from numerical constants. The example above would plot the sum of the values in the first two columns of the data file, plus three, on the horizontal axis, against two plus the value in the third column on the vertical axis. A more advanced example might be: </p><pre>
 plot 'data.dat' using 3.0:$($2)
-</pre><p>This would place all of the data points on the line <img src="images/img-0025.png" alt="$x=3$" style="position:relative; bottom:0px; width:44px; height:12px" class="math" />, meanwhile drawing their vertical positions from the value of some column <img src="images/img-0026.png" alt="$n$" style="position:relative; bottom:0px; width:11px; height:8px" class="math" /> in the data file, where the value of <img src="images/img-0026.png" alt="$n$" style="position:relative; bottom:0px; width:11px; height:8px" class="math" /> is itself read from the second column of the data file. </p><p>Later, in Section <a href="horizontal_datafiles.html">4.4</a>, I shall discuss how to plot rows of data files against one another, in horizontally arranged data files. </p><p>It is also possible to plot data from only selected lines within a data file. When PyXPlot reads a data file, it looks for any blank lines in the file. It divides the data file up into <i class="it">data blocks</i>, each being separated from the next by a single blank line. The first datablock is numbered 0, the next 1, and so on. <span id="a0000000230"></span> </p><p>When two or more blank lines are found together, the data file is divided up into <i class="it">index blocks</i>. The first index block is numbered 0, the next 1, and so on. Each index block may be made up of a series of data blocks. To clarify this, a labelled example data file is shown in Figure <a href="plot_datafiles.html#introduce_every">2.2</a>. </p><div id="introduce_every" class="figure"><table cellspacing="0" class="tabular">
+</pre><p>This would place all of the data points on the line <img src="images/img-0025.png" alt="$x=3$" style="position:relative; bottom:0px; width:44px; height:12px" class="math" />, meanwhile drawing their vertical positions from the value of some column <img src="images/img-0026.png" alt="$n$" style="position:relative; bottom:0px; width:11px; height:8px" class="math" /> in the data file, where the value of <img src="images/img-0026.png" alt="$n$" style="position:relative; bottom:0px; width:11px; height:8px" class="math" /> is itself read from the second column of the data file. </p><p>Later, in Section <a href="horizontal_datafiles.html">4.4</a>, I shall discuss how to plot rows of data files against one another, in horizontally arranged data files. </p><p>It is also possible to plot data from only selected lines within a data file. When Pyxplot reads a data file, it looks for any blank lines in the file. It divides the data file up into <i class="it">data blocks</i>, each being separated from the next by a single blank line. The first datablock is numbered 0, the next 1, and so on. <span id="a0000000230"></span> </p><p>When two or more blank lines are found together, the data file is divided up into <i class="it">index blocks</i>. The first index block is numbered 0, the next 1, and so on. Each index block may be made up of a series of data blocks. To clarify this, a labelled example data file is shown in Figure <a href="plot_datafiles.html#introduce_every">2.2</a>. </p><div id="introduce_every" class="figure"><table cellspacing="0" class="tabular">
 <tr>
 
     
@@ -180,7 +180,7 @@ plot 'data.dat' using 3.0:$($2)
     <td style="border-bottom-width:1px; border-bottom-color:black; border-bottom-style:solid; text-align:left"><p> <img src="images/img-0027.png" alt="$&lt;$" style="position:relative; bottom:0px; width:12px; height:11px" class="math" />etc<img src="images/img-0028.png" alt="$&gt;$" style="position:relative; bottom:0px; width:12px; height:11px" class="math" /> </p></td>
 
 </tr>
-</table><div class="caption"><b>Figure 2.2</b>: <span>An example PyXPlot data file – the data file is shown in the two left-hand columns, and commands are shown to the right.</span></div><p>  </p></div><p>By default, when a data file is plotted, all data blocks in all index blocks are plotted. To plot only the data from one index block, the following syntax may be used: </p><pre>
+</table><div class="caption"><b>Figure 2.2</b>: <span>An example Pyxplot data file – the data file is shown in the two left-hand columns, and commands are shown to the right.</span></div><p>  </p></div><p>By default, when a data file is plotted, all data blocks in all index blocks are plotted. To plot only the data from one index block, the following syntax may be used: </p><pre>
 plot 'data.dat' index 1
 </pre><p>To achieve the default behaviour of plotting all index blocks, the <tt class="tt">index</tt> modifier should be followed by a negative number.<span id="a0000000231"></span> </p><p>It is also possible to specify which lines and/or data blocks to plot from within each index. To do so, the <tt class="tt">every</tt><span id="a0000000232"></span> modifier is used, which takes up to six values, separated by colons: </p><pre>
 plot 'data.dat' every a:b:c:d:e:f
@@ -246,7 +246,7 @@ plot 'data.dat' index 1 every ::3
 <tr>
 <td><a href="sect0010.html" title="Operators and Functions"><img alt="Previous: Operators and Functions" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="gnuplot_intro.html" title="First Steps With Pyxplot"><img alt="Up: First Steps With Pyxplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="directing_output.html" title="Directing Where Output Goes"><img alt="Next: Directing Where Output Goes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 

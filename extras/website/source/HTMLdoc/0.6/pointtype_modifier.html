@@ -6,7 +6,7 @@
 
 <link href="plot_ranges.html" title="Setting Axis Ranges" rel="next" />
 <link href="directing_output.html" title="Directing Where Output Goes" rel="prev" />
-<link href="gnuplot_intro.html" title="First Steps With PyXPlot" rel="up" />
+<link href="gnuplot_intro.html" title="First Steps With Pyxplot" rel="up" />
 <link rel="stylesheet" href="styles/plastex-styles.css" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -17,7 +17,7 @@
 <tr>
 <td><a href="directing_output.html" title="Directing Where Output Goes"><img alt="Previous: Directing Where Output Goes" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="gnuplot_intro.html" title="First Steps With Pyxplot"><img alt="Up: First Steps With Pyxplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="plot_ranges.html" title="Setting Axis Ranges"><img alt="Next: Setting Axis Ranges" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="gnuplot_intro.html">First Steps With PyXPlot</a> <b>:</b>
+<a href="gnuplot_intro.html">First Steps With Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -62,7 +62,7 @@ plot 'datafile' with lines
 plot 'datafile' with yerrorbars
 </pre><p>In this case, three columns of data need to be specified: the <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />- and <img src="images/img-0005.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-coordinates of each datapoint, plus the size of the vertical errorbar on that datapoint. By default, the first three columns of the datafile are used, but once again (see Section <a href="plot_datafiles.html">2.5</a>), the <tt class="ttfamily">using</tt> modifier can be used: </p><pre>
 plot 'datafile' using 2:3:7 with yerrorbars
-</pre><p>More details of the errorbars plot style can be found in Section <a href="filebackup.html">3.3.5</a>. Other plots styles supported by PyXPlot are listed in Section <a href="missing_features.html">2.11</a>, and their details can be found in many gnuplot tutorials. Bar charts will be discussed further in Section <a href="barcharts.html">3.6</a>. </p><p>The modifiers “<tt class="ttfamily">pointtype</tt>”<span id="a-1225709204"></span> and “<tt class="ttfamily">linetype</tt>”<span id="a-1225732244"></span>, which can be abbreviated to “<tt class="ttfamily">pt</tt>” and “<tt class="ttfamily">lt</tt>” respectively, can also be placed after the <tt class="ttfamily">with</tt> modifier. Each should be followed by an integer. The former specifies what shape of points should be used to plot the dataset, and the latter whether a line should be continuous, dotted, dash-dotted, etc. Different integers correspond to different styles. </p><p>The default plotting style referred to above can also be changed. For example: </p><pre>
+</pre><p>More details of the errorbars plot style can be found in Section <a href="filebackup.html">3.3.5</a>. Other plots styles supported by Pyxplot are listed in Section <a href="missing_features.html">2.11</a>, and their details can be found in many gnuplot tutorials. Bar charts will be discussed further in Section <a href="barcharts.html">3.6</a>. </p><p>The modifiers “<tt class="ttfamily">pointtype</tt>”<span id="a-1225709204"></span> and “<tt class="ttfamily">linetype</tt>”<span id="a-1225732244"></span>, which can be abbreviated to “<tt class="ttfamily">pt</tt>” and “<tt class="ttfamily">lt</tt>” respectively, can also be placed after the <tt class="ttfamily">with</tt> modifier. Each should be followed by an integer. The former specifies what shape of points should be used to plot the dataset, and the latter whether a line should be continuous, dotted, dash-dotted, etc. Different integers correspond to different styles. </p><p>The default plotting style referred to above can also be changed. For example: </p><pre>
 set style data lines
 </pre><p>The default style for plotting data from files is then changed to lines. Similarly the “<tt class="tt">set style function</tt>”<span id="a-1225733332"></span> command changes the default style for plotting functions. </p></div>
 
@@ -73,7 +73,7 @@ set style data lines
 <tr>
 <td><a href="directing_output.html" title="Directing Where Output Goes"><img alt="Previous: Directing Where Output Goes" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="gnuplot_intro.html" title="First Steps With Pyxplot"><img alt="Up: First Steps With Pyxplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="plot_ranges.html" title="Setting Axis Ranges"><img alt="Next: Setting Axis Ranges" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 

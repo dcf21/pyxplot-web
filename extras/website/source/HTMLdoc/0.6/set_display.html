@@ -57,7 +57,7 @@
 </div>
 
 <div><h2 id="set_display">3.5.4 Speed Issues</h2>
-<p>  </p><p>By default, whenever an item is added to a multiplot, or an existing item moved or replotted, the whole multiplot is replotted to show the change. This can be a time consuming process on large and complex multiplots. For this reason, the <tt class="ttfamily">set nodisplay</tt><span id="a-1227923508"></span> command is provided, which stops PyXPlot from producing any output. The <tt class="ttfamily">set display</tt> command can subsequently be issued to return to normal behaviour. </p><p>This can be especially useful in scripts which produce large multiplots. There is no point in producing output at each step in the construction of a large multiplot, and so a great speed increase can be achieved by wrapping the script with: </p><pre> 
+<p>  </p><p>By default, whenever an item is added to a multiplot, or an existing item moved or replotted, the whole multiplot is replotted to show the change. This can be a time consuming process on large and complex multiplots. For this reason, the <tt class="ttfamily">set nodisplay</tt><span id="a-1227923508"></span> command is provided, which stops Pyxplot from producing any output. The <tt class="ttfamily">set display</tt> command can subsequently be issued to return to normal behaviour. </p><p>This can be especially useful in scripts which produce large multiplots. There is no point in producing output at each step in the construction of a large multiplot, and so a great speed increase can be achieved by wrapping the script with: </p><pre> 
 set nodisplay
 [...prepare large multiplot...]
 set display

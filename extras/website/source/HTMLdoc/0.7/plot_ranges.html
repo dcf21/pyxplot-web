@@ -7,7 +7,7 @@
 
 <link href="fit_command.html" title="Function Fitting" rel="next" />
 <link href="pointtype_modifier.html" title="Data Styles" rel="prev" />
-<link href="gnuplot_intro.html" title="First Steps With PyXPlot" rel="up" />
+<link href="gnuplot_intro.html" title="First Steps With Pyxplot" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -17,7 +17,7 @@
 <tr>
 <td><a href="pointtype_modifier.html" title="Data Styles"><img alt="Previous: Data Styles" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="gnuplot_intro.html" title="First Steps With Pyxplot"><img alt="Up: First Steps With Pyxplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="fit_command.html" title="Function Fitting"><img alt="Next: Function Fitting" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="gnuplot_intro.html">First Steps With PyXPlot</a> <b>:</b>
+<a href="gnuplot_intro.html">First Steps With Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -52,7 +52,7 @@
 </div>
 
 <div><h1 id="plot_ranges">2.10 Setting Axis Ranges</h1>
-<p>In Section <a href="first_plots.html">2.2</a>, the <tt class="tt">set xlabel</tt> configuration command was previously introduced for placing text labels on axes. In this section, the configuration of axes is extended to setting their ranges. </p><p>By default, PyXPlot automatically scales axes to some sensible range which contains all of the plotted data. However, it is possible for the user to override this and set his own range.<span id="a0000000259"></span> This can be done directly from the plot command, for example: </p><pre>
+<p>In Section <a href="first_plots.html">2.2</a>, the <tt class="tt">set xlabel</tt> configuration command was previously introduced for placing text labels on axes. In this section, the configuration of axes is extended to setting their ranges. </p><p>By default, Pyxplot automatically scales axes to some sensible range which contains all of the plotted data. However, it is possible for the user to override this and set his own range.<span id="a0000000259"></span> This can be done directly from the plot command, for example: </p><pre>
 plot [-1:1][-2:2] sin(x)
 </pre><p>  </p><p>The ranges are specified immediately after the <tt class="tt">plot</tt> command<span id="a0000000260"></span>, with the syntax <tt class="tt">[minimum:maximum]</tt>.<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">An alternative valid syntax is to replace the colon with the word <tt class="tt">to</tt>: <tt class="tt">[minimum to maximum]</tt>.</span></a> The first specified range applies to the <img src="images/img-0007.png" alt="$x$" style="position:relative; bottom:0px; width:10px; height:8px" class="math" />-axis, and the second to the <img src="images/img-0008.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-axis.<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">As will be discussed in Section <a href="multiple_axes.html">4.5</a>, if further ranges are specified, they apply to the <img src="images/img-0039.png" alt="$x2$" style="position:relative; bottom:0px; width:18px; height:12px" class="math" />-axis, then the <img src="images/img-0040.png" alt="$y2$" style="position:relative; bottom:-4px; width:18px; height:16px" class="math" />-axis, and so forth.</span></a> Any of the values can be omitted, for example: </p><pre>
 plot [:][-2:2] sin(x)
@@ -76,7 +76,7 @@ set nologscale y x x2
 <tr>
 <td><a href="pointtype_modifier.html" title="Data Styles"><img alt="Previous: Data Styles" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="gnuplot_intro.html" title="First Steps With Pyxplot"><img alt="Up: First Steps With Pyxplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="fit_command.html" title="Function Fitting"><img alt="Next: Function Fitting" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 

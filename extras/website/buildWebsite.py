@@ -485,7 +485,7 @@ def renderExamplesLeaf(leaf, node, tree, opt, var):
    [output, errors] = pplobj.communicate('set width 6\nset fontsize 1.2\nset term eps\nset out "output.eps"\nload "script.ppl"\nset term png trans dpi 110\nset output "output.png"\nrefresh\nset term png trans dpi 90\nset output "output_sm.png"\nrefresh')
    # In an ideal world we'd do something useful with the output here
    if (len(errors.strip())>0):
-     sys.stderr.write("PyXPlot error:\n%s"%errors)
+     sys.stderr.write("Pyxplot error:\n%s"%errors)
      raise RuntimeError
    leafdir = os.path.join(opt['targetRoot'],tree['root'], node['dir'], leaf['dir'])
    for file in ['output.eps', 'output.png', 'output_sm.png', 'script.ppl']: shutil.copy2("%s/%s"%(tempdir,file), leafdir)

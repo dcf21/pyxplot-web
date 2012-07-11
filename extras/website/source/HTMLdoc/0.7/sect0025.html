@@ -7,7 +7,7 @@
 
 <link href="barcharts.html" title="Barcharts and Histograms" rel="next" />
 <link href="errorbars.html" title="Error Bars" rel="prev" />
-<link href="sect0022.html" title="A Tour of PyXPlot’s Plot Styles" rel="up" />
+<link href="sect0022.html" title="A Tour of Pyxplot’s Plot Styles" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -17,7 +17,7 @@
 <tr>
 <td><a href="errorbars.html" title="Error Bars"><img alt="Previous: Error Bars" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0022.html" title="A Tour of PyXPlot’s Plot Styles"><img alt="Up: A Tour of PyXPlot’s Plot Styles" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0022.html" title="A Tour of Pyxplot’s Plot Styles"><img alt="Up: A Tour of Pyxplot’s Plot Styles" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="barcharts.html" title="Barcharts and Histograms"><img alt="Next: Barcharts and Histograms" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
@@ -44,7 +44,7 @@
 
 </span><span>
 <span>
-<a href="sect0022.html">A Tour of PyXPlot’s Plot Styles</a> <b>:</b>
+<a href="sect0022.html">A Tour of Pyxplot’s Plot Styles</a> <b>:</b>
 </span>
 
 </span><span>
@@ -57,11 +57,11 @@
 </div>
 
 <div><h2 id="a0000000036">4.1.5 Plotting Functions with Errorbars, Arrows, or More</h2>
-<p>In Gnuplot, when a function (as opposed to a data file) is plotted, only those plot styles which accept two columns of data can be used – for example, <tt class="tt">lines</tt> or <tt class="tt">points</tt>. This means that it is not possible to plot a function with errorbars. In PyXPlot, this is possible using the following syntax: </p><pre>
+<p>In Gnuplot, when a function (as opposed to a data file) is plotted, only those plot styles which accept two columns of data can be used – for example, <tt class="tt">lines</tt> or <tt class="tt">points</tt>. This means that it is not possible to plot a function with errorbars. In Pyxplot, this is possible using the following syntax: </p><pre>
 plot f(x):g(x) with yerrorbars
 </pre><p>Two functions are supplied, separated by a colon; plotting proceeds as if a data file had been supplied, containing values of <img src="images/img-0007.png" alt="$x$" style="position:relative; bottom:0px; width:10px; height:8px" class="math" /> in column 1, values of <img src="images/img-0056.png" alt="$f(x)$" style="position:relative; bottom:-4px; width:33px; height:18px" class="math" /> in column 2, and values of <img src="images/img-0057.png" alt="$g(x)$" style="position:relative; bottom:-4px; width:32px; height:18px" class="math" /> in column 3. This may be useful, for example, if <img src="images/img-0057.png" alt="$g(x)$" style="position:relative; bottom:-4px; width:32px; height:18px" class="math" /> measures the intrinsic uncertainty in <img src="images/img-0056.png" alt="$f(x)$" style="position:relative; bottom:-4px; width:33px; height:18px" class="math" />. The <tt class="tt">using</tt> modifier may also be used: </p><pre>
 plot f(x):g(x) using 2:3
-</pre><p>Here, <img src="images/img-0057.png" alt="$g(x)$" style="position:relative; bottom:-4px; width:32px; height:18px" class="math" /> would be plotted on the <img src="images/img-0008.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-axis, against <img src="images/img-0056.png" alt="$f(x)$" style="position:relative; bottom:-4px; width:33px; height:18px" class="math" /> on the <img src="images/img-0007.png" alt="$x$" style="position:relative; bottom:0px; width:10px; height:8px" class="math" />-axis. It should be noted, however, that the range of values of <img src="images/img-0007.png" alt="$x$" style="position:relative; bottom:0px; width:10px; height:8px" class="math" /> used would still correspond to the range of the plot’s horizontal axis. If the above were to be attempted with an autoscaling horizontal axis, the result might be rather unexpected – PyXPlot would find itself autoscaling the <img src="images/img-0007.png" alt="$x$" style="position:relative; bottom:0px; width:10px; height:8px" class="math" />-axis range to the spread of values of <img src="images/img-0056.png" alt="$f(x)$" style="position:relative; bottom:-4px; width:33px; height:18px" class="math" />, but find that this itself changed depending upon the range of the <img src="images/img-0007.png" alt="$x$" style="position:relative; bottom:0px; width:10px; height:8px" class="math" />-axis.<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">We’re aware that this is not good. Expect it to change in a future release.</span></a> </p></div>
+</pre><p>Here, <img src="images/img-0057.png" alt="$g(x)$" style="position:relative; bottom:-4px; width:32px; height:18px" class="math" /> would be plotted on the <img src="images/img-0008.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-axis, against <img src="images/img-0056.png" alt="$f(x)$" style="position:relative; bottom:-4px; width:33px; height:18px" class="math" /> on the <img src="images/img-0007.png" alt="$x$" style="position:relative; bottom:0px; width:10px; height:8px" class="math" />-axis. It should be noted, however, that the range of values of <img src="images/img-0007.png" alt="$x$" style="position:relative; bottom:0px; width:10px; height:8px" class="math" /> used would still correspond to the range of the plot’s horizontal axis. If the above were to be attempted with an autoscaling horizontal axis, the result might be rather unexpected – Pyxplot would find itself autoscaling the <img src="images/img-0007.png" alt="$x$" style="position:relative; bottom:0px; width:10px; height:8px" class="math" />-axis range to the spread of values of <img src="images/img-0056.png" alt="$f(x)$" style="position:relative; bottom:-4px; width:33px; height:18px" class="math" />, but find that this itself changed depending upon the range of the <img src="images/img-0007.png" alt="$x$" style="position:relative; bottom:0px; width:10px; height:8px" class="math" />-axis.<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">We’re aware that this is not good. Expect it to change in a future release.</span></a> </p></div>
 
 
 
@@ -70,7 +70,7 @@ plot f(x):g(x) using 2:3
 <tr>
 <td><a href="errorbars.html" title="Error Bars"><img alt="Previous: Error Bars" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0022.html" title="A Tour of PyXPlot’s Plot Styles"><img alt="Up: A Tour of PyXPlot’s Plot Styles" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0022.html" title="A Tour of Pyxplot’s Plot Styles"><img alt="Up: A Tour of Pyxplot’s Plot Styles" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="barcharts.html" title="Barcharts and Histograms"><img alt="Next: Barcharts and Histograms" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 

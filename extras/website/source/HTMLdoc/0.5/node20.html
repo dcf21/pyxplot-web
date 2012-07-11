@@ -65,7 +65,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <P>
 In this section I shall outline the new and modified commands for controlling
-the graphic output format of PyXPlot.
+the graphic output format of Pyxplot.
 
 <P>
 The widths of plots may be set be means of two commands - <TT>set
@@ -91,7 +91,7 @@ set size ratio 3.0
 </PRE>
 
 <P>
-The command <TT>set size noratio</TT> returns to PyXPlot's default aspect ratio
+The command <TT>set size noratio</TT> returns to Pyxplot's default aspect ratio
 of the golden ratio, i.e. <!-- MATH
  $\left((1+\sqrt{5})/2\right)^{-1}$
  -->
@@ -142,7 +142,7 @@ plot cos(x)  &lt;-- first plot window remains
 <A NAME="2014"></A>
 As there are many changes to the options accepted by the <TT>set terminal</TT>
 command in comparison to those understood by gnuplot, the settings allowed in
-PyXPlot are listed below:
+Pyxplot are listed below:
 
 <P>
 <TABLE CELLPADDING=3>
@@ -207,22 +207,22 @@ PyXPlot are listed below:
 <P>
 The default terminal is normally <TT>x11_singlewindow</TT>, matching
 approximately the behaviour of gnuplot. However, there is an exception to this.
-When PyXPlot is used non-interactively - i.e. one or more command scripts is
-specified on the commandline, and PyXPlot exits as soon as it finishes
+When Pyxplot is used non-interactively - i.e. one or more command scripts is
+specified on the commandline, and Pyxplot exits as soon as it finishes
 executing them - the <TT>x11_singlewindow</TT> is not a very sensible
-terminal to use. Any plot window would close as soon as PyXPlot exited. The
+terminal to use. Any plot window would close as soon as Pyxplot exited. The
 default terminal in this case changes to <TT>postscript</TT>.
 
 <P>
 One exception to this is when the special `-' filename is specified in a list
 of command scripts on the commandline, to produce an interactive terminal
-between running a series of scripts. In this case, PyXPlot detects that the
+between running a series of scripts. In this case, Pyxplot detects that the
 session will be interactive, and defaults to the usual
 <TT>x11_singlewindow</TT> terminal.
 
 <P>
 An additional exception is on machines where the <TT>DISPLAY</TT> environment
-variable<A NAME="2017"></A> is not set. In this case, PyXPlot detects that it has access to no
+variable<A NAME="2017"></A> is not set. In this case, Pyxplot detects that it has access to no
 X-terminal on which to display plots, and defaults to the <TT>postscript</TT>
 terminal.
 

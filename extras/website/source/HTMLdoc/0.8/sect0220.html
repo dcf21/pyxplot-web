@@ -65,7 +65,7 @@ tabulate [ &lt;range&gt; ] ( &lt;expression&gt; | &lt;filename&gt; )
        [ sortby &lt;expression&gt; ]
        [ using &lt;expression&gt;  {:&lt;expression&gt;} ]
        [ with &lt;output format&gt; ]
-</pre><p>PyXPlot’s <tt class="tt">tabulate</tt> command<a name="a0000001347" id="a0000001347"></a> is similar to its <tt class="tt">plot</tt> command, but instead of plotting a series of datapoints onto a graph, it outputs them to datafiles. This can be used to produce text files containing samples of functions, to rearrange/filter the columns in datafiles, to change the units in which data is expressed in datafiles, and so forth. The following example would produce a datafile called <tt class="tt">gamma.dat</tt> containing a list of values of the gamma function: </p><pre>
+</pre><p>Pyxplot’s <tt class="tt">tabulate</tt> command<a name="a0000001347" id="a0000001347"></a> is similar to its <tt class="tt">plot</tt> command, but instead of plotting a series of datapoints onto a graph, it outputs them to datafiles. This can be used to produce text files containing samples of functions, to rearrange/filter the columns in datafiles, to change the units in which data is expressed in datafiles, and so forth. The following example would produce a datafile called <tt class="tt">gamma.dat</tt> containing a list of values of the gamma function: </p><pre>
 set output 'gamma.dat'
 tabulate [1:5] gamma(x)
 </pre><p>Multiple functions may be tabulated into the same file, either by using the <tt class="tt">using</tt><a name="a0000001348" id="a0000001348"></a> modifier: </p><pre>

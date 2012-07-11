@@ -52,7 +52,7 @@
 </div>
 
 <div><h1 id="horizontal_datafiles">4.4 Horizontally arranged Data files</h1>
-<p><span id="a0000000394"></span><span id="a0000000395"></span><span id="a0000000396"></span><span id="a0000000397"></span> The command syntax for plotting columns of data files against one another was previously described in Section <a href="plot_datafiles.html">2.6</a>. In an extension of what is possible in Gnuplot, PyXPlot also allows one to plot <i class="it">rows</i> of data against one another in horizontally-arranged data files. For this, the keyword <tt class="tt">rows</tt><span id="a0000000398"></span> is placed after the <tt class="tt">using</tt> modifier: </p><pre>
+<p><span id="a0000000394"></span><span id="a0000000395"></span><span id="a0000000396"></span><span id="a0000000397"></span> The command syntax for plotting columns of data files against one another was previously described in Section <a href="plot_datafiles.html">2.6</a>. In an extension of what is possible in Gnuplot, Pyxplot also allows one to plot <i class="it">rows</i> of data against one another in horizontally-arranged data files. For this, the keyword <tt class="tt">rows</tt><span id="a0000000398"></span> is placed after the <tt class="tt">using</tt> modifier: </p><pre>
 plot 'data.dat' index 1 using rows 1:2
 </pre><p>For completeness, the syntax <tt class="tt">using</tt> <tt class="tt">columns</tt><span id="a0000000399"></span> is also accepted, to specify the default behaviour of plotting columns against one another: </p><pre>
 plot 'data.dat' index 1 using columns 1:2

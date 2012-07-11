@@ -67,7 +67,7 @@ set x2ticdir outwards \\
 plot sin(x) axes x2y1
 </pre><p>Of more practical use is the ‘<tt class="tt">unset x2</tt>’ command, which is used to remove an axis once it has been added to a plot. After executing: </p><pre>
 set x2label 'foo'
-</pre><p>for example, the only way to tell PyXPlot to subsequently produce a plot without a second <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis would be to delete this axis with the following command: </p><pre>
+</pre><p>for example, the only way to tell Pyxplot to subsequently produce a plot without a second <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis would be to delete this axis with the following command: </p><pre>
 unset axis x2
 </pre><p>Note that in this case, the <tt class="tt">unset x2label</tt> command would be sufficent to remove the label ‘foo’ placed on the new axis, but not sufficient to delete the new axis that the <tt class="tt">set x2label</tt> command implicitly created. Multiple axes can be deleted in a single <tt class="tt">unset axis</tt> statement, for example: </p><pre>
 unset axis x2x4x5

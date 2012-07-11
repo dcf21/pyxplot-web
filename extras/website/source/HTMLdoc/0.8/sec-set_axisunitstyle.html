@@ -68,13 +68,13 @@ plot [0:10] x using 1:$2*unit(m)
 plot [0*unit(m):1*unit(m)] x**2
 
 set unit angle nodimensionless ; plot [0:1] asin(x)
-</pre><p> the axis is set to share the particular physical dimensions of that unit, and thereafter no data with any other physical dimensions may be plotted against that axis. When the axis comes to be drawn, PyXPlot makes a decision about which physical unit should be used to label the axis. For example, in the default SI system and with no preferred unit of length set, axes with units of length might be displayed in millimetres, metres or kilometres depending upon their scales. </p><p>The chosen unit is indicated in one of three styles in the axis label, selected using the <tt class="tt">set axisunitstyle</tt> command<a name="a0000000769" id="a0000000769"></a>: </p><pre>
+</pre><p> the axis is set to share the particular physical dimensions of that unit, and thereafter no data with any other physical dimensions may be plotted against that axis. When the axis comes to be drawn, Pyxplot makes a decision about which physical unit should be used to label the axis. For example, in the default SI system and with no preferred unit of length set, axes with units of length might be displayed in millimetres, metres or kilometres depending upon their scales. </p><p>The chosen unit is indicated in one of three styles in the axis label, selected using the <tt class="tt">set axisunitstyle</tt> command<a name="a0000000769" id="a0000000769"></a>: </p><pre>
 set axisunitstyle ratio
 set axisunitstyle bracketed
 set axisunitstyle squarebracketed
 </pre><p> The effect of these three options, respectively, is shown below for an axis with units of momentum. In each case, the axis label was set simply using </p><pre>
 set xlabel "Momentum"
-</pre><p> and the subsequent text was appended automatically by PyXPlot: </p><p> <center>
+</pre><p> and the subsequent text was appended automatically by Pyxplot: </p><p> <center>
 <img src="images/img-0453.png" alt="\includegraphics[width=10cm]{examples/eps/ex_axisunits}" style="width:10cm" /></center>  </p><p>When the <tt class="tt">set xformat</tt> command<a name="a0000000770" id="a0000000770"></a> is used (see Section <a href="sec-set_xformat.html">1.8.8</a>), no indication of the units associated with axes are appended to axis labels, as the <tt class="tt">set xformat</tt> command<a name="a0000000771" id="a0000000771"></a> can be used to hard-code this information. The user must include this information in the axis label manually if it is needed. </p></div>
 
 

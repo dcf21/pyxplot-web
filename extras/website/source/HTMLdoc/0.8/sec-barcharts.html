@@ -7,7 +7,7 @@
 
 <link href="sect0047.html" title="Steps" rel="next" />
 <link href="sect0046.html" title="Shaded Regions" rel="prev" />
-<link href="sec-list_of_plotstyles.html" title="PyXPlot’s Plot Styles" rel="up" />
+<link href="sec-list_of_plotstyles.html" title="Pyxplot’s Plot Styles" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -17,7 +17,7 @@
 <tr>
 <td><a href="sect0046.html" title="Shaded Regions"><img alt="Previous: Shaded Regions" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-list_of_plotstyles.html" title="PyXPlot’s Plot Styles"><img alt="Up: PyXPlot’s Plot Styles" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sec-list_of_plotstyles.html" title="Pyxplot’s Plot Styles"><img alt="Up: Pyxplot’s Plot Styles" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="sect0047.html" title="Steps"><img alt="Next: Steps" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
@@ -49,7 +49,7 @@
 
 </span><span>
 <span>
-<a href="sec-list_of_plotstyles.html">PyXPlot’s Plot Styles</a> <b>:</b>
+<a href="sec-list_of_plotstyles.html">Pyxplot’s Plot Styles</a> <b>:</b>
 </span>
 
 </span><span>
@@ -67,7 +67,7 @@
 </ul><p> These styles differ in where the horizontal interfaces between the bars are placed along the abscissa axis and how wide the bars are. In the <tt class="tt">boxes</tt><a name="a0000000684" id="a0000000684"></a><a name="a0000000685" id="a0000000685"></a> plot style, the interfaces between the bars are at the midpoints between the specified datapoints by default (see, for example, Figure <a href="sec-barcharts.html#fig:ex_barchart2">1.1</a>a). Alternatively, the widths of the bars may be set using the <tt class="tt">set boxwidth</tt> command. In this case, all of the bars will be centred upon their specified <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
                                      width:10px; 
                                      height:8px" class="math gen" />-coordinates, and have total widths equalling that specified in the <tt class="tt">set boxwidth</tt> command<a name="a0000000686" id="a0000000686"></a>. Consequently, there may be gaps between them, or they may overlap, as seen in Figure <a href="sec-barcharts.html#fig:ex_barchart2">1.1</a>(b). </p><div id="fig:ex_barchart2" class="figure"><center> 
-<img src="images/img-0389.png" alt="\includegraphics[width=\textwidth ]{examples/eps/ex_barchart2}" style="width:" /> </center><div class="caption"><b>Figure 1.1</b>: <span>A gallery of the various bar chart styles which PyXPlot can produce. See the text for more details. The script and data file used to produce this image are available on the PyXPlot website at http://www.pyxplot.org.uk/examples/Manual/04barchart2/.</span></div></div><p>Having set a fixed box width, the default behaviour of scaling box widths automatically may be restored either with the <tt class="tt">unset boxwidth</tt> command, or by setting the boxwidth to a negative width. </p><p>In the <tt class="tt">wboxes</tt><a name="a0000000687" id="a0000000687"></a><a name="a0000000688" id="a0000000688"></a> plot style, the width of each bar is specified manually as an additional column of the input datafile. This plot style expects three columns of data to be provided: the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
+<img src="images/img-0389.png" alt="\includegraphics[width=\textwidth ]{examples/eps/ex_barchart2}" style="width:" /> </center><div class="caption"><b>Figure 1.1</b>: <span>A gallery of the various bar chart styles which Pyxplot can produce. See the text for more details. The script and data file used to produce this image are available on the Pyxplot website at http://www.pyxplot.org.uk/examples/Manual/04barchart2/.</span></div></div><p>Having set a fixed box width, the default behaviour of scaling box widths automatically may be restored either with the <tt class="tt">unset boxwidth</tt> command, or by setting the boxwidth to a negative width. </p><p>In the <tt class="tt">wboxes</tt><a name="a0000000687" id="a0000000687"></a><a name="a0000000688" id="a0000000688"></a> plot style, the width of each bar is specified manually as an additional column of the input datafile. This plot style expects three columns of data to be provided: the <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
                                      width:10px; 
                                      height:8px" class="math gen" />- and <img src="images/img-0020.png" alt="$y$" style="vertical-align:-4px; 
                                      width:9px; 
@@ -80,7 +80,7 @@ set boxfrom 5
                                      height:17px" class="math gen" />. Figure <a href="sec-barcharts.html#fig:ex_barchart1">1.2</a>(b) shows the kind of effect that is achieved; for comparison, Figure <a href="sec-barcharts.html#fig:ex_barchart1">1.2</a>(a) shows the same bar chart with the boxes starting from their default position of <img src="images/img-0391.png" alt="$y=0$" style="vertical-align:-4px; 
                                      width:42px; 
                                      height:16px" class="math gen" />. </p><div id="fig:ex_barchart1" class="figure"><center> 
-<img src="images/img-0394.png" alt="\includegraphics[width=\textwidth ]{examples/eps/ex_barchart1}" style="width:" /> </center><div class="caption"><b>Figure 1.2</b>: <span>A second gallery of the various bar chart styles which PyXPlot can produce. See the text for more details. The script and data file used to produce this image are available on the PyXPlot website at http://www.pyxplot.org.uk/examples/Manual/03barchart1/.</span></div></div><p>The bars may be filled using the <tt class="tt">with</tt> <tt class="tt">fillcolour</tt><a name="a0000000692" id="a0000000692"></a> modifier, followed by the name of a colour: </p><pre>
+<img src="images/img-0394.png" alt="\includegraphics[width=\textwidth ]{examples/eps/ex_barchart1}" style="width:" /> </center><div class="caption"><b>Figure 1.2</b>: <span>A second gallery of the various bar chart styles which Pyxplot can produce. See the text for more details. The script and data file used to produce this image are available on the Pyxplot website at http://www.pyxplot.org.uk/examples/Manual/03barchart1/.</span></div></div><p>The bars may be filled using the <tt class="tt">with</tt> <tt class="tt">fillcolour</tt><a name="a0000000692" id="a0000000692"></a> modifier, followed by the name of a colour: </p><pre>
 plot 'data.dat' with boxes fillcolour blue
 plot 'data.dat' with boxes fc 4
 </pre><p>Figures <a href="sec-barcharts.html#fig:ex_barchart2">1.1</a>(b) and (d) demonstrate the use of filled bars. </p><p>The <tt class="tt">boxes</tt> and <tt class="tt">wboxes</tt> plot styles expect identically-formatted data when used on two- and three-dimensional plots; in the latter case, all bars are drawn in the plane <img src="images/img-0396.png" alt="$z=0$" style="vertical-align:0px; 
@@ -110,7 +110,7 @@ plot 'data.dat' with boxes fc 4
 <tr>
 <td><a href="sect0046.html" title="Shaded Regions"><img alt="Previous: Shaded Regions" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sec-list_of_plotstyles.html" title="PyXPlot’s Plot Styles"><img alt="Up: PyXPlot’s Plot Styles" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sec-list_of_plotstyles.html" title="Pyxplot’s Plot Styles"><img alt="Up: Pyxplot’s Plot Styles" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="sect0047.html" title="Steps"><img alt="Next: Steps" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 

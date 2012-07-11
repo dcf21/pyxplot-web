@@ -52,7 +52,7 @@
 </div>
 
 <div><h1 id="a0000000043">4.9 Plotting Many Files at Once</h1>
-<p><span id="a0000000445"></span><span id="a0000000446"></span><span id="a0000000447"></span> </p><p>PyXPlot allows the wildcards <tt class="tt">*</tt> and <tt class="tt">?</tt> to be used in the filenames of data files supplied to the <tt class="tt">plot</tt> command<span id="a0000000448"></span>. For example, the following would plot all data files in the current directory with a <tt class="tt">.dat</tt> suffix, using the same plot options: </p><pre>
+<p><span id="a0000000445"></span><span id="a0000000446"></span><span id="a0000000447"></span> </p><p>Pyxplot allows the wildcards <tt class="tt">*</tt> and <tt class="tt">?</tt> to be used in the filenames of data files supplied to the <tt class="tt">plot</tt> command<span id="a0000000448"></span>. For example, the following would plot all data files in the current directory with a <tt class="tt">.dat</tt> suffix, using the same plot options: </p><pre>
 plot '*.dat' with linewidth 2
 </pre><p>In the legend, full filenames are displayed, allowing the data files to be distinguished. As in Gnuplot, a blank filename passed to the plot command causes the last used data file to be used again, for example: </p><pre>
 plot 'data.dat' using 1:2, '' using 2:3

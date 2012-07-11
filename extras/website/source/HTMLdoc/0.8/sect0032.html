@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+<a href="sect0001.html">Introduction to Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -66,7 +66,7 @@
                                      width:12px; 
                                      height:5px" class="math gen" /><a name="a0000000572" id="a0000000572"></a>, which takes a regular expression with a syntax similar to that expected by the shell command <tt class="tt">sed</tt><a name="a0000000573" id="a0000000573"></a> and applies it to the relevant string variable.<a href="#a0000000574" class="footnote"><sup class="footnotemark">2</sup></a><a name="a0000000575" id="a0000000575"></a> In the following example, the first instance of the letter <tt class="tt">s</tt> in the string variable <tt class="tt">twister</tt> is replaced with the letters <tt class="tt">th</tt>: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">twister="seven silver soda syphons"</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">twister =<img src="images/img-0028.png" alt="$\sim $" style="vertical-align:2px; 
                                      width:12px; 
-                                     height:5px" class="math gen" /> s/s/th/</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print twister</b></tt><br /><tt class="tt">theven silver soda syphons</tt>  </p><p>Note that only the <tt class="tt">s</tt> (substitute) command of <tt class="tt">sed</tt> is implemented in PyXPlot. Any character can be used in place of the <tt class="tt">/</tt> characters in the above example, for example: </p><pre>
+                                     height:5px" class="math gen" /> s/s/th/</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print twister</b></tt><br /><tt class="tt">theven silver soda syphons</tt>  </p><p>Note that only the <tt class="tt">s</tt> (substitute) command of <tt class="tt">sed</tt> is implemented in Pyxplot. Any character can be used in place of the <tt class="tt">/</tt> characters in the above example, for example: </p><pre>
 twister =~ s's'th'
 </pre><p>Flags can be passed, as in <tt class="tt">sed</tt> or <tt class="tt">perl</tt>, to modify the precise behaviour of the regular expression. In the following example the <tt class="tt">g</tt> flag is used to perform a global search-and-replace of all instances of the letter <tt class="tt">s</tt> with the letters <tt class="tt">th</tt>: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">twister="seven silver soda syphons"</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">twister =<img src="images/img-0028.png" alt="$\sim $" style="vertical-align:2px; 
                                      width:12px; 

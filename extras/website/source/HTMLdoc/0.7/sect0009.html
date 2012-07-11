@@ -6,8 +6,8 @@
 <title>: Getting Started</title>
 
 <link href="first_plots.html" title="First Plots" rel="next" />
-<link href="gnuplot_intro.html" title="First Steps With PyXPlot" rel="prev" />
-<link href="gnuplot_intro.html" title="First Steps With PyXPlot" rel="up" />
+<link href="gnuplot_intro.html" title="First Steps With Pyxplot" rel="prev" />
+<link href="gnuplot_intro.html" title="First Steps With Pyxplot" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -15,9 +15,9 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Previous: First Steps With PyXPlot" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="gnuplot_intro.html" title="First Steps With Pyxplot"><img alt="Previous: First Steps With Pyxplot" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="gnuplot_intro.html" title="First Steps With Pyxplot"><img alt="Up: First Steps With Pyxplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="first_plots.html" title="First Plots"><img alt="Next: First Plots" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="gnuplot_intro.html">First Steps With PyXPlot</a> <b>:</b>
+<a href="gnuplot_intro.html">First Steps With Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -52,15 +52,15 @@
 </div>
 
 <div><h1 id="a0000000020">2.1 Getting Started</h1>
-<p>The simplest way to start PyXPlot is to type ‘<tt class="tt">pyxplot</tt>’ at a shell prompt to start an interactive session. A PyXPlot command-line prompt will appear, into which commands can be typed. PyXPlot can be exited either by typing <tt class="tt">exit</tt><span id="a0000000197"></span>, <tt class="tt">quit</tt><span id="a0000000198"></span>, or by pressing CTRL-D. </p><p>As you begin to plot increasingly complicated graphs, the number of commands required to set them up and plot them will grow. It will soon become preferable, instead of typing these commands into an interactive session, to store lists of commands as scripts, which are simply text files containing PyXPlot commands. These may be executed by passing the filename of the command script to PyXPlot on the shell command line, for example:<span id="a0000000199"></span> </p><pre>
+<p>The simplest way to start Pyxplot is to type ‘<tt class="tt">pyxplot</tt>’ at a shell prompt to start an interactive session. A Pyxplot command-line prompt will appear, into which commands can be typed. Pyxplot can be exited either by typing <tt class="tt">exit</tt><span id="a0000000197"></span>, <tt class="tt">quit</tt><span id="a0000000198"></span>, or by pressing CTRL-D. </p><p>As you begin to plot increasingly complicated graphs, the number of commands required to set them up and plot them will grow. It will soon become preferable, instead of typing these commands into an interactive session, to store lists of commands as scripts, which are simply text files containing Pyxplot commands. These may be executed by passing the filename of the command script to Pyxplot on the shell command line, for example:<span id="a0000000199"></span> </p><pre>
 pyxplot foo.ppl
-</pre><p>In this case, PyXPlot would execute all of the commands in the file <tt class="tt">foo.ppl</tt> and then exit immediately afterwards. By convention, we suffix the filenames of PyXPlot command scripts with ‘<tt class="tt">.ppl</tt>’, though this is not strictly necessary. Several filenames may be passed on a single command line, indicating a series of scripts to be executed in sequence: </p><pre>
+</pre><p>In this case, Pyxplot would execute all of the commands in the file <tt class="tt">foo.ppl</tt> and then exit immediately afterwards. By convention, we suffix the filenames of Pyxplot command scripts with ‘<tt class="tt">.ppl</tt>’, though this is not strictly necessary. Several filenames may be passed on a single command line, indicating a series of scripts to be executed in sequence: </p><pre>
 pyxplot foo1.ppl foo2.ppl foo3.ppl
-</pre><p>It is possible to use a single PyXPlot session both interactively and from command scripts. One way to do this is to pass the magic filename ‘–’ on the command line: </p><pre>
+</pre><p>It is possible to use a single Pyxplot session both interactively and from command scripts. One way to do this is to pass the magic filename ‘–’ on the command line: </p><pre>
 pyxplot foo1.ppl - foo2.ppl
 </pre><p>This magic filename represents an interactive session, which commences after the execution of <tt class="tt">foo1.ppl</tt>, and should be terminated in the usual way after use, with the <tt class="tt">exit</tt><span id="a0000000200"></span> or <tt class="tt">quit</tt><span id="a0000000201"></span> commands. Afterwards, the command script <tt class="tt">foo2.ppl</tt> would execute. </p><p>From within an interactive session, it is possible to run a command script using the <tt class="tt">load</tt> command<span id="a0000000202"></span>: </p><pre>
 pyxplot&gt; load 'foo.ppl'
-</pre><p>This example would have the same effect as typing the contents of the file <tt class="tt">foo.ppl</tt> into the present session. </p><p>Usually a text editor is used to produce PyXPlot command scripts, but the <tt class="tt">save</tt> command<span id="a0000000203"></span> may also assist. This stores a history of the commands executed in the present interactive session to file. </p><p>Command files can include comment lines, which should begin with a hash character, for example:<span id="a0000000204"></span><span id="a0000000205"></span> </p><pre>
+</pre><p>This example would have the same effect as typing the contents of the file <tt class="tt">foo.ppl</tt> into the present session. </p><p>Usually a text editor is used to produce Pyxplot command scripts, but the <tt class="tt">save</tt> command<span id="a0000000203"></span> may also assist. This stores a history of the commands executed in the present interactive session to file. </p><p>Command files can include comment lines, which should begin with a hash character, for example:<span id="a0000000204"></span><span id="a0000000205"></span> </p><pre>
 # This is a comment
 </pre><p>Comments may also be placed on the same line as commands, for example: </p><pre>
 set nokey # I'll have no key on _my_ plot
@@ -71,9 +71,9 @@ set nokey # I'll have no key on _my_ plot
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Previous: First Steps With PyXPlot" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="gnuplot_intro.html" title="First Steps With Pyxplot"><img alt="Previous: First Steps With Pyxplot" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="gnuplot_intro.html" title="First Steps With Pyxplot"><img alt="Up: First Steps With Pyxplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="first_plots.html" title="First Plots"><img alt="Next: First Plots" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 

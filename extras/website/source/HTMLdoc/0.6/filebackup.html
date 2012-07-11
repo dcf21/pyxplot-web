@@ -67,7 +67,7 @@
     <td style="text-align:left"><p> — </p></td>
 
     
-    <td style="text-align:left"><p> For an unknown reason, gnuplot doesn’t allow <tt class="ttfamily">set linewidth 2</tt> as valid syntax. This setting is permitted in PyXPlot. Furthermore, <tt class="ttfamily">set pointlinewidth 2</tt> will set the linewidth to be used when drawing data <i class="itshape">points</i>. A similar effect can be achieved via: </p><pre>
+    <td style="text-align:left"><p> For an unknown reason, gnuplot doesn’t allow <tt class="ttfamily">set linewidth 2</tt> as valid syntax. This setting is permitted in Pyxplot. Furthermore, <tt class="ttfamily">set pointlinewidth 2</tt> will set the linewidth to be used when drawing data <i class="itshape">points</i>. A similar effect can be achieved via: </p><pre>
 plot sin(x) with points pointlinewidth 2
 </pre><p>In both cases, the abbreviation <tt class="ttfamily">plw</tt> is valid. </p></td>
 
@@ -95,7 +95,7 @@ plot sin(x) with dots pointsize 10
     <td style="text-align:left"><p> — </p></td>
 
     
-    <td style="text-align:left"><p> As well as the <tt class="ttfamily">index</tt>, <tt class="ttfamily">using</tt> and <tt class="ttfamily">every</tt> keywords which gnuplot used to allow users to plot subsets of data from datafiles, PyXPlot also has a further modifier, <tt class="ttfamily">select</tt>. This can be used to plot only those datapoints in a datafile which specify some given criterion. For example: </p><pre>
+    <td style="text-align:left"><p> As well as the <tt class="ttfamily">index</tt>, <tt class="ttfamily">using</tt> and <tt class="ttfamily">every</tt> keywords which gnuplot used to allow users to plot subsets of data from datafiles, Pyxplot also has a further modifier, <tt class="ttfamily">select</tt>. This can be used to plot only those datapoints in a datafile which specify some given criterion. For example: </p><pre>
 plot 'datafile' select ($8&gt;5)
 plot sin(x) select (($1&gt;0) and ($2&gt;0))
 </pre></td>
@@ -109,7 +109,7 @@ plot sin(x) select (($1&gt;0) and ($2&gt;0))
     <td style="text-align:left"></td>
 
     
-    <td style="text-align:left"><p> In the second example, two select criteria are given, combined with the logical and operator<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">See Table <a href="sect0009.html#operators_table">2.2</a> for a list of all operators recognised by PyXPlot.</span></a>. The select modifier has many applications, including plotting two-dimensional slices from three-dimensional datasets, and selecting certain subsets of datapoints from a datafile for plotting. </p></td>
+    <td style="text-align:left"><p> In the second example, two select criteria are given, combined with the logical and operator<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">See Table <a href="sect0009.html#operators_table">2.2</a> for a list of all operators recognised by Pyxplot.</span></a>. The select modifier has many applications, including plotting two-dimensional slices from three-dimensional datasets, and selecting certain subsets of datapoints from a datafile for plotting. </p></td>
 
 </tr><tr>
 
@@ -157,7 +157,7 @@ plot 'datafile' with arrows_twohead
     <td style="text-align:left"><p> — </p></td>
 
     
-    <td style="text-align:left"><p> PyXPlot can plot datapoints using the standard upper- and lower-limit symbols.<span id="a-1227411060"></span><span id="a-1227410772"></span> No special syntax is required for this; these symbols are pointtypes<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">The <tt class="ttfamily">pointtype</tt> modifier was introduced in Section <a href="pointtype_modifier.html">2.7</a>.</span></a> 12 and 13 respectively, obtained as follows: </p><pre>
+    <td style="text-align:left"><p> Pyxplot can plot datapoints using the standard upper- and lower-limit symbols.<span id="a-1227411060"></span><span id="a-1227410772"></span> No special syntax is required for this; these symbols are pointtypes<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">The <tt class="ttfamily">pointtype</tt> modifier was introduced in Section <a href="pointtype_modifier.html">2.7</a>.</span></a> 12 and 13 respectively, obtained as follows: </p><pre>
 plot 'upperlimits' with points pointtype 12
 plot 'lowerlimits' with points pointtype 13
 </pre></td>
@@ -171,7 +171,7 @@ plot 'lowerlimits' with points pointtype 13
     <td style="text-align:left"><p> — </p></td>
 
     
-    <td style="text-align:left"><p> In gnuplot, when a function (as opposed to a datafile) is plotted, only those plot styles which accept two columns of data can be used – for example, <tt class="ttfamily">lines</tt> or <tt class="ttfamily">points</tt>. It is not possible to plot a function with errorbars, for example. In PyXPlot, by contrast, this is possible using the following syntax: </p><pre>
+    <td style="text-align:left"><p> In gnuplot, when a function (as opposed to a datafile) is plotted, only those plot styles which accept two columns of data can be used – for example, <tt class="ttfamily">lines</tt> or <tt class="ttfamily">points</tt>. It is not possible to plot a function with errorbars, for example. In Pyxplot, by contrast, this is possible using the following syntax: </p><pre>
 plot f(x):g(x) with yerrorbars
 </pre></td>
 
@@ -197,7 +197,7 @@ plot f(x):g(x) using 2:3
     <td style="text-align:left"></td>
 
     
-    <td style="text-align:left"><p> Here, <img src="images/img-0062.png" alt="$g(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> would be plotted on the <img src="images/img-0005.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-axis, against <img src="images/img-0061.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> on the <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis. It should be noted, however, that the range of values of <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" /> used would still correspond to the range of the plot’s horizontal axis. If the above were to be attempted with an autoscaling horizontal axis, the result might be rather unexpected – PyXPlot would find itself autoscaling the <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis range to the spread of values of <img src="images/img-0061.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" />, but find that this itself changed depending upon the range of the <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis. </p></td>
+    <td style="text-align:left"><p> Here, <img src="images/img-0062.png" alt="$g(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> would be plotted on the <img src="images/img-0005.png" alt="$y$" style="position:relative; bottom:-4px; width:9px; height:12px" class="math" />-axis, against <img src="images/img-0061.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" /> on the <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis. It should be noted, however, that the range of values of <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" /> used would still correspond to the range of the plot’s horizontal axis. If the above were to be attempted with an autoscaling horizontal axis, the result might be rather unexpected – Pyxplot would find itself autoscaling the <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis range to the spread of values of <img src="images/img-0061.png" alt="$f(x)$" style="position:relative; bottom:-5px; width:33px; height:19px" class="math" />, but find that this itself changed depending upon the range of the <img src="images/img-0004.png" alt="$x$" style="position:relative; bottom:-1px; width:10px; height:9px" class="math" />-axis. </p></td>
 
 </tr><tr>
 
@@ -304,7 +304,7 @@ plot 'datafile' with yerrorbars
     <td style="text-align:left"></td>
 
     
-    <td style="text-align:left"><p> To avoid confusion, a different syntax is adopted in PyXPlot. The syntax: </p><pre>
+    <td style="text-align:left"><p> To avoid confusion, a different syntax is adopted in Pyxplot. The syntax: </p><pre>
 plot 'datafile' with yerrorbars
 </pre></td>
 
@@ -431,7 +431,7 @@ plot 'datafile' with yerrorrange
     <td style="text-align:left"><p> — </p></td>
 
     
-    <td style="text-align:left"><p> PyXPlot allows the wildcards ‘*’ and ‘?’ to be used both in the filenames of datafiles following the <tt class="ttfamily">plot</tt> command, and also when specifying command files on the command line and with the <tt class="ttfamily">load</tt> command. For example, the following would plot all datafiles in the current directory with a ‘.dat’ suffix, using the same plot options: </p></td>
+    <td style="text-align:left"><p> Pyxplot allows the wildcards ‘*’ and ‘?’ to be used both in the filenames of datafiles following the <tt class="ttfamily">plot</tt> command, and also when specifying command files on the command line and with the <tt class="ttfamily">load</tt> command. For example, the following would plot all datafiles in the current directory with a ‘.dat’ suffix, using the same plot options: </p></td>
 
 </tr><tr>
 

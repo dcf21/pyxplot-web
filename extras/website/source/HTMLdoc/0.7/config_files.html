@@ -7,7 +7,7 @@
 
 <link href="sect0045.html" title="An Example Configuration File" rel="next" />
 <link href="configuration.html" title="Overview" rel="prev" />
-<link href="sect0044.html" title="Configuring PyXPlot" rel="up" />
+<link href="sect0044.html" title="Configuring Pyxplot" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -17,7 +17,7 @@
 <tr>
 <td><a href="configuration.html" title="Overview"><img alt="Previous: Overview" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0044.html" title="Configuring PyXPlot"><img alt="Up: Configuring PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0044.html" title="Configuring Pyxplot"><img alt="Up: Configuring Pyxplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="sect0045.html" title="An Example Configuration File"><img alt="Next: An Example Configuration File" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0044.html">Configuring PyXPlot</a> <b>:</b>
+<a href="sect0044.html">Configuring Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -52,10 +52,10 @@
 </div>
 
 <div><h1 id="config_files">7.2 Configuration Files</h1>
-<p>  </p><p>PyXPlot can also be configured by means of a configuration file, with filename <tt class="tt">.pyxplotrc</tt>, which is scanned once upon startup. This file may be placed either in the user’s current working directory, or in his home directory. In the event of both files existing, settings in the former override those in the latter; in the event of neither file existing, PyXPlot uses its own default settings. </p><p>The configuration file should take the form of a series of sections, each headed by a section heading enclosed in square brackets, and followed by variables declared using the format: </p><pre> 
+<p>  </p><p>Pyxplot can also be configured by means of a configuration file, with filename <tt class="tt">.pyxplotrc</tt>, which is scanned once upon startup. This file may be placed either in the user’s current working directory, or in his home directory. In the event of both files existing, settings in the former override those in the latter; in the event of neither file existing, Pyxplot uses its own default settings. </p><p>The configuration file should take the form of a series of sections, each headed by a section heading enclosed in square brackets, and followed by variables declared using the format: </p><pre> 
 OUTPUT=foo.eps
 </pre><p>The following sections are used, although they do not all need to be present in any given file: </p><ul class="itemize">
-<li><p><tt class="tt">settings</tt> – contains parameters similar to those which can be set with the <tt class="tt">set</tt> command. A complete list is given in Section <a href="configfile_settings.html">7.4</a> below. </p></li><li><p><tt class="tt">terminal</tt> – contains parameters for altering the behaviour and appearance of PyXPlot’s interactive terminal. A complete list is given in Section <a href="configfile_terminal.html">7.5</a>. </p></li><li><p><tt class="tt">variables</tt> – contains variable definitions. Any variables defined in this section will be predefined in the PyXPlot mathematical environment upon startup. </p></li><li><p><tt class="tt">functions</tt> – contains function definitions. </p></li><li><p><tt class="tt">colours</tt> – contains a variable ‘<tt class="tt">palette</tt>’, which should be set to a comma-separated list of the sequence of colours in the palette used to plot datasets. The first will be called colour 1 in PyXPlot, the second colour 2, etc. A list of recognised colour names is given in Section <a href="colour_names.html">7.6</a>. </p></li><li><p><tt class="tt">latex</tt> – contains a variable ‘<tt class="tt">preamble</tt>’, which is prefixed to the beginning of all L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X text items, before the <tt class="tt">\begin{document}</tt> statement. It can be used to define custom L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X macros, or to include packages using the <tt class="tt">\includepackage{}</tt> command. The preamble can be changed using the <tt class="tt">set preamble</tt> command<span id="a0000000583"></span>. </p></li>
+<li><p><tt class="tt">settings</tt> – contains parameters similar to those which can be set with the <tt class="tt">set</tt> command. A complete list is given in Section <a href="configfile_settings.html">7.4</a> below. </p></li><li><p><tt class="tt">terminal</tt> – contains parameters for altering the behaviour and appearance of Pyxplot’s interactive terminal. A complete list is given in Section <a href="configfile_terminal.html">7.5</a>. </p></li><li><p><tt class="tt">variables</tt> – contains variable definitions. Any variables defined in this section will be predefined in the Pyxplot mathematical environment upon startup. </p></li><li><p><tt class="tt">functions</tt> – contains function definitions. </p></li><li><p><tt class="tt">colours</tt> – contains a variable ‘<tt class="tt">palette</tt>’, which should be set to a comma-separated list of the sequence of colours in the palette used to plot datasets. The first will be called colour 1 in Pyxplot, the second colour 2, etc. A list of recognised colour names is given in Section <a href="colour_names.html">7.6</a>. </p></li><li><p><tt class="tt">latex</tt> – contains a variable ‘<tt class="tt">preamble</tt>’, which is prefixed to the beginning of all L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X text items, before the <tt class="tt">\begin{document}</tt> statement. It can be used to define custom L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X macros, or to include packages using the <tt class="tt">\includepackage{}</tt> command. The preamble can be changed using the <tt class="tt">set preamble</tt> command<span id="a0000000583"></span>. </p></li>
 </ul></div>
 
 
@@ -65,7 +65,7 @@ OUTPUT=foo.eps
 <tr>
 <td><a href="configuration.html" title="Overview"><img alt="Previous: Overview" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="sect0044.html" title="Configuring PyXPlot"><img alt="Up: Configuring PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="sect0044.html" title="Configuring Pyxplot"><img alt="Up: Configuring Pyxplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="sect0045.html" title="An Example Configuration File"><img alt="Next: An Example Configuration File" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 

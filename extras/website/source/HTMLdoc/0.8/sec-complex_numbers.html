@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+<a href="sect0001.html">Introduction to Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -57,11 +57,11 @@
 </div>
 
 <div><h1 id="sec:complex_numbers">4.5 Working with Complex Numbers</h1>
-<p>  <a name="a0000000420" id="a0000000420"></a> </p><p>In all of the examples given thus far, algebraic expressions have only been allowed to return real numbers: PyXPlot has not been handling any complex numbers. Since there are many circumstances in which the data being analysed may be known for certain to be real, complex arithmetic is disabled by default. Expressions such as <tt class="tt">sqrt(-1)</tt> will return either an error or <tt class="tt">NaN</tt>. The most obvious example of this is the built-in variable <tt class="tt">i</tt>, which is set to equal <tt class="tt">sqrt(-1)</tt>: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">print i</b></tt><br /><tt class="tt">nan</tt>  </p><p>Complex arithmetic may be enabled by typing <a name="a0000000421" id="a0000000421"></a> </p><pre>
+<p>  <a name="a0000000420" id="a0000000420"></a> </p><p>In all of the examples given thus far, algebraic expressions have only been allowed to return real numbers: Pyxplot has not been handling any complex numbers. Since there are many circumstances in which the data being analysed may be known for certain to be real, complex arithmetic is disabled by default. Expressions such as <tt class="tt">sqrt(-1)</tt> will return either an error or <tt class="tt">NaN</tt>. The most obvious example of this is the built-in variable <tt class="tt">i</tt>, which is set to equal <tt class="tt">sqrt(-1)</tt>: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">print i</b></tt><br /><tt class="tt">nan</tt>  </p><p>Complex arithmetic may be enabled by typing <a name="a0000000421" id="a0000000421"></a> </p><pre>
 set numeric complex
 </pre><p>and then disabled again by typing <a name="a0000000422" id="a0000000422"></a> </p><pre>
 set numeric real
-</pre><p>Once complex arithmetic is enabled, many of PyXPlot’s built-in mathematical functions accept complex input arguments, including the logarithm function, all of the trigonometric functions, and the exponential function. A complete list of functions which accept complex inputs can be found in Appendix <a href="ch-function_list.html">2</a>. </p><p>Complex number literals can be entered into algebraic expressions in either of the following two forms: </p><pre>
+</pre><p>Once complex arithmetic is enabled, many of Pyxplot’s built-in mathematical functions accept complex input arguments, including the logarithm function, all of the trigonometric functions, and the exponential function. A complete list of functions which accept complex inputs can be found in Appendix <a href="ch-function_list.html">2</a>. </p><p>Complex number literals can be entered into algebraic expressions in either of the following two forms: </p><pre>
 print (2 + 3*i       )
 print (2 + 3*sqrt(-1))
 </pre><p>The former version depends upon the pre-defined system variable <tt class="tt">i</tt> being defined to equal <img src="images/img-0007.png" alt="$\sqrt {-1}$" style="vertical-align:-3px; 

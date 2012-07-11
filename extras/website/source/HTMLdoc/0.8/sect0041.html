@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+<a href="sect0001.html">Introduction to Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -57,9 +57,9 @@
 </div>
 
 <div><h1 id="a0000000042">6.13 Shell Commands</h1>
-<p>Shell commands<a name="a0000000606" id="a0000000606"></a> may be executed directly from within PyXPlot by prefixing them with an <tt class="tt">!</tt><a name="a0000000607" id="a0000000607"></a> character. The remainder of the line is sent directly to the shell, for example: </p><pre>
+<p>Shell commands<a name="a0000000606" id="a0000000606"></a> may be executed directly from within Pyxplot by prefixing them with an <tt class="tt">!</tt><a name="a0000000607" id="a0000000607"></a> character. The remainder of the line is sent directly to the shell, for example: </p><pre>
 !ls -l
-</pre><p>Semi-colons cannot be used to place further PyXPlot commands after a shell command on the same line. </p><p><table cellspacing="0" class="tabular">
+</pre><p>Semi-colons cannot be used to place further Pyxplot commands after a shell command on the same line. </p><p><table cellspacing="0" class="tabular">
 <tr>
 
     
@@ -70,9 +70,9 @@
     <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> !ls -l ; set key top left </tt></div></p></td>
 
 </tr>
-</table> </p><p>It is also possible to substitute the output of a shell command into a PyXPlot command. To do this, the shell command should be enclosed in back-quotes (‘), as in the following example:<a name="a0000000608" id="a0000000608"></a><a name="a0000000609" id="a0000000609"></a> </p><pre>
+</table> </p><p>It is also possible to substitute the output of a shell command into a Pyxplot command. To do this, the shell command should be enclosed in back-quotes (‘), as in the following example:<a name="a0000000608" id="a0000000608"></a><a name="a0000000609" id="a0000000609"></a> </p><pre>
 a=`ls -l *.ppl | wc -l`
-print "The current directory contains %d PyXPlot scripts."%(a)
+print "The current directory contains %d Pyxplot scripts."%(a)
 </pre><p>It should be noted that back-quotes can only be used outside quotes. For example, </p><p><table cellspacing="0" class="tabular">
 <tr>
 
@@ -106,7 +106,7 @@ print "The current directory contains %d PyXPlot scripts."%(a)
     <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> !cd .. </tt></div></p></td>
 
 </tr>
-</table> </p><p>PyXPlot has its own <tt class="tt">cd</tt> command<a name="a0000000610" id="a0000000610"></a> for this purpose, as well as its own <tt class="tt">pwd</tt> command<a name="a0000000611" id="a0000000611"></a>: </p><p><table cellspacing="0" class="tabular">
+</table> </p><p>Pyxplot has its own <tt class="tt">cd</tt> command<a name="a0000000610" id="a0000000610"></a> for this purpose, as well as its own <tt class="tt">pwd</tt> command<a name="a0000000611" id="a0000000611"></a>: </p><p><table cellspacing="0" class="tabular">
 <tr>
 
     

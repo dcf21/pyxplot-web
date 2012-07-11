@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+<a href="sect0001.html">Introduction to Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -81,7 +81,7 @@ solve &lt;equation 1&gt;,... via &lt;variable 1&gt;, ...
     <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> x = unit(m)<br />y = 5*unit(km)<br />solve x=y via x </tt></div></p></td>
 
 </tr>
-</table> </p><p>The <tt class="tt">solve</tt> command<a name="a0000000473" id="a0000000473"></a> works by minimising the squares of the residuals of all of the equations supplied, and so even when no exact solution can be found, the best compromise is returned. The following example has no solution – a system of three equations with two variables is over-constrained – but PyXPlot nonetheless finds a compromise solution: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">solve x+y=10, x-y=3, 2*x+y=16 via x,y</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print x</b></tt><br /><tt class="tt">6.3571429</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print y</b></tt><br /><tt class="tt">3.4285714</tt>  </p><p>When complex arithmetic is enabled, the <tt class="tt">solve</tt> command<a name="a0000000474" id="a0000000474"></a> allows each of the variables being fitted to take any value in the complex plane, and thus the number of dimensions of the fitting problem is effectively doubled – the real and imaginary components of each variable are solved for separately – as in the following example: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">set numerics complex</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">solve exp(x)=e*i via x</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print Re(x)</b></tt><br /><tt class="tt">1</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print Im(x)/pi</b></tt><br /><tt class="tt">0.5</tt>  </p></div>
+</table> </p><p>The <tt class="tt">solve</tt> command<a name="a0000000473" id="a0000000473"></a> works by minimising the squares of the residuals of all of the equations supplied, and so even when no exact solution can be found, the best compromise is returned. The following example has no solution – a system of three equations with two variables is over-constrained – but Pyxplot nonetheless finds a compromise solution: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">solve x+y=10, x-y=3, 2*x+y=16 via x,y</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print x</b></tt><br /><tt class="tt">6.3571429</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print y</b></tt><br /><tt class="tt">3.4285714</tt>  </p><p>When complex arithmetic is enabled, the <tt class="tt">solve</tt> command<a name="a0000000474" id="a0000000474"></a> allows each of the variables being fitted to take any value in the complex plane, and thus the number of dimensions of the fitting problem is effectively doubled – the real and imaginary components of each variable are solved for separately – as in the following example: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">set numerics complex</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">solve exp(x)=e*i via x</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print Re(x)</b></tt><br /><tt class="tt">1</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print Im(x)/pi</b></tt><br /><tt class="tt">0.5</tt>  </p></div>
 
 
 

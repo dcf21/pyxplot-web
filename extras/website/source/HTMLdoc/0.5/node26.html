@@ -66,7 +66,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <TD ALIGN="LEFT">--</TD>
 <TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>For an unknown
 reason, gnuplot doesn't allow <TT>set linewidth 2</TT> as valid syntax. This
-setting is allowed to be made in PyXPlot. Furthermore, <TT>set
+setting is allowed to be made in Pyxplot. Furthermore, <TT>set
 pointlinewidth 2</TT> will set the linewidth to be used when drawing data
 <SPAN  CLASS="textit">points</SPAN>. A similar effect can be achieved via:
 
@@ -102,7 +102,7 @@ plot sin(x) with dots pointsize 10
 <TD ALIGN="LEFT">--</TD>
 <TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>As well as the <TT>index</TT>,
 <TT>using</TT> and <TT>every</TT> keywords which gnuplot used to allow users to
-plot subsets of data from datafiles, PyXPlot also has a further modifier,
+plot subsets of data from datafiles, Pyxplot also has a further modifier,
 <TT>select</TT>. This can be used to plot only those datapoints in a datafile
 which specify some given criterion. For example:
 
@@ -167,7 +167,7 @@ plot 'datafile' with arrows_twohead
 </TR>
 <TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=85>lower and upper limit datapoints</TD>
 <TD ALIGN="LEFT">--</TD>
-<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>PyXPlot can plot datapoints using the
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>Pyxplot can plot datapoints using the
 standard upper- and lower-limit symbols.<A NAME="631"></A><A NAME="632"></A> No special syntax is required for
 this; these symbols are pointtypes<A NAME="tex2html19"
   HREF="footnode.html#foot2034"><SUP><SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">6</SPAN></SUP></A> 12 and 13 respectively,
@@ -185,7 +185,7 @@ plot 'lowerlimits' with points pointtype 13
 when a function (as opposed to a datafile) is plotted, only those plot styles
 which accept two columns of data can be used - for example, <TT>lines</TT> or
 <TT>points</TT>. It is not possible to plot a function with errorbars, for
-example. In PyXPlot, by contrast, this is possible using the following syntax:
+example. In Pyxplot, by contrast, this is possible using the following syntax:
 
 <P>
 <PRE>
@@ -242,7 +242,7 @@ It should be noted, however, that the range of values of <SPAN CLASS="MATH"><IMG
  ALT="$ x$"></SPAN> used would still
 correspond to the range of the plot's horizontal axis. If the above were to be
 attempted with an autoscaling horizontal axis, the result might be rather
-unexpected - PyXPlot would find itself autoscaling the <SPAN CLASS="MATH"><IMG
+unexpected - Pyxplot would find itself autoscaling the <SPAN CLASS="MATH"><IMG
  WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
  SRC="img7.png"
  ALT="$ x$"></SPAN>-axis range to the
@@ -339,7 +339,7 @@ marked out by the errorbar.</TD>
 </TR>
 <TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=85>&nbsp;</TD>
 <TD ALIGN="LEFT">&nbsp;</TD>
-<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>To avoid confusion, a different syntax is adopted in PyXPlot. The syntax:
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>To avoid confusion, a different syntax is adopted in Pyxplot. The syntax:
 
 <P>
 <PRE>
@@ -402,7 +402,7 @@ For clarity, a complete list of errorbar styles is given below:</TD>
 </TR>
 <TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=85>datafile wildcards<A NAME="695"></A><A NAME="696"></A><A NAME="697"></A></TD>
 <TD ALIGN="LEFT">--</TD>
-<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>PyXPlot allows the wildcards `*' and `?' to be used both in the filenames of datafiles following the <TT>plot</TT> command, and also when specifying command files on the commandline and with the <TT>load</TT> command. For example, the following would plot all datafiles in the current directory with a `.dat' suffix, using the same plot options:</TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=255>Pyxplot allows the wildcards `*' and `?' to be used both in the filenames of datafiles following the <TT>plot</TT> command, and also when specifying command files on the commandline and with the <TT>load</TT> command. For example, the following would plot all datafiles in the current directory with a `.dat' suffix, using the same plot options:</TD>
 </TR>
 <TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=85>&nbsp;</TD>
 <TD ALIGN="LEFT">&nbsp;</TD>

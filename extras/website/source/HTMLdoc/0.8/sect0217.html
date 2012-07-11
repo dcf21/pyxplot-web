@@ -79,7 +79,7 @@ pyxplot&gt; print x/pi
 x = unit(m)
 y = 5*unit(km)
 solve x=y via x
-</pre><p>The <tt class="tt">solve</tt> command works by minimising the squares of the residuals of all of the equations supplied, and so even when no exact solution can be found, the best compromise is returned. The following example has no solution – a system of three equations with two variables is over-constrained – but PyXPlot nonetheless finds a compromise solution: </p><pre>
+</pre><p>The <tt class="tt">solve</tt> command works by minimising the squares of the residuals of all of the equations supplied, and so even when no exact solution can be found, the best compromise is returned. The following example has no solution – a system of three equations with two variables is over-constrained – but Pyxplot nonetheless finds a compromise solution: </p><pre>
 pyxplot&gt; solve x+y=10, x-y=3, 2*x+y=16 via x,y
 pyxplot&gt; print x
 6.3571429

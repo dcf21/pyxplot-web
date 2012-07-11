@@ -7,7 +7,7 @@
 
 <link href="sect0016.html" title="Plotting Many Datafiles at Once" rel="next" />
 <link href="sect0015.html" title="Querying the Values of Settings" rel="prev" />
-<link href="ch-first_steps.html" title="First Steps With PyXPlot" rel="up" />
+<link href="ch-first_steps.html" title="First Steps With Pyxplot" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -17,7 +17,7 @@
 <tr>
 <td><a href="sect0015.html" title="Querying the Values of Settings"><img alt="Previous: Querying the Values of Settings" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-first_steps.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-first_steps.html" title="First Steps With Pyxplot"><img alt="Up: First Steps With Pyxplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="sect0016.html" title="Plotting Many Datafiles at Once"><img alt="Next: Plotting Many Datafiles at Once" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
@@ -39,12 +39,12 @@
 
 </span><span>
 <span>
-<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+<a href="sect0001.html">Introduction to Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="ch-first_steps.html">First Steps With PyXPlot</a> <b>:</b>
+<a href="ch-first_steps.html">First Steps With Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -69,7 +69,7 @@ plot 'data.dat' using (3+$1+$2):(2+$3)
                                      width:11px; 
                                      height:8px" class="math gen" /> is itself read from the second column of the datafile: </p><pre>
 plot 'data.dat' using (3):$($2)
-</pre><p>It is also possible to plot data from only selected lines within a datafile. When PyXPlot reads a datafile, it looks for any blank lines in the file. It divides the datafile up into <i class="it">data blocks</i>, each being separated from the next by a single blank line. The first data block is numbered 0, the next 1, and so on. <a name="a0000000343" id="a0000000343"></a> </p><p>When two or more blank lines are found together, the datafile is divided up into <i class="it">index blocks</i>. The first index block is numbered 0, the next 1, and so on. Each index block may be made up of a series of data blocks. To clarify this, a labelled example datafile is shown in Figure <a href="sec-plot_datafiles.html#sec:every">3.1</a>. </p><div id="sec:every" class="figure"><center> <table cellspacing="0" class="tabular">
+</pre><p>It is also possible to plot data from only selected lines within a datafile. When Pyxplot reads a datafile, it looks for any blank lines in the file. It divides the datafile up into <i class="it">data blocks</i>, each being separated from the next by a single blank line. The first data block is numbered 0, the next 1, and so on. <a name="a0000000343" id="a0000000343"></a> </p><p>When two or more blank lines are found together, the datafile is divided up into <i class="it">index blocks</i>. The first index block is numbered 0, the next 1, and so on. Each index block may be made up of a series of data blocks. To clarify this, a labelled example datafile is shown in Figure <a href="sec-plot_datafiles.html#sec:every">3.1</a>. </p><div id="sec:every" class="figure"><center> <table cellspacing="0" class="tabular">
 <tr>
 
     
@@ -195,7 +195,7 @@ plot 'data.dat' using (3):$($2)
                                      height:11px" class="math gen" /> </p></td>
 
 </tr>
-</table> </center><div class="caption"><b>Figure 3.1</b>: <span>An example PyXPlot datafile – the datafile is shown in the two left-hand columns, and commands are shown to the right.</span></div></div><p>By default, when a datafile is plotted, all data blocks in all index blocks are plotted. To plot only the data from one index block, the following syntax may be used: </p><pre>
+</table> </center><div class="caption"><b>Figure 3.1</b>: <span>An example Pyxplot datafile – the datafile is shown in the two left-hand columns, and commands are shown to the right.</span></div></div><p>By default, when a datafile is plotted, all data blocks in all index blocks are plotted. To plot only the data from one index block, the following syntax may be used: </p><pre>
 plot 'data.dat' index 1
 </pre><p>To achieve the default behaviour of plotting all index blocks, the <tt class="tt">index</tt> modifier should be followed by a negative number.<a name="a0000000344" id="a0000000344"></a> </p><p>It is also possible to specify which lines and/or data blocks to plot from within each index. To do so, the <tt class="tt">every</tt><a name="a0000000345" id="a0000000345"></a> modifier is used, which takes up to six values, separated by colons: </p><pre>
 plot 'data.dat' every a:b:c:d:e:f
@@ -279,7 +279,7 @@ plot 'data.dat' every a:b:c:d:e:f
 </div><p>Any or all of these values can be omitted, and so the following would both be valid statements: </p><pre>
 plot 'data.dat' index 1 every 2:3
 plot 'data.dat' index 1 every ::3
-</pre><p>The first would plot only every other datapoint from every third data block; the second from the third line onwards within each data block. </p><p><a name="a0000000346" id="a0000000346"></a> Comment lines may be included in datafiles by prefixing them with a hash character. Such lines are completely ignored by PyXPlot and do not count towards the one or two blank lines required to separate blocks and index blocks. It is usually good practice to include comment lines at the top of datafiles to indicate their date and source. In Section <a href="sec-special_comments.html">5.4</a> we will see that PyXPlot can read metadata from some comment lines which follow particular syntax. </p></div>
+</pre><p>The first would plot only every other datapoint from every third data block; the second from the third line onwards within each data block. </p><p><a name="a0000000346" id="a0000000346"></a> Comment lines may be included in datafiles by prefixing them with a hash character. Such lines are completely ignored by Pyxplot and do not count towards the one or two blank lines required to separate blocks and index blocks. It is usually good practice to include comment lines at the top of datafiles to indicate their date and source. In Section <a href="sec-special_comments.html">5.4</a> we will see that Pyxplot can read metadata from some comment lines which follow particular syntax. </p></div>
 
 
 
@@ -290,7 +290,7 @@ plot 'data.dat' index 1 every ::3
 <tr>
 <td><a href="sect0015.html" title="Querying the Values of Settings"><img alt="Previous: Querying the Values of Settings" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-first_steps.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-first_steps.html" title="First Steps With Pyxplot"><img alt="Up: First Steps With Pyxplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="sect0016.html" title="Plotting Many Datafiles at Once"><img alt="Next: Plotting Many Datafiles at Once" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 

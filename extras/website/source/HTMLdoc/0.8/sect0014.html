@@ -7,7 +7,7 @@
 
 <link href="sec-latex_incompatibility.html" title="Axis Labels and Titles" rel="next" />
 <link href="sect0013.html" title="Splitting Long Commands" rel="prev" />
-<link href="ch-first_steps.html" title="First Steps With PyXPlot" rel="up" />
+<link href="ch-first_steps.html" title="First Steps With Pyxplot" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -17,7 +17,7 @@
 <tr>
 <td><a href="sect0013.html" title="Splitting Long Commands"><img alt="Previous: Splitting Long Commands" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-first_steps.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-first_steps.html" title="First Steps With Pyxplot"><img alt="Up: First Steps With Pyxplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="sec-latex_incompatibility.html" title="Axis Labels and Titles"><img alt="Next: Axis Labels and Titles" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
@@ -39,12 +39,12 @@
 
 </span><span>
 <span>
-<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+<a href="sect0001.html">Introduction to Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="ch-first_steps.html">First Steps With PyXPlot</a> <b>:</b>
+<a href="ch-first_steps.html">First Steps With Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -57,7 +57,7 @@
 </div>
 
 <div><h1 id="a0000000015">3.5 Printing Text</h1>
-<p>PyXPlot’s <tt class="tt">print</tt> command<a name="a0000000321" id="a0000000321"></a> can be used to display strings and the results of calculations on the terminal, as in the following examples: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">a=2</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print "Hello World!"</b></tt><br /><tt class="tt">Hello World!</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print a</b></tt><br /><tt class="tt">2</tt>  </p><p>Multiple items can be displayed one-after-another on a single line by separating them with commas. The following example displays the values of the variable <tt class="tt">a</tt> and the function <tt class="tt">f(a)</tt> in the middle of a text string: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">f(x) = x**2</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">a=3</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print "The value of ",a," squared is ",f(a),"."</b></tt><br /><tt class="tt">The value of 3 squared is 9.</tt>  </p><p>A similar effect is often achieved more neatly using the string substitution operator, <tt class="tt">%</tt><a name="a0000000322" id="a0000000322"></a><a name="a0000000323" id="a0000000323"></a>. The operator is preceded by a format string, in which the places where numbers and strings are to be substituted are marked by tokens such as <tt class="tt">%e</tt> and <tt class="tt">%s</tt>. The substitution operator is followed by a ()-bracketed list of the quantities which are to be substituted into the format string. This behaviour is similar to that of the Python programming language’s % operator<a href="#a0000000324" class="footnote"><sup class="footnotemark">1</sup></a>, and of the <tt class="tt">printf</tt> command in C. The following examples demonstrate the use of this operator: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">print "The value of %d squared is %d."%(a,f(a))</b></tt><br /><tt class="tt">The value of 3 squared is 9.</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print "The %s of f(%f) is %d."%("value",sqrt(2), <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+<p>Pyxplot’s <tt class="tt">print</tt> command<a name="a0000000321" id="a0000000321"></a> can be used to display strings and the results of calculations on the terminal, as in the following examples: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">a=2</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print "Hello World!"</b></tt><br /><tt class="tt">Hello World!</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print a</b></tt><br /><tt class="tt">2</tt>  </p><p>Multiple items can be displayed one-after-another on a single line by separating them with commas. The following example displays the values of the variable <tt class="tt">a</tt> and the function <tt class="tt">f(a)</tt> in the middle of a text string: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">f(x) = x**2</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">a=3</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print "The value of ",a," squared is ",f(a),"."</b></tt><br /><tt class="tt">The value of 3 squared is 9.</tt>  </p><p>A similar effect is often achieved more neatly using the string substitution operator, <tt class="tt">%</tt><a name="a0000000322" id="a0000000322"></a><a name="a0000000323" id="a0000000323"></a>. The operator is preceded by a format string, in which the places where numbers and strings are to be substituted are marked by tokens such as <tt class="tt">%e</tt> and <tt class="tt">%s</tt>. The substitution operator is followed by a ()-bracketed list of the quantities which are to be substituted into the format string. This behaviour is similar to that of the Python programming language’s % operator<a href="#a0000000324" class="footnote"><sup class="footnotemark">1</sup></a>, and of the <tt class="tt">printf</tt> command in C. The following examples demonstrate the use of this operator: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">print "The value of %d squared is %d."%(a,f(a))</b></tt><br /><tt class="tt">The value of 3 squared is 9.</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print "The %s of f(%f) is %d."%("value",sqrt(2), <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
                                      width:7px; 
                                      height:18px" class="math gen" /></b></tt><br /><tt class="tt">.......&gt;                                 <b class="bf">f(sqrt(2)) )</b></tt><br /><tt class="tt">The value of f(1.414214) is 2.</tt>  </p><p>The detailed behaviour of the string substitution operator, and a full list of the substitution tokens which it accepts, are given in Section <a href="sec-stringsubop.html">6.1.1</a>. </p></div>
 
@@ -66,7 +66,7 @@
 <div id="footnotes">
 <p><b>Footnotes</b></p>
 <ol>
-<li id="a0000000324">Unlike in Python, the brackets are obligatory; <tt class="tt">’%d’%2</tt> is <i class="it">not</i> valid in PyXPlot, and should be written as <tt class="tt">’%d’%(2)</tt>.</li>
+<li id="a0000000324">Unlike in Python, the brackets are obligatory; <tt class="tt">’%d’%2</tt> is <i class="it">not</i> valid in Pyxplot, and should be written as <tt class="tt">’%d’%(2)</tt>.</li>
 </ol>
 </div>
 
@@ -75,7 +75,7 @@
 <tr>
 <td><a href="sect0013.html" title="Splitting Long Commands"><img alt="Previous: Splitting Long Commands" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-first_steps.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-first_steps.html" title="First Steps With Pyxplot"><img alt="Up: First Steps With Pyxplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="sec-latex_incompatibility.html" title="Axis Labels and Titles"><img alt="Next: Axis Labels and Titles" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 

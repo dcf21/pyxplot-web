@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
 <help>
 
-Welcome to the PyXPlot help system. The 'help' command provides an
+Welcome to the Pyxplot help system. The 'help' command provides an
 easily-navigable source of information which is supplementary to that in the
 Users' Guide. To obtain information on any particular topic, type 'help'
 followed by the name of the topic. For example,
 
 help plot
 
-provides information on PyXPlot's plot command. Some topics have subtopics,
+provides information on Pyxplot's plot command. Some topics have subtopics,
 this being one example; these are listed at the end of each help page. To view
 them, add further words to the end of your help request, as in the example:
 
 help set title
 
-Information is arranged with general information about PyXPlot under the
+Information is arranged with general information about Pyxplot under the
 heading 'about' and information about the format that input datafiles should
-take under the heading 'datafile'. Information about each of PyXPlot's commands
+take under the heading 'datafile'. Information about each of Pyxplot's commands
 can be found under the name of that command. Other categories, listed below,
 are self-explanatory.
 
@@ -31,45 +31,45 @@ email: \labcoders@pyxplot.org.uk\rab
  </authors>
  <credits>
 
-The inspiration for PyXPlot came from two sources, to which PyXPlot owes a
-considerable historical debt. PyXPlot's interface was heavily motivated by
+The inspiration for Pyxplot came from two sources, to which Pyxplot owes a
+considerable historical debt. Pyxplot's interface was heavily motivated by
 gnuplot's simple and intuitive interface, which was devised by Thomas Williams
-and Colin Kelley and has more recently been developed by many others. PyXPlot's
+and Colin Kelley and has more recently been developed by many others. Pyxplot's
 graphical output engine was heavily motivated by the PyX graphics library for
 Python, originally written by Joerg Lehmann and Andre Wobst and more recently
-developed by a larger team. Versions of PyXPlot prior to 0.8.0 used PyX to
+developed by a larger team. Versions of Pyxplot prior to 0.8.0 used PyX to
 produce their graphical output, and though version 0.8.x uses its own graphics
 engine, it continues to bear many similarities to PyX.
 
-Several other people have made very substantial contributions to PyXPlot's
+Several other people have made very substantial contributions to Pyxplot's
 development. Matthew Smith provided extensive advice on many mathematical
 matters which arose during its development, provided C implementations of the
 Airy functions and the Riemann zeta function for general complex inputs, and
 suggested many mathematical functions which ought to be made available. Dave
-Ansell provided many good ideas which have helped to shape PyXPlot's interface.
-The writing of PyXPlot's PostScript engine was substantially eased thanks to
+Ansell provided many good ideas which have helped to shape Pyxplot's interface.
+The writing of Pyxplot's PostScript engine was substantially eased thanks to
 the help of Michael Rutter, who happily shared his code and past experiences
 with us; the implementation of the image command is substantially his work.
 
 We are also very grateful to our team of alpha testers, without whose work this
-release of PyXPlot would doubtless contain many more bugs than it does:
+release of Pyxplot would doubtless contain many more bugs than it does:
 especial thanks go to Rachel Holdforth and Stuart Prescott. Of course, the authors
 remain solely responsible for any bugs which remain.
 
 Finally, we would like to think all of the users who have got in touch with us
-by email since PyXPlot was first released on the web in 2006. Your feedback and
+by email since Pyxplot was first released on the web in 2006. Your feedback and
 suggestions have been gratefully received.
 
  </credits>
  <version>
 
-This is PyXPlot version $VERSION.
+This is Pyxplot version $VERSION.
 
  </version>
  <datafile>
 
-PyXPlot expects its input datafiles to be in plain text format, with columns of
-data separated either by whitespace or by commas. This means that PyXPlot is
+Pyxplot expects its input datafiles to be in plain text format, with columns of
+data separated either by whitespace or by commas. This means that Pyxplot is
 compatible both with the format of datafiles read by gnuplot and with the
 Comma Separated Values (CSV) format which many spreadsheets are able to
 produce.
@@ -122,7 +122,7 @@ the datafile, and the vertical positions from the fourth.
    </using>
    <every>
 
-When PyXPlot reads a datafile, it looks for any blank lines in the file. It
+When Pyxplot reads a datafile, it looks for any blank lines in the file. It
 divides the datafile up into "data blocks", each being separated from the next
 by a single blank line. The first datablock is numbered 0, the next 1, and so
 on.
@@ -181,7 +181,7 @@ To select which index blocks to take data from, see the "index" modifier.
    </every>
    <index>
 
-When PyXPlot reads a datafile, it looks for any blank lines in the file. It
+When Pyxplot reads a datafile, it looks for any blank lines in the file. It
 divides the datafile up into "data blocks", each being separated from the next
 by a single blank line. The first datablock is numbered 0, the next 1, and so
 on.
@@ -225,12 +225,12 @@ datapoints from a datafile for plotting.
  </datafile>
  <date>
 
-This version of PyXPlot was released on $DATE.
+This version of Pyxplot was released on $DATE.
 
  </date>
  <license>
 
-PyXPlot is distributed under the Gnu General Public License, Version 2. A copy
+Pyxplot is distributed under the Gnu General Public License, Version 2. A copy
 of this can be downloaded from: http://www.gnu.org/copyleft/gpl.html .
 
  </license>

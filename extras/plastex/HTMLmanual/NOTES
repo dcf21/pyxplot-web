@@ -1,4 +1,4 @@
-This file is to be used to generate tex for the HTML manual that goes on the PyXPlot website.  To use it:
+This file is to be used to generate tex for the HTML manual that goes on the Pyxplot website.  To use it:
 
 (a) make sure that you have plastex 0.9.1 installed and that it works.  Plastex 0.7 is not new enough.
 

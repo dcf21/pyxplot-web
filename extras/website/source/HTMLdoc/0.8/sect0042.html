@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+<a href="sect0001.html">Introduction to Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -57,9 +57,9 @@
 </div>
 
 <div><h1 id="a0000000043">6.14 Script Watching: pyxplot_watch</h1>
-<p>PyXPlot includes a simple tool for watching command script files and executing them whenever they are modified. This may be useful when developing a command script, if one wants to make small modifications to it and see the results in a semi-live fashion. This tool is invoked by calling the <tt class="tt">pyxplot_watch</tt><a name="a0000000612" id="a0000000612"></a><a name="a0000000613" id="a0000000613"></a> command from a shell prompt. The command-line syntax of <tt class="tt">pyxplot_watch</tt> is similar to that of PyXPlot itself, for example: </p><pre>
+<p>Pyxplot includes a simple tool for watching command script files and executing them whenever they are modified. This may be useful when developing a command script, if one wants to make small modifications to it and see the results in a semi-live fashion. This tool is invoked by calling the <tt class="tt">pyxplot_watch</tt><a name="a0000000612" id="a0000000612"></a><a name="a0000000613" id="a0000000613"></a> command from a shell prompt. The command-line syntax of <tt class="tt">pyxplot_watch</tt> is similar to that of Pyxplot itself, for example: </p><pre>
 pyxplot_watch script.ppl
-</pre><p>would set <tt class="tt">pyxplot_watch</tt> to watch the command script file <tt class="tt">script.ppl</tt>. One difference, however, is that if multiple script files are specified on the command line, they are watched and executed independently, <i class="itshape">not</i> sequentially, as PyXPlot itself would do. Wildcard characters can also be used to set <tt class="tt">pyxplot_watch</tt> to watch multiple files.<a href="#a0000000614" class="footnote"><sup class="footnotemark">1</sup></a> </p><p>This is especially useful when combined with Ghostview’s<a name="a0000000615" id="a0000000615"></a> watch facility. For example, suppose that a script <tt class="tt">foo.ppl</tt> produces PostScript output <tt class="tt">foo.ps</tt>. The following two commands could be used to give a live view of the result of executing this script: </p><pre>
+</pre><p>would set <tt class="tt">pyxplot_watch</tt> to watch the command script file <tt class="tt">script.ppl</tt>. One difference, however, is that if multiple script files are specified on the command line, they are watched and executed independently, <i class="itshape">not</i> sequentially, as Pyxplot itself would do. Wildcard characters can also be used to set <tt class="tt">pyxplot_watch</tt> to watch multiple files.<a href="#a0000000614" class="footnote"><sup class="footnotemark">1</sup></a> </p><p>This is especially useful when combined with Ghostview’s<a name="a0000000615" id="a0000000615"></a> watch facility. For example, suppose that a script <tt class="tt">foo.ppl</tt> produces PostScript output <tt class="tt">foo.ps</tt>. The following two commands could be used to give a live view of the result of executing this script: </p><pre>
 gv --watch foo.ps &amp;
 pyxplot_watch foo.ppl
 </pre></div>

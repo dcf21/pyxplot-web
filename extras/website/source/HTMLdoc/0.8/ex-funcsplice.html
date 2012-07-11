@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+<a href="sect0001.html">Introduction to Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -74,7 +74,7 @@ f(x)[-pi/2:pi/2] = cos(x)
 </pre><p>Plotting this function would yield the following result: </p><center> 
 <img src="images/img-0075.png" alt="\includegraphics[width=8cm]{examples/eps/ex_intro_func_splice}" style="width:8cm" /> </center><p>To produce this function, we have made use of the fact that if there is an overlap in the domains of validity of multiple definitions of a function, then later declarations are guaranteed take precedence. The definition that the function equals zero is valid everywhere, but is overridden in the region <img src="images/img-0073.png" alt="$-\nicefrac {\pi }{2}&lt;x&lt;\nicefrac {\pi }{2}$" style="vertical-align:-5px; 
                                      width:115px; 
-                                     height:18px" class="math gen" /> by the second function definition. </p><p>Where functions have been spliced together, the <tt class="tt">show functions</tt> command will show all of the definitions of the spliced function, together with the regions of parameter space in which they are used. This is indicated using the same syntax that is used for defining spliced functions, such that the output can be stored and pasted into a future PyXPlot session to redefine exactly the same spliced function. </p><p>When a function takes more than one argument, multiple ranges can be specified, one for each argument. Any of the limits can be left blank if there is no upper- or lower-limit upon the value of that particular argument. In the following example, the function <tt class="tt">f(a,b,c)</tt> would only be defined when all of <tt class="tt">a</tt>, <tt class="tt">b</tt> and <tt class="tt">c</tt> were in the range <img src="images/img-0077.png" alt="$-1 \to 1$" style="vertical-align:0px; 
+                                     height:18px" class="math gen" /> by the second function definition. </p><p>Where functions have been spliced together, the <tt class="tt">show functions</tt> command will show all of the definitions of the spliced function, together with the regions of parameter space in which they are used. This is indicated using the same syntax that is used for defining spliced functions, such that the output can be stored and pasted into a future Pyxplot session to redefine exactly the same spliced function. </p><p>When a function takes more than one argument, multiple ranges can be specified, one for each argument. Any of the limits can be left blank if there is no upper- or lower-limit upon the value of that particular argument. In the following example, the function <tt class="tt">f(a,b,c)</tt> would only be defined when all of <tt class="tt">a</tt>, <tt class="tt">b</tt> and <tt class="tt">c</tt> were in the range <img src="images/img-0077.png" alt="$-1 \to 1$" style="vertical-align:0px; 
                                      width:58px; 
                                      height:12px" class="math gen" />: </p><pre>
 f(a,b,c)[-1:1][-1:1][-1:1] = a+b+c
@@ -114,7 +114,7 @@ f(x)[0:] = 1
                                      width:39px; 
                                      height:13px" class="math gen" />, the converse is true: only the left-hand string exerts a force. The case <img src="images/img-0087.png" alt="$|x|&gt;2l$" style="vertical-align:-5px; 
                                      width:56px; 
-                                     height:18px" class="math gen" /> is not possible, as the bead would have to penetrate the hard walls. It is left as an exercise for the reader to use Hooke’s Law to derive the following expression, but in summary, the force on the bead can be defined in PyXPlot as: </p></td>
+                                     height:18px" class="math gen" /> is not possible, as the bead would have to penetrate the hard walls. It is left as an exercise for the reader to use Hooke’s Law to derive the following expression, but in summary, the force on the bead can be defined in Pyxplot as: </p></td>
 
 </tr><tr>
 

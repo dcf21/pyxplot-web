@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+<a href="sect0001.html">Introduction to Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -57,7 +57,7 @@
 </div>
 
 <div><h1 id="a0000000031">5.10 Random Data Generation</h1>
-<p>PyXPlot has a range of mathematical functions which draw random samples from a variety of probability distributions. These are: </p><ul class="itemize">
+<p>Pyxplot has a range of mathematical functions which draw random samples from a variety of probability distributions. These are: </p><ul class="itemize">
 <li><p><tt class="tt">random()</tt> – returns a random real number between 0 and 1. <a name="a0000000558" id="a0000000558"></a> </p></li><li><p><tt class="tt">random_binomial(<img src="images/img-0269.png" alt="$p,n$" style="vertical-align:-4px; 
                                      width:29px; 
                                      height:12px" class="math gen" />)</tt> – returns a random sample from a binomial distribution with <img src="images/img-0014.png" alt="$n$" style="vertical-align:0px; 
@@ -99,7 +99,7 @@
 <tr>
 
     
-    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> PyXPlot’s functions for generating random numbers are most commonly used for adding noise to artificially-generated data. In this example, however, we use them to implement a rather inefficient algorithm for estimating the value of the mathematical constant <img src="images/img-0136.png" alt="$\pi $" style="vertical-align:0px; 
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> Pyxplot’s functions for generating random numbers are most commonly used for adding noise to artificially-generated data. In this example, however, we use them to implement a rather inefficient algorithm for estimating the value of the mathematical constant <img src="images/img-0136.png" alt="$\pi $" style="vertical-align:0px; 
                                      width:11px; 
                                      height:8px" class="math gen" />. The algorithm works by spreading randomly-placed samples in the square <img src="images/img-0276.png" alt="$\left\{  -1&lt;x&lt;1;\;  -1&lt;y&lt;1\right\} $" style="vertical-align:-5px; 
                                      width:210px; 
@@ -128,7 +128,7 @@
     
     <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>On the author’s machine, this script returns a value of <img src="images/img-0281.png" alt="$3.1352$" style="vertical-align:0px; 
                                      width:50px; 
-                                     height:13px" class="math gen" /> when executed using the random samples which are returned immediately after starting PyXPlot. This method of estimating <img src="images/img-0136.png" alt="$\pi $" style="vertical-align:0px; 
+                                     height:13px" class="math gen" /> when executed using the random samples which are returned immediately after starting Pyxplot. This method of estimating <img src="images/img-0136.png" alt="$\pi $" style="vertical-align:0px; 
                                      width:11px; 
                                      height:8px" class="math gen" /> is well modelled as a Poisson process, and the uncertainty in this result can be estimated from the Poisson distribution to be <img src="images/img-0282.png" alt="$1/\sqrt {N}$" style="vertical-align:-5px; 
                                      width:49px; 
@@ -143,7 +143,7 @@
 </tr><tr>
 
     
-    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>With a little modification, this script can be adapted to produce a diagram of the datapoints used in its calculation. Below is a modified version of the second half of the script, which loops over the datapoints stored in the datafile <tt class="tt">random.dat</tt>. It uses PyXPlot’s vector graphics commands, which will be introduced in Chapter <a href="ch-vector_graphics.html">3</a>, to produce such a diagram: </p></td>
+    <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>With a little modification, this script can be adapted to produce a diagram of the datapoints used in its calculation. Below is a modified version of the second half of the script, which loops over the datapoints stored in the datafile <tt class="tt">random.dat</tt>. It uses Pyxplot’s vector graphics commands, which will be introduced in Chapter <a href="ch-vector_graphics.html">3</a>, to produce such a diagram: </p></td>
 
 </tr><tr>
 

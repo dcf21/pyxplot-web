@@ -78,7 +78,7 @@ set axis x3 linked x2 using phy_h*x
 set axis x2 linked x1 using x**2
 </pre><p> would appear twice, symmetrically on either side of <img src="images/img-0131.png" alt="$x=0$" style="vertical-align:0px; 
                                      width:43px; 
-                                     height:12px" class="math gen" />. </p><p>Insofar as is possible, linked axes autoscale intelligently when no range is set. Thus, if the <tt class="tt">x2</tt>-axis is linked to the <tt class="tt">x</tt>-axis, and no range to set for the <tt class="tt">x</tt>-axis, the <tt class="tt">x</tt>-axis will autoscale to include all of the data plotted against both itself and the <tt class="tt">x2</tt>-axis. Similarly, if the <tt class="tt">x2</tt>-axis is linked to the <tt class="tt">x</tt>-axis by means of some algebraic expression, the <tt class="tt">x</tt>-axis will attempt to autoscale to include the data plotted against the <tt class="tt">x2</tt>-axis, though in some cases – especially with non-monotonic linking functions – this may prove too difficult. Where PyXPlot detects that it has failed, a warning is issued recommending that a hard range be set for – in this example – the <tt class="tt">x</tt>-axis. </p><p> <span class="upshape"><span class="mdseries"><span class="rm">A plot of many blackbodies demonstrating the use of linked axes.</span></span></span></p><div>
+                                     height:12px" class="math gen" />. </p><p>Insofar as is possible, linked axes autoscale intelligently when no range is set. Thus, if the <tt class="tt">x2</tt>-axis is linked to the <tt class="tt">x</tt>-axis, and no range to set for the <tt class="tt">x</tt>-axis, the <tt class="tt">x</tt>-axis will autoscale to include all of the data plotted against both itself and the <tt class="tt">x2</tt>-axis. Similarly, if the <tt class="tt">x2</tt>-axis is linked to the <tt class="tt">x</tt>-axis by means of some algebraic expression, the <tt class="tt">x</tt>-axis will attempt to autoscale to include the data plotted against the <tt class="tt">x2</tt>-axis, though in some cases – especially with non-monotonic linking functions – this may prove too difficult. Where Pyxplot detects that it has failed, a warning is issued recommending that a hard range be set for – in this example – the <tt class="tt">x</tt>-axis. </p><p> <span class="upshape"><span class="mdseries"><span class="rm">A plot of many blackbodies demonstrating the use of linked axes.</span></span></span></p><div>
 
 <table cellspacing="0" class="tabular">
 <tr>
@@ -96,7 +96,7 @@ set axis x2 linked x1 using x**2
     <td style="width:40%">&nbsp;</td>
     <td class="eqnnum" style="width:20%">&nbsp;</td>
 </tr>
-</table><p> which is evaluated in PyXPlot by the system-defined mathematical function <tt class="tt">Bv(nu,T)</tt>. We use the axis linkage commands listed as an example in the text of Section <a href="ex-cmbrtemp.html">1.8.9</a> to produce three parallel horizontal axes showing wavelength of light, frequency of light and photon energy. </p></td>
+</table><p> which is evaluated in Pyxplot by the system-defined mathematical function <tt class="tt">Bv(nu,T)</tt>. We use the axis linkage commands listed as an example in the text of Section <a href="ex-cmbrtemp.html">1.8.9</a> to produce three parallel horizontal axes showing wavelength of light, frequency of light and photon energy. </p></td>
 
 </tr><tr>
 

@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+<a href="sect0001.html">Introduction to Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -57,13 +57,13 @@
 </div>
 
 <div><h1 id="sec:special_comments">5.4 Special Comment Lines in Datafiles</h1>
-<p>  <a name="a0000000503" id="a0000000503"></a> </p><p>Whilst most comment lines in datafiles – those lines which begin with a hash character – are ignored by PyXPlot, lines which begin with any of the following four strings are parsed: </p><pre>
+<p>  <a name="a0000000503" id="a0000000503"></a> </p><p>Whilst most comment lines in datafiles – those lines which begin with a hash character – are ignored by Pyxplot, lines which begin with any of the following four strings are parsed: </p><pre>
 # Columns:
 # ColumnUnits:
 
 # Rows:
 # RowUnits:
-</pre><p> The first pair of special comments affect the behaviour of PyXPlot when plotting <tt class="tt">using columns</tt>, while the second pair affect the behaviour of PyXPlot when plotting <tt class="tt">using rows</tt> (see Section <a href="sec-horizontal_datafiles.html">3.9.1</a>). Within each pair, the first may be used to tell PyXPlot the names of each of the columns/rows in the datafile, while the second may be used to tell PyXPlot the physical units of the values in each of the columns/rows. These special comments may appear multiple times throughout a single datafile to indicate changes to the format of the data. </p><p>For example, a datafile prefixed with the lines </p><pre>
+</pre><p> The first pair of special comments affect the behaviour of Pyxplot when plotting <tt class="tt">using columns</tt>, while the second pair affect the behaviour of Pyxplot when plotting <tt class="tt">using rows</tt> (see Section <a href="sec-horizontal_datafiles.html">3.9.1</a>). Within each pair, the first may be used to tell Pyxplot the names of each of the columns/rows in the datafile, while the second may be used to tell Pyxplot the physical units of the values in each of the columns/rows. These special comments may appear multiple times throughout a single datafile to indicate changes to the format of the data. </p><p>For example, a datafile prefixed with the lines </p><pre>
 # Columns:      Time   Distance
 # ColumnUnits:   s      10*m
 </pre><p> contains two columns of data, the first containing times measured in seconds and the second containing distances measured in tens of metres. Note that because the entries on each of these lines are whitespace-separated, spaces are not allowed in column names or within units such as <tt class="tt">10*m</tt>. This datafile could be plotted using any of the following forms equivalently </p><pre>

@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+<a href="sect0001.html">Introduction to Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -57,13 +57,13 @@
 </div>
 
 <div><h1 id="sec:filters">5.1 Input Filters</h1>
-<p>By default, PyXPlot expects datafiles to be in a simple plaintext format which is described in Section <a href="sec-plot_datafiles.html">3.8</a>. Input filters provide a mechanism by which datafiles in arbitrary formats can be read into PyXPlot. For each filter, a filename wildcard is supplied, and the filter is then applied to all datafiles whose filenames match this wildcard. For example, by default PyXPlot has five input filters installed, as the <tt class="tt">show filters</tt> command reveals: </p><pre>
+<p>By default, Pyxplot expects datafiles to be in a simple plaintext format which is described in Section <a href="sec-plot_datafiles.html">3.8</a>. Input filters provide a mechanism by which datafiles in arbitrary formats can be read into Pyxplot. For each filter, a filename wildcard is supplied, and the filter is then applied to all datafiles whose filenames match this wildcard. For example, by default Pyxplot has five input filters installed, as the <tt class="tt">show filters</tt> command reveals: </p><pre>
 set filter "*.fits"   "/usr/local/lib/pyxplot/pyxplot_fitshelper"
 set filter "*.gz"     "/bin/gunzip -c"
 set filter "*.log"    "/usr/local/lib/pyxplot/pyxplot_timehelper"
 set filter "ftp://*"  "/usr/bin/wget -O -"
 set filter "http://*" "/usr/bin/wget -O -"
-</pre><p>Each filter takes the form of a program which is launched by PyXPlot whenever a datafile with matching filename is read. The program is passed the filename of the datafile as a command line argument immediately following any arguments specified in the filter’s definition. It is then expected to return the data contained in the file to PyXPlot in plaintext format using its <tt class="tt">stdout</tt> stream. Any errors which such a program returns to <tt class="tt">stderr</tt> are passed to the user as error messages. </p><p>The above set of filters allows PyXPlot to read data from gzipped plaintext datafiles, data tables in FITS format<a name="a0000000500" id="a0000000500"></a>, and from datafiles available over the web via HTTP<a name="a0000000501" id="a0000000501"></a> or FTP<a name="a0000000502" id="a0000000502"></a>. Finally, a filter is provided for converting textual dates in log files into numbers representing days, months and years. To add to this list of filters, it is necessary to write a short program or shell script, and the simple filters provided in PyXPlot’s source code for <tt class="tt">.log</tt> and .fits files may provide a useful model. </p></div>
+</pre><p>Each filter takes the form of a program which is launched by Pyxplot whenever a datafile with matching filename is read. The program is passed the filename of the datafile as a command line argument immediately following any arguments specified in the filter’s definition. It is then expected to return the data contained in the file to Pyxplot in plaintext format using its <tt class="tt">stdout</tt> stream. Any errors which such a program returns to <tt class="tt">stderr</tt> are passed to the user as error messages. </p><p>The above set of filters allows Pyxplot to read data from gzipped plaintext datafiles, data tables in FITS format<a name="a0000000500" id="a0000000500"></a>, and from datafiles available over the web via HTTP<a name="a0000000501" id="a0000000501"></a> or FTP<a name="a0000000502" id="a0000000502"></a>. Finally, a filter is provided for converting textual dates in log files into numbers representing days, months and years. To add to this list of filters, it is necessary to write a short program or shell script, and the simple filters provided in Pyxplot’s source code for <tt class="tt">.log</tt> and .fits files may provide a useful model. </p></div>
 
 
 

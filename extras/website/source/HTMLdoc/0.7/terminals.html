@@ -7,7 +7,7 @@
 
 <link href="sect0017.html" title="Paper Sizes" rel="next" />
 <link href="sect0016.html" title="Reading data from a pipe" rel="prev" />
-<link href="gnuplot_ext_first.html" title="PyXPlot and the Outside World" rel="up" />
+<link href="gnuplot_ext_first.html" title="Pyxplot and the Outside World" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -17,7 +17,7 @@
 <tr>
 <td><a href="sect0016.html" title="Reading data from a pipe"><img alt="Previous: Reading data from a pipe" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="gnuplot_ext_first.html" title="PyXPlot and the Outside World"><img alt="Up: PyXPlot and the Outside World" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="gnuplot_ext_first.html" title="Pyxplot and the Outside World"><img alt="Up: Pyxplot and the Outside World" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="sect0017.html" title="Paper Sizes"><img alt="Next: Paper Sizes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="gnuplot_ext_first.html">PyXPlot and the Outside World</a> <b>:</b>
+<a href="gnuplot_ext_first.html">Pyxplot and the Outside World</a> <b>:</b>
 </span>
 
 </span><span>
@@ -52,7 +52,7 @@
 </div>
 
 <div><h1 id="terminals">3.4 Formatting and Terminals</h1>
-<p>  </p><p>In this section, we describe the commands used to control the format of the graphic output produced by PyXPlot. This continues the discussion from Section <a href="directing_output.html">2.7</a> of how the <tt class="tt">set terminal</tt> command<span id="a0000000283"></span> can be used to produce plots in various graphic formats, such as postscript files, jpeg images, etc. </p><p>Many of these <i class="it">terminals</i> – the word we use to describe an output format – accept additional parameters which configure the exact appearance of the output produced. For example, the default terminal, <tt class="tt">X11</tt>, which displays plots on the screen, has such settings. By default, each time a new plot is generated, if the previous plot is still open on the display, the old plot is replaced with the new one. This way, only one plot window is open at any one time. This behaviour has the advantage that the desktop does not become flooded with plot windows. </p><p>If this is not desired, however – for example if you want to compare two plots – old graphs can be kept visible when plotting further graphs by using the the <tt class="tt">X11_multiwindow</tt> terminal:<span id="a0000000284"></span><span id="a0000000285"></span> </p><pre> 
+<p>  </p><p>In this section, we describe the commands used to control the format of the graphic output produced by Pyxplot. This continues the discussion from Section <a href="directing_output.html">2.7</a> of how the <tt class="tt">set terminal</tt> command<span id="a0000000283"></span> can be used to produce plots in various graphic formats, such as postscript files, jpeg images, etc. </p><p>Many of these <i class="it">terminals</i> – the word we use to describe an output format – accept additional parameters which configure the exact appearance of the output produced. For example, the default terminal, <tt class="tt">X11</tt>, which displays plots on the screen, has such settings. By default, each time a new plot is generated, if the previous plot is still open on the display, the old plot is replaced with the new one. This way, only one plot window is open at any one time. This behaviour has the advantage that the desktop does not become flooded with plot windows. </p><p>If this is not desired, however – for example if you want to compare two plots – old graphs can be kept visible when plotting further graphs by using the the <tt class="tt">X11_multiwindow</tt> terminal:<span id="a0000000284"></span><span id="a0000000285"></span> </p><pre> 
 set terminal X11_singlewindow
 plot sin(x)
 plot cos(x)  &lt;-- first plot window disappears
@@ -60,7 +60,7 @@ plot cos(x)  &lt;-- first plot window disappears
 set terminal X11_multiwindow
 plot sin(x)
 plot cos(x)  &lt;-- first plot window remains
-</pre><p>As an additional option, the <tt class="tt">X11_persist</tt> terminal keeps plot windows open after PyXPlot exits; the above two terminals close all plot windows upon exit. </p><p>If the <tt class="tt">enlarge</tt> modifier is used with the <tt class="tt">set terminal</tt> command<span id="a0000000286"></span> then the whole plot is enlarged, or, in the case of large plots, shrunk, to the current paper size, minus a small margin. The aspect ratio of the plot is preserved. This is most useful with the <tt class="tt">postscript</tt> terminal, when preparing a plot to send directly to a printer. </p><p>As there are many changes to the options accepted by the <tt class="tt">set terminal</tt> command in comparison to those understood by Gnuplot, the syntax of PyXPlot’s command is given below, followed by a list of the recognised settings: </p><pre> 
+</pre><p>As an additional option, the <tt class="tt">X11_persist</tt> terminal keeps plot windows open after Pyxplot exits; the above two terminals close all plot windows upon exit. </p><p>If the <tt class="tt">enlarge</tt> modifier is used with the <tt class="tt">set terminal</tt> command<span id="a0000000286"></span> then the whole plot is enlarged, or, in the case of large plots, shrunk, to the current paper size, minus a small margin. The aspect ratio of the plot is preserved. This is most useful with the <tt class="tt">postscript</tt> terminal, when preparing a plot to send directly to a printer. </p><p>As there are many changes to the options accepted by the <tt class="tt">set terminal</tt> command in comparison to those understood by Gnuplot, the syntax of Pyxplot’s command is given below, followed by a list of the recognised settings: </p><pre> 
 set terminal { X11_singlewindow | X11_multiwindow | X11_persist |
                postscript | eps | pdf | gif | png | jpg }
              { colour | color | monochrome }
@@ -92,7 +92,7 @@ set terminal { X11_singlewindow | X11_multiwindow | X11_persist |
     <td style="text-align:left"><p><tt class="tt">x11_persist</tt> </p></td>
 
     
-    <td style="text-align:left"><p> As above, but plot windows remain open after PyXPlot closes.</p></td>
+    <td style="text-align:left"><p> As above, but plot windows remain open after Pyxplot closes.</p></td>
 
 </tr><tr>
 
@@ -247,7 +247,7 @@ set terminal { X11_singlewindow | X11_multiwindow | X11_persist |
     <td style="text-align:left"><p> Do not enlarge output; opposite to the above. <b class="bf">[default]</b></p></td>
 
 </tr>
-</table><p>  </p><p>The default terminal is normally <tt class="tt">x11_singlewindow</tt>, matching approximately the behaviour of Gnuplot. However, there is an exception to this. When PyXPlot is used non-interactively – i.e. one or more command scripts are specified on the command line, and PyXPlot exits as soon as it finishes executing them – the <tt class="tt">x11_singlewindow</tt> is not a very sensible terminal to use: any plot window would close as soon as PyXPlot exited. The default terminal in this case changes to <tt class="tt">postscript</tt>. </p><p>This rule does not apply when the special ‘–’ filename is specified in a list of command scripts on the command line, to produce an interactive terminal between running a series of scripts. In this case, PyXPlot detects that the session will be interactive, and defaults to the usual <tt class="tt">x11_singlewindow</tt> terminal. </p><p>An additional exception is on machines where the <tt class="tt">DISPLAY</tt> environment variable<span id="a0000000303"></span> is not set. In this case, PyXPlot detects that it has access to no X-terminal on which to display plots, and defaults to the <tt class="tt">postscript</tt> terminal. </p><p>The <tt class="tt">gif</tt>, <tt class="tt">png</tt> and <tt class="tt">jpg</tt> terminals result in some loss of image quality, since the plot has to be sampled into a bitmapped graphic format. By default, this sampling is performed at <img src="images/img-0047.png" alt="$300\, \mathrm{dpi}$" style="position:relative; bottom:-3px; width:55px; height:15px" class="math" />, though this may be changed using the command <tt class="tt">set dpi &lt;value&gt;</tt>. Alternatively, it may be changed using the <tt class="tt">DPI</tt> option in the <tt class="tt">settings</tt> section of a configuration file (see Section <a href="configuration.html">7.1</a>).<span id="a0000000304"></span> <span id="a0000000305"></span><span id="a0000000306"></span> </p></div>
+</table><p>  </p><p>The default terminal is normally <tt class="tt">x11_singlewindow</tt>, matching approximately the behaviour of Gnuplot. However, there is an exception to this. When Pyxplot is used non-interactively – i.e. one or more command scripts are specified on the command line, and Pyxplot exits as soon as it finishes executing them – the <tt class="tt">x11_singlewindow</tt> is not a very sensible terminal to use: any plot window would close as soon as Pyxplot exited. The default terminal in this case changes to <tt class="tt">postscript</tt>. </p><p>This rule does not apply when the special ‘–’ filename is specified in a list of command scripts on the command line, to produce an interactive terminal between running a series of scripts. In this case, Pyxplot detects that the session will be interactive, and defaults to the usual <tt class="tt">x11_singlewindow</tt> terminal. </p><p>An additional exception is on machines where the <tt class="tt">DISPLAY</tt> environment variable<span id="a0000000303"></span> is not set. In this case, Pyxplot detects that it has access to no X-terminal on which to display plots, and defaults to the <tt class="tt">postscript</tt> terminal. </p><p>The <tt class="tt">gif</tt>, <tt class="tt">png</tt> and <tt class="tt">jpg</tt> terminals result in some loss of image quality, since the plot has to be sampled into a bitmapped graphic format. By default, this sampling is performed at <img src="images/img-0047.png" alt="$300\, \mathrm{dpi}$" style="position:relative; bottom:-3px; width:55px; height:15px" class="math" />, though this may be changed using the command <tt class="tt">set dpi &lt;value&gt;</tt>. Alternatively, it may be changed using the <tt class="tt">DPI</tt> option in the <tt class="tt">settings</tt> section of a configuration file (see Section <a href="configuration.html">7.1</a>).<span id="a0000000304"></span> <span id="a0000000305"></span><span id="a0000000306"></span> </p></div>
 
 
 
@@ -256,7 +256,7 @@ set terminal { X11_singlewindow | X11_multiwindow | X11_persist |
 <tr>
 <td><a href="sect0016.html" title="Reading data from a pipe"><img alt="Previous: Reading data from a pipe" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="gnuplot_ext_first.html" title="PyXPlot and the Outside World"><img alt="Up: PyXPlot and the Outside World" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="gnuplot_ext_first.html" title="Pyxplot and the Outside World"><img alt="Up: Pyxplot and the Outside World" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="sect0017.html" title="Paper Sizes"><img alt="Next: Paper Sizes" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 

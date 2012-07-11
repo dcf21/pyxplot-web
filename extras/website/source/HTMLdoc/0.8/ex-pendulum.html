@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+<a href="sect0001.html">Introduction to Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -57,7 +57,7 @@
 </div>
 
 <div><h1 id="ex:pendulum">6.9 Subroutines</h1>
-<p> <a name="a0000000596" id="a0000000596"></a>  </p><p>Subroutines are similar to mathematical functions (see Section <a href="sec-functions.html">4.3</a>), and once defined, can be used anywhere in algebraic expressions, just as functions can be. However, instead of being defined by a single algebraic expression, whenever a subroutine is evaluated, a block of PyXPlot commands of arbitrary length is executed. This gives much greater flexibility for implementing complex algorithms. Subroutines are defined using the following syntax: </p><pre>
+<p> <a name="a0000000596" id="a0000000596"></a>  </p><p>Subroutines are similar to mathematical functions (see Section <a href="sec-functions.html">4.3</a>), and once defined, can be used anywhere in algebraic expressions, just as functions can be. However, instead of being defined by a single algebraic expression, whenever a subroutine is evaluated, a block of Pyxplot commands of arbitrary length is executed. This gives much greater flexibility for implementing complex algorithms. Subroutines are defined using the following syntax: </p><pre>
 subroutine &lt;name&gt;(&lt;variable1&gt;,...)
  {
   ...
@@ -111,7 +111,7 @@ print f(1,pi/2)
     
     <td style="text-align:left; border-right:1px solid black; border-left:1px solid black"><p>If <img src="images/img-0040.png" alt="$c$" style="vertical-align:0px; 
                                      width:8px; 
-                                     height:8px" class="math gen" /> is close to one of the roots, then convergence towards that particular root is guaranteed, but further afield the map develops a fractal structure. In this example, we define a PyXPlot subroutine to produce such a map as a function of <img src="images/img-0303.png" alt="$c=x+iy$" style="vertical-align:-4px; 
+                                     height:8px" class="math gen" /> is close to one of the roots, then convergence towards that particular root is guaranteed, but further afield the map develops a fractal structure. In this example, we define a Pyxplot subroutine to produce such a map as a function of <img src="images/img-0303.png" alt="$c=x+iy$" style="vertical-align:-4px; 
                                      width:79px; 
                                      height:16px" class="math gen" />, and then plot the resulting map using the <tt class="tt">colourmap</tt> plot style (see Section <a href="sec-colourmaps.html">1.12</a>). To make the fractal prettier – it contains, after all, only three colours as strictly defined – we vary the brightness of each point depending upon how many iterations are required before the series ventures within a distance of <img src="images/img-0304.png" alt="$|z_ n-r_ i|&lt;10^{-2}$" style="vertical-align:-5px; 
                                      width:122px; 
@@ -226,7 +226,7 @@ print f(1,pi/2)
                                      width:64px; 
                                      height:18px" class="math gen" /> is a Jacobi elliptic function and <img src="images/img-0319.png" alt="$k=\sin \left(\omega /2\right)$" style="vertical-align:-5px; 
                                      width:101px; 
-                                     height:19px" class="math gen" />. The Jacobi elliptic function cannot be analytically computed, but can be numerically approximated using the <tt class="tt">jacobi_­sn(u,m)</tt> function in PyXPlot. </p></td>
+                                     height:19px" class="math gen" />. The Jacobi elliptic function cannot be analytically computed, but can be numerically approximated using the <tt class="tt">jacobi_­sn(u,m)</tt> function in Pyxplot. </p></td>
 
 </tr><tr>
 

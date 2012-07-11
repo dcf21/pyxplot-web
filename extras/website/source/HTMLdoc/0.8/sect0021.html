@@ -6,7 +6,7 @@
 <title>: Converting between different Temperature Scales</title>
 
 <link href="sec-unitdisp.html" title="Configuring how Numbers are Displayed" rel="next" />
-<link href="sec-angles.html" title="Treatment of Angles in PyXPlot" rel="prev" />
+<link href="sec-angles.html" title="Treatment of Angles in Pyxplot" rel="prev" />
 <link href="sec-units.html" title="Working with Physical Units" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -15,7 +15,7 @@
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-angles.html" title="Treatment of Angles in PyXPlot"><img alt="Previous: Treatment of Angles in PyXPlot" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-angles.html" title="Treatment of Angles in Pyxplot"><img alt="Previous: Treatment of Angles in Pyxplot" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="sec-units.html" title="Working with Physical Units"><img alt="Up: Working with Physical Units" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+<a href="sect0001.html">Introduction to Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -62,7 +62,7 @@
 </div>
 
 <div><h2 id="a0000000022">4.6.2 Converting between different Temperature Scales</h2>
-<p> <a name="a0000000442" id="a0000000442"></a><a name="a0000000443" id="a0000000443"></a> </p><p>PyXPlot’s facilities for converting quantities between different physical units include the ability to convert temperatures between different temperature scales, for example, between <img src="images/img-0109.png" alt="$^\circ \mathrm{C}$" style="vertical-align:0px; 
+<p> <a name="a0000000442" id="a0000000442"></a><a name="a0000000443" id="a0000000443"></a> </p><p>Pyxplot’s facilities for converting quantities between different physical units include the ability to convert temperatures between different temperature scales, for example, between <img src="images/img-0109.png" alt="$^\circ \mathrm{C}$" style="vertical-align:0px; 
                                      width:19px; 
                                      height:13px" class="math gen" />, <img src="images/img-0110.png" alt="$^\circ \mathrm{F}$" style="vertical-align:0px; 
                                      width:18px; 
@@ -78,7 +78,7 @@
                                      width:6px; 
                                      height:6px" class="math gen" />C equals 1 J/K, even though a temperature of <img src="images/img-0113.png" alt="$1^\circ $" style="vertical-align:0px; 
                                      width:15px; 
-                                     height:13px" class="math gen" />C does not equal a temperature of 1 K. </p><p>The cause of this problem, and the reason why it rarely affects any physical units other than temperatures is that there exists such a thing as absolute temperature. Distances, for example, are very rarely absolute: they measure relative distance gaps between points. Occasionally people might choose to express all their displacements relative to a particular origin, but they wouldn’t expect PyXPlot to be able to convert these into displacements from another origin. But they might expect it to be able to convert temperatures between Celsius and Fahrenheit, even though the problem of doing so is equivalent. </p><p>Times are occasionally expressed as absolute quantities: the year <small class="footnotesize">AD</small> 1453, for example, implicitly corresponds to a period of 1453 years after the Christian epoch, and so similar problems would arise in trying to convert such a year into the Muslim calendar, which counts from the year <small class="footnotesize">AD</small> 622.<a href="#a0000000444" class="footnote"><sup class="footnotemark">1</sup></a> </p><p>As PyXPlot cannot distinguish between absolute and relative temperatures, it takes a safe approach of performing algebra consistently with any unit of temperature, never performing automatic conversions between different temperature scales. A calculation based on temperatures measured in <img src="images/img-0110.png" alt="$^\circ \mathrm{F}$" style="vertical-align:0px; 
+                                     height:13px" class="math gen" />C does not equal a temperature of 1 K. </p><p>The cause of this problem, and the reason why it rarely affects any physical units other than temperatures is that there exists such a thing as absolute temperature. Distances, for example, are very rarely absolute: they measure relative distance gaps between points. Occasionally people might choose to express all their displacements relative to a particular origin, but they wouldn’t expect Pyxplot to be able to convert these into displacements from another origin. But they might expect it to be able to convert temperatures between Celsius and Fahrenheit, even though the problem of doing so is equivalent. </p><p>Times are occasionally expressed as absolute quantities: the year <small class="footnotesize">AD</small> 1453, for example, implicitly corresponds to a period of 1453 years after the Christian epoch, and so similar problems would arise in trying to convert such a year into the Muslim calendar, which counts from the year <small class="footnotesize">AD</small> 622.<a href="#a0000000444" class="footnote"><sup class="footnotemark">1</sup></a> </p><p>As Pyxplot cannot distinguish between absolute and relative temperatures, it takes a safe approach of performing algebra consistently with any unit of temperature, never performing automatic conversions between different temperature scales. A calculation based on temperatures measured in <img src="images/img-0110.png" alt="$^\circ \mathrm{F}$" style="vertical-align:0px; 
                                      width:18px; 
                                      height:13px" class="math gen" /> will produce an answer measured in <img src="images/img-0110.png" alt="$^\circ \mathrm{F}$" style="vertical-align:0px; 
                                      width:18px; 
@@ -104,7 +104,7 @@
     <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> print 98*unit(oF / oC) </tt></div></p></td>
 
 </tr>
-</table> </p><p>Note that such a conversion always assumes that the temperatures supplied are <i class="it">absolute</i> temperatures. PyXPlot has no facility for converting relative temperatures between different scales. This must be done manually. </p><p>The conversion of derived units of temperature, such as <img src="images/img-0114.png" alt="$\mathrm{J}/\mathrm{K}$" style="vertical-align:-5px; 
+</table> </p><p>Note that such a conversion always assumes that the temperatures supplied are <i class="it">absolute</i> temperatures. Pyxplot has no facility for converting relative temperatures between different scales. This must be done manually. </p><p>The conversion of derived units of temperature, such as <img src="images/img-0114.png" alt="$\mathrm{J}/\mathrm{K}$" style="vertical-align:-5px; 
                                      width:32px; 
                                      height:18px" class="math gen" /> or <img src="images/img-0115.png" alt="$^\circ \mathrm{C}^2$" style="vertical-align:0px; 
                                      width:27px; 
@@ -124,7 +124,7 @@
 <tr>
 
     
-    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this example, we use PyXPlot’s automatic conversion of physical units to create a temperature conversion scale. </p></td>
+    <td style="border-top-style:solid; border-left:1px solid black; border-right:1px solid black; border-top-color:black; border-top-width:1px; text-align:left"><p> In this example, we use Pyxplot’s automatic conversion of physical units to create a temperature conversion scale. </p></td>
 
 </tr><tr>
 
@@ -150,14 +150,14 @@
 <div id="footnotes">
 <p><b>Footnotes</b></p>
 <ol>
-<li id="a0000000444">PyXPlot can, incidentally, make this conversion, as will be seen in Section <a href="sec-time_series.html">4.11</a>.</li>
+<li id="a0000000444">Pyxplot can, incidentally, make this conversion, as will be seen in Section <a href="sec-time_series.html">4.11</a>.</li>
 </ol>
 </div>
 
 <div class="navigation">
 <table cellspacing="2" cellpadding="0" width="100%">
 <tr>
-<td><a href="sec-angles.html" title="Treatment of Angles in PyXPlot"><img alt="Previous: Treatment of Angles in PyXPlot" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
+<td><a href="sec-angles.html" title="Treatment of Angles in Pyxplot"><img alt="Previous: Treatment of Angles in Pyxplot" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
 <td><a href="sec-units.html" title="Working with Physical Units"><img alt="Up: Working with Physical Units" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 

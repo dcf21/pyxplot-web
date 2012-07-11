@@ -39,12 +39,12 @@
 
 </span><span>
 <span>
-<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+<a href="sect0001.html">Introduction to Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="ch-first_steps.html">First Steps With PyXPlot</a> <b>:</b>
+<a href="ch-first_steps.html">First Steps With Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -65,7 +65,7 @@
 <p>The final modifier which the <tt class="tt">plot</tt> command takes to allow the user to specify which subset(s) of a datafile should be plotted is <tt class="tt">select</tt><a name="a0000000359" id="a0000000359"></a>. This can be used to plot only those datapoints in a datafile which specify some given criterion, as in the following examples: </p><pre>
 plot 'data.dat' select ($8&gt;5)
 plot sin(x) select (($1&gt;0) and ($2&gt;0))
-</pre><p>In the second example, two selection criteria are given, combined with the logical <tt class="tt">and</tt> operator. A full list of all of the operators recognised by PyXPlot, including logical operators, was given in Table <a href="sec-first_plots.html#tab:operators_table">3.1</a>. </p><p>When plotting using <tt class="tt">lines</tt><a name="a0000000360" id="a0000000360"></a><a name="a0000000361" id="a0000000361"></a> to connect the datapoints (see Section <a href="sec-pointtype.html">3.13</a>), the default behaviour is for the lines not to be broken if a set of datapoints are removed by the <tt class="tt">select</tt> modifier. However, this behaviour is sometimes undesirable. To cause the plotted line to break when points are removed the <tt class="tt">discontinuous</tt><a name="a0000000362" id="a0000000362"></a> modifier is supplied after the <tt class="tt">select</tt> modifier, as in the example </p><pre>
+</pre><p>In the second example, two selection criteria are given, combined with the logical <tt class="tt">and</tt> operator. A full list of all of the operators recognised by Pyxplot, including logical operators, was given in Table <a href="sec-first_plots.html#tab:operators_table">3.1</a>. </p><p>When plotting using <tt class="tt">lines</tt><a name="a0000000360" id="a0000000360"></a><a name="a0000000361" id="a0000000361"></a> to connect the datapoints (see Section <a href="sec-pointtype.html">3.13</a>), the default behaviour is for the lines not to be broken if a set of datapoints are removed by the <tt class="tt">select</tt> modifier. However, this behaviour is sometimes undesirable. To cause the plotted line to break when points are removed the <tt class="tt">discontinuous</tt><a name="a0000000362" id="a0000000362"></a> modifier is supplied after the <tt class="tt">select</tt> modifier, as in the example </p><pre>
 plot sin(x) select ($1&gt;0) discontinuous
 </pre><p>which plots a set of disconnected peaks from the sine function. </p></div>
 

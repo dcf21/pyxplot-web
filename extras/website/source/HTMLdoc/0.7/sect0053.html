@@ -58,7 +58,7 @@ edit &lt;plot number&gt;
 edit 1
 set textcolour red
 replot
-</pre><p>Here, the <tt class="tt">edit</tt> command is used to select the plot with reference number 1. The <tt class="tt">set textcolour red</tt> command which follows then changes the settings of this plot, taking effect when the <tt class="tt">replot</tt> command is called. </p><p>The <tt class="tt">edit</tt> command also has the effect of resetting all of PyXPlot’s plot settings to those used to produce the chosen plot, and so in conjunction with the <tt class="tt">show</tt> command, can be used to inspect as well as modify the settings of any plot on a multiplot page. For example: </p><pre>
+</pre><p>Here, the <tt class="tt">edit</tt> command is used to select the plot with reference number 1. The <tt class="tt">set textcolour red</tt> command which follows then changes the settings of this plot, taking effect when the <tt class="tt">replot</tt> command is called. </p><p>The <tt class="tt">edit</tt> command also has the effect of resetting all of Pyxplot’s plot settings to those used to produce the chosen plot, and so in conjunction with the <tt class="tt">show</tt> command, can be used to inspect as well as modify the settings of any plot on a multiplot page. For example: </p><pre>
 edit 1
 show textcolour
 </pre><p>would show the text colour used in plot 1. </p><p>Having issued the <tt class="tt">edit</tt> command, no further command needs to be issued to return to a state of adding plots to a multiplot rather than editing the existing plots; simply call the <tt class="tt">plot</tt> command rather than the <tt class="tt">replot</tt> command to do this. </p></div>

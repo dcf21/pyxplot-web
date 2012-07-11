@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+<a href="sect0001.html">Introduction to Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -65,7 +65,7 @@
                                      width:30px; 
                                      height:9px" class="math gen" /> at <img src="images/img-0141.png" alt="$x=\pi +\infty i$" style="vertical-align:-1px; 
                                      width:92px; 
-                                     height:13px" class="math gen" />. </p><p>Various caveats apply both to the <tt class="tt">minimise</tt> and <tt class="tt">maximise</tt> commands, as well as to the <tt class="tt">solve</tt> command. All of these commands operate by searching numerically for optimal sets of input parameters to meet the criteria set by the user. As with all numerical algorithms, there is no guarantee that the <i class="it">locally</i> optimum solutions returned are the <i class="it">globally</i> optimum solutions. It is always advisable to double-check that the answers returned agree with common sense. </p><p>These commands can often find solutions to equations when these solutions are either very large or very small, but they usually work best when the solution they are looking for is roughly of order unity. PyXPlot does have mechanisms which attempt to correct cases where the supplied initial guess turns out to be many orders of magnitude different from the true solution, but it cannot be guaranteed not to wildly overshoot and produce unexpected results in such cases. To reiterate, it is always advisable to double-check that the answers returned agree with common sense. </p><p> <span class="upshape"><span class="mdseries"><span class="rm">Finding the maximum of a blackbody curve.</span></span></span></p><div>
+                                     height:13px" class="math gen" />. </p><p>Various caveats apply both to the <tt class="tt">minimise</tt> and <tt class="tt">maximise</tt> commands, as well as to the <tt class="tt">solve</tt> command. All of these commands operate by searching numerically for optimal sets of input parameters to meet the criteria set by the user. As with all numerical algorithms, there is no guarantee that the <i class="it">locally</i> optimum solutions returned are the <i class="it">globally</i> optimum solutions. It is always advisable to double-check that the answers returned agree with common sense. </p><p>These commands can often find solutions to equations when these solutions are either very large or very small, but they usually work best when the solution they are looking for is roughly of order unity. Pyxplot does have mechanisms which attempt to correct cases where the supplied initial guess turns out to be many orders of magnitude different from the true solution, but it cannot be guaranteed not to wildly overshoot and produce unexpected results in such cases. To reiterate, it is always advisable to double-check that the answers returned agree with common sense. </p><p> <span class="upshape"><span class="mdseries"><span class="rm">Finding the maximum of a blackbody curve.</span></span></span></p><div>
 
 <table cellspacing="0" class="tabular">
 <tr>
@@ -85,7 +85,7 @@
 </tr>
 </table><p> The visible surface of the Sun has a temperature of approximately <img src="images/img-0144.png" alt="$5800\, \mathrm{K}$" style="vertical-align:0px; 
                                      width:52px; 
-                                     height:13px" class="math gen" /> and radiates in such a fashion. In this example, we use the <tt class="tt">solve</tt>, <tt class="tt">minimise</tt> and <tt class="tt">maximise</tt> commands to locate the frequency of light at which it emits the most energy per unit frequency interval. This task is simplified as PyXPlot has a system-defined mathematical function <tt class="tt">Bv(nu,T)</tt> which evaluates the expression given above. </p></td>
+                                     height:13px" class="math gen" /> and radiates in such a fashion. In this example, we use the <tt class="tt">solve</tt>, <tt class="tt">minimise</tt> and <tt class="tt">maximise</tt> commands to locate the frequency of light at which it emits the most energy per unit frequency interval. This task is simplified as Pyxplot has a system-defined mathematical function <tt class="tt">Bv(nu,T)</tt> which evaluates the expression given above. </p></td>
 
 </tr><tr>
 
@@ -137,7 +137,7 @@
 </tr><tr>
 
     
-    <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><p>Finally, this maximum could also be found using PyXPlot’s built-in function <tt class="tt">Bvmax(T)</tt>:<br /><tt class="tt">pyxplot&gt; <b class="bf">print Bvmax(5800*unit(K))</b></tt><br /><tt class="tt">340.9781 THz</tt>  </p></td>
+    <td style="border-bottom-style:solid; border-bottom-width:1px; border-left:1px solid black; border-right:1px solid black; text-align:left; border-bottom-color:black"><p>Finally, this maximum could also be found using Pyxplot’s built-in function <tt class="tt">Bvmax(T)</tt>:<br /><tt class="tt">pyxplot&gt; <b class="bf">print Bvmax(5800*unit(K))</b></tt><br /><tt class="tt">340.9781 THz</tt>  </p></td>
 
 </tr>
 </table>

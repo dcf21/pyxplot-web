@@ -7,7 +7,7 @@
 
 <link href="sect0012.html" title="Interactive Help" rel="next" />
 <link href="plot_ranges.html" title="Setting Axis Ranges" rel="prev" />
-<link href="gnuplot_intro.html" title="First Steps With PyXPlot" rel="up" />
+<link href="gnuplot_intro.html" title="First Steps With Pyxplot" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -17,7 +17,7 @@
 <tr>
 <td><a href="plot_ranges.html" title="Setting Axis Ranges"><img alt="Previous: Setting Axis Ranges" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="gnuplot_intro.html" title="First Steps With Pyxplot"><img alt="Up: First Steps With Pyxplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="sect0012.html" title="Interactive Help"><img alt="Next: Interactive Help" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="gnuplot_intro.html">First Steps With PyXPlot</a> <b>:</b>
+<a href="gnuplot_intro.html">First Steps With Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -52,7 +52,7 @@
 </div>
 
 <div><h1 id="fit_command">2.11 Function Fitting</h1>
-<p>  </p><p>It is possible to fit functional forms to data points read from files by using the <tt class="tt">fit</tt> command<span id="a0000000265"></span>. A simple example might be:<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">In Gnuplot, this example would have been written <tt class="tt">fit f(x) ...</tt>, rather than <tt class="tt">fit f() ...</tt>. This syntax is supported in PyXPlot, but is deprecated.</span></a> </p><pre>
+<p>  </p><p>It is possible to fit functional forms to data points read from files by using the <tt class="tt">fit</tt> command<span id="a0000000265"></span>. A simple example might be:<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">In Gnuplot, this example would have been written <tt class="tt">fit f(x) ...</tt>, rather than <tt class="tt">fit f() ...</tt>. This syntax is supported in Pyxplot, but is deprecated.</span></a> </p><pre>
 f(x) = a*x+b
 fit f() 'data.dat' index 1 using 2:3 via a,b
 </pre><p>The first line specifies the functional form which is to be used. The coefficients within this function which are to be varied during the fitting process are listed after the keyword <tt class="tt">via</tt><span id="a0000000266"></span> in the <tt class="tt">fit</tt> command. The modifiers <tt class="tt">index</tt><span id="a0000000267"></span>, <tt class="tt">every</tt><span id="a0000000268"></span> and <tt class="tt">using</tt><span id="a0000000269"></span><span id="a0000000270"></span> have the same meanings here as in the plot command.<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">The <tt class="tt">select</tt> modifier, to be introduced in Section <a href="select_modifier.html">4.3</a> can also be used.</span></a> For example, given the following data file which contains a sampled square wave, entitled “square.dat”: </p><pre>
@@ -95,7 +95,7 @@ fit f() 'data.dat' via a
 <tr>
 <td><a href="plot_ranges.html" title="Setting Axis Ranges"><img alt="Previous: Setting Axis Ranges" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="gnuplot_intro.html" title="First Steps With Pyxplot"><img alt="Up: First Steps With Pyxplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="sect0012.html" title="Interactive Help"><img alt="Next: Interactive Help" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 

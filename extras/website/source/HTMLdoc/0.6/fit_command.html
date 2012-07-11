@@ -6,7 +6,7 @@
 
 <link href="sect0010.html" title="Interactive Help" rel="next" />
 <link href="plot_ranges.html" title="Setting Axis Ranges" rel="prev" />
-<link href="gnuplot_intro.html" title="First Steps With PyXPlot" rel="up" />
+<link href="gnuplot_intro.html" title="First Steps With Pyxplot" rel="up" />
 <link rel="stylesheet" href="styles/plastex-styles.css" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -17,7 +17,7 @@
 <tr>
 <td><a href="plot_ranges.html" title="Setting Axis Ranges"><img alt="Previous: Setting Axis Ranges" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="gnuplot_intro.html" title="First Steps With Pyxplot"><img alt="Up: First Steps With Pyxplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="sect0010.html" title="Interactive Help"><img alt="Next: Interactive Help" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="gnuplot_intro.html">First Steps With PyXPlot</a> <b>:</b>
+<a href="gnuplot_intro.html">First Steps With Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -52,7 +52,7 @@
 </div>
 
 <div><h1 id="fit_command">2.9 Function Fitting</h1>
-<p> <span id="a-1225415220"></span>  </p><p>It is possible to fit functional forms to data points in datafiles using the <tt class="ttfamily">fit</tt> command. A simple example might be:<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">In gnuplot, this example would have been written <tt class="ttfamily">fit f(x) ...</tt>, rather than <tt class="ttfamily">fit f() ...</tt>. This syntax is supported in PyXPlot, but deprecated.</span></a> </p><pre>
+<p> <span id="a-1225415220"></span>  </p><p>It is possible to fit functional forms to data points in datafiles using the <tt class="ttfamily">fit</tt> command. A simple example might be:<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">In gnuplot, this example would have been written <tt class="ttfamily">fit f(x) ...</tt>, rather than <tt class="ttfamily">fit f() ...</tt>. This syntax is supported in Pyxplot, but deprecated.</span></a> </p><pre>
 f(x) = a*x+b
 fit f() 'datafile' index 1 using 2:3 via a,b
 </pre><p>The coefficients to be varied are listed after the keyword “<tt class="ttfamily">via</tt>”; the keywords <tt class="ttfamily">index</tt>, <tt class="ttfamily">every</tt> and <tt class="ttfamily">using</tt> have the same meanings as in the plot command.<a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">The <tt class="ttfamily">select</tt> keyword, to be introduced in Section <a href="filebackup.html">3.3.5</a> can also be used.</span></a> </p><p>This is useful for producing best-fit lines<span id="a-1225928820"></span><a class="footnote"><sup class="footnotemark">†</sup><span class="footnotetext">Another way of producing best-fit lines is a to use a cubic spline; more details in given in Section <a href="spline_command.html">3.8</a></span></a>, and also has applications for estimating the gradients of datasets. The syntax is essentially identical to that used by gnuplot, though a few points are worth noting: </p><ul class="itemize">
@@ -77,7 +77,7 @@ fit f() 'datafile' via a
 <tr>
 <td><a href="plot_ranges.html" title="Setting Axis Ranges"><img alt="Previous: Setting Axis Ranges" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="gnuplot_intro.html" title="First Steps With Pyxplot"><img alt="Up: First Steps With Pyxplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="sect0010.html" title="Interactive Help"><img alt="Next: Interactive Help" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 

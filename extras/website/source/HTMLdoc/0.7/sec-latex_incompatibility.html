@@ -7,7 +7,7 @@
 
 <link href="sect0010.html" title="Operators and Functions" rel="next" />
 <link href="string_subs_op.html" title="Printing Text" rel="prev" />
-<link href="gnuplot_intro.html" title="First Steps With PyXPlot" rel="up" />
+<link href="gnuplot_intro.html" title="First Steps With Pyxplot" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -17,7 +17,7 @@
 <tr>
 <td><a href="string_subs_op.html" title="Printing Text"><img alt="Previous: Printing Text" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="gnuplot_intro.html" title="First Steps With Pyxplot"><img alt="Up: First Steps With Pyxplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="sect0010.html" title="Operators and Functions"><img alt="Next: Operators and Functions" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="gnuplot_intro.html">First Steps With PyXPlot</a> <b>:</b>
+<a href="gnuplot_intro.html">First Steps With Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -58,7 +58,7 @@ set ylabel "$h/{\rm m}$"
 set title 'Trajectories of rockets fired with speed $v$ and \
 angle $\theta$'
 </pre><div id="fig:ex_axislab" class="figure"><center> <img src="images/img-0009.png" alt="\includegraphics{examples/eps/ex_axislab.eps}" style="width:323px; height:284px" />
- </center><div class="caption"><b>Figure 2.1</b>: <span>A plot of the trajectories of rockets fired with different initial velocities. The key demonstrates the use of L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X to render mathematical symbols attractively. The full PyXPlot script used to generate this figure is available on the PyXPlot website at <a href="http://www.pyxplot.org.uk/examples/Manual/01axislab/.">http://www.pyxplot.org.uk/examples/Manual/01axislab/.</a></span></div><p>  </p></div><p>The output produced by these commands is shown in Figure <a href="sec-latex_incompatibility.html#fig:ex_axislab">2.1</a>. Note that the labels and title, and indeed all text labels in PyXPlot, are rendered using L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X, and so any L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X commands can be used. As a caveat, however, this does mean that care needs to be taken to escape any of L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X’s reserved characters – i.e.: <img src="images/img-0010.png" alt="$\backslash $" style="position:relative; bottom:-5px; width:7px; height:18px" class="math" /> &amp; % # { } $ _ <img src="images/img-0003.png" alt="\^{}" style="position:relative; bottom:10px; width:5px; height:3px" class="accent" /> or <img src="images/img-0011.png" alt="$\sim $" style="position:relative; bottom:2px; width:12px; height:5px" class="math" />. </p><p>Because of the use of quotes to delimit text labels, special care needs to be taken when apostrophe and quote characters are used. The following command would raise an error, because the apostrophe would be interpreted as marking the end of the text label: </p><p><table cellspacing="0" class="tabular">
+ </center><div class="caption"><b>Figure 2.1</b>: <span>A plot of the trajectories of rockets fired with different initial velocities. The key demonstrates the use of L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X to render mathematical symbols attractively. The full Pyxplot script used to generate this figure is available on the Pyxplot website at <a href="http://www.pyxplot.org.uk/examples/Manual/01axislab/.">http://www.pyxplot.org.uk/examples/Manual/01axislab/.</a></span></div><p>  </p></div><p>The output produced by these commands is shown in Figure <a href="sec-latex_incompatibility.html#fig:ex_axislab">2.1</a>. Note that the labels and title, and indeed all text labels in Pyxplot, are rendered using L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X, and so any L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X commands can be used. As a caveat, however, this does mean that care needs to be taken to escape any of L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X’s reserved characters – i.e.: <img src="images/img-0010.png" alt="$\backslash $" style="position:relative; bottom:-5px; width:7px; height:18px" class="math" /> &amp; % # { } $ _ <img src="images/img-0003.png" alt="\^{}" style="position:relative; bottom:10px; width:5px; height:3px" class="accent" /> or <img src="images/img-0011.png" alt="$\sim $" style="position:relative; bottom:2px; width:12px; height:5px" class="math" />. </p><p>Because of the use of quotes to delimit text labels, special care needs to be taken when apostrophe and quote characters are used. The following command would raise an error, because the apostrophe would be interpreted as marking the end of the text label: </p><p><table cellspacing="0" class="tabular">
 <tr>
 
     
@@ -78,9 +78,9 @@ angle $\theta$'
     <td style="text-align:left"><p><tt class="tt"> set xlabel "My plot’s X axis" </tt></p></td>
 
 </tr>
-</table> </p><p>To make it possible to render L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X strings containing both single and double quote characters – for example, to put a German umlaut on the name ‘Jörg’ in the L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X string ‘<tt class="tt">J<img src="images/img-0010.png" alt="$\backslash $" style="position:relative; bottom:-5px; width:7px; height:18px" class="math" />"org’s Data</tt>’ – PyXPlot recognises the backslash character to be an escape character when followed by either ’ or " in a L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X string. This is the <i class="itshape">only</i> case in which PyXPlot considers <img src="images/img-0010.png" alt="$\backslash $" style="position:relative; bottom:-5px; width:7px; height:18px" class="math" /> an escape character. To render the example string above, one would type:<span id="a0000000219"></span><span id="a0000000220"></span><span id="a0000000221"></span> </p><pre>
+</table> </p><p>To make it possible to render L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X strings containing both single and double quote characters – for example, to put a German umlaut on the name ‘Jörg’ in the L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X string ‘<tt class="tt">J<img src="images/img-0010.png" alt="$\backslash $" style="position:relative; bottom:-5px; width:7px; height:18px" class="math" />"org’s Data</tt>’ – Pyxplot recognises the backslash character to be an escape character when followed by either ’ or " in a L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X string. This is the <i class="itshape">only</i> case in which Pyxplot considers <img src="images/img-0010.png" alt="$\backslash $" style="position:relative; bottom:-5px; width:7px; height:18px" class="math" /> an escape character. To render the example string above, one would type:<span id="a0000000219"></span><span id="a0000000220"></span><span id="a0000000221"></span> </p><pre>
 set xlabel "J\\"org's Data"
-</pre><p>In this example, two backslashes are required. The first is the L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X escape character used to produce the umlaut; the second is a PyXPlot escape character, used so that the " character is not interpreted as delimiting the string. <span id="a0000000222"></span><span id="a0000000223"></span><span id="a0000000224"></span> </p><p>Having set labels and titles, they may be removed thus: </p><pre>
+</pre><p>In this example, two backslashes are required. The first is the L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X escape character used to produce the umlaut; the second is a Pyxplot escape character, used so that the " character is not interpreted as delimiting the string. <span id="a0000000222"></span><span id="a0000000223"></span><span id="a0000000224"></span> </p><p>Having set labels and titles, they may be removed thus: </p><pre>
 set xlabel ''
 set ylabel ''
 set title ''
@@ -96,7 +96,7 @@ unset title
 <tr>
 <td><a href="string_subs_op.html" title="Printing Text"><img alt="Previous: Printing Text" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="gnuplot_intro.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="gnuplot_intro.html" title="First Steps With Pyxplot"><img alt="Up: First Steps With Pyxplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="sect0010.html" title="Operators and Functions"><img alt="Next: Operators and Functions" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 

@@ -59,13 +59,13 @@ plot [&lt;range specifier&gt; ...] ('&lt;filename&gt;'|&lt;function&gt;)
      [index &lt;index specifier&gt;]
      [every &lt;every specifier&gt;]
      [with &lt;style&gt; [&lt;style modifier&gt; ... ] ]
-</pre><p>The <tt class="tt">plot</tt> command is the main workhorse command of PyXPlot, which is used to produce all plots. For example to plot the sine function: </p><pre>
+</pre><p>The <tt class="tt">plot</tt> command is the main workhorse command of Pyxplot, which is used to produce all plots. For example to plot the sine function: </p><pre>
 plot sin(x)
 </pre><p>Ranges for the axes of a graph can be specified by placing them in square brackets before the name of the function to be plotted. An example of this syntax would be: </p><pre>
 plot [-pi:pi] sin(x)
 </pre><p>which would plot the function <img src="images/img-0006.png" alt="$\sin (x)$" style="position:relative; bottom:-4px; width:46px; height:18px" class="math" /> between <img src="images/img-0112.png" alt="$-\pi $" style="position:relative; bottom:-1px; width:24px; height:9px" class="math" /> and <img src="images/img-0113.png" alt="$\pi $" style="position:relative; bottom:-1px; width:11px; height:9px" class="math" />. </p><p>Data files may also be plotted as well as functions, in which case the filename of the data file to be plotted should be enclosed in apostrophes. An example of this syntax would be: </p><pre>
 plot 'data.dat' with points
-</pre><p>which would plot the file called <tt class="tt">data.dat</tt>. Section <a href="plot_datafiles.html">2.6</a> should be studied for further details of the format that is expected of input data files, and how PyXPlot may be directed to plot only certain portions of data files. </p><p>Multiple datasets can be plotted on a single graph by listing them with commas separating them: </p><pre>
+</pre><p>which would plot the file called <tt class="tt">data.dat</tt>. Section <a href="plot_datafiles.html">2.6</a> should be studied for further details of the format that is expected of input data files, and how Pyxplot may be directed to plot only certain portions of data files. </p><p>Multiple datasets can be plotted on a single graph by listing them with commas separating them: </p><pre>
 plot sin(x) with colour blue, cos(x) with linetype 2
 </pre></div>
 

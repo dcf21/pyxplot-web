@@ -39,7 +39,7 @@
 
 </span><span>
 <span>
-<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+<a href="sect0001.html">Introduction to Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -63,7 +63,7 @@
 plot int_dt('sin(t)',0,x)
 </pre><p>The function <tt class="tt">diff_dx()</tt> takes two obligatory parameters plus one further optional parameter. The first is the expression to be differentiated, which, as above, may optionally placed in quotes for clarity. This should be followed by the numerical value <img src="images/img-0019.png" alt="$x$" style="vertical-align:0px; 
                                      width:10px; 
-                                     height:8px" class="math gen" /> of the dummy variable at the point where the expression is to be differentiated. This value may have any physical dimensions, and may be a complex number if complex arithmetic is enabled. The final, optional, parameter to the <tt class="tt">diff_dx()</tt> function is an approximate step size, which indicates the range of argument values over which PyXPlot should take samples to determine the gradient. If no value is supplied, a value of <img src="images/img-0129.png" alt="$10^{-6}x$" style="vertical-align:0px; 
+                                     height:8px" class="math gen" /> of the dummy variable at the point where the expression is to be differentiated. This value may have any physical dimensions, and may be a complex number if complex arithmetic is enabled. The final, optional, parameter to the <tt class="tt">diff_dx()</tt> function is an approximate step size, which indicates the range of argument values over which Pyxplot should take samples to determine the gradient. If no value is supplied, a value of <img src="images/img-0129.png" alt="$10^{-6}x$" style="vertical-align:0px; 
                                      width:46px; 
                                      height:16px" class="math gen" /> is used, replaced by <img src="images/img-0130.png" alt="$10^{-6}$" style="vertical-align:0px; 
                                      width:35px; 
@@ -86,7 +86,7 @@ plot int_dt('sin(t)',0,x)
     <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> print diff_dx(’cos(x)’, 1.0) </tt></div></p></td>
 
 </tr>
-</table> </p><p>When complex arithmetic is enabled, PyXPlot checks that the function being differentiated satisfies the Cauchy-Riemann equations, and returns an error if it does not, to indicate that it is not differentiable. The following is an example of a function which is not differentiable, and which throws an error because the Cauchy-Riemann equations are not satisfied: </p><p><table cellspacing="0" class="tabular">
+</table> </p><p>When complex arithmetic is enabled, Pyxplot checks that the function being differentiated satisfies the Cauchy-Riemann equations, and returns an error if it does not, to indicate that it is not differentiable. The following is an example of a function which is not differentiable, and which throws an error because the Cauchy-Riemann equations are not satisfied: </p><p><table cellspacing="0" class="tabular">
 <tr>
 
     
@@ -97,7 +97,7 @@ plot int_dt('sin(t)',0,x)
     <td style="text-align:left"><p><div style="width:284.527559055pt" class="minipage"><tt class="tt"> set num comp<br />print diff_dx(Re(sin(x)),1) </tt></div></p></td>
 
 </tr>
-</table> </p><p>Advanced users may be interested to know that <tt class="tt">int_dx()</tt><a name="a0000000465" id="a0000000465"></a> function is implemented using the <tt class="tt">gsl_­integration_­qags()</tt> function of the Gnu Scientific Library<a name="a0000000466" id="a0000000466"></a> (GSL), and the <tt class="tt">diff_dx()</tt><a name="a0000000467" id="a0000000467"></a> function is implemented using the <tt class="tt">gsl_­deriv_­central()</tt> function of the same library. Any caveats which apply to the use of these routines also apply to PyXPlot’s numerical calculus. </p><p> <span class="upshape"><span class="mdseries"><span class="rm">Integrating the function <img src="images/img-0133.png" alt="$\mathrm{sinc}(x)$" style="vertical-align:-4px; 
+</table> </p><p>Advanced users may be interested to know that <tt class="tt">int_dx()</tt><a name="a0000000465" id="a0000000465"></a> function is implemented using the <tt class="tt">gsl_­integration_­qags()</tt> function of the Gnu Scientific Library<a name="a0000000466" id="a0000000466"></a> (GSL), and the <tt class="tt">diff_dx()</tt><a name="a0000000467" id="a0000000467"></a> function is implemented using the <tt class="tt">gsl_­deriv_­central()</tt> function of the same library. Any caveats which apply to the use of these routines also apply to Pyxplot’s numerical calculus. </p><p> <span class="upshape"><span class="mdseries"><span class="rm">Integrating the function <img src="images/img-0133.png" alt="$\mathrm{sinc}(x)$" style="vertical-align:-4px; 
                                      width:53px; 
                                      height:18px" class="math gen" />.</span></span></span></p><div>
 
@@ -117,7 +117,7 @@ plot int_dt('sin(t)',0,x)
     <td style="width:40%">&nbsp;</td>
     <td class="eqnnum" style="width:20%">&nbsp;</td>
 </tr>
-</table><p> In the following script, we use PyXPlot’s facilities for numerical integration to produce a plot of </p><table id="a0000000469" class="equation" width="100%" cellspacing="0" cellpadding="7">
+</table><p> In the following script, we use Pyxplot’s facilities for numerical integration to produce a plot of </p><table id="a0000000469" class="equation" width="100%" cellspacing="0" cellpadding="7">
 <tr>
     
     <td style="width:40%">&nbsp;</td>

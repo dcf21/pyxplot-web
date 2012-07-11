@@ -57,7 +57,7 @@
 </div>
 
 <div><h2 id="a-1227582708">3.5.1 Deleting, Moving and Changing Plots</h2>
-<p>Each time a plot is placed on the multiplot page in PyXPlot, it is allocated a reference number, which is output to the terminal. Reference numbers count up from zero each time the multiplot page is cleared. A number of commands exist for modifying plots after they have been placed on the page, selecting them by making reference to their reference numbers. </p><p>Plots may be removed from the page with the <tt class="ttfamily">delete</tt> command, and restored with the <tt class="ttfamily">undelete</tt> command:<span id="a-1227582580"></span><span id="a-1227582996"></span> </p><pre> 
+<p>Each time a plot is placed on the multiplot page in Pyxplot, it is allocated a reference number, which is output to the terminal. Reference numbers count up from zero each time the multiplot page is cleared. A number of commands exist for modifying plots after they have been placed on the page, selecting them by making reference to their reference numbers. </p><p>Plots may be removed from the page with the <tt class="ttfamily">delete</tt> command, and restored with the <tt class="ttfamily">undelete</tt> command:<span id="a-1227582580"></span><span id="a-1227582996"></span> </p><pre> 
 delete &lt;number&gt;
 undelete &lt;number&gt;
 </pre><p>The reference numbers of deleted plots are not reused until the page is cleared, as they may always be restored with the <tt class="ttfamily">undelete</tt> command; plots which have been deleted simply do not appear. </p><p>Plots may also be moved with the <tt class="ttfamily">move</tt> command. For example, the following would move plot 23 to position (8,8) measured in centimetres: </p><pre> 

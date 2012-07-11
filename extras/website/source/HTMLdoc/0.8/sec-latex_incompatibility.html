@@ -7,7 +7,7 @@
 
 <link href="sect0015.html" title="Querying the Values of Settings" rel="next" />
 <link href="sect0014.html" title="Printing Text" rel="prev" />
-<link href="ch-first_steps.html" title="First Steps With PyXPlot" rel="up" />
+<link href="ch-first_steps.html" title="First Steps With Pyxplot" rel="up" />
 <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
@@ -17,7 +17,7 @@
 <tr>
 <td><a href="sect0014.html" title="Printing Text"><img alt="Previous: Printing Text" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-first_steps.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-first_steps.html" title="First Steps With Pyxplot"><img alt="Up: First Steps With Pyxplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="sect0015.html" title="Querying the Values of Settings"><img alt="Next: Querying the Values of Settings" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
@@ -39,12 +39,12 @@
 
 </span><span>
 <span>
-<a href="sect0001.html">Introduction to PyXPlot</a> <b>:</b>
+<a href="sect0001.html">Introduction to Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
 <span>
-<a href="ch-first_steps.html">First Steps With PyXPlot</a> <b>:</b>
+<a href="ch-first_steps.html">First Steps With Pyxplot</a> <b>:</b>
 </span>
 
 </span><span>
@@ -63,7 +63,7 @@ set ylabel "Vertical axis"
 set title 'A plot with labelled axes'
 plot
 </pre><center> 
-<img src="images/img-0026.png" alt="\includegraphics[width=8cm]{examples/eps/ex_axislabs}" style="width:8cm" /> </center><p>These labels and title – in fact, all text labels which are ever produced by PyXPlot – are rendered using the L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X typesetting system, and so any L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X commands can be used to produce custom formatting. This allows great flexibility, but means that care needs to be taken to escape any of L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X’s reserved characters – i.e. <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+<img src="images/img-0026.png" alt="\includegraphics[width=8cm]{examples/eps/ex_axislabs}" style="width:8cm" /> </center><p>These labels and title – in fact, all text labels which are ever produced by Pyxplot – are rendered using the L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X typesetting system, and so any L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X commands can be used to produce custom formatting. This allows great flexibility, but means that care needs to be taken to escape any of L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X’s reserved characters – i.e. <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
                                      width:7px; 
                                      height:18px" class="math gen" /> &amp; % # { } $ _ <img src="images/img-0024.png" alt="\^{}" style="vertical-align:9px; width:5px; height:4px" class="accent gen" /> or <img src="images/img-0028.png" alt="$\sim $" style="vertical-align:2px; 
                                      width:12px; 
@@ -91,9 +91,9 @@ plot
 </tr>
 </table> </p><p>To make it possible to render L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X strings containing both single and double quote characters – for example, the string <tt class="tt">J<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
                                      width:7px; 
-                                     height:18px" class="math gen" />"org’s Data</tt>, which puts a German umlaut on the letter o as well as having a possessive apostrophe – PyXPlot recognises the backslash character to be an escape character when followed by either ’ or ". A double backslash (<img src="images/img-0031.png" alt="$\backslash \backslash $" style="vertical-align:-5px; 
+                                     height:18px" class="math gen" />"org’s Data</tt>, which puts a German umlaut on the letter o as well as having a possessive apostrophe – Pyxplot recognises the backslash character to be an escape character when followed by either ’ or ". A double backslash (<img src="images/img-0031.png" alt="$\backslash \backslash $" style="vertical-align:-5px; 
                                      width:16px; 
-                                     height:18px" class="math gen" />) represents a literal backslash. These are the <i class="itshape">only</i> cases in which PyXPlot considers <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+                                     height:18px" class="math gen" />) represents a literal backslash. These are the <i class="itshape">only</i> cases in which Pyxplot considers <img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
                                      width:7px; 
                                      height:18px" class="math gen" /> an escape character. To render the example string above, one would type:<a name="a0000000325" id="a0000000325"></a><a name="a0000000326" id="a0000000326"></a><a name="a0000000327" id="a0000000327"></a> </p><p><table cellspacing="0" class="tabular">
 <tr>
@@ -108,7 +108,7 @@ plot
                                      height:18px" class="math gen" />"org’s Data" </tt></div></p></td>
 
 </tr>
-</table> </p><p>In this example, three backslashes are required. The first pair produce the L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X escape character used to produce the umlaut; the second is a PyXPlot escape character, used so that the " character is not interpreted as delimiting the string. <a name="a0000000328" id="a0000000328"></a><a name="a0000000329" id="a0000000329"></a><a name="a0000000330" id="a0000000330"></a> </p><p>The pre-defined <tt class="tt">texify()</tt><a name="a0000000331" id="a0000000331"></a> function may provide some assistance in generating L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X labels: it takes either an algebraic expression, or a string in quotes, and produces a L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X representation of it, as in the following examples: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">a=50</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print texify("A %d% increase"%(a))</b></tt><br /><tt class="tt">A 50<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
+</table> </p><p>In this example, three backslashes are required. The first pair produce the L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X escape character used to produce the umlaut; the second is a Pyxplot escape character, used so that the " character is not interpreted as delimiting the string. <a name="a0000000328" id="a0000000328"></a><a name="a0000000329" id="a0000000329"></a><a name="a0000000330" id="a0000000330"></a> </p><p>The pre-defined <tt class="tt">texify()</tt><a name="a0000000331" id="a0000000331"></a> function may provide some assistance in generating L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X labels: it takes either an algebraic expression, or a string in quotes, and produces a L<sup style="font-variant:small-caps; margin-left:-0.3em">a</sup>T<sub style="text-transform:uppercase; margin-left:-0.2em">e</sub>X representation of it, as in the following examples: </p><p> <tt class="tt">pyxplot&gt; <b class="bf">a=50</b></tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print texify("A %d% increase"%(a))</b></tt><br /><tt class="tt">A 50<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
                                      width:7px; 
                                      height:18px" class="math gen" />% increase</tt><br /><tt class="tt">pyxplot&gt; <b class="bf">print texify(sqrt(x**2+1))</b></tt><br /><tt class="tt">$<img src="images/img-0006.png" alt="$\backslash $" style="vertical-align:-5px; 
                                      width:7px; 
@@ -132,7 +132,7 @@ unset title
 <tr>
 <td><a href="sect0014.html" title="Printing Text"><img alt="Previous: Printing Text" border="0" src="icons/previous.gif" width="32" height="32" /></a></td>
 
-<td><a href="ch-first_steps.html" title="First Steps With PyXPlot"><img alt="Up: First Steps With PyXPlot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
+<td><a href="ch-first_steps.html" title="First Steps With Pyxplot"><img alt="Up: First Steps With Pyxplot" border="0" src="icons/up.gif" width="32" height="32" /></a></td>
 
 <td><a href="sect0015.html" title="Querying the Values of Settings"><img alt="Next: Querying the Values of Settings" border="0" src="icons/next.gif" width="32" height="32" /></a></td>
 
