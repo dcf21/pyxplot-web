@@ -1,11 +1,11 @@
---- gp_help.xml.orig	2010-12-27 15:34:53.000000000 +0000
-+++ gp_help.xml	2010-12-27 15:37:41.000000000 +0000
-@@ -456,11 +456,11 @@
+--- gp_help.xml.orig	2012-07-19 16:48:09.995724181 +0100
++++ gp_help.xml	2012-07-19 17:18:18.271724180 +0100
+@@ -467,11 +467,11 @@
  
  f(x)#=#a*x+b\\fit#f()#'data.dat'#index#1#using#2:3#via#a,b\\
  
--The first line specifies the functional form which is to be used. The coefficients within this function, a and b, which are to be varied during the fitting process are listed after the keyword via in the fit command. The modifiers index, every, select and using have the same meanings in the fit command as in the plot command. When fitting a function of n variables, at least n+1 columns (or rows - see Section XXX of the Users' Guide) of data must be specified after the using modifier. By default, the first n+1 columns are used. These correspond to the values of each of the n arguments to the function, plus finally the value which the output from the function is aiming to match. If an additional column is specified, then this is taken to contain the standard error in the value that the output from the function is aiming to match, and can be used to weight the datapoints which are being used to constrain the fit. As the fit command works, it displays statistics including the best-fit values of each of the fitting parameters, the uncertainties in each of them, and the covariance matrix. These can be useful for analysing the security of the fit achieved, but calculating the uncertainties in the best-fit parameters and the covariance matrix can be time consuming, especially when many parameters are being fitted simultaneously. The optional keyword withouterrors can be included immediately before the filename of the datafile to be fitted to substantially speed up cases where this information is not required. By default, the starting values for each of the fitting parameters is 1.0. However, if the variables to be used in the fitting process are already set before the fit command is called, these initial values are used instead. For example, the following would use the initial values {a=100,b=50}: 
-+The first line specifies the functional form which is to be used. The coefficients within this function, a and b, which are to be varied during the fitting process are listed after the keyword via in the fit command. The modifiers index, every, select and using have the same meanings in the fit command as in the plot command. When fitting a function of n variables, at least n+1 columns (or rows - see Section 3.9.1 of the Users' Guide) of data must be specified after the using modifier. By default, the first n+1 columns are used. These correspond to the values of each of the n arguments to the function, plus finally the value which the output from the function is aiming to match. If an additional column is specified, then this is taken to contain the standard error in the value that the output from the function is aiming to match, and can be used to weight the datapoints which are being used to constrain the fit. As the fit command works, it displays statistics including the best-fit values of each of the fitting parameters, the uncertainties in each of them, and the covariance matrix. These can be useful for analysing the security of the fit achieved, but calculating the uncertainties in the best-fit parameters and the covariance matrix can be time consuming, especially when many parameters are being fitted simultaneously. The optional keyword withouterrors can be included immediately before the filename of the datafile to be fitted to substantially speed up cases where this information is not required. By default, the starting values for each of the fitting parameters is 1.0. However, if the variables to be used in the fitting process are already set before the fit command is called, these initial values are used instead. For example, the following would use the initial values {a=100,b=50}: 
+-The first line specifies the functional form which is to be used. The coefficients within this function, a and b, which are to be varied during the fitting process are listed after the keyword via in the fit command. The modifiers index, every, select and using have the same meanings in the fit command as in the plot command. When fitting a function of n variables, at least n+1 columns (or rows - see Section XXX of the Users' Guide) of data must be specified after the using modifier. By default, the first n+1 columns are used. These correspond to the values of each of the n arguments to the function, plus finally the value which the output from the function is aiming to match. If an additional column is specified, then this is taken to contain the standard error in the value that the output from the function is aiming to match, and can be used to weight the data points which are being used to constrain the fit. As the fit command works, it displays statistics including the best-fit values of each of the fitting parameters, the uncertainties in each of them, and the covariance matrix. These can be useful for analysing the security of the fit achieved, but calculating the uncertainties in the best-fit parameters and the covariance matrix can be time consuming, especially when many parameters are being fitted simultaneously. The optional keyword withouterrors can be included immediately before the filename of the data file to be fitted to substantially speed up cases where this information is not required. By default, the starting values for each of the fitting parameters is 1.0. However, if the variables to be used in the fitting process are already set before the fit command is called, these initial values are used instead. For example, the following would use the initial values {a=100,b=50}: 
++The first line specifies the functional form which is to be used. The coefficients within this function, a and b, which are to be varied during the fitting process are listed after the keyword via in the fit command. The modifiers index, every, select and using have the same meanings in the fit command as in the plot command. When fitting a function of n variables, at least n+1 columns (or rows - see Section 3.9.1 of the Users' Guide) of data must be specified after the using modifier. By default, the first n+1 columns are used. These correspond to the values of each of the n arguments to the function, plus finally the value which the output from the function is aiming to match. If an additional column is specified, then this is taken to contain the standard error in the value that the output from the function is aiming to match, and can be used to weight the data points which are being used to constrain the fit. As the fit command works, it displays statistics including the best-fit values of each of the fitting parameters, the uncertainties in each of them, and the covariance matrix. These can be useful for analysing the security of the fit achieved, but calculating the uncertainties in the best-fit parameters and the covariance matrix can be time consuming, especially when many parameters are being fitted simultaneously. The optional keyword withouterrors can be included immediately before the filename of the data file to be fitted to substantially speed up cases where this information is not required. By default, the starting values for each of the fitting parameters is 1.0. However, if the variables to be used in the fitting process are already set before the fit command is called, these initial values are used instead. For example, the following would use the initial values {a=100,b=50}: 
  
  f(x)#=#a*x+b\\a#=#100\\b#=#50\\fit#f()#'data.dat'#index#1#using#2:3#via#a,b\\
  
@@ -14,82 +14,82 @@
  
    </fit>
    <for>
-@@ -553,7 +553,7 @@
+@@ -582,7 +582,7 @@
  
- interpolate#(#akima#|#linear#|#loglinear#|#polynomial#|\\##############spline#|#stepwise#|\\##############2d#[(#bmp_r#|#bmp_g#|#bmp_b#)]#)\\############[\labrange#specification\rab]#\labfunction#name\rab"()"\\############'\labfilename\rab'\\############[#every#\labexpression\rab#{:\labexpression}#]\\############[#index#\labvalue\rab#]\\############[#select#\labexpression\rab#]\\############[#using#\labexpression\rab#{:\labexpression}#]\\
+ interpolate#(#akima#|#linear#|#loglinear#|#polynomial#|\\##############spline#|#stepwise#|\\##############2d#[#(#bmp_r#|#bmp_g#|#bmp_b#)#]#)\\############[#\labrange#specification\rab#]#\labfunction#name\rab()\\############\labfilename\rab\\############[#every#{#\labexpression\rab#}#]\\############[#index#\labvalue\rab#]\\############[#select#\labexpression\rab#]\\############[#using#{#\labexpression\rab#}#]\\
  
--The interpolate command can be used to generate a special function within Pyxplot's mathematical environment which interpolates a set of datapoints supplied from a datafile. Either one- or two-dimensional interpolation is possible. In the case of one-dimensional interpolation, various different types of interpolation are supported: linear interpolation, power law interpolation, polynomial interpolation, cubic spline interpolation and akima spline interpolation. Stepwise interpolation returns the value of the datapoint nearest to the requested point in argument space. The use of polynomial interpolation with large datasets is strongly discouraged, as polynomial fits tend to show severe oscillations between datapoints. Except in the case of stepwise interpolation, extrapolation is not permitted; if an attempt is made to evaluate an interpolated function beyond the limits of the datapoints which it interpolates, Pyxplot returns an error or value of not-a-number. In the case of two-dimensional interpolation, the type of interpolation to be used is set using the interpolate modifier to the set samples command, and may be changed at any time after the interpolation function has been created. The options available are nearest neighbour interpolation - which is the two-dimensional equivalent of stepwise interpolation, inverse square interpolation - which returns a weighted average of the supplied datapoints, using the inverse squares of their distances from the requested point in argument space as weights, and Monaghan Lattanzio interpolation, which uses the weighting function (Monaghan &amp; Lattanzio 1985)  where v=r/h for h=sqrtA/n, A is the product (xmax-xmin)(ymax-ymin) and n is the number of input datapoints. These are selected as follows: 
-+The interpolate command can be used to generate a special function within Pyxplot's mathematical environment which interpolates a set of datapoints supplied from a datafile. Either one- or two-dimensional interpolation is possible. In the case of one-dimensional interpolation, various different types of interpolation are supported: linear interpolation, power law interpolation, polynomial interpolation, cubic spline interpolation and akima spline interpolation. Stepwise interpolation returns the value of the datapoint nearest to the requested point in argument space. The use of polynomial interpolation with large datasets is strongly discouraged, as polynomial fits tend to show severe oscillations between datapoints. Except in the case of stepwise interpolation, extrapolation is not permitted; if an attempt is made to evaluate an interpolated function beyond the limits of the datapoints which it interpolates, Pyxplot returns an error or value of not-a-number. In the case of two-dimensional interpolation, the type of interpolation to be used is set using the interpolate modifier to the set samples command, and may be changed at any time after the interpolation function has been created. The options available are nearest neighbour interpolation - which is the two-dimensional equivalent of stepwise interpolation, inverse square interpolation - which returns a weighted average of the supplied datapoints, using the inverse squares of their distances from the requested point in argument space as weights, and Monaghan Lattanzio interpolation, which uses the weighting function  given in (Monaghan &amp; Lattanzio 1985). These are selected as follows: 
+-The interpolate command can be used to generate a special function within Pyxplot's mathematical environment which interpolates a set of data points supplied from a data file. Either one- or two-dimensional interpolation is possible. In the case of one-dimensional interpolation, various different types of interpolation are supported: linear interpolation, power law interpolation, polynomial interpolation, cubic spline interpolation and akima spline interpolation. Stepwise interpolation returns the value of the datapoint nearest to the requested point in argument space. The use of polynomial interpolation with large datasets is strongly discouraged, as polynomial fits tend to show severe oscillations between data points. Except in the case of stepwise interpolation, extrapolation is not permitted; if an attempt is made to evaluate an interpolated function beyond the limits of the data points which it interpolates, Pyxplot returns an error or value of not-a-number. In the case of two-dimensional interpolation, the type of interpolation to be used is set using the interpolate modifier to the set samples command, and may be changed at any time after the interpolation function has been created. The options available are nearest neighbor interpolation - which is the two-dimensional equivalent of stepwise interpolation, inverse square interpolation - which returns a weighted average of the supplied data points, using the inverse squares of their distances from the requested point in argument space as weights, and Monaghan Lattanzio interpolation, which uses the weighting function (Monaghan &amp; Lattanzio 1985)  where v=r/h for h=sqrtA/n, A is the product (xmax-xmin)(ymax-ymin) and n is the number of input datapoints. These are selected as follows: 
++The interpolate command can be used to generate a special function within Pyxplot's mathematical environment which interpolates a set of data points supplied from a data file. Either one- or two-dimensional interpolation is possible. In the case of one-dimensional interpolation, various different types of interpolation are supported: linear interpolation, power law interpolation, polynomial interpolation, cubic spline interpolation and akima spline interpolation. Stepwise interpolation returns the value of the datapoint nearest to the requested point in argument space. The use of polynomial interpolation with large datasets is strongly discouraged, as polynomial fits tend to show severe oscillations between data points. Except in the case of stepwise interpolation, extrapolation is not permitted; if an attempt is made to evaluate an interpolated function beyond the limits of the data points which it interpolates, Pyxplot returns an error or value of not-a-number. In the case of two-dimensional interpolation, the type of interpolation to be used is set using the interpolate modifier to the set samples command, and may be changed at any time after the interpolation function has been created. The options available are nearest neighbor interpolation - which is the two-dimensional equivalent of stepwise interpolation, inverse square interpolation - which returns a weighted average of the supplied data points, using the inverse squares of their distances from the requested point in argument space as weights, and Monaghan Lattanzio interpolation, which uses the weighting function given in Monaghan &amp; Lattanzio (1985). These are selected as follows: 
  
- set#samples#interpolate#NearestNeighbour\\set#samples#interpolate#InverseSquare\\set#samples#interpolate#MonaghanLattanzio\\
+ set#samples#interpolate#nearestNeighbor\\set#samples#interpolate#inverseSquare\\set#samples#interpolate#monaghanLattanzio\\
  
-@@ -645,11 +645,11 @@
+@@ -690,11 +690,11 @@
  
  plot#'data.dat'#with#points\\
  
--which would plot data from the file data.dat. Section XXX of the Users' Guide provides further details of the format that input datafiles should take and how Pyxplot may be directed to plot only certain portions of datafiles. Multiple datasets can be plotted on a single graph by specifying them in a comma-separated list, as in the example: 
-+which would plot data from the file data.dat. Section 3.8 of the Users' Guide provides further details of the format that input datafiles should take and how Pyxplot may be directed to plot only certain portions of datafiles. Multiple datasets can be plotted on a single graph by specifying them in a comma-separated list, as in the example: 
+-which would plot data from the file data.dat. Section XXX of the Users' Guide provides further details of the format that input data files should take and how Pyxplot may be directed to plot only certain portions of data files. Multiple datasets can be plotted on a single graph by specifying them in a comma-separated list, as in the example: 
++which would plot data from the file data.dat. Section 3.8 of the Users' Guide provides further details of the format that input data files should take and how Pyxplot may be directed to plot only certain portions of data files. Multiple datasets can be plotted on a single graph by specifying them in a comma-separated list, as in the example: 
  
- plot#sin(x)#with#colour#blue,#cos(x)#with#linetype#2\\
+ plot#sin(x)#with#color#blue,#cos(x)#with#linetype#2\\
  
 -If the 3d modifier is supplied to the plot command, then a three-dimensional plot is produced; many plot styles then take additional columns of data to signify the positions of datapoints along the z-axis. This is described further in Chapter XXX of the Users' Guide. The angle from which three-dimensional plots are viewed can be set using the set view command. 
-+If the 3d modifier is supplied to the plot command, then a three-dimensional plot is produced; many plot styles then take additional columns of data to signify the positions of datapoints along the z-axis. This is described further in Chapter 7 of the Users' Guide. The angle from which three-dimensional plots are viewed can be set using the set view command. 
++If the 3d modifier is supplied to the plot command, then a three-dimensional plot is produced; many plot styles then take additional columns of data to signify the positions of datapoints along the z-axis. This is described further in Chapter 8 of the Users' Guide. The angle from which three-dimensional plots are viewed can be set using the set view command. 
     <axes>
  
  The axes modifier may be used to specify which axes data should be plotted against when plots have multiple parallel axes - for example, if a plot has an x-axis along its lower edge and an x2-axis along its upper edge. The following example would plot data using the x2-axis as the ordinate axis and the y-axis as the abscissa axis: 
-@@ -691,13 +691,13 @@
+@@ -736,13 +736,13 @@
  
-  would use twice the default width of line. The following is a complete list of all of Pyxplot's plot styles - i.e. all of the words which may be used in place of lines: arrows_head, arrows_nohead, arrows_twohead, boxes, ColourMap, ContourMap, dots, FilledRegion, fsteps, histeps, impulses, lines, LinesPoints, LowerLimits, points, stars, steps, surface, UpperLimits, wboxes, XErrorBars, XErrorRange, XYErrorBars, XYErrorRange, XYZErrorBars, XYZErrorRange, XZErrorBars, XZErrorRange, YErrorBars, YErrorRange, YErrorShaded, YZErrorBars, YZErrorRange, ZErrorBars, ZErrorRange. In addition, lp and pl are recognised as abbreviations for linespoints; errorbars is recognised as an abbreviation for yerrorbars; errorrange is recognised as an abbreviation for yerrorrange; and arrows_twoway is recognised as an alternative for arrows_twohead. As well as the names of these plot styles, the with modifier can also be followed by style modifiers such as linewidth which alter the exact appearance of various plot styles. A complete list of these is as follows: 
+  would use twice the default width of line. The following is a complete list of all of Pyxplot's plot styles - i.e. all of the words which may be used in place of lines: arrows_head, arrows_nohead, arrows_twohead, boxes, colormap, contourmap, dots, filledRegion, fsteps, histeps, impulses, lines, linesPoints, lowerLimits, points, stars, steps, surface, upperLimits, wboxes, xErrorBars, xErrorRange, XYErrorBars, xyErrorRange, xyzErrorBars, XYZErrorRange, xzErrorBars, xzErrorRange, yErrorBars, yErrorRange, yErrorShaded, yzErrorBars, yzErrorRange, zErrorBars, zErrorRange. In addition, lp and pl are recognised as abbreviations for linespoints; errorbars is recognised as an abbreviation for yerrorbars; errorrange is recognised as an abbreviation for yerrorrange; and arrows_twoway is recognised as an alternative for arrows_twohead. As well as the names of these plot styles, the with modifier can also be followed by style modifiers such as linewidth which alter the exact appearance of various plot styles. A complete list of these is as follows: 
  
--* colour - used to select the colour in which each dataset is to be plotted. It should be followed either by an integer, to set a colour from the present palette (see Section XXX of the Users' Guide), or by a recognised colour name, a complete list of which can be found in Section XXX of the Users' Guide. Alternatively, arbitrary colours may be specified by using one of the forms rgb0.1:0.2:0.3, hsb0.1:0.2:0.3 or cmyk0.4:0.3:0.2:0.1, where the colon-separated values indicate the RGB, HSB or CMYK components of the desired colour in the range0 to1. This modifier may also be spelt color.  \\
-+* colour - used to select the colour in which each dataset is to be plotted. It should be followed either by an integer, to set a colour from the present palette (see Section 7.1.1 of the Users' Guide), or by a recognised colour name, a complete list of which can be found in Section 17.4 of the Users' Guide. Alternatively, arbitrary colours may be specified by using one of the forms rgb0.1:0.2:0.3, hsb0.1:0.2:0.3 or cmyk0.4:0.3:0.2:0.1, where the colon-separated values indicate the RGB, HSB or CMYK components of the desired colour in the range0 to1. This modifier may also be spelt color.  \\
- * fillcolour - used to select the colour in which each dataset is filled. The colour may be specified using any of the styles listed for colour. May also be spelt fillcolour.  \\
+-* color - used to select the color in which each dataset is to be plotted. It should be followed either by an integer, to set a color from the present palette (see Section XXX of the Users' Guide), by a recognised color name, or by an object of type color. This modifier may also be spelt colour.  \\
++* color - used to select the color in which each dataset is to be plotted. It should be followed either by an integer, to set a color from the present palette (see Section 8.1.1 of the Users' Guide), by a recognised color name, or by an object of type color. This modifier may also be spelt colour.  \\
+ * fillcolor - used to select the color in which each dataset is filled. The color may be specified using any of the styles listed for color. May also be spelt fillcolor.  \\
 -* linetype - used to numerically select the type of line - for example, solid, dotted, dashed, etc. - which should be used in line-based plot styles. A complete list of Pyxplot's numbered line types can be found in Chapter XXX of the Users' Guide. May be abbreviated lt.  \\
-+* linetype - used to numerically select the type of line - for example, solid, dotted, dashed, etc. - which should be used in line-based plot styles. A complete list of Pyxplot's numbered line types can be found in Chapter 16 of the Users' Guide. May be abbreviated lt.  \\
++* linetype - used to numerically select the type of line - for example, solid, dotted, dashed, etc. - which should be used in line-based plot styles. A complete list of Pyxplot's numbered line types can be found in Chapter 18 of the Users' Guide. May be abbreviated lt.  \\
  * linewidth - used to select the width of line which should be used in line-based plot styles, where unity represents the default width. May be abbreviated lw.  \\
  * pointlinewidth - used to select the width of line which should be used to stroke points in point-based plot styles, where unity represents the default width. May be abbreviated plw.  \\
  * pointsize - used to select the size of drawn points, where unity represents the default size. May be abbreviated ps.  \\
 -* pointtype - used to numerically select the type of point - for example, crosses, circles, etc. - used by point-based plot styles. A complete list of Pyxplot's numbered point types can be found in Chapter XXX of the Users' Guide. May be abbreviated pt.  \\
-+* pointtype - used to numerically select the type of point - for example, crosses, circles, etc. - used by point-based plot styles. A complete list of Pyxplot's numbered point types can be found in Chapter 16 of the Users' Guide. May be abbreviated pt.  \\
++* pointtype - used to numerically select the type of point - for example, crosses, circles, etc. - used by point-based plot styles. A complete list of Pyxplot's numbered point types can be found in Chapter 18 of the Users' Guide. May be abbreviated pt.  \\
  
  Any number of these modifiers may be placed sequentially after the keyword with, as in the following examples: 
  
-@@ -818,7 +818,7 @@
+@@ -863,7 +863,7 @@
  set key###|#Elephants Set option ON#\\
  set nokey#|#Elephants Set option OFF
  
 -  More details of the effects of each individual parameter can be found in the subsections below, which forms a complete list of the recognised setting keywords. The reader should also see the show command, which can be used to display the current values of settings, and the unset command, which returns settings to their default values. Chapter XXX of the Users' Guide describes how commonly used settings can be saved into a configuration file. 
-+  More details of the effects of each individual parameter can be found in the subsections below, which forms a complete list of the recognised setting keywords. The reader should also see the show command, which can be used to display the current values of settings, and the unset command, which returns settings to their default values. Chapter 17 of the Users' Guide describes how commonly used settings can be saved into a configuration file. 
++  More details of the effects of each individual parameter can be found in the subsections below, which forms a complete list of the recognised setting keywords. The reader should also see the show command, which can be used to display the current values of settings, and the unset command, which returns settings to their default values. Chapter 19 of the Users' Guide describes how commonly used settings can be saved into a configuration file. 
     <arrow>
  
- set#arrow#\labarrow#number\rab\\######from#[\labsystem\rab]#\labx\rab,#[\labsystem\rab]#\laby\rab\\######to###[\labsystem\rab]#\labx\rab,#[\labsystem\rab]#\laby\rab\\######[#with#{\laboption\rab}#]\\
-@@ -859,7 +859,7 @@
+ set#arrow#\labarrow#number\rab\\##from#[#\labsystem\rab#]#\labx\rab,#[#\labsystem\rab#]#\laby\rab,#[#[#\labsystem\rab#]#\labz\rab#]\\##to###[#\labsystem\rab#]#\labx\rab,#[#\labsystem\rab#]#\laby\rab,#[#[#\labsystem\rab#]#\labz\rab#]\\##[#with#{#\laboption\rab#}#]\\
+@@ -904,7 +904,7 @@
  
- set#axescolour#blue\\
+ set#axescolor#blue\\
  
--would specify that graph axes should be drawn in blue. Any of the recognised colour names listed in Section XXX of the Users' Guide can be used. 
-+would specify that graph axes should be drawn in blue. Any of the recognised colour names listed in Section 17.4 of the Users' Guide can be used. 
+-would specify that graph axes should be drawn in blue. Any of the recognised color names listed in Section XXX of the Users' Guide can be used, or a numbered color from the present palette, or an object of type color. 
++would specify that graph axes should be drawn in blue. Any of the recognised color names listed in Section 19.4 of the Users' Guide can be used, or a numbered color from the present palette, or an object of type color. 
  
-    </axescolour>
+    </axescolor>
     <axis>
-@@ -884,13 +884,13 @@
+@@ -929,13 +929,13 @@
  * atzero - Specifies that rather than being placed along an edge of the plot, the axis should mark the lines where the perpendicular axes x1, y1 and/or z1 are zero. [Not default].  \\
  * automirrored - Specifies that an automatic decision should be made between the behaviour of mirrored and nomirrored. If there are no axes on the opposite side of the graph, a mirror axis is produced. If there are already axes on the opposite side of the graph, no mirror axis is produced. [Default].  \\
  * fullmirrored - Similar to mirrored. Specifies that this axis should have a corresponding twin placed on the opposite side of the graph with mirroring ticks and labelling. [Not default; see automirrored].  \\
 -* invisible - Specifies that the axis should not be drawn; data can still be plotted against it, but the axis is unseen. See Example XXX of the Users' Guide for a plot where all of the axes are invisible.  \\
 -* linked - Specifies that the axis should be linked to another axis; see Section XXX of the Users' Guide.  \\
-+* invisible - Specifies that the axis should not be drawn; data can still be plotted against it, but the axis is unseen. See Example 21 in the Users' Guide for a plot where all of the axes are invisible.  \\
-+* linked - Specifies that the axis should be linked to another axis; see Section 7.7.7 of the Users' Guide.  \\
++* invisible - Specifies that the axis should not be drawn; data can still be plotted against it, but the axis is unseen. See Example 24 of the Users' Guide for a plot where all of the axes are invisible.  \\
++* linked - Specifies that the axis should be linked to another axis; see Section 8.8.9 of the Users' Guide.  \\
  * mirrored - Specifies that this axis should have a corresponding twin placed on the opposite side of the graph with mirroring ticks but with no labels on the ticks. [Not default; see automirrored].  \\
  * noarrow - Specifies that no arrowheads should be drawn on the ends of the axis. [Default].  \\
  * nomirrored - Specifies that this axis should not have any corresponding twins. [Not default; see automirrored].  \\
  * notatzero - Opposite of atzero; the axis should be placed along an edge of the plot. [Default].  \\
 -* notlinked - Specifies that the axis should no longer be linked to any other; see Section XXX of the Users' Guide. [Default].  \\
-+* notlinked - Specifies that the axis should no longer be linked to any other; see Section 7.7.7 of the Users' Guide. [Default].  \\
++* notlinked - Specifies that the axis should no longer be linked to any other; see Section 8.8.9 of the Users' Guide. [Default].  \\
  * reversearrow - Specifies that an arrowhead should be drawn on the left/bottom end of the axis. [Not default].  \\
  * twowayarrow - Specifies that arrowheads should be drawn on both ends of the axis. [Not default].  \\
  * visible - Specifies that the axis should be displayed; opposite of invisible. [Default].  \\
-@@ -1030,7 +1030,7 @@
+@@ -1075,7 +1075,7 @@
  The setting contours is used to define the set of ordinate values for which contours are drawn when using the contourmap plot style. If \labnumber\rab is specified, the contours are evenly spaced - either linearly or logarithmically, depending upon the state of the logscale c1 setting - between the values specified in the c1range setting. Otherwise, the list of ordinate values may be specified as a ()-bracketed comma-separated list. If the option label is specified, then each contour is labelled with the ordinate value that it follows. If the option nolabel is specified, then the contours are not labelled. 
  
     </contours>
@@ -98,65 +98,65 @@
  
  set#c\labn\rabrange#[#\labrange\rab#]\\##############[#reversed#|#noreversed#]\\##############[#renormalise#|#norenormalise#]\\
  
-@@ -1046,7 +1046,7 @@
+@@ -1091,7 +1091,7 @@
  
-     </Colour_Maps>
+     </Color_Maps>
  
 -   </c\labn\rabrange>
 +   </c1range>
     <data_style>
  
  See set style data. 
-@@ -1113,7 +1113,7 @@
+@@ -1158,7 +1158,7 @@
  
- set#gridmajcolour#purple\\
+ set#gridmajcolor#purple\\
  
--would cause the major gridlines to be drawn in purple. Any of the recognised colour names listed in Section XXX of the Users' Guide can be used. See also the set gridmincolour command. 
-+would cause the major gridlines to be drawn in purple. Any of the recognised colour names listed in Section 17.4 of the Users' Guide can be used. See also the set gridmincolour command. 
+-would cause the major gridlines to be drawn in purple. Any of the recognised color names listed in Section XXX of the Users' Guide can be used, or a numbered color from the present palette, or an object of type color. See also the set gridmincolor command. 
++would cause the major gridlines to be drawn in purple. Any of the recognised color names listed in Section 19.4 of the Users' Guide can be used, or a numbered color from the present palette, or an object of type color. See also the set gridmincolor command. 
  
-    </gridmajcolour>
-    <gridmincolour>
-@@ -1124,7 +1124,7 @@
+    </gridmajcolor>
+    <gridmincolor>
+@@ -1169,7 +1169,7 @@
  
- set#gridmincolour#purple\\
+ set#gridmincolor#purple\\
  
--would cause the minor gridlines to be drawn in purple. Any of the recognised colour names listed in Section XXX of the Users' Guide can be used. See also the set gridmajcolour command. 
-+would cause the minor gridlines to be drawn in purple. Any of the recognised colour names listed in Section 17.4 of the Users' Guide can be used. See also the set gridmajcolour command. 
+-would cause the minor gridlines to be drawn in purple. Any of the recognised color names listed in Section XXX of the Users' Guide can be used, or a numbered color from the present palette, or an object of type color. See also the set gridmajcolor command. 
++would cause the minor gridlines to be drawn in purple. Any of the recognised color names listed in Section 19.4 of the Users' Guide can be used, or a numbered color from the present palette, or an object of type color. See also the set gridmajcolor command. 
  
-    </gridmincolour>
+    </gridmincolor>
     <key>
-@@ -1240,7 +1240,7 @@
+@@ -1285,7 +1285,7 @@
  
  set#multiplot\\
  
 -causes Pyxplot to enter multiplot mode, which allows many graphs to be plotted together and displayed side-by-side. See Section XXX of the Users' Guide for a full discussion of multiplot mode. 
-+causes Pyxplot to enter multiplot mode, which allows many graphs to be plotted together and displayed side-by-side. See Section 9.1 of the Users' Guide for a full discussion of multiplot mode. 
++causes Pyxplot to enter multiplot mode, which allows many graphs to be plotted together and displayed side-by-side. See Section 10.2 of the Users' Guide for a full discussion of multiplot mode. 
  
     </multiplot>
     <mxtics>
-@@ -1352,7 +1352,7 @@
+@@ -1397,7 +1397,7 @@
  
  set#nomultiplot\\
  
 -The set nomultiplot command causes Pyxplot to leave multiplot mode; outside of multiplot mode, only single graphs and vector graphics objects are displayed at any one time, whereas in multiplot mode, galleries of plots and vector graphics can be placed alongside one another. See Section XXX of the Users' Guide for a full discussion of multiplot mode. 
-+The set nomultiplot command causes Pyxplot to leave multiplot mode; outside of multiplot mode, only single graphs and vector graphics objects are displayed at any one time, whereas in multiplot mode, galleries of plots and vector graphics can be placed alongside one another. See Section 9.1 of the Users' Guide for a full discussion of multiplot mode. 
++The set nomultiplot command causes Pyxplot to leave multiplot mode; outside of multiplot mode, only single graphs and vector graphics objects are displayed at any one time, whereas in multiplot mode, galleries of plots and vector graphics can be placed alongside one another. See Section 10.2 of the Users' Guide for a full discussion of multiplot mode. 
  
     </nomultiplot>
     <nostyle>
-@@ -1440,17 +1440,148 @@
+@@ -1485,17 +1485,148 @@
  
  plot#sin(x),#cos(x),#tan(x),#exp(x)\\
  
--the first function would be plotted in red, the second in green, and the third in blue. Upon reaching the fourth, the palette would cycle back to red. Any of the recognised colour names listed in Section XXX of the Users' Guide can be used. 
-+the first function would be plotted in red, the second in green, and the third in blue. Upon reaching the fourth, the palette would cycle back to red. Any of the recognised colour names listed in Section 17.4 of the Users' Guide can be used. 
+-the first function would be plotted in red, the second in green, and the third in blue. Upon reaching the fourth, the palette would cycle back to red. Any of the recognised color names listed in Section XXX of the Users' Guide can be used, or a numbered color from the present palette, or an object of type color. 
++the first function would be plotted in red, the second in green, and the third in blue. Upon reaching the fourth, the palette would cycle back to red. Any of the recognised color names listed in Section 19.4 of the Users' Guide can be used, or a numbered color from the present palette, or an object of type color. 
  
     </palette>
     <papersize>
  
  set#papersize#(#\labnamed#size\rab#|#\labheight\rab,\labwidth\rab#)\\
  
--The setting papersize changes the size of output produced by the postscript terminal, and whenever the enlarge terminal option is set (see the set terminal command). This can take the form of either a recognised paper size name - a list of these is given in Appendix XXX of the Users' Guide - or as a (height, width) pair of values, both measured in millimetres. The following examples demonstrate these possibilities: 
-+The setting papersize changes the size of output produced by the postscript terminal, and whenever the enlarge terminal option is set (see the set terminal command). This can take the form of either a recognised paper size name or as a (height, width) pair of values, both measured in millimetres. The following examples demonstrate these possibilities: 
+-The setting papersize changes the size of output produced by the postscript terminal, and whenever the enlarge terminal option is set (see the set terminal command). This can take the form of either a recognised paper size name - a list of these is given in Appendix XXX of the Users' Guide - or as a (height, width) pair of values, both measured in millimeters. The following examples demonstrate these possibilities: 
++The setting papersize changes the size of output produced by the postscript terminal, and whenever the enlarge terminal option is set (see the set terminal command). This can take the form of either a recognised paper size name, or as a (height, width) pair of values, both measured in millimeters. The following examples demonstrate these possibilities: 
  
  set#papersize#a4\\set#papersize#letter\\set#papersize#200,100\\
  
@@ -294,16 +294,16 @@
     </papersize>
     <pointlinewidth>
  
-@@ -1700,7 +1831,7 @@
+@@ -1745,7 +1876,7 @@
  
- set#textcolour#red\\
+ set#textcolor#red\\
  
--causes all text labels, including the labels on graph axes and legends, etc. to be rendered in red. Any of the recognised colour names listed in Section XXX of the Users' Guide can be used; colours can also be referred to numerically with reference to the current palette. 
-+causes all text labels, including the labels on graph axes and legends, etc. to be rendered in red. Any of the recognised colour names listed in Section 17.4 of the Users' Guide can be used; colours can also be referred to numerically with reference to the current palette. 
+-causes all text labels, including the labels on graph axes and legends, etc. to be rendered in red. Any of the recognised color names listed in Section XXX of the Users' Guide can be used, or a numbered color from the present palette, or an object of type color. 
++causes all text labels, including the labels on graph axes and legends, etc. to be rendered in red. Any of the recognised color names listed in Section 19.4 of the Users' Guide can be used, or a numbered color from the present palette, or an object of type color. 
  
-    </textcolour>
+    </textcolor>
     <texthalign>
-@@ -1995,7 +2126,7 @@
+@@ -2034,7 +2165,7 @@
  
  tabulate#[0:2*pi]#sin(x),#cos(x),#tan(x)\\
  
@@ -312,12 +312,12 @@
  
  set#samples#200\\
  
-@@ -2003,7 +2134,7 @@
+@@ -2042,7 +2173,7 @@
  
  set#output#'filtered.dat'\\tabulate#'input.dat'#u#3:6:9#select#(asin($4)\rab0)\\
  
 -The numerical display format used in each column of the output file is chosen automatically to preserve accuracy whilst simultaneously being as easily human readable as possible. Thus, columns which contain only integers are displayed as such, and scientific notation is only used in columns which contain very large or very small values. If desired, however, a format statement may be specified using the with format specifier. The syntax for this is similar to that expected by the string substitution operator (%; see Section XXX of the Users' Guide). As an example, to tabulate the values of x to very many significant figures with some additional text, one could use: 
-+The numerical display format used in each column of the output file is chosen automatically to preserve accuracy whilst simultaneously being as easily human readable as possible. Thus, columns which contain only integers are displayed as such, and scientific notation is only used in columns which contain very large or very small values. If desired, however, a format statement may be specified using the with format specifier. The syntax for this is similar to that expected by the string substitution operator (%; see Section 6.1.1 of the Users' Guide). As an example, to tabulate the values of x to very many significant figures with some additional text, one could use: 
++The numerical display format used in each column of the output file is chosen automatically to preserve accuracy whilst simultaneously being as easily human readable as possible. Thus, columns which contain only integers are displayed as such, and scientific notation is only used in columns which contain very large or very small values. If desired, however, a format statement may be specified using the with format specifier. The syntax for this is similar to that expected by the string substitution operator (%; see Section 6.2.1 of the Users' Guide). As an example, to tabulate the values of x to very many significant figures with some additional text, one could use: 
  
  tabulate#x**2#with#format#"x#=#%f#;#x**2#=#%27.20e"\\
  
