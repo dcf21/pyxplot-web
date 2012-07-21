@@ -19,6 +19,11 @@ done
 
 plastex pyxplot-plastex.tex
 
+for all in pyxplot-plastex/images/*.png
+do
+mogrify -transparent white $all
+done
+
 for all in pyxplot-plastex/*.html
 do
 cat $all     | sed "s@<span style=\"border:1px solid #000000;@<div style=\"border:1px solid #000000;@g" > ${all}_2
