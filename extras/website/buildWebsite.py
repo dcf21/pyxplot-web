@@ -2,11 +2,12 @@
 
 # This is a script to test different pyxplot versions
 
-# rpc25, Sun Nov  8 13:36:29 CET 2009
+# $Id$
 
 # Default options (change with foo=bar on command line)
 
 import sys, os, re, subprocess, shutil, copy, tempfile
+import Image
 
 options = {'pyxplot'       : "pyxplot9",  # Default config goes here 
            'sourceRoot'    : "source/",
@@ -285,7 +286,8 @@ def getExamplesNode(configFH):
       raise
 
    # Default image is output of first leaf
-   if (node['image'] == None): node['image'] = os.path.join(node['leaves'][0]['dir'], 'output_sm.png')
+   if (node['image'] == None):
+     node['image'] = os.path.join(node['leaves'][0]['dir'], 'output_sm2.png')
 
    # Check that all the necessary information has been supplied
    for x in 'name', 'dir':
@@ -365,6 +367,7 @@ def renderExamples(tree):
       elif (nodeCount%2==0): ftmp.write("</tr><tr>\n")
       ftmp.write("<<SET exampleuri: %s>>\n"%node['uri'])
       ftmp.write("<<SET exampleimageuri: %s%s>>\n"%(node['uri'],node['image']))
+      ftmp.write("<<SET exampleimagetxt: %s>>\n"%node['name'].replace("_", " "))
       ftmp.write("<<SET examplename: %s>>\n"%node['name'].replace("_", " "))
       f = open(os.path.join(options['includedir'], 'examples-box.html'), 'r')  # UGLY
       for line in f: ftmp.write(line)
@@ -405,6 +408,7 @@ def renderExamplesNode(node, tree, opt, var):
       elif (nodeCount%2==0): ftmp.write("</tr><tr>\n")
       ftmp.write("<<SET exampleuri: %s>>\n"%leaf['uri'])
       ftmp.write("<<SET exampleimageuri: %s%s>>\n"%(leaf['uri'],'output_sm.png'))
+      ftmp.write("<<SET exampleimagetxt: %s>>\n"%(leaf['caption']))
       ftmp.write("<<SET examplename: %s>>\n"%leaf['name'].replace("_", " "))
       f = open(os.path.join(options['includedir'], 'examples-box.html'), 'r')  # UGLY
       for line in f: ftmp.write(line)
@@ -475,8 +479,8 @@ def renderExamplesLeaf(leaf, node, tree, opt, var):
    insertObject(ftmp, object, opt, var)
    ftmp.close()
 
-   # Now render the contents of the scriupt
-	# XXX The error handling in this bit is fucking dreadful.  Please sort it out.
+   # Now render the contents of the script
+	# XXX The error handling in this bit is dreadful.  Please sort it out.
    tempdir = tempfile.mkdtemp()
    shutil.copy2(os.path.join(options['includedir'],leaf['scriptfile']), "%s/script.ppl"%tempdir)
    for datafile in leaf['datafiles']: shutil.copy2(os.path.join(options['includedir'],datafile), tempdir)
@@ -487,8 +491,22 @@ def renderExamplesLeaf(leaf, node, tree, opt, var):
    if (len(errors.strip())>0):
      sys.stderr.write("Pyxplot error:\n%s"%errors)
      raise RuntimeError
+   # Make _sm2.png for display on examples-root
+   infile = os.path.join(tempdir,"output_sm.png")
+   imObj  = Image.open(infile)
+   imSize = imObj.size
+   imRat  = float(imSize[1]) / imSize[0]
+   del imObj
+   if (imRat) > 6.5/9.: imWid = "height 6.0"
+   else               : imWid = "width 8.5"
+   pplobj = subprocess.Popen(opt['pyxplot'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE, cwd=tempdir)
+   [output, errors] = pplobj.communicate('set term png trans dpi 90\nset output "output_sm2.png"\nset multiplot\nm=0.25\nw=9\nh=6.5\nfor (i=4; i>=0; i--) { box from -i*m,i*m to -i*m+w,i*m+h with lw 2 fillcol white ; }\nset texthal cent\nset textval cent\neps "output.eps" at w/2,h/2 %s'%(imWid))
+   if (len(errors.strip())>0):
+     sys.stderr.write("Pyxplot error:\n%s"%errors)
+     raise RuntimeError
+   # Copy output of example into place
    leafdir = os.path.join(opt['targetRoot'],tree['root'], node['dir'], leaf['dir'])
-   for file in ['output.eps', 'output.png', 'output_sm.png', 'script.ppl']: shutil.copy2("%s/%s"%(tempdir,file), leafdir)
+   for file in ['output.eps', 'output.png', 'output_sm.png', 'output_sm2.png', 'script.ppl']: shutil.copy2("%s/%s"%(tempdir,file), leafdir)
    for file in leaf['datafiles']: shutil.copy2(os.path.join(options['includedir'],file), leafdir)
    shutil.rmtree(tempdir)
 

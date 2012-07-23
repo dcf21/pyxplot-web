@@ -19,11 +19,13 @@ done
 
 plastex pyxplot-plastex.tex
 
+# Make images have transparent backgrounds so they don't look silly with colors behind them
 for all in pyxplot-plastex/images/*.png
 do
 mogrify -transparent white $all
 done
 
+# Fix example and boxout blocks to be divs, not spans
 for all in pyxplot-plastex/*.html
 do
 cat $all     | sed "s@<span style=\"border:1px solid #000000;@<div style=\"border:1px solid #000000;@g" > ${all}_2
@@ -32,6 +34,14 @@ rm ${all}_2
 mv ${all}_3 $all
 done
 
+# Index doesn't plastex very sensibly... use 'x' as character for links
+for all in pyxplot-plastex/*.html
+do
+cat $all     | sed "s@<plasTeX.Base.LaTeX.Index.IndexDestination object at 0x.......>@x@g" > ${all}_2
+mv ${all}_2 $all
+done
+
+# Transfer files into place
 rm -Rf /home/dcf21/pyxplot/extras/website/source/HTMLdoc/0.9
 mkdir -p /home/dcf21/pyxplot/extras/website/source/HTMLdoc/0.9
 cp -r /tmp/dcf_plastex/html/pyxplot-plastex/* /home/dcf21/pyxplot/extras/website/source/HTMLdoc/0.9
