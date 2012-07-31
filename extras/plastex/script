@@ -45,5 +45,5 @@ done
 rm -Rf /home/dcf21/pyxplot/extras/website/source/HTMLdoc/0.9
 mkdir -p /home/dcf21/pyxplot/extras/website/source/HTMLdoc/0.9
 cp -r /tmp/dcf_plastex/html/pyxplot-plastex/* /home/dcf21/pyxplot/extras/website/source/HTMLdoc/0.9
-cp /home/dcf21/pyxplot/pyxplot9/doc/pyxplot.pdf /home/dcf21/pyxplot/extras/website/source/library/manual-0.9.0.pdf
+cp /home/dcf21/pyxplot/pyxplot9/doc/pyxplot.pdf /home/dcf21/pyxplot/extras/website/source/library/manual-0.9.1.pdf
 
