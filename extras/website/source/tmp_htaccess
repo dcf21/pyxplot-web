@@ -1,4 +1,0 @@
-AuthUserFile /web/SERVERS/www.pyxplot.org.uk/docs/.htpasswd_ppl
-AuthType Basic
-AuthName "The future of PyXPlot"
-Require valid-user

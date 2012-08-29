@@ -3,5 +3,6 @@ Disallow: /0.5
 Disallow: /0.6
 Disallow: /0.7
 Disallow: /0.8
+Disallow: /0.9
 User-agent: Mediapartners-Google
 Disallow:
