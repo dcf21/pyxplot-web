@@ -10,13 +10,22 @@ assert os.path.exists("0.8") # Just double check that we're in the output HTML d
 
 os.system("rm -Rf .svn */.svn */*/.svn */*/*/.svn */*/*/*/.svn */*/*/*/*/.svn")
 
-for fn in glob.glob("0.*/doc/html/*.html"):
+for fn in glob.glob("0.*/doc/html/*.html") + glob.glob("current/doc/html/*.html"):
  #print fn
  contents = open(fn).read()
  lines = contents.split('\n')
- i = hadHead = hadBody = hadEndBody = 0
+ i = hadMeta = hadTitle = hadHead = hadBody = hadEndBody = 0
  while (i<len(lines)):
-   if (not hadHead) and lines[i].strip()=='</head>':
+   if (not hadMeta) and lines[i].strip().startswith("""<meta name"""):
+     lines.insert(i,r"""<meta name="description" content="Pyxplot: A data processing, graph plotting and vector graphics suite">
+<meta name="keywords" content="Pyxplot, graph plotting, vector graphics, LaTeX, equations, scripting">
+<meta name="author" content="Dominic Ford" />""")
+     hadMeta=1
+   elif (not hadTitle) and lines[i].strip().startswith("""<title>"""):
+     if (lines[i][7]==":"): lines[i] = r"""<title>Pyxplot Users' Guide"""+lines[i][7:]
+     else:                  lines[i] = r"""<title>Pyxplot Users' Guide: """+lines[i][7:]
+     hadTitle=1
+   elif (not hadHead) and lines[i].strip()=='</head>':
      lines.insert(i,r"""<script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-22395429-2']);
